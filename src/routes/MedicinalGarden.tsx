@@ -12,6 +12,7 @@ import {
 } from '../three/MedicinalGardenScene'
 import { Crosshair, Encounter } from '../components/WalkHud'
 import { BoardCard, BOARD_ART } from '../components/BoardCard'
+import { MaterialIprStrip } from '../components/MaterialIprPanel'
 import { BED_PLOTS, PLAQUE, POND_PLANT } from '../data/medicinalGarden'
 import { getPlant } from '../data/plants'
 import { Icon } from '../components/ui/Icon'
@@ -429,6 +430,9 @@ export default function MedicinalGarden() {
                 plant={board}
                 className="overflow-hidden rounded-[6px] shadow-[0_28px_64px_-22px_rgb(0_0_0/0.6)]"
               />
+              <div className="glass mt-2 rounded-full border border-line">
+                <MaterialIprStrip profile={board.ipr} name={board.name} materialId={board.id} interactive={false} />
+              </div>
             </motion.div>
           ) : null}
         </AnimatePresence>

@@ -4,6 +4,95 @@
  */
 
 export interface paths {
+    "/abs": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Abs Helper */
+        post: operations["abs_helper_abs_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/ask": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Ask */
+        post: operations["ask_ask_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/classify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Classify Formulation
+         * @description One question at a time: send the answers so far, get the next question or the result.
+         */
+        post: operations["classify_formulation_classify_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/consent": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get Consent */
+        get: operations["get_consent_consent_get"];
+        put?: never;
+        /** Set Consent */
+        post: operations["set_consent_consent_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/escalate": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Escalate */
+        post: operations["escalate_escalate_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/health": {
         parameters: {
             query?: never;
@@ -14,8 +103,77 @@ export interface paths {
         /**
          * Health
          * @description The web app polls this to decide between the assistant and the offline notice.
+         *     It never loads a model, so it answers instantly even on a cold start.
          */
         get: operations["health_health_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/materials/{kind}/{material_id}/ipr": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Material Ipr */
+        get: operations["material_ipr_materials__kind___material_id__ipr_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/me": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        /** Delete Me */
+        delete: operations["delete_me_me_delete"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/registry": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List Registries */
+        get: operations["list_registries_registry_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/sources": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List Sources */
+        get: operations["list_sources_sources_get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -28,6 +186,30 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        /** AbsResult */
+        AbsResult: {
+            /** Ip Approval Needed */
+            ip_approval_needed: boolean;
+            /**
+             * Route
+             * @enum {string}
+             */
+            route: "nba_approval" | "sbb_intimation" | "exempt_check" | "not_applicable";
+            /** Steps */
+            steps: components["schemas"]["Line"][];
+            /** Summary */
+            summary: string;
+            /**
+             * Verified On
+             * @default 2026-09-17
+             */
+            verified_on: string;
+        };
+        /** AbsStep */
+        AbsStep: {
+            next_question?: components["schemas"]["Question"] | null;
+            result?: components["schemas"]["AbsResult"] | null;
+        };
         /** Abstention */
         Abstention: {
             /**
@@ -44,6 +226,23 @@ export interface components {
             part: string;
             /** Volume */
             volume: string;
+        };
+        /** AskRequest */
+        AskRequest: {
+            /** Context */
+            context?: components["schemas"]["ContextItem"][];
+            /**
+             * Jurisdiction Mode
+             * @default BOTH
+             * @enum {string}
+             */
+            jurisdiction_mode: "IN" | "INTL" | "BOTH";
+            /** Language */
+            language?: string | null;
+            /** Persona */
+            persona?: ("practitioner" | "researcher" | "startup" | "cultivator") | null;
+            /** Question */
+            question: string;
         };
         /** Biodiversity */
         Biodiversity: {
@@ -84,6 +283,58 @@ export interface components {
             /** Version Label */
             version_label: string;
         };
+        /** Cite */
+        Cite: {
+            /** Locator */
+            locator: string;
+            /** Source Id */
+            source_id: string;
+            /** Verified */
+            verified: boolean;
+        };
+        /** ClassificationResult */
+        ClassificationResult: {
+            /**
+             * Category
+             * @enum {string}
+             */
+            category: "cosmetic" | "ayurveda_aahar" | "classical" | "patent_proprietary" | "phytopharmaceutical" | "new_drug";
+            /** Decided By */
+            decided_by: string;
+            /**
+             * Disclaimer
+             * @default This classification is information, not legal advice. Lines marked 'verify' point at the right law but the exact provision has not been checked yet.
+             */
+            disclaimer: string;
+            /** Ip Posture */
+            ip_posture: components["schemas"]["Line"][];
+            /** Label */
+            label: string;
+            /** Requires */
+            requires: components["schemas"]["Line"][];
+            /**
+             * Verified On
+             * @default 2026-09-17
+             */
+            verified_on: string;
+        };
+        /** ClassifyRequest */
+        ClassifyRequest: {
+            /**
+             * Answers
+             * @default {}
+             */
+            answers: {
+                [key: string]: boolean;
+            };
+        };
+        /** ClassifyStep */
+        ClassifyStep: {
+            /** Asked */
+            asked: number;
+            next_question?: components["schemas"]["Question"] | null;
+            result?: components["schemas"]["ClassificationResult"] | null;
+        };
         /** Confidence */
         Confidence: {
             /**
@@ -98,6 +349,30 @@ export interface components {
             reasons: string[];
             /** Score */
             score: number;
+        };
+        /** ConsentRequest */
+        ConsentRequest: {
+            /** Granted */
+            granted: boolean;
+            /**
+             * Scope
+             * @enum {string}
+             */
+            scope: "assistant" | "transcript";
+        };
+        /** ConsentState */
+        ConsentState: {
+            /** Assistant */
+            assistant: boolean;
+            /** Transcript */
+            transcript: boolean;
+        };
+        /** ContextItem */
+        ContextItem: {
+            /** Id */
+            id: string;
+            /** Kind */
+            kind: string;
         };
         /** Deposit */
         Deposit: {
@@ -123,6 +398,29 @@ export interface components {
             /** Schedulee1 */
             scheduleE1: boolean | "unknown";
         };
+        /** EscalateRequest */
+        EscalateRequest: {
+            /** Answer Id */
+            answer_id?: string | null;
+            /** Contact */
+            contact?: string | null;
+            /**
+             * Message
+             * @default
+             */
+            message: string;
+        };
+        /** EscalateResult */
+        EscalateResult: {
+            /** Facilitators */
+            facilitators: components["schemas"]["FacilitatorOut"][];
+            /** Note */
+            note: string;
+            /** Status */
+            status: string;
+            /** Ticket Id */
+            ticket_id: string;
+        };
         /** Escalation */
         Escalation: {
             /**
@@ -144,6 +442,17 @@ export interface components {
             /** Restricted */
             restricted: boolean | "unknown";
         };
+        /** FacilitatorOut */
+        FacilitatorOut: {
+            /** Body */
+            body: string;
+            /** Contact */
+            contact: string;
+            /** Name */
+            name: string;
+            /** Source Url */
+            source_url: string;
+        };
         /** GI */
         GI: {
             /**
@@ -161,10 +470,17 @@ export interface components {
             /** Regno */
             regNo: string;
         };
+        /** HTTPValidationError */
+        HTTPValidationError: {
+            /** Detail */
+            detail?: components["schemas"]["ValidationError"][];
+        };
         /** Health */
         Health: {
             /** Corpus Version */
             corpus_version: string;
+            /** Database */
+            database: boolean;
             /** Embed Model */
             embed_model: string;
             /** Model */
@@ -204,6 +520,12 @@ export interface components {
             title: string;
             /** Year */
             year: number;
+        };
+        /** Line */
+        Line: {
+            cite: components["schemas"]["Cite"];
+            /** Text */
+            text: string;
         };
         /**
          * MaterialIPProfile
@@ -278,6 +600,46 @@ export interface components {
              * @enum {string}
              */
             name: "anthropic" | "groq";
+        };
+        /** PurgeResult */
+        PurgeResult: {
+            /** Deleted */
+            deleted: {
+                [key: string]: number;
+            };
+        };
+        /** Question */
+        Question: {
+            /**
+             * Help
+             * @default
+             */
+            help: string;
+            /** Id */
+            id: string;
+            /** Text */
+            text: string;
+        };
+        /** RegistryOut */
+        RegistryOut: {
+            /** Cite Locator */
+            cite_locator: string | null;
+            /** Cite Source Id */
+            cite_source_id: string | null;
+            /** Fee Note */
+            fee_note: string | null;
+            /** Forms */
+            forms: unknown[];
+            /** Id */
+            id: string;
+            /** Jurisdiction */
+            jurisdiction: string;
+            /** Name */
+            name: string;
+            /** Regime */
+            regime: string[];
+            /** Url */
+            url: string;
         };
         /** RegistryPointer */
         RegistryPointer: {
@@ -357,6 +719,50 @@ export interface components {
             /** Question */
             question: string;
         };
+        /** SourceOut */
+        SourceOut: {
+            /** Doc Type */
+            doc_type: string;
+            /** Id */
+            id: string;
+            /** Issuer */
+            issuer: string;
+            /** Jurisdiction */
+            jurisdiction: string;
+            /** Regime */
+            regime: string[];
+            /** Title */
+            title: string;
+            /** Url */
+            url: string;
+            /** Versions */
+            versions: components["schemas"]["SourceVersionOut"][];
+        };
+        /** SourceVersionOut */
+        SourceVersionOut: {
+            /** Chunks */
+            chunks: number;
+            /**
+             * Retrieved At
+             * Format: date-time
+             */
+            retrieved_at: string;
+            /** Sha256 */
+            sha256: string;
+            /** Superseded */
+            superseded: boolean;
+            /** Version Label */
+            version_label: string;
+        };
+        /** SourcesOut */
+        SourcesOut: {
+            /** Changelog Markdown */
+            changelog_markdown: string;
+            /** Corpus Version */
+            corpus_version: string;
+            /** Sources */
+            sources: components["schemas"]["SourceOut"][];
+        };
         /** TraditionalKnowledge */
         TraditionalKnowledge: {
             /** Cite */
@@ -371,6 +777,19 @@ export interface components {
              * @enum {string}
              */
             tkdl: "documented" | "unknown";
+        };
+        /** ValidationError */
+        ValidationError: {
+            /** Context */
+            ctx?: Record<string, never>;
+            /** Input */
+            input?: unknown;
+            /** Location */
+            loc: (string | number)[];
+            /** Message */
+            msg: string;
+            /** Error Type */
+            type: string;
         };
         /** Wildlife */
         Wildlife: {
@@ -399,6 +818,212 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
+    abs_helper_abs_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ClassifyRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AbsStep"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    ask_ask_post: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description anonymous id from the browser */
+                "x-session-id": string;
+            };
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["AskRequest"];
+            };
+        };
+        responses: {
+            /** @description status, answer, done */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "text/event-stream": unknown;
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    classify_formulation_classify_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ClassifyRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ClassifyStep"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    get_consent_consent_get: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description anonymous id from the browser */
+                "x-session-id": string;
+            };
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ConsentState"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    set_consent_consent_post: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description anonymous id from the browser */
+                "x-session-id": string;
+            };
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ConsentRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ConsentState"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    escalate_escalate_post: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description anonymous id from the browser */
+                "x-session-id": string;
+            };
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["EscalateRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["EscalateResult"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
     health_health_get: {
         parameters: {
             query?: never;
@@ -415,6 +1040,122 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["Health"];
+                };
+            };
+        };
+    };
+    material_ipr_materials__kind___material_id__ipr_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                kind: "plant" | "microbe" | "animal" | "mineral";
+                material_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["MaterialIPProfile"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    delete_me_me_delete: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description anonymous id from the browser */
+                "x-session-id": string;
+            };
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PurgeResult"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    list_registries_registry_get: {
+        parameters: {
+            query?: {
+                regime?: string | null;
+                jurisdiction?: ("IN" | "INTL") | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RegistryOut"][];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    list_sources_sources_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["SourcesOut"];
                 };
             };
         };

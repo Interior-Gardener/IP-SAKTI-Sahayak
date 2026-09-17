@@ -12,14 +12,16 @@ import { useNarrator } from '../lib/speech'
 import { plantAsText, sharePlant, socialTargets } from '../lib/share'
 import type { PlateVariant } from '../lib/plate'
 import type { HistoryKind, Plant } from '../types/plant'
+import { MaterialIprPanel } from '../components/MaterialIprPanel'
 
-type TabId = 'overview' | 'uses' | 'ayurveda' | 'history' | 'cultivation' | 'gallery' | 'notes'
+type TabId = 'overview' | 'uses' | 'ayurveda' | 'history' | 'iplaw' | 'cultivation' | 'gallery' | 'notes'
 
 const TABS: { id: TabId; label: string; icon: IconName }[] = [
   { id: 'overview', label: 'Overview', icon: 'info' },
   { id: 'uses', label: 'Medicinal uses', icon: 'drop' },
   { id: 'ayurveda', label: 'Properties', icon: 'layers' },
   { id: 'history', label: 'History', icon: 'book' },
+  { id: 'iplaw', label: 'IP & Law', icon: 'scale' },
   { id: 'cultivation', label: 'Grow it', icon: 'seedling' },
   { id: 'gallery', label: 'Plates & audio', icon: 'eye' },
   { id: 'notes', label: 'My notes', icon: 'note' },
@@ -239,6 +241,7 @@ export default function PlantPage() {
             {tab === 'uses' && <UsesTab plant={plant} />}
             {tab === 'ayurveda' && <AyurvedaTab plant={plant} />}
             {tab === 'history' && <HistoryTab plant={plant} />}
+            {tab === 'iplaw' && <MaterialIprPanel profile={plant.ipr} name={plant.name} materialId={plant.id} botanical={plant.botanical} names={plant.names} />}
             {tab === 'cultivation' && <CultivationTab plant={plant} />}
             {tab === 'gallery' && <GalleryTab plant={plant} onCopy={() => setToast('Link copied to clipboard')} />}
             {tab === 'notes' && <NotesTab plant={plant} />}

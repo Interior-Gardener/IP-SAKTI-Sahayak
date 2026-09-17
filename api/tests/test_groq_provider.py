@@ -37,3 +37,21 @@ def test_parse_markers_accepts_missing_prefix():
     prose, cites = parse_markers('Bees make it. [[c-1|"Honey is collected by bees"]]')
     assert prose == "Bees make it."
     assert [(c.chunk_id, c.cited_text) for c in cites] == [("c-1", "Honey is collected by bees")]
+
+
+def test_parse_markers_accepts_single_closing_bracket():
+    prose, cites = parse_markers(
+        'Barred [[c:39|"(p) an invention which is traditional knowledge.]"]. Next.'
+    )
+    assert [c.chunk_id for c in cites] == ["39"] and "[[" not in prose
+
+
+def test_parse_markers_accepts_fullwidth_brackets():
+    prose, cites = parse_markers(
+        'It is barred【c:39|"traditional knowledge"】. Also “curly” [[c:40|“known properties”]].'
+    )
+    assert [(c.chunk_id, c.cited_text) for c in cites] == [
+        ("39", "traditional knowledge"),
+        ("40", "known properties"),
+    ]
+    assert "【" not in prose and "[[" not in prose

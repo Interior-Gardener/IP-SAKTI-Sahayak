@@ -117,3 +117,46 @@ export async function* ask(
   const tail = parseFrame(buffer)
   if (tail) yield tail
 }
+
+/* ---------------------------------------------------------------- privacy, escalation, corpus */
+
+export type ConsentState = components['schemas']['ConsentState']
+export type EscalateResult = components['schemas']['EscalateResult']
+export type SourcesOut = components['schemas']['SourcesOut']
+export type JurisdictionAnswer = SahayakAnswer['answers'][number]
+
+export function getConsent(sessionId: string) {
+  return request<ConsentState>('/consent', {}, sessionId)
+}
+
+export function setConsent(sessionId: string, scope: 'assistant' | 'transcript', granted: boolean) {
+  return request<ConsentState>(
+    '/consent',
+    { method: 'POST', body: JSON.stringify({ scope, granted }) },
+    sessionId,
+  )
+}
+
+export function deleteMyData(sessionId: string) {
+  return request<{ deleted: Record<string, number> }>('/me', { method: 'DELETE' }, sessionId)
+}
+
+export function escalate(sessionId: string, body: { answer_id?: string; message: string; contact?: string }) {
+  return request<EscalateResult>('/escalate', { method: 'POST', body: JSON.stringify(body) }, sessionId)
+}
+
+export function sources() {
+  return request<SourcesOut>('/sources')
+}
+
+/* ---------------------------------------------------------------- opening the drawer */
+
+export interface OpenSahayakDetail {
+  question?: string
+  context?: { kind: string; id: string; label?: string }[]
+}
+
+/** Any page (or a 3D scene) can open the assistant without prop drilling. */
+export function openSahayak(detail: OpenSahayakDetail = {}) {
+  window.dispatchEvent(new CustomEvent<OpenSahayakDetail>('sahayak:open', { detail }))
+}

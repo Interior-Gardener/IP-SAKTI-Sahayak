@@ -10,8 +10,8 @@ Status: `planned` (designed, not built) · `built` · `verified` (built and test
 
 | Data | Where it comes from | Why we need it | Kept where | Kept how long |
 |---|---|---|---|---|
-| Anonymous session id | Generated in the browser (`useSahayak.sessionId`) | Rate limiting, consent, purge | `consent_grants`, `audit_events`, `conversations` | Retention window (§3) |
-| Question text | Typed or spoken by the user | To answer it | In memory for the request; `conversations` **only** if the user consents to transcript retention (for escalation) | Retention window, or until `DELETE /me` |
+| Anonymous session id | Generated in the browser (`useSahayak.sessionId`) | Rate limiting, consent, purge | `consent_grants`, `audit_events`, `answers` | Retention window (§3) |
+| Question text | Typed or spoken by the user | To answer it | In memory for the request; `answers` **only** if the user consents to transcript retention (for escalation) | Retention window, or until `DELETE /me` |
 | Voice audio | Mic (stage 3) | Speech-to-text | Never stored; sent to Bhashini (or Groq Whisper fallback) and dropped | Not stored |
 | Contact details | Escalation form, optional | So a facilitator can reply | `escalations` | Until the ticket closes + retention window |
 | Paid-database credentials | User, stage 3 connectors | Query their own subscription | Not stored server-side beyond the request; consent row + audit row per call | Not stored |
@@ -22,27 +22,27 @@ No accounts, no names, no location, no device fingerprinting. Questions may stil
 
 | Principle | Control | Where | Status |
 |---|---|---|---|
-| Notice | Consent banner before the first question, in the selected language; says what is sent, to whom (LLM provider, Bhashini), and for how long | `ConsentBanner` (T1.16) | planned |
-| Consent, specific and revocable | `POST /consent` per scope: `assistant`, `transcript`, `connector:<name>`; revoke any time; `/ask` refuses without `assistant` | `consent_grants` (T1.13, T2.13) | planned |
+| Notice | Consent banner before the first question, in the selected language; says what is sent, to whom (LLM provider, Bhashini), and for how long | `ConsentBanner` (T1.16) | built |
+| Consent, specific and revocable | `POST /consent` per scope: `assistant`, `transcript`, `connector:<name>`; revoke any time; `/ask` refuses without `assistant` | `consent_grants` (T1.13, T2.13) | built |
 | Purpose limitation | Question text used only to answer; not used for training or analytics | Provider settings; model card | planned — **verify** provider data-use terms |
-| Data minimisation | Anonymous session ids; hashes in audit rows; audio not stored | §1, §4 | planned |
-| Accuracy | Citations verified against the corpus; `unknown` instead of guesses | Verifier (T1.10) | planned |
-| Storage limitation | Retention job purges conversations after `RETENTION_DAYS` | T2.13 | planned |
+| Data minimisation | Anonymous session ids; hashes in audit rows; audio not stored | §1, §4 | built |
+| Accuracy | Citations verified against the corpus; `unknown` instead of guesses | Verifier (T1.10) | built |
+| Storage limitation | Retention job purges conversations after `RETENTION_DAYS` | T2.13 | built |
 | Security safeguards | §5 | — | planned |
-| Rights: access / erasure | `DELETE /me` purges everything for the session id immediately | T1.13 | planned |
+| Rights: access / erasure | `DELETE /me` purges everything for the session id immediately | T1.13 | built |
 | Grievance redressal | Contact route listed in the UI footer and README | T1.16 | planned — **verify** what the Act and Rules require here |
 | Cross-border transfer | LLM providers may process outside India; stated in the notice | Consent banner | planned — **verify** against the Act and Rules |
 | Children's data | Not directed at children; no age data collected | Notice text | planned — **verify** |
 
 ## 3. Retention
 
-- `RETENTION_DAYS` env var (default 30) for `conversations`, `answers`, `escalations` once closed.
+- `RETENTION_DAYS` env var (default 30) for `answers`, closed `escalations` and revoked consent rows (`python -m app.retention`).
 - `audit_events` keep ids and hashes only, so they can live longer for security review (default 180 days).
 - Eval runs hold no user data.
 
 ## 4. Audit
 
-One `audit_events` row per `ask`, `tool_call`, `connector`, `escalate`, `purge`, with `session_id`, `kind`, `created_at` and a `payload` holding **no raw personal data**: question hash, language, jurisdiction mode, chunk ids, provider and model, token counts, timings, verifier flags, confidence band. Raw text appears only if the user granted `transcript` consent, and then in `conversations`, not in the audit log.
+One `audit_events` row per `ask`, `tool_call`, `connector`, `escalate`, `purge`, with `session_id`, `kind`, `created_at` and a `payload` holding **no raw personal data**: question hash, language, jurisdiction mode, chunk ids, provider and model, token counts, timings, verifier flags, confidence band. Raw text appears only if the user granted `transcript` consent, and then in `answers`, not in the audit log.
 
 Paid connectors (stage 3): a `consent_grants` row for `connector:<name>` must exist, and every call writes its own audit row. No row, no call.
 
@@ -71,15 +71,15 @@ Paid connectors (stage 3): a `consent_grants` row for `connector:<name>` must ex
 
 | # | Risk | Our control | Status |
 |---|---|---|---|
-| LLM01 | Prompt injection | §6 rows 1–2 | planned |
-| LLM02 | Sensitive information disclosure | Minimisation, hashed audit, keys server-side | planned |
+| LLM01 | Prompt injection | §6 rows 1–2 | built |
+| LLM02 | Sensitive information disclosure | Minimisation, hashed audit, keys server-side | built |
 | LLM03 | Supply chain | Official SDKs only; lockfiles; pinned model ids | planned |
-| LLM04 | Data and model poisoning | Corpus only from official sources in `manifest.yaml` with sha256; changes via PR + `CHANGELOG.md` | planned |
-| LLM05 | Improper output handling | Answer markdown rendered without raw HTML; citations are structured data, not parsed from prose | planned |
+| LLM04 | Data and model poisoning | Corpus only from official sources in `manifest.yaml` with sha256; changes via PR + `CHANGELOG.md` | built |
+| LLM05 | Improper output handling | Answer markdown rendered without raw HTML; citations are structured data, not parsed from prose | built |
 | LLM06 | Excessive agency | Small fixed tool set, no write tools except `escalate`, iteration cap, audit per call | planned |
-| LLM07 | System prompt leakage | System prompt holds no secrets; leaking it is harmless by design | planned |
-| LLM08 | Vector and embedding weaknesses | Per-jurisdiction filters; no mixed embedding models; corpus is public data only | planned |
-| LLM09 | Misinformation | Verifier, confidence, abstention, disclaimer on every envelope, escalation path | planned |
-| LLM10 | Unbounded consumption | Rate limits, size caps, iteration caps, cache | planned |
+| LLM07 | System prompt leakage | System prompt holds no secrets; leaking it is harmless by design | built |
+| LLM08 | Vector and embedding weaknesses | Per-jurisdiction filters; no mixed embedding models; corpus is public data only | built |
+| LLM09 | Misinformation | Verifier, confidence, abstention, disclaimer on every envelope, escalation path | built |
+| LLM10 | Unbounded consumption | Rate limits, size caps, iteration caps, cache | built |
 
 Check the list names against the current OWASP GenAI project page when this file is next reviewed.

@@ -35,6 +35,8 @@ A minimal free setup is `GROQ_API_KEY` only, with `LLM_PROVIDER_*=groq`, `EMBED_
 - Tool loop: Groq tool calling behind the same `tool_loop` interface; fewer parallel calls and stricter iteration caps.
 - No embeddings on Groq: pair it with `EMBED_PROVIDER=local` (or Voyage).
 
+Quirks seen with `openai/gpt-oss-120b` and handled by the marker parser: it sometimes drops the `c:` prefix, closes with a single `]`, or uses its native full-width brackets `【c:39|"…"】`. It also translated quoted spans when answering in Hindi, so the prompt now says quotes stay in the source's words.
+
 Expect a quality gap versus Claude on legal reasoning and on writing in Indian languages. The eval harness runs per provider (`make eval PROVIDER=groq`) so the gap is measured, not guessed, and the UI footer always shows which provider answered.
 
 ## 4. Embeddings and reranking
@@ -42,6 +44,8 @@ Expect a quality gap versus Claude on legal reasoning and on writing in Indian l
 - `local`: BGE-M3 via `sentence-transformers` (multilingual, runs on CPU; a few thousand statute chunks embed in minutes). Reranker `bge-reranker-v2-m3` likewise. No keys, no cost.
 - `voyage`: `voyage-law-2` for legal text (needs `VOYAGE_API_KEY`). Better English legal retrieval; queries are translated to English first anyway.
 - Every chunk stores `embed_model`. Changing the embedder triggers a re-embed of all chunks; the API refuses to search across mixed models.
+- CPU speed: `EMBED_MAX_TOKENS` (default 512) caps BGE-M3 input; chunks are ~600 tokens with the contextual header first. A full corpus ingest still takes 1-3 hours on a laptop CPU.
+- `RERANK_PROVIDER=none` skips the reranker (another ~2 GB download) for quick local demos.
 
 ## 5. Bhashini (national language infrastructure)
 

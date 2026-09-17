@@ -7,6 +7,7 @@ import { cx } from './ui/primitives'
 import { CommandPalette } from './CommandPalette'
 import { Walkthrough } from './Walkthrough'
 import { PresentationMode } from './PresentationMode'
+import { SahayakDrawer } from './sahayak/Drawer'
 
 const NAV: { to: string; label: string; icon: IconName }[] = [
   { to: '/garden', label: 'Garden', icon: 'map' },
@@ -141,6 +142,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const [paletteOpen, setPaletteOpen] = useState(false)
   const [walkthroughOpen, setWalkthroughOpen] = useState(false)
   const [presenting, setPresenting] = useState(false)
+  const [sahayakOpen, setSahayakOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
   /* Routes that ARE the viewport: a canvas fills the window, owns its own
@@ -196,6 +198,16 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     }
     window.addEventListener('vanaspati:walkthrough', start)
     return () => window.removeEventListener('vanaspati:walkthrough', start)
+  }, [])
+
+  // Any page or scene can call openSahayak(); the drawer reads the question and context.
+  useEffect(() => {
+    const open = () => {
+      setPaletteOpen(false)
+      setSahayakOpen(true)
+    }
+    window.addEventListener('sahayak:open', open)
+    return () => window.removeEventListener('sahayak:open', open)
   }, [])
 
   const replayIntro = () => {
@@ -259,6 +271,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               </kbd>
             </button>
 
+            <button
+              onClick={() => setSahayakOpen(true)}
+              className="flex h-9 items-center gap-2 rounded-full bg-moss-900 px-3 text-[0.8rem] font-medium text-moss-100 transition-colors hover:bg-moss-800"
+            >
+              <Icon name="scale" size={15} />
+              <span className="hidden sm:inline">Ask Sahayak</span>
+            </button>
+
             <HelpMenu onWalkthrough={startWalkthrough} onPresent={() => setPresenting(true)} onReplayIntro={replayIntro} />
 
             <button
@@ -299,6 +319,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
       <Walkthrough open={walkthroughOpen} onClose={() => setWalkthroughOpen(false)} />
       <PresentationMode open={presenting} onClose={() => setPresenting(false)} />
+      <SahayakDrawer open={sahayakOpen} onClose={() => setSahayakOpen(false)} />
     </div>
   )
 }

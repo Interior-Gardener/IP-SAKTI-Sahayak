@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { MaterialIprStrip } from '../components/MaterialIprPanel'
 import { Link, useSearchParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'motion/react'
 import { gardenBeds, getPlant, plants, type GardenBed } from '../data/plants'
@@ -489,7 +490,9 @@ export default function Garden() {
                 </div>
               </dl>
 
-              <div className="flex items-center gap-2 p-3">
+              <MaterialIprStrip profile={selected.ipr} name={selected.name} materialId={selected.id} />
+
+              <div className="flex items-center gap-2 border-t border-line p-3">
                 <Link to={`/plant/${selected.id}`} className="flex-1">
                   <Button variant="primary" size="sm" className="w-full" iconRight="arrowRight">
                     Full entry

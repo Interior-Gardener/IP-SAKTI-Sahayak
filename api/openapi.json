@@ -1,6 +1,74 @@
 {
   "components": {
     "schemas": {
+      "AbsResult": {
+        "properties": {
+          "ip_approval_needed": {
+            "title": "Ip Approval Needed",
+            "type": "boolean"
+          },
+          "route": {
+            "enum": [
+              "nba_approval",
+              "sbb_intimation",
+              "exempt_check",
+              "not_applicable"
+            ],
+            "title": "Route",
+            "type": "string"
+          },
+          "steps": {
+            "items": {
+              "$ref": "#/components/schemas/Line"
+            },
+            "title": "Steps",
+            "type": "array"
+          },
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "verified_on": {
+            "default": "2026-09-17",
+            "title": "Verified On",
+            "type": "string"
+          }
+        },
+        "required": [
+          "route",
+          "summary",
+          "steps",
+          "ip_approval_needed"
+        ],
+        "title": "AbsResult",
+        "type": "object"
+      },
+      "AbsStep": {
+        "properties": {
+          "next_question": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Question"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "result": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AbsResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "title": "AbsStep",
+        "type": "object"
+      },
       "Abstention": {
         "properties": {
           "reason": {
@@ -41,6 +109,68 @@
           "part"
         ],
         "title": "ApiMonograph",
+        "type": "object"
+      },
+      "AskRequest": {
+        "properties": {
+          "context": {
+            "items": {
+              "$ref": "#/components/schemas/ContextItem"
+            },
+            "maxItems": 10,
+            "title": "Context",
+            "type": "array"
+          },
+          "jurisdiction_mode": {
+            "default": "BOTH",
+            "enum": [
+              "IN",
+              "INTL",
+              "BOTH"
+            ],
+            "title": "Jurisdiction Mode",
+            "type": "string"
+          },
+          "language": {
+            "anyOf": [
+              {
+                "maxLength": 8,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Language"
+          },
+          "persona": {
+            "anyOf": [
+              {
+                "enum": [
+                  "practitioner",
+                  "researcher",
+                  "startup",
+                  "cultivator"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Persona"
+          },
+          "question": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Question",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "title": "AskRequest",
         "type": "object"
       },
       "Biodiversity": {
@@ -143,6 +273,133 @@
         "title": "Citation",
         "type": "object"
       },
+      "Cite": {
+        "properties": {
+          "locator": {
+            "title": "Locator",
+            "type": "string"
+          },
+          "source_id": {
+            "title": "Source Id",
+            "type": "string"
+          },
+          "verified": {
+            "title": "Verified",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "source_id",
+          "locator",
+          "verified"
+        ],
+        "title": "Cite",
+        "type": "object"
+      },
+      "ClassificationResult": {
+        "properties": {
+          "category": {
+            "enum": [
+              "cosmetic",
+              "ayurveda_aahar",
+              "classical",
+              "patent_proprietary",
+              "phytopharmaceutical",
+              "new_drug"
+            ],
+            "title": "Category",
+            "type": "string"
+          },
+          "decided_by": {
+            "title": "Decided By",
+            "type": "string"
+          },
+          "disclaimer": {
+            "default": "This classification is information, not legal advice. Lines marked 'verify' point at the right law but the exact provision has not been checked yet.",
+            "title": "Disclaimer",
+            "type": "string"
+          },
+          "ip_posture": {
+            "items": {
+              "$ref": "#/components/schemas/Line"
+            },
+            "title": "Ip Posture",
+            "type": "array"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "requires": {
+            "items": {
+              "$ref": "#/components/schemas/Line"
+            },
+            "title": "Requires",
+            "type": "array"
+          },
+          "verified_on": {
+            "default": "2026-09-17",
+            "title": "Verified On",
+            "type": "string"
+          }
+        },
+        "required": [
+          "category",
+          "label",
+          "requires",
+          "ip_posture",
+          "decided_by"
+        ],
+        "title": "ClassificationResult",
+        "type": "object"
+      },
+      "ClassifyRequest": {
+        "properties": {
+          "answers": {
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "default": {},
+            "title": "Answers",
+            "type": "object"
+          }
+        },
+        "title": "ClassifyRequest",
+        "type": "object"
+      },
+      "ClassifyStep": {
+        "properties": {
+          "asked": {
+            "title": "Asked",
+            "type": "integer"
+          },
+          "next_question": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Question"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "result": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ClassificationResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "asked"
+        ],
+        "title": "ClassifyStep",
+        "type": "object"
+      },
       "Confidence": {
         "properties": {
           "band": {
@@ -174,6 +431,66 @@
           "band"
         ],
         "title": "Confidence",
+        "type": "object"
+      },
+      "ConsentRequest": {
+        "properties": {
+          "granted": {
+            "title": "Granted",
+            "type": "boolean"
+          },
+          "scope": {
+            "enum": [
+              "assistant",
+              "transcript"
+            ],
+            "title": "Scope",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope",
+          "granted"
+        ],
+        "title": "ConsentRequest",
+        "type": "object"
+      },
+      "ConsentState": {
+        "properties": {
+          "assistant": {
+            "title": "Assistant",
+            "type": "boolean"
+          },
+          "transcript": {
+            "title": "Transcript",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "assistant",
+          "transcript"
+        ],
+        "title": "ConsentState",
+        "type": "object"
+      },
+      "ContextItem": {
+        "properties": {
+          "id": {
+            "maxLength": 80,
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "maxLength": 20,
+            "title": "Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "id"
+        ],
+        "title": "ContextItem",
         "type": "object"
       },
       "Deposit": {
@@ -240,6 +557,73 @@
         "title": "DrugSchedules",
         "type": "object"
       },
+      "EscalateRequest": {
+        "properties": {
+          "answer_id": {
+            "anyOf": [
+              {
+                "maxLength": 40,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Answer Id"
+          },
+          "contact": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contact"
+          },
+          "message": {
+            "default": "",
+            "maxLength": 2000,
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "title": "EscalateRequest",
+        "type": "object"
+      },
+      "EscalateResult": {
+        "properties": {
+          "facilitators": {
+            "items": {
+              "$ref": "#/components/schemas/FacilitatorOut"
+            },
+            "title": "Facilitators",
+            "type": "array"
+          },
+          "note": {
+            "title": "Note",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "ticket_id": {
+            "title": "Ticket Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "status",
+          "facilitators",
+          "note"
+        ],
+        "title": "EscalateResult",
+        "type": "object"
+      },
       "Escalation": {
         "properties": {
           "available": {
@@ -290,6 +674,34 @@
         "title": "Export",
         "type": "object"
       },
+      "FacilitatorOut": {
+        "properties": {
+          "body": {
+            "title": "Body",
+            "type": "string"
+          },
+          "contact": {
+            "title": "Contact",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "source_url": {
+            "title": "Source Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "body",
+          "contact",
+          "source_url"
+        ],
+        "title": "FacilitatorOut",
+        "type": "object"
+      },
       "GI": {
         "properties": {
           "tags": {
@@ -327,11 +739,28 @@
         "title": "GITag",
         "type": "object"
       },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
       "Health": {
         "properties": {
           "corpus_version": {
             "title": "Corpus Version",
             "type": "string"
+          },
+          "database": {
+            "title": "Database",
+            "type": "boolean"
           },
           "embed_model": {
             "title": "Embed Model",
@@ -355,7 +784,8 @@
           "provider",
           "model",
           "embed_model",
-          "corpus_version"
+          "corpus_version",
+          "database"
         ],
         "title": "Health",
         "type": "object"
@@ -431,6 +861,23 @@
           "cite"
         ],
         "title": "LandmarkPatent",
+        "type": "object"
+      },
+      "Line": {
+        "properties": {
+          "cite": {
+            "$ref": "#/components/schemas/Cite"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "cite"
+        ],
+        "title": "Line",
         "type": "object"
       },
       "MaterialIPProfile": {
@@ -630,6 +1077,123 @@
         "title": "ProviderInfo",
         "type": "object"
       },
+      "PurgeResult": {
+        "properties": {
+          "deleted": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Deleted",
+            "type": "object"
+          }
+        },
+        "required": [
+          "deleted"
+        ],
+        "title": "PurgeResult",
+        "type": "object"
+      },
+      "Question": {
+        "properties": {
+          "help": {
+            "default": "",
+            "title": "Help",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "text"
+        ],
+        "title": "Question",
+        "type": "object"
+      },
+      "RegistryOut": {
+        "properties": {
+          "cite_locator": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cite Locator"
+          },
+          "cite_source_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cite Source Id"
+          },
+          "fee_note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fee Note"
+          },
+          "forms": {
+            "items": {},
+            "title": "Forms",
+            "type": "array"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "jurisdiction": {
+            "title": "Jurisdiction",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "regime": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Regime",
+            "type": "array"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "jurisdiction",
+          "regime",
+          "url",
+          "forms",
+          "fee_note",
+          "cite_locator",
+          "cite_source_id"
+        ],
+        "title": "RegistryOut",
+        "type": "object"
+      },
       "RegistryPointer": {
         "properties": {
           "action": {
@@ -802,6 +1366,120 @@
         "title": "SahayakAnswer",
         "type": "object"
       },
+      "SourceOut": {
+        "properties": {
+          "doc_type": {
+            "title": "Doc Type",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "issuer": {
+            "title": "Issuer",
+            "type": "string"
+          },
+          "jurisdiction": {
+            "title": "Jurisdiction",
+            "type": "string"
+          },
+          "regime": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Regime",
+            "type": "array"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          },
+          "versions": {
+            "items": {
+              "$ref": "#/components/schemas/SourceVersionOut"
+            },
+            "title": "Versions",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "jurisdiction",
+          "regime",
+          "doc_type",
+          "issuer",
+          "url",
+          "versions"
+        ],
+        "title": "SourceOut",
+        "type": "object"
+      },
+      "SourceVersionOut": {
+        "properties": {
+          "chunks": {
+            "title": "Chunks",
+            "type": "integer"
+          },
+          "retrieved_at": {
+            "format": "date-time",
+            "title": "Retrieved At",
+            "type": "string"
+          },
+          "sha256": {
+            "title": "Sha256",
+            "type": "string"
+          },
+          "superseded": {
+            "title": "Superseded",
+            "type": "boolean"
+          },
+          "version_label": {
+            "title": "Version Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "version_label",
+          "sha256",
+          "retrieved_at",
+          "superseded",
+          "chunks"
+        ],
+        "title": "SourceVersionOut",
+        "type": "object"
+      },
+      "SourcesOut": {
+        "properties": {
+          "changelog_markdown": {
+            "title": "Changelog Markdown",
+            "type": "string"
+          },
+          "corpus_version": {
+            "title": "Corpus Version",
+            "type": "string"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/SourceOut"
+            },
+            "title": "Sources",
+            "type": "array"
+          }
+        },
+        "required": [
+          "corpus_version",
+          "sources",
+          "changelog_markdown"
+        ],
+        "title": "SourcesOut",
+        "type": "object"
+      },
       "TraditionalKnowledge": {
         "properties": {
           "cite": {
@@ -830,6 +1508,46 @@
           "cite"
         ],
         "title": "TraditionalKnowledge",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
         "type": "object"
       },
       "Wildlife": {
@@ -882,9 +1600,292 @@
   },
   "openapi": "3.1.0",
   "paths": {
+    "/abs": {
+      "post": {
+        "operationId": "abs_helper_abs_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClassifyRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AbsStep"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Abs Helper",
+        "tags": [
+          "assistant"
+        ]
+      }
+    },
+    "/ask": {
+      "post": {
+        "operationId": "ask_ask_post",
+        "parameters": [
+          {
+            "description": "anonymous id from the browser",
+            "in": "header",
+            "name": "x-session-id",
+            "required": true,
+            "schema": {
+              "description": "anonymous id from the browser",
+              "title": "X-Session-Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AskRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "text/event-stream": {}
+            },
+            "description": "status, answer, done"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Ask",
+        "tags": [
+          "assistant"
+        ]
+      }
+    },
+    "/classify": {
+      "post": {
+        "description": "One question at a time: send the answers so far, get the next question or the result.",
+        "operationId": "classify_formulation_classify_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClassifyRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClassifyStep"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Classify Formulation",
+        "tags": [
+          "assistant"
+        ]
+      }
+    },
+    "/consent": {
+      "get": {
+        "operationId": "get_consent_consent_get",
+        "parameters": [
+          {
+            "description": "anonymous id from the browser",
+            "in": "header",
+            "name": "x-session-id",
+            "required": true,
+            "schema": {
+              "description": "anonymous id from the browser",
+              "title": "X-Session-Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsentState"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Consent",
+        "tags": [
+          "privacy"
+        ]
+      },
+      "post": {
+        "operationId": "set_consent_consent_post",
+        "parameters": [
+          {
+            "description": "anonymous id from the browser",
+            "in": "header",
+            "name": "x-session-id",
+            "required": true,
+            "schema": {
+              "description": "anonymous id from the browser",
+              "title": "X-Session-Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConsentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsentState"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Set Consent",
+        "tags": [
+          "privacy"
+        ]
+      }
+    },
+    "/escalate": {
+      "post": {
+        "operationId": "escalate_escalate_post",
+        "parameters": [
+          {
+            "description": "anonymous id from the browser",
+            "in": "header",
+            "name": "x-session-id",
+            "required": true,
+            "schema": {
+              "description": "anonymous id from the browser",
+              "title": "X-Session-Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EscalateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EscalateResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Escalate",
+        "tags": [
+          "assistant"
+        ]
+      }
+    },
     "/health": {
       "get": {
-        "description": "The web app polls this to decide between the assistant and the offline notice.",
+        "description": "The web app polls this to decide between the assistant and the offline notice.\nIt never loads a model, so it answers instantly even on a cold start.",
         "operationId": "health_health_get",
         "responses": {
           "200": {
@@ -899,6 +1900,201 @@
           }
         },
         "summary": "Health"
+      }
+    },
+    "/materials/{kind}/{material_id}/ipr": {
+      "get": {
+        "operationId": "material_ipr_materials__kind___material_id__ipr_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "kind",
+            "required": true,
+            "schema": {
+              "enum": [
+                "plant",
+                "microbe",
+                "animal",
+                "mineral"
+              ],
+              "title": "Kind",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "material_id",
+            "required": true,
+            "schema": {
+              "title": "Material Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialIPProfile"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Material Ipr",
+        "tags": [
+          "corpus"
+        ]
+      }
+    },
+    "/me": {
+      "delete": {
+        "operationId": "delete_me_me_delete",
+        "parameters": [
+          {
+            "description": "anonymous id from the browser",
+            "in": "header",
+            "name": "x-session-id",
+            "required": true,
+            "schema": {
+              "description": "anonymous id from the browser",
+              "title": "X-Session-Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PurgeResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Me",
+        "tags": [
+          "privacy"
+        ]
+      }
+    },
+    "/registry": {
+      "get": {
+        "operationId": "list_registries_registry_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "regime",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Regime"
+            }
+          },
+          {
+            "in": "query",
+            "name": "jurisdiction",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "IN",
+                    "INTL"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Jurisdiction"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/RegistryOut"
+                  },
+                  "title": "Response List Registries Registry Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Registries",
+        "tags": [
+          "corpus"
+        ]
+      }
+    },
+    "/sources": {
+      "get": {
+        "operationId": "list_sources_sources_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SourcesOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "List Sources",
+        "tags": [
+          "corpus"
+        ]
       }
     }
   }

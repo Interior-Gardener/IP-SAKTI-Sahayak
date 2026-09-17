@@ -4,6 +4,9 @@ from fastapi.openapi.utils import get_openapi
 from pydantic import BaseModel
 from pydantic.json_schema import models_json_schema
 
+from app import services
+from app.llm.router import resolve
+from app.routes import router
 from app.schemas import CONTRACTS
 from app.settings import get_settings
 
@@ -14,8 +17,9 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins,
     allow_methods=["GET", "POST", "DELETE"],
-    allow_headers=["*"],
+    allow_headers=["Content-Type", "Accept", "X-Session-Id"],
 )
+app.include_router(router)
 
 
 class Health(BaseModel):
@@ -24,17 +28,28 @@ class Health(BaseModel):
     model: str
     embed_model: str
     corpus_version: str
+    database: bool
 
 
 @app.get("/health", response_model=Health)
 def health() -> Health:
-    """The web app polls this to decide between the assistant and the offline notice."""
+    """The web app polls this to decide between the assistant and the offline notice.
+    It never loads a model, so it answers instantly even on a cold start."""
+    provider, model = resolve("answer")
+    db_ok = services.database_ok()
+    version = "unavailable"
+    if db_ok:
+        from app.db import SessionLocal
+
+        with SessionLocal() as session:
+            version = services.corpus_version(session)
     return Health(
-        status="ok",
-        provider=settings.llm_provider_answer,
-        model=settings.llm_model_answer,
+        status="ok" if db_ok else "degraded",
+        provider=provider,
+        model=model,
         embed_model=settings.embed_model,
-        corpus_version=settings.corpus_version,
+        corpus_version=version,
+        database=db_ok,
     )
 
 

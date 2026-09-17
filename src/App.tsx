@@ -17,6 +17,8 @@ const MyGarden = lazy(() => import('./routes/MyGarden'))
 const Atlas = lazy(() => import('./routes/Atlas'))
 const Compare = lazy(() => import('./routes/Compare'))
 const Quiz = lazy(() => import('./routes/Quiz'))
+const Sahayak = lazy(() => import('./routes/Sahayak'))
+const Sources = lazy(() => import('./routes/Sources'))
 
 function RouteFallback() {
   return (
@@ -75,6 +77,8 @@ function AnimatedRoutes() {
             <Route path="/tours/:id" element={<TourPage />} />
             <Route path="/my-garden" element={<MyGarden />} />
             <Route path="/quiz" element={<Quiz />} />
+            <Route path="/sahayak" element={<Sahayak />} />
+            <Route path="/sources" element={<Sources />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>

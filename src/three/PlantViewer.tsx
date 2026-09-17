@@ -12,6 +12,7 @@ import { useDetail, dprFor } from '../hooks/useDetail'
 import { useGarden } from '../store/useGarden'
 import { Icon } from '../components/ui/Icon'
 import { cx } from '../components/ui/primitives'
+import { openSahayak } from '../lib/sahayak/client'
 
 /* ------------------------------------------------------------------ *
  * Single-specimen viewer: orbit, zoom, and labelled hotspots pointing
@@ -50,6 +51,32 @@ export function Hotspot({
           style={{ background: open ? 'rgba(255,255,255,0.9)' : accent }}
         />
         {label}
+      </button>
+    </Html>
+  )
+}
+
+/**
+ * The legal layer's way into the 3D view: a seal floating just above the top of the
+ * specimen. It opens Sahayak with this plant as context, so the question starts from
+ * the thing the visitor is looking at.
+ */
+export function SealHotspot({ plant, top }: { plant: Plant; top: number }) {
+  const verified = plant.ipr.lastVerified !== null
+  return (
+    <Html position={[0, top * 1.08, 0]} center zIndexRange={[20, 0]}>
+      <button
+        onClick={() =>
+          openSahayak({
+            question: `What IP and regulatory rules apply to products made from ${plant.name}?`,
+            context: [{ kind: 'plant', id: plant.id, label: plant.name }],
+          })
+        }
+        title={verified ? 'IP & law (verified profile)' : 'IP & law (profile not yet verified)'}
+        className="flex -translate-y-1/2 items-center gap-1.5 rounded-full bg-moss-900/90 py-1 pr-2.5 pl-1.5 text-[11px] font-medium whitespace-nowrap text-moss-100 shadow-md ring-1 ring-white/20 transition-transform hover:scale-105"
+      >
+        <Icon name="scale" size={13} />
+        IP &amp; law
       </button>
     </Html>
   )
@@ -214,6 +241,8 @@ export function PlantViewer({ plant, className }: PlantViewerProps) {
                 accent={plant.accent}
               />
             ))}
+
+          {showHotspots && <SealHotspot plant={plant} top={metrics.height} />}
 
           {showScale && <ScaleBar height={metrics.trueHeight} radius={metrics.radius} />}
 

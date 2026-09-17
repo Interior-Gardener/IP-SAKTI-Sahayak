@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { plants } from '../data/plants'
 import { tours } from '../data/tours'
@@ -7,10 +7,11 @@ import { BotanicalPlate } from './BotanicalPlate'
 import { Icon, type IconName } from './ui/Icon'
 import { cx } from './ui/primitives'
 import { useGarden } from '../store/useGarden'
+import { openSahayak } from '../lib/sahayak/client'
 
 interface Result {
   id: string
-  kind: 'plant' | 'tour' | 'page'
+  kind: 'plant' | 'tour' | 'page' | 'ask'
   title: string
   subtitle: string
   to: string
@@ -25,6 +26,8 @@ const PAGES: Result[] = [
   { id: 'p-compare', kind: 'page', title: 'Comparison bench', subtitle: 'Put two or three plants side by side', to: '/compare', icon: 'expand' },
   { id: 'p-tours', kind: 'page', title: 'Guided tours', subtitle: 'Themed walks with narration', to: '/tours', icon: 'route' },
   { id: 'p-mine', kind: 'page', title: 'My Garden', subtitle: 'Saved plants and study notes', to: '/my-garden', icon: 'bookmark' },
+  { id: 'p-sahayak', kind: 'page', title: 'Sahayak', subtitle: 'IP and regulatory questions, answered with sources', to: '/sahayak', icon: 'scale' },
+  { id: 'p-sources', kind: 'page', title: 'Sources', subtitle: 'The statutes and treaties Sahayak cites', to: '/sources', icon: 'book' },
 ]
 
 export function CommandPalette({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -85,7 +88,13 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
 
     const pageResults = PAGES.filter((p) => p.title.toLowerCase().includes(trimmed.toLowerCase()))
 
-    return [...plantResults, ...tourResults, ...pageResults]
+    // Longer queries read like questions: offer to put them to Sahayak.
+    const askResult: Result[] =
+      trimmed.split(/\s+/).length >= 3
+        ? [{ id: 'ask', kind: 'ask', title: `Ask Sahayak: ${trimmed}`, subtitle: 'IP and regulatory answer with sources', to: '/sahayak', icon: 'scale' }]
+        : []
+
+    return [...plantResults, ...tourResults, ...pageResults, ...askResult]
   }, [query, bookmarks, visited])
 
   useEffect(() => {
@@ -97,6 +106,15 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
   }, [open])
 
   useEffect(() => setActive(0), [query])
+
+  const go = useCallback(
+    (result: Result) => {
+      onClose()
+      if (result.kind === 'ask') openSahayak({ question: query.trim() })
+      else navigate(result.to)
+    },
+    [navigate, onClose, query],
+  )
 
   useEffect(() => {
     if (!open) return
@@ -112,15 +130,12 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
       }
       if (e.key === 'Enter') {
         const target = results[active]
-        if (target) {
-          navigate(target.to)
-          onClose()
-        }
+        if (target) go(target)
       }
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [open, results, active, navigate, onClose])
+  }, [open, results, active, go, onClose])
 
   useEffect(() => {
     listRef.current?.querySelector('[data-active="true"]')?.scrollIntoView({ block: 'nearest' })
@@ -164,10 +179,7 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
                 key={result.id}
                 data-active={i === active}
                 onMouseEnter={() => setActive(i)}
-                onClick={() => {
-                  navigate(result.to)
-                  onClose()
-                }}
+                onClick={() => go(result)}
                 className={cx(
                   'flex w-full items-center gap-3 rounded-2xl px-3 py-2.5 text-left transition-colors',
                   i === active ? 'bg-sunken' : 'hover:bg-sunken/60',

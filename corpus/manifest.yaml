@@ -1,0 +1,435 @@
+# Version-tracked legal corpus: the single source of truth for what Sahayak may cite.
+#
+# Rules (docs/CONTRIBUTING.md §4):
+# - Official sources only. Every url was opened and checked when it was added.
+# - `url` is the page a person should open; `fetch_url` is the file ingest downloads.
+# - `fetch: manual` means the site blocks scripted download: save the file by hand
+#   as corpus/raw/<id>.<format> and ingest picks it up.
+# - sha256 and retrieved_at are recorded by ingest in the database, not here.
+#   `effective_from` stays unset until someone checks the commencement date in the text.
+# - `issued` is the date shown by the publishing site, not a commencement date.
+# - Changing an entry = a line in CHANGELOG.md.
+#
+# Schema: api/app/ingest/manifest.py (validated by pytest).
+
+version: 1
+sources:
+  # ---------------------------------------------------------------- India: patents
+  - id: in-patents-act-1970
+    title: The Patents Act, 1970
+    jurisdiction: IN
+    regime: [patent]
+    doc_type: statute
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/a49ad42b-f2dc-4ee2-9884-11ef0839798d
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/9e02bd6e-8946-4131-9eec-b1a0dd71cf80/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code consolidated text
+
+  - id: in-patents-rules-2003
+    title: The Patents Rules, 2003
+    jurisdiction: IN
+    regime: [patent]
+    doc_type: rules
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/06d5b3ec-938f-4b0e-ac5a-b52d962d8b24
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/335e0cd0-019b-4505-b4c0-904a9d42bfb7/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: Updated till 23 June 2017 (per file name)
+    issued: 2003-05-02
+    notes: Does not include the Patents (Amendment) Rules, 2024; read with in-patents-amendment-rules-2024. Replace with a consolidated text when one is found.
+
+  - id: in-patents-amendment-rules-2024
+    title: The Patents (Amendment) Rules, 2024
+    jurisdiction: IN
+    regime: [patent]
+    doc_type: rules
+    issuer: Ministry of Commerce and Industry (via WIPO Lex)
+    url: https://www.wipo.int/wipolex/en/legislation/details/23105
+    fetch: manual
+    format: pdf
+    licence: Official Government of India publication
+    version_label: As notified
+    issued: 2024-03-15
+    notes: WIPO Lex serves the PDF through signed links; download it from the details page.
+
+  - id: in-mppp-v3
+    title: Manual of Patent Office Practice and Procedure, Version 3.0
+    jurisdiction: IN
+    regime: [patent]
+    doc_type: manual
+    issuer: Office of the Controller General of Patents, Designs and Trade Marks
+    url: https://ipindia.gov.in/frontend/pdf/patents/Manual_for_Patent_Office_Practice_and_Procedure_.pdf
+    fetch_url: https://ipindia.gov.in/frontend/pdf/patents/Manual_for_Patent_Office_Practice_and_Procedure_.pdf
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: Version 3.0
+
+  # ---------------------------------------------------------------- India: other IP
+  - id: in-gi-act-1999
+    title: The Geographical Indications of Goods (Registration and Protection) Act, 1999
+    jurisdiction: IN
+    regime: [gi]
+    doc_type: statute
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/1905d861-7dcd-46d6-a03b-4fe6009dea5b
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/55740471-35c8-4016-a122-c20c019b91ab/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code consolidated text
+
+  - id: in-gi-rules-2002
+    title: The Geographical Indications of Goods (Registration and Protection) Rules, 2002
+    jurisdiction: IN
+    regime: [gi]
+    doc_type: rules
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/41f0dba0-3d94-4a53-bdd3-1bfc1c2efce9
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/aed1ea9d-2bb4-4e37-943f-f9a7503cae9d/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code text
+    issued: 2002-03-08
+
+  - id: in-trade-marks-act-1999
+    title: The Trade Marks Act, 1999
+    jurisdiction: IN
+    regime: [trademark]
+    doc_type: statute
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/62219d21-0553-405b-9ccb-a11b4d9c41c2
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/7648d2d2-4e14-40dc-80d0-db8f99716fd5/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code consolidated text
+    notes: The Trade Marks Rules, 2017 are still to be added.
+
+  - id: in-designs-act-2000
+    title: The Designs Act, 2000
+    jurisdiction: IN
+    regime: [design]
+    doc_type: statute
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/cd8f2852-7085-432b-a264-7b73a6f01fff
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/94cc7bf7-96c1-4dbe-b3b3-9b3287296573/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code consolidated text
+
+  - id: in-copyright-act-1957
+    title: The Copyright Act, 1957
+    jurisdiction: IN
+    regime: [copyright]
+    doc_type: statute
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/6b893162-631a-453b-a7b9-89685716889b
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/696240f0-b1ef-42f3-972d-9d03b1a6066f/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code consolidated text
+
+  - id: in-ppvfr-act-2001
+    title: The Protection of Plant Varieties and Farmers' Rights Act, 2001
+    jurisdiction: IN
+    regime: [pvp]
+    doc_type: statute
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/66408705-b196-477f-9229-dc633f393a23
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/e04ea3dd-cccf-4562-82ee-d661b9af0c8e/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code consolidated text
+
+  # ---------------------------------------------------------------- India: biodiversity / ABS
+  - id: in-bd-act-2002
+    title: The Biological Diversity Act, 2002
+    jurisdiction: IN
+    regime: [abs]
+    doc_type: statute
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/000de0a3-39ce-4e18-85f0-0c51b4bdab5d
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/bf83f6e3-2c10-4dab-9daa-da46662849d2/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code consolidated text
+    notes: Check at ingest whether the text includes the Biological Diversity (Amendment) Act, 2023.
+
+  - id: in-bd-rules-2024
+    title: The Biological Diversity Rules, 2024
+    jurisdiction: IN
+    regime: [abs]
+    doc_type: rules
+    issuer: National Biodiversity Authority
+    url: https://www.nbaindia.nic.in/acts-and-rules/rules
+    fetch_url: https://www.nbaindia.nic.in/sites/default/files/2026-05/BD_Rules.pdf
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: As notified
+    issued: 2024-10-22
+
+  - id: in-bd-amendment-rules-2025
+    title: The Biological Diversity (Amendment) Rules, 2025
+    jurisdiction: IN
+    regime: [abs]
+    doc_type: rules
+    issuer: National Biodiversity Authority
+    url: https://www.nbaindia.nic.in/acts-and-rules/rules
+    fetch_url: https://www.nbaindia.nic.in/sites/default/files/2026-05/AmendmentBD_Rules.pdf
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: As notified
+    issued: 2025-05-06
+
+  # ---------------------------------------------------------------- India: drugs, ads, food, cosmetics
+  - id: in-dc-act-1940
+    title: The Drugs and Cosmetics Act, 1940
+    jurisdiction: IN
+    regime: [drug_licensing, labelling, cosmetic]
+    doc_type: statute
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/8725a8a7-45a4-42e3-9046-e2a6383cd049
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/3b64f195-bdb9-4837-afb2-7d7b24ac83d2/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code consolidated text
+
+  - id: in-dc-rules-1945
+    title: The Drugs and Cosmetics Rules, 1945
+    jurisdiction: IN
+    regime: [drug_licensing, labelling, advertising]
+    doc_type: rules
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/9a917765-d98d-4bdf-92ee-8b6332b91956
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/655d0cf8-b0c3-4a20-a703-224c832db910/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code combined Act and Rules text (as-on date to confirm at ingest)
+    issued: 1945-12-21
+    notes: Key parts are Part XVI-XVII (ASU), Rule 158B, Rule 161, Schedules E(1) and T. Check the status of Rule 170 separately.
+
+  - id: in-dmr-act-1954
+    title: The Drugs and Magic Remedies (Objectionable Advertisements) Act, 1954
+    jurisdiction: IN
+    regime: [advertising]
+    doc_type: statute
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/a0e67f19-8e2e-4ba2-bde4-6354e5ff7dee
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/6381cc69-0b65-4e0f-9754-71f0f3bf91b7/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code consolidated text
+
+  - id: in-ndct-rules-2019
+    title: The New Drugs and Clinical Trials Rules, 2019
+    jurisdiction: IN
+    regime: [drug_licensing]
+    doc_type: rules
+    issuer: Central Drugs Standard Control Organisation
+    url: https://cdsco.gov.in/opencms/opencms/en/Acts-and-rules/New-Drugs/
+    fetch_url: https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2022/new_DC_rules/NEW%20DRUGS%20ANDctrS%20RULE,%202019.pdf
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: CDSCO published text
+
+  - id: in-cosmetics-rules-2020
+    title: The Cosmetics Rules, 2020
+    jurisdiction: IN
+    regime: [cosmetic, labelling]
+    doc_type: rules
+    issuer: Central Drugs Standard Control Organisation
+    url: https://cdsco.gov.in/opencms/opencms/en/Acts-and-rules/Cosmetics-Rules/
+    fetch_url: https://www.cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2022/cos_rules/Cosmetics%20Rules%202020.pdf
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: CDSCO published text
+
+  - id: in-fssai-ayurveda-aahara-2022
+    title: Food Safety and Standards (Ayurveda Aahara) Regulations, 2022
+    jurisdiction: IN
+    regime: [food, labelling]
+    doc_type: regulations
+    issuer: Food Safety and Standards Authority of India
+    url: https://fssai.gov.in/upload/notifications/2022/05/62789a20b54bdGazette_Notification_Ayurveda_Aahara_09_05_2022.pdf
+    fetch: manual
+    format: pdf
+    licence: Official Government of India publication
+    version_label: Gazette notification dated 2022-05-09 (per file name)
+    notes: fssai.gov.in returns its web app instead of the PDF to scripts; open in a browser and save.
+
+  - id: in-fss-act-2006
+    title: The Food Safety and Standards Act, 2006
+    jurisdiction: IN
+    regime: [food]
+    doc_type: statute
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/901412c2-ea41-4afb-b6d2-8686b27623e6
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/85d01867-be01-4a3f-9c7c-94e2d0fa5c18/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code consolidated text
+
+  - id: in-wlpa-1972
+    title: The Wild Life (Protection) Act, 1972
+    jurisdiction: IN
+    regime: [wildlife]
+    doc_type: statute
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/3df23bd4-5433-4baf-92e9-56b72f4f1008
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/028cf190-8c70-42d0-baf0-d15be4ba14e7/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code consolidated text
+
+  - id: in-consumer-protection-act-2019
+    title: The Consumer Protection Act, 2019
+    jurisdiction: IN
+    regime: [advertising]
+    doc_type: statute
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/1b6c1754-47b1-411e-9607-1712a9caf368
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/d546dfb5-3044-4661-981d-3e1771c290b9/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code consolidated text
+
+  - id: in-dpdp-act-2023
+    title: The Digital Personal Data Protection Act, 2023
+    jurisdiction: IN
+    regime: [privacy]
+    doc_type: statute
+    issuer: Legislative Department, Government of India (India Code)
+    url: https://indiacode.gov.in/items/c058fa9f-eaf0-4ca3-98f1-3443b087bca9
+    fetch_url: https://indiacode.gov.in/server/api/core/bitstreams/52f9ecbb-b927-4ba6-ae6f-ca2fac50d4df/content
+    fetch: auto
+    format: pdf
+    licence: Official Government of India publication
+    version_label: India Code text
+    notes: For the checks in docs/dpdp-and-security.md.
+
+  # ---------------------------------------------------------------- International
+  - id: intl-trips
+    title: Agreement on Trade-Related Aspects of Intellectual Property Rights (TRIPS)
+    jurisdiction: INTL
+    regime: [treaty, patent, gi, trademark, copyright, design, trade_secret]
+    doc_type: treaty
+    issuer: World Trade Organization
+    url: https://www.wipo.int/wipolex/en/treaties/textdetails/12746
+    fetch_url: https://www.wto.org/english/docs_e/legal_e/27-trips.pdf
+    fetch: auto
+    format: pdf
+    licence: Official treaty text
+    version_label: WTO legal text (check at ingest whether Art. 31bis from the 2017 amendment is included)
+
+  - id: intl-paris-convention
+    title: Paris Convention for the Protection of Industrial Property (as amended on September 28, 1979)
+    jurisdiction: INTL
+    regime: [treaty, patent, trademark, design]
+    doc_type: treaty
+    issuer: World Intellectual Property Organization
+    url: https://www.wipo.int/wipolex/en/treaties/textdetails/12633
+    fetch: manual
+    format: pdf
+    licence: Official treaty text
+    version_label: As amended on 28 September 1979
+    notes: WIPO Lex serves the PDF through signed links; download from the details page.
+
+  - id: intl-cbd
+    title: Convention on Biological Diversity
+    jurisdiction: INTL
+    regime: [treaty, abs]
+    doc_type: treaty
+    issuer: Secretariat of the Convention on Biological Diversity
+    url: https://www.cbd.int/doc/legal/cbd-en.pdf
+    fetch_url: https://www.cbd.int/doc/legal/cbd-en.pdf
+    fetch: auto
+    format: pdf
+    licence: Official treaty text
+    version_label: Text and annexes
+
+  - id: intl-nagoya-protocol
+    title: Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization
+    jurisdiction: INTL
+    regime: [treaty, abs]
+    doc_type: treaty
+    issuer: Secretariat of the Convention on Biological Diversity
+    url: https://www.wipo.int/wipolex/en/treaties/textdetails/12294
+    fetch_url: https://www.cbd.int/abs/doc/protocol/nagoya-protocol-en.pdf
+    fetch: auto
+    format: pdf
+    licence: Official treaty text
+    version_label: Text adopted 29 October 2010
+
+  - id: intl-gratk-2024
+    title: WIPO Treaty on Intellectual Property, Genetic Resources and Associated Traditional Knowledge
+    jurisdiction: INTL
+    regime: [treaty, patent, abs]
+    doc_type: treaty
+    issuer: World Intellectual Property Organization
+    url: https://www.wipo.int/en/web/treaties/ip/gratk/index
+    fetch_url: https://www.wipo.int/edocs/mdocs/tk/en/gratk_dc/gratk_dc_7.pdf
+    fetch: auto
+    format: pdf
+    licence: Official treaty text
+    version_label: GRATK/DC/7, adopted 24 May 2024
+    issued: 2024-05-24
+
+  - id: intl-pct
+    title: Patent Cooperation Treaty (PCT)
+    jurisdiction: INTL
+    regime: [treaty, patent]
+    doc_type: treaty
+    issuer: World Intellectual Property Organization
+    url: https://www.wipo.int/documents/d/pct-system/docs-en-texts-pct.pdf
+    fetch_url: https://www.wipo.int/documents/d/pct-system/docs-en-texts-pct.pdf
+    fetch: auto
+    format: pdf
+    licence: Official treaty text
+    version_label: WIPO published text (check the in-force date on the cover at ingest)
+
+  - id: intl-budapest-treaty
+    title: Budapest Treaty on the International Recognition of the Deposit of Microorganisms for the Purposes of Patent Procedure
+    jurisdiction: INTL
+    regime: [treaty, patent]
+    doc_type: treaty
+    issuer: World Intellectual Property Organization
+    url: https://www.wipo.int/wipolex/en/treaties/textdetails/12244
+    fetch: manual
+    format: pdf
+    licence: Official treaty text
+    version_label: As amended on 26 September 1980
+    notes: WIPO Lex serves the PDF through signed links; download from the details page.
+
+  - id: intl-eu-thmpd-2004-24
+    title: Directive 2004/24/EC on traditional herbal medicinal products
+    jurisdiction: INTL
+    regime: [market_access]
+    doc_type: regulation
+    issuer: European Parliament and Council (EUR-Lex)
+    url: https://eur-lex.europa.eu/eli/dir/2004/24/oj/eng
+    fetch: manual
+    format: html
+    licence: Official EU legal text (EUR-Lex terms)
+    version_label: Original text, OJ L 136, 30.4.2004
+    notes: EUR-Lex answers scripted requests with a 202 challenge page; save the page from a browser.

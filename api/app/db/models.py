@@ -15,7 +15,7 @@ from sqlalchemy import (
     Text,
     func,
 )
-from sqlalchemy.dialects.postgresql import ARRAY, TSVECTOR
+from sqlalchemy.dialects.postgresql import ARRAY, JSONB, TSVECTOR
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 # BGE-M3 and voyage-law-2 both emit 1024 dimensions. A model with another size
@@ -73,6 +73,8 @@ class Chunk(Base):
     )
     locator: Mapped[str] = mapped_column(Text)  # 's.3(p)', 'Rule 158B(1)(b)', 'Art. 27.3(b)'
     heading_path: Mapped[str] = mapped_column(Text, default="")
+    # PDF page the unit starts on, for "#page=N" deep links in citations.
+    page: Mapped[int | None] = mapped_column()
     text: Mapped[str] = mapped_column(Text)
     context_header: Mapped[str] = mapped_column(Text, default="")
     embedding: Mapped[list[float] | None] = mapped_column(Vector(EMBED_DIM))
@@ -100,3 +102,91 @@ class Chunk(Base):
         Index("ix_chunks_tsv", "tsv", postgresql_using="gin"),
         Index("ix_chunks_jurisdiction_doc_type", "jurisdiction", "doc_type"),
     )
+
+
+# --- Assistant: consent, audit, escalation, registries (stage 1) -------------------------
+# Sessions are anonymous ids from the browser; nothing here needs an account. Rows tied
+# to a session are deleted by DELETE /me.
+
+
+class ConsentGrant(Base):
+    __tablename__ = "consent_grants"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    session_id: Mapped[str] = mapped_column(String(64), index=True)
+    scope: Mapped[str] = mapped_column(String(80))  # assistant | transcript | connector:<name>
+    granted_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    revoked_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+
+class AuditEvent(Base):
+    """No raw personal data: questions are stored as hashes (docs/dpdp-and-security.md §4)."""
+
+    __tablename__ = "audit_events"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    session_id: Mapped[str] = mapped_column(String(64), index=True)
+    kind: Mapped[str] = mapped_column(String(40))  # ask | tool_call | connector | escalate | purge
+    payload: Mapped[dict] = mapped_column(JSONB, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+
+class StoredAnswer(Base):
+    """Kept only when the session granted `transcript` consent (needed for escalation)."""
+
+    __tablename__ = "answers"
+
+    id: Mapped[str] = mapped_column(String(40), primary_key=True)
+    session_id: Mapped[str] = mapped_column(String(64), index=True)
+    envelope: Mapped[dict] = mapped_column(JSONB)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+
+class Facilitator(Base):
+    """Only bodies from official listings, with the page they were verified from."""
+
+    __tablename__ = "facilitators"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column(Text)
+    body: Mapped[str] = mapped_column(Text)
+    contact: Mapped[str] = mapped_column(Text)
+    source_url: Mapped[str] = mapped_column(Text)
+    verified_at: Mapped[date] = mapped_column(Date)
+
+
+class Escalation(Base):
+    __tablename__ = "escalations"
+
+    id: Mapped[str] = mapped_column(String(40), primary_key=True)
+    session_id: Mapped[str] = mapped_column(String(64), index=True)
+    answer_id: Mapped[str | None] = mapped_column(String(40))
+    message: Mapped[str] = mapped_column(Text, default="")
+    contact: Mapped[str | None] = mapped_column(Text)
+    facilitator_id: Mapped[int | None] = mapped_column(ForeignKey("facilitators.id"))
+    status: Mapped[str] = mapped_column(String(20), default="open")
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+
+class Registry(Base):
+    """Where a user goes next. `cite_chunk_id` must point at the provision that requires it."""
+
+    __tablename__ = "registries"
+
+    id: Mapped[str] = mapped_column(String(60), primary_key=True)
+    name: Mapped[str] = mapped_column(Text)
+    jurisdiction: Mapped[str] = mapped_column(String(4))
+    regime: Mapped[list[str]] = mapped_column(ARRAY(String(40)), default=list)
+    url: Mapped[str] = mapped_column(Text)
+    forms: Mapped[list] = mapped_column(JSONB, default=list)
+    fee_note: Mapped[str | None] = mapped_column(Text)
+    cite_chunk_id: Mapped[int | None] = mapped_column(ForeignKey("chunks.id", ondelete="SET NULL"))
+
+
+class MaterialIpr(Base):
+    __tablename__ = "material_ipr"
+
+    kind: Mapped[str] = mapped_column(String(10), primary_key=True)
+    material_id: Mapped[str] = mapped_column(String(60), primary_key=True)
+    profile: Mapped[dict] = mapped_column(JSONB)
+    last_verified: Mapped[date | None] = mapped_column(Date)

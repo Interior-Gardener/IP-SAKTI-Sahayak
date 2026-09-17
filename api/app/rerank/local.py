@@ -27,3 +27,12 @@ class LocalReranker:
             (Scored(i, float(s)) for i, s in enumerate(scores)), key=lambda s: s.score, reverse=True
         )
         return ranked[:top_k]
+
+
+def get_reranker() -> "LocalReranker | None":
+    """RERANK_PROVIDER=local (default) or none."""
+    import os
+
+    if os.environ.get("RERANK_PROVIDER", "local").lower() == "none":
+        return None
+    return LocalReranker(os.environ.get("RERANK_MODEL", "BAAI/bge-reranker-v2-m3"))

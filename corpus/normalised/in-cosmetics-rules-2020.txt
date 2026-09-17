@@ -1,0 +1,4122 @@
+<<page 1>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 1 of 112
+THE COSMETICS RULES, 20201
+WHEREAS a draft of the Cosmetics Rules, 2018, was published, with a view
+to codify separately and to update the rules relating to cosmetics, by the Central
+Government in exercise of the powers conferred by section 12 and section 33 of
+the Drugs and Cosmetics Act, 1940 (23 of 1940), vide notification of the
+Government of India in the Ministry of Health and Family Welfare (Department
+of Health and Family Welfare) number G.S.R. 1153(E), dated the 29th
+November, 2018, in the Gazette of India, Extraordinary, Part II, Section 3, Subsection (i), inviting objections arid suggestions from persons likely to be
+affected thereby, before the expiry of a period of forty-five days from the date on
+which the copies of the Official Gazette containing the said notification were
+made available to the public;
+AND WHEREAS copies of the Gazette were made available to the public on
+30th November, 2018;
+AND WHEREAS, objections and suggestions received from the public on the
+said rules have been considered by the Central Government;
+NOW, THEREFORE, in exercise of the powers conferred under section 12
+and section 33 of the Drugs and Cosmetics Act, 1940 (23 of 1940), the Central
+Government, after consultation with the Drugs Technical Advisory Board,
+hereby makes the following rules, namely:—
+CHAPTER I
+PRELIMINARY
+1. Short title.—(1) These rules may be called the Cosmetics Rules, 2020.
+(2) They shall come into force on the date of their publication in the
+Official Gazette.
+2. Application.—These rules shall be applicable to the cosmetic as defined
+in clause (aaa) of section 3 of the Drugs and Cosmetics Act, 1940 (23 of
+1940).
+3. Definitions.—In these rules, unless the context otherwise requires,—
+(a) "Act" means the Drugs and Cosmetics Act, 1940 (23 of 1940);
+<<page 2>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 2 of 112
+(b) "Actual manufacturer" in relation to import of cosmetics, means a person
+who manufactures cosmetics at his own manufacturing site in a country other
+than India approved by National Regulatory Authority or any authorised
+competent authority in that country for that purpose, by whatever name called.
+Explanation.-—for the purpose of this clause, person includes a company or a
+unit or a body corporate or any other establishment.
+(c) "Appendix" means the appendix appended to these rules;
+(d) "Authorised agent" means a person in India authorised by the
+manufacturer. The authorised agent shall be responsible for the business
+activities of the manufacturer in India including compliance to the provisions of
+the Act and rules made thereunder.
+Explanation.—for the purpose of this clause, person includes a company or a
+unit or a body corporate or any other establishment.
+(e) "Bureau of Indian Standards" means the Bureau of Indian Standards
+established under section 3 of the Bureau of Indian Standards Act, 2016 (11 of
+2016);
+(f) "Central Licensing Authority" means the Drugs Controller General of
+India, appointed by the Central Government;
+(g) "Change in the constitution of a licensee" means in relation to,—
+(i) a firm, a change from proprietorship to partnership including Limited
+Liability Partnership or vice versa;
+(ii) a company,—
+(A) its conversion from a private to a public company, or from a public to a
+private company; or
+(B) any change in the ownership of shares of more than fifty per cent, of the
+voting capital in the body corporate or in case of a body corporate not having a
+share capital, any change in its membership; and where the managing agent,
+being a body corporate is a subsidiary of another body corporate, includes a
+<<page 3>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 3 of 112
+change in the constitution of that other body corporate within the meaning of
+this clause;
+(h) "Director" means the Director of the Central Cosmetics Laboratory
+appointed by the Central Government under sub-rule 3 of rule 11;
+(i) "Form" means a Form set out in Appendix to these rules;
+(j) "Government Analyst" means, a Government Analyst appointed by the
+Central Government or the State Government under section 20 of the Act;
+(k) "Import registration certificate" means a certificate issued under rule 13 by
+the Central Licensing Authority for registration of cosmetics manufactured for
+import into and use in India;
+(1) "Inspector" means and includes an Inspector appointed by the Central
+Government or a State Government respectively under section 21 of the Act;
+(m) "Laboratory" means the Central Cosmetics Laboratory established or
+notified for carrying out analysis or test of cosmetics by the Central
+Government under rule 11;
+(n) "Legal manufacturer or brand owner" in relation to import of cosmetics,
+means a person, who authorise the other manufacturer from India or overseas
+countries for the manufacture of cosmetics, by way of an authorization referred
+under rule 12.
+Explanation.—For the purpose of this clause, person includes a company or a
+unit or a body corporate or any other establishment.
+(o) "Licence" means a licence granted by the State Licensing Authority under
+rule 25;
+(p) "Loan licence" means a licence granted by the State Licensing Authority
+under rule 25, for manufacturing a cosmetic, to a person
+who intends to utilize the manufacturing site of another licensee for
+manufacturing the cosmetic manufactured by the licensee at that site;
+<<page 4>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 4 of 112
+(q) "Manufacturer" in relation to import of cosmetics means the actual
+manufacturer or the legal manufacturer;
+(r) "New cosmetic" means a cosmetic which contains a novel ingredient which
+has not been used anywhere in the world or is not recognised for use in
+cosmetics in any National or International literature;
+(s) "Schedule" means a Schedule appended to these rules;
+(t) State Government in relation to a Union Territory means the Administrator
+thereof;
+(u) "State Licensing Authority" means the state drugs controller by whatever
+name called and authorised by the Government of a State or a Union territory,
+as the case may be, to perform the duties of Licensing Authority under these
+rules in the State or Union territory and includes any person to whom powers of
+the Licensing Authority may be delegated by the Government of the State or
+Union territory;
+(v) "Subsidiary" means an entity in India owned by the manufacturer.
+(w) "Use before" or "date of expiry" means the date recorded on the container,
+label or wrapper as the date upto which the cosmetic shall retain its
+characteristics as per standards at proposed storage condition stated on label;
+(x) The words and expressions used in these rules and not defined herein but
+defined in the Drugs and Cosmetics Act, 1940 (23 of 1940) and the Drugs
+Rules, 1945 shall have the same meaning as assigned to them in that Act and
+rules respectively.
+CHAPTER II
+AUTHORITIES, OFFICERS AND LABORATORY
+
+4. Licensing Authorities.—(1) The Central Licensing Authority shall be
+the competent authority for enforcement of these rules in matters relating to,—
+(i) import of all categories of cosmetics;
+(ii) co-ordination with the State Licensing Authorities.
+<<page 5>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 5 of 112
+(2) The state drugs controller, by whatever name called, shall be the State
+Licensing Authority and the competent authority for enforcement of these rules
+in matters relating to,—
+(i) manufacture for sale or distribution of all categories of cosmetics;
+(ii) sale, stock, exhibit or offer for sale or distribution of all categories of
+cosmetics;
+(iii) grant of approval to the laboratory which applies for carrying out tests on
+cosmetics and their raw materials under Chapter VIII.
+5. Delegation of powers of Licensing Authorities.—(1) The Central
+Licensing Authority, may with the prior approval of the Central Government,
+by an order in writing, delegate all or any of its powers to any other officer of
+the Central Drugs Standard Control Organisation not below the rank of
+Assistant Drugs Controller.
+(2) The officer to whom the powers have been delegated under sub-rule (1)
+shall exercise the powers of the Central Licensing Authority under its name and
+seal.
+(3) The State Licensing Authority may, with the prior approval of the State
+Government, by an order in writing, delegate all or any of its powers to any
+officer not below the rank of Assistant Drugs Controller or equivalent under its
+control.
+(4) The officer to whom the powers have been delegated under sub-rule (3)
+shall exercise the powers of the State Licensing Authority under its name and
+seal.
+6. Controlling officer.—Any officer not below the rank of Assistant
+Drugs Controller, by whatever name called, shall be the controlling officer to
+supervise and give instructions to any officer subordinate to such controlling
+officer to exercise powers and functions under these rules for areas and
+purposes specified, by an order, of the Drugs Controller General of India or the
+Drugs Controller, by whatever name called, of the State respective.
+7. Government Analyst.—The Central Government or a State
+Government may appoint by notification in the Official Gazette, the
+<<page 6>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 6 of 112
+Government Analyst for the purpose of these rules as provided in section 20 of
+the Act and rules made thereunder.
+8. Functions of Government Analyst.—(1) The Government Analyst
+shall cause to be analysed or tested such cosmetics as may be sent to him by an
+Inspector or any person under the provisions of Chapter IV of the Act and shall
+furnish reports of the results of test or analysis in accordance with these rules
+within a period of sixty days of the receipt of the sample:
+Provided that where it is not possible to test or analyse the sample within the
+specified period, the Government Analyst shall seek extension of time from the
+concerned Government giving specific reasons for delay in such testing or
+analysis.
+(2) A Government Analyst shall, from time to time, forward to the Central
+Licensing Authority, reports giving the result of analytical work and research
+with a view to their publication at the discretion of the Central Government.
+9. Powers, duties and functions of Inspectors specially Authorised to
+inspect manufacture and sale of cosmetics.—(1) Subject to the instructions of
+the controlling officer, it shall be the duty of an Inspector appointed under
+section 21 of the Act by the State Government, authorised to inspect the
+manufacture of cosmetics,—
+(i) to inspect not less than once in a three year, all premises licensed to
+manufacture cosmetics within the area allotted to him to satisfy himself that the
+conditions of the licence and provisions of the Act and Rules thereunder are
+being observed;
+(ii) to send a detailed report after each inspection to the controlling
+officer indicating the conditions of the licence and provisions of the Act and
+rules thereunder which are being observed and the conditions and provisions, if
+any, which are not being observed;
+(iii) to institute prosecution in respect of breach of the Act and Rules
+thereunder;
+(iv) take samples of cosmetics manufactured or imported for sale, or
+stocked or exhibited for sale in respect of which the inspector has reason
+<<page 7>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 7 of 112
+to suspect contravention of the provisions of the Act or these rules and
+send them for test or evaluation;
+(v) maintain a record of all inspections undertaken, drawing of samples,
+seizure of stocks and action taken by inspector in exercise and
+performance of duties and to furnish copies of such record to the Central
+Licensing Authority or the state Licensing Authority, as the case may be;
+(vi) make such enquiries and inspections as may be necessary to detect
+the manufacture or sale of cosmetics in contravention of any provision of
+the Act and these rules;
+(vii) investigate any complaint made in writing relating to cosmetic to
+the inspector or any other senior officer in accordance with the direction
+of the controlling officer;
+(viii) review technical dossier of cosmetic furnished with the
+application under these rules or any other duties assigned by the Central
+Licensing Authority or state Licensing Authority, as the case may be,
+related to these rules.
+(2) Without prejudice to the duties and functions assigned to the Inspector
+appointed by the State Government under sub-rule (1) such duties and function
+may, as and when directed by Central Licensing Authority or Drugs Controller
+General of India or controlling officer shall be discharged by the Inspector
+appointed by the Central Government under section 21 of the Act.
+10. Prohibition of disclosure of information.—Except for the purposes
+of official business or when required by a court of law, an Inspector shall not,
+without the sanction in writing of his official superior, disclose to any person
+any information acquired by him during the course of his official duties.
+11.
+Establishment
+and
+functions
+of
+the
+Central
+Cosmetics
+Laboratory.—
+(1) The Central Government may, by notification, establish Central Cosmetics
+Laboratory for the purpose of,—
+<<page 8>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 8 of 112
+(a) to analyse or test such samples of cosmetics as may be sent to it
+under sub-section (2) of section 11, or under sub-section (4) of section 25 of the
+Act; or
+(b) functioning as an appellate laboratory; or
+(c) to carry out any other function as may be specifically assigned to it.
+(2) Without prejudice to sub-rule (1), the Central Government may also
+designate or notify any laboratory under its control and the Director of such
+laboratory having facility for carrying out test and evaluation of cosmetics as
+Central Cosmetics Laboratory for the purposes specified in sub-rule (1):
+Provided that no Laboratory shall be so designated unless it has been duly
+accredited by the National Accreditation Body for Testing and Calibration
+Laboratories.
+(3) The Central Cosmetic Laboratory shall be headed by a Director who shall
+be appointed or designated by the Central Government.
+CHAPTER III
+IMPORT AND REGISTRATION
+12. Import of cosmetics.—(1) No cosmetic shall be imported into India
+unless the product has been registered in accordance with these rules by the
+Central Licensing Authority or by any officer to whom such powers may be
+delegated under sub-rule (1) of rule 5.
+(2) An application for registration of a cosmetic product intended to be
+imported into India shall be made through the online portal of the Central
+Government in Form COS- 1 either by the manufacturer himself or by his
+authorised agent or the importer in India or by the subsidiary in India authorised
+by the manufacturer.
+(3) An authorisation by the manufacturer to his agent in India shall be duly
+authenticated either in India before a first class Magistrate or in the country of
+origin before the authority competent under the laws of that country or by an
+authority specified in the First Schedule.
+<<page 9>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 9 of 112
+(4) The applicant referred to sub-rule (2) above shall furnish along with the
+application such other information and documents as specified in Part I of the
+Second Schedule:
+Provided also that in the event of application for import of bulk finished
+formulation ready to fill, the following additional documents shall also required
+to be furnished:
+(i) a valid manufacturing license for the finished formulation of the
+cosmetic ready to fill in finished form from the State Licensing Authority; and
+(ii) details of registered brand owner of the finished product in India;
+(5) The application for registration in accordance with sub-rule (2) shall be
+accompanied by a copy of the receipt of fee having been deposited as specified
+in Third Schedule.
+(6) The fee shall be such for each category of cosmetic along with each
+manufacturing site with additional fee for each category of cosmetic and variant
+specified in the Fourth Schedule.
+(7) Till such time, the online portal becomes operational for this purpose,
+offline application in Form COS- 1 may be made either by the manufacturer
+himself or by his authorised agent or by the importer in India or by the
+subsidiary in India authorised by the manufacturer for registration of a cosmetic
+referred to in sub-rule (1).
+(8) The applicant shall be liable to pay testing fees directly to the testing
+Laboratory approved by the Central Government referred in rule 11, for
+examination, test and analysis of imported cosmetics in respect of cosmetics
+identified for such examination as specified in the Fifth Schedule.
+(9) The applicant shall pay the fee as specified in the Third Schedule in
+connection with the expenditure to be incurred for inspecting or visiting the.1
+manufacturing premises of cosmetics approved in the foreign countries by
+officers authorised by Central Licensing Authority, as considered necessary.
+13. Grant of import registration certificate.—(1) After examination of
+documents furnished with the application under sub-rule (2) of rule 12 the
+Central Licensing Authority may, on being satisfied, grant import registration
+<<page 10>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 10 of 112
+certificate in Form COS- 2 or may reject such application for which reasons
+shall be recorded in writing within a period of six months from the date of
+application.
+(2) In the event of rejection, the applicant may appeal to the Central
+Government within a period of forty-five days and that Government, may, after
+such enquiry into the matter, as considered necessary, pass orders in relation
+thereto within a period of ninety days from the date of appeal.
+(3) In case of a new cosmetic, the applicant shall obtain prior permission in
+Form COS- 3 as provided in Chapter V from the Central Licensing Authority
+before registration of import of new cosmetic into India.
+(4) A single application may be made and a single registration certificate in
+Form COS- 2 may be issued in respect of import of one or more cosmetics
+manufactured by the same manufacturer:
+Provided that the cosmetics are manufactured at one factory or more than
+one factory functioning conjointly as a single manufacturing unit for cosmetic
+intended for registration.
+(5) A fee as specified in the Third Schedule shall be paid for a duplicate
+copy of the registration certificate, if the original is defaced, damaged or lost.
+14. Validity of import registration certificate.—(1) A registration
+certificate granted under rule 13 shall remain valid in perpetuity, subject to
+payment of registration certificate retention fee as specified in the Third
+Schedule before completion of the period of five years from the date of its issue,
+unless, it is suspended or cancelled by the Licensing Authority.
+(2) If the licensee fails to pay the required registration certificate retention
+fee on or before the due date as referred to in sub-rule (1), the registration
+certificate holder shall, in addition to the registration certificate retention fee, be
+liable to pay a late fee calculated at the rate of two per cent, of the registration
+certificate retention fee for every month or part thereof within one hundred and
+eighty days and in the event of non-payment of such fee during that period, the
+registration certificate shall be deemed to have been cancelled.
+<<page 11>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 11 of 112
+15. Fresh application in case of change in constitution.—(1) In case of
+change in constitution of a registration holder or overseas manufacturer, after
+grant of registration under sub-rule (1) of rule 13, an application shall be made
+under sub-rule (2) of rule 12 for grant of fresh registration within a period of
+one hundred and eighty days from the date of such change in constitution:
+Provided that the existing registration shall be deemed to be valid till such
+time, fresh registration is issued or application is rejected by the Central
+Licensing Authority.
+(2) In case of any change in respect of labelling or composition or testing of
+registered product or its specifications, the Central Licensing Authority shall be
+informed by manufacturer or by the authorised agent or the importer or the
+subsidiary in India authorised by the manufacturer within fifteen days along
+with an undertaking that products comply with standards laid down by the
+Bureau, of Indian Standards as referred in the Ninth Schedule.
+(3) In case of change in name or address of a registration holder or overseas
+manufacturer, after grant of registration under sub-rule (1) of rule 13, an
+application for amendment shall be made in online portal of Central
+Government for prior approval from the Central Licensing Authority for the
+said changes in registration certificate within a period of sixty days from the
+date of such change.
+16. Suspension and cancellation of Registration Certificate.—If the
+manufacturer or authorised agent or importer fails to comply with any of the
+conditions of the Registration Certificate, the Central Licensing Authority may,
+after giving him an opportunity to show cause as to why such an order should,
+not be passed, by an order in writing, stating the reasons therefore, suspend or
+cancel the registration certificate for such period as it thinks fit either wholly or
+in respect of some of the cosmetics to which it relates:
+Provided that a person who is aggrieved by the order passed by the Central
+Licensing Authority may, within thirty days of the receipt of the order, appeal to
+the Central Government and that Government may, after such enquiry into the
+matter as it considers necessary and after giving the said appellant an
+opportunity of being heard, pass such orders as considered appropriate in the
+facts and circumstances of the case.
+<<page 12>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 12 of 112
+17. Import of cosmetics already registered for import.—(1) A cosmetic
+manufactured in a foreign site and already registered under rule 13 for import
+and sale in India, may be imported by any person or entity by making an
+application in online portal of the Central Government in Form COS- 4 with an
+undertaking as specified in Sixth Schedule.
+(2) After examination of documents furnished with the application under
+sub-rule (1), the Central Licensing Authority may, on being satisfied, subject to
+the conditions, grant import registration number in Form COS- 4A, or may
+reject such application for which reasons shall be recorded in writing within a
+period of six months from the date of application.
+(3) An import registration number granted under sub-rule (2) shall remain
+valid for a period of three years from the date of its issue, unless it is suspended
+or cancelled.
+(4) If the importer fails to comply with any of the conditions of the Import
+Registration Number issued in Form COS- 4A, the Central Licensing Authority
+may, after giving him an opportunity to show cause as to why such an order
+should not be passed, by an order in writing, stating the reasons therefore,
+suspend or cancel the import registration number for such period as it thinks, fit.
+18. Prohibition of import of certain cosmetic.—(1) No cosmetic, the
+manufacture, sale or distribution of which is prohibited in the country of origin,
+shall be imported under the same name or under any other name except for the
+purpose of examination, test or analysis.
+(2) No cosmetics shall be imported unless the "Use Before or use by" date
+shown on the label, wrapper or container of the cosmetic is later than six
+months from the date of import.
+(3) No cosmetic containing hexachlorophene shall be imported.
+(4) No cosmetic that has been tested on animals after the 12th day of
+November 2014 shall be imported into the country.
+19. Documents to be supplied to the Commissioner of Customs.—Before
+any cosmetics are imported, a declaration signed by manufacturer or on behalf
+of the manufacturer or by importer or on behalf of the importer that the
+<<page 13>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 13 of 112
+cosmetics comply with the provisions of Chapter III of the Act, and the rules
+made thereunder, shall be supplied to the Commissioner of Customs.
+20. Procedure for import of cosmetics.—(1) If the officer appointed at
+the port of entry by the Central Government has reason to believe that any
+cosmetic contravenes any of the provisions of the Act or the rules made
+thereunder, he may take sample of the cosmetic from the consignment for
+inspection.
+(2) If on examination of the sample drawn as per sub-rule (1) defects are
+noticed, the officer shall advise the Commissioner of Customs about further
+action to be taken.
+(3) If the suspected contravention of the provisions of the Act or the rules
+is such as may have to be determined by test, the officer shall send the sample
+to the Laboratory established for the purpose for performing such tests and the
+consignment of the said cosmetic shall be detained till such time, the test report
+on that sample is received from the Director of the said Laboratory or any other
+officer of the Laboratory empowered by him in this behalf:
+Provided that if the importer gives an undertaking in writing not to dispose
+of the cosmetic without the consent of the Commissioner of Customs and to
+return the consignment or such portion thereof as may be required, the
+Commissioner of Customs may, make over the consignment to the importer.
+(4) If the importer who has given an undertaking under proviso to sub-rule
+(1) is required by the Commissioner of Customs to return the consignment or
+portion thereof, he shall return the consignment or portion thereof within ten
+days of receipt of the notice.
+(5) If the Director of the Laboratory established for the purpose by the
+Central Government or any other officer of the laboratory empowered by him in
+this behalf with the approval of the Central Government, reports to the
+Commissioner of Customs or to the officer mentioned in sub-rule (1) that the
+sample of any cosmetic in a consignment contravenes provisions of Chapter III
+of the Act or rules made thereunder and that the contravention is such that it
+cannot be remedied by the importer, the Commissioner of Customs shall
+communicate the report forthwith to the importer who shall within two months
+of receiving such communication either send back all the cosmetic of that
+<<page 14>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 14 of 112
+description in the consignment to the country in which it was manufactured or
+to the country from which it was imported or hand it over to the Central
+Government which shall cause it to be destroyed:
+Provided that the importer may, within thirty days of receipt of the report,
+make a representation against the report to the Commissioner of Customs who
+shall forward the representation with a fresh sample of the cosmetic to the
+Central Licensing Authority, who shall if necessary, after obtaining the report of
+the Director of the Central Cosmetics Laboratory, pass orders thereon which
+shall be final.
+(6) If the Central Licensing Authority or any other officer empowered by the
+said authority in this behalf with the approval of the Central Government,
+reports to the Commissioner of Customs after inspection of the sample of the
+cosmetic and where necessary, after obtaining a test report thereon, that the
+sample of the said cosmetic contravenes any provision of the Act or the rules
+made thereunder and that contravention is such that it can be remedied by the
+importer, the Commissioner of Customs shall communicate the report forthwith
+to the importer and permit him to import the cosmetic on his giving an
+undertaking in writing not to dispose of the cosmetic without the permission of
+the officer authorised in this behalf by the Central Government.
+21. Import of cosmetic for personal use.—Small quantities of cosmetics
+the import of which is otherwise prohibited under section 10 of the Act, may be
+imported for personal use subject to the following conditions:—
+(i) The cosmetics shall form part of a passenger's baggage and shall be the
+property of and intended for, the bona fide use of the passenger; and
+(ii) The cosmetics shall be declared to the Customs authorities, if thev so
+direct.
+22. Import through points of entry.—No cosmetic shall be imported into
+India except through the points of entry as specified in rule 43A of the Drugs
+and Cosmetics Rules, 1945.
+<<page 15>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 15 of 112
+CHAPTER IV
+MANUFACTURE OF COSMETICS FOR
+SALE OR DISTRIBUTION
+23. Application for grant of license or loan license to manufacture
+cosmetics for sale or for distribution.—(1) Any person who intends to
+manufacture cosmetics shall make an application for grant of a licence or loan
+licence to manufacture for sale or for distribution to the state Licensing
+Authority.
+(2) Application under sub-rule (1) shall be made through an identified
+online portal in Form COS- 5 for licence or in Form COS- 6 for loan licence
+accompanied with a fee, as specified in the Third Schedule along with
+respective documents as specified in Part II of the Second Schedule:
+Provided further that till such time the online portal is not operational for this
+purpose, offline application in Form COS- 5 for licence or in Form COS- 6 for
+loan licence may be made for manufacturing of cosmetic referred to in sub-rule
+(2)
+(3) In case of a new cosmetic, the applicant shall obtain prior permission in
+Form COS- 3 as provided in Chapter V from the Central Licensing Authority
+and no licence to manufacture any cosmetic shall be granted by the State
+Licensing Authority without such permission.
+(4) In addition to the documents specified in part II of the Second
+Schedule, the applicant shall furnish a self-declaration in Form COS- 7
+conforming compliance with Good Manufacturing Practices, requirements of
+premises, plants and equipment for manufacture of cosmetics as specified in the
+Seventh Schedule.
+(5) On receipt of the application under sub-rule (1) accompanied such fee
+and such documents as provided in sub-rule (2) and (3), for grant of a licence or
+loan licence, the State Licensing Authority shall grant a licence or loan licence
+within a period of forty-five days from the date application after scrutiny of
+application and documents it is of the opinion that requirements of the Act and
+these rules have been fulfilled:
+Provided where the State Licensing Authority considers that the applicant
+has not fulfilled the requirement of the Act and these rules, the same shall be
+<<page 16>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 16 of 112
+conveyed to the applicant within forty-five days from the date the application
+has been made.
+(6) On receipt of the licence or loan licence referred in sub-rule (5), the
+applicant may manufacture cosmetics for sale or distribution, after uploading a
+copy of such licence on the website of the Central Drugs Standard Control
+Organisation.
+(7) The State Licensing Authority within thirty days from the date of grant
+of licence or loan licence, shall inspect or authorise any other officer
+subordinate to such authority to inspect the site and verify the information given
+in self certificate in Form COS- 7 referred in sub-rule (4).
+(8) Where the State Licensing Authority or any other officer authorised to
+do so fails to inspect and verify the site of the licence or loan licence within the
+period referred in sub-rule (7), the licence or loan licence shall be deemed to be
+valid for all purposes.
+(9) In case, it is found at the time of inspection that the self-certificate
+contained any false information, the Licensing Authority may, after giving the
+licensee an opportunity to show cause, the licence or loan licence may be
+cancelled:
+Provided that where the State Licensing Authority is of the view that
+deficiencies can be removed, the said authority may issue the directions to the
+holder of the licence or loan licence to stop the manufacturing till the
+requirements are complied with, and when it is complied with, it shall be
+informed to Licensing Authority by the applicant and the Licensing Authority if
+satisfied may issue the directions to restart the manufacturing within five
+working days of receipt of such compliance.
+(10) In case, the original license or loan licence is defaced, damaged or
+lost; a duplicate copy of the licence or loan licence may be requested for from
+the State Licensing Authority on payment of fee as specified in the Third
+Schedule.
+24. Manufacture at more than one premises.—If cosmetics are
+manufactured at more than one premises, a separate application for each of such
+premises shall be made and a separate license obtained for each such premises.
+<<page 17>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 17 of 112
+25. Form of license or loan licence to manufacture cosmetics for sale or
+distribution.—A license or loan licence to manufacture cosmetics for sale or
+distribution shall be granted in Form COS- 8 and loan licence in Form COS- 9.
+26. Conditions of license or loan licence for manufacture of
+cosmetics.—A license in Form COS- 8 shall be subject to the conditions stated
+therein and to the following other conditions, namely:—
+(a) Manufacture of cosmetics shall be conducted under the direction and
+personal supervision of competent technical staff consisting at least one person
+who is a whole-time employee and who possesses any one of the following
+qualifications—
+(i) holds a Diploma in Pharmacy approved by the Pharmacy Council of India
+under the Pharmacy Act, 1948 (8 of 1948), or
+(ii) is registered under the Pharmacy Act, 1948 (8 of 1948), or
+(iii) has passed the Intermediate Examination with Chemistry as one of the
+subjects or an examination recognised by the Licensing Authority as equivalent
+to it.
+(iv) holds a bachelor degree in Cosmetic Technology from recognized
+university.
+(b) The factory premises shall comply with the requirements and conditions
+specified in the Seventh Schedule.
+(c) The manufacturer shall either—
+(i) provide and maintain adequate staff, premises and laboratory equipment
+for testing the cosmetics manufactured, and the raw materials used for
+manufacture in such cosmetics, or
+(ii) make arrangements with a laboratory approved by the Central Licensing
+Authority under Chapter VIII of the rules and accredited by National
+Accreditation Board for Testing & Calibration Laboratories (NABL) for
+carrying out such tests.
+(d) The applicant shall maintain documentary evidence for the following—
+<<page 18>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 18 of 112
+(i) documents in respect of the ownership or occupation on rental or other
+basis of the premises, specified in the application for license or in the license
+granted,
+(ii) constitution of the firm, or
+(iii) any other document that may be required for verifying the correctness of
+the statements made by the applicant or the licensee, while applying for or after
+obtaining the license as the case may be.
+(e) The licensee shall comply with the provisions of the Act and the rules
+made thereunder and with such further requirements, if any, as may be specified
+in any rules to be made hereafter under Chapter IV of the Act.
+(f) The licensee shall keep record of the details of each batch of cosmetic
+manufactured by him and of the raw materials used therein as per particulars
+specified in the Eighth Schedule and such records shall be retained for a period
+of three years after the date of expiry of the batch.
+(g) A license in Form COS- 9 shall be deemed to have been cancelled or
+suspended, if the license issued, in Form COS- 8, in respect of manufacturing
+facilities is cancelled or suspended.
+(h) The licensee shall test each batch or lot of the raw materials used for
+manufacturing the cosmetics and also each batch of the final product and shall
+maintain records or registers showing the particulars in respect of such tests.
+The records or registers shall be retained for a period of three years from the
+date of manufacture.
+(i) The licensee shall allow an Inspector appointed under the Act to enter with
+or without prior notice any premises where the manufacture of a substance in
+respect of which the license is issued, is carried on, to inspect the premises and
+to take samples of the manufactured products for which a receipt shall be issued
+in Form COS- 10.
+(j) The licensee shall allow an Inspector to inspect all registers and records
+maintained under these rules and shall supply to the Inspector such information
+as he may have required for the purpose of ascertaining whether the provisions
+of the Act and rules made thereunder have been complied with.
+<<page 19>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 19 of 112
+(k) The licensee shall maintain an Inspection book in Form COS- 11 to enable
+an Inspector to record his impression and the defects noticed; The manufacturer
+shall inform the Licensing Authority within thirty days, in writing, in the event
+of change in labelling or composition or testing, or specification or in
+documentation of any of the cosmetic pertaining to this license along with an
+undertaking that the products comply with standards laid down by the Bureau of
+Indian Standards as referred in the Ninth Schedule.
+(1) The licensee shall inform the Licensing Authority in writing in the event of
+any change in the constitution of the firm operating under the license. Where
+any change in the constitution of the firm takes place, the current license shall
+be deemed to be valid for a maximum period of six months from the date on
+which the change takes place unless, in the meantime, a fresh license has been
+taken from the Licensing Authority in the name of the firm with the changed
+constitution.
+(m) In case of change in name or address of a manufacturer, after grant of
+licence or loan licence under sub-rule (5) of rule 23, an application for
+amendment shall be made to state Government for prior approval from
+Licensing authorities for the said changes in manufacturing license within a
+period of sixty days from the date of such change:
+Provided that clauses (c) and (d) shall not apply to the manufacture of soap
+and the procedure for testing of raw materials and the records to be maintained
+by a manufacturer of soap shall be such as are approved by the "Licensing
+Authority":
+27. Grant or refusal of license.—(1) If the Licensing Authority, after such
+further enquiry, if any, as he may consider necessary, is satisfied that the
+requirements of the rules under the Act have been complied with and that the
+conditions of the license, loan licence and the rules under the Act shall be
+observed, he shall grant a license in Form COS- 8 or Form COS- 9 as the case
+may be.
+(2) If the Licensing Authority is not so satisfied, he shall reject the
+application and shall inform the applicant of the reasons for such rejection and
+of the conditions which must be satisfied before a license can be granted or
+renewed and shall supply the applicant with a copy of inspection report.
+<<page 20>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 20 of 112
+28. Further application for licence or loan licence after rejection.—If
+within a period of six months from the rejection of an application for a licence
+or loan licence, the applicant informs the State Licensing Authority that the
+requirements laid down in the Act and these rules have been fulfilled and
+deposits a fee as specified in the Third Schedule, the State Licensing Authority
+may, after causing further scrutiny, and on being satisfied that the requirements
+for grant of licence or loan licence have been complied with , issue a licence in
+Form COS- 8 or Form COS- 9.
+29. Appeal to the State Government.—Any person who is aggrieved by
+the order passed by the Licensing Authority refusing to grant a license under
+this Chapter may within ninety days from the date of receipt of such order,
+appeal to the State Government and the State Government may, after such
+enquiry as considered necessary, and after giving the said person an opportunity
+for representing the case, pass such order as it thinks fit.
+30. Validity of licence.—(1) A licence or loan licence issued in Form
+COS- 8 or Form COS- 9 shall remain valid in perpetuity, subject to payment of
+licence or loan licence retention fee as specified in the Third Schedule before
+completion of the period of five years from the date of its issue, unless, it is
+suspended or cancelled by the State Licensing Authority.
+(2) If the licensee fails to pay the required licence or loan licence retention
+fee on or before the due date as referred to in sub-rule (1), the licence or loan
+licence holder shall, in addition to the licence or loan licence retention fee, be
+liable to pay a late fee calculated at the rate of two per cent, of the licence or
+loan licence retention fee for every month or part thereof within one hundred
+and eighty days and in the event of non-payment of such fee during that period,
+the licence shall be deemed to have been cancelled.
+31. Inspection for verification of compliance.—(1) The premises
+licensed for manufacturing cosmetics shall be inspected by Inspector appointed
+by the Central Government and State Government to verify the compliance with
+the conditions of licence and the provisions of the Act and these rules, not less
+than once in three years or as needed as per risk based approach.
+(2) The inspectors appointed by the Central Government shall, when so
+required by the controlling officer or the Central Licensing Authority, carry out
+<<page 21>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 21 of 112
+special inspection of the identified manufacturing facilities for ensuring
+compliance with the provisions of this Act and Rules thereunder.
+CHAPTER V
+PERMISSION FOR IMPORT OR MANUFACTURE OF NEW
+COSMETIC
+32. Permission for import or manufacture of new cosmetic.—(1) Any
+person who intends to import or manufacture a new cosmetic, shall apply to the
+Central Licensing Authority in Form COS- 12 along with requisite fee and the
+data on safety and effectiveness of cosmetic.
+(2) If the Central Licensing Authority, after being satisfied that the
+cosmetic if permitted to be manufactured or imported shall be safe and effective
+for use in the country, may issue a prior permission in Form COS- 3, subject to
+the condition specified therein.
+(3) The prior permission obtained in Form COS- 3 shall be furnished along
+with the application for import under Chapter III or manufacture under Chapter
+IV of such new cosmetics.
+(4) Methods of test or analysis to be employed for safety evaluation of new
+cosmetic shall be complied by manufacturer as specified in the IS 4011 : 2018
+methods of test for safety evaluation of cosmetics, published by the Bureau of
+Indian Standards as amended from time to time.
+CHAPTER VI
+LABELLING, PACKING AND STANDARDS FOR SALE OR
+DISTRIBUTION OF COSMETICS
+33. Prohibition of sale or distribution. —Subject to the other provisions
+of the act and these rules, no person shall sell or distribute any cosmetic unless
+the cosmetic, if of Indian origin, is manufactured by a licensed manufacturer
+and labelled and packed in accordance with these rules.
+34. Manner of labelling.—(1) Subject to other provisions of the rules, a
+cosmetic shall carry on both the inner and outer labels:
+(a) the name of the cosmetics,
+(b) the name of the manufacturer and complete address of the premises
+<<page 22>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 22 of 112
+of the manufacturer where the cosmetic has been manufactured. If the product
+has not been manufactured in a factory owned by the manufacturer, the name
+and address of the actual manufacturer or the name of the country where it has
+actually been manufactured as “Made in........ (name of country)" should be
+there on the label:
+Provided that if the cosmetic is contained in a very small size container as
+30gm or less if the cosmetics are in solid or semi-solid state and 60 ml or less if
+the cosmetics is in liquid state, where the address of the manufacturer cannot be
+given, the name of the manufacturer and his principal place of manufacture
+shall be given along with pin code.
+(c) use before or date of expiry (month and year) or use by or expiry date or
+expiry XX months from manufactured or date of manufacturing or expiry date.
+(2) (a) A distinctive batch number, that is to say, the number by reference to
+which details of manufacture of the particular batch from which the substance in
+the container is taken are recorded and are available for inspection, the figures
+representing the batch number being preceded by the letter "B" or the words
+"Batch No." or "B. No." or "Batch" or "Lot No." or "Lot" shall carry on the
+inner or outer labels:
+Provided that this clause shall not apply to any cosmetic containing 10 grams
+or less if the cosmetic is in solid or semi-solid state and 25 milliliters or less if
+the cosmetic is in a liquid state:
+Provided further that in the case of soaps, instead of the batch number, the
+month and year of manufacture of soap shall be given on the label.
+(b) Manufacturing licence number, the number being preceded by the letter 'M'
+or "M. L. No" or "Mfg. Lie. No." shall carry on the inner or outer labels:
+Provided that in case of imported products, if such provision is not mandatory
+in country of origin, such cosmetics may be allowed without mentioning
+manufacturing license number, subject to fulfilment of other import regulations.
+(3) The outer label of the cosmetics shall carry a declaration of the net
+contents expressed in terms of weight for solids, fluid measure for liquids, fluid
+<<page 23>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 23 of 112
+measure or weight for semi-solids, combined with numerical count if the
+content is sub-divided:
+Provided that this statement need not appear in case of a package of perfume,
+toilet water or the like, the net content of which does not exceed 60 ml or any
+package of solid or semi-solid cosmetic the net content of which does not
+exceed 30 grams.
+(4) In case of cosmetics; where a hazard exists, every inner label shall
+clearly indicate
+(a) adequate directions for safe use,
+(b) any warning, caution or special direction required to be observed by
+the consumer,
+(c) a statement indicating the names and quantities of ingredients that
+are hazardous or poisonous.
+(5) In the case of imported cosmetics to be marketed in India, import
+registration certificate number shall be mentioned on the label of unit pack
+preceded by letter "RC" or "RC No" or "Reg. Cert. No" along with name and
+address of the importer;
+(6) Where a package of a cosmetic has only one label, such label shall
+contain all the information required to be shown on both the inner and the outer
+labels, under these rules.
+(7) In all cases, the list of ingredients, present in concentration of more
+than one percent, shall be listed in the descending order of weight or volume at
+the time they are added, followed by those in concentration of less than or equal
+to one percent, in any order, and preceded by the words 'INGREDIENTS':
+Provided that this statement need not appear for packs of less than or equal
+to 60 ml of liquid and 30 gm of solid and semi-solids.
+(8) The cosmetic shall comply with labelling requirement, if any, specified
+in the relevant Indian standard as laid down by the 'Bureau of Indian Standards'
+for the cosmetics covered under the Ninth Schedule.
+<<page 24>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 24 of 112
+(9) No cosmetic shall be imported unless it is packed and labelled in
+conformity with these rules and the label of imported cosmetics shall bear
+registration certificate number of the product and the name and address of the
+registration certificate holder for marketing the said product in India:
+Provided further that in cases where the imported cosmetics require India
+specific labelling, the same shall be allowed to be stickered on the unit pack at
+the bonded warehouses.
+(10) In case, the cosmetic is meant for export then the labels on packages or
+container of cosmetic shall meet the specific requirements of law of the country
+to which the cosmetic is to be exported, but the following particulars shall
+appear in a conspicuous manner on the label of the inner most pack of the
+cosmetic in which the cosmetic is packed and every other outer covering in
+which the container is packed:—
+(a) name of the cosmetic;
+(b) the distinctive batch number or lot number or serial number preceded
+by the word “Lot No." or "Lot" or "Batch No." or "B. No." or "Serial No." or
+"B";
+(c) use before or date of expiry, if any;
+(d) the name and address of manufacturer and address of actual premises
+where the cosmetic has been manufactured;
+(e) licence number preceded by letters "Licence No. or Lie. No.";
+(f) internationally recognised symbols in lieu of text, wherever required:
+Provided that where a cosmetic is required by the consignee to be not
+labelled with the name and address of the manufacturer, the labels on packages
+or containers shall bear a code number as approved by the state Licensing
+Authority.
+35. Prohibition against altering inscription on containers, labels or
+wrappers of cosmetic. —No person shall alter, obliterate or deface any
+inscription or mark made or recorded by the manufacturer on the container,
+label or wrapper of any cosmetic:
+<<page 25>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 25 of 112
+Provided that nothing in this rule shall apply to any alteration, inscription or
+mark made on the container, label or wrapper of any cosmetic at the instance or
+direction or with the permission of the Central Licensing Authority.
+36. Prohibition against false or misleading claims.—No cosmetic may
+purport or claim to purport or convey any idea which is false or misleading to
+the intending user.
+37. Labelling of hair dyes containing dyes, colours and pigments.—
+Hair dyes containing Paraphenylenediamine or other dyes, colours and pigments
+shall be labelled with the following legend in English and local languages and
+these shall appear on both the inner and the outer labels:
+"Caution.—This product contains ingredients which may cause skin
+irritation in certain cases and so a preliminary test according to the
+accompanying directions should first be made. This product should not be used
+for dyeing the eyelashes or eyebrows; as such a use may cause blindness."
+Each package shall also contain instructions in English and local languages on
+the following lines for carrying out the test:
+"This preparation may cause serious inflammation of the skin in some cases and
+so a preliminary test should always be carried out to determine whether or not
+special sensitivity exists. To make the test, cleanse a small area of skin behind
+the ear or upon the inner surface of the forearm, using either soap and water or
+alcohol. Apply a small quantity of the hair dye as prepared for use to the area
+and allow it to dry. After twenty-four hours, wash the area gently with soap and
+water. If no irritation or inflammation is apparent, it may be assumed that no
+hypersensitivity to the dye exists. The test should, however, be carried out
+before each and every application.
+This preparation should on no account be used for dyeing eyebrows or
+eyelashes as severe inflammation of the eye or even blindness may result."
+38. Special provisions relating to toothpaste containing fluoride.—
+(i) Fluoride content in toothpaste shall not be more than 1000 ppm and
+the content of fluoride in terms of ppm shall be mentioned on the tube and
+carton.
+<<page 26>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 26 of 112
+(ii) Date of expiry should be mentioned on tube and carton.
+39. Standards of cosmetics.—(1) No cosmetic shall be imported or
+manufactured unless it complies with the specifications prescribed under the
+Ninth Schedule or any other standards of quality and safety, applicable to it, and
+other provisions under the rules. In case, the cosmetic is not included under the
+Ninth Schedule, it shall meet the requirements under these rules and
+specifications and standards applicable to it in the country of origin.
+(2) Raw materials specified in ANNEX A of the Indian Standard IS: 4707
+Part 2, as amended from time to time, shall not be added in the cosmetic
+product.
+(3) No Cosmetic shall be imported or manufactured which contains Dyes,
+Colours and Pigments other than the one specified by the Bureau of Indian
+Standards (IS: 4707 Part 1 or IS: 4707 Part 2, as amended) and included the
+Tenth Schedule.
+The permitted Synthetic Organic colours and Natural Organic Colours used
+in the Cosmetic shall not contain more than:—
+(i) 2 parts per million of Arsenic calculated as Arsenic Trioxide.
+(ii) 20 parts per million of lead calculated as lead.
+(iii) 100 parts per million of Heavy Metals other than lead calculated as;
+the total of the respective metals.
+(4) No cosmetic containing hexachlorophene shall be manufactured:
+Provided that in case of soaps, hexachlorophene may be used in
+concentrations not exceeding one per cent weight by weight:
+Provided further that the following cautionary note shall be printed and shall
+appear in a conspicuous manner on the wrapper of package of each soap,
+namely. "Contains hexachlorophene - not to be used on babies".
+(5) Cosmetics imported or manufactured in the country shall contain
+mercury in the following proportions, namely,—
+<<page 27>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 27 of 112
+(a) in cosmetics intended for use only in the area of eye, the level of mercury
+not exceeding seventy parts per million (0.007 per cent.) of mercury, calculated
+as the metal, as a preservative;
+(b) in other finished cosmetic products, unintentional mercury shall not exceed
+one part per million (1 ppm).".
+(6) The use of lead and arsenic compounds for the purpose of colouring
+cosmetics is prohibited.
+(7) No person shall use any animal for testing of cosmetics.
+CHAPTER VII
+PROCEDURE OF SAMPLING FOR TEST OR
+ANALYSIS, SEIZURE AND REPORT
+40. Testing of Cosmetic from a purchaser.—An application from a
+purchaser for test or analysis of a cosmetic under section 26 of the Act shall be
+made to the Government Analyst in Form COS- 13 and the report of the test or
+analysis of the cosmetics made on such application shall be supplied to the
+applicant in Form COS- 14.
+41. Procedure for sampling.—The Inspector while exercising powers
+under section 22 of the Act shall follow the procedure provided in section 23 of
+the said Act.
+42. Forms of receipts for seized cosmetic, record register, document or
+any other material object.—A receipt for the stock of any cosmetic or for any
+record, register, document or any other material object seized by him under
+clause (c) or clause (cc) of sub-section (1) of section 22 of the Act shall be
+given in Form COS- 15.
+43. Manner of certifying copies of seized documents.—The Inspector
+shall return the documents, seized by him under clause (cc) or produced before
+him under clause (cca), of sub-section (1) of section 22 of the Act within a
+period of twenty days of the date of such seizure or production to the person
+from whom they have been seized or as the case may be, the person who
+produced them, after copies thereof or extracts therefrom have been signed by
+the concerned Inspector and the person from whom they were seized or as the
+case may be, who produced such records.
+<<page 28>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 28 of 112
+44. Form of intimation of purpose of taking samples.—(1) When an
+Inspector takes a sample of a cosmetic for the purpose of test or analysis, he
+shall intimate such purpose in writing in Form COS- 10 to the person from
+whom he takes the sample.
+(2) In cases, where the fair prices tendered is refused by the person from
+whom sample has been taken, the Inspector shall record the fact in the receipt in
+Form COS- 16.
+45. Procedure for dispatch of sample to Government Analyst.—(1) The
+port’ >n of the sample or the container sent by an Inspector to the Government
+Analyst for test or analysis under sub-section (4) of section 23 of the Act shall
+be sent by registered post or by hand in a sealed packet, enclosed together with
+a memorandum in Form COS- 17.
+(2) A copy of the memorandum and a specimen impression of the seal used
+to seal the packet shall be sent to the Government Analyst separately by
+registered post or by hand.
+46. Form of order not to dispose of stock.—An order in writing by an
+Inspector under clause (c) of section 22 of the Act requiring a person not to
+dispose of any stock in his possession shall be in Form COS- 18.
+47. Prohibition of sale.—No person in possession of a cosmetic in respect
+of which an Inspector has made an order under clause (c) of sub-section (1) of
+section 22 of the Act shall, in contravention of that order, sell or otherwise
+dispose of any stock of such cosmetic.
+48. Procedure on receipt of sample.—On receipt of a package from an
+Inspector containing a sample for test or analysis, the Government Analyst shall
+compare the seals on the packet or on the portion of sample or container with
+the specimen impression received separately and shall note the condition of the
+seals on the packet or on portion of sample or container. After the test or
+analysis has been completed, he shall forthwith supply to the Inspector a report
+in triplicate of the result of the test or analysis in Form COS- 19, together with
+full protocols of the tests or analysis applied.
+<<page 29>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 29 of 112
+Explanation.—It shall be deemed to be full and sufficient compliance of the
+requirement of the rule in respect of the supply of the "protocol of the tests or
+analysis applied", if—
+(1) for the category of cosmetics for which standards specified in the Ninth
+Schedule are applicable and followed, a reference to the specific tests or
+analysis carried out as per standards stipulated therein is given in the report.
+(2) For those cosmetics for which methods of test are not available and have
+been evolved by the Government Analyst, a description of tests applied is given
+in the report.
+49. Dispatch of samples for test or analysis by order of court.—(1)
+Samples for test or analysis under sub-section (4) of section 25 of the Act shall
+be sent by registered post or by courier or delivered in person in a sealed packet,
+enclosed, together with a memorandum in Form COS- 20, with the outer cover
+being addressed to the Director.
+(2) The packet as well as the outer cover shall be marked with a
+distinguishing number.
+(3) A copy of the memorandum in Form COS- 20 and a specimen
+impression of the seal used to seal the packet shall be sent separately by
+registered post or courier to the Director.
+50. Recording of condition of seals.—On receipt of the packet, it shall be
+opened by an officer authorised in writing in that behalf by the Director who
+shall record the condition of the seal on the packet.
+51. Report of result of test or analysis.—After test or analysis, the result
+of the test or analysis, together with full protocols of the tests applied, shall be
+supplied immediately after completion of such tests or analysis to the sender in
+Form COS- 21.
+52. Issuance of certificates.—Certificates issued under these Rules by the
+Laboratory shall be signed by the Director or by an officer authorised by the
+Central Government by Notification in the Official Gazette to sign such
+certificates.
+<<page 30>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 30 of 112
+53. Confiscation of cosmetics, implements, machinery etc.—(1) Where
+any person has been convicted for contravening any of the provisions of
+Chapter IV of the Act or any Rule made thereunder, the stock of the cosmetics
+in respect of which the contravention had been made, shall be liable to
+confiscation.
+(2) Where any person has been convicted for manufacturing of any cosmetic
+deemed to be misbranded under clause (a), clause (b) or clause (c) of section
+17C of the Act, or adulterated cosmetic under section 17E of the Act, or for
+manufacture for sale of any cosmetic without a valid licence as required under
+clause (c) of section 18 of the Act, any implements or machinery used in such
+manufacture and any receptacle, packages, or coverings in which such cosmetic
+is contained and the animals, vehicles, vessels or other conveyances used in
+carrying such cosmetics shall also be liable to confiscation.
+54. Procedure for disposal of confiscated cosmetics.—(1) The Court
+shall refer the confiscated cosmetics to the Inspector concerned for report as to
+whether they are of standard quality or contravene the provisions of the Act or
+the Rules in any respect.
+(2) If the Inspector, on the basis of Government Analyst's report, finds the
+confiscated cosmetics to be not of standard quality or to contravene any of the
+provisions of the Act or the Rules thereunder, he shall report to the Court
+accordingly. The Court shall, thereupon, order destruction of such cosmetics.
+The destruction shall take place under the supervision of the Inspector in the
+presence of such authority, if any, as may be specified by the Court.
+(3) If the Inspector finds that the confiscated cosmetics are of standard
+quality and do not contravene the provisions of the Act or the Rules made
+thereunder, he shall report to the Court accordingly.
+CHAPTER VIII
+APPROVAL OF LABORATORY FOR CARRYING OUT TESTS ON
+COSMETICS AND THEIR RAW MATERIALS
+
+55. Application for grant of approval for testing cosmetics.—(1) Any
+laboratory that meets the requirements and has been accredited by National
+Accreditation Body for Testing and Calibration Laboratories may grant of
+<<page 31>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 31 of 112
+approval for carrying out tests on cosmetics or the raw materials used in the
+manufacture thereof on behalf of licensees for manufacture for sale of
+cosmetics, shall be made in Form COS- 22 to the State Licensing Authority of
+the state where such laboratory is to be established:
+Provided that the applicant shall furnish to the State Licensing Authority
+such additional information as may be required in Form COS- 22 in connection
+with the application.
+(2) A separate application shall be made for grant of approval for carrying
+out tests on additional categories of cosmetics including raw materials used in
+the manufacture of these cosmetics.
+(3) The application under sub-rule (1) shall be accompanied with the fee as
+specified in the Third Schedule.
+(4) In case the original approval is defaced, damaged or lost, the fee for the
+duplicate copy of the approval shall be as specified in the Third Schedule.
+56. Approval for carrying out tests on cosmetics on behalf of licensees.
+-(1) Approval for carrying out such tests on cosmetics as may be required under
+the provisions of these rules, on behalf of licensee for manufacture of cosmetics,
+shall be granted in Form COS- 23.
+(2) Before approval in Form COS- 23 is granted, the following conditions shall
+be complied with by the applicant.—
+(i) The premises where the tests are to be carried out, shall be well lighted
+and properly ventilated except where the nature of tests of any cosmetic
+warrants otherwise. Wherever necessary, the premises shall be air conditioned
+so as to maintain the accuracy and functioning of laboratory instruments or to
+enable the performance of special tests such as microbiological tests, etc.
+(ii) The applicant shall provide adequate space having regard to the nature
+and number of samples of cosmetics proposed to be tested:
+Provided that the approving authority shall determine from time to time
+whether the space provided continues to be adequate.
+<<page 32>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 32 of 112
+(iii) The applicant shall provide and maintain suitable equipment having
+regard to the nature and number of samples of cosmetics intended to be tested
+which shall be adequate in the opinion of the State Licensing Authority.
+(iv) The testing of cosmetics, shall be under the active direction of a
+person whose qualifications and experience are considered adequate in the
+opinion of the approving authority and who shall be held responsible for the
+reports of test or analysis issued by the applicant.
+(v) The testing of cosmetics, shall be carried out by persons whose
+qualifications and experience of testing are adequate in the opinion of the State
+Licensing Authority.
+(vi) The applicant shall provide books of standards recognized under the
+provisions of the Act and the Rules made thereunder and such books of
+reference as may be required in connection with the testing or analysis of the
+products for the testing of which approval had been applied for.
+57. Inspection before grant of approval.—(1) Before grant of approval
+in Form COS- 23, the State Licensing Authority shall cause the institution at
+which the testing of cosmetic is proposed to be carried out to be inspected
+jointly by the Inspector appointed by the Central Government and the State
+Government under section 21 of the Act, to examine the premises and the
+equipment intended to be used for testing of cosmetics and inquire into the
+professional qualifications of the expert staff to be employed.
+(2) The report of the inspection shall be rendered within twenty-four hours of
+the inspection and a copy thereof shall be made available to the laboratory
+inspected.
+58. Procedure of approving authority.—(1) If the State Licensing
+Authority, after such further enquiry, if any, as may be considered necessary, is
+satisfied that the requirements of the rules made under the Act have been
+complied with and that the conditions of the approval and the rules made under
+the Act will be observed, he shall grant an approval in Form COS- 23.
+(2) If the State Licensing Authority is not so satisfied, the application shall
+be rejected and the applicant informed of the reasons for such rejection and of
+the conditions which must be satisfied before an approval could be granted.
+<<page 33>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 33 of 112
+59. Further application after rejection.—If within a period of six months
+from the rejection of an application for approval, the applicant informs the State
+Licensing Authority that the conditions laid down have been satisfied and
+deposits inspection fee as specified in the Third Schedule, the State Licensing
+Authority may, after a further inspection being carried out and on being
+satisfied that the conditions for grant of approval have been complied with,
+grant the approval in Form COS- 23.
+60. Validity of licence.—(1) A licence issued in Form COS- 23 shall
+remain valid, if the licensee deposits a licence retention fee referred in the Third
+Schedule before the completion of period of five years from the date of its issue,
+unless, it is suspended or cancelled by the State Licensing Authority.
+(2) The licence retention fee referred in sub-rule (1) shall be equivalent to
+the fee required for grant of such licence as specified in the Third Schedule.
+(3) If the licensee fails to pay licence retention fee on or before the due
+date as referred to in sub-rule (1), he shall be liable to pay licence retention fee
+along with a late fee calculated at the rate of two per cent of the licence fee for
+every month or part there of up to six months, and in the event of non-payment
+of such fee, the licence shall be deemed to have been cancelled.
+61. Inspection for verification of compliance.—The premises licensed in
+the manner specified in these rules shall be inspected jointly by Inspector
+appointed by the Central Government and State Government to verify
+compliance with the conditions of licence and provisions of the Act and these
+rules at least once in three years based on risk based approach.
+62. General conditions after approval.—An approval in Form COS- 23,
+shall be subject to the following general conditions:—
+(a) The laboratory that has been approved under this chapter for carrying
+out tests and analysis shall provide and maintain an adequate staff and adequate
+premises and equipment as specified in the Eleventh Schedule.
+(b) The approved institution shall provide proper facilities for storage so as
+to preserve the properties of the samples to be tested by it.
+<<page 34>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 34 of 112
+(c) The approved institution shall maintain records of tests carried out on
+all samples of cosmetics and the results thereof together with the protocols of
+tests showing the readings and calculation in such form as to be available for
+inspection and such records shall be retained in case of substances for which an
+expiry date is assigned for a period of two years from the expiry of such date
+and in case of other substances, for a period of six years.
+(d) The approved institution shall allow the Inspector appointed under this
+Act to enter with or without prior notice the premises where the testing is
+carried on and to inspect the premises and the equipment used for test and the
+testing procedures employed. The institution shall allow the Inspectors to
+inspect the registers and records maintained under these rules and shall supply
+to such Inspectors such information as they may be required for ascertaining
+whether the provisions of the Act and Rules thereunder have been observed.
+(e) The approved institution shall from time to time report to the State
+Licensing Authority any changes in the person-in-charge of testing of cosmetics
+or in the expert staff responsible for testing and any material alteration in the
+premises or changes in the equipment used for the purposes of testing which
+have been made since the date of last inspection made on behalf of the State
+Licensing Authority before grant or renewal of approval.
+(f) The approved laboratory shall furnish reports of the results of test or
+analysis in Form COS- 24.
+(g) In case any sample of a cosmetic is found on test to be not of standard
+quality, the approved institution shall furnish to the Central Licensing Authority
+and the Licensing Authority of the State where the manufacturer or sender of
+the cosmetic is located with a copy of the test report on the sample with the
+protocols of tests applied.
+(h) The approved laboratory shall comply with the provisions of the Act and
+Rules thereunder and with any other requirement, if any, specified under
+Chapter IV of the Act.
+(i) The approved institution shall maintain an Inspection Book in Form COS-
+11 to enable the Inspector to record his impression or defects noticed.
+<<page 35>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 35 of 112
+63. Withdrawal and suspension of approval.—(1) The State Licensing
+Authority may, after giving the approved laboratory an opportunity to show
+cause why such an order should not be passed, by an order in writing, stating
+the reasons therefore, withdraw an approval granted under this Part or suspend
+it for such period as considered appropriate either wholly or in respect of some
+of the categories of cosmetics to which it relates, if in his opinion, the approved
+institution has failed to comply with any of the conditions of the approval or
+with any provisions of the Act or Rules made thereunder.
+(2) Any approved laboratory whose approval has been suspended or
+withdrawn, may within three months of the date of the order, appeal to the
+concerned State Government which shall dispose of the appeal in consultation
+with a panel of competent persons appointed by it in this behalf and notified in
+the Official Gazette.
+CHAPTER IX
+MISCELLANEOUS
+64. Exemption of cosmetics.—(1) Cosmetics as may be specified in the
+Twelfth Schedule shall be exempted from the provisions of Chapter III and
+Chapter IV of the Act and the rules made thereunder to the extent and subject to
+the conditions specified in that Schedule.
+65. Voluntary recall of cosmetics.—(1) If a manufacturer or authorised
+agent, as the case may be, considers or has reasons to believe that a cosmetics,
+which has been imported, manufactured, sold or distributed, is likely to pose
+risk to the health of a user during its use and therefore may be unsafe, such
+manufacturer or authorised agent shall immediately initiate procedures to
+withdraw the cosmetics in question from the market, indicating reasons for its
+withdrawal and inform the State Licensing Authority or Central Licensing
+Authority, as the case may be, of the details relating thereto.
+(2) A manufacturer or authorised agent, as the case may be, shall
+immediately inform the State Licensing Authority or Central Licensing
+Authority, as the case may be, and co-operate with them, if there are reasons to
+believe that a cosmetic which has been placed in the market, may be unsafe for
+users.
+(3) The manufacturer or importer or authorised agent, as the case may be,
+shall inform the State Licensing Authority or Central Licensing Authority, as
+<<page 36>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 36 of 112
+the case may be of the action taken to prevent risk to the user and shall not
+prevent or discourage any person from cooperating, in accordance with the
+provisions of the Act and these rules, with the State Licensing Authority or
+Central Licensing Authority, as the case may be, where this may prevent,
+reduce or eliminate a risk arising due to use of such cosmetics.
+66. Fees for examination of samples.—(1) The fee for test and analysis in
+respect of samples under sub-section (1) of section 25 of the Act shall as
+specified in the Fifth Schedule.
+(2) The fees to be paid by a person submitting to the Government Analyst
+under section 26 of the Act for test or analysis of a cosmetic purchased by him
+shall be those specified in the Fifth Schedule.
+67. Mode of payment of fee.—(1) The fees prescribed under these rules,
+in case of application made to the Central Licensing Authority, shall be paid
+through challan or by electronic mode, in the Bank of Baroda, Kasturba Gandhi
+Marg, New Delhi-110001 or any other branch of Bank of Baroda, or any other
+bank, notified by the Ministry of Health and Family Welfare in the Central
+Government, to be credited under the Head of Account “0210- Medical and
+Public Health, 04-Public Health, 104-Fees and Fines.
+(2) Where the fee specified is payable to the State Licensing Authority, the
+same shall be paid through a challan or by electronic mode as may be specified
+by the State Government concerned.
+68. Applicability in case of inconsistency.—If there is any inconsistency
+between these rules and any other rules made under the Act, the provisions of
+these rules shall prevail over such other rules.
+69. Debarment of applicant.—(1) Whoever himself or, any other person
+on his behalf, or applicant submits misleading, or fake, or fabricated documents,
+may, be debarred by Licensing Authority for such period as deemed appropriate
+in the facts and circumstances of the case after giving an opportunity to show
+cause as to why such an order should not be made.
+(2) Where an applicant is aggrieved by an order made by the Central
+Licensing Authority under sub-rule (1), such applicant may, within thirty days
+from the receipt of the order, make an appeal to the Central Government or the
+<<page 37>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 37 of 112
+State Government, as the case may be, and the Central Government or the State
+Government, may, after such enquiry as it considers necessary, and after
+affording an opportunity of being heard, pass such orders in relation thereto as
+considered appropriate.
+70. Digitalisation of Form.—The Forms prescribed under these rules may
+be suitably modified by the Central Drugs Standard Control Organisation for
+the purpose of digitalisation and such conversion into digital forms modification
+shall be deemed legally valid for all purposes.
+71. Amendments in the Drugs Rules, 1945.—The Drugs Rules, 1945 is
+amended in the manner as specified in the Thirteenth Schedule.
+72. Savings.—(1) Notwithstanding the non-applicability of the Drugs and
+Cosmetics Rules, 1945, the approvals or permissions or licenses or certificates
+issued under the provisions of the Act and the said rules in respect of cosmetics
+prior to commencement of these rules, shall be deemed to be valid for all
+purpose still its expiry or for a period of eighteen months from the date on these
+rules are notified, whichever is later, under the corresponding provisions of said
+rules;
+(2) Any things done or any action taken or purported to have been done or
+taken, including any rule, notification, inspection, order or notice made or
+issued or any appointment or declaration made or any operation undertaken or
+any direction given or any proceedings taken or any penalty, punishment,
+forfeiture or fine imposed under the Drugs and Cosmetics Rules, 1945 shall, be
+deemed to have been done or taken under the corresponding provisions of these
+rules and shall always remain valid for all purposes.
+<<page 38>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 38 of 112
+FIRST SCHEDULE
+[See rule 12(3)]
+Authorisation from manufacturer
+(To be authenticated in India either by a Magistrate of First Class or by Indian
+Embassy in the country of origin or by an equivalent authority through apostille)
+
+Authorisation to accompany an application for issuance of import registration
+certificate
+I......................working
+as...........................authorised
+to
+sign
+this
+Authorisation on behalf of manufacturer M/s ....................................... (Full
+address or telephone number, e-mail) having manufacturing site at
+............................. (Full address, telephone no., e-mail), hereby delegate the
+Authorisation to M/s..............................,(full address, with telephone, fax and Email address), hereinafter to be known as authorised agent, intends to apply for
+registration certificate under the provisions of the Cosmetics Rules, 2020 to
+import into India for the following cosmetics manufactured at below
+manufacturing site.
+Following are the details of cosmetics proposed to be imported (A separate
+list may be annexed, if required in below given format).
+Serial
+No.
+Product or brand of
+cosmetic
+Brand
+name
+Variant
+name
+Pack
+sizes
+Actual
+manufacturer and its
+premises-
+1.
+2.
+(2) Our authorised agent shall act in the following respects:—
+(a) to act as the official representative for obtaining registration certificate for
+and on behalf of M/s.__(Name and complete address of the overseas
+manufacturer/brand owner) in India.
+(b) to submit all necessary documents in the name of____________ (Name
+and complete address of the overseas manufacturer or brand owner) for the
+<<page 39>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 39 of 112
+registration
+certificate
+of
+cosmetics
+manufactured
+by____________
+(manufacturer's name).
+(3) I shall comply with all the conditions imposed on the registration
+certificate and with provisions of the Cosmetics Rules, 2020.
+(4) I declare that M/s............is carrying on the manufacture of the listed
+cosmetics at the manufacturing site specified above.
+(5) I shall allow the Central Licensing Authority or any person Authorised
+by it in that behalf to enter and inspect the manufacturing premise and to
+examine the process, procedure and documents in respect of any manufacturing
+site or to take sample of listed cosmetics for which the application for
+registration certificate has been made.
+(6) In case of any violation of Drugs and Cosmetics Act, 1940 and Rules
+thereunder, the authorised agent shall continue to be responsible even after
+withdraw of this Power of Attorney for the cosmetics imported in India.
+(7) I do hereby state and declare that all the photocopies or scanned copies
+in the application are true copies of the original documents.
+(8) I do hereby state and declare that all the documents submitted by the
+undersigned are true and correct.
+Place: ...................
+Date: ....................
+Signature of the manufacturer
+(Name and Designation) Seal/Stamp
+Undertaking from the authorised agent
+I......................, age..........., working as...........................at M/s.....................
+(full address or telephone number, e-mail) agrees to act upon the Authorisation
+as the Authorised agent on behalf of manufacturer M/s .......................................
+(full address or telephone number, e-mail) having manufacturing site at
+............................. (full address, telephone number, e-mail).
+<<page 40>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 40 of 112
+Place: ....................
+Date: ....................
+Signature of the authorised agent (Name and Designation) Seal/Stamp
+SECOND SCHEDULE
+[See rules 12(4), 23(2) and 23(4)]
+Part-I
+Information and undertaking required to be furnished by the manufacturer or
+his authorised importer or distributor or agent with the application form for
+import registration certificate.
+The format shall be properly filled in for each application in Form COS- 1.
+1. Particulars of the manufacturer and manufacturing premises.
+(a) Name and address of the manufacturer and manufacturing premises to be
+registered along with telephone numbers, Fax numbers and e-mail address.
+(b) Name(s) and address of the Partners or Directors.
+(c) Name and address of the authorized importer or distributor or agent in
+India, responsible for the business of the manufacturer including name(s) and
+address of its Partners or Directors.
+(d) A brief profile of the manufacturer's business activity, in domestic as well
+as global market.
+Note: In case the brand owner is a company registered in India, the name
+and registered office address of the company should be given.
+2. Particulars of the cosmetics to be registered under registration certificate.
+(a) Names of cosmetics along with their brands name, category, pack
+sizes and variants to be registered and meant for import into and use in India.
+(b) Particulars of the manufacturing licenses or registration or product
+permission or marketing Authorisations or free sale certificate or (if any) under
+which the cosmetics are being manufactured in the country of origin along with
+<<page 41>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 41 of 112
+the copy of the licenses or marketing Authorisation or free sale certificate or
+registration issued by the Regulatory Authority or any other competent
+authorities or associations of that country.
+(c) List of countries where marketing Authorisation or import permission
+for the said cosmetic has been granted.
+3. Chemical information of cosmetics.
+(a) Name(s) of ingredients in the nomenclature of standard references,
+along with percentages contained in the cosmetic.
+(b) Specifications and testing method for testing of the cosmetic(s).
+(c) Manner of labelling as per the Cosmetics Rules, 2020.
+(d) Package insert (if any).
+4. Undertaking to declare that—
+(a) I/We shall comply with all the conditions imposed on the registration
+certificate for the import of cosmetics as required under the provisions of the
+Cosmetics Rules, 2020.
+(b) I/We declare that we are carrying on the manufacture of the cosmetics
+mentioned in this Schedule, at the premises specified above, and we shall from
+time to time report any change of premises on which manufacture will be
+carried on and in cases where manufacture is carried on in more than one
+factory any change in the distribution of functions between the factories.
+(c) I/We shall comply with the provisions of Chapter III of the Cosmetics
+Rules, 2020.
+(d) Every cosmetic manufactured by us for import under the registration
+certificate into India shall conform to the standards laid down by the Bureau of
+Indian Standards as referred in the Ninth Schedule.
+(e) No cosmetic manufactured by us shall be imported into India which has
+been tested on animals.
+<<page 42>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 42 of 112
+(f) I/We shall inform to Licensing Authority, in case of any change in
+respect of labelling or composition or testing of registered product or its
+specifications within thirty days along with an undertaking that products comply
+with the standards laid down by the Bureau of Indian Standards as referred in
+the Ninth Schedule.
+(g) I/We shall from time to time report for any administrative action taken
+due to adverse reaction, viz. market withdrawals/regulatory restriction, or
+cancellation of authorisation and/or "not of standard quality report" of any
+cosmetic pertaining to the registration certificate declared by any Regulatory
+Authority of any country where the cosmetic is marketed/sold or distributed.
+The dispatch and marketing of the cosmetic in such cases shall be stopped and
+the Licensing Authority shall be informed immediately.
+(h) I/We shall comply with such further requirements, if any, as may be
+specified, by the Government of India, under the Act and the Rules, made
+thereunder.
+(i) I/We shall allow the Licensing Authority or any person authorised by him in
+that behalf to take samples of the cosmetics for testing if considered necessary
+by the Licensing Authority.
+The information submitted above is true to the best of my/our knowledge and
+belief.
+Place: ....................
+Date: ....................
+Signature of the manufacturer or his Authorised agent
+Name and Designation:
+Seal/ Stamp
+Part-II
+Information and undertaking required to be furnished by the manufacturer
+with the application form for grant of manufacturing licence or loan licence:—
+(1) (a) Receipt for the fees paid or challan, (the fees are as given in Third
+Schedule) as the case may be or their attested copies.
+<<page 43>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 43 of 112
+(b) Copy of Approved layout plan of the manufacturing area.
+(c) Documents viz. rent receipt, purchase documents or its attested copies
+showing lawful possession of the premises.
+(d) List of machinery and equipment.
+(e) Documents relating to the constitution of the firm viz. partnership-deed,
+memorandum and article of association etc.
+(f) Full particulars of the competent technical staff employed for
+manufacturing and testing of cosmetics along with copies of their educational
+qualifications and experience certificates approval letter as competent staff. The
+competent technical staff is required to furnish consent letter for full time
+employment with the applicant firm.
+(g) List of Cosmetics along with their composition formula, manner of
+labelling in triplicate along-with undertaking to be submitted.
+(h) Documents relating to the ownership of the brand of cosmetic whether it is
+registered or under trademark, if any.
+(i) Full name of the proprietor or the partners, as the case may be shall be
+provided in the application. In case of private or public limited concerns, full
+name of the Directors who sign the application or the Authorised signatory, if
+any, shall be provided in the application.
+(j) Self-certificate of compliance of Good Manufacturing Practices (GMP) for
+manufacture of cosmetics as specified in Form COS- 7.
+(2) Undertaking to declare that.—
+(a) I/We shall comply with all the conditions imposed on the license or loan
+license for the manufacture of cosmetics as required under the provisions of the
+Cosmetics Rules, 2020.
+(b) I/We declare that we are carrying on the manufacture of the cosmetics
+mentioned in this Schedule, at the premises specified above, and we shall from
+time to time report any change of premises on which manufacture will be
+carried on.
+<<page 44>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 44 of 112
+(c) I/We shall comply with the provisions of Chapter IV of the Cosmetics
+Rules, 2020.
+(d) Every cosmetic manufactured by us for sale or for distribution in India
+shall conform to the standards laid down by the Bureau of Indian Standards as
+referred in the Ninth Schedule.
+(e) I/We declare that no cosmetic manufactured by us has been tested on
+animals.
+(f) I/We shall inform to Licensing Authority, in case of any change in respect
+of labelling or composition or testing of licensed product or its specifications
+within thirty days along with an undertaking that products comply with
+standards laid down by the Bureau of Indian Standards as referred in the Ninth
+Schedule.
+(g) I/We shall comply with such further requirements, if any, as may be
+specified, by the Government of India, under the Act and the Rules, made
+thereunder.
+(h) I/We shall allow the Licensing Authority or any person authorised by him
+in that behalf to take samples of the cosmetics for testing if considered
+necessary by the Licensing Authority.
+(i) I/We undertake that in case State Licensing Authority or any officer
+appointed by the authority found any deficiency during an inspection the State
+Licensing Authority have a full right to cancel or give any direction for
+improvement for Good Manufacturing Practice in the said premises in respect
+of the above said cosmetics. Further I will not claim any damages, etc. for any
+action of the State Licensing Authority in this regard.
+The information submitted above is true to the best of my or our knowledge
+and belief.
+Place: ....................
+Date: ....................
+Signature of the manufacturer/
+applicant Name and Designation:
+Seal/ Stamp
+<<page 45>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 45 of 112
+THIRD SCHEDULE
+[See rules 12(5), 12(9), 13(5), 23(2), 23(10), 28, 30(1), 32(1),
+55(3), 55(4), 59, 60(1) and 60(2)]
+Fee payable for licence, permission and registration certificate
+
+Serial
+•
+Number
+Subject
+In
+rupees(INR)
+except
+where
+specified
+in
+dollars($)
+1.
+Registration Certificate
+
+(a) Fee for the grant or retention of
+registration
+certificate
+for
+each
+category of cosmetic
+$1000
+Serial
+Number
+Subject
+In rupees(INR)
+except where
+specified in
+dollars($)
+
+(b) Fee for the grant or retention of registration
+certificate for additional category of cosmetic
+$1000
+
+(c) Fee for each variant of cosmetic for the
+grant or retention of registration certificate
+$50
+
+(d) Fee for each manufacturing site for the
+grant or retention of registration certificate
+$500
+
+(e) Fee for grant of permission for new
+cosmetics
+$500
+
+(f) Fee for issue of duplicate copy of the
+registration certificate, if the original is
+defaced, damaged or lost
+$200
+
+(g) Fee for inspection of each overseas
+manufacturing site of cosmetics
+$5000
+2.
+Manufacturing Licence
+
+(a) Fee for grant of licence in Form COS- 8 for
+manufacture of cosmetics for sale or for
+distribution up to ten items of each category of
+cosmetics
+10000
+<<page 46>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 46 of 112
+
+(b) Fee for grant of licence in Form COS- 8 for
+manufacture of cosmetics for sale or for
+distribution of each additional items of the
+category of cosmetic.
+500
+
+(c) Fee for grant of licence in Form COS- 8 for
+manufacture of cosmetics for sale or for
+distribution of ten items of each additional
+category of cosmetic.
+10000
+
+(d) Fee for grant of loan licence in Form COS-
+9 for manufacture of cosmetics for sale or for
+distribution up to ten items of each category of
+cosmetics
+10000
+
+(e) Fee for grant of loan licence in Form COS-
+9 for manufacture of cosmetics for sale or for
+distribution of each additional items of the
+category of cosmetic.
+500
+
+(f) Fee for grant of loan licence in Form COS-
+9 for manufacture of cosmetics for sale or for
+distribution up to ten items of each category of
+cosmetics
+10000
+
+(g) Fee for issue of duplicate copy of the
+licence in Form COS- 8 or loan licence in
+Form COS- 9, if the original is defaced,
+damaged or lost
+500
+(h) Fee for further application after rejection
+1000
+Serial
+Number
+Subject
+In rupees(INR)
+except where
+specified in dollars($)
+
+(i) Retention fee for licence in Form COS- 8
+for manufacture of cosmetics for sale or for
+distribution up to ten items of each category of
+cosmetics
+10000
+
+(j) Retention fee for licence in Form COS- 8
+for manufacture of cosmetics for sale or for
+distribution of each additional items of the
+500
+<<page 47>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 47 of 112
+category of cosmetic.
+
+(k) Retention fee for licence in Form COS- 8
+for manufacture of cosmetics for sale or for
+distribution of ten items of each additional
+category of cosmetic.
+10000
+
+(1) Retention fee for loan licence in Form
+COS- 9 for manufacture of cosmetics for sale
+or for distribution up to ten items of each
+category of cosmetics
+10000
+
+(m) Retention fee for loan licence in Form
+COS- 9 for manufacture of cosmetics for sale
+or for distribution of each additional items of
+the category of cosmetic.
+500
+
+(n) Retention fee for loan licence in Form
+COS- 9 for manufacture of cosmetics for sale
+or for distribution up to ten items of each
+category of cosmetics
+10000
+3.
+Fee for approval of laboratory carrying out test
+on cosmetics and their raw materials
+
+(a) Fee for approval of laboratory in Form
+COS-23 for test and analysis of cosmetics
+1000
+
+(b) Fee for issue of duplicate copy of the
+approval, if the original is defaced, damaged
+or lost
+100
+
+(c) Fee for inspection of laboratory for further
+inspection after rejection of the application
+500
+
+(d) Fee for retention of approval granted in
+Form COS- 23 for laboratory carrying out test
+and analysis of cosmetics
+1000
+<<page 48>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 48 of 112
+FOURTH SCHEDULE
+[See rule 12 (6)]
+List of categories of cosmetics for import
+Serial
+number
+Category
+1.
+Face care products other than face mask
+2.
+Face mask
+3.
+Eye contour products
+Serial
+number
+Category
+4.
+Lip care products
+5.
+Hand care products
+6.
+Foot care products
+7.
+Body care products
+8.
+External intimate care products
+9.
+Chemical exfoliation products
+10.
+Mechanical exfoliation products
+11.
+Skin lightening products
+12.
+Other skin care products
+13.
+Soap products
+14.
+Bath / shower products
+15.
+Make-up remover products
+16.
+External Intimate hygiene products
+17.
+Other skin cleansing products
+18.
+Chemical depilatories
+19.
+Physical epilation products
+20.
+Other body hair removal products
+21.
+Bleach for body hair
+22.
+Products with antiperspirant activity
+<<page 49>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 49 of 112
+23.
+Products without antiperspirant activity
+24.
+Shaving products
+25.
+Pre- / after-shaving products
+26.
+Other shaving and pre- / after- shaving products
+27.
+Foundation
+28.
+Concealer
+2C
+Other face make-up products
+3f.
+Mascara
+31.
+Eye shadow
+32.
+Eye pencil
+33.
+Eye liner
+34.
+Other eye make-up products
+35.
+Lip stick
+Serial
+number
+Category
+36.
+Lipstick sealer
+37.
+Other lip make-up products
+38.
+Body or face paint , including "carneval make-up"
+39.
+Other make-up products
+40.
+Hydro alcoholic perfumes
+41.
+Non hydro alcoholic perfumes
+42.
+Before and after sun products Sun protection products
+43.
+Self-tanning products
+44.
+Other sun and self-tanning products
+45.
+Other skin products
+46.
+Hair conditioner
+47.
+Scalp and hair roots care products
+48.
+Anti hair loss products
+49.
+Other hair and scalp care and cleansing products
+<<page 50>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 50 of 112
+50.
+Antidandruff products
+51.
+Oxidative hair colour products
+52.
+Non-oxidative hair colour products
+53.
+Hair bleaching and dye remover products
+54.
+Other hair colouring pducts
+55.
+Products for temporary hair
+56.
+Styling Permanent wave products
+57.
+Hair relaxer / straightener products
+58.
+Other hair styling products
+59.
+Hair sun protection products
+60.
+Other hair and scalp products
+61.
+Nail varnish / Nail make-up
+62.
+Nail varnish remover
+63.
+Nail varnish thinner
+64.
+Nail bleach
+65.
+Other nail varnish and remover products
+66.
+Nail care products
+67.
+Nail hardener
+Serial
+number
+Category
+68.
+Other nail care / nail hardener products
+69.
+Nail glue remover
+70.
+Cuticle remover / softener
+71.
+Nail sculpting products
+72.
+Other nail and cuticle products
+73.
+Toothpaste
+74.
+Tooth cleansing powder / salt
+75.
+Other tooth care products
+76.
+Mouth wash
+<<page 51>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 51 of 112
+77.
+Breath spray
+78.
+Other mouth wash / breath spray products
+79.
+Tooth whiteners
+80.
+Other oral hygiene products
+
+FIFTH SCHEDULE
+[See rule 12(8), 66(1) and 66(2)]
+
+Fee for test or analysis by the Central cosmetics laboratories
+or by the state laboratories.
+
+1.
+Fees for Physical tests
+Rupees
+(i)
+Adhesion Strength
+150
+(ii)
+Ash Content
+100
+(iii) Bleed Number
+150
+(iv) Blush Time
+150
+(v)
+Cleaning Efficiency
+100
+(vi) Cloud Point
+100
+(vii) Colour in a Cell on the Lovibond Scale
+100
+(viii) Diameter of Slip
+150
+(ix) Drying Time
+150
+(x)
+Fineness
+100
+(xi) Flash Point
+100
+(xii) Foam Height
+100
+(xiii) Foaming Power
+100
+(xiv) Freedom from Cracking
+100
+(XV)
+Freedom From Grittiness
+100
+(xvi)
+Lather Test
+100
+(xvii)
+Loss on Drying
+100
+(xviii)
+Matter Insoluble in Boiling Water
+100
+(xix)
+Melting Point
+150
+(XX)
+Moisture & Volatile Matter
+100
+<<page 52>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 52 of 112
+(xxi)
+Mush
+100
+(xxii)
+Non-Volatile Matter
+100
+(xxiii)
+Odour
+100
+(xxiv)
+Particle Size of Undispersed Pigments Microns
+100
+(xxv)
+PH
+100
+(xxvi)
+Polenske Value
+100
+(xxvii)
+Refractive Index at 40°C
+100
+(xxviii) Relative Density at 25°C
+100
+(xxix)
+Relative Density at 30°/30°C
+100
+(xxx)
+Saponification Value
+100
+(xxxi)
+Softening Point
+100
+(xxxii)
+Solid Content
+200
+(xxxiii) Stability Test
+100
+(xxxiv) Sulphated Ash
+100
+(xxxv)
+Suspended Solids
+100
+(xxxvi) Thermal Stability
+150
+(xxxvii) Total Active Matter
+100
+(xxxviii) Total Solid
+100
+(xxxix) Total Volatile Matter
+100
+(xl)
+Transparency
+100
+(xli)
+Viscosity
+100
+
+2.
+Fees for Chemical tests
+Rupees
+(i) Acid Insoluble Ash
+200
+(ii) Acid Value
+200
+(iii) Arsenic
+200
+(iv) Assay (as Ammonium Bicarbonate)
+200
+(v) Assay (as Oxygen Content)
+200
+(vi) Assay (As Hydrogen Peroxide)
+200
+(vii)
+Carbonization Substance
+200
+<<page 53>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 53 of 112
+(viii)
+Chlorides
+200
+(ix)
+Cold Water Extract
+200
+(x)
+Crude Fibre
+200
+(xi)
+Extraneous Sand
+200
+(xii)
+Free Acid & Alkali
+200
+(xiii)
+Free Carbonated Alkali
+200
+(xiv)
+Free Caustic Alkali
+200
+(xv)
+Glycerol
+200
+(xvi)
+Heavy Metals
+200
+(xvii)
+Iodine Value
+200
+(xviii) Lawsone Pigment
+200
+(xix)
+Matter Insoluble in Alcohol
+200
+(xx)
+Mineral Matter
+200
+(xxi)
+Non Volatile Alcohol Matter
+200
+(xxii)
+Peroxide Value
+200
+(xxiii) PPD Content (By Gravimetry)
+200
+(xxiv) Presence of Extraneous Dyes
+200
+(xxv)
+Rosin Test
+200
+(xxvi) Sulphur & Sulphide
+200
+(xxvii) Synthetic Detergent
+200
+(xxviii) Synthetic Surface Active Agent
+200
+(xxix) Test For Rancidity
+200
+(xxx)
+Titre of Total Fatty Acids
+200
+(xxxi) Total Fatty Matter
+200
+(xxxii) Unsaponifiable Matter
+200
+3.
+Fees for tests involving instruments
+Rupees
+(i)
+Arsenic
+300
+(ii)
+Breaking Load Value
+150
+(iii)
+Consistency
+300
+(iv)
+Fluoride Ion
+300
+<<page 54>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 54 of 112
+(v)
+Heavy Metal
+300
+(vi)
+Mercury
+300
+(vii)
+Pay Off Test
+150
+(viii) PPD Content (by HPLC)
+1000
+(ix) Ultraviolet Absorption
+300
+(x)
+Water Content
+300
+
+4. Fees for microbiological tests
+Rupees
+(i) Microbiological Limit Test
+500
+(a) Gram Negative Pathogens
+(b) Total Yeast and Molds Count
+(c) Total Viable Count
+Note.—For tests not listed in the Schedule, charges will be determined by
+the Director or the Government Analyst of the laboratory or institute as the case
+may be.
+SIXTH SCHEDULE
+(See rule 17(1))
+Undertaking for the import of cosmetics to be submitted by the importer
+with application form for Import Registration Number
+
+1/We..................................S/o
+or
+D/o..........................................having
+premises
+in
+the
+name
+of
+M/s.........................................at
+(address).........................................................................aged
+about..........
+do
+hereby undertake that,—
+1. I am the importer of........................ (Name of the Cosmetics)
+from...................... (Name and address and country of a company from whom
+the cosmetics are imported)...............................................................which are
+manufactured by the manufacturer whose name and address is written on the
+label as per the Cosmetics Rules, 2020 (Name and full address of the
+Manufacturer) and are complying with the provisions of the Cosmetics Rules,
+2020.
+<<page 55>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 55 of 112
+2. I shall bear the fees for testing if samples are required to be tested by the
+port officer or by any officer of CDSCO.
+3. In case of any quality failures of the imported cosmetics product or if so
+directed by the Licensing Authority due to non-compliance of the Cosmetics
+Rules, 2020, I will withhold the further distribution of the product or recall the
+cosmetics from the market and follow the directions of the Licensing or
+registration authority as the case may be.
+4.1 shall maintain books and records of distribution of above said imported
+cosmetics.
+5. I shall allow the Inspector appointed under the Drugs and Cosmetics Act,
+194C by the Government to inspect the books and records when so required.
+Place: ......................
+Date: ......................
+(Signature)
+Name:
+Address:
+IEC code:
+Seal:
+
+SEVENTH SCHEDULE
+[See rules 23(4), 26(b)]
+Good manufacturing practices and requirements of premises, plants and
+equipment for manufacture of cosmetics
+
+I. General requirements
+(A) Location and surroundings.—The factory shall be located in a sanitary
+place any hygienic conditions shall be maintained in the premises. Premises
+shall not be used for residence or be interconnected with residential areas. It
+shall be well ventilated and clean.
+In the manufacture of cosmetic products overall control and monitoring is
+essential to ensure that the consumer receives products of specified quality.
+<<page 56>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 56 of 112
+(B) Buildings.—The buildings used for the factory shall be constructed so
+as to permit production under hygienic conditions and not to permit entry of
+insects, rodents, flies, etc.
+Effective measures should be taken to avoid any contamination from the
+surrounding environment.
+The walls and floors of the room in which manufacturing operations are
+carried out, be free from cracks and open joints to avoid accumulation of dust.
+These shall be smooth, washable, coved and shall permit easy and effective
+cleaning and disinfection.
+Buildings should be adequately lit and properly ventilated appropriate to the
+operations.
+Testing laboratories should preferably be physically separated from the
+production areas.
+Storage areas should be of adequate space provided with suitable lighting,
+arranged and equipped to allow dry, clean and orderly placement of stored
+materials and products.
+The walls of the room in which manufacturing operations are carried out,
+shall be up to a height of above six feet from the floor.
+(C) Personnel.—There should be an adequate number of personnel having,
+experience and capabilities relevant to their assigned function.
+(D) Water supply.—The water used in manufacture shall be of potable
+quality.
+(E) Disposal of waste.—The disposal of sewage and effluents (solid, liquid
+and gas) from the manufacturing premises shall be in conformity with the
+requirements of Environment Pollution Control Board.
+(F) Health, clothing and sanitary requirements of the staff.—All workers
+shall be free from contagious or infectious diseases. They shall be provided with
+clean uniforms, masks, headgears and gloves wherever required. Washing
+facilities shall also be provided.
+<<page 57>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 57 of 112
+(G) Medical services.—Adequate facilities for first-aid shall be provided.
+(H) Maintenance. —All equipment should be serviced and calibrated
+regularly, wherever required records should be maintained.
+(I) Testing and release of raw materials &and finished cosmetic products.-
+Quality control of raw materials & finished cosmetic products is an essential
+part of Good Manufacturing Practices. It provides assurance that cosmetic
+products will be of consistent quality appropriate to their intended use.
+A quality control system should be established to ensure that products
+contain the correct materials of specified quality and quantity and are
+manufactured under proper conditions according to standard operating
+procedures.
+Quality control involves sampling, inspecting and testing of raw or
+packaging materials, in process, intermediate, bulk, and finished products.
+Parametric release of raw material can be adopted provided vendors of raw
+materials are approved and such procedures are robust, validated, based on the
+trend of earlier testing experience for such purposes.
+Parametric release for finished product can also be adopted, provided such
+procedures are robust, validated, based on the trend of earlier testing experience
+for such purposes, except for the cosmetics in the category of eye products,
+lipstick, and dental products.
+Note: Each batch of raw material, finished product or in-process parameters
+need not required to be tested however it needs to be approved and released by
+quality control on the basis of standard operating procedure for parametric
+release.
+J) Working benches shall be provided for carrying out operations such as
+filling, labelling, packing, etc. Such benches shall be fitted with smooth,
+impervious tops capable of being washed.
+(K) Adequate facilities shall be provided for washing and drying of glass
+containers if the same are to be used for packing the product.
+<<page 58>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 58 of 112
+II. Requirements of plant and equipment
+List of categories of cosmetics for the purpose of grant of licence to
+manufacture for sale of cosmetic in the country
+Category
+(A) Powders
+(B) Skin Powder for Infants
+(C) Creams, lotions, emulsions, pastes, cleansing milks, shampoos, pomade,
+brilliantine,
+shaving-creams and hair-oils, etc.
+(D) Nail Polishes and Nail Lacquers.
+(E) Lipsticks and Lipgloss.
+(F) Depilatories
+(G) Preparations used for Eyes
+1. Eyebrows, Eyelashes, Eyeliners.
+2. Kajal and surma.
+(H) Aerosol
+(I) Alcoholic Fragrance solutions
+J) Hair Dyes
+(K) Tooth-powders and toothpastes, etc.
+1. Tooth-powder in General.
+2. Tooth pastes.
+3. Tooth — Powder (Black).
+(L) Toilet Soaps
+The following equipment, area and other requirements are recommended for
+the manufacture of.—
+(A) Powders.—Face-powder, cake make-up, compacts, face-packs, masks
+ard rouges etc.
+Equipments:
+(a) Powder mixer of suitable type provided with a dust collector.
+(b) Perfume and colour blender.
+(c) Sifter with sieves of suitable mesh size.
+(d) Ball mill of suitable grinder.
+<<page 59>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 59 of 112
+(e) Trays and scoops (stainless steel).
+(f) Filling and sealing equipment provided with dust extractor.
+(g) For compacts:—
+(i) a separate mixer
+(ii) Compact pressing machine.
+(h) Weighing and measuring devices.
+(i) Storage tanks.
+
+An area of 15 square metres is recommended. The section is to be provided with
+adequate exhaust fans.
+
+(B) Skin Powder for Infants.—
+Equipments:
+(a) Powder mixer of suitable type provided with a dust collector.
+(b) Perfume and colour blender.
+(c) Sifter with sieves of suitable mesh size.
+(d) Ball mill of suitable grinder.
+(e) Trays and scoops (stainless steel).Filling and sealing equipment provided
+with dust extractor.
+(f) Weighing and measuring devices.
+
+An area of 15 square metres is recommended. The section is to be provided
+with adequate exhaust fans.
+(C) Creams, lotions, emulsions, pastes, cleansing milks, shampoos,
+pomade, brilliantine, shaving-creams and hair-oils, etc.-
+Equipments:
+(a) Mixing and storage tanks of suitable materials.
+(b) Heating kettle — steam, gas or electrically heated.
+(c) Suitable agitator.
+(d) Colloidal mill or homogeniser (wherever necessary).
+(e) Triple roller mill (wherever necessary).
+(f) Filling and sealing equipment.
+(g) Weighing and measuring devices.
+
+An area of 25 square metres is recommended.
+<<page 60>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 60 of 112
+(D) Nail Polishes and Nail Lacquers.-
+1. Equipments:
+(a) A suitable mixer.
+(b) Storage tanks.
+(c) Filling machine - hand operated or power driven.
+(d) Weighing and measuring devices.
+An area of 15 square metres is recommended. The section shall be provided
+with flame proof exhaust system.
+2. Premises.—The following are the special requirements related to Nail
+Polishes and Nail Lacquers :
+(a) It shall be situated in an industrial area.
+(b) It shall be separate from other cosmetic-manufacturing area by metal/brick
+partition up to ceiling.
+(c) Floors, walls, ceilings and doors shall be fireproof.
+(d) Smoking, cooking and dwelling shall not be permitted and no naked flame
+shall be brought in the premises.
+(e) All electrical wiring and connections shall be concealed and main electric
+switch shall be outside the manufacturing area.
+(f) All equipment, furniture and light fittings in the section shall be
+flameproof.
+(g) Fire extinguisher like foam and dry powder and sufficient number of
+buckets containing sand shall be provided.
+(h) All doors of the section shall open outwards.
+
+3. Storage.—All explosive solvents and ingredients shall be stored in metal
+cupboards or in a separate enclosed area.
+4. Manufacture.—
+(a) Manufacture of lacquer shall not be undertaken unless the above
+conditions are complied with.
+(b) Workers shall be asked to wear shoes with rubber soles in the section.
+<<page 61>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 61 of 112
+5. Other requirements.—No objection certificate from local Fire Brigade
+Authorities shall be furnished.
+(E) Lipsticks and Lipgloss.—
+Equipments:
+(a) Vertical mixer.
+(b) Jacketted kettle — steam, gas or electrically heated.
+(c) Mixing vessels (stainless steel).
+(d) Triple roller mill/Ball mill.
+(e) Moulds with refrigeration facility.
+(f) Weighing and measuring devices.
+An area of 15 square meters is recommended
+(F) Depilatories.—
+Equipments:
+(a) Mixing tanks.
+(b) Mixer.
+(c) Triple roller mill or homogeniser (where necessary).
+(d) Filling and sealing equipment.
+(e) Weighing and measuring devices.
+(f) Moulds (where necessary).
+An area of 10 square meters is recommended.
+(G)
+Preparations
+used
+for
+Eyes.—Such preparations shall be
+manufactured under strict hygienic conditions to ensure that these are safe for
+use.
+1. Eyebrows, Eyelashes, Eyeliners.—
+Equipments:
+(a) Mixing tanks.
+(b) A suitable mixer.
+(c) Homogeniser (where necessary).
+<<page 62>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 62 of 112
+(d) Filling and sealing equipment.
+(e) Weighing and measuring devices.
+An area of 10 square metres is recommended.
+2. Kajal and surma.—
+Equipments:
+(a) Base steriliser.
+(b) Powder steriliser (dry heat oven).
+(c) Stainless steel tanks.
+(d) A suitable Mixer.
+(e) Stainless steel sieves.
+(f) Filling and sealing arrangements.
+(g) Weighing and measuring devices.
+(h) Homogeniser (where necessary).
+(i) Pestle and Mortar (for Surma).
+An area of 10 square metres with a separate area of 5 square metres for
+base sterilization is recommended. Other requirements for 1 and 2:
+(a) False ceiling shall be provided wherever required.
+(b) Manufacturing area shall be made fly proof. An airlock or an air curtain
+shall be provided.
+(c) Base used for Kajal shall be sterilised by heating the base at 150° C for
+required time in a separate enclosed area.
+(d) The vegetable carbon black powder shall be sterilised in a drying oven at
+120° C for required time.
+(e) All utensils used for manufacture shall be of stainless steel and shall be
+washed with detergent water, antiseptic liquid and again with distilled water.
+(f) Containers employed for ‘Kajal' shall be cleaned properly with bactericidal
+solution and dried.
+(g) Workers shall put on clean overalls and use hand gloves wherever
+necessary.
+<<page 63>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 63 of 112
+(H) Aerosol:
+Equipments:
+(a) Air-compressor (wherever necessary).
+(b) Mixing tanks.
+(c) Suitable propellant filling and crimping equipments.
+(d) Liquid filling unit.
+(e) Leak testing equipment.
+(f) Fire extinguisher (wherever necessary).
+(g) Suitable filtration equipment.
+(h) Weighing and measuring devices.
+An area of 15 square meters is recommended.
+Other requirements.—No objection certificate from the Local Fire Brigade
+Authorities shall be furnished.
+(I) Alcoholic Fragrance solutions.—
+Equipments:
+(a) Mixing tanks with stirrer.
+(b) Filtering equipment.
+(c) Filling and sealing equipment.
+(d) Weighing and measuring devices.
+An area of 15 square meters is recommended.
+J) Hair Dyes.—
+Equipments:
+(a) Stainless steel tanks.
+(b) Mixer.
+(c) Filling unit
+(d) Weighing and measuring devices.
+(e) Masks, gloves and goggles.
+An area of 15 square meters with proper exhaust is recommended.
+<<page 64>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 64 of 112
+(K) Tooth-powders and toothpastes, etc.-
+1. Tooth-powder in General.
+Equipments:
+(a) Weighing and measuring devices.
+(b) Dry mixer (powder blender).
+(c) Stainless steel sieves.
+(d) Powder filling and sealing equipments.
+An area of 15 square meters with proper exhaust is recommended.
+2. Tooth pastes.
+Equipments:
+(a) Weighing and measuring devices.
+(b) Kettle—steam, gas or electrically heated (where necessary).
+(c) Planetary mixer with de-aerator system.
+(d) Stainless steel tanks.
+(e) Tube filling equipment.
+(f) Crimping machine.
+An additional area of 15 square meters with proper exhaust is recommended.
+3. Tooth — Powder (Black).
+Equipments:
+(a) Weighing and measuring devices.
+(b) Dry mixer powder blender.
+(c) Stainless steel sieves.
+(d) Powder filling arrangements.
+An area of 15 square meters with proper exhaust is recommended. Areas for
+manufacturing "Black" and "White" tooth-powders should be separate.
+(L) Toilet Soaps.—
+Equipments:
+<<page 65>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 65 of 112
+(a) Kettles or pans for saponification.
+(b) Boiler or any other suitable heating arrangement.
+(c) Suitable stirring arrangement.
+(d) Storage tanks or trays.
+(e) Driers.
+(f) Amalgamator or chipping machine.
+(g) Mixer.
+(h) Triple roller mill.
+(i) Granulator.
+(j) Plodder.
+(k) Cutter.
+(1) Pressing stamping and embossing machine.
+(m) Weighing and measuring devices.
+A minimum area of 100 square meters is recommended for the small-scale
+manufacture of toilet soaps.
+The areas recommended above are for basic manufacturing of different
+categories of cosmetics. In addition to that separate adequate space for storage
+of raw materials, finished products, packing materials shall be provided in
+factory premises.
+Note I: The above requirements of the Schedule are made subject to the
+modification at the discretion of the Licensing Authority, if he is of the opinion
+that having regard to the nature and extent of the manufacturing operations it is
+necessary to relax or alter them in the circumstances of a particular case.
+Note II : The above requirements do not include requirements of
+machinery, equipment and premises required for preparation of containers and
+closers of different categories of cosmetics. The Licensing Authority shall have
+the discretion to examine the suitability and adequacy of the machinery,
+equipment and premises for the purpose taking into consideration the
+requirements of the licensee.
+Note III: This schedule specifies equipment and space required for certain
+categories of cosmetics only. There are other cosmetics items, viz. Attars,
+perfumes, etc., which are not covered in the above categories. The Licensing
+Authority shall, in respect of such items or categories of cosmetics, have the
+discretion to examine the adequacy of factory premises, space, plant and
+<<page 66>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 66 of 112
+machinery and other requisites having regard to the nature and extent of the
+manufacturing operations involved and direct the licensee to carry on necessary
+modification in them.
+EIGHTH SCHEDULE
+[See rules 26(f)]
+I. Particulars to be shown in the manufacturing records:
+(1) Serial number.
+(2) Name of the product.
+(3)' Lot or Batch size.
+(4) Lot or Batch number.
+(5) Date of commencement of manufacture and date when manufacture was
+completed.
+(6) Names of all ingredients, quantities required for the lot/batch size,
+quantities actually used.
+(7) Control reference numbers in respect of raw materials used in
+formulation.
+(8) Reference to analytical report numbers or unique code.
+(9) Actual production and packing particulars indicating the size and quantity
+of finished packings.
+(10) Date of release of finished packing for distribution or sale.
+(11) Signature of the expert staff responsible for the manufacture.
+II. Records of raw materials: Records in respect of each raw material shall
+be maintained indicating the quantity received, control reference number, the
+quantity issued from time to time, the names and batch numbers of the products
+for the manufacture of which the said quantity of raw material has been issued
+and the particulars relating to the proper disposal of the stocks.
+<<page 67>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 67 of 112
+Notes: (1) The Licensing Authority may permit the licensee to maintain
+records in such manner as is considered satisfactory, provided the basic
+requirements laid down above are complied with.
+(2) The Licensing Authority may direct the licensee to maintain records for
+such additional particulars, as it may consider necessary in the circumstances of
+a particular case.
+NINTH SCHEDULE
+(See rules 34(7), 39(1), 48)
+Standards for cosmetics
+
+Standards for cosmetics in finished form.—The following cosmetics in
+finished form shall conform to the Indian Standards specifications laid down
+from time to time by the Bureau of Indian Standards (BIS).
+
+1. Skin Powders IS :3959
+2. Skin Powder for infants IS :5339
+3. Tooth Powder IS :5383
+4. Toothpaste IS :6356
+5. Skin Creams IS :6608
+6. Hair Oils IS :7123
+7. Shampoo, Soap - based IS :7669
+8. Shampoo Specification IS : 7884
+9. Hair Creams IS :7679
+10. Oxidation hair dyes, Liquid IS :8481
+11. Cologne IS :8482
+12. Nail Polish (Nail Enamel) IS :9245
+13. Aftershave Lotion IS :9255
+14. Pomades and Brilliantines IS :9339
+15. Depilatories Chemicals IS :9636
+16. Shaving Creams IS :9740
+17. Cosmetic Pencils IS :9832
+18. Lipstick IS :9875
+19. Toilet Soap IS :2888
+20. Liquid Toilet Soap IS : 4199
+21. Baby Toilet Soap IS : 10523
+22. Shaving Soap IS :5784
+<<page 68>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 68 of 112
+23. Transparent Toilet Soap IS :11303
+24. Lipsalve IS: 10284
+25. Powder Hair Dye IS: 10350
+26. Bindi (Liquid) IS : 10998
+27. KumKum Powder IS: 10999
+28. Henna Powder IS : 11142
+29. Bathing Bars IS:13498
+30. Sindoor IS: 14649
+31. Liquid foundation make-up IS 14318
+32. Coldwax-Hair remover IS : 15152
+33. Face pack IS: 15153
+34. Kajal IS : 15154
+35. Oxidation Hair Dyes (Emulsion type) IS: 15205
+36. Cream Bleach IS:15608
+37. Hair Shampoo for Babies- Specification IS:17117
+Note.—In case of any new or amended standards published by the Bureau
+of Indian Standards, the new or amended standards shall be mandatory to the
+cosmetics after six months from the date of publication.
+
+TENTH SCHEDULE
+[See rules 39(1), 39(3)]
+Part I
+List of colourants allowed for use in cosmetic products as given under IS: 4707
+(Part 1) as amended by the Bureau of Indian Standards from time to time.
+
+Part II
+List of colours permitted to be used in soaps.
+
+Common Name of
+the colour
+Colour Index
+Number
+Chemical Names of the colour
+(1)
+(2)
+(3)
+Phthalocyanine Blue 74160
+(phthalocyninate (2-) copper.
+Citrus Red No.2
+12156
+1 -2(2,5-d imethoxy phenylazo) 2naphthol.
+<<page 69>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 69 of 112
+Aqueous Green Paste 74260
+Polychloro copper Phthalocyanine.
+Pigment Yellow 3
+11710
+2-(4-Chloro-2-nitrophenyl)-azo-N-(-2Chlorophenyl)-3- Oxobutamide.
+Common Name of
+the colour
+Colour
+Index
+Number
+Chemical Names of the colour
+(1)
+(2)
+(3)
+Irgalite Carmine FP
+Powder
+or
+Pigments Red 5
+12490
+N-(5-Chloro-2, 4-Dimethoxy-phenyl)- 4-(CSdiathylamine)
+Sulfonyl-2-methoxyphenyl)-
+azo-3-hydroxy-2-naphthalene carboxamide.
+Monolite Red 4R
+HV
+Paste
+or
+Pigment Red 7
+12420
+N-(4-CWoro-2-methylphenyl-4-(4-Chloro-2methylphenyl) azo 3-hydroxy-2-naphthalenol
+Carboxamide.
+Note.—(1) In case of any new or amended standards published by the
+Bureau of Indian Standards, the new or amended standards shall be mandatory
+to the cosmetics after six months from the date of publication.
+(2) This list of colour for use in soaps is in addition to those colours already
+given in Part I of the Tenth Schedule and are used for soaps.
+
+ELEVENTH SCHEDULE
+[See rule 62(a)]
+Good laboratory practices and requirements of premises and equipment
+
+1. General Requirements:
+(a) The laboratory or the organisation of which it is a part must be an entity
+that is legally authorised to function and can be held legally responsible.
+(b) It is the responsibility of the management to ensure that the laboratory
+carry out its testing, calibration, validation, and all other technical activities in
+such a way as to meet Good Laboratory Practices (GLP) requirements.
+(c) Laboratory management shall have a qualified individual to be known as
+quality manager or technical manager for carrying out all technical activities
+<<page 70>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 70 of 112
+and for the implementation of documented quality system and shall report to the
+top management directly.
+(d) The quality manager shall prepare a schedule for technical audit of the
+laboratory for GLP compliance by an expert or experts appointed by the topmanagement other than the in-charge of the laboratory and shall ensure the
+maintenance of documented quality system as per quality manual.
+2. Premises:
+(a) (i) the laboratories shall be designed, constructed and maintained so as to
+prevent entry of insects and rodents besides cross contamination;
+(ii) interior surface (walls, floor, and ceilings) shall be smooth and free from
+cracks, and permit easy cleaning and disinfection;
+(iii) adequate provision is made not only for space and equipment for carrying
+out necessary test but also for utilities like water, power and gas;
+(iv) air ventilation system shall ensure dust free environment.
+(b) The laboratories shall be provided with adequate lighting and ventilation
+and if necessary, air-conditioning to maintain satisfactory temperature and
+relative humidity that will not adversely affect the testing and storage of
+cosmetics or the accuracy of the functioning of the laboratory equipments or
+instruments.
+(c) The drainage system facilities shall be such as to facilitate proper
+maintenance and prevent water logging in the laboratory.
+(d) Tabletops shall be constructed with acid, alkali and solvent resistant
+material and shall be smooth and free from crevices as far as possible.
+(e) All bio-medical laboratory waste shall be destroyed as per the provisions
+of the Biomedical Waste Management Rules, 2016 as amended from time to
+time.
+(f) Bio-burden shall be routinely maintained in the controlled and
+uncontrolled area, (e.g. air locks)
+<<page 71>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 71 of 112
+3. Personnel:
+(a) Staff in the laboratory shall possess necessary qualification, proper training
+and shall have adequate, experience for the assigned duties.
+(b) A training record of all the personnel shall be maintained.
+(c) Head of the laboratory must be of high professional standing with
+experience in cosmetics or drugs analysis and laboratory management who is
+responsible for.
+(i) ensuring the control and maintenance of documents including the quality
+system as per the requirements of regulatory authorities which involves all raw
+data, SOPs, documentation exhibits, protocols, training charts, etc;
+(ii) planning and organising the audit of the quality system and initiation as
+well as follow up action of the corrective actions, if any;
+(iii) investigation of technical complaints;
+(iv) taking final responsibilities for recommending any regulatory action in
+the event of noncompliance of tested samples.
+4. Equipment:
+(a) The laboratory shall be furnished with all types of equipment as may be
+necessary for carrying out the different activities within the laboratory.
+(b) The analytical instruments shall be housed in dust-free environment and
+whenever required, conditions of temperature and humidity shall be maintained
+and periodic checks on temperature and humidity be made and recorded.
+(c) The instruments, instrument bench and surrounding areas shall be kept
+clean and tidy at all times.
+(d) Instruments requiring calibration shall be calibrated at regular intervals
+and records of such calibration or maintenance be maintained and there shall be
+written instructions in the form of Standard Operating Procedures for the
+operation, maintenance and calibration of instruments.
+<<page 72>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 72 of 112
+(e) Equipment records shall be maintained and such records shall contain the
+following:—
+(i) name of equipment or machine or apparatus;
+(ii) manufacturer's name, model number and type of identification;
+(iii) serial number;
+(iv) date on which equipment was received in laboratory;
+(v) current location;
+(vi) condition when received (e.g. new, used, re-conditioned);
+(vii) copy of the manufacturer's operating instructions;
+(viii) frequency of calibration;
+(ix) frequency of maintenance;
+(x) log book (day to day entry including status of the equipment)
+(xi) staff responsible for monitoring the calibration and maintenance
+status of the equipment;
+(xii) calibrating records;
+(xiii) list of authorised users or operators, if any;
+(xiv) history of any damage, malfunction, modification or up gradation,
+repair and calibration;
+(xv) list of spares and accessories, if any.
+(f) A progress register for non-functional equipment and action for
+procurement of spares and accessories, monitoring thereof, shall be maintained.
+(g) A standard operating procedure for preventive maintenance of machine or
+equipment or apparatus shall be prepared by the laboratory.
+(h) Other equipment such as burettes, pipettes, volumetric flasks, weight
+boxes, thermometers, etc., shall be thoroughly checked for accuracy of
+calibration before acceptance for use.
+(i) Maintenance procedure in the form of standard operating procedures must
+be prepared and regular servicing must be performed by the maintenance
+engineer or specialist
+(j) Equipment, instruments giving anomalous results or defective must be
+labelled as ‘out-of-order' till they are repaired and after instrument is repaired it
+should be calibrated before use.
+<<page 73>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 73 of 112
+(k) The maintenance of equipment for services like electricity, gas, water,
+steam, and compressed gas shall be handled by competent person.
+(1) Autoclaves must meet the requirements described for operations, safety and
+validation procedures, and the validation carried out by the laboratory shall be
+recorded.
+(m) Fume Cupboards.
+Work involving the evolution of harmful and obnoxious vapours shall be
+carried out in a fume cupboard. The exhaust system of the fume cupboard shall
+be checked frequently to ensure that it is in order. Preferably, there should be a
+water drainage system inside the fume cupboard or near fume cupboard and
+shall be checked frequently to ensure that there is no water logging and it is in
+order.
+5. Chemicals and Reagents:
+(a) The storage and handling of chemicals and reagents shall be done in a
+manner considering the physicochemical properties of these substances and the
+hazards involved in their use.
+(b) All reagents and solutions in the laboratory shall be properly identified
+with a label.
+(c) A standardisation register shall be maintained by the laboratory along with
+its raw data and standard operating procedure for preparation and
+standardisation on stock solutions, standard solutions, volumetric solutions must
+be prepared for the guidance of staff.
+(d) Containers of stock solutions and of standard solutions shall bear the
+following details:—
+(i) name of analytical chemist who prepared the solution;
+(ii) date of preparation;
+(iii) Each volumetric solution shall have "use before date" depending upon the
+stability of the solution; and
+<<page 74>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 74 of 112
+(iv) standardisation records.
+(e) The transfer of hazardous chemicals and regents from one container to
+another container shall be carried out with suitable equipment by taking the care
+of safety and no make-shift or hazardous methods must be resorted to.
+6. Good house keeping and safety:
+(a) General and specific written down instructions for safety shall be
+circulated to each staff member and the instructions be revised periodically as
+appropriate (e.g., poster displays, audio-visual material and by seminars or
+conferences)
+(b) Standard operating procedure for safety, house-keeping and loss
+prevention shall be prepared in accordance with the various rules, and
+regulations of the Government of India and include the following requirements,
+namely:—
+(i) safety data sheets must be made available to staff before testing is carried
+out;
+(ii) drinking, eating and smoking shall not be permitted in the laboratories;
+food for human consumption shall not be kept in working or storage areas; food
+meant for test animals shall be handled by the workers under the guidance of a
+veterinary doctor or qualified person. In the animal house, the facilities for
+collection and disposal of animal waste or safe sanitary storage of waste before
+removal from testing be provided;
+(iii) staff must wear laboratory coats or other protective clothing including
+gloves and face masks and eye protection wherever required;
+(iv) the laboratories shall have adequate first aid kit and firefighting
+equipment located at the right places and the staff must be familiar and trained
+with the use of firefighting equipment including fire extinguishers, fire blankets
+and gas masks or any equivalent devices as approved under the Factory Act.
+(v) operators carrying out sterility tests shall wear sterilised garments
+including headgear, face masks and shoes;
+<<page 75>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 75 of 112
+(vi) the staff must be educated in the first aid techniques, emergency care and
+use of antidotes; and
+(vii) safety rules in handling cylinders of compressed gases must be observed
+and staff must be familiar with relevant colour identification codes;
+(c) Protective precautions to be taken in laboratories:
+(i) water showers shall be installed at appropriate places in the laboratory;
+(ii) rubber suction bulbs must be used on manual pipettes and siphons;
+(iii) warnings, precautions, and written instructions must be given for work
+with violent, uncontrollable or dangerous reactions (e.g. mixing water and acids,
+biological such as infectious agents, etc.);
+(iv) appropriate facilities for the collection, storage, and disposal of wastes
+shall be made available;
+(v) staff must be aware of methods for safe disposal of corrosive or dangerous
+products by neutralisation or deactivation and of the need for complete disposal
+of mercury and its salts;
+(vi) staff must also be aware about the safety precautions to be adopted while
+handling potassium cyanide and cyanogen bromide;
+(vii) a standard operating procedure for handling, collection, disposal of
+chemical and biological wastes be prepared.
+7. Maintenance, calibration, and validation of equipment:
+(a) All equipment, instruments and other devices used in the laboratory shall
+use appropriate methods and procedures for all tests or calibrations and they
+shall be regularly calibrated and validated. The frequency of calibration may
+differ from instrument to instrument.
+(b) The original equipment manufacturer's recommendations along with the
+experience of the laboratory staff and the use of equipment per day may also be
+considered while fixing the frequency of calibration.
+<<page 76>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 76 of 112
+(c) For most of the equipment and instruments, Standard Operating
+Procedures for calibration and calibration schedule be prepared by the
+laboratory and a logbook shall also be prepared by each laboratory for proper
+documentation of calibration results.
+8. Reference materials:
+(a) Reference materials, if any, are necessary for the testing and, or
+calibration, validation or verification of a equipment, instruments or other
+devices and all such materials shall be traceable to agency authorised by
+Government of India or any other International body.
+(b) Whenever, any new reference material is received by the laboratory, a
+code number shall be assigned and this code number shall be quoted on the
+laboratory note book and analytical work sheet. The working standard shall also
+be provided with identification code.
+(c) A register pertaining to reference and working materials must be
+maintained by the laboratory. The following details may be mentioned in the
+register:
+(i) source of supply;
+(ii) code number of the reference material;
+(iii) date of receipt;
+(iv) batch number or identification number of the supplying agency;
+(v) details like assay value, water content or any other information provided;
+(vi) storage condition of the material; and
+(vii) date of expiry, if any and date of manufacturing if possible
+(d) All working standards shall be checked at appropriate intervals or before
+use to ensure that it has not deteriorated or decomposed during storage. These
+observations be recorded in a register: All the reference and working standards
+shall be stored at appropriate storage condition; those requiring storage between
+2-8°C shall be stored in a refrigerator. Wherever recommended the material
+may not be allowed to be frozen.
+9. Microbiological Cultures:
+<<page 77>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 77 of 112
+(a) Standard Operating Procedure for maintenance of microbial culture and
+subculture must be prepared by the laboratories.
+(b) If the cultures have become non-viable or mutant, proper procedure shall
+be followed to destroy these cultures by autoclaving under an authorised
+personnel for biological testing. Preferably not more than five passages may be
+prepared.
+(c) All activities be carried out in a aseptic area by authorised person.
+(d) The laboratories shall perform standard biochemical tests on the subculture as given in literature to ensure their viability.
+10. Quality system:
+The quality system shall be designed to ensure the following objectives:—
+(a) The measurements and calibrations shall fully conform to the compendial
+requirements and the methods demonstrably based on validation protocols are
+followed.
+(b) It shall be effective in providing necessary assurance that the activities or
+processes or techniques or practices comply with planned arrangements.
+(c) It helps in early detection and correction of non conformities.
+(d) Remedial action on the observations by internal and external audits are
+taken appropriately and
+(e) It shall have a documented quality policy for the organisation.
+11. Internal quality system audits.—
+(a) Internal audits are done to assure the integrity of the analysis and such
+audits shall be conducted periodically with a predetermined schedule and
+procedure with appropriate checklist, to verify that the operations continue to
+comply with the requirements of quality system and requirements of regulatory
+authorities. Internal quality audits shall be carried out by trained and qualified
+personnel who are independent of the activity to be audited.
+<<page 78>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 78 of 112
+(b) The periodicity of quality audit shall be fixed by the head of the laboratory
+so that each activity is audited at least once in a year.
+(c) Head of the laboratory will be responsible for initiation of the corrective
+action arising from audits and verification of corrective action.
+(d) Whenever any non-compliance or any diversion is noticed by the team in
+implementing quality policy or quality system, protocols, the same will be
+attended by the quality manager. The problem will be analysed and necessary
+actions will be taken with proper documentation.
+(e) The quality manager shall maintain all the records of the analysis being
+conducted which includes test system, the type of analysis, date on which
+analysis is done, etc and quality manager shall also maintain copies of all
+protocols pertaining to different activities being checked by the audit team.
+12. Management review:
+Quality system reviews shall be conducted by the top management at least once
+in every twelve months and the agenda of review shall generally cover the
+following:—
+(i) report or input of internal audits;
+(ii) matter arising from previous reviews;
+(iii) report of external audits, if any;
+(iv) surveillance report, if any;
+(v) result of proficiency testing;
+(vi) complaints or feedback received from users of laboratory services;
+(vii) details of in-house quality control checks;
+(viii) need of amendment of the quality system and documentation;.
+(ix) induction training of new staff; and
+(x) any other requirements of the laboratory.
+13. Standard operating procedures:
+(a) Standard operating procedures are written procedures for different activities
+being conducted in a laboratory and shall include the following characteristics:
+(i) they shall be written in a chronological order listing different steps leading
+to an analysis of cosmetics or calibration of an instrument:
+<<page 79>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 79 of 112
+(ii) testing laboratories shall have standard operating procedure manuals and
+have its periodic review;
+(iii) it shall be user friendly documents and shall include designation of the
+person responsible for intended activity.
+(b) Standard operating procedures in addition to those recommended under
+various activities shall also be prepared to the minimum in respect of the
+following:
+(i)
+sample handling and accountability;
+(ii)
+receipt identification, storage, mixing and method sampling of the test
+and control articles;
+(iii)
+record keeping, reporting, storage and retrieval of data;
+
+(iv)
+coding of different studies, handling of data including use data system of
+computerized data system
+(v)
+operation of technical audit personnel in performing and inspections and
+final report reviews; reporting audits, inspections and final report reviews;
+(vi)
+routine inspection of cleaning, maintenance, testing, calibration and
+standardisation of instruments;
+(vii) action to be taken in respect of equipment failure;
+(viii) analytical data methods;
+(ix)
+the raw data;
+
+(X)
+data handling and storage retrieval;
+
+(xi)
+health and safety protection;
+
+(xii) storage and maintenance of microbial cultures;
+
+(xiii) use and storage of reference standards;
+
+(xiv) procurement of stores and equipment;
+<<page 80>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 80 of 112
+(xv) monitoring of testing of samples;
+
+(xvi) method of retention of unexpended samples, their location, maintenance
+and disposal;
+(xvii) document control;
+(xviii) redressal of technical complaints;
+
+(xix) housing-keeping;
+(XX) corrective and preventing action;
+
+(xxi) working procedure (test methods);
+
+(xxii) calibration manual; and
+(xxiii) training manual.
+
+14. Protocols and specifications archive:
+(a) Every laboratory shall have a specification archive and current versions of
+all necessary specifications shall be kept as per the requirements of the Act and
+the Rules made thereunder and the Bureau of Indian Standards.
+15. Raw data:
+(a) Raw data refers to the laboratory work sheet, note books or analysis sheet,
+records, and other activities and such raw data shall include hand written
+notes, photographs, software, drawings, computer printouts, spectral charts,
+dictated observations or recorded data from automated equipment. The raw' data
+also includes result of environmental monitoring, calibration, records of
+equipment, integrator output from analytical equipment, including work-sheet
+used to read a note, information from light emitting diode display of any
+equipment.
+(b) A single line shall strike through the data being changed; the correct
+information shall be recorded along with the old data and the reason of change.
+The analyst making the change shall be identified by his signature with date. In
+case of automated data collection system, the person responsible shall be
+<<page 81>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 81 of 112
+identified at the time of data output. The original entry must be saved and the
+system have audit trial for all the data.
+(c) Data integrity and security shall be maintained and the data shall not be
+accessible to any unauthorised person.
+16. Storage and archival:
+(a) The residual sample shall be retained in proper storage condition for a
+period of one year after the final report.
+(b) The laboratory must establish and maintain procedures for the
+identification collection, indexing, retrieval, storage, maintenance, and disposal
+of all quality documents.
+(c) All the raw data, documentation, standard operating procedures, protocols,
+and final reports are to be retained and there shall be archives for orderly
+storage and expeditious retrieval of all raw data, documentation, protocols,
+interim and final report. The archive shall provide a suitable environment that
+will prevent modification, damage, or deterioration and/or loss.
+(d) The condition under which the original documents are stored must ensure
+their security and confidentiality,
+(e) Paper documents shall not be kept for long periods under high humidity
+and raw data in the form of tape and discs are to be preserved with care,
+(f) In case of storage of only optical disc, the life of disc shall be longer than
+the storage time,
+(g) Raw data on thermal paper might fade away with time; therefore, a
+photocopy of the thermal paper shall also be retained in the archive.
+(h) Time for which records are retained shall be prescribed in the documents.
+<<page 82>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 82 of 112
+TWELFTH SCHEDULE
+[See rule 64(1)]
+Class of cosmetics
+Extent and conditions of
+exemption
+1. Cosmetics
+The provisions of Chapter IV of the
+Act and Rules made thereunder,
+which require them to be covered by
+a licence for the sale, provided that
+the cosmetics sold, if of Indian
+origin, are manufactured by licensed
+manufacturers.
+2. Hair Fixers, namely mucilaginous
+preparations containing gums, used by
+men for fixing beard.
+The provisions of Chapter IV of the
+Act and the rules thereunder.
+3.
+The
+following
+categories
+of
+cosmetics:—
+(i) Cosmetics in bulk for repackaging for
+100% export to other countries.
+(ii)
+Cosmetics
+for
+research
+and
+development purposes like packaging
+trials, consumer studies, shelf life studies
+and transport studies.
+(iii) Cosmetics for sale to overseas
+passengers in duty free shops situated
+within international airports.
+(iv) Cosmetics in amenity kits for
+exclusive use of International passengers
+on complimentary basis if not be used for
+domestic sale.
+(v) Cosmetics imported for use in hotels
+exclusively for their captive consumption
+and after providing notarized undertaking
+The provisions of Chapter III of the
+Act and rules thereunder which
+required them to be covered by
+registration certificate subject to the
+following conditions.—
+(i) the cosmetics shall not be used
+for domestic sale.
+<<page 83>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 83 of 112
+to this effect.
+4. Cosmetics imported in the form of a Kit
+to be marketed in India as such, wherein
+all individual products of the Kit are
+already registered for import into India
+under Cosmetics Rules, 2020.
+The provisions of Chapter III of the
+Act and rules thereunder which
+required them to be covered by
+registration certificate.
+
+THIRTEENTH SCHEDULE
+(See rule 71)
+1. In the Drugs and Cosmetics Rules 1945 (hereinafter to be referred as said
+rules) in sub-rule (1) of rule 1 the words "and cosmetics" shall be omitted.
+2. In the said rules, in sub-rule (1) of rule 45 the words "and cosmetics"
+shall be omitted.
+3. In the said rules, in rule 48 the words "or cosmetic" shall be omitted.
+4. In the said rules, in rule 52 the words "or cosmetics" shall be omitted.
+5. In the said rules, in sub-rule (1) of rule 52 the words "or cosmetics"
+shall be omitted.
+6. In the said rules, in sub-rule (4) of rule 52 the words "or cosmetics" shall be
+omitted.
+7. In the said rules, in rule 54A the words "or cosmetics" wherever they occur
+shall be omitted.
+8. In the said rules, in rule 55 the words "cosmetic" and "or cosmetic"
+wherever they occur shall be omitted.
+9. In the said rules, PART XIII, PART XIV and PART XV and rules
+contained therein shall be omitted.
+10. In the said rules, in PART XV(A) the words "cosmetics" shall be omitted.
+11 In the said rules, in rule 150C the words "or items of cosmetics" wherever
+they occur shall be omitted.
+<<page 84>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 84 of 112
+12. In the said rules, in rule 150B the words "cosmetics", "or cosmetics" and
+"and cosmetics" wherever they occur shall be omitted.
+13. In the said rules, in rule 150C the words "cosmetics", "or cosmetics" and
+"or cosmetics as the case may be" wherever they occur shall be omitted.
+14. In the said rules, in rule 150E the words "or cosmetics" and "or a
+cosmetic" wherever they occur shall be omitted.
+15. In the said rules, in rule 150F the words "or cosmetics" and "or cosmetics
+as the case may be" wherever they occur shall be omitted.
+16. In the said rules, in rule 150C the words "or items of cosmetics" wherever
+they occur shall be omitted.
+17. In the said rules, in SCHEDULE B the figures, brackets and words "III.
+Cosmetics Rupees 400-1500 (The exact amount of the fee shall be determined
+by the Director of Laboratory or the Government Analyst, as the case may be.)"
+wherever they occur shall be omitted.
+18. In the said rules, in SCHEDULE B(l) the word "Cosmetics" shall be
+omitted.
+19. In the said rules, in SCHEDULE D the word "and cosmetics" wherever
+they occur shall be omitted.
+20. In the said rules, the SCHEDULE D(III) shall be omitted.
+21. In the said rules, in SCHEDULE K the figures, brackets and words "16.
+Cosmetics" and the portion beginning with the "The provisions and ending with
+manufacturers" shall be omitted.
+22. In the said rules, the SCHEDULE M(II) shall be omitted.
+23. In the said rules, the SCHEDULE Q shall be omitted.
+24. In the said rules, the SCHEDULE S shall be omitted.
+25. In the said rules, the SCHEDULE U (I) shall be omitted.
+<<page 85>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 85 of 112
+26. In the said rules, in SCHEDULE A in Form 15 the words "cosmetics"
+wherever they occur shall be omitted.
+27. In the said rules, in SCHEDULE A in Form 16 the words "or cosmetics"
+and "cosmetics" wherever they occur shall be omitted.
+28. In the said rules, in SCHEDULE A in Form 17 the words "cosmetics"
+shall be omitted.
+29. In the said rules, in SCHEDULE A in Form 18 the words "cosmetics"
+shall be omitted.
+30. In the said rules, in SCHEDULE A the Form 31, Form 31A Form 32,
+Form 32A Form 33, Form 33A, Form 34, Form 42 and Form 43 shall be
+omitted.
+31. In the said rules, in SCHEDULE A in Form 36 the words "cosmetics" and
+"items of cosmetics" wherever they occur shall be omitted.
+32. In the said rules, in SCHEDULE A in Form 37 the words "cosmetics",
+"items of cosmetics" and "or items of cosmetics" wherever they occur shall be
+omitted.
+33. In the said rules, in SCHEDULE A in Form 38 the words "cosmetics" and
+"items of cosmetics" wherever they occur shall be omitted.
+34. In the said rules, in SCHEDULE A in Form 39 the words "cosmetic" shall
+be omitted.
+35. In the said rules, in rule 150K the words "or items of cosmetics" shall be
+omitted."
+36. In the said rules, in SCHEDULE A in Form 17A the words "or cosmetics"
+shall be omitted.
+<<page 86>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 86 of 112
+APPENDIX
+FORM COS- 1
+[See rule 12(2), and 12(7)]
+Application for issue of registration certificate for
+import of cosmetics into India
+I/We*___(Name and full address) hereby apply for thegrant of registration
+certificate to the manufacturer, M/ s ____(full address with telephone number,
+fax and e-mail address of the foreign manufacturer) for his manufactured
+cosmetics meant for import into India.
+1. Names of cosmetics along with their brand name and pack size(s) and
+variants for registration.
+Serial
+number
+Product or brand
+of cosmetic
+Brand
+name
+Variant
+name
+Pack
+sizes
+Actual
+manufacturer and its
+premises
+1.
+2.
+2. I/We* enclose herewith the information and undertaking specified in
+Part-I of Second Schedule duly signed by the manufacturer for grant of
+registration certificate for the premises stated below:—
+3. A fee of.................. for registration of cosmetics for import as specified
+at serial number 2 above has been credited to the Central Government under the
+Head of Account "0210-Medical and Public Health, 04-Public Health, 104-Fees
+and Fines" under the Cosmetics Rules, 2020 - Central vide Challan No..............,
+dated..............., (attached in original).
+4. Particulars of premises to be registered where manufacture is carried on:
+Address(s) :_
+Telephone :_______
+Fax:_
+<<page 87>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 87 of 112
+E-mail :__
+I/we undertake to comply with all the terms and conditions required to obtain
+registration certificate and to keep it valid during its validity period.
+Place: ...................
+Date: ...................
+Signature__
+Name__
+Designation ________
+Seal/Stamp of manufacturer or his Authorised agent in India.
+(Note: In case the applicant is an Authorised agent of the manufacturer in India,
+an undertaking for the purpose of registration is to be enclosed as per Part-I of
+Second Schedule)
+FORM COS- 2
+[See rule 13(1) and 13(4)]
+Import registration certificate to be issued for import
+of cosmetics into India
+Registration Certificate No.____ Date___M/s_(Name and full address of
+registered office) having factory premises at_(full address) has been registered
+under rule 13 as a manufacturer and is hereby issued this Registration
+Certificate.
+2. Name (s) of cosmetics, along with their brand names and pack size(s) and
+variants which may be imported under this registration certificate.
+Serial
+number
+Product or brand of
+cosmetic
+Brand
+name
+Variant
+name
+Pack
+sizes
+Actual
+manufacturer and its
+premises
+1.
+<<page 88>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 88 of 112
+2.
+3. This registration certificate shall be in force from_to __unless it issooner
+suspended or cancelled under the rules.
+4. This registration certificate is issued through the office of manufacturer
+or his authorised agent or importer in India or by the subsidiary in India
+authorised by the manufacturer, namely M/s..................................(name and full
+address)........................who shall be responsible for the business activities of the
+manufacturer, in India in all respects.
+5. This Registration Certificate is subject to the conditions, stated below
+and to such other conditions as may be specified in the Drugs and Cosmetics
+Act, 1940 and the rules made thereunder, from time to time in this regard.
+Place: .......................
+Date: ........................
+CENTRAL LICENSING AUTHORITY
+Seal / Stamp
+Conditions of the registration certificate
+1. The registration certificate shall be produced by the authorised importer
+or distributer or agent as and when required by the Licensing Authority or
+regulatory authority.
+2. The manufacturer or his authorised importer/distributor/agent in India
+shall inform the Licensing Authority forthwith in the event of any
+administrative action taken namely, market withdrawal, regulatory restrictions,
+or cancellation of authorisation, and not of standard quality report of any
+cosmetic pertaining to this registration certificate declared by the Regulatory
+Authority of the country of origin or by any Regulatory Authority of any other
+country, where the cosmetic is marketed/sold or distributed.
+The dispatch and marketing of the cosmetic in such cases shall be stopped
+and the Licensing Authority shall be informed immediately. Further action in
+respect of such stopped marketing of cosmetic shall be followed as per the
+direction of the Licensing Authority. In such cases, action equivalent to that
+<<page 89>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 89 of 112
+taken with reference to the concerned cosmetic in the country of origin or in the
+country of marketing shall be followed in India also, in consultation with the
+Licensing Authority. The Licensing Authority may, however, direct any further
+modification to this course of action, including the withdrawal of the cosmetic
+from Indian market within 48 hours time period.
+3. The manufacturer or his authorised agent or importer or distributor or
+subsidiary in India shall inform the Licensing Authority within thirty days, in
+writing, in the event of change in labelling or composition or testing, or
+specification or in documentation of any of the cosmetic pertaining to this
+Registration Certificate along with an undertaking that the products comply
+with standards laid down by the Bureau of Indian Standards as referred in the
+Ninth Schedule.
+4. The manufacturer or his authorised agent in India shall inform the
+Licensing Authority immediately in writing, in the event, of any change in the
+constitution of the firm operating under this registration certificate. Where any
+such change in the constitution of the firm takes place, the current Registration
+Certificate shall be deemed to be valid for a maximum period of one hundred
+and eighty days from the date on which the change has taken place unless, in the
+meantime, a fresh registration certificate has been taken from the Licensing
+Authority in the name of the firm with the changed constitution of the firm.
+5. In case of change in name or address of a registration holder or overseas
+manufacturer, operating under this registration certificate, an application for
+amendment shall be made in online portal of Central Government for prior
+approval from the Central Licensing Authority for the said changes in
+registration certificate within a period of sixty days from the date of such
+change.
+6. The importer shall notify to the Licensing Authority immediately in
+writing, on the class of the cosmetic product which present a risk to the human
+health and the corrective measure taken.
+<<page 90>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 90 of 112
+
+FORM COS- 3
+[See rule 13(3), 23(3), 32(2) and 32(3)]
+Permission to import or manufacture new cosmetics in India
+Number of the permission and date of issue................M/s...............................
+having address...........................is hereby permitted to import or manufacture the
+following new cosmetic under rule 32 of the Cosmetics Rules, 2020.
+1. Name of the cosmetic
+2. Category or intended use
+3. Composition of the product
+4. Any special instruction
+Dated: .....................
+Signature:
+Name and Designation of Central Licensing Authority:
+Conditions for the grant of permission to import or
+manufacture new cosmetic
+1. The cosmetic product shall conform to the specifications as permitted by
+the Central Licensing Authority
+2. Name of the cosmetic shall be printed or written in indelible ink and shall
+appear in a conspicuous manner.
+3. Any special instructions as permitted shall be printed on the label.
+4. No claims other than those permitted shall be made on the label without the
+prior approval of the Central Licensing Authority
+<<page 91>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 91 of 112
+FORM COS- 4
+[See rule 17(11))]
+Application for issue of Import Registration Number for
+Import of already registered cosmetics.
+
+I/We*__(Name and full address of importer)hereby apply for the grant of
+registration number for Import of already registered cosmetics, meant for import
+into India.
+1. Detail of cosmetics
+Serial
+number
+Name of
+cosmetic
+(Name of manufacturer and
+address)
+Pack
+sizes
+Registration
+Certificate
+Number
+1.
+2.
+3.
+2. I/We* enclose herewith the information and undertaking specified in
+Sixth Schedule duly signed.
+3. I/we undertake to comply with all the terms and conditions required to
+obtain registration number and to keep it valid during its validity period.
+Address(s) :_
+Telephone :_
+Fax:_
+E-mail :___
+Place:__
+Date:__
+Signature_
+Name_
+Designation___
+<<page 92>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 92 of 112
+
+FORM COS- 4A
+[See rule 17(2)]
+Import Registration Number to be issued for import of
+already registered cosmetics into India
+
+Import Registration No.:______
+
+Date__
+1. M/s__(Name and full Address of importer)has been registered under rule
+17 as an importer and is hereby issued this Import Registration Number for
+import of already registered cosmetics into India.
+2. Detail of cosmetics
+Serial
+number
+Name of cosmetic(s) Pack size(s) Name and address of manufacturer
+1.
+2.
+3. This Import Registration Number shall remain valid for three years
+unless it is sooner suspended or cancelled under the Cosmetics Rules, 2020.
+4. This Import Registration Number is subject to the conditions stated
+below and to such other conditions as may be specified in the rules for the time
+being in force under the Cosmetics Rules, 2020.
+Place:___
+Date:_
+Central Licensing Authority
+Seal / Stamp
+Conditions of the Import Registration Number
+1. This Import Registration Number shall be produced by the importer as
+and when required by the Licensing Authority or regulatory authority.
+<<page 93>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 93 of 112
+2. The importer shall inform to the Licensing Authority forthwith in the
+event of any administrative action taken namely, market withdrawal, deletion of
+product from the original Registration Certificate holder's or any regulatory
+restrictions of any cosmetics pertaining to this registration.
+3. The importer shall provide the statement of details of cosmetics
+imported by them annually to the Central Licensing Authority.
+FORM COS- 5
+[See rule 23(2)]
+Application for grant of a license to manufacture cosmetics for sale or for
+distribution
+1. I/We...............................of..............................hereby apply for the grant
+of a License to manufacture on the premises situated at..................... the
+following cosmetics:
+2. Details of cosmetic products:
+Serial
+Number
+Name of
+cosmetic
+Name of
+ingredients
+Specifications or
+Standards or
+Grade of
+ingredients
+Percentage
+of
+Ingredients
+Function of
+ingredients
+3. Names, qualifications and experience of technical staff employed for
+manufacture and testing..........................................
+4. A fee of rupees.......................................has been credited to Government
+under the
+head of account.......................................
+Date..............................
+Signature................................................
+Note: The application should be accompanied by a plan of the premises.
+<<page 94>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 94 of 112
+
+FORM COS-6
+[See rule 23(2)]
+Application for grant of a loan license to manufacture cosmetics for sale or
+for distribution
+1. I/We ..................... of.........................hereby apply for grant of a loan
+license to manufacture cosmetics, for sale, on the Premises situated at
+..................C/o...................the following cosmetics:
+2. Details of cosmetic products:
+Serial
+Number
+Name of
+cosmetic
+Name of
+ingredients
+Specifications or
+Standards or Grade
+of ingredients
+Percentage
+of
+Ingredients
+Function of
+ingredients
+3. The names, qualifications and experience of the expert staff actually
+connected with the manufacture and testing of the specified products in the
+manufacturing premises.
+4. I/We enclose
+(a) A true copy of a letter from me/us to the manufacturing concern whose
+manufacturing capacity is intended to be utilized by me/us.
+(b) A true copy of a letter from - the manufacturing concern that they agree to
+lend the services of their expert staff, equipment and premises for the
+manufacture of each item required by me / us and they will analyse every batch
+of and maintain the registers of raw materials, finished products and reports of
+analysis separately in this behalf.
+(c) Specimens of labels, cartons of the products proposed to be
+manufactured.
+5. A fee of rupees......................has been credited to Government under the
+head of Account...............
+Date.........................................
+<<page 95>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 95 of 112
+Signature................................
+Enter here the name and address of the manufacturing concern where the
+manufacture will be actually carried out and also their license number.
+FORM COS- 7
+[See rule 23(4) and 23(7)]
+Self-certificate of compliance of Good
+Manufacturing Practices (GMP)
+for manufacture of cosmetics
+(To be given by the applicant along with Form COS- 5 or Form COS- 6 at the
+time of application for manufacturing licence or loan licence)
+1. I/We...............................of..............................hereby applied for the grant
+of a License
+i:o manufacture at premises situated at.................. the following cosmetics.
+1.............
+2.............
+3.............
+2.1/We hereby declare that the above premises having facilities of good
+manufacturing practices, requirements of premises, plants and equipment for
+manufacture of above cosmetics as per the Seventh Schedule of the Cosmetics
+Rules, 2020.
+3. I/We undertake to provide facility to inspect the above premises as per
+the Cosmetics Rules, 2020 to the State Licensing Authority or any officer
+appointed by the authority.
+4. I/We undertake that in case State Licensing Authority or any officer
+appointed by the authority found any deficiency during an inspection the State
+Licensing Authority have a full right to cancel or give any direction for
+improvement for Good
+<<page 96>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 96 of 112
+Manufacturing Practice in the said premises in respect of the above said
+cosmetics. Further I will not claim any damages, etc. for any action of the State
+Licensing Authority in this regard.
+Date:
+Place:
+Name:
+Signature:
+Designation:
+FORM COS- 8
+[See rule 25, 26(g), 27(1), 28 and 30(1)]
+License to manufacture cosmetics for sale or for distribution Number
+of license and date of issue.....................................
+1...........................................is hereby licensed to manufacture on the
+premises situated at..................... the following cosmetics under the supervision
+of the following technical staff.
+(a) Details of cosmetic products:
+Serial
+Number
+Name of
+cosmetic
+Name of
+ingredients
+Specifications or
+Standards or
+Grade of
+ingredients
+Percentage
+of
+Ingredients
+Function of
+ingredients
+(b) Names of the technical staff.................................................................
+2. The licence unless sooner suspended or cancelled shall continue to
+remain valid. However, the compliance with the conditions of licence and the
+provisions of the Drugs and Cosmetics Act and Rules shall be assessed at least
+once in a year.
+3. The license is subject to the conditions stated below and to such other
+conditions as may be specified in the Cosmetics Rules, 2020.
+<<page 97>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 97 of 112
+State Licensing Authority
+Signature......................................
+Designation...................................
+Date of issue...............................
+Conditions of License
+1. This license shall be kept on the approved premises and shall be
+produced at the request of an Inspector appointed under the Drugs and
+Cosmetics Act, 1940.
+2. Any change in the technical staff shall be forthwith reported to the
+Licensing Authority.
+3. If the licensee wants to manufacture for sale additional items he should
+apply to the Licensing Authority for the necessary endorsement to the license as
+provided in rule
+23. This license shall be deemed to extend to the cosmetics so endorsed.
+4. The licensee shall inform the Licensing Authority in writing in the event
+of any change in the constitution of the firm operating under the license. Where
+any change in the constitution of the firm takes place, the current license shall
+be deemed to be valid for a maximum period of six-months from the date on
+which the change takes place unless, in the meantime, a fresh license has been
+taken from the Licensing Authority in the name of the firm with the changed
+constitution.
+FORM COS- 9
+[See rule 25, 26(g), 27(1), 27(3), 28 and 30(1)]
+Loan license to manufacture cosmetics for sale or for distribution
+1. Number of license and date of issue............................
+2.........................of.................................... here by granted a loan license to
+manufacture
+the
+following
+cosmetics
+on
+the
+premises
+situated
+<<page 98>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 98 of 112
+at....................................C/o..................under
+the
+direction
+and
+personal
+supervision of the following technical staff :
+a. Names of the technical staff............................
+b. Details of cosmetic products
+Serial
+Number
+Name of
+cosmetic
+Name of
+ingredients
+Specifications
+or Standards or
+Grade of
+ingredients
+Percentage
+of
+Ingredients
+Function of
+ingredients
+3. The licence unless sooner suspended or cancelled shall continue to
+remain valid. However, the compliance with the conditions of licence and the
+provisions of the Drugs and Cosmetics Act and Rules shall be assessed at least
+once in a year.
+4. The license is subject to the conditions stated below and to such other
+conditions as are specified in the rules for the time being in force under the
+Drugs and Cosmetics Act, 1940.
+State Licensing Authority
+Date........................
+Signature...................
+Designation..............
+Conditions of Licence
+1. The license shall be kept on the approved premises and shall be
+produced at the request of an Inspector appointed under the Drugs and
+Cosmetics Act, 1940.
+2. Any change in the technical staff shall be forthwith reported to the
+Licensing Authority.
+3. If the licensee wants to manufacture for sale additional items he should
+apply to the Licensing Authority for necessary endorsement to the license as
+<<page 99>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 99 of 112
+provided in rule 23. This license shall be deemed to extend to the cosmetics so
+endorsed.
+4. The licensee shall inform the Licensing Authority in writing in the event
+of any change in the constitution of the firm operating under the license. Where
+any change in the constitution of the firm takes place, the current license shall
+be deemed to be valid for a maximum period of six months from the date on
+which the change takes place unless, in the meantime, a fresh license has been
+taken from the Licensing Authority in the name of the firm with the changed
+constitution.
+FORM COS- 10
+[See rule 26(i) and 44(1)]
+Intimation to person from whom sample is taken
+I have this day taken from the premises of......................situated at.......................
+....................samples of the cosmetics specified below for the purpose of test or
+analysis.
+Date.......... .................. Inspector............
+Details of samples taken
+Date....................................... Inspector............
+FORM COS- 11
+[See rule 26(k) and 62(i)]
+Form in which the inspection book shall be maintained
+A. The cover of the Inspection Book shall contain the following particulars,
+namely :
+1. The name and address of the licensee...............................
+2. License number and the date up to which the license is valid
+...............
+<<page 100>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 100 of 112
+B. (i) The pages of the Inspection Book shall be serially numbered and duly
+stamped by the Licensing Authority. The pages, other than the first and the last
+pages, shall have the following particulars:-
+Name and designation of the Inspector who inspects the premises of the
+licensee:—
+Date of Inspection ...............................
+Observations of the Inspector...............................
+Signature of the Inspector
+(ii) The first and last pages of the Inspection Book shall be endorsed by the
+Licensing Authority with the following word, namely :-
+'Inspection
+Book
+maintained
+by
+M/s.............................................situated
+at...............................for license number......................in Form.................under
+the Cosmetics Rules, 2020.
+Seal and signature of the Licensing Authority.
+Notes:
+(i) Printed copy of the Inspection Book may be obtained by the licensee from
+the Licensing Authority on payment.
+(ii) The Inspection Book shall be maintained at the premises of the licensee.
+(iii) The observations made by the Inspector shall be in triplicate. The original
+copy shall be retained in the inspection Book to be maintained in the premises
+of the licensee. The duplicate copy shall be sent to the Licensing Authority. The
+triplicate copy shall be taken as record by the Inspector.
+<<page 101>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 101 of 112
+FORM COS- 12
+[See rule 32(1)]
+Application for grant of permission for new cosmetics for obtaining import
+registration certificate or manufacturing license
+
+I/We*_(Name and full address) hereby
+apply for the grant of permission to import or manufacture a new cosmetics in
+India. The necessary information or data is given below:—
+1. Particulars of new cosmetic:—
+a. Name of the cosmetic
+b. Category of cosmetic/intended use
+c. Composition of the product
+d. Test protocols/specification of the raw materials and finished product
+2. Assessment of the safety for human health of the finished product, its
+ingredients, their chemical structure and level of exposure
+3. Existing data on undesirable effects on human health resulting from use of
+the cosmetic product
+4. Supporting data for the claimed benefits of cosmetic products should be
+made available to justify the nature of its effect
+5. Draft of the product label and carton
+6. Whether the product is marketed in any other country; list thereto
+7. Any other data generated on safety, efficacy and quality parameters
+8. A total fees of ........ USD...............(in words)............has been credited to
+the Government under the head of account................(photocopy of receipt
+is enclosed)
+<<page 102>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 102 of 112
+Signature of the Manufacturer/Importer/Authorised agent
+Name:
+Designation:
+Stamp/Seal
+Place:
+Date: .
+FORM COS- 13
+[See rule 40]
+Application from a purchaser for test or analysis of a cosmetic under
+Section 26 of the Drugs and Cosmetics Act, 1940
+
+1. Full name and address of the applicant...............................................
+2. Occupation.....................................
+3.
+Name
+of
+cosmetic
+purporting
+to
+be
+contained
+in
+the
+sample..............................
+4. Name and full address of the concern where the cosmetic was
+purchased...............
+5. Date on which purchased......................................................................
+6.
+Reasons
+why
+the
+cosmetic
+is
+being
+submitted
+for
+test
+or
+analysis........................
+A fee of ..................has been credited to Government under the Head of
+Account
+"02.10- Medical and Public Health, 04-Public Health, 104-Fees and Fines"
+under the
+Drugs
+and
+Cosmetic
+Rules
+1945,
+-
+Central
+vide
+Challan
+No.........................dated................
+(attached in original)
+<<page 103>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 103 of 112
+I hereby declare that the cosmetic being submitted for test was purchased by
+or for me. I further declare that the sample of the cosmetic being sent for test or
+analysis is exactly as it was purchased and has not been tampered with in any
+way.
+Date:....................... Signed......................
+FORM COS- 14
+[See rule 40]
+Report of test or analysis by Government Analyst under Section 26 of the
+Drugs and Cosmetics Act, 1940
+1. Name of person from whom sample received...........................................
+2. Date of receipt.....................................................................................
+3.
+Name
+of
+cosmetic
+purporting
+to
+be
+contained
+in
+the
+sample..............................
+4. Opinion of the Government Analyst—The sample referred to above is/is not
+of standard quality as defined in the Drugs and Cosmetics Act, 1940 and Rules
+thereunder.
+Date :.......................... Government Analyst.............
+FORM COS- 15
+(See rule 42)
+Receipt for stock of cosmetics for record, register, document or material
+object seized under section 22 (1) (c) or (cc) of the Drugs and Cosmetics
+Act, 1940
+The stock of cosmetics for records, registers, documents or material objects
+detailed
+below has / have this day been seized by me under the provisions of clause (c)
+or clause (cc) of sub-section (1) of section 22 of the Drugs and Cosmetics Act.
+1940 (23 of 1940)
+from the premises of................................situated at............................................
+Date......................... Inspector............
+<<page 104>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 104 of 112
+Details of cosmetics, records, registers, documents or material objects seized.
+Date....................................... Inspector............
+
+FORM COS- 16
+[See rule 44(2)]
+Receipt for samples of cosmetics taken where fair price tendered thereof
+under sub - section (1) of section 23 of the Drags and Cosmetics Act, 1940 is
+refused
+
+To...................................
+
+Whereas I, this...............day of.........20..........., have taken from the premises
+of........ situated at................................samples of cosmetics as specified below:-
+Details of Samples..............................
+And whereas I had offered to pay you rupees ...................... as the fair price of
+the samples of cosmetics taken:
+And whereas, you have refused to accept the fair price tendered thereof.
+Now, therefore, I give you the receipt as the fair price tendered for the
+samples of the cosmetics- taken by me.
+Date........................................ Inspector............
+FORM COS- 17
+[See rule 45(1)]
+Memorandum to Government Analyst
+Serial No. of Memorandum ...................................................................................
+From:
+To
+The Government Analyst,
+<<page 105>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 105 of 112
+The portion of sample or container described below is sent herewith for test
+or analysis under the provisions of clause (i) of sub-section (4) of Section 23 of
+the Drugs and Cosmetics Act, 1940.
+The portion of sample/'container has been marked by me with the following
+mark.
+Details of portion of sample or container with name of cosmetic which it
+purports to contain—
+Date.................................................... Inspector..................
+FORM COS- 18
+(See rule 46)
+Order under section 22 (l)(c) of the Drugs and Cosmetics Act, 1940
+requiring a person not to dispose of stock in his possession
+
+Whereas, I have reasons to believe that the stocks of cosmetics in your
+possession, detailed below contravene the provisions of section 18 of the Drugs
+and Cosmetics Act, 1940;
+Now, therefore, I hereby require you under clause (c) of sub-section (1) of
+section 22 of the said Act not to dispose of the said stock for a period
+of..................days from
+the date of this order.
+Date.................................................... Inspector.
+Details of stock of cosmetics
+Date.................................................... Inspector.
+<<page 106>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 106 of 112
+FORM COS- 19
+[See rule 48]
+Report of tests or analysis of cosmetics by the Government Analyst.
+1. Name of the officer or Inspector from whom received..................................
+2.
+Serial
+number
+and
+date
+of
+the
+Officer's/Inspector's
+memorandum........................
+3. Number of sample...............................
+4. Date of receipt...............................
+5.
+Name
+of
+the
+cosmetic
+purporting
+to
+be
+contained
+in
+the
+sample.........................
+6. Condition of seals on the packet or on portion of sample or container...
+7. Results of test or analysis:—
+The sample of cosmetics—
+(a) contain a prescribed colour only or does not contain a prescribed colour.
+(b) does not contain harmful ingredients or contains harmful ingredients.
+(c) conforms to claims made on the label as to the nature and quality of or
+does not conform to claims made on the label as to the nature and quality of the
+cosmetic.
+(d) contains not more than..................................parts per million of lead
+and....................................................parts
+per
+million
+of
+Arsenic
+.......................................... contains more than..............................parts per
+million of Lead and.................. .....................parts per million of Arsenic.
+Date.......................... Government Analyst.
+<<page 107>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 107 of 112
+
+FORM COS- 20
+[See rule 49(1) and 49(3)]
+Memorandum to the Director, Central Cosmetic Laboratory
+Serial Number..................................
+To
+the
+Director,
+Central
+Cosmetic
+Laboratory......................................................
+From......................................
+1 send herewith, under the provisions of section 25 (4) of the Drugs and
+Cosmetics
+Act,1940, sample(s) of a cosmetic purporting to be ....................for test or
+analysis and
+request that a report of the result of the test or analysis may be supplied to this
+Court.
+2. The distinguishing number on the packet is............................................
+3. Particulars of offence alleged...................................................................
+4. Matter on which opinion is required .......................................
+5. A fee of Rs.................has been deposited in Court.
+Date....................
+Magistrate
+<<page 108>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 108 of 112
+FORM COS- 21
+(See rule 51)
+Report of test or analysis by the Central cosmetic laboratory
+
+Certified
+that
+the
+sample
+bearing
+number
+...........................................................
+purporting
+to
+be
+a
+sample
+of................................................... received on ....................with memorandum
+No ............................................................dated...................................................
+from............................................... has been tested or analysed and that the result
+of such test or analysis is as stated below.
+
+2. The condition of the seals on the packet on receipt was as follows: —
+*3. In the opinion of the undersigned the sample is of standard quality is not
+of standard quality as defined in the Drugs and Cosmetics Act, 1940 and Rules
+thereunder for the reasons given below:—
+Director,
+Date.............. Central cosmetic laboratory or other authorized officer
+Details of results of test or analysis with protocols of test applied
+Director,
+Date............... Central cosmetic laboratory or other authorized officer
+*If opinion is required on any other matter, the paragraph should be suitably
+amended.
+FORM COS- 22
+[See rule 55(1)]
+Application for grant of approval for carrying out tests on cosmetics or raw
+materials used in the manufacture thereof on behalf of licensees for
+manufacture for sale of cosmetics
+1. *I/We........................................of...............................hereby apply for the
+<<page 109>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 109 of 112
+grant of approval for carrying out tests on the following items of cosmetics or
+raw materials used in the manufacture thereof on behalf of licensees for
+manufacture for sale of cosmetics.
+2. Items of cosmetics:
+(1) ................................
+(2) ................................
+(3) ................................
+3. Name, qualifications and experience of expert staff employed for testing
+and the person-in-charge of testing.
+4. List of testing equipments provided.
+5. I/We enclose a plan of the testing premises showing the location and
+area of the different sections thereof.
+6. An application fee of rupees.................................... or an inspection fee
+(in case of
+further application after rejection) of rupees ............................................ has
+been credited
+to Government under the Head of Account...................................................
+Date.................................................... Signature................
+FORM COS- 23
+(See rule 56(1), 56(2), 58(1), 59, 60(1) and 62)
+Approval for carrying out tests on cosmetics and raw materials used in
+their manufacture on behalf of licensees for manufacture for sale of
+cosmetics
+1. Number of approval and date of issue:...............
+2. Approval is hereby granted to......................................................for
+carrying out tests for identity, purity and quality on the following items of
+<<page 110>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 110 of 112
+cosmetics and the raw materials used in the manufacture thereof on the premises
+situated..........................................................................
+Items of cosmetics
+(1) ................................
+(2) ................................
+(3) ................................
+3. Names of competent technical staff employed for testing and the
+person-in-charge of testing.
+4. The approval shall be in force from.............................to.......................
+5. The approval is subject to the conditions stated below and such other
+conditions as may be specified in the rules for the time being in force under the
+Act.
+Date............. ....Signature
+State Licensing Authority
+Conditions of Approval
+1. This approval shall be kept in the approved premises and shall be
+produced at the request of the Inspectors appointed under the Act.
+2. If the approved institution wishes to undertake during the currency of
+the approval the testing of any other items of cosmetics it should apply to the
+State Licensing Authority for necessary endorsement as provided in rule
+56.This approval will be deemed to extend to the item so endorsed.
+3. Any change in the analytical staff or in the person-in-charge of the
+testing shall be forth with reported to the State Licensing Authority.
+4. The approved institution shall inform the State Licensing Authority in
+writing in the event of any change of the constitution of the institution operating
+under this Form. Where any change in the constitution of the institution takes
+place, the current approval shall be deemed to be valid for a maximum period of
+<<page 111>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 111 of 112
+three months from the date on which the change takes place unless in the mean
+time, a fresh approval has been taken from the State Licensing Authority in the
+name of the institution with the changed constitution.
+FORM COS- 24
+[See rule 62(f)]
+Report of test or analysis by approved institution
+1. Name of manufacturer from whom sample received together with his
+manufacturing licence number under the Act and under the rules made
+thereunder.
+2. Reference number and date of the letter from the manufacturer under
+which the sample was forwarded
+3. Date of receipt of the sample.
+4. Name of cosmetic/raw material purporting to be contained in the
+sample.
+5. Details of raw material/final product in bulk/final product (in finished
+pack) as obtained from the manufacturer:
+(a) Original manufacturer's name in the case of raw materials
+repacked.
+(b) Batch number.
+(c) Batch size as represented by sample.
+(d) Date of manufacture, if any.
+(e) Date of expiry, if any.
+6. Results of test or analysis with protocols of test or analysis applied.
+In the opinion of the undersigned, the sample referred to above is of
+standard quality/ is 7iot of standard quality as defined in the Act and the rules
+made thereunder for the reasons given below.
+<<page 112>>
+Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
+Page 112 of 112
+Date.... Signature of Person-in-charge of testing
+Note-Final product includes repacked material.
+
+REFERENCE
+1 Vide G.S.R. 763E), dated 15th Dec., 2020, published in the Gazette of India,
+Extra., Pt. II, Sec. 3(i), No. 632, dated 15th Dec., 2020.

@@ -51,31 +51,31 @@ Status values: `todo` · `in progress` · `blocked` · `done`
 ### Corpus + ingest
 | ID | Task | Size | Depends | Done when | Status | Owner | Notes |
 |---|---|---|---|---|---|---|---|
-| T1.1 | `corpus/manifest.yaml` seeded with ~30 sources (real official URLs only) + `corpus/CHANGELOG.md` | M | — | manifest validates against a schema | todo | | |
-| T1.2 | Ingest `fetch` + `normalise` (PyMuPDF, OCR fallback, HTML) | M | T0.4, T1.1 | raw + normalised text for 3 sources | todo | | |
-| T1.3 | Ingest `structure` (Indian section/rule parser, treaty articles) + `chunk` with contextual headers | L | T1.2 | Patents Act chunks with locators like `s.3(p)` | todo | | |
-| T1.4 | Ingest `embed` + `upsert` (versioning, superseded marking) + `ingest run` CLI | M | T0.9, T1.3 | re-run is idempotent; new hash → new version | todo | | |
-| T1.5 | Run full ingest; hand-check the ~10 most-cited sections | M | T1.4 | chunk counts per source noted here | todo | | |
+| T1.1 | `corpus/manifest.yaml` seeded with ~30 sources (real official URLs only) + `corpus/CHANGELOG.md` | M | — | manifest validates against a schema | done | Tushar | 2026-09-17. 31 sources (23 IN, 8 INTL), every link checked. India Code moved to indiacode.gov.in; downloads use its DSpace API. 4 sources are `fetch: manual` (WIPO Lex, FSSAI, EUR-Lex block scripts): save them by hand into `corpus/raw/`. Gaps listed in `corpus/CHANGELOG.md`. Schema + pytest in `api/app/ingest/manifest.py`. |
+| T1.2 | Ingest `fetch` + `normalise` (PyMuPDF, OCR fallback, HTML) | M | T0.4, T1.1 | raw + normalised text for 3 sources | done | Tushar | 2026-09-17. `python -m app.ingest fetch|normalise`. All 27 auto sources download and normalise (checks the file really is a PDF). OCR fallback needs Tesseract (in the Docker image; not on Windows by default, use `--no-ocr`). `corpus/raw` is gitignored; `corpus/normalised` is committed. |
+| T1.3 | Ingest `structure` (Indian section/rule parser, treaty articles) + `chunk` with contextual headers | L | T1.2 | Patents Act chunks with locators like `s.3(p)` | done | Tushar | 2026-09-17. Parser handles India Code dash headings, NBA `. –` headings, bare-number headings, `Article N` split lines, schedules, chapters, amendment footnotes, bilingual gazettes (English kept). ~3,050 chunks. Long sections split per clause (`s.3(k)–(p)`). Weak spot: NDCT Rules 2019 (15 units only). Contextual header is template-based; the optional LLM one-liner is not done. |
+| T1.4 | Ingest `embed` + `upsert` (versioning, superseded marking) + `ingest run` CLI | M | T0.9, T1.3 | re-run is idempotent; new hash → new version | done | Tushar | 2026-09-17. `python -m app.ingest run` = fetch → normalise → chunk → embed → upsert. Idempotent by sha256; new hash supersedes old version; changing embed model re-embeds. BGE-M3 on CPU capped at 512 tokens (`EMBED_MAX_TOKENS`), ~1-5 s/chunk on a laptop, so a full run takes 1-3 h. Needs `pip install -e ".[local]"`. |
+| T1.5 | Run full ingest; hand-check the ~10 most-cited sections | M | T1.4 | chunk counts per source noted here | in progress | Tushar | 2026-09-17. Full ingest running on Tushar's laptop (slow on CPU). After it finishes: record chunk counts per source here and hand-check ~10 key sections (s.3(p), s.3(j), s.10(4)(d)(ii), BD Act s.6/s.7, Rule 158B, TRIPS Art. 27.3(b), GRATK Art. 3). |
 
 ### Answer pipeline
 | ID | Task | Size | Depends | Done when | Status | Owner | Notes |
 |---|---|---|---|---|---|---|---|
-| T1.6 | Guard-in: size cap, rate limit, scope classifier, injection heuristics | M | T0.6 | tests for out-of-scope + injection | todo | | |
-| T1.7 | Understand: language detect, NMT fallback, regime router, entity link, rewrite | M | T0.6 | router test returns regimes[] | todo | | |
-| T1.8 | Retrieval: hybrid dense + FTS, RRF, rerank, version pin, dedupe, per-jurisdiction filter | L | T1.4 | jurisdiction-filter test; recall check on 5 questions | todo | | |
-| T1.9 | Generate: prompt + both provider paths into per-jurisdiction answers | M | T0.7, T0.8, T1.8 | one answer per jurisdiction, never merged | todo | | |
-| T1.10 | Guard-out: verifier (5 rules), confidence, abstain, disclaimer | L | T1.9 | test: fabricated section rejected; leak regenerated | todo | | |
-| T1.11 | `POST /ask` SSE endpoint wiring + answer cache + audit trace | M | T1.6–T1.10 | `curl -N` streams a full envelope | todo | | |
-| T1.12 | `/sources`, `/registry`, `/materials/{kind}/{id}/ipr` endpoints | M | T0.4 | endpoints tested | todo | | |
-| T1.13 | `/consent`, `/escalate` (verified facilitators only), `DELETE /me`, sessions | M | T0.4 | consent required before ask; purge test | todo | | |
+| T1.6 | Guard-in: size cap, rate limit, scope classifier, injection heuristics | M | T0.6 | tests for out-of-scope + injection | done | Tushar | 2026-09-17. `api/app/guardrails/guard_in.py`: size cap, per-session token bucket (in-process), medical-advice regex before any model call, injection flags, PII scrub for logs, scope via fast model (failure never blocks). |
+| T1.7 | Understand: language detect, NMT fallback, regime router, entity link, rewrite | M | T0.6 | router test returns regimes[] | done | Tushar | 2026-09-17. `api/app/understand/pipeline.py`: script-based language detect, LLM translation to English (Bhashini later), structured router with keyword fallback, statute linking from manifest titles, search-query rewrite. Material entity linking to plant names not done yet. |
+| T1.8 | Retrieval: hybrid dense + FTS, RRF, rerank, version pin, dedupe, per-jurisdiction filter | L | T1.4 | jurisdiction-filter test; recall check on 5 questions | done | Tushar | 2026-09-17. `api/app/retrieval/hybrid.py`: dense (pgvector) + full-text (OR of words) + exact locator lookup (`section 3(p)`, `Rule 158B`, `Article 27.3`) → RRF, soft regime boost, optional rerank (`RERANK_PROVIDER=none` to skip the 2 GB model), jurisdiction hard filter, superseded skipped. DB tests included. KG expansion is stage 2. |
+| T1.9 | Generate: prompt + both provider paths into per-jurisdiction answers | M | T0.7, T0.8, T1.8 | one answer per jurisdiction, never merged | done | Tushar | 2026-09-17. `api/app/generate/answer.py`: frozen system prompt (cacheable), per-jurisdiction user turn with language/persona. Live-tested on Groq gpt-oss-120b. |
+| T1.10 | Guard-out: verifier (5 rules), confidence, abstain, disclaimer | L | T1.9 | test: fabricated section rejected; leak regenerated | done | Tushar | 2026-09-17. `api/app/guardrails/verify.py`: 5 rules + confidence (floor 0.25 → answer withheld). Leak = naming the other side's law without a source for it here → regenerate once. gpt-oss quirks handled: 【c:id|"…"】 brackets, single `]`, quotes must stay untranslated. |
+| T1.11 | `POST /ask` SSE endpoint wiring + answer cache + audit trace | M | T1.6–T1.10 | `curl -N` streams a full envelope | done | Tushar | 2026-09-17. `POST /ask` streams SSE events `status`, `answer` (India first), `done`, `error`. Needs `X-Session-Id` + assistant consent. Audit row per ask (question hash only). LRU answer cache. Live pipeline test: English s.3(p) → high confidence cited; Hindi → Hindi answer with verified English quote; IPL question → out_of_scope; dosing → medical_advice. Not yet tried through uvicorn + browser. |
+| T1.12 | `/sources`, `/registry`, `/materials/{kind}/{id}/ipr` endpoints | M | T0.4 | endpoints tested | done | Tushar | 2026-09-17. `GET /sources` (versions, chunk counts, changelog), `GET /registry` (table empty until verified registries are added), `GET /materials/{kind}/{id}/ipr` (404 until verified profiles are stored). |
+| T1.13 | `/consent`, `/escalate` (verified facilitators only), `DELETE /me`, sessions | M | T0.4 | consent required before ask; purge test | done | Tushar | 2026-09-17. `POST/GET /consent` (assistant, transcript), `POST /escalate` (ticket; facilitator table empty until verified from official listings — UI says so), `DELETE /me` purges by session. Answers stored only with transcript consent. Migration `assistant tables`. CI now runs Postgres so DB tests run there. |
 
 ### Web
 | ID | Task | Size | Depends | Done when | Status | Owner | Notes |
 |---|---|---|---|---|---|---|---|
-| T1.14 | Sahayak drawer in `AppShell` + command palette entry + offline notice | M | T0.10 | drawer opens; API down → offline notice, garden fine | todo | | |
-| T1.15 | `/sahayak` page: jurisdiction switch (two panes), answer pane, citations panel, confidence chip, disclaimer, provider footer | L | T1.14 | BOTH shows two separate panes | todo | | |
-| T1.16 | Language picker, persona picker, consent banner, escalate form, "Where to go next" | M | T1.15 | consent shown before first ask | todo | | |
-| T1.17 | `/sources` page | S | T1.12 | lists sources, versions, changelog | todo | | |
+| T1.14 | Sahayak drawer in `AppShell` + command palette entry + offline notice | M | T0.10 | drawer opens; API down → offline notice, garden fine | done | Tushar | 2026-09-17. Drawer (`src/components/sahayak/Drawer.tsx`) opened by header button, ⌘K "Ask Sahayak: …" (3+ words), or `openSahayak({question, context})` from anywhere. Health check only when opened; offline notice if API/DB down; garden untouched. Needs `VITE_API_URL`. |
+| T1.15 | `/sahayak` page: jurisdiction switch (two panes), answer pane, citations panel, confidence chip, disclaimer, provider footer | L | T1.14 | BOTH shows two separate panes | done | Tushar | 2026-09-17. `/sahayak` page + `AskPanel`: jurisdiction switch, India and International panes side by side (never merged), grouped citations with quotes and links, confidence chip with reasons, disclaimer, provider footer, streaming stage text. Safe mini-markdown renderer (no HTML). |
+| T1.16 | Language picker, persona picker, consent banner, escalate form, "Where to go next" | M | T1.15 | consent shown before first ask | done | Tushar | 2026-09-17. Language picker (8 languages), persona picker, consent banner (optional transcript consent), escalate form, delete-my-data. "Where to go next" waits for verified registry data (T1.12). |
+| T1.17 | `/sources` page | S | T1.12 | lists sources, versions, changelog | done | Tushar | 2026-09-17. `/sources` page: filter IN/INTL, version, passages, older versions, changelog. |
 
 ### Plant IP layer
 | ID | Task | Size | Depends | Done when | Status | Owner | Notes |
@@ -83,15 +83,15 @@ Status values: `todo` · `in progress` · `blocked` · `done`
 | T1.18 | `MaterialIPProfile` type + `src/data/ipr/plant/` + join in `plants.ts` (all 30 as `'unknown'`) | S | — | build passes | done | Tushar | 2026-09-17. Type lives in the API schema and is re-exported from `src/types/material.ts`. `plants.ts` joins `PLANT_IPR[id]` or an all-`unknown` profile from `src/data/ipr/unknown.ts`. To add a verified plant, add a file under `src/data/ipr/plant/` and list it in `index.ts`. `indianBioResource` may be `unknown`; `lastVerified` null = never verified. PATENTSCOPE link returns 403 to curl (bot block) but is WIPO's real search page. |
 | T1.19 | Fill real cited profiles: turmeric, neem, ashwagandha, sandalwood | M | T1.1, T1.18 | every field cited or `'unknown'` | todo | | |
 | T1.20 | Fill real cited profiles: sarpagandha, guggulu, amla, tulsi | M | T1.19 | same | todo | | |
-| T1.21 | `MaterialIprPanel`: `iplaw` tab in PlantPage, Walk dossier panel, BoardCard strip | M | T1.18 | panel visible in all three spots | todo | | |
-| T1.22 | 3D seal hotspot in `PlantViewer` + "Ask Sahayak about this" with context | M | T1.14, T1.21 | clicking seal opens drawer with plant context | todo | | |
+| T1.21 | `MaterialIprPanel`: `iplaw` tab in PlantPage, Walk dossier panel, BoardCard strip | M | T1.18 | panel visible in all three spots | done | Tushar | 2026-09-17. `MaterialIprPanel` = "IP & Law" tab on every plant page; `MaterialIprStrip` on the Garden plant card (with Ask Sahayak) and under the walkable garden's hover board (passive). Profiles are all 'Not yet verified' until T1.19/T1.20. |
+| T1.22 | 3D seal hotspot in `PlantViewer` + "Ask Sahayak about this" with context | M | T1.14, T1.21 | clicking seal opens drawer with plant context | done | Tushar | 2026-09-17. `SealHotspot` ("IP & law" seal above the specimen, shown with the Parts toggle) in `PlantViewer`; click opens the drawer with the plant as context. Build passes; not yet clicked through in a browser. |
 
 ### Eval
 | ID | Task | Size | Depends | Done when | Status | Owner | Notes |
 |---|---|---|---|---|---|---|---|
-| T1.23 | Golden set part 1: 60 in-scope items (IN / INTL / BOTH) | L | T1.5 | `eval/golden/inscope.jsonl` | todo | | |
-| T1.24 | Golden set part 2: 15 microbe/animal/mineral, 20 out-of-scope, 25 multilingual twins | L | T1.23 | jsonl files | todo | | |
-| T1.25 | Eval runners (retrieval, accuracy, citation, abstention, multilingual) + `make eval` | L | T1.11, T1.23 | runs end-to-end on 10 items | todo | | |
+| T1.23 | Golden set part 1: 60 in-scope items (IN / INTL / BOTH) | L | T1.5 | `eval/golden/inscope.jsonl` | in progress | Tushar | 2026-09-17. Starter set `eval/golden/inscope.jsonl`: 18 items (11 IN, 6 INTL, 1 BOTH). Every expected locator was checked by script against the parsed chunk text, and key points quote the provision. Need ~42 more; follow the same rule: check the locator really contains the point before adding (`verified_by`). |
+| T1.24 | Golden set part 2: 15 microbe/animal/mineral, 20 out-of-scope, 25 multilingual twins | L | T1.23 | jsonl files | in progress | Tushar | 2026-09-17. Started: `abstain.jsonl` 10 items (4 out-of-scope, 3 medical, 3 unsafe incl. an injection), `multilingual.jsonl` 4 twins (2 Hindi, 1 Marathi, 1 Tamil). Still needed: 15 microbe/animal/mineral items, ~10 more abstention, ~21 more twins. |
+| T1.25 | Eval runners (retrieval, accuracy, citation, abstention, multilingual) + `make eval` | L | T1.11, T1.23 | runs end-to-end on 10 items | done | Tushar | 2026-09-17. `eval/run.py` (all 5 runners, per provider, writes `eval/runs/<date>-<provider>.json` with targets), `--only retrieval` (no model calls), `--smoke` (ids in `eval/golden/smoke.txt`), `Makefile` targets `eval`, `eval-smoke`, `eval-retrieval`. Item schema validated on load. Not run yet: waiting for the full ingest (T1.5). |
 | T1.26 | Full eval run per provider, commit results, CI smoke subset | M | T1.24, T1.25 | numbers under `eval/runs/` | todo | | |
 
 ## Stage 2 — Rasashala, classification, ABS, KG, agent, workbench
@@ -103,14 +103,14 @@ Status values: `todo` · `in progress` · `blocked` · `done`
 | T2.3 | Procedural `substance.ts` generator | M | — | preview renders shapes | todo | | |
 | T2.4 | Export reusable pieces from `MedicinalGardenScene` (LabelBoard, Plaque, ground) | S | — | walkable garden unchanged | todo | | |
 | T2.5 | `RasashalaScene` + `/rasashala` route + third Gateway door | L | T2.1–T2.4 | walkable scene with 4 areas + boards | todo | | |
-| T2.6 | Classifier rule table + `/classify` (sections verified against corpus) | M | T1.5 | table case tests | todo | | |
-| T2.7 | ABS helper `/abs` | M | T1.5 | route tests | todo | | |
-| T2.8 | TKDL / prior-art pointer | S | T1.18 | search URLs for 3 materials | todo | | |
+| T2.6 | Classifier rule table + `/classify` (sections verified against corpus) | M | T1.5 | table case tests | done | Tushar | 2026-09-17. `api/app/classify/rules.py` + `POST /classify` (send answers so far, get next question or result). 6 categories, first match wins. Each line cites manifest id + locator; `verified` true only where a script found the text in the chunk. Unverified (show as "verify"): D&C s.3(a), Rule 158B (parser missed it), Cosmetics Rules detail, FSSAI Aahara regs (not ingested), NDCT approval data. |
+| T2.7 | ABS helper `/abs` | M | T1.5 | route tests | done | Tushar | 2026-09-17. `POST /abs`: foreign → NBA approval (BD Act s.3), Indian → SBB intimation (s.7), IP intended → s.6 approval, normally traded → s.40 exemption check. Forms/fees/benefit-sharing point at BD Rules 2024 as unverified. Web wizard is T2.12. |
+| T2.8 | TKDL / prior-art pointer | S | T1.18 | search URLs for 3 materials | done | Tushar | 2026-09-17. `src/lib/priorArt.ts`: one OR-query from the botanical name + Latin-script local names; Google Patents link with the query, IP India and PATENTSCOPE search pages with the query to paste (no stable query URLs), TKDL home (full search needs registration). Shown in the IP & Law tab. All four URLs opened on 2026-09-17. |
 | T2.9 | Knowledge graph tables, seed, retrieval expansion, `/graph/{entity}` | L | T1.8 | expansion adds linked chunks in test | todo | | |
 | T2.10 | Agentic tool loop + tools, audited, iteration cap | L | T2.6, T2.7, T2.9 | multi-step question uses ≥2 tools | todo | | |
 | T2.11 | Workbench store slice + "Add to workbench" on hotspots and shelves | M | T2.5 | basket persists | todo | | |
 | T2.12 | `/workbench` route + scene + wizard + result card | L | T2.6, T2.11 | end-to-end classification with cites | todo | | |
-| T2.13 | DPDP: consent ledger, audit events per ask/tool, retention job | M | T1.13 | audit row per ask and tool call | todo | | |
+| T2.13 | DPDP: consent ledger, audit events per ask/tool, retention job | M | T1.13 | audit row per ask and tool call | done | Tushar | 2026-09-17. Consent ledger + audit row per ask (hash, no text) + per escalation + per purge were built in T1.11/T1.13. Added `python -m app.retention [--dry-run]` (`RETENTION_DAYS` 30, `AUDIT_RETENTION_DAYS` 180; open escalations kept). Audit per tool call arrives with the agent loop (T2.10). Schedule the retention job daily when deployed. |
 
 ## Stage 3 — Connectors, voice, Registry Marg
 
