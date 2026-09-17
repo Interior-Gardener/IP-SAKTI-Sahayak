@@ -28,3 +28,13 @@ dist-ssr
 
 # Reference material for building the medicinal garden scene — local only, far too large for git
 PHOTOS AND VIDEOS/
+
+# Secrets and local environments
+.env
+.env.*
+!.env.example
+api/.venv/
+__pycache__/
+
+# Fetched legal sources are rebuilt by ingest
+corpus/raw/

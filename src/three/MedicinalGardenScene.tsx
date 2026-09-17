@@ -45,7 +45,7 @@ const HEDGE = '#3f6b3a'
  * 949 x 1658, and the plate is sized from that ratio so the print is
  * never stretched — height first, because the board's height against a
  * standing visitor is the thing that has to look right. */
-export const PLAQUE_ART = asset('/cards/medicinal-garden-entry-board.png')
+export const PLAQUE_ART = asset('/cards/garden-entry-board.png')
 /** The scan's own pixel grid, which everything drawn from it is sized by. */
 export const PLAQUE_ART_W = 949
 export const PLAQUE_ART_H = 1658
