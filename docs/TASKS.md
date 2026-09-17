@@ -17,7 +17,7 @@ We split the build into small tasks so several people, each with their own Claud
 
 **After finishing a task**
 6. Update this file: status `done`, add the date and a short note (anything the next person needs to know).
-7. Commit and push to GitHub on `main`:
+7. Commit and push to GitHub on `main`. **Small (S) tasks can share one commit**: finish two or three, then push them together. M and L tasks get their own commit.
    - Commit message: **short, plain, human-sounding, non-technical**, not past tense, e.g. `add the chat drawer`, `plant legal info for neem and tulsi`. No long bodies, no bullet lists.
    - **No Claude/AI co-author line** (no `Co-Authored-By: Claude`). Commit under your own git name.
 8. Check your limit again (step 2) before taking the next task. If you're low, stop here: the tracker and GitHub are already up to date, so the next teammate can carry on.
@@ -34,10 +34,10 @@ Status values: `todo` · `in progress` · `blocked` · `done`
 |---|---|---|---|---|---|---|---|
 | T0.1 | Rename package to `vanaspati-sahayak`; fix plaque image path in `MedicinalGardenScene.tsx:48`; add root `.gitignore` entries for `.env`, `api/.venv`, `corpus/raw` | S | — | build + lint pass, plaque renders | done | Tushar | 2026-09-17. Plaque now points at `/cards/garden-entry-board.png`. Lint has 3 old warnings, no errors. Run `npm ci` first on a fresh clone. |
 | T0.2 | `api/` skeleton: `pyproject.toml`, ruff, pytest, `app/main.py`, `app/settings.py`, `GET /health` + one test | S | — | `uvicorn` serves `/health`, pytest green | done | Tushar | 2026-09-17. Python 3.12 venv via `uv venv --python 3.12 api/.venv` then `uv pip install -e ".[dev]"`. `/health` returns provider, model, embed model, corpus version. |
-| T0.3 | `docker-compose.yml` (pgvector postgres + api), `api/Dockerfile`, `.env.example` with every var from providers.md | S | T0.2 | `docker compose up` → `/health` 200 | todo | | |
+| T0.3 | `docker-compose.yml` (pgvector postgres + api), `api/Dockerfile`, `.env.example` with every var from providers.md | S | T0.2 | `docker compose up` → `/health` 200 | done | Tushar | 2026-09-17. Compose file validates (`docker compose config`) but was not run live: Docker was not running. First person with Docker: run `docker compose up` and confirm `/health`. Compose reads `.env` if it exists. |
 | T0.4 | DB layer: SQLAlchemy + Alembic, first migration for `sources`, `source_versions`, `chunks` (HNSW + GIN indexes) | M | T0.3 | `alembic upgrade head` works on compose DB | todo | | |
-| T0.5 | Pydantic schemas for the contracts (`SahayakAnswer`, `Citation`, `RegistryPointer`, `MaterialIPProfile`) | S | T0.2 | schemas appear in `/openapi.json` | todo | | |
-| T0.6 | LLM provider base + router (`base.py`, `router.py`, role → provider/model from env) | S | T0.2 | unit test picks provider by env | todo | | |
+| T0.5 | Pydantic schemas for the contracts (`SahayakAnswer`, `Citation`, `RegistryPointer`, `MaterialIPProfile`) | S | T0.2 | schemas appear in `/openapi.json` | done | Tushar | 2026-09-17. In `api/app/schemas/`. Profile `cite` fields hold a manifest source id or `unknown`. `classification`/`abs` are loose dicts until stage 2. Contracts are added to `/openapi.json` by hand in `main.py` until real endpoints use them. |
+| T0.6 | LLM provider base + router (`base.py`, `router.py`, role → provider/model from env) | S | T0.2 | unit test picks provider by env | done | Tushar | 2026-09-17. Providers call `router.register(name, factory)`. Non-default provider (e.g. groq) must set `LLM_MODEL_<ROLE>`. |
 | T0.7 | Anthropic provider (`complete`, `complete_structured`, `answer_with_citations`) | M | T0.6 | mocked test maps citations to `Citation` | todo | | |
 | T0.8 | Groq provider incl. `[[c:id|"span"]]` marker parser | M | T0.6 | parser tests + mocked call test | todo | | |
 | T0.9 | Embeddings (`local` BGE-M3, `voyage`) + local reranker, behind interfaces | M | T0.2 | small script embeds and reranks 3 strings | todo | | |

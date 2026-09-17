@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.openapi.utils import get_openapi
 from pydantic import BaseModel
+from pydantic.json_schema import models_json_schema
 
+from app.schemas import CONTRACTS
 from app.settings import get_settings
 
 settings = get_settings()
@@ -33,3 +36,20 @@ def health() -> Health:
         embed_model=settings.embed_model,
         corpus_version=settings.corpus_version,
     )
+
+
+def _openapi() -> dict:
+    """Stage-1 endpoints that return the contracts don't exist yet; adding the
+    schemas here lets the web generate its types now."""
+    if app.openapi_schema:
+        return app.openapi_schema
+    schema = get_openapi(title=app.title, version=app.version, routes=app.routes)
+    _, defs = models_json_schema(
+        [(m, "serialization") for m in CONTRACTS], ref_template="#/components/schemas/{model}"
+    )
+    schema.setdefault("components", {}).setdefault("schemas", {}).update(defs["$defs"])
+    app.openapi_schema = schema
+    return schema
+
+
+app.openapi = _openapi

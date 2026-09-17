@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: sahayak
+      POSTGRES_PASSWORD: sahayak
+      POSTGRES_DB: sahayak
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sahayak"]
+      interval: 5s
+      retries: 10
+
+  api:
+    build: ./api
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgresql+psycopg://sahayak:sahayak@postgres:5432/sahayak
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./corpus:/corpus
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:
