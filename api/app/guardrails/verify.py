@@ -57,13 +57,39 @@ TERM_ALIASES = {
 }
 
 
+# Hyphen and dash look-alikes models use in place of the source's plain hyphen, e.g.
+# gpt-oss writes "benefit‑sharing" (non-breaking hyphen) for "benefit-sharing".
+DASHES = "‐‑‒–—―−-"
+ELLIPSIS_RE = re.compile(r"\.{3,}|…")
+MIN_PIECE = 12  # a quote piece shorter than this proves nothing on its own
+
+
 def _norm(text: str) -> str:
-    text = unicodedata.normalize("NFKC", text).lower()
+    text = unicodedata.normalize("NFKC", text).lower().replace("­", "")
     # Quotes and square brackets vary between the source (amendment markers such as
     # "4[(b) ...]") and the model's copy of it, so neither counts in the comparison.
     text = re.sub(r"[“”\"'‘’`\[\]]", "", text)
-    text = re.sub(r"[—–-]", "-", text)
-    return re.sub(r"\s+", " ", text).strip()
+    text = re.sub(f"[{DASHES}]", "-", text)
+    text = re.sub(r"\s*-\s*", "-", text)
+    return re.sub(r"\s+", " ", text).strip(" .;:,")
+
+
+def quote_in(quote: str, source: str) -> bool:
+    """The quote appears in the source. An ellipsis ("...", "…") may stand for omitted
+    words: every piece around it must then appear in the source, in order. At least one
+    piece must be long enough to be real evidence, so a string of fragments like
+    "Category…(A)…As per text" cannot pass on its short pieces."""
+    haystack = _norm(source)
+    pieces = [p for p in (_norm(x) for x in ELLIPSIS_RE.split(quote)) if p]
+    if not pieces or max(len(p) for p in pieces) < MIN_PIECE:
+        return False
+    at = 0
+    for piece in pieces:
+        found = haystack.find(piece, at)
+        if found < 0:
+            return False
+        at = found + len(piece)
+    return True
 
 
 @dataclass
@@ -100,9 +126,19 @@ def verify(draft: DraftAnswer) -> Verified:
         if (raw.chunk_id, raw.cited_text) in seen:
             continue
         seen.add((raw.chunk_id, raw.cited_text))
-        ok = bool(raw.cited_text.strip()) and _norm(raw.cited_text) in _norm(chunk.text)
+        ok = quote_in(raw.cited_text, chunk.text)
         if not ok:
-            flags.append(f"quoted text not found in {chunk.source_id} {chunk.locator}")
+            # Models sometimes attach a correct quote to the neighbouring chunk. If the exact
+            # words are in another chunk retrieved for this jurisdiction, cite that one.
+            moved = next(
+                (r for r in draft.retrieved
+                 if r.jurisdiction == draft.jurisdiction and quote_in(raw.cited_text, r.text)),
+                None,
+            )  # fmt: skip
+            if moved is not None:
+                chunk, ok = moved, True
+            else:
+                flags.append(f"quoted text not found in {chunk.source_id} {chunk.locator}")
         if chunk.jurisdiction != draft.jurisdiction:  # defensive; retrieval filters this
             leaked = True
             flags.append(f"{chunk.source_id} belongs to {chunk.jurisdiction}")

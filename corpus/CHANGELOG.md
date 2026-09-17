@@ -2,6 +2,13 @@
 
 Every change to `manifest.yaml` gets a line here: what changed, why, who checked it. Newest first.
 
+## 2026-09-17 — all 31 sources ingested
+
+- FSSAI Ayurveda Aahara Regulations switched to automatic download from FSSAI's archive host `stg-old.fssai.gov.in` (the main site serves its web app instead of the PDF).
+- EU Directive 2004/24/EC switched from HTML to PDF; EUR-Lex was partly down, so the PDF was taken from the EU Publications Office search (op.europa.eu).
+- Manual files saved by Tushar and checked (valid PDF, right title on page 1): Patents (Amendment) Rules 2024 (WIPO Lex, 19 pp), Paris Convention (WIPO Lex, 20 pp), Budapest Treaty (WIPO Lex, 10 pp), Directive 2004/24/EC (6 pp).
+- Ingest on GPU: ~3,160 chunks across 31 sources.
+
 ## 2026-09-17 — initial manifest (31 sources)
 
 - Added 23 Indian sources (patents, GI, trade marks, designs, copyright, plant varieties, biodiversity, drugs and cosmetics, advertising, food, wildlife, consumer protection, data protection) and 8 international ones (TRIPS, Paris, CBD, Nagoya, GRATK, PCT, Budapest, EU Directive 2004/24/EC).

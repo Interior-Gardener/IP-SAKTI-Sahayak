@@ -103,8 +103,10 @@ RULES: list[CategoryRule] = [
         requires=[
             Line(text="Foods for special dietary use, functional foods, nutraceuticals and health supplements are regulated under section 22 of the Food Safety and Standards Act.",
                  cite=c("in-fss-act-2006", "s.22", True)),
-            Line(text="Ayurveda Aahara products follow the FSSAI Ayurveda Aahara Regulations, 2022 (text not yet ingested).",
-                 cite=c("in-fssai-ayurveda-aahara-2022", "Reg. 3", False)),
+            Line(text="Ayurveda Aahara must be formulated in line with the categories and requirements in Schedule B of the Ayurveda Aahara Regulations, 2022.",
+                 cite=c("in-fssai-ayurveda-aahara-2022", "Reg. 3", True)),
+            Line(text="Its labelling, presentation and advertisement must not claim that it prevents, treats or cures a human disease.",
+                 cite=c("in-fssai-ayurveda-aahara-2022", "Reg. 8", True)),
         ],
         ip_posture=[TRADE_MARK, TRADE_SECRET],
     ),

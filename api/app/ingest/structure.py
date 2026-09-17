@@ -31,7 +31,9 @@ ARTICLE_RE = re.compile(r"^Article\s+(?P<num>\d{1,3}(?:[a-z]|bis|ter|quater)?)\s
 # A heading on its own line with no dash (NDCT Rules style): "3. Central Licencing Authority".
 BARE_HEADING_RE = re.compile(r"^(?P<num>\d{1,3}[A-Z]?)\.\s+(?P<title>[A-Z][^.—]{2,120})$")
 # The start of a numbered heading whose dash may be on the next line.
-HEADING_START_RE = re.compile(r"^(?:\d{1,3}\[\s*)?\d{1,4}[A-Z]{0,3}\.?\s+[A-Z]")
+HEADING_START_RE = re.compile(
+    r"^(?:\d{1,3}\[\s*)?\d{1,4}(?:[A-Z]{1,3}|\([A-Z]{1,2}\)|-[A-Z]{1,2})?\.?\s+[A-Z]"
+)
 DASH_RE = re.compile(r"\.\s?[—–]|\.\s?-\s|\.-|—")
 SCHEDULE_RE = re.compile(
     r"^(?:\d{1,3}\[\s*)?(?:THE\s+)?(?P<name>(?:[A-Z]+\s+)?SCHEDULE(?:\s+[A-Z0-9()\-]{1,12})?)\s*$"
@@ -233,10 +235,19 @@ def _parse_bare_headings(normalised: str, prefix: str) -> list[Unit]:
     current: Unit | None = None
     last = 0
     for page, line in iter_lines(normalised):
+        sm = SCHEDULE_RE.match(line)
+        if sm and current is not None:
+            # Schedules restart numbering, so list items inside them must not become rules.
+            name = " ".join(sm.group("name").split()).title()
+            current = Unit(name, name, "", page)
+            units.append(current)
+            last = 10_000
+            continue
         m = BARE_HEADING_RE.match(line)
         if m:
             n = int(re.match(r"\d+", m.group("num")).group())
-            if n in (last, last + 1) or (n == 1 and last > 3):
+            # Small gaps are normal: a heading merged with its body text, or an omitted rule.
+            if last <= n <= last + 3 or (n == 1 and last > 3):
                 last = n
                 current = Unit(f"{prefix}{m.group('num')}", m.group("title").strip(), "", page)
                 units.append(current)

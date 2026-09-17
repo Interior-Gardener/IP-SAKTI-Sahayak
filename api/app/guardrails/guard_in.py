@@ -66,12 +66,14 @@ MEDICAL_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Patterns are deliberately narrow: legal questions say "Act as amended", "ignore rule 158B
+# for exports?" or "cite section 6", and those must not be refused.
 INJECTION_PATTERNS = {
-    "ignore_instructions": r"\b(ignore|disregard|forget)\b.{0,40}\b(instruction|rule|prompt|above|previous)",  # noqa: E501
-    "role_override": r"\b(you are now|act as|pretend to be|from now on you)\b",
-    "system_prompt_probe": r"\b(system prompt|your (instructions|rules|prompt))\b",
-    "fake_citation": r"\b(cite|say|state)\b.{0,30}\b(section|article|rule)\s*\d+.{0,40}\b(even if|regardless|anyway)\b",  # noqa: E501
-    "delimiter_spoof": r"</?(source|document|system)\b|\[\[c:",
+    "ignore_instructions": r"\b(ignore|disregard|forget|override)\s+(all\s+|any\s+|the\s+)?(previous|prior|above|earlier|your|system)\s+(instructions|rules|prompts?|guidelines)",
+    "role_override": r"\b(you are now|from now on,? you|pretend (to be|you are)|act as (an? |if you)(?!.{0,20}\b(licen[cs]|agent|authority|distributor)))",
+    "system_prompt_probe": r"\b(reveal|show|print|repeat)\b.{0,30}\b(system prompt|your (instructions|rules|prompt))\b",
+    "fake_citation": r"\b(cite|say|state|claim)\b.{0,60}\b(section|article|rule)\s*\d+.{0,60}\b(even if|regardless|anyway|whether or not)\b",
+    "delimiter_spoof": r"</?(source|document|system)\b|\[\[c:|【c:",
 }  # fmt: skip
 _INJECTION_RES = {k: re.compile(v, re.IGNORECASE) for k, v in INJECTION_PATTERNS.items()}
 
@@ -124,6 +126,10 @@ def check_question(question: str, fast: LLMProvider | None) -> GuardResult:
         return GuardResult("out_of_scope", "empty question")
 
     flags = injection_flags(question)
+    if flags:
+        # Trying to steer the assistant (ignore rules, cite a made-up section, spoof source
+        # markers) is refused outright rather than left to the model's judgement.
+        return GuardResult("unsafe", f"instruction-injection pattern: {', '.join(flags)}", flags)
     if MEDICAL_RE.search(question):
         return GuardResult("medical_advice", "asks for personal health or dosing advice", flags)
     if fast is None:

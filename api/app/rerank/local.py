@@ -15,7 +15,12 @@ class LocalReranker:
         if encoder is None:
             from sentence_transformers import CrossEncoder
 
-            encoder = CrossEncoder(model)
+            from app.embed.local import pick_device
+
+            device = pick_device()
+            encoder = CrossEncoder(model, device=device)
+            if device == "cuda":
+                encoder.model.half()
         self.model = model
         self.encoder = encoder
 

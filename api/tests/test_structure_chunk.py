@@ -99,3 +99,16 @@ def test_long_section_splits_at_clauses_with_clause_locators():
 def test_unstructured_document_falls_back_to_pages():
     text = "<<page 1>>\nSome manual text about practice.\n<<page 2>>\nMore manual text here.\n"
     assert [u.locator for u in parse_units(text, "manual")] == ["p.1", "p.2"]
+
+
+def test_dc_rules_158b_heading_with_parenthesised_letter_wrapping_lines():
+    text = """<<page 182>>
+158. Conditions of licence.—A licence in Form 25D shall be subject to the conditions stated.
+1[158(B) Guidelines for issue of license with respect to Ayurveda, Siddha or
+Unani drugs.-
+I. (A). Ayurveda, Siddha Unani Medicines under section 3(a):- Ayurveda, Siddha or Unani drugs includes all medicines.
+1[158C. Form of Free Sale Certificate and Non-Conviction Certificate. – The State Drug Controller shall issue it.
+"""
+    units = parse_units(text, "rules")
+    assert [u.locator for u in units] == ["Rule 158", "Rule 158B", "Rule 158C"]
+    assert units[1].heading.startswith("Guidelines for issue of license")

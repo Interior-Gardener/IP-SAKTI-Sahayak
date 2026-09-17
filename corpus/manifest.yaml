@@ -47,7 +47,7 @@ sources:
     title: The Patents (Amendment) Rules, 2024
     jurisdiction: IN
     regime: [patent]
-    doc_type: rules
+    doc_type: notification
     issuer: Ministry of Commerce and Industry (via WIPO Lex)
     url: https://www.wipo.int/wipolex/en/legislation/details/23105
     fetch: manual
@@ -55,7 +55,7 @@ sources:
     licence: Official Government of India publication
     version_label: As notified
     issued: 2024-03-15
-    notes: WIPO Lex serves the PDF through signed links; download it from the details page.
+    notes: WIPO Lex serves the PDF through signed links; download it from the details page. It amends the Patents Rules, 2003 paragraph by paragraph, so locators are this notification's paragraph numbers ("para 2"), not rule numbers.
 
   - id: in-mppp-v3
     title: Manual of Patent Office Practice and Procedure, Version 3.0
@@ -221,6 +221,7 @@ sources:
     licence: Official Government of India publication
     version_label: India Code combined Act and Rules text (as-on date to confirm at ingest)
     issued: 1945-12-21
+    text_start: Drugs and Cosmetics Rules, 1945
     notes: Key parts are Part XVI-XVII (ASU), Rule 158B, Rule 161, Schedules E(1) and T. Check the status of Rule 170 separately.
 
   - id: in-dmr-act-1954
@@ -269,11 +270,12 @@ sources:
     doc_type: regulations
     issuer: Food Safety and Standards Authority of India
     url: https://fssai.gov.in/upload/notifications/2022/05/62789a20b54bdGazette_Notification_Ayurveda_Aahara_09_05_2022.pdf
-    fetch: manual
+    fetch_url: https://stg-old.fssai.gov.in/upload/notifications/2022/05/62789a20b54bdGazette_Notification_Ayurveda_Aahara_09_05_2022.pdf
+    fetch: auto
     format: pdf
     licence: Official Government of India publication
     version_label: Gazette notification dated 2022-05-09 (per file name)
-    notes: fssai.gov.in returns its web app instead of the PDF to scripts; open in a browser and save.
+    notes: The main fssai.gov.in site returns its web app to scripts and browsers; the same PDF is served from FSSAI's archive host stg-old.fssai.gov.in.
 
   - id: in-fss-act-2006
     title: The Food Safety and Standards Act, 2006
@@ -429,7 +431,7 @@ sources:
     issuer: European Parliament and Council (EUR-Lex)
     url: https://eur-lex.europa.eu/eli/dir/2004/24/oj/eng
     fetch: manual
-    format: html
+    format: pdf
     licence: Official EU legal text (EUR-Lex terms)
     version_label: Original text, OJ L 136, 30.4.2004
-    notes: EUR-Lex answers scripted requests with a 202 challenge page; save the page from a browser.
+    notes: EUR-Lex answers scripted requests with a 202 challenge page; open https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32004L0024 in a browser and save the PDF.

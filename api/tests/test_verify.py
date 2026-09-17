@@ -120,3 +120,50 @@ def test_brackets_in_quote_do_not_fail_verification():
         "TK is barred.", [("1", "(p) an invention which, in effect, is traditional knowledge]")]
     )
     assert [c.verified for c in verify(d).citations] == [True]
+
+
+def test_quote_matching_tolerates_dash_variants_and_ellipses_only():
+    from app.guardrails.verify import quote_in
+
+    src = "(a) Provide for legal certainty, clarity and transparency of their domestic access\nand benefit-sharing legislation or regulatory requirements;"
+    assert quote_in("domestic access and benefit\u2011sharing legislation", src)
+    assert quote_in(
+        "...Provide for legal certainty, clarity and transparency…regulatory requirements", src
+    )
+    assert not quote_in("Provide for legal certainty … mandatory patent disclosure", src)
+    assert not quote_in("...", src)
+    assert not quote_in("sharing", src)  # too short to count as evidence
+
+
+def test_correct_quote_on_wrong_chunk_is_moved():
+    d = draft("TK is barred.", [("2", "an invention which, in effect, is traditional knowledge")])
+    v = verify(d)
+    assert [(c.locator, c.verified) for c in v.citations] == [("s.3", True)]
+    assert not any("not found" in f for f in v.flags)
+
+
+def test_ellipsis_fragments_must_all_be_present_in_order():
+    from app.guardrails.verify import quote_in
+
+    src = "Serial number Category of drug Safety study (A) Classical formulation As per text Not Required"
+    assert quote_in("Serial number…Category of drug…As per text", src)
+    assert not quote_in(
+        "Serial number…Category of drug…Required by law", src
+    )  # a fragment is invented
+    assert not quote_in("As per text…Serial number", src)  # out of order
+    assert not quote_in("(A)…As per text…Not", src)  # nothing long enough to be evidence
+
+
+def test_long_chunk_keeps_its_last_clauses_and_is_labelled():
+    from app.generate.answer import shorten, to_documents
+
+    section = (
+        "3. What are not inventions.—"
+        + ("(a) filler clause text. " * 200)
+        + "(p) an invention which, in effect, is traditional knowledge."
+    )
+    cut = shorten(section, 1000)
+    assert cut.startswith("3. What are not inventions")
+    assert cut.endswith("is traditional knowledge.")  # the tail survives the trim
+    assert "[…]" in cut and len(cut) < len(section)
+    assert to_documents([S3])[0].title.endswith("[primary law]")

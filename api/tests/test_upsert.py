@@ -81,3 +81,14 @@ def test_embedder_change_re_embeds(session):
         session.scalars(select(Chunk.embed_model).where(Chunk.source_version_id == r.version_id))
     )
     assert models == {"fake-2"}
+
+
+def test_rechunk_replaces_chunks_of_same_file(session):
+    e = FakeEmbedder()
+    first = upsert_source(session, SOURCE, "e" * 64, DRAFTS, e)
+    r = upsert_source(session, SOURCE, "e" * 64, DRAFTS[:1], e, rechunk=True)
+    assert (r.outcome, r.version_id, r.chunks) == ("rechunked", first.version_id, 1)
+    assert [
+        c.locator
+        for c in session.scalars(select(Chunk).where(Chunk.source_version_id == r.version_id))
+    ] == ["s.3"]

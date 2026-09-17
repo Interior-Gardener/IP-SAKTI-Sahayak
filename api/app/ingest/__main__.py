@@ -17,8 +17,23 @@ from app.ingest.normalise import normalise_source
 from app.ingest.structure import parse_units
 
 
+def skip_to(text: str, first_line: str) -> str:
+    """Drop everything before the first line equal to `first_line`, keeping the page marker
+    in force at that point so page numbers stay right."""
+    lines = text.splitlines()
+    page = "<<page 1>>"
+    for i, line in enumerate(lines):
+        if line.startswith("<<page "):
+            page = line
+        elif line.strip() == first_line:
+            return "\n".join([page, *lines[i:]])
+    raise ValueError(f"text_start line not found: {first_line!r}")
+
+
 def drafts_for(source: ManifestSource):
     text = (REPO / "corpus" / "normalised" / f"{source.id}.txt").read_text(encoding="utf-8")
+    if source.text_start:
+        text = skip_to(text, source.text_start)
     return chunk_units(parse_units(text, source.doc_type, source.language), source.title)
 
 
@@ -28,6 +43,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--manifest", default=str(MANIFEST))
     parser.add_argument("--only", nargs="*", help="source ids to process")
     parser.add_argument("--no-ocr", action="store_true")
+    parser.add_argument(
+        "--rechunk", action="store_true", help="replace chunks of unchanged files (parser updates)"
+    )
     args = parser.parse_args(argv)
 
     manifest = load_manifest(Path(args.manifest))
@@ -69,7 +87,14 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "run":
             from app.ingest.upsert import upsert_source
 
-            u = upsert_source(session, source, sha256_of(source.raw_path()), drafts, embedder)
+            u = upsert_source(
+                session,
+                source,
+                sha256_of(source.raw_path()),
+                drafts,
+                embedder,
+                rechunk=args.rechunk,
+            )
             print(f"upsert    {source.id:36} {u.outcome:12} version={u.version_id}", flush=True)
 
     if session is not None:

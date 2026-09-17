@@ -50,6 +50,8 @@ extend-immutable-calls = ["fastapi.Depends", "fastapi.Header", "fastapi.Query"]
 "tests/*" = ["E501"]
 # The rule table reads best one line per entry.
 "app/classify/rules.py" = ["E501"]
+"scripts/*" = ["E501"]
+"app/guardrails/guard_in.py" = ["E501"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

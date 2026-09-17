@@ -55,3 +55,23 @@ def test_parse_markers_accepts_fullwidth_brackets():
         ("40", "known properties"),
     ]
     assert "【" not in prose and "[[" not in prose
+
+
+def test_retries_once_when_the_model_uses_its_own_citation_style():
+    replies = iter(
+        [
+            "Micro-organisms are patentable【1†Patents Act】.",  # unusable style
+            'Micro-organisms are patentable [[c:c-2|"other than micro-organisms"]].',
+        ]
+    )
+    sent = []
+
+    def create(**kw):
+        sent.append(kw["messages"])
+        return NS(choices=[NS(message=NS(content=next(replies)))])
+
+    client = NS(chat=NS(completions=NS(create=create)))
+    docs = [Document("c-2", "Patents Act s.3", "plants and animals other than micro-organisms")]
+    answer = GroqProvider("gpt-oss", client).answer_with_citations("sys", "q?", docs)
+    assert [c.chunk_id for c in answer.citations] == ["c-2"]
+    assert len(sent) == 2 and "c-2" in sent[1][-1]["content"]  # the retry names the allowed ids

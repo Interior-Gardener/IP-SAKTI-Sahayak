@@ -71,7 +71,7 @@ def or_query(text: str) -> str:
     websearch_to_tsquery ANDs every word, so a natural question rarely matches anything;
     ranking (ts_rank_cd) still prefers passages that contain more of the words."""
     words = re.findall(r"[A-Za-z][A-Za-z0-9]{2,}", text)
-    return " | ".join(dict.fromkeys(w.lower() for w in words)) or "''"
+    return " | ".join(dict.fromkeys(w.lower() for w in words))
 
 
 _SELECT = """
@@ -105,6 +105,8 @@ def dense(session: Session, vector: list[float], model: str, jurisdiction: str, 
 
 def lexical(session: Session, query: str, jurisdiction: str, limit: int,
             historical: bool = False) -> list[Retrieved]:  # fmt: skip
+    if not or_query(query):
+        return []  # no searchable words (e.g. untranslated non-Latin text): dense search still runs
     return _rows(
         session,
         f"SELECT {_SELECT} {_FROM} AND c.tsv @@ to_tsquery('english', :q) "

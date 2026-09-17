@@ -3,7 +3,9 @@
 Provider keys live here and nowhere else: the web app never receives them.
 """
 
+import os
 from functools import lru_cache
+from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -27,3 +29,23 @@ class Settings(BaseSettings):
 @lru_cache
 def get_settings() -> Settings:
     return Settings()
+
+
+def load_env_file() -> None:
+    """Vendor SDKs (anthropic, groq) read keys from os.environ, not from Settings, so the
+    repo-root .env is copied into the environment. Variables already set win, which keeps
+    Docker and CI configuration authoritative."""
+    for path in (Path(__file__).resolve().parents[2] / ".env", Path.cwd() / ".env"):
+        if not path.is_file():
+            continue
+        for line in path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            value = value.strip().strip('"').strip("'")
+            if key.strip() and value:
+                os.environ.setdefault(key.strip(), value)
+
+
+load_env_file()

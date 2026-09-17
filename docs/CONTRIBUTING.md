@@ -1,6 +1,6 @@
 # Contributing — Vanaspati Sahayak
 
-For teammates joining the SIH-26 PS-45 build. Read [PLAN.md](PLAN.md) first, then [architecture.md](architecture.md). This file is the practical part: setup, keys, workflow, ownership.
+For teammates joining the SIH-26 PS-45 build. Read [STATUS.md](STATUS.md) first (where the build stands, measured results, setup), then [PLAN.md](PLAN.md) and [architecture.md](architecture.md). This file is the practical part: setup, keys, workflow, ownership.
 
 ## 1. Setup
 
@@ -19,6 +19,12 @@ pip install -e ".[dev]"
 cp ../.env.example ../.env   # fill keys, see §2
 docker compose up postgres   # from repo root
 uvicorn app.main:app --reload # http://localhost:8000/docs
+
+# NVIDIA GPU? The default torch wheel is CPU-only and ingest will take hours.
+# Install the CUDA build (RTX 50xx needs cu128+); ingest then takes minutes:
+pip install -e ".[local]"
+pip install --force-reinstall torch --index-url https://download.pytorch.org/whl/cu128
+python -c "import torch; print(torch.cuda.is_available())"   # must print True
 
 # corpus ingest (stage 1)
 python -m app.ingest run --manifest ../corpus/manifest.yaml

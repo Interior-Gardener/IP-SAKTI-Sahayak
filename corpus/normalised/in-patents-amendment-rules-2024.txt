@@ -1,0 +1,1966 @@
+<<page 1>>
+22
+THE GAZETTE OF INDIA : EXTRAORDINARY
+[PART II—SEC. 3(i)]
+MINISTRY OF COMMERCE AND INDUSTRY
+(Department For Promotion of Industry and Internal Trade)
+NOTIFICATION
+New Delhi, the 15th March, 2024
+
+G.S.R. 211(E).—WHEREAS the draft of certain rules, further to amend the Patents Rules, 2003 were
+published, as required under sub-section (3) of section 159 of the Patents Act, 1970 (39 of 1970), vide notification of
+the Government of India in the Ministry of Commerce and Industry (Department for Promotion of Industry and
+Internal Trade) number G.S.R. 619 (E), dated the 23st August, 2023 in the Gazette of India, Extraordinary, Part II,
+Section 3, Sub-section (i) inviting objections and suggestions from all persons likely to be affected.
+AND, WHEREAS, copies of the said notification were made available to the public on the 23st August, 2023;
+AND, WHEREAS, the objections and suggestions received from the public in respect of the said draft rules have
+been duly considered by the Central Government;
+NOW, THEREFORE, in exercise of the powers conferred by section 159 of the Patents Act, 1970 (39 of 1970), the
+Central Government hereby makes the following rules further to amend the Patents Rules, 2003, namely: -
+
+1.
+(1) These rules may be called the Patents (Amendment) Rules, 2024.
+(2) They shall come into force on the date of their publication in the Official Gazette.
+2.
+In the Patents Rules, 2003, hereinafter referred to as the said rules, in rule 12, -
+(i)
+in sub-rule (2), for the words ‘six months from the date of such filing’, the words ‘three months from
+the date of issuance of first statement of objections under sub-rule (3) of rule 24B or sub-rule (8) of
+rule 24C’ shall be substituted;
+(ii)
+for sub-rule (3), the following sub-rule shall be substituted, namely: -
+“3. The Controller may, use accessible and available databases, for considering the information
+relating to applications filed in a country outside India.
+4. The Controller may, under sub-section (2) of section 8, for reasons to be recorded in writing, direct
+the applicant to furnish a fresh statement and undertaking in Form 3 within two months from the date
+of such communication by the Controller.
+5. Notwithstanding anything contained in these rules, the Controller may condone the delay or extend
+the time for filing Form 3 for a period up to three months upon a request made in Form 4.”.
+3.
+In rule 13 after sub-rule (2) of the said rules, the following sub-rule shall be inserted, namely, -
+“(2A) A patent applicant may, if he so desires, file one or more further applications under section 16,
+including in respect of an invention disclosed in the provisional or complete specification or a further
+application filed under section 16.”.
+4.
+In rule 24B of the said rules, -
+(a) in sub-rule (1), -
+(i) for the words ‘forty-eight months’, wherever they occur, the words ‘thirty-one months’ shall be
+substituted;
+(ii) in sub-rule (1), after clause (v), the following clause shall be inserted, namely, -
+‘(vi) Notwithstanding anything contained in this sub-rule, in respect of an application filed
+before commencement of the Patents (Amendment) Rules, 2024, the period for making
+request for examination under sub-section (1) of section 11B shall be the period specified
+under this sub-rule before the commencement of the Patents (Amendment) Rules, 2024.’;
+(b) in sub-rule (6), for the words, brackets and figure ‘specified under sub-rule (5)’, the words
+‘specified herein’ shall be substituted.
+5.
+In rule 24C of the said rules, in sub-rule (11), for the words, brackets and figure ‘specified under sub-rule (10)’,
+the words ‘specified herein’ shall be substituted.
+6.
+In the said rules, after rule 29, the following rule shall be inserted, namely, -
+<<page 2>>
+[भाग II—खण् ड 3(i)]
+भारत का रािपत्र : असाधारण
+23
+“29A. Grace period. - An application to avail the period specified under section 31 shall be filed in Form 31,
+along with the fees specified in the First Schedule.”.
+7.
+In the said rules, in rule 55:
+(A) for sub-rule (3), the following sub-rule shall be substituted, namely, -
+“(3) On consideration of the representation if the Controller is satisfied that, -
+(a) no prima facie case is made out in the representation, he shall notify the opponent
+accordingly, and -
+(i) unless the opponent requests to be heard in the matter, the Controller shall, within one
+month from the date of such notification, pass an order recording the grounds for refusal of
+the representation;
+(ii) if opponent requests for a hearing, the Controller shall, after giving the opponent an
+opportunity of being heard, pass an order within one month from the date of hearing,
+recording his reasons for refusal or prima facie acceptance of the representation and the
+applicant shall be notified accordingly.
+(b) a prima facie case is made out in the representation, the Controller shall, within one month
+of receiving the representation, pass an order recording his reasons and notify the applicant
+accordingly.
+(B) in sub-rule (4) for the word ‘three months’, the word ‘two months’ shall be substituted;
+(C) after sub-rule (5), the following sub-rules shall be inserted namely: -
+“(5A.) The procedure specified in sub-rules (2) to (4) of rule 62 shall, as far as may be,
+apply to the procedure for hearing under this rule.
+(5B) An application for a patent, in which a representation for opposition has been filed
+and notice has been issued by the Controller under rule 3, shall be examined in accordance
+with rule 24C.”.
+8.
+In rule 56 of the said rules, in sub-rule (4), for the word ‘three months, the word ‘two months’ shall be
+substituted.
+9.
+After rule 70 of the said rules, the following rule shall be inserted, namely: -
+‘70A. Certificate of inventorship. - (1) The Controller may issue a certificate of inventorship to an inventor in
+respect of a patent in force, on a request made by the inventor in Form-8A along with fee specified in the First
+Schedule.
+(2) The Controller may issue a duplicate certificate of inventorship to an inventor in respect of a patent in force
+on a request made by the inventor in Form-8A along with the fee specified in the First Schedule and such
+request shall contain a statement setting out the circumstances in which the original certificate of inventorship
+was lost, destroyed, damaged or cannot be produced.’.
+10.
+In rule 80 of the said rules, for sub-rule (3), the following sub-rule shall be substituted, namely: -
+“(3) The annual renewal fees payable in respect of two or more years may be paid in advance:
+Provided that where the renewal fees is paid in advance through electronic mode for a period of at least 4 years,
+a ten per cent reduction in fee shall be applicable for such renewal.”.
+11.
+In rule 110 of the said rules, in sub-rule (2): -
+a) for the words ‘Patents Act and Rules’, the words ‘The Patents Act, 1970 (39 of 1970), The Patents
+Rules, 2003, The Designs Act, 2000 (16 0f 2000) and The Designs Rules, 2001’ shall be substituted;
+b) for the words ‘patent specifications’, the words ‘patent specifications, design specifications’ shall be
+substituted.
+12.
+In rule 131 of the said rules, for sub-rule (2), the following sub-rule shall be substituted, namely,-
+“(2) The statements referred to in sub-rule (1) shall be furnished once in respect of every period of three
+financial year, starting from the financial year commencing immediately after the financial year in which the
+patent was granted, and shall be furnished within six months from the expiry of each such period.
+Provided that the Controller may condone the delay or extend the time in filing of such statement for a period
+up to three months upon a request made in Form 4.”.
+<<page 3>>
+24
+THE GAZETTE OF INDIA : EXTRAORDINARY
+[PART II—SEC. 3(i)]
+13.
+Rule 137 of the said rules, shall be numbered as sub-rule (1) thereof and after sub-rule (1) as so renumbered,
+the following sub-rule shall be inserted namely, -
+“(2) The provisions contained in sub-rule (1) shall be not be applicable for matters related to- (i) extension of
+time or condonation of delay under sub-rule (5) of rule 12; (ii) clause (i) of sub-rule (4) and sub-rule (6) of rule
+20; (iii) rule 21; (iv) sub-rules (1), (5) and (6) of rule 24B; (v) sub-rules (10) and (11) of rule 24C; (vi) sub-rule
+(4) of Rule 55; (vii) sub-rule (1A) of rule 80; (viii) sub-rules (1) and (2) of rule 130; (ix) sub-rule(2) of rule
+131.”.
+14.
+For rule 138 of the said rules, the following rules shall be substituted, namely, -
+"138. Power to extend time specified or condone delay: - Notwithstanding anything contained in these rules,
+the time specified for doing any act or taking any proceeding thereunder may be extended or any delay may be
+condoned by the Controller for a period of up to six months, upon a request made in Form 4, where such
+request is made before the expiry of the said period of six months:
+Provided that such request may be made any number of times within the specified period of six months.’.
+
+15. In the said rules, for Table I of THE FIRST SCHEDULE, the following table shall be substituted, namely, -
+TABLE I
+“Number
+of Entry
+On what payable
+Number
+of the
+relevant
+Form
+For e-filing
+For physical filing
+Natural person
+or startup or
+small entity or
+educational
+institution
+Other(s), alone
+or with natural
+person or startup
+or small entity or
+educational
+institution
+Natural person or
+startup or small
+entity or
+educational
+institution
+Other(s), alone
+or with natural
+person or startup
+or small entity or
+educational
+institution
+1
+2
+3
+4
+5
+6
+7
+
+Rupees
+Rupees
+Rupees
+Rupees
+1. On application for a patent
+under sections 7, 54* or 135
+and rule 20(1) accompanied
+by provisional or complete
+specification—
+1
+1600
+Multiple of
+1600 in case of
+every multiple
+priority.
+8000
+Multiple of 8000
+in case of every
+multiple priority.
+1750
+Multiple of 1750
+in case of every
+multiple priority.
+8800
+Multiple of 8800
+in case of every
+multiple priority.
+
+(i) for each sheet of
+specification in addition to
+30, excluding sequence
+listing of nucleotides and/
+or amino acid sequences
+under sub-rule (3) of rule
+(9);
+
+(i) 160
+(i) 800
+(i) 180
+(i) 880
+
+(ii) for each claim in
+addition to 10;
+
+(ii) 320
+(ii) 1600
+(ii) 350
+(ii) 1750
+
+(iii) for each page of
+sequence listing of
+nucleotides and/ or amino
+acid sequences under subrule (3) of rule (9).
+
+(iii) 160 subject
+to a maximum
+of 24000
+(iii) 800 subject
+to a maximum of
+120000
+Not allowed
+Not allowed
+
+*An application for a
+patent made under section
+54 shall be eligible for a
+reduction of 50 per cent in
+fee as compared to other
+applications.
+
+2. On filing complete
+specification after
+provisional up to 30 pages
+having up to 10 claims –
+
+2
+No fee
+No fee
+No fee
+No fee
+<<page 4>>
+[भाग II—खण् ड 3(i)]
+भारत का रािपत्र : असाधारण
+25
+
+(i) for each sheet of
+specification in addition to
+30, excluding sequence
+listing of nucleotides and/
+or amino acid sequences
+under sub-rule (3) of rule
+(9);
+
+(i) 160
+(i) 800
+(i) 180
+(i) 880
+
+(ii) for each claim in
+addition to 10.
+
+(ii) 320
+(ii) 1600
+(ii) 350
+(ii) 1800
+
+(iii) for each page of
+sequence listing of
+nucleotides and/ or amino
+acid sequences under subrule (3) of rule (9).
+
+(iii) 160 subject
+to a maximum
+of 24000
+(iii) 800 subject
+to a maximum of
+120000
+Not allowed
+Not allowed
+
+Note: A specification in
+respect of an application
+for a patent made under
+section 54 shall be eligible
+for a reduction of 50 per
+cent in fee as compared to
+other specifications.
+
+3. On filing a statement and
+undertaking under
+section 8.
+3
+No fee
+No fee
+No fee
+No fee
+4. i) On request for extension
+of time under sections
+53(2) and 142(4), rules
+13(6), 80(1A) and 130 (per
+month).
+4
+480
+2400
+530
+2600
+ii) On request for extension
+of time or condonation of
+delay (per month) under
+sub-rule (4) of rule 12 or
+sub-rule (2) or rule 131.
+4
+2000
+10000
+2200
+11000
+iii) On request for
+extension of time under
+sub-rule (6) of rule 24B
+(per month).
+4
+1000
+4000
+1100
+4400
+
+iv) On request for
+extension of time under
+sub-rule (11) of rule 24C
+(per month).
+4
+2000
+10000
+2200
+11000
+
+v) On request for extension
+of time under rule 138 (per
+month).
+4
+10000
+50000
+11000
+55000
+5. On filing a declaration as to
+inventorship under sub-rule
+(6) of rule 13.
+5
+No fee
+No fee
+No fee
+No fee
+6. On application for
+postdating.
+-
+800
+4000
+880
+4400
+7. On application for deletion
+of reference under section
+19 (2).
+-
+800
+4000
+880
+4400
+8. (i) On claim under section
+20(1);
+6
+800
+4000
+880
+4400
+
+(ii) On request for direction
+under section 20 (4) or 20
+(5).
+6
+800
+4000
+880
+4400
+<<page 5>>
+26
+THE GAZETTE OF INDIA : EXTRAORDINARY
+[PART II—SEC. 3(i)]
+9. (i) On notice of opposition to
+grant of patent under section
+25(2);
+7
+8000
+40000
+Not allowed
+Not allowed
+
+(ii) On filing representation
+opposing grant of patent
+under section 25(1).
+7A
+4000
+20000
+Not allowed
+Not allowed
+10. On giving notice that hearing
+before Controller shall be
+attended under rule 62(2).
+-
+1500
+7500
+1700
+8300
+11. On application under section
+28(2).
+8
+No fee
+No fee
+No fee
+No fee
+On application under
+sections 28(3) or 28(7).
+8
+800
+4000
+880
+4400
+12. Certificate of inventorship
+under rule 70A.
+8A
+900
+Not applicable
+1000
+Not applicable
+13. Request for publication
+under section 11A(2) and
+rule 24A.
+9
+2500
+12500
+2750
+13750
+14. On application under section
+44 for amendment of patent.
+10
+2400
+12000
+2650
+13200
+15. On application for directions
+under section 51(1) or 51(2).
+11
+2400
+12000
+2650
+13200
+16. On request for grant of a
+patent under sections 26(1)
+and 52(2).
+12
+2400
+12000
+2650
+13200
+17. On request for converting a
+patent of addition to an
+independent patent under
+section 55 (1).
+-
+2400
+12000
+2650
+13200
+18. For renewal of a patent
+under section 53—
+
+(i) before the expiration of the
+2nd year from the date of
+patent in respect of 3rd year;
+-
+800
+4000
+880
+4400
+(ii) before the expiration of the
+3rd year in respect of the 4th
+year;
+-
+800
+4000
+880
+4400
+(iii) before the expiration of the
+4th year in respect of the 5th
+year;
+-
+800
+4000
+880
+4400
+(iv) before the expiration of the
+5th year in respect of the 6th
+year;
+-
+800
+4000
+880
+4400
+(v) before the expiration of the
+6th year in respect of the 7th
+year;
+-
+2400
+12000
+2650
+13200
+(vi) before the expiration of the
+7th year in respect of the 8th
+year;
+-
+2400
+12000
+2650
+13200
+(vii) before the expiration of the
+8th year in respect of the 9th
+year;
+-
+2400
+12000
+2650
+13200
+(viii) before the expiration of the
+9th year in respect of the
+10th year;
+-
+2400
+12000
+2650
+13200
+(ix) before the expiration of the
+10th year in respect of the
+11th year;
+-
+4800
+24000
+5300
+26400
+<<page 6>>
+[भाग II—खण् ड 3(i)]
+भारत का रािपत्र : असाधारण
+27
+(x) before the expiration of the
+11th year in respect of the
+12th year;
+-
+4800
+24000
+5300
+26400
+(xi) before the expiration of the
+12th year in respect of the
+13th year;
+-
+4800
+24000
+5300
+26400
+(xii) before the expiration of the
+13th year in respect of the
+14th year;
+-
+4800
+24000
+5300
+26400
+(xiii) before the expiration of the
+14th year in respect of the
+15th year;
+-
+4800
+24000
+5300
+26400
+(xiv) before the expiration of the
+15th year in respect of the
+16th year;
+-
+8000
+40000
+8800
+44000
+(xv) before the expiration of the
+16th year in respect of the
+17th year;
+-
+8000
+40000
+8800
+44000
+(xvi) before the expiration of the
+17th year in respect of the
+18th year;
+-
+8000
+40000
+8800
+44000
+(xvii) before the expiration of the
+18th year in respect of the
+19th year;
+-
+8000
+40000
+8800
+44000
+(xviii)before the expiration of the
+19th year in respect of the
+20th year.
+-
+8000
+40000
+8800
+44000
+19. On application for
+amendment of application
+for patent or complete
+specification or other related
+documents under section
+57—
+13
+
+(i) before grant of patent;
+800
+4000
+880
+4400
+(ii) after grant of patent;
+1600
+8000
+1750
+8800
+(iii) where amendment is for
+changing name or address or
+nationality or address for
+service.
+320
+1600
+350
+1750
+20. On notice of opposition to an
+application under sections
+57(4), 61(1) and 87(2) or to
+surrender a patent under
+section 63(3) or to a request
+under section 78(5).
+14
+2400
+12000
+2650
+13200
+21. On application for
+restoration of a patent under
+section 60.
+15
+2400
+12000
+2650
+13200
+22. Additional fee for restoration
+under section 61(3) and rule
+86(1).
+—
+4800
+24000
+5300
+26400
+23. On notice of offer to
+surrender a patent under
+section 63.
+—
+No fee
+No fee
+No fee
+No fee
+24. On application for the entry
+in the register of patents of
+the name of a person entitled
+16
+1600
+(In respect of
+each patent)
+8,000
+(In respect of
+each patent)
+1750
+(In respect of
+each patent)
+8,800
+(In respect of
+each patent)
+<<page 7>>
+28
+THE GAZETTE OF INDIA : EXTRAORDINARY
+[PART II—SEC. 3(i)]
+to a patent or as a share or as
+a mortgage or as licensee or
+as otherwise or for the entry
+in the register of patents of
+notification of a document
+under sections 69(1) or 69(2)
+and rules 90(1) or 90(2).
+25. On application for alteration
+of an entry in the register of
+patents or register of patent
+agents under rules 94(1) or
+rule 118(1).
+—
+320
+1600
+350
+1750
+26. On request for entry of an
+additional address for service
+in the Register of Patents
+under rule 94(3).
+—
+800
+4000
+880
+4400
+27. On application for
+compulsory license under
+sections 84(1), 91(1), 92(1)
+and 92A.
+17
+2400
+12000
+2650
+13200
+28. On request for examination
+of application for patent—
+
+18
+
+(i) under section 11B and
+rule 24(1);
+
+4000
+20000
+4400
+22000
+(ii) under rule 20(4)(ii).
+
+5600
+28000
+6150
+30800
+29. On request for expedited or
+delayed examination of
+application for patent under
+rule 24C.
+18A
+8000
+60000
+Not allowed
+Not allowed
+30. Conversion of the request for
+examination filed under rule
+24B to request for expedited
+or delayed examination
+under rule 24C.
+18A
+4000
+40000
+Not allowed
+Not allowed
+31. On application for
+revocation of a patent under
+section 85(1).
+19
+2400
+12000
+2650
+13200
+32. On application for revision
+of terms and conditions of
+licence under section 88(4).
+20
+2400
+12000
+2650
+13200
+33. On request for termination of
+compulsory licence under
+section 94.
+21
+2400
+12000
+2650
+13200
+34. On application for
+registration as a patent agent
+under rule 109(1) or rule
+112.
+22
+3200
+Not applicable
+3500
+Not applicable
+35. On request for appearing in
+the qualifying examination
+under rule 109(3).
+—
+1600
+Not applicable
+1750 Not applicable
+36. For continuance of the name
+of a person in the register of
+patent agents—
+
+for the 1st year to be paid
+along with registration;
+
+—
+800
+Not applicable
+880
+Not applicable
+
+(ii) for every year
+excluding the 1st year
+—
+800
+Not applicable
+880
+Not applicable
+<<page 8>>
+[भाग II—खण् ड 3(i)]
+भारत का रािपत्र : असाधारण
+29
+to be paid on the 1st
+April in each year.
+37. On application for duplicate
+certificate of patent agent
+under rule 111A.
+—
+1600
+Not applicable
+1750
+Not applicable
+38. On application for
+restoration of the name of a
+person in the register of
+patent agents under rule
+117(1).
+23
+1600
+(Plus
+continuation fee
+under entry
+number 36)
+Not applicable
+1750
+(Plus continuation
+fee under entry
+number 36)
+Not applicable
+39. On a request for correction
+of clerical error under section
+78(2).
+—
+800
+4000
+880
+4400
+40. On application for review or
+setting aside the decision or
+order of the controller under
+section 77(1)(f) or 77(1)(g).
+24
+1600
+8000
+1750
+8800
+41. On application for
+permission for applying
+patent outside India under
+section 39 and rule 71(1).
+25
+1600
+8000
+1750
+8800
+42. On application for duplicate
+patent under section 154 and
+rule 132.
+—
+1600
+8000
+1750
+8800
+43. (i) On request for certified
+copies under section 72
+or for certificate under
+section 147 and rule 133(1).
+—
+1000
+(up to 30 pages
+and, thereafter,
+30 for each
+extra page)
+5000
+(up to 30 pages
+and, thereafter,
+150 for each
+extra page)
+1100
+(up to 30 pages
+and, thereafter, 30
+for each extra
+page)
+5500
+(up to 30 pages
+and, thereafter,
+150 for each
+extra page)
+
+(ii) On request for certified
+copies under section 72 or
+for certificate under section
+147 and rule 133(2).
+--
+2400
+(up to 30 pages
+and thereafter,
+30 for each
+extra page)
+12000
+(up to 30 pages
+and thereafter,
+30 for each extra
+page)
+3300
+(up to 30 pages
+and thereafter, 30
+for each extra
+page)
+13200
+(up to 30 pages
+and thereafter,
+30 for each extra
+page)
+44. For certifying office copies,
+printed each.
+—
+800
+4000
+880
+4400
+45. On request for inspection of
+register under section 72,
+inspection under rule 27 or
+rule 74A.
+—
+320
+1600
+350
+1750
+46. On request for information
+under section 153 and rule
+134.
+—
+480
+2400
+530
+2650
+47. On form of authorization of
+a patent agent.
+26
+No fee
+No fee
+No fee
+No fee
+48. On petition not otherwise
+provided for.
+—
+1600
+8000
+1750
+8800
+49. For supplying of photocopies
+of the documents, per page.
+—
+10
+10
+10
+10
+50. Transmittal fee for
+international application.
+—
+3200
+16000
+3500
+17600
+51. Transmittal fee for
+international application (for
+ePCT filing).
+—
+No fee
+No fee
+Not applicable
+Not applicable
+52. For preparation of certified
+copy of priority document
+and for transmission of the
+same to the International
+Bureau of World Intellectual
+—
+1000
+(up to 30 pages
+and, thereafter,
+30 for each
+5000
+(up to 30 pages
+and, thereafter,
+150 for each
+1100
+(up to 30 pages
+and, thereafter, 30
+for each extra
+5500
+(up to 30 pages
+and, thereafter,
+150 for each
+<<page 9>>
+30
+THE GAZETTE OF INDIA : EXTRAORDINARY
+[PART II—SEC. 3(i)]
+Property Organization.
+extra page)
+extra page)
+page)
+extra page)
+53. For preparation of certified
+copy of priority document
+and e-transmission through
+WIPO DAS.
+—
+No fee
+No fee
+Not applicable
+Not applicable
+54. On statement regarding
+working of a patented
+invention on a commercial
+scale in India under section
+146(2) and rule 131(1).
+27
+No fee
+No fee
+No fee
+No fee
+55. To be submitted for claiming
+the status of a small entity or
+startup.
+28
+No fee
+No fee
+No fee
+No fee
+56. Application for withdrawing
+the application under section
+11B(4), and rules 7(4A) and
+26.
+29
+No fee
+No fee
+No fee
+No fee
+57. Request for adjournment of
+hearing under rule 129A (for
+each adjournment).
+-
+1000
+5000
+1100
+5500
+58. Miscellaneous form under
+rule 8(2), to be used when no
+other form is prescribed.
+30
+As applicable
+59. Grace period.
+31
+500
+2500
+550
+2750”
+
+16.
+In the said rules, in THE SECOND SCHEDULE, in the LIST OF FORMS, -
+(i)
+for the entry corresponding to “Form-4”, the following entry shall be substituted, namely, -
+"4.
+Sections 53(2) and 142(4), rules 12(5), 13(6), 24B(6),
+24C(11), 80(1A), 130 and 138.
+Request for extension of time or
+condonation of delay.”;
+(ii)
+after the entry corresponding to “Form-8”, the following entry shall be substituted, namely, -
+“8A.
+Rule 70A.
+Certificate of inventorship.”;
+
+(iii)
+after the entry corresponding to “Form-30”, the following entry shall be inserted, namely, -
+"31.
+Section 31 and rule 29A
+Grace period.”.
+17.
+In the said rules, in THE SECOND SCHEDULE: -
+(i)
+for Form 1, the following Form shall be substituted, namely, -
+“FORM 1
+THE PATENTS ACT 1970 (39 of 1970) and
+THE PATENTS RULES, 2003
+APPLICATION FOR GRANT OF PATENT
+(See section 7, 54 and 135 and sub-rule (1) of rule 20)
+(FOR OFFICE USE ONLY)
+
+Application No.
+
+Filing date:
+
+Amount of Fee
+paid:
+
+CBR No:
+
+Signature:
+
+1. APPLICANT’S REFERENCE /
+IDENTIFICATION NO. (AS ALLOTTED BY
+OFFICE)
+
+2. TYPE OF APPLICATION [Please tick ( ) at the appropriate category]
+Ordinary ( )
+Convention ( )
+PCT-NP ( )
+PPH ( )
+<<page 10>>
+[भाग II—खण् ड 3(i)]
+भारत का रािपत्र : असाधारण
+31
+Divisional
+( )
+Patent of
+Addition ()
+Divisional ( )( )
+Patent of
+Addition ( )
+
+Divisional
+( )
+Patent of
+Addition ( )
+
+3A. APPLICANT(S)
+Name in
+Full
+Gender
+(optional,
+for
+individuals)
+Nationality
+Country of
+Residence
+Age
+(optional,
+for natural
+persons))
+Address of the Applicant
+
+- Male
+- Female
+- Others
+- Prefer not
+to disclose
+
+- ____
+years
+- Prefer not
+to disclose
+House No.
+
+Street
+
+City
+
+State
+
+Country
+
+Pin code
+
+Email (OTP
+verification
+mandatory
+-will be
+redacted)
+
+Contact
+number
+(OTP
+verification
+mandatory
+-will be
+redacted)
+
+3B. CATEGORY OF APPLICANT [Please tick ( ) at the appropriate category]
+Natural Person ( )
+Other than Natural Person ( )
+Educational institution ()
+
+Small Entity ( )
+Startup ( )
+Others ( )
+
+4. INVENTOR(S) [Please tick ( ) at the appropriate category]
+Are all the inventor(s) same as the
+applicant(s) named above?
+Yes ( )
+No ( )
+If “No”, furnish the details of the inventor(s)
+Name in
+Full
+Gender
+(optional,
+for natural
+persons)
+Nationality
+Age (optional,
+for natural
+persons)
+Country of
+Residence
+Address of the Inventor
+
+- Male
+- Female
+- Others
+- Prefer not
+to disclose
+
+- ____ years
+- Prefer not to
+disclose
+
+House No.
+
+Street
+
+City
+
+State
+
+Country
+
+Pin code
+
+5. TITLE OF THE INVENTION
+
+6. AUTHORISED REGISTERED PATENT
+AGENT(S)
+IN/PA No.
+
+Name
+
+Mobile No. (OTP
+verification
+mandatory-will be
+redacted)
+
+7. ADDRESS FOR SERVICE OF APPLICANT IN
+INDIA
+Name
+
+Postal Address
+<<page 11>>
+32
+THE GAZETTE OF INDIA : EXTRAORDINARY
+[PART II—SEC. 3(i)]
+
+Telephone No.
+
+Mobile No. (OTP
+verification
+mandatory-will be
+redacted)
+
+Fax No.
+
+E-mail ID (OTP
+verification
+mandatory-will be
+redacted)
+
+8. IN CASE OF APPLICATION CLAIMING PRIORITY OF APPLICATION FILED IN CONVENTION
+COUNTRY, PARTICULARS OF CONVENTION APPLICATION
+Country
+Application
+Number
+Filing date
+Name of the
+applicant
+Title of the
+invention
+IPC (as classified in the
+convention country)
+
+9. IN CASE OF PCT NATIONAL PHASE APPLICATION, PARTICULARS OF INTERNATIONAL
+APPLICATION FILED UNDER PATENT CO-OPERATION TREATY (PCT)
+International application number
+International filing date
+
+10. IN CASE OF DIVISIONAL APPLICATION FILED UNDER SECTION 16, PARTICULARS OF
+ORIGINAL (FIRST) APPLICATION
+Original (first) application No.
+Date of filing of original (first) application
+
+11. IN CASE OF PATENT OF ADDITION FILED UNDER SECTION 54, PARTICULARS OF MAIN
+APPLICATION OR PATENT
+Main application/patent No.
+Date of filing of main application
+12. DECLARATIONS
+(i) Declaration by the inventor(s)
+(In case the applicant is an assignee: the inventor(s) may sign herein below or the applicant may upload the
+assignment or enclose the assignment with this application for patent or send the assignment by post/electronic
+transmission duly authenticated within the prescribed period).
+I/We, the above named inventor(s) is/are the true & first inventor(s) for this Invention and declare that the applicant(s)
+herein is/are my/our assignee or legal representative.
+(a) Date
+(b) Signature(s)
+(c) Name(s)
+
+(ii) Declaration by the applicant(s) in the convention country
+(In case the applicant in India is different than the applicant in the convention country: the applicant in the
+convention country may sign herein below or applicant in India may upload the assignment from the applicant in the
+convention country or enclose the said assignment with this application for patent or send the assignment by
+post/electronic transmission duly authenticated within the prescribed period)
+I/We, the applicant(s) in the convention country declare that the applicant(s) herein is/are my/our assignee or legal
+representative.
+(a) Date
+
+(b) Signature(s)
+
+(c) Name(s) of the signatory
+(iii) Declaration by the applicant(s)
+I/We the applicant(s) hereby declare(s) that: -
+o
+I am/ We are in possession of the above-mentioned invention.
+o
+The provisional/complete specification relating to the invention is filed with this application.
+o
+The invention as disclosed in the specification uses the biological material from India and the necessary
+permission from the competent authority shall be submitted by me/us before the grant of patent to
+<<page 12>>
+[भाग II—खण् ड 3(i)]
+भारत का रािपत्र : असाधारण
+33
+me/us.
+o
+There is no lawful ground of objection(s) to the grant of the Patent to me/us.
+o
+I am/we are the true & first inventor(s).
+o
+I am/we are the assignee or legal representative of true & first inventor(s).
+o
+The application or each of the applications, particulars of which are given in Paragraph-8, was the first
+application in convention country/countries in respect of my/our invention(s).
+o
+I/We claim the priority from the above mentioned application(s) filed in convention country/countries
+and state that no application for protection in respect of the invention had been made in a convention
+country before that date by me/us or by any person from which I/We derive the title.
+o
+My/our application in India is based on international application under Patent Cooperation Treaty (PCT)
+as mentioned in Paragraph-9.
+o
+The application is divided out of my /our application particulars of which is given in Paragraph-10 and
+pray that this application may be treated as deemed to have been filed on DD/MM/YYYY under section
+16 of the Act.
+o
+The said invention is an improvement in or modification of the invention particulars of which are given
+in Paragraph-11.
+13. FOLLOWING ARE THE ATTACHMENTS WITH THE APPLICATION
+(a) Form 2
+Item
+Details
+Fee
+Remarks
+Complete/ provisional
+specification)#
+No. of pages
+
+No. of Claim(s)
+No. of claims and No. of
+pages
+
+Abstract
+No. of pages
+
+No. of Drawing(s)
+No. of drawings and No. of
+pages
+
+# In case of a complete specification, if the applicant desires to adopt the drawings filed with his provisional
+specification as the drawings or part of the drawings for the complete specification under rule 13(4), the number of
+such pages filed with the provisional specification are required to be mentioned here.
+(b) Complete specification (in conformation with the international application)/as amended before the International
+Preliminary Examination Authority (IPEA), as applicable (2 copies).
+(c) Sequence listing in electronic form
+(d) Drawings (in conformation with the international application)/as amended before the International Preliminary
+Examination Authority (IPEA), as applicable (2 copies).
+(e) Priority document(s) or a request to retrieve the priority document(s) from DAS (Digital Access Service) if the
+applicant had already requested the office of first filing to make the priority document(s) available to DAS.
+(f) Translation of priority document/Specification/International Search Report/International Preliminary Report on
+Patentability.
+(g) Statement and Undertaking on Form 3
+(h) Declaration of Inventorship on Form 5
+(i) Power of Authority
+(j).................................................................................................................
+
+Total fee ₹..........in Cash/ Banker's Cheque /Bank Draft bearing No..........
+Date...............on .............
+
+Bank.
+
+I/We hereby declare that to the best of my/our knowledge, information and belief the fact and matters slated
+herein are correct and I/We request that a patent may be granted to me/us for the said invention.
+<<page 13>>
+34
+THE GAZETTE OF INDIA : EXTRAORDINARY
+[PART II—SEC. 3(i)]
+
+Dated this.....................day of......................20........................
+
+Signature:
+
+Name:
+To,
+The Controller of Patents
+The Patent Office, at....................
+
+Note: -
+* Repeat boxes in case of more than one entry.
+* To be signed by the applicant(s) or by authorized registered patent agent otherwise where mentioned.
+* Tick ()/cross (x) whichever is applicable/not applicable in declaration in paragraph-12.
+* Name of the inventor and applicant should be given in full, family name in the beginning.
+* Strike out the portion which is/are not applicable.
+* For fee: See First Schedule.”;
+
+(ii)
+for Form 3, the following Form shall be substituted, namely, -
+“FORM 3
+THE PATENTS ACT, 1970
+(39 of 1970)
+and
+THE PATENTS RULES, 2003
+STATEMENT AND UNDERTAKING UNDER SECTION 8
+(See sub-rule (2) and (3) of Rule 12)
+1. Name of the applicant(s).
+I/We...........................................................................
+.................................................................................
+.................................................................................
+.................................
+hereby declare:
+2. Name, address and nationality of the joint
+applicant.
+(i) that I/We who have made the application for patent number .......
+in India, dated ............., alone/jointly with ............................,
+(ii) that I/We have not made any application for the
+same/substantially the same invention outside India
+Or
+(iii) that I/We have made for the same/ substantially same invention,
+application(s) for patent in the other countries, the particulars of
+which are given below:
+Name of the
+country
+Date of
+application
+Application
+No.
+Status of the
+application
+Date of
+publication
+Date of disposal
+
+3. Name and address of the assignee
+(i) that the rights in the application(s) filed in India has/have been
+<<page 14>>
+[भाग II—खण् ड 3(i)]
+भारत का रािपत्र : असाधारण
+35
+assigned to ....................................
+.................................................................................
+.........................................................
+(ii) that I/We undertake that upto the date of grant of the patent by
+the Controller, I/We would keep him informed in writing regarding
+the details of corresponding applications for patents filed outside
+India in accordance with the provisions contained in section 8 and
+rule 12.
+Dated this.........day of...........20.....
+4. To be signed by the applicant or his
+authorized registered patent agent.
+Signature. ......................
+5. Name of the natural person who has
+signed.
+(..........................................).
+
+To
+The Controller of Patents,
+The Patent Office,
+at.......................................
+Note. - Strike out whichever is not applicable;”;
+
+(iii)
+for Form 4, the following Form shall be substituted, namely, -
+FORM 4
+THE PATENTS ACT, 1970
+(39 of 1970)
+and
+THE PATENTS RULES, 2003
+REQUEST FOR EXTENSION OF TIME OR CONDONATION OF DELAY
+[See sections 53(2), and 142 (4); rules 12(5), 13(6), 24B(6), 24C(11), 80(1A), 130, 131(2) and 138]
+1. Name of the applicant
+I/We..........................................................................................
+................................................................................................
+................................................................. hereby request for
+extension of time for ................. months(s) under
+section/rule.....................in connection with my/our/application/Patent
+No............
+The reasons for making the request are as follows:-
+................................................................................................
+.........................................................................
+Dated this.......day of ..........20....
+2. To be signed by the applicant
+or his authorized registered
+patent agent
+Signature
+(..............................................)
+
+3. Name of the natural person
+who has signed
+
+To
+The Controller of Patents,
+The Patent Office,
+at.......................................
+Note. - For fee: See First Schedule.”;
+
+(iv)
+after Form 8, the following Form shall be substituted, namely, -
+<<page 15>>
+36
+THE GAZETTE OF INDIA : EXTRAORDINARY
+[PART II—SEC. 3(i)]
+FORM 8A
+THE PATENTS ACT, 1970
+(39 of 1970)
+and
+THE PATENTS RULES, 2003
+Certificate of Inventorship
+[See rule 70A]
+1. Name of the Inventor, and
+Patent Number.
+I................................................................................................
+.........................................1, Inventor in respect of Patent
+Number............................1, hereby request for the grant of a ‘Certificate of
+Inventorship’ in respect of the Patent.
+OR
+I................................................................................................
+.........................................1, Inventor in respect of Patent
+Number............................1, hereby request for the grant of a duplicate
+certificate of inventorship in respect of the Patent. The statement setting out the
+circumstances in which the original certificate of inventorship was lost,
+destroyed, damaged or cannot be produced are as follows:
+................................................................................................
+................................................................................................
+................................................................................................
+................................................................................................
+................................................................................................
+
+2. To be signed by the inventor
+and the date of filing of this
+request.
+
+Signature2
+(BELOW INFORMATION IS MANDATORILY REQUIRED TO BE
+SUBMITTED)
+(Name of the Inventor who has signed)
+Aadhaar number of the Inventor (for indian inventors)
+House No.
+Apartment/Street
+City
+State
+Country
+Pin Code
+Mobile Phone: (OTP verification mandatory-will be redacted)
+Email: (OTP verification mandatory-will be redacted)
+Dated this.......day of ..........20....2
+
+To
+The Controller of Patents,
+The Patent Office,
+at.......................................
+Note.- This Certificate does not, in any manner whatsoever, confer or derogate from any rights under the patent.”;
+
+(v)
+for Form 27, the following Form shall be substituted, namely, -
+<<page 16>>
+[भाग II—खण् ड 3(i)]
+भारत का रािपत्र : असाधारण
+37
+“FORM 27
+THE PATENTS ACT, 1970
+(39 of 1970)
+AND
+THE PATENTS RULES, 2003
+No Fee
+STATEMENT REGARDING THE WORKING OF PATENTED INVENTION(S) ON A COMMERCIAL
+SCALE IN INDIA
+[See section 146(2) and rule 131(1)]
+1. Insert
+name,
+address,
+nationality,
+patent
+number(s).
+I/ We, the Patentee(s)/ Licensee ..............., in respect of patent number(s) ............,
+furnish this statement,
+(Explanation: One form may be filed in respect of multiple patents, provided all of them
+are related patents and are granted to the same patentee(s)).
+2. State the financial year
+to which the statement
+relates.
+in respect of the financial year .........
+3. Worked / not worked.
+Please state whether
+each patent in respect of
+which this form is being
+filed is worked or not
+worked.
+Patent Number(s)
+Worked [Tick () if
+applicable]
+Not worked [ Tick () if
+applicable]
+
+4. If not worked, please
+tick
+the
+appropriate
+reasons
+Patented Invention is under development/ commercial trial
+Patented Invention is under Review/approval with Regulatory authorities
+Exploring commercial licensing
+Any other, may specify:
+
+5. Whether the patent is
+available for licensing
+YES
+NO
+In case of YES, would you be interested in receiving communications from any person
+interested in seeking a license. If so, kindly provide contact details as below:
+Email address: .............
+Contact Number: ...........
+
+The facts and matters stated above are true to the best of my/ our knowledge,
+information and belief.
+Dated this ......... day of ............. 20......
+6. To
+be
+signed
+by
+Patentee(s) / Licensee /
+Authorised
+Agent
+furnishing the statement.
+Signature(s) .................................
+
+To
+The Controller of Patents,
+The Patent Office,
+at ..................
+<<page 17>>
+38
+THE GAZETTE OF INDIA : EXTRAORDINARY
+[PART II—SEC. 3(i)]
+Note: 1. Every patentee and every licensee (exclusive or otherwise) is required to file this Form; where a patent is
+granted to two or more persons, this form may be filed jointly by all or any of such persons.
+2. Subject to conditions specified under the Patent Act, 1970 a patented invention shall not be considered as ‘not
+worked’ merely on the ground that the patented product has been imported in India.”.
+(vi)
+after Form 30, the following Form shall be substituted, namely:-
+“FORM 31
+THE PATENTS ACT, 1970
+(39 of 1970)
+AND
+THE PATENTS RULES, 2003
+GRACE PERIOD
+[See section 31 and rule 29A]
+1. Name, address,
+nationality, and
+application number.
+I/ We, the applicant ..............., in respect of application number ............, filed on
+............ hereby claim the benefit of grace period provided under section 31.
+2. Applicable provision
+Section 31(a)
+Section 31(b)
+Section 31(c)
+Section 31(d)
+3. Documents
+to
+be
+submitted as evidence.
+Note: Evidence may
+also include an affidavit.
+
+(i) Section 31(a)
+With reference to:
+a) the earliest date of display or use BOX FOR DDMMYYYY;
+and
+b) that the display occurred with the consent of the true and first
+inventor or a person deriving title from him; and YES NO
+c) that the display occurred at an industrial or other exhibition to
+which the provisions of this section have been extended by
+the Central Government by notification in the Official
+Gazette;
+the following documentary evidence is submitted:
+..................................................................
+..................................................................
+..................................................................
+..................................................................
+(ii) Section 31(b)
+With reference to:
+a) the earliest date of publication or use;
+b) the documentary evidence in respect of section 31(a) above;
+and
+c) the documentary evidence to the effect that the publication of
+any description of the invention occurred in consequence of
+the display or use of the invention as stated in section 31(b);
+the following documentary evidence is submitted:
+..................................................................
+..................................................................
+..................................................................
+..................................................................
+(iii) Section 31(c)
+With reference to:
+a) the earliest date of use;
+b) the documentary evidence in respect of section 31(a) or
+section 31(b) as mentioned above; and
+<<page 18>>
+[भाग II—खण् ड 3(i)]
+भारत का रािपत्र : असाधारण
+39
+c) the documentary evidence regarding use of the invention as
+stated in section 31(c); and
+d) the documentary evidence or affidavit that the use of the
+invention occurred without the consent of the true and first
+inventor or a person deriving title from him;
+the following documentary evidence is submitted:
+..................................................................
+..................................................................
+..................................................................
+..................................................................
+(iv) Section 31(d)
+With reference to:
+a) the earliest date of description or publication;
+b) the description of the invention in a paper read by the true
+and first inventor before a learned society;
+c) the description of the invention published by the true and first
+inventor or with his consent in the transactions of a learned
+society;
+the following documentary evidence is submitted:
+..................................................................
+..................................................................
+..................................................................
+..................................................................
+4. Undertaking
+That my invention was in the public domain from DDMMYYYY and this application is
+made not later than 12 months from that date (earliest date as stated above in respect of
+section 31(a), 31(b), 31(c), or 31(d)).
+
+The facts and matters stated above are true to the best of my/ our knowledge, information
+and belief.
+Dated this ......... day of ............. 20......
+5. To be signed by
+Applicant / Authorised
+Agent.
+Note: Affidavit, if any,
+shall be signed by the
+applicant.
+Signature(s) .................................
+
+To
+The Controller of Patents,
+The Patent Office,
+at ..................
+Note: Select the options that are applicable.”.
+
+18.
+In the said rules, for THE FOURTH SCHEDULE, the following Schedule shall be substituted, namely,-
+“THE FOURTH SCHEDULE
+[See proviso to rule 136(1)]
+Number of Entry Matter in respect of which cost to be
+awarded
+Amount ( in rupees)
+Natural person(s) or
+Startup(s) or Small entit(y)/
+(ies) or educational
+institution(s)
+Other(s), alone or with
+natural person(s) or Startup(s)
+or Small entit(y)/ (ies) or
+educational institution(s)
+1.
+For notice of opposition under
+sections 25, 57, 60, 63, 78, 87(2) or
+88(4).
+2400
+12000
+2.
+For application for compulsory
+licence under sections 84(1), 91(1)
+1500
+6000
+<<page 19>>
+40
+THE GAZETTE OF INDIA : EXTRAORDINARY
+[PART II—SEC. 3(i)]
+or 92(1).
+3.
+For application for revision of terms
+and conditions of licence under
+section 88(4) .
+2400
+12000
+4.
+For notice of intention to attend the
+hearing under rule 62(2).
+1500
+6000
+5.
+Stamp fee for power of attorney
+where a patent agent or other person
+has been appointed or stamp fee in
+respect of relevant affidavits.
+The amount actually paid.
+The amount actually paid.
+6.
+For written statement under rule 57
+or reply statement under rule 58 or
+for each affidavit, if relevant.
+4000
+5000
+7.
+For each document of publication
+produced in the proceedings, if
+relevant.
+1600
+2000
+8.
+For each unnecessary or irrelevant
+affidavit or citation.
+1600
+2000
+9.
+For every day or part day of hearing
+before the Controller.
+4000
+5000
+10.
+Sub-rule (2) of rule 136
+Aggregate of amounts
+actually paid in respect of
+entries 1, 2, 12, 27, 28, 29
+of the First Schedule, as
+may be applicable
+Twice the aggregate of
+amounts actually paid in
+respect of entries 1, 2, 12,
+27, 28, 29 of the First
+Schedule, as may be
+applicable”.
+
+19.
+In the said rules, in the FIFTH SCHEDULE, for the headings,
+“Sl.
+No.
+On what payable
+(Relevant provision of
+Patents Rules, 2003, if
+any)
+Relevant Rule
+of regulations
+under the
+Treaty
+For Natural Person
+Other than natural person either
+alone or jointly with natural
+person”,
+the following headings shall be substituted, namely: -
+“S.
+No.
+On what payable
+(Relevant provision of
+Patents Rules, 2003, if
+any)
+Relevant Rule
+of regulations
+under the
+Treaty
+Natural person(s) or
+Startup(s) or Small
+entit(y)/ (ies) or
+educational institution(s)
+Other(s), alone or with natural
+person(s) or Startup(s) or Small
+entit(y)/ (ies) or educational
+institution(s)”.
+
+[ F. No. P-24031/14/2023-IPR-III]
+HIMANI PANDE Jt. Secy.
+
+Note: The said rules were published in the Gazette of India, Extraordinary, Part-II, Section 3, Sub-Section (ii), vide
+number S.O. 493 (E) dated the 2nd May, 2003 and last amended, vide notification number G.S.R. 646 (E) dated
+the 21st September, 2021.
+
+Uploaded by Dte. of Printing at Government of India Press, Ring Road, Mayapuri, New Delhi-110064
+and Published by the Controller of Publications, Delhi-110054. MANOJ KUMAR
+VERMA
+Digitally signed by
+MANOJ KUMAR VERMA
+Date: 2024.03.15
+23:06:12 +05'30'

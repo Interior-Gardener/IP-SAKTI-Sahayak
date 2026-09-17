@@ -56,13 +56,19 @@ class Item(BaseModel):
     question: str
     language: str = "en"
     jurisdiction_mode: Literal["IN", "INTL", "BOTH"] = "IN"
-    category: Literal["in_scope", "out_of_scope", "medical_advice", "unsafe"] = "in_scope"
+    category: Literal["in_scope", "out_of_scope", "medical_advice", "unsafe"] = (
+        "in_scope"
+    )
     material_kind: Literal["plant", "microbe", "animal", "mineral"] | None = None
     expected: dict[Literal["IN", "INTL"], Expected] = Field(default_factory=dict)
     key_points: list[str] = Field(default_factory=list, description="for the judge")
     twin_of: str | None = None
-    reference_answer: str | None = Field(default=None, description="for chrF, same language")
-    verified_by: str = Field(description="who checked the expected locators against the corpus")
+    reference_answer: str | None = Field(
+        default=None, description="for chrF, same language"
+    )
+    verified_by: str = Field(
+        description="who checked the expected locators against the corpus"
+    )
 
 
 def load_items(paths: list[Path]) -> list[Item]:
@@ -84,12 +90,18 @@ def load_items(paths: list[Path]) -> list[Item]:
 
 
 def locator_matches(expected: str, actual: str) -> bool:
-    return actual == expected or actual.startswith(expected + "(") or actual.startswith(expected + ".")
+    return (
+        actual == expected
+        or actual.startswith(expected + "(")
+        or actual.startswith(expected + ".")
+    )
 
 
 def hit_expected(exp: Expected, source_id: str, locator: str) -> bool:
     source_ok = not exp.sources or source_id in exp.sources
-    locator_ok = not exp.locators or any(locator_matches(e, locator) for e in exp.locators)
+    locator_ok = not exp.locators or any(
+        locator_matches(e, locator) for e in exp.locators
+    )
     return source_ok and locator_ok
 
 
@@ -116,7 +128,9 @@ def chrf(hypothesis: str, reference: str, n: int = 6, beta: float = 2.0) -> floa
 
 
 class Grade(BaseModel):
-    score: Literal[0, 0.5, 1] = Field(description="1 all key points correct, 0.5 partly, 0 wrong or missing")
+    score: Literal[0, 0.5, 1] = Field(
+        description="1 all key points correct, 0.5 partly, 0 wrong or missing"
+    )
     reason: str
 
 
@@ -149,11 +163,19 @@ class Result:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--provider", default=os.environ.get("LLM_PROVIDER_ANSWER", "groq"))
+    parser.add_argument(
+        "--provider", default=os.environ.get("LLM_PROVIDER_ANSWER", "groq")
+    )
     parser.add_argument("--only", choices=["retrieval", "full"], default="full")
     parser.add_argument("--limit", type=int)
     parser.add_argument("--smoke", action="store_true", help="the 15-item CI subset")
     parser.add_argument("--files", nargs="*", type=Path)
+    parser.add_argument(
+        "--resume", type=Path, help="a partial run file: skip items already scored"
+    )
+    parser.add_argument(
+        "--tag", default="", help="added to the result file name so runs never overwrite each other"
+    )
     args = parser.parse_args()
 
     os.environ["LLM_PROVIDER_ANSWER"] = args.provider
@@ -165,7 +187,9 @@ def main() -> int:
     files = args.files or sorted(GOLDEN.glob("*.jsonl"))
     items = load_items(files)
     if args.smoke:
-        items = [i for i in items if i.id in set((GOLDEN / "smoke.txt").read_text().split())]
+        items = [
+            i for i in items if i.id in set((GOLDEN / "smoke.txt").read_text().split())
+        ]
     if args.limit:
         items = items[: args.limit]
     by_id = {i.id: i for i in items}
@@ -177,27 +201,82 @@ def main() -> int:
     if args.only == "full":
         from app.llm.router import get_provider
 
-        svc = Services(SessionLocal, services.answer_llm(), services.fast_llm(), embedder, reranker, "eval")
+        svc = Services(
+            SessionLocal,
+            services.answer_llm(),
+            services.fast_llm(),
+            embedder,
+            reranker,
+            "eval",
+        )
         judge = get_provider("judge")
 
     results: list[Result] = []
     answers: dict[str, object] = {}
+    done: set[str] = set()
+    if args.resume and args.resume.exists():
+        previous = json.loads(args.resume.read_text(encoding="utf-8"))
+        for r in previous["results"]:
+            if not any(n.startswith("error:") for n in r["notes"]):
+                results.append(
+                    Result(r["item"], r["metrics"], r["notes"], r["seconds"])
+                )
+                done.add(r["item"])
+        print(f"resuming: {len(done)} items already scored")
+    # The item count (or --tag) keeps a small re-run from overwriting a full run's results.
+    tag = f"-{args.tag}" if args.tag else f"-{len(items)}items"
+    partial = RUNS / f"{date.today().isoformat()}-{args.provider}{tag}-partial.json"
+
+    def save_partial() -> None:
+        RUNS.mkdir(parents=True, exist_ok=True)
+        partial.write_text(json.dumps({"provider": args.provider, "results": [r.__dict__ for r in results]},
+                                      indent=2, ensure_ascii=False), encoding="utf-8")  # fmt: skip
+
     for item in items:
+        if item.id in done:
+            continue
         t = time.perf_counter()
         res = Result(item.id)
         # 1. retrieval
-        if item.category == "in_scope" and item.expected:
+        # Non-English items are translated inside the pipeline, so retrieval is scored there.
+        if item.category == "in_scope" and item.expected and item.language == "en":
             with SessionLocal() as session:
                 found = []
                 for j, exp in item.expected.items():
-                    hits = search(session, item.question, j, embedder, reranker, top_k=8)
-                    found.append(any(hit_expected(exp, h.source_id, h.locator) for h in hits))
+                    hits = search(
+                        session, item.question, j, embedder, reranker, top_k=8
+                    )
+                    found.append(
+                        any(hit_expected(exp, h.source_id, h.locator) for h in hits)
+                    )
             res.metrics["retrieval"] = float(all(found))
 
         if svc is not None:
-            env = [e for e in run(AskRequest(question=item.question, language=item.language,
-                                             jurisdiction_mode=item.jurisdiction_mode), svc)][-1].data  # fmt: skip
+            try:
+                events = list(run(AskRequest(question=item.question, language=item.language,
+                                             jurisdiction_mode=item.jurisdiction_mode), svc))  # fmt: skip
+            except Exception as e:  # noqa: BLE001 - e.g. provider rate limit: keep what we have
+                res.notes.append(f"error: {type(e).__name__}: {str(e)[:200]}")
+                results.append(res)
+                save_partial()
+                print(
+                    f"{item.id:28} ERROR {type(e).__name__} — stopping; rerun with --resume {partial.as_posix()}"
+                )
+                break
+            env = events[-1].data
+            trace = next((e.data for e in events if e.name == "trace"), None)
             answers[item.id] = env
+            # Why it came out this way, so a wrong abstention can be diagnosed from the run file.
+            if env.abstained:
+                res.notes.append(f"abstained: {env.abstained.reason}")
+            for a in env.answers:
+                res.notes.append(
+                    f"{a.jurisdiction} confidence {a.confidence.band} {a.confidence.score}: {'; '.join(a.confidence.reasons)}"
+                )
+            if trace is not None:
+                res.notes.extend(
+                    f"{j} flag: {f}" for j, fl in trace.flags.items() for f in fl
+                )
             abstained = env.abstained is not None
             # 4. abstention
             if item.category == "in_scope":
@@ -210,7 +289,9 @@ def main() -> int:
                 ok = True
                 for a in env.answers:
                     exp = item.expected.get(a.jurisdiction)
-                    all_verified = all(c.verified for c in a.citations) and bool(a.citations)
+                    all_verified = all(c.verified for c in a.citations) and bool(
+                        a.citations
+                    )
                     expected_cited = exp is None or any(
                         hit_expected(exp, c.source_id, c.locator) for c in a.citations
                     )
@@ -218,10 +299,14 @@ def main() -> int:
                 res.metrics["citation"] = float(ok)
                 # 2. accuracy
                 if item.key_points and judge is not None:
-                    body = "\n\n".join(f"[{a.jurisdiction}]\n{a.markdown}" for a in env.answers)
-                    prompt = f"Question: {item.question}\n\nKey points:\n- " + "\n- ".join(
-                        item.key_points
-                    ) + f"\n\nAnswer:\n{body}"
+                    body = "\n\n".join(
+                        f"[{a.jurisdiction}]\n{a.markdown}" for a in env.answers
+                    )
+                    prompt = (
+                        f"Question: {item.question}\n\nKey points:\n- "
+                        + "\n- ".join(item.key_points)
+                        + f"\n\nAnswer:\n{body}"
+                    )
                     try:
                         grade = judge.complete_structured(JUDGE_SYSTEM, prompt, Grade)
                         res.metrics["accuracy"] = float(grade.score)
@@ -230,6 +315,7 @@ def main() -> int:
                         res.notes.append(f"judge failed: {e}")
         res.seconds = round(time.perf_counter() - t, 2)
         results.append(res)
+        save_partial()
         print(f"{item.id:28} {json.dumps(res.metrics)}", flush=True)
 
     # 5. multilingual, once both twins have answers
@@ -240,8 +326,11 @@ def main() -> int:
                 continue
             a, b = answers[item.id], answers[twin.id]
             res = next(r for r in results if r.item == item.id)
-            prompt = "Answer 1:\n" + "\n".join(x.markdown for x in a.answers) + "\n\nAnswer 2:\n" + "\n".join(
-                x.markdown for x in b.answers
+            prompt = (
+                "Answer 1:\n"
+                + "\n".join(x.markdown for x in a.answers)
+                + "\n\nAnswer 2:\n"
+                + "\n".join(x.markdown for x in b.answers)
             )
             try:
                 verdict = judge.complete_structured(AGREE_SYSTEM, prompt, Agreement)
@@ -249,7 +338,12 @@ def main() -> int:
             except Exception as e:  # noqa: BLE001
                 res.notes.append(f"agreement judge failed: {e}")
             if item.reference_answer:
-                res.metrics["chrf"] = round(chrf(" ".join(x.markdown for x in a.answers), item.reference_answer), 3)
+                res.metrics["chrf"] = round(
+                    chrf(
+                        " ".join(x.markdown for x in a.answers), item.reference_answer
+                    ),
+                    3,
+                )
 
     def mean(key: str) -> float | None:
         vals = [r.metrics[key] for r in results if r.metrics.get(key) is not None]
@@ -267,7 +361,10 @@ def main() -> int:
     out = {
         "date": date.today().isoformat(),
         "provider": args.provider,
-        "models": {"answer": svc.answer_llm.model if svc else None, "judge": judge.model if judge else None},
+        "models": {
+            "answer": svc.answer_llm.model if svc else None,
+            "judge": judge.model if judge else None,
+        },
         "embed_model": embedder.model,
         "reranker": getattr(reranker, "model", None),
         "items": len(items),
@@ -276,8 +373,10 @@ def main() -> int:
         "results": [r.__dict__ for r in results],
     }
     RUNS.mkdir(parents=True, exist_ok=True)
-    name = f"{out['date']}-{args.provider}{'-smoke' if args.smoke else ''}{'-retrieval' if args.only == 'retrieval' else ''}.json"
-    (RUNS / name).write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
+    name = f"{out['date']}-{args.provider}{tag}{'-retrieval' if args.only == 'retrieval' else ''}.json"
+    (RUNS / name).write_text(
+        json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
     print("\n" + json.dumps(summary, indent=2))
     print(f"wrote eval/runs/{name}")
     return 0

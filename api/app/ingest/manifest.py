@@ -42,6 +42,9 @@ class ManifestSource(BaseModel):
     effective_from: date | None = None
     effective_to: date | None = None
     notes: str | None = None
+    # For files that bundle other material first (e.g. an Act printed before its Rules):
+    # parsing starts at the first line that equals this text exactly.
+    text_start: str | None = None
 
     @model_validator(mode="after")
     def _check(self) -> "ManifestSource":

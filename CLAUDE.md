@@ -9,6 +9,8 @@
 - `docs/architecture.md` — request flow, data model, API surface, contracts.
 - `docs/providers.md` — Anthropic vs Groq, embeddings, Bhashini, env vars.
 - `docs/CONTRIBUTING.md` — setup, keys, branch flow, ownership.
+- `docs/STATUS.md` — **start here**: what works, measured eval results, what was tested live, setup on a new machine, next steps.
+- `docs/SOURCES.md` — generated register: where every corpus document came from, which file, where its data lives.
 - `docs/TASKS.md` — task tracker and the per-task workflow rules (check limit, update tracker, push).
 - `docs/dpdp-and-security.md` — privacy, audit, threat model, OWASP LLM checklist.
 - `docs/model-card.md` — intended use, eval metrics, risks (NIST AI RMF / ISO 42001).

@@ -46,12 +46,22 @@ def format_documents(documents: list[Document]) -> str:
     )
 
 
+RETRY_MARKERS = (
+    "That answer had no usable citation markers. Write it again with the same content, "
+    'putting a marker after each sourced sentence in exactly this form: [[c:<source id>|"<exact '
+    'words copied from that source>"]]. Use only these source ids: {ids}. Do not use any other '
+    "citation style."
+)
+
+
 class GroqProvider(LLMProvider):
     name = "groq"
 
     def __init__(self, model: str, client: Groq | None = None) -> None:
         super().__init__(model)
-        self.client = client or Groq()
+        # The free tier allows ~8k tokens a minute and one cited answer uses ~6-7k, so
+        # rate-limit errors are normal; the SDK waits for the server's retry-after and retries.
+        self.client = client or Groq(max_retries=8)
 
     def _chat(self, messages: list[dict], max_tokens: int, **kwargs) -> str:
         response = self.client.chat.completions.create(
@@ -83,21 +93,27 @@ class GroqProvider(LLMProvider):
     def answer_with_citations(
         self, system: str, question: str, documents: list[Document]
     ) -> CitedAnswer:
-        raw = self._chat(
-            [
-                {"role": "system", "content": f"{system}\n\n{CITATION_RULES}"},
-                {
-                    "role": "user",
-                    "content": f"{format_documents(documents)}\n\nQuestion: {question}",
-                },
-            ],
-            4096,
-        )
+        messages = [
+            {"role": "system", "content": f"{system}\n\n{CITATION_RULES}"},
+            {"role": "user", "content": f"{format_documents(documents)}\n\nQuestion: {question}"},
+        ]
         known = {d.chunk_id for d in documents}
+        raw = self._chat(messages, 4096)
         prose, citations = parse_markers(raw)
         # An id the model invented cannot be verified; drop it here so the
         # verifier sees an uncited claim and lowers confidence.
-        return CitedAnswer(prose, [c for c in citations if c.chunk_id in known], self.model)
+        citations = [c for c in citations if c.chunk_id in known]
+        if not citations:
+            # gpt-oss sometimes falls back to its own 【1†source】 style, which carries no
+            # quotable text and so can never be verified. Ask once more, showing the format.
+            messages += [
+                {"role": "assistant", "content": raw},
+                {"role": "user", "content": RETRY_MARKERS.format(ids=", ".join(sorted(known)))},
+            ]
+            raw = self._chat(messages, 4096)
+            prose, citations = parse_markers(raw)
+            citations = [c for c in citations if c.chunk_id in known]
+        return CitedAnswer(prose, citations, self.model)
 
     def transcribe(self, audio: bytes, language: str | None = None) -> str:
         result = self.client.audio.transcriptions.create(

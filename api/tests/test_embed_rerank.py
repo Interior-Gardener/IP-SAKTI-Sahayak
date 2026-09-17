@@ -12,7 +12,7 @@ class FakeEncoder:
     def get_sentence_embedding_dimension(self):
         return 3
 
-    def encode(self, texts, normalize_embeddings):
+    def encode(self, texts, normalize_embeddings, batch_size=16):
         assert normalize_embeddings
         return np.array([[len(t), 0.0, 1.0] for t in texts])
 

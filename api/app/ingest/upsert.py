@@ -11,7 +11,7 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Literal
 
-from sqlalchemy import select, update
+from sqlalchemy import delete, select, update
 from sqlalchemy.orm import Session
 
 from app.db.models import EMBED_DIM, Chunk, Source, SourceVersion
@@ -19,8 +19,8 @@ from app.embed.base import Embedder
 from app.ingest.chunk import Chunk as ChunkDraft
 from app.ingest.manifest import ManifestSource
 
-Outcome = Literal["new_version", "unchanged", "re_embedded"]
-BATCH = 32
+Outcome = Literal["new_version", "unchanged", "re_embedded", "rechunked"]
+BATCH = 256  # rows per DB write; the encoder batches internally
 
 
 @dataclass(frozen=True)
@@ -50,6 +50,25 @@ def _embed_all(
     return vectors
 
 
+def _rows(version_id, source, drafts, vectors, model):
+    return [
+        Chunk(
+            source_version_id=version_id,
+            locator=d.locator,
+            heading_path=d.heading_path,
+            page=d.page,
+            text=d.text,
+            context_header=d.context_header,
+            embedding=vector,
+            embed_model=model,
+            jurisdiction=source.jurisdiction,
+            regime=list(source.regime),
+            doc_type=source.doc_type,
+        )
+        for d, vector in zip(drafts, vectors, strict=True)
+    ]
+
+
 def upsert_source(
     session: Session,
     source: ManifestSource,
@@ -57,6 +76,7 @@ def upsert_source(
     drafts: list[ChunkDraft],
     embedder: Embedder,
     progress: Callable[[int, int], None] | None = None,
+    rechunk: bool = False,
 ) -> UpsertResult:
     row = session.get(Source, source.id) or Source(id=source.id)
     row.title = source.title
@@ -71,6 +91,15 @@ def upsert_source(
     session.flush()
 
     existing = session.scalar(select(SourceVersion).where(SourceVersion.sha256 == sha256))
+    if existing is not None and rechunk:
+        # Same file, better parser: replace this version's chunks in place.
+        session.execute(delete(Chunk).where(Chunk.source_version_id == existing.id))
+        vectors = _embed_all(
+            embedder, [embedding_text(d.context_header, d.text) for d in drafts], progress
+        )
+        session.add_all(_rows(existing.id, source, drafts, vectors, embedder.model))
+        session.commit()
+        return UpsertResult(source.id, "rechunked", existing.id, len(drafts))
     if existing is not None:
         stale = session.scalars(
             select(Chunk).where(
@@ -106,21 +135,6 @@ def upsert_source(
     vectors = _embed_all(
         embedder, [embedding_text(d.context_header, d.text) for d in drafts], progress
     )
-    session.add_all(
-        Chunk(
-            source_version_id=version.id,
-            locator=d.locator,
-            heading_path=d.heading_path,
-            page=d.page,
-            text=d.text,
-            context_header=d.context_header,
-            embedding=vector,
-            embed_model=embedder.model,
-            jurisdiction=source.jurisdiction,
-            regime=list(source.regime),
-            doc_type=source.doc_type,
-        )
-        for d, vector in zip(drafts, vectors, strict=True)
-    )
+    session.add_all(_rows(version.id, source, drafts, vectors, embedder.model))
     session.commit()
     return UpsertResult(source.id, "new_version", version.id, len(drafts))
