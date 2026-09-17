@@ -5,9 +5,12 @@ import { plantsPart3 } from './plants.part3'
 import { plantsPart4 } from './plants.part4'
 import { PLANT_HISTORY } from './history'
 import { PLANT_PHOTOS } from './photos'
+import { PLANT_IPR } from './ipr/plant'
+import { unknownProfile } from './ipr/unknown'
 import { asset } from '../lib/asset'
 
-// Botany and history are written and reviewed separately, then joined here.
+// Botany, history and the legal layer are written and reviewed separately,
+// then joined here.
 export const plants: Plant[] = [...plantsPart1, ...plantsPart2, ...plantsPart3, ...plantsPart4].map((entry) => {
   const history = PLANT_HISTORY[entry.id]
   // Loud at module load rather than a blank panel three clicks in.
@@ -18,7 +21,9 @@ export const plants: Plant[] = [...plantsPart1, ...plantsPart2, ...plantsPart3, 
     ...photo,
     src: asset(photo.src),
   }))
-  return { ...entry, history, photos }
+  // Unverified plants still get a profile, just an honest all-'unknown' one.
+  const ipr = PLANT_IPR[entry.id] ?? unknownProfile('plant', entry.botanical)
+  return { ...entry, history, photos, ipr }
 })
 
 export const plantById: ReadonlyMap<string, Plant> = new Map(plants.map((p) => [p.id, p]))

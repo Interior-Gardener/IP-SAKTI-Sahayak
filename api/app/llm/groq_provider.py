@@ -16,7 +16,8 @@ from pydantic import BaseModel
 from app.llm import router
 from app.llm.base import CitedAnswer, Document, LLMProvider, RawCitation
 
-MARKER = re.compile(r'\[\[c:(?P<id>[^|\]]+)\|"(?P<span>.*?)"\]\]', re.DOTALL)
+# The "c:" prefix is optional: gpt-oss-120b sometimes leaves it out.
+MARKER = re.compile(r'\[\[(?:c:)?(?P<id>[^|\]]+)\|"(?P<span>.*?)"\]\]', re.DOTALL)
 
 CITATION_RULES = """\
 Answer only from the numbered sources below. After every sentence that relies on a

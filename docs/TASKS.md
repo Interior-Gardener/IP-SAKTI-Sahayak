@@ -9,7 +9,7 @@ We split the build into small tasks so several people, each with their own Claud
 2. **Check your limit.** Run `/usage` in Claude Code. Compare what you have left with the task's size:
    - **S** ≈ under 10% of a 5-hour session · **M** ≈ 10–25% · **L** ≈ 25–50%.
    - If you don't clearly have room, **don't start it**. Pick a smaller `todo` task or hand over to the next teammate.
-3. Mark the task `in progress`, put your name in **Owner**, commit and push that one-line change so others see it.
+3. Mark the task `in progress` and put your name in **Owner** (this goes out with your next push, no separate commit).
 
 **While working**
 4. Do only that task. Follow `CLAUDE.md` rules: never make up legal authority (use `'unknown'` or "verify" with a manifest cite id), keep IN and INTL answers separate, the garden must still work with the API down, keys only in the API env.
@@ -17,12 +17,13 @@ We split the build into small tasks so several people, each with their own Claud
 
 **After finishing a task**
 6. Update this file: status `done`, add the date and a short note (anything the next person needs to know).
-7. Commit and push to GitHub on `main`. **Small (S) tasks can share one commit**: finish two or three, then push them together. M and L tasks get their own commit.
-   - Commit message: **short, plain, human-sounding, non-technical**, not past tense, e.g. `add the chat drawer`, `plant legal info for neem and tulsi`. No long bodies, no bullet lists.
+7. **Don't commit after every task.** Keep working through tasks and commit + push **once, when your limit is near 90% used** (check `/usage`), or when you stop for the day. One push can hold several finished tasks.
+   - Commit message: **short, plain, human-sounding, non-technical**, not past tense, e.g. `add the chat drawer and plant legal info`. No long bodies, no bullet lists.
    - **No Claude/AI co-author line** (no `Co-Authored-By: Claude`). Commit under your own git name.
-8. Check your limit again (step 2) before taking the next task. If you're low, stop here: the tracker and GitHub are already up to date, so the next teammate can carry on.
+   - Before pushing, make sure the tracker is updated for every task in that push, and build/lint/tests pass.
+8. Check your limit (step 2) before taking the next task. If it's around 90%, update the tracker, commit and push now, so the next teammate starts from GitHub.
 
-**If you run out of limit mid-task:** commit what builds as `wip: <task id>`, push, set the status to `blocked` with a note on what's left.
+**If you hit ~90% mid-task:** commit what builds as `wip: <task id>`, push, set the status to `blocked` with a note on what's left.
 
 Status values: `todo` · `in progress` · `blocked` · `done`
 
@@ -34,12 +35,12 @@ Status values: `todo` · `in progress` · `blocked` · `done`
 |---|---|---|---|---|---|---|---|
 | T0.1 | Rename package to `vanaspati-sahayak`; fix plaque image path in `MedicinalGardenScene.tsx:48`; add root `.gitignore` entries for `.env`, `api/.venv`, `corpus/raw` | S | — | build + lint pass, plaque renders | done | Tushar | 2026-09-17. Plaque now points at `/cards/garden-entry-board.png`. Lint has 3 old warnings, no errors. Run `npm ci` first on a fresh clone. |
 | T0.2 | `api/` skeleton: `pyproject.toml`, ruff, pytest, `app/main.py`, `app/settings.py`, `GET /health` + one test | S | — | `uvicorn` serves `/health`, pytest green | done | Tushar | 2026-09-17. Python 3.12 venv via `uv venv --python 3.12 api/.venv` then `uv pip install -e ".[dev]"`. `/health` returns provider, model, embed model, corpus version. |
-| T0.3 | `docker-compose.yml` (pgvector postgres + api), `api/Dockerfile`, `.env.example` with every var from providers.md | S | T0.2 | `docker compose up` → `/health` 200 | done | Tushar | 2026-09-17. Compose file validates (`docker compose config`) but was not run live: Docker was not running. First person with Docker: run `docker compose up` and confirm `/health`. Compose reads `.env` if it exists. |
-| T0.4 | DB layer: SQLAlchemy + Alembic, first migration for `sources`, `source_versions`, `chunks` (HNSW + GIN indexes) | M | T0.3 | `alembic upgrade head` works on compose DB | todo | | |
+| T0.3 | `docker-compose.yml` (pgvector postgres + api), `api/Dockerfile`, `.env.example` with every var from providers.md | S | T0.2 | `docker compose up` → `/health` 200 | done | Tushar | 2026-09-17. Verified live: `docker compose up` → `/health` 200. Host ports are `API_PORT` / `POSTGRES_PORT` in `.env` (port 8000 was taken on one laptop, used 8010). Compose reads `.env`. |
+| T0.4 | DB layer: SQLAlchemy + Alembic, first migration for `sources`, `source_versions`, `chunks` (HNSW + GIN indexes) | M | T0.3 | `alembic upgrade head` works on compose DB | done | Tushar | 2026-09-17. SQLAlchemy models in `api/app/db/models.py`, first Alembic migration creates `vector` extension + 3 tables + HNSW/GIN/btree indexes. Checked upgrade → downgrade → upgrade and `alembic check`. API container runs `alembic upgrade head` on start. Embedding dim fixed at 1024 (BGE-M3 and voyage-law-2). |
 | T0.5 | Pydantic schemas for the contracts (`SahayakAnswer`, `Citation`, `RegistryPointer`, `MaterialIPProfile`) | S | T0.2 | schemas appear in `/openapi.json` | done | Tushar | 2026-09-17. In `api/app/schemas/`. Profile `cite` fields hold a manifest source id or `unknown`. `classification`/`abs` are loose dicts until stage 2. Contracts are added to `/openapi.json` by hand in `main.py` until real endpoints use them. |
-| T0.6 | LLM provider base + router (`base.py`, `router.py`, role → provider/model from env) | S | T0.2 | unit test picks provider by env | done | Tushar | 2026-09-17. Providers call `router.register(name, factory)`. Non-default provider (e.g. groq) must set `LLM_MODEL_<ROLE>`. |
+| T0.6 | LLM provider base + router (`base.py`, `router.py`, role → provider/model from env) | S | T0.2 | unit test picks provider by env | done | Tushar | 2026-09-17. Providers call `router.register(name, factory)`. **Default is Groq `openai/gpt-oss-120b` for all roles**; setting `LLM_PROVIDER_<ROLE>=anthropic` picks the Claude defaults automatically. |
 | T0.7 | Anthropic provider (`complete`, `complete_structured`, `answer_with_citations`) | M | T0.6 | mocked test maps citations to `Citation` | done | Tushar | 2026-09-17. `anthropic` SDK 1.6. Citations via plain-text document blocks; server-side `fallbacks="default"` on refusal; system prompt cached. Mocked tests only, no live key call yet. |
-| T0.8 | Groq provider incl. `[[c:id|"span"]]` marker parser | M | T0.6 | parser tests + mocked call test | done | Tushar | 2026-09-17. `groq` SDK 1.7. Marker parser drops made-up chunk ids. Structured output uses JSON mode + schema in prompt. Whisper `transcribe` included. Mocked tests only. |
+| T0.8 | Groq provider incl. `[[c:id|"span"]]` marker parser | M | T0.6 | parser tests + mocked call test | done | Tushar | 2026-09-17. `groq` SDK 1.7. Live call with gpt-oss-120b worked; it sometimes drops the `c:` marker prefix, so the parser accepts both. Unknown chunk ids are dropped. Structured output uses JSON mode + schema in prompt. Whisper `transcribe` included. |
 | T0.9 | Embeddings (`local` BGE-M3, `voyage`) + local reranker, behind interfaces | M | T0.2 | small script embeds and reranks 3 strings | done | Tushar | 2026-09-17. Heavy deps are optional extras: `pip install -e ".[local]"` (sentence-transformers) or `".[voyage]"`. Tests use fake encoders. `api/scripts/embed_smoke.py` is the live check; not run yet (needs ~2 GB model download). |
 | T0.10 | Web client: `src/lib/sahayak/client.ts` (fetch + SSE), `npm run gen:api` → `src/types/sahayak.ts`, `src/store/useSahayak.ts`, web `.env.example` | M | T0.5 | types generate; build + lint pass | done | Tushar | 2026-09-17. Types come from the committed `api/openapi.json`: after an API schema change run `python scripts/dump_openapi.py` in `api/`, then `npm run gen:api` (a pytest fails if the file is stale). `openapi-typescript` needs an npm override for TS 6. `/ask` SSE is read with fetch since it is a POST; client sends `X-Session-Id`. Web uses the root `.env` (`VITE_API_URL`). |
 | T0.11 | CI workflow: web lint+build, api ruff+pytest | S | T0.2 | Actions green on push | done | Tushar | 2026-09-17. `.github/workflows/ci.yml`, green on first run. Separate old `deploy.yml` fails because GitHub Pages is not enabled in repo settings (not a code problem). |
@@ -79,7 +80,7 @@ Status values: `todo` · `in progress` · `blocked` · `done`
 ### Plant IP layer
 | ID | Task | Size | Depends | Done when | Status | Owner | Notes |
 |---|---|---|---|---|---|---|---|
-| T1.18 | `MaterialIPProfile` type + `src/data/ipr/plant/` + join in `plants.ts` (all 30 as `'unknown'`) | S | — | build passes | todo | | |
+| T1.18 | `MaterialIPProfile` type + `src/data/ipr/plant/` + join in `plants.ts` (all 30 as `'unknown'`) | S | — | build passes | done | Tushar | 2026-09-17. Type lives in the API schema and is re-exported from `src/types/material.ts`. `plants.ts` joins `PLANT_IPR[id]` or an all-`unknown` profile from `src/data/ipr/unknown.ts`. To add a verified plant, add a file under `src/data/ipr/plant/` and list it in `index.ts`. `indianBioResource` may be `unknown`; `lastVerified` null = never verified. PATENTSCOPE link returns 403 to curl (bot block) but is WIPO's real search page. |
 | T1.19 | Fill real cited profiles: turmeric, neem, ashwagandha, sandalwood | M | T1.1, T1.18 | every field cited or `'unknown'` | todo | | |
 | T1.20 | Fill real cited profiles: sarpagandha, guggulu, amla, tulsi | M | T1.19 | same | todo | | |
 | T1.21 | `MaterialIprPanel`: `iplaw` tab in PlantPage, Walk dossier panel, BoardCard strip | M | T1.18 | panel visible in all three spots | todo | | |

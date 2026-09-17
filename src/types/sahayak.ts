@@ -53,7 +53,7 @@ export interface components {
              */
             cites: string[];
             /** Indianbioresource */
-            indianBioResource: boolean;
+            indianBioResource: boolean | "unknown";
             /** Normallytradedcommodity */
             normallyTradedCommodity: boolean | "unknown";
         };
@@ -223,9 +223,10 @@ export interface components {
             kind: "plant" | "microbe" | "animal" | "mineral";
             /**
              * Lastverified
-             * @description ISO date
+             * @description ISO date; null = never verified
+             * @default null
              */
-            lastVerified: string;
+            lastVerified: string | null;
             monographs: components["schemas"]["Monographs"];
             patentability: components["schemas"]["Patentability"];
             patents: components["schemas"]["Patents"];

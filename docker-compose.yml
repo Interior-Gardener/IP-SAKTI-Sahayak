@@ -6,7 +6,7 @@ services:
       POSTGRES_PASSWORD: sahayak
       POSTGRES_DB: sahayak
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT:-5432}:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -22,7 +22,7 @@ services:
     environment:
       DATABASE_URL: postgresql+psycopg://sahayak:sahayak@postgres:5432/sahayak
     ports:
-      - "8000:8000"
+      - "${API_PORT:-8000}:8000"
     volumes:
       - ./corpus:/corpus
     depends_on:

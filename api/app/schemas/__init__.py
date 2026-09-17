@@ -140,7 +140,7 @@ class GI(BaseModel):
 
 
 class Biodiversity(BaseModel):
-    indianBioResource: bool
+    indianBioResource: bool | Unknown
     normallyTradedCommodity: bool | Unknown
     cites: list[str] = []
 
@@ -186,7 +186,7 @@ class MaterialIPProfile(BaseModel):
     export: Export
     drugSchedules: DrugSchedules
     monographs: Monographs
-    lastVerified: str = Field(description="ISO date")
+    lastVerified: str | None = Field(default=None, description="ISO date; null = never verified")
 
 
 CONTRACTS = (SahayakAnswer, RegistryPointer, MaterialIPProfile)

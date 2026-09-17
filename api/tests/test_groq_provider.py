@@ -30,3 +30,10 @@ def test_answer_drops_unknown_chunk_ids():
     answer = GroqProvider("llama", client).answer_with_citations("sys", "q?", docs)
     assert [c.chunk_id for c in answer.citations] == ["c-2"]
     assert "[[" not in answer.markdown
+
+
+def test_parse_markers_accepts_missing_prefix():
+    # gpt-oss-120b sometimes drops the "c:" prefix (seen in a live call).
+    prose, cites = parse_markers('Bees make it. [[c-1|"Honey is collected by bees"]]')
+    assert prose == "Bees make it."
+    assert [(c.chunk_id, c.cited_text) for c in cites] == [("c-1", "Honey is collected by bees")]

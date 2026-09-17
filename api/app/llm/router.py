@@ -5,10 +5,20 @@ from collections.abc import Callable
 
 from app.llm.base import LLMProvider, Role
 
-DEFAULTS: dict[Role, tuple[str, str]] = {
-    "answer": ("anthropic", "claude-opus-5"),
-    "fast": ("anthropic", "claude-haiku-4-5"),
-    "judge": ("anthropic", "claude-sonnet-5"),
+# Groq is the default for now (free credits). Each provider has its own
+# default model per role, so switching LLM_PROVIDER_<ROLE> alone is enough.
+DEFAULT_PROVIDER = "groq"
+DEFAULT_MODELS: dict[str, dict[Role, str]] = {
+    "groq": {
+        "answer": "openai/gpt-oss-120b",
+        "fast": "openai/gpt-oss-120b",
+        "judge": "openai/gpt-oss-120b",
+    },
+    "anthropic": {
+        "answer": "claude-opus-5",
+        "fast": "claude-haiku-4-5",
+        "judge": "claude-sonnet-5",
+    },
 }
 
 # Providers register themselves here, so the router carries no vendor imports.
@@ -20,12 +30,9 @@ def register(name: str, factory: Callable[[str], LLMProvider]) -> None:
 
 
 def resolve(role: Role) -> tuple[str, str]:
-    default_provider, default_model = DEFAULTS[role]
-    provider = os.environ.get(f"LLM_PROVIDER_{role.upper()}", default_provider).lower()
-    # A default model id only makes sense for the default provider; Groq ids
-    # change with its catalogue, so they must be set explicitly.
-    model = os.environ.get(f"LLM_MODEL_{role.upper()}") or (
-        default_model if provider == default_provider else ""
+    provider = os.environ.get(f"LLM_PROVIDER_{role.upper()}", DEFAULT_PROVIDER).lower()
+    model = os.environ.get(f"LLM_MODEL_{role.upper()}") or DEFAULT_MODELS.get(provider, {}).get(
+        role, ""
     )
     if not model:
         raise RuntimeError(f"set LLM_MODEL_{role.upper()} for provider '{provider}'")

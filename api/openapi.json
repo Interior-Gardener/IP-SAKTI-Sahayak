@@ -54,8 +54,16 @@
             "type": "array"
           },
           "indianBioResource": {
-            "title": "Indianbioresource",
-            "type": "boolean"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "const": "unknown",
+                "type": "string"
+              }
+            ],
+            "title": "Indianbioresource"
           },
           "normallyTradedCommodity": {
             "anyOf": [
@@ -462,9 +470,17 @@
             "type": "string"
           },
           "lastVerified": {
-            "description": "ISO date",
-            "title": "Lastverified",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "ISO date; null = never verified",
+            "title": "Lastverified"
           },
           "monographs": {
             "$ref": "#/components/schemas/Monographs"
@@ -499,8 +515,7 @@
           "biodiversity",
           "export",
           "drugSchedules",
-          "monographs",
-          "lastVerified"
+          "monographs"
         ],
         "title": "MaterialIPProfile",
         "type": "object"

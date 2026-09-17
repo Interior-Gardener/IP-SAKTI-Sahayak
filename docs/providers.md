@@ -6,18 +6,20 @@ The API never hard-codes a vendor. Every model-backed role goes through a small 
 
 | Role | Used for | Env var (provider) | Env var (model) | Default |
 |---|---|---|---|---|
-| `answer` | the cited answer, classification explanations, agent loop | `LLM_PROVIDER_ANSWER` | `LLM_MODEL_ANSWER` | `anthropic` / `claude-opus-5` |
-| `fast` | scope classifier, regime router, query rewrite, contextual chunk headers | `LLM_PROVIDER_FAST` | `LLM_MODEL_FAST` | `anthropic` / `claude-haiku-4-5` |
-| `judge` | eval harness grading | `LLM_PROVIDER_JUDGE` | `LLM_MODEL_JUDGE` | `anthropic` / `claude-sonnet-5` |
+| `answer` | the cited answer, classification explanations, agent loop | `LLM_PROVIDER_ANSWER` | `LLM_MODEL_ANSWER` | `groq` / `openai/gpt-oss-120b` |
+| `fast` | scope classifier, regime router, query rewrite, contextual chunk headers | `LLM_PROVIDER_FAST` | `LLM_MODEL_FAST` | `groq` / `openai/gpt-oss-120b` |
+| `judge` | eval harness grading | `LLM_PROVIDER_JUDGE` | `LLM_MODEL_JUDGE` | `groq` / `openai/gpt-oss-120b` |
 | `embed` | chunk and query embeddings | `EMBED_PROVIDER` | `EMBED_MODEL` | `local` / `BAAI/bge-m3` |
 | `rerank` | cross-encoder rerank | `RERANK_PROVIDER` | `RERANK_MODEL` | `local` / `BAAI/bge-reranker-v2-m3` |
 | `asr` / `tts` / `nmt` | voice and translation | `SPEECH_PROVIDER` | — | `bhashini` with fallbacks |
 
 Keys: `ANTHROPIC_API_KEY`, `GROQ_API_KEY`, `VOYAGE_API_KEY` (optional), `BHASHINI_USER_ID` + `BHASHINI_API_KEY`.
 
+**Current team default (2026-09-17): Groq with `openai/gpt-oss-120b` for all three roles.** Switching a role's provider to `anthropic` picks that provider's default model automatically.
+
 A minimal free setup is `GROQ_API_KEY` only, with `LLM_PROVIDER_*=groq`, `EMBED_PROVIDER=local`, `RERANK_PROVIDER=local`. A best-quality setup is `ANTHROPIC_API_KEY` with the defaults above.
 
-## 2. Anthropic (primary)
+## 2. Anthropic (best quality, optional)
 
 - SDK: official `anthropic` Python package. Adaptive thinking on; effort `high` for the answer role.
 - **Citations**: retrieved chunks are passed as `document` content blocks with `citations: {enabled: true}`. The response carries `cited_text` plus the document index, which maps straight to a chunk id. This is character-anchored, so the verifier's substring check is exact.
@@ -25,7 +27,7 @@ A minimal free setup is `GROQ_API_KEY` only, with `LLM_PROVIDER_*=groq`, `EMBED_
 - Tool loop (stage 2): the SDK's tool runner with per-turn hooks that write `audit_events`.
 - Models: `claude-opus-5` (answer), `claude-sonnet-5` (judge), `claude-haiku-4-5` (fast). Use these exact ids; no date suffixes.
 
-## 3. Groq (free-credit alternative)
+## 3. Groq (current default)
 
 - SDK: official `groq` Python package (OpenAI-compatible chat completions). Groq offers free credits on sign-up; check the console for the current allowance and rate limits.
 - Models: pick from the live catalogue in the Groq console. Reasonable choices at time of writing: a Llama 3.3 70B or Llama 4 class model for `answer`, a Llama 3.1 8B class model for `fast`, and `whisper-large-v3` for ASR. Confirm ids in the console before setting `LLM_MODEL_*`; catalogues change.

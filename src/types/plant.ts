@@ -1,3 +1,5 @@
+import type { MaterialIPProfile } from './material'
+
 /* ------------------------------------------------------------------ *
  * Botanical + procedural-model type system.
  * The same `PlantModelSpec` drives the 3D generator and the 2D
@@ -247,6 +249,8 @@ export interface Plant {
   facts: string[]
   history: PlantHistory
   photos: PlantPhoto[]
+  /** Legal layer: IP, biodiversity and drug-regulatory status, cited or 'unknown'. */
+  ipr: MaterialIPProfile
   /** 1 = windowsill-easy, 3 = specialist. */
   difficulty: 1 | 2 | 3
   accent: string
@@ -271,7 +275,7 @@ export interface PlantPhoto {
 }
 
 /** A compendium entry before its history is attached — see data/plants.ts. */
-export type PlantEntry = Omit<Plant, 'history' | 'photos'>
+export type PlantEntry = Omit<Plant, 'history' | 'photos' | 'ipr'>
 
 export interface TourStop {
   plantId: string

@@ -10,6 +10,10 @@ dependencies = [
   "pydantic-settings>=2.4",
   "anthropic>=1.6",
   "groq>=1.7",
+  "sqlalchemy>=2.0",
+  "alembic>=1.13",
+  "psycopg[binary]>=3.2",
+  "pgvector>=0.3",
 ]
 
 [project.optional-dependencies]
@@ -26,6 +30,7 @@ build-backend = "hatchling.build"
 packages = ["app"]
 
 [tool.ruff]
+extend-exclude = ["alembic/versions"]
 line-length = 100
 target-version = "py312"
 

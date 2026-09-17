@@ -15,8 +15,8 @@ class Settings(BaseSettings):
     database_url: str = "postgresql+psycopg://sahayak:sahayak@localhost:5432/sahayak"
     cors_origins: list[str] = ["http://localhost:5173"]
 
-    llm_provider_answer: str = "anthropic"
-    llm_model_answer: str = "claude-opus-5"
+    llm_provider_answer: str = "groq"
+    llm_model_answer: str = "openai/gpt-oss-120b"
     embed_provider: str = "local"
     embed_model: str = "BAAI/bge-m3"
 
