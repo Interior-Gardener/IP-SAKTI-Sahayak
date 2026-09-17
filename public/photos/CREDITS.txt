@@ -1,0 +1,160 @@
+Photograph credits
+==================
+
+Every photograph in public/photos comes from Wikimedia Commons under a free
+licence and is stored locally so the site works offline. Attribution is
+required by these licences; the CC BY-SA files also carry a share-alike
+obligation on the image itself.
+
+Each entry: file — photographer — licence — source page
+
+tulsi-1.jpg — Thamizhpparithi Maari — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:An_Ocimum_sanctum_plant.JPG
+tulsi-2.jpg — Adityamadhav83 — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:(Ocimum_tenuiflorum)_Holy_Tulasi_plant_at_Kakinada_01.jpg
+tulsi-3.jpg — Adityamadhav83 — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:(Ocimum_tenuiflorum)_Tulasi_foliage_02.jpg
+neem-1.jpg — Phalswal anuj — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:1497063717294-741582150_anuj.jpg
+neem-2.jpg — Thamizhpparithi Maari — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:%22Neem_flower_for_rasam_making%22.jpg
+neem-3.jpg — Muktar H Abdullahi — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:A_beautiful_Neem_plant.jpg
+ashwagandha-1.jpg — Thamizhpparithi Maari — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:An_image_of_Withania_somnifera.JPG
+ashwagandha-2.jpg — Dinesh Valke from Thane, India — CC BY-SA 2.0
+    https://commons.wikimedia.org/wiki/File:Amukkuram_(Malayalam-_%E0%B4%85%E0%B4%AE%E0%B5%81%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B5%81%E0%B4%B0%E0%B4%82)_(21761211786).jpg
+ashwagandha-3.jpg — Dinesh Valke from Thane, India — CC BY-SA 2.0
+    https://commons.wikimedia.org/wiki/File:Ashvagandha_(Sanskrit-_%E0%A4%85%E0%A4%B6%E0%A5%8D%E0%A4%B5%E0%A4%97%E0%A4%A8%E0%A5%8D%E0%A4%A7%E0%A4%BE)_(21787388435).jpg
+aloe-vera-1.jpg — Holger Uwe Schmitt — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:%2B_La_Finca_De_Aloe_Vera._03.jpg
+aloe-vera-2.jpg — Holger Uwe Schmitt — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:%2B_La_Finca_De_Aloe_Vera._04.jpg
+aloe-vera-3.jpg — Holger Uwe Schmitt — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:%2B_La_Finca_De_Aloe_Vera._02.jpg
+turmeric-1.jpg — Photograph by Mike Peel (www.mikepeel.net). — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:At_Singapore_Botanic_Gardens_2023_19.jpg
+turmeric-2.jpg — Thamizhpparithi Maari — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:A_closeup_of_Turmeric.JPG
+turmeric-3.jpg — Thamizhpparithi Maari — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:%22Field_of_Turmeric_with_coconut_as_a_inter_crop%22.jpg
+ginger-1.jpg — Dguendel — CC BY 4.0
+    https://commons.wikimedia.org/wiki/File:Berlin-Dahlem,_botanischer_Garten,_Zingiber_officinale.JPG
+ginger-2.jpg — Burdigo — CC0
+    https://commons.wikimedia.org/wiki/File:Gingembre_(march%C3%A9_de_Bergerac).jpg
+ginger-3.jpg — Pisofrix — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Flor_de_Jengibre_(Zingiber_officinale).jpg
+brahmi-1.jpg — Alex Popovkin, Bahia, Brazil — CC BY 2.0
+    https://commons.wikimedia.org/wiki/File:Bacopa_monnieri_(L.)_Pennell_(6812665349).jpg
+brahmi-2.jpg — Alex Popovkin, Bahia, Brazil — CC BY 2.0
+    https://commons.wikimedia.org/wiki/File:Bacopa_monnieri_(L.)_Pennell_(6812666587).jpg
+brahmi-3.jpg — Alex Popovkin, Bahia, Brazil — CC BY 2.0
+    https://commons.wikimedia.org/wiki/File:Bacopa_monnieri_(L.)_Pennell_(6857283033).jpg
+amla-1.jpg — A. J. T. Johnsingh, WWF-India and NCF — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Amla_PannaTR_IMG_3122.jpg
+amla-2.jpg — Dinesh Valke from Thane, India — CC BY-SA 2.0
+    https://commons.wikimedia.org/wiki/File:Amla_(Gujarati-_%E0%AA%86%E0%AA%AE%E0%AA%B3%E0%AA%BE)_(4938449876).jpg
+amla-3.jpg — me, myelf and I — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:Amla_field.JPG
+giloy-1.jpg — Dinesh Valke from Thane, India — CC BY-SA 2.0
+    https://commons.wikimedia.org/wiki/File:Amrita_(Marathi-_%E0%A4%85%E0%A4%AE%E0%A5%83%E0%A4%A4%E0%A4%BE)_(11544219625).jpg
+giloy-2.jpg — Dinesh Valke from Thane, India — CC BY-SA 2.0
+    https://commons.wikimedia.org/wiki/File:Amritvel_(Konkani-_%E0%A4%85%E0%A4%AE%E0%A5%83%E0%A4%A4%E0%A4%B5%E0%A5%87%E0%A4%B2)_(3538040889).jpg
+giloy-3.jpg — Dinototosugiarto — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Brotowali_atau_andawali.jpg
+shatavari-1.jpg — Nativeplants garden — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Asparagus_racemosus_(73664).jpg
+shatavari-2.jpg — Vinayaraj — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Asparagus_racemosus_-_Satawari_flowers_-_at_Peravoor_2018_(10).jpg
+shatavari-3.jpg — Vinayaraj — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Asparagus_racemosus_-_Satawari_flowers_-_at_Peravoor_2018_(2).jpg
+mint-1.jpg — AnRo0002 — CC0
+    https://commons.wikimedia.org/wiki/File:20140727Mentha_spicata6.jpg
+mint-2.jpg — AnRo0002 — CC0
+    https://commons.wikimedia.org/wiki/File:20140727Mentha_spicata4.jpg
+mint-3.jpg — AnRo0002 — CC0
+    https://commons.wikimedia.org/wiki/File:20140809Mentha_spicata1.jpg
+lemongrass-1.jpg — Hajar Sahal — CC0
+    https://commons.wikimedia.org/wiki/File:A_Lemongrass_plant!.jpg
+lemongrass-2.jpg — Aurelefreddy — CC0
+    https://commons.wikimedia.org/wiki/File:Citronnelle_(Cymbopogon_citratus).jpg
+lemongrass-3.jpg — Jacoma226 — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Au_palais_de_la_citronnelle.jpg
+fenugreek-1.jpg — Dguendel — CC BY 4.0
+    https://commons.wikimedia.org/wiki/File:Blankenburg,_Kloster_Michaelstein,_der_Klostergarten,_Bockshornklee.jpg
+fenugreek-2.jpg — Thamizhpparithi Maari — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Aesthetic_bunch_of_fenugreek_greens.jpg
+fenugreek-3.jpg — കാക്കര — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:Fenugreek_-_%E0%B4%89%E0%B4%B2%E0%B5%81%E0%B4%B5.JPG
+sarpagandha-1.jpg — Vinayaraj — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:Rauvolfia_serpentina_05.jpg
+sarpagandha-2.jpg — Nativeplants garden — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Indian_snakeroot_plant_at_Pulikurumba.jpg
+sarpagandha-3.jpg — Nativeplants garden — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Indian_snakeroot(Rauvolfia_serpentina).jpg
+arjuna-1.jpg — वि.नरसीकर — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Arjun.jpg
+arjuna-2.jpg — S. K. Gawali — Public domain
+    https://commons.wikimedia.org/wiki/File:Bark_of_Terminalia_arjuna.jpg
+arjuna-3.jpg — Biswarup Ganguly — CC BY 3.0
+    https://commons.wikimedia.org/wiki/File:Bark_-_Terminalia_arjuna_-_Indian_Botanic_Garden_-_Howrah_2013-03-31_5734.JPG
+vasaka-1.jpg — Dinesh Valke from Thane, India — CC BY-SA 2.0
+    https://commons.wikimedia.org/wiki/File:Adulasa_(Sanskrit-_%E0%A4%85%E0%A4%A1%E0%A5%81%E0%A4%B3%E0%A4%B8%E0%A4%BE)_(2175392900).jpg
+vasaka-2.jpg — VASANTH S.N. — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:Adhatoda_vasica_leaf.JPG
+vasaka-3.jpg — Linkus russia — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Adhatoda_vasica.jpg
+kalmegh-1.jpg — Lalithamba from India — CC BY 2.0
+    https://commons.wikimedia.org/wiki/File:Andrographis_paniculata_(Burm.f)Wall_ex_Nees_-_Flickr_-_lalithamba.jpg
+kalmegh-2.jpg — Dr. Alexey Yakovlev — CC BY-SA 2.0
+    https://commons.wikimedia.org/wiki/File:Andrographis_paniculata_(Acanthaceae)_(50097956741).jpg
+kalmegh-3.jpg — V C Balakrishnan — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Andrographis_paniculata_(1).JPG_-_Photo_by_V_C_Balakrishnan.jpg
+bael-1.jpg — Parvathisri — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:2_vilvam_tree.jpg
+bael-2.jpg — Dinesh Valke from Thane, India — CC BY-SA 2.0
+    https://commons.wikimedia.org/wiki/File:Aegle_marmelos_(L.)_Corr%C3%AAa_(52522748883).jpg
+bael-3.jpg — Dinesh Valke from Thane, India — CC BY-SA 2.0
+    https://commons.wikimedia.org/wiki/File:Aegle_marmelos_(L.)_Corr%C3%AAa_(50460032263).jpg
+mulethi-1.jpg — Georges Seguin (Okki) — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:Bambouseraie_de_Prafrance_20100904_012.jpg
+mulethi-2.jpg — Joanna Boisse — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Atlas_roslin_pl_Lukrecja_g%C5%82adka_571_7092.jpg
+mulethi-3.jpg — Atriplex82 — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Bamberg_20140513092749.jpg
+sandalwood-1.jpg — Vinayaraj — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Munnar_to_Marayoor_along_sandal_forests_ksrtmun2k24_(21).jpg
+sandalwood-2.jpg — Vengolis — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Foilage_1777.jpg
+sandalwood-3.jpg — Vinayaraj — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Munnar_to_Marayoor_along_sandal_forests_ksrtmun2k24_(20).jpg
+henna-1.jpg — Raffi Kojian — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:Gardenology-IMG_8027_hunt10aug.jpg
+henna-2.jpg — Sengai Podhuvan — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:Flower_MARUTHAANI_blooming.jpg
+henna-3.jpg — Thamizhpparithi Maari — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:A_closeup_of_Lawsonia_inermis.JPG
+bhringraj-1.jpg — Dan Mathew — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Bhringaraj_Sapling.jpg
+bhringraj-2.jpg — Vinayaraj — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:Eclipta_alba_(506).jpg
+bhringraj-3.jpg — Filo gèn' — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Eclipta_alba_(Asteraceae)_01.jpg
+mandukaparni-1.jpg — Sanjay Acharya — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:Asiatic_Pennywort.jpg
+mandukaparni-2.jpg — Renaudsechet — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Bai_bua_bo_%E0%B9%83%E0%B8%9A%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%9A%E0%B8%81_Centella_asiatica.jpg
+mandukaparni-3.jpg — Nativeplants garden — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Centella_asiatica_(57932).jpg
+guggulu-1.jpg — Delonix — CC BY 4.0
+    https://commons.wikimedia.org/wiki/File:Commiphora_wightii_AK13.jpg
+guggulu-2.jpg — Delonix — CC BY 4.0
+    https://commons.wikimedia.org/wiki/File:Commiphora_wightii_AK1.jpg
+guggulu-3.jpg — Dinesh Valke from Thane, India — CC BY-SA 2.0
+    https://commons.wikimedia.org/wiki/File:Commiphora_wightii_(2095514120).jpg
+punarnava-1.jpg — Neha.Vindhya — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:Boerhaavia_diffusa.jpg
+punarnava-2.jpg — Vinayaraj — CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Boerhavia_diffusa_-_Red_Spiderling_at_Lokanarkavu_2018_(1).jpg
+punarnava-3.jpg — Anonyme973 — CC BY-SA 3.0
+    https://commons.wikimedia.org/wiki/File:Boerhavia_diffusa_(d%C3%A9tail_inflorescence).jpg

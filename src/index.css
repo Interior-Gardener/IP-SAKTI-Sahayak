@@ -1,0 +1,179 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Botanical palette */
+  --color-bark-50: #f6f4ef;
+  --color-bark-100: #eae5da;
+  --color-bark-200: #d6cdbb;
+  --color-bark-300: #b9ab92;
+  --color-bark-400: #9a8a6d;
+  --color-bark-500: #7d6d53;
+  --color-bark-600: #63563f;
+  --color-bark-700: #4c4232;
+  --color-bark-800: #332c22;
+  --color-bark-900: #1f1a14;
+
+  --color-moss-50: #eefaf0;
+  --color-moss-100: #d6f2dc;
+  --color-moss-200: #ade4bb;
+  --color-moss-300: #79d093;
+  --color-moss-400: #47b46b;
+  --color-moss-500: #2a9852;
+  --color-moss-600: #1c7a41;
+  --color-moss-700: #186036;
+  --color-moss-800: #164c2d;
+  --color-moss-900: #0e2f1d;
+  --color-moss-950: #07190f;
+
+  --color-turmeric-300: #f7cf72;
+  --color-turmeric-400: #f0b93f;
+  --color-turmeric-500: #e09f1c;
+  --color-turmeric-600: #b87a13;
+
+  --color-rose-clay-400: #d9866b;
+  --color-rose-clay-500: #c46a4d;
+
+  --radius-4xl: 2rem;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --animate-fade-up: fade-up 0.5s var(--ease-out-expo) both;
+  --animate-shimmer: shimmer 2.4s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+/* ---- Semantic surface tokens (light default, dark override) ---- */
+:root {
+  color-scheme: light;
+  --surface: #f7f5ef;
+  --surface-raised: #ffffff;
+  --surface-sunken: #eeebe2;
+  --surface-inverse: #0e1a12;
+  --ink: #1b2119;
+  --ink-soft: #4d5a4d;
+  --ink-faint: #7a8779;
+  --line: #dfdacd;
+  --line-strong: #cac3b1;
+  --accent: #1c7a41;
+  --accent-soft: #d6f2dc;
+  --accent-ink: #0e2f1d;
+  --glass: rgb(255 255 255 / 0.72);
+  --shadow-soft: 0 1px 2px rgb(31 26 20 / 0.05), 0 8px 24px -12px rgb(31 26 20 / 0.18);
+  --shadow-lift: 0 2px 6px rgb(31 26 20 / 0.06), 0 24px 48px -20px rgb(31 26 20 / 0.28);
+}
+
+:root.dark {
+  color-scheme: dark;
+  --surface: #0d150f;
+  --surface-raised: #16211a;
+  --surface-sunken: #080f0a;
+  --surface-inverse: #f7f5ef;
+  --ink: #e8eee6;
+  --ink-soft: #a3b3a2;
+  --ink-faint: #6f8070;
+  --line: #23312611;
+  --line: #243027;
+  --line-strong: #344437;
+  --accent: #5fd189;
+  --accent-soft: #16332180;
+  --accent-ink: #d6f2dc;
+  --glass: rgb(16 26 19 / 0.72);
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+  --shadow-lift: 0 2px 6px rgb(0 0 0 / 0.45), 0 24px 48px -20px rgb(0 0 0 / 0.8);
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-raised: var(--surface-raised);
+  --color-sunken: var(--surface-sunken);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+}
+
+* { min-width: 0; }
+
+html { -webkit-tap-highlight-color: transparent; }
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+::selection { background: var(--accent); color: var(--surface-raised); }
+
+/* Scrollbars that don't fight the design */
+@supports (scrollbar-width: thin) {
+  * { scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@utility glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+}
+
+@utility text-balance-pretty {
+  text-wrap: pretty;
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+/* Grain overlay for depth on large surfaces */
+@utility grain {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
