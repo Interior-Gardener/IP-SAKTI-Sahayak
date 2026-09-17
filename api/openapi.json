@@ -1,0 +1,890 @@
+{
+  "components": {
+    "schemas": {
+      "Abstention": {
+        "properties": {
+          "reason": {
+            "enum": [
+              "out_of_scope",
+              "insufficient_sources",
+              "medical_advice",
+              "unsafe"
+            ],
+            "title": "Reason",
+            "type": "string"
+          },
+          "suggestion": {
+            "title": "Suggestion",
+            "type": "string"
+          }
+        },
+        "required": [
+          "reason",
+          "suggestion"
+        ],
+        "title": "Abstention",
+        "type": "object"
+      },
+      "ApiMonograph": {
+        "properties": {
+          "part": {
+            "title": "Part",
+            "type": "string"
+          },
+          "volume": {
+            "title": "Volume",
+            "type": "string"
+          }
+        },
+        "required": [
+          "volume",
+          "part"
+        ],
+        "title": "ApiMonograph",
+        "type": "object"
+      },
+      "Biodiversity": {
+        "properties": {
+          "cites": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Cites",
+            "type": "array"
+          },
+          "indianBioResource": {
+            "title": "Indianbioresource",
+            "type": "boolean"
+          },
+          "normallyTradedCommodity": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "const": "unknown",
+                "type": "string"
+              }
+            ],
+            "title": "Normallytradedcommodity"
+          }
+        },
+        "required": [
+          "indianBioResource",
+          "normallyTradedCommodity"
+        ],
+        "title": "Biodiversity",
+        "type": "object"
+      },
+      "Citation": {
+        "properties": {
+          "cited_text": {
+            "title": "Cited Text",
+            "type": "string"
+          },
+          "doc_type": {
+            "title": "Doc Type",
+            "type": "string"
+          },
+          "jurisdiction": {
+            "enum": [
+              "IN",
+              "INTL"
+            ],
+            "title": "Jurisdiction",
+            "type": "string"
+          },
+          "locator": {
+            "description": "e.g. 's.3(p)', 'Rule 158B(1)(b)', 'Art. 27.3(b)'",
+            "title": "Locator",
+            "type": "string"
+          },
+          "source_id": {
+            "title": "Source Id",
+            "type": "string"
+          },
+          "source_title": {
+            "title": "Source Title",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          },
+          "verified": {
+            "title": "Verified",
+            "type": "boolean"
+          },
+          "version_label": {
+            "title": "Version Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "source_title",
+          "version_label",
+          "locator",
+          "cited_text",
+          "url",
+          "jurisdiction",
+          "doc_type",
+          "verified"
+        ],
+        "title": "Citation",
+        "type": "object"
+      },
+      "Confidence": {
+        "properties": {
+          "band": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ],
+            "title": "Band",
+            "type": "string"
+          },
+          "reasons": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Reasons",
+            "type": "array"
+          },
+          "score": {
+            "maximum": 1,
+            "minimum": 0,
+            "title": "Score",
+            "type": "number"
+          }
+        },
+        "required": [
+          "score",
+          "band"
+        ],
+        "title": "Confidence",
+        "type": "object"
+      },
+      "Deposit": {
+        "properties": {
+          "budapest": {
+            "title": "Budapest",
+            "type": "boolean"
+          },
+          "cite": {
+            "title": "Cite",
+            "type": "string"
+          },
+          "indianIDAs": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Indianidas",
+            "type": "array"
+          }
+        },
+        "required": [
+          "budapest",
+          "cite"
+        ],
+        "title": "Deposit",
+        "type": "object"
+      },
+      "DrugSchedules": {
+        "properties": {
+          "cite": {
+            "title": "Cite",
+            "type": "string"
+          },
+          "heavyMetalTesting": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Heavymetaltesting"
+          },
+          "scheduleE1": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "const": "unknown",
+                "type": "string"
+              }
+            ],
+            "title": "Schedulee1"
+          }
+        },
+        "required": [
+          "scheduleE1",
+          "cite"
+        ],
+        "title": "DrugSchedules",
+        "type": "object"
+      },
+      "Escalation": {
+        "properties": {
+          "available": {
+            "const": true,
+            "default": true,
+            "title": "Available",
+            "type": "boolean"
+          },
+          "ticket_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ticket Id"
+          }
+        },
+        "title": "Escalation",
+        "type": "object"
+      },
+      "Export": {
+        "properties": {
+          "cite": {
+            "title": "Cite",
+            "type": "string"
+          },
+          "restricted": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "const": "unknown",
+                "type": "string"
+              }
+            ],
+            "title": "Restricted"
+          }
+        },
+        "required": [
+          "restricted",
+          "cite"
+        ],
+        "title": "Export",
+        "type": "object"
+      },
+      "GI": {
+        "properties": {
+          "tags": {
+            "default": [],
+            "items": {
+              "$ref": "#/components/schemas/GITag"
+            },
+            "title": "Tags",
+            "type": "array"
+          }
+        },
+        "title": "GI",
+        "type": "object"
+      },
+      "GITag": {
+        "properties": {
+          "cite": {
+            "title": "Cite",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "regNo": {
+            "title": "Regno",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "regNo",
+          "cite"
+        ],
+        "title": "GITag",
+        "type": "object"
+      },
+      "Health": {
+        "properties": {
+          "corpus_version": {
+            "title": "Corpus Version",
+            "type": "string"
+          },
+          "embed_model": {
+            "title": "Embed Model",
+            "type": "string"
+          },
+          "model": {
+            "title": "Model",
+            "type": "string"
+          },
+          "provider": {
+            "title": "Provider",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "provider",
+          "model",
+          "embed_model",
+          "corpus_version"
+        ],
+        "title": "Health",
+        "type": "object"
+      },
+      "JurisdictionAnswer": {
+        "description": "One pane. Answers for different jurisdictions are never merged.",
+        "properties": {
+          "citations": {
+            "items": {
+              "$ref": "#/components/schemas/Citation"
+            },
+            "title": "Citations",
+            "type": "array"
+          },
+          "confidence": {
+            "$ref": "#/components/schemas/Confidence"
+          },
+          "jurisdiction": {
+            "enum": [
+              "IN",
+              "INTL"
+            ],
+            "title": "Jurisdiction",
+            "type": "string"
+          },
+          "markdown": {
+            "title": "Markdown",
+            "type": "string"
+          }
+        },
+        "required": [
+          "jurisdiction",
+          "markdown",
+          "citations",
+          "confidence"
+        ],
+        "title": "JurisdictionAnswer",
+        "type": "object"
+      },
+      "LandmarkPatent": {
+        "properties": {
+          "cite": {
+            "title": "Cite",
+            "type": "string"
+          },
+          "number": {
+            "title": "Number",
+            "type": "string"
+          },
+          "office": {
+            "title": "Office",
+            "type": "string"
+          },
+          "outcome": {
+            "title": "Outcome",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "year": {
+            "title": "Year",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "title",
+          "number",
+          "office",
+          "outcome",
+          "year",
+          "cite"
+        ],
+        "title": "LandmarkPatent",
+        "type": "object"
+      },
+      "MaterialIPProfile": {
+        "description": "`cite` fields hold a manifest source id, or 'unknown' when unverified.",
+        "properties": {
+          "biodiversity": {
+            "$ref": "#/components/schemas/Biodiversity"
+          },
+          "deposit": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Deposit"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "drugSchedules": {
+            "$ref": "#/components/schemas/DrugSchedules"
+          },
+          "export": {
+            "$ref": "#/components/schemas/Export"
+          },
+          "gi": {
+            "$ref": "#/components/schemas/GI"
+          },
+          "kind": {
+            "enum": [
+              "plant",
+              "microbe",
+              "animal",
+              "mineral"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "lastVerified": {
+            "description": "ISO date",
+            "title": "Lastverified",
+            "type": "string"
+          },
+          "monographs": {
+            "$ref": "#/components/schemas/Monographs"
+          },
+          "patentability": {
+            "$ref": "#/components/schemas/Patentability"
+          },
+          "patents": {
+            "$ref": "#/components/schemas/Patents"
+          },
+          "tk": {
+            "$ref": "#/components/schemas/TraditionalKnowledge"
+          },
+          "wildlife": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Wildlife"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "kind",
+          "tk",
+          "patentability",
+          "patents",
+          "gi",
+          "biodiversity",
+          "export",
+          "drugSchedules",
+          "monographs",
+          "lastVerified"
+        ],
+        "title": "MaterialIPProfile",
+        "type": "object"
+      },
+      "Monographs": {
+        "properties": {
+          "api": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ApiMonograph"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "cite": {
+            "title": "Cite",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cite"
+        ],
+        "title": "Monographs",
+        "type": "object"
+      },
+      "PatentSearch": {
+        "properties": {
+          "googlePatents": {
+            "title": "Googlepatents",
+            "type": "string"
+          },
+          "inpass": {
+            "title": "Inpass",
+            "type": "string"
+          },
+          "patentscope": {
+            "title": "Patentscope",
+            "type": "string"
+          }
+        },
+        "required": [
+          "inpass",
+          "patentscope",
+          "googlePatents"
+        ],
+        "title": "PatentSearch",
+        "type": "object"
+      },
+      "Patentability": {
+        "properties": {
+          "cites": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Cites",
+            "type": "array"
+          },
+          "note": {
+            "title": "Note",
+            "type": "string"
+          }
+        },
+        "required": [
+          "note"
+        ],
+        "title": "Patentability",
+        "type": "object"
+      },
+      "Patents": {
+        "properties": {
+          "landmark": {
+            "default": [],
+            "items": {
+              "$ref": "#/components/schemas/LandmarkPatent"
+            },
+            "title": "Landmark",
+            "type": "array"
+          },
+          "search": {
+            "$ref": "#/components/schemas/PatentSearch"
+          }
+        },
+        "required": [
+          "search"
+        ],
+        "title": "Patents",
+        "type": "object"
+      },
+      "ProviderInfo": {
+        "properties": {
+          "model": {
+            "title": "Model",
+            "type": "string"
+          },
+          "name": {
+            "enum": [
+              "anthropic",
+              "groq"
+            ],
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "model"
+        ],
+        "title": "ProviderInfo",
+        "type": "object"
+      },
+      "RegistryPointer": {
+        "properties": {
+          "action": {
+            "title": "Action",
+            "type": "string"
+          },
+          "cite": {
+            "$ref": "#/components/schemas/Citation"
+          },
+          "fee_note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Fee Note"
+          },
+          "form": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Form"
+          },
+          "registry": {
+            "title": "Registry",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "registry",
+          "action",
+          "url",
+          "cite"
+        ],
+        "title": "RegistryPointer",
+        "type": "object"
+      },
+      "SahayakAnswer": {
+        "properties": {
+          "abs": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Abs"
+          },
+          "abstained": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Abstention"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "answers": {
+            "items": {
+              "$ref": "#/components/schemas/JurisdictionAnswer"
+            },
+            "title": "Answers",
+            "type": "array"
+          },
+          "classification": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Classification"
+          },
+          "disclaimer": {
+            "default": "This is information, not legal advice. Verify with the cited source or a qualified IP facilitator before acting on it.",
+            "title": "Disclaimer",
+            "type": "string"
+          },
+          "escalation": {
+            "$ref": "#/components/schemas/Escalation",
+            "default": {
+              "available": true,
+              "ticket_id": null
+            }
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "jurisdiction_mode": {
+            "enum": [
+              "IN",
+              "INTL",
+              "BOTH"
+            ],
+            "title": "Jurisdiction Mode",
+            "type": "string"
+          },
+          "language": {
+            "description": "BCP-47, e.g. 'hi', 'mr', 'ta', 'en'",
+            "title": "Language",
+            "type": "string"
+          },
+          "next_steps": {
+            "default": [],
+            "items": {
+              "$ref": "#/components/schemas/RegistryPointer"
+            },
+            "title": "Next Steps",
+            "type": "array"
+          },
+          "persona": {
+            "anyOf": [
+              {
+                "enum": [
+                  "practitioner",
+                  "researcher",
+                  "startup",
+                  "cultivator"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Persona"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/ProviderInfo"
+          },
+          "question": {
+            "title": "Question",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "question",
+          "language",
+          "jurisdiction_mode",
+          "answers",
+          "provider"
+        ],
+        "title": "SahayakAnswer",
+        "type": "object"
+      },
+      "TraditionalKnowledge": {
+        "properties": {
+          "cite": {
+            "title": "Cite",
+            "type": "string"
+          },
+          "classicalTexts": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Classicaltexts",
+            "type": "array"
+          },
+          "tkdl": {
+            "enum": [
+              "documented",
+              "unknown"
+            ],
+            "title": "Tkdl",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tkdl",
+          "cite"
+        ],
+        "title": "TraditionalKnowledge",
+        "type": "object"
+      },
+      "Wildlife": {
+        "properties": {
+          "cites": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Cites",
+            "type": "array"
+          },
+          "citesListed": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "const": "unknown",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Citeslisted"
+          },
+          "protectedSchedule": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Protectedschedule"
+          }
+        },
+        "title": "Wildlife",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "IP-SAKTI Sahayak API",
+    "version": "0.1.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/health": {
+      "get": {
+        "description": "The web app polls this to decide between the assistant and the offline notice.",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Health"
+      }
+    }
+  }
+}
