@@ -18,7 +18,7 @@ We split the build into small tasks so several people, each with their own Claud
 **After finishing a task**
 6. Update this file: status `done`, add the date and a short note (anything the next person needs to know).
 7. Commit and push to GitHub on `main`:
-   - Commit message: **short, plain, human-sounding, non-technical**, e.g. `added the chat drawer`, `plant legal info for neem and tulsi`. No long bodies, no bullet lists.
+   - Commit message: **short, plain, human-sounding, non-technical**, not past tense, e.g. `add the chat drawer`, `plant legal info for neem and tulsi`. No long bodies, no bullet lists.
    - **No Claude/AI co-author line** (no `Co-Authored-By: Claude`). Commit under your own git name.
 8. Check your limit again (step 2) before taking the next task. If you're low, stop here: the tracker and GitHub are already up to date, so the next teammate can carry on.
 
@@ -33,7 +33,7 @@ Status values: `todo` · `in progress` · `blocked` · `done`
 | ID | Task | Size | Depends | Done when | Status | Owner | Notes |
 |---|---|---|---|---|---|---|---|
 | T0.1 | Rename package to `vanaspati-sahayak`; fix plaque image path in `MedicinalGardenScene.tsx:48`; add root `.gitignore` entries for `.env`, `api/.venv`, `corpus/raw` | S | — | build + lint pass, plaque renders | done | Tushar | 2026-09-17. Plaque now points at `/cards/garden-entry-board.png`. Lint has 3 old warnings, no errors. Run `npm ci` first on a fresh clone. |
-| T0.2 | `api/` skeleton: `pyproject.toml`, ruff, pytest, `app/main.py`, `app/settings.py`, `GET /health` + one test | S | — | `uvicorn` serves `/health`, pytest green | todo | | |
+| T0.2 | `api/` skeleton: `pyproject.toml`, ruff, pytest, `app/main.py`, `app/settings.py`, `GET /health` + one test | S | — | `uvicorn` serves `/health`, pytest green | done | Tushar | 2026-09-17. Python 3.12 venv via `uv venv --python 3.12 api/.venv` then `uv pip install -e ".[dev]"`. `/health` returns provider, model, embed model, corpus version. |
 | T0.3 | `docker-compose.yml` (pgvector postgres + api), `api/Dockerfile`, `.env.example` with every var from providers.md | S | T0.2 | `docker compose up` → `/health` 200 | todo | | |
 | T0.4 | DB layer: SQLAlchemy + Alembic, first migration for `sources`, `source_versions`, `chunks` (HNSW + GIN indexes) | M | T0.3 | `alembic upgrade head` works on compose DB | todo | | |
 | T0.5 | Pydantic schemas for the contracts (`SahayakAnswer`, `Citation`, `RegistryPointer`, `MaterialIPProfile`) | S | T0.2 | schemas appear in `/openapi.json` | todo | | |
