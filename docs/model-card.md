@@ -35,14 +35,18 @@ A system card for the assistant as a whole (retrieval + language models + guardr
 
 Golden set ~120 items (PLAN.md stage 1). Results per provider:
 
-| Metric | Target (MVP) | Anthropic | Groq |
+| Metric | Target (MVP) | Groq (2026-09-18, 46 items) | Anthropic |
 |---|---|---|---|
-| Retrieval recall@8 | ≥ 0.85 | TBD | TBD |
-| Citation correctness | ≥ 0.95 | TBD | TBD |
-| Answer accuracy (judge) | ≥ 0.80 | TBD | TBD |
-| Abstention on out-of-scope | ≥ 0.95 | TBD | TBD |
-| False abstention on in-scope | ≤ 0.10 | TBD | TBD |
-| Multilingual agreement (hi / mr / ta) | ≥ 0.85 | TBD | TBD |
+| Retrieval recall@8 | ≥ 0.85 | 1.00 | not run |
+| Citation correctness | ≥ 0.95 | 0.886 | not run |
+| Answer accuracy (judge) | ≥ 0.80 | 0.843 | not run |
+| Abstention on out-of-scope | ≥ 0.95 | 1.00 | not run |
+| False abstention on in-scope | ≤ 0.10 | 0.028 | not run |
+| Multilingual agreement (hi / mr / ta) | ≥ 0.85 | 1.00 | not run |
+
+Run file: `eval/runs/2026-09-18-groq-after-window.json`. Treat these as early and indicative: 46
+items (plan: ~120), written in-house, and graded by the same model family that writes the answers.
+Known wrong answer in that run: Rule 158B's requirement table was misread (a flattened table).
 
 Known limitation of the method: the accuracy judge is itself a model; a sample of judged items is checked by a team member each run and the agreement rate recorded here.
 

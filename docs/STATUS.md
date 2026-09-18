@@ -54,8 +54,24 @@ of 6 (sections ranked 7th–8th were being cut); prompt rules on primary law, on
   mark answer from the wrong section.
 - *One withheld answer*: Budapest Art. 7, quote did not match the treaty text.
 
-Known limits of these numbers: accuracy is judged by the same model family that writes the answers
-(spot-check a sample by hand), and 46 items is small — the plan asks for ~120.
+**How to read these numbers (agreed with Tushar, 2026-09-18)**
+
+They are honest but early. Fine-tuning comes after the product is complete; for now the eval is a
+regression net, not a score to quote.
+
+- *The tests are practical*: every item runs the whole pipeline as the website does — real question,
+  real search over the 3,147 ingested chunks, real model answer, real citation checking. Nothing is
+  stubbed, so a pass means the product did it.
+- *Small set*: 46 items (plan: ~120). One bad answer moves a metric by ~3 points.
+- *Written in-house*: the questions were written alongside the system, which flatters it. Questions
+  from teammates or real users would be a harder test.
+- *Self-graded accuracy*: the judge is the same model family that writes the answers. Hand-check a
+  sample each run and record the agreement rate in `docs/model-card.md`.
+- *The failure that matters most*: a confident, well-cited, wrong statement (Rule 158B's table).
+  Citation misses are cosmetic next to that.
+
+Before the submission: grow the golden set, get someone else to write a batch of questions,
+hand-check a sample of judged answers, and re-tune only then.
 
 ## 3. Live checks actually performed
 
