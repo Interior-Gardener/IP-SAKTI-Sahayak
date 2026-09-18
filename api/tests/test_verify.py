@@ -167,3 +167,21 @@ def test_long_chunk_keeps_its_last_clauses_and_is_labelled():
     assert cut.endswith("is traditional knowledge.")  # the tail survives the trim
     assert "[…]" in cut and len(cut) < len(section)
     assert to_documents([S3])[0].title.endswith("[primary law]")
+
+
+def test_best_primary_law_hits_always_reach_the_model():
+    from app.generate.answer import select_documents
+
+    def hit(cid, doc_type, rank):
+        h = chunk(cid, f"s.{cid}", "text " * 20)
+        h.doc_type = doc_type
+        h.signals = {"dense": rank}
+        return h
+
+    # Six guidance hits rank above the statute, which lands 7th.
+    guidance = [hit(i, "manual", i) for i in range(1, 7)]
+    statute = hit(9, "statute", 7)
+    chosen = select_documents([*guidance, statute], top_k=6)
+    assert statute in chosen
+    assert chosen[0].doc_type == "statute"  # primary law is shown first
+    assert len(chosen) == 6

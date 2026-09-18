@@ -71,12 +71,25 @@ ANSWER_TOP_K = int(os.environ.get("ANSWER_TOP_K", "6"))
 DOC_CHARS = int(os.environ.get("ANSWER_DOC_CHARS", "2400"))
 
 
+PRIMARY_KEPT = 3  # best statute/rules/treaty hits that always reach the model
+
+
+def is_primary(hit: Retrieved) -> bool:
+    return AUTHORITY.get(hit.doc_type, 5) <= 1
+
+
 def select_documents(retrieved: list[Retrieved], top_k: int = ANSWER_TOP_K) -> list[Retrieved]:
-    """Keep the best `top_k` hits (retrieval order), then order them by authority.
-    Named-provision hits are always kept."""
+    """Choose what the model sees, then order it by authority.
+
+    Always kept: hits for a provision the question named, and the best few primary-law hits.
+    Without that last rule, a statute ranked 7th or 8th was cut by `top_k` and the answer
+    cited a manual instead of the section itself.
+    """
     named = [r for r in retrieved if "locator" in r.signals]
-    rest = [r for r in retrieved if "locator" not in r.signals]
-    chosen = (named + rest)[: max(top_k, len(named))]
+    primary = [r for r in retrieved if is_primary(r) and r not in named][:PRIMARY_KEPT]
+    rest = [r for r in retrieved if r not in named and r not in primary]
+    keep = named + primary
+    chosen = keep + rest[: max(0, top_k - len(keep))]
     return sorted(chosen, key=lambda r: AUTHORITY.get(r.doc_type, 5))
 
 

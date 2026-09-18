@@ -8,9 +8,11 @@ same verifier as the Anthropic path then checks every span against its chunk.
 """
 
 import json
+import logging
+import os
 import re
 
-from groq import Groq
+from groq import Groq, RateLimitError
 from pydantic import BaseModel
 
 from app.llm import router
@@ -46,6 +48,19 @@ def format_documents(documents: list[Document]) -> str:
     )
 
 
+logger = logging.getLogger(__name__)
+
+
+def groq_keys() -> list[str]:
+    """Keys to use in order. GROQ_API_KEYS (comma-separated) lets a long eval run past one
+    account's daily limit; GROQ_API_KEY alone is the normal single-key setup."""
+    listed = [k.strip() for k in os.environ.get("GROQ_API_KEYS", "").split(",") if k.strip()]
+    single = os.environ.get("GROQ_API_KEY", "").strip()
+    if single and single not in listed:
+        listed.insert(0, single)
+    return listed
+
+
 RETRY_MARKERS = (
     "That answer had no usable citation markers. Write it again with the same content, "
     'putting a marker after each sourced sentence in exactly this form: [[c:<source id>|"<exact '
@@ -59,15 +74,39 @@ class GroqProvider(LLMProvider):
 
     def __init__(self, model: str, client: Groq | None = None) -> None:
         super().__init__(model)
+        self.keys = groq_keys()
+        self.key_index = 0
         # The free tier allows ~8k tokens a minute and one cited answer uses ~6-7k, so
-        # rate-limit errors are normal; the SDK waits for the server's retry-after and retries.
-        self.client = client or Groq(max_retries=8)
+        # per-minute rate-limit errors are normal; the SDK waits for the server's
+        # retry-after and retries. The per-day limit is not worth waiting for: the next
+        # key takes over instead (see _chat).
+        self.client = client or Groq(max_retries=8, api_key=self.keys[0] if self.keys else None)
+
+    def _next_key(self) -> bool:
+        """Switch to the next configured key. False when there are none left."""
+        if self.key_index + 1 >= len(self.keys):
+            return False
+        self.key_index += 1
+        self.client = Groq(max_retries=8, api_key=self.keys[self.key_index])
+        logger.warning(
+            "groq key %d of %d exhausted; switching to the next one",
+            self.key_index,
+            len(self.keys),
+        )
+        return True
 
     def _chat(self, messages: list[dict], max_tokens: int, **kwargs) -> str:
-        response = self.client.chat.completions.create(
-            model=self.model, messages=messages, max_tokens=max_tokens, **kwargs
-        )
-        return response.choices[0].message.content or ""
+        while True:
+            try:
+                response = self.client.chat.completions.create(
+                    model=self.model, messages=messages, max_tokens=max_tokens, **kwargs
+                )
+                return response.choices[0].message.content or ""
+            except RateLimitError as e:
+                # A daily (TPD/RPD) limit does not clear in time to wait for it.
+                daily = "per day" in str(e) or "TPD" in str(e) or "RPD" in str(e)
+                if not (daily and self._next_key()):
+                    raise
 
     def complete(self, system: str, prompt: str, max_tokens: int = 1024) -> str:
         return self._chat(

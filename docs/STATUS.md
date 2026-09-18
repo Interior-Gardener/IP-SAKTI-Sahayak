@@ -17,35 +17,39 @@ provenance is in [SOURCES.md](SOURCES.md).
 - **Web**: Ask Sahayak drawer everywhere, `/sahayak` (two panes for India vs international),
   `/sources`, an "IP & Law" tab on all 30 plants, an IP line on the garden card and the walkable
   garden board, and a seal hotspot in the 3D plant viewer. The garden still works with the API down.
-- **Tests**: 87 (`cd api && .venv/Scripts/python -m pytest -q`). CI runs web lint+build and API
+- **Tests**: 88 (`cd api && .venv/Scripts/python -m pytest -q`). CI runs web lint+build and API
   ruff+pytest with Postgres.
 
 ## 2. Measured quality (eval)
 
-Latest full run: `eval/runs/2026-09-17-groq-46item-run.json` (Groq `openai/gpt-oss-120b`,
-44 of 46 items before the daily limit; rebuilt from the log, so per-item notes are missing).
+Latest: **`eval/runs/2026-09-18-groq-46items.json` — all 46 items in one run** (Groq
+`openai/gpt-oss-120b`, judge the same model). It finished only because `GROQ_API_KEYS` held six
+keys and the provider switched key six times as each hit its daily limit.
 
-| Metric | Result | Target | |
-|---|---|---|---|
-| Retrieval recall@8 | 1.00 | ≥ 0.85 | met |
-| Abstention on out-of-scope / medical / unsafe | 1.00 | ≥ 0.95 | met |
-| Multilingual agreement (hi, mr, ta) | 1.00 | ≥ 0.85 | met |
-| Judge accuracy | 0.92 | ≥ 0.80 | met |
-| Citation correctness | 0.84 | ≥ 0.95 | **not met** |
-| False abstention (good answers withheld) | 0.24 | ≤ 0.10 | **not met** |
+| Metric | 2026-09-18 (46 items) | 2026-09-17 (44 items) | Target | |
+|---|---|---|---|---|
+| Retrieval recall@8 | 1.00 | 1.00 | ≥ 0.85 | met |
+| Abstention on out-of-scope / medical / unsafe | 1.00 | 1.00 | ≥ 0.95 | met |
+| False abstention (good answers withheld) | 0.028 | 0.242 | ≤ 0.10 | met |
+| Judge accuracy | 0.814 | 0.92 | ≥ 0.80 | met |
+| Citation correctness | 0.829 | 0.84 | ≥ 0.95 | **not met** |
+| Multilingual agreement | 0.75 | 1.00 | ≥ 0.85 | **not met** (3 of 4 twins) |
 
 Retrieval-only (no model calls, all 29 English items): recall@8 = 1.00.
 
-**Known causes of the two gaps**
+Both fixes landed: the citation-format retry and always keeping the best primary-law passages took
+withheld answers from 0.242 to **0.028** (1 of 36).
 
-1. Four withheld answers used gpt-oss's own citation style (`【1†source】`), which carries no
-   quotable text, so nothing could be verified. The Groq path now retries once showing the
-   required marker format — **this fix has not yet been measured** (no quota left).
-2. Some answers quote a related document (e.g. the Patent Office Manual) instead of the section
-   the question is about; they verify but miss the expected provision. Sources are now labelled
-   `[primary law]` / `[guidance]` and ordered accordingly — also not yet measured.
-3. Some answers cite laws that are not in the corpus (e.g. Trade Marks Rules 2017). That is the
-   verifier working correctly; the fix is to add those sources.
+**What still fails, from the run file's per-item notes**
+
+- *Citations (6 of 35)*: the answer verifies, but rests on a neighbouring provision instead of the
+  expected one — e.g. Trade Marks s.36 instead of s.9, or PPV&FR s.18 instead of s.39. Both were in
+  the documents shown. This is now a prompting/ranking problem, not a retrieval one.
+- *Accuracy (3 items at 0)*: one said the sources were insufficient although 6 citations verified
+  (TRIPS Art. 39); one gave a single flat patent fee where the schedule varies by applicant; one
+  answered from the wrong trade mark section.
+- *Multilingual*: the Tamil twin covered only half of its English twin's content.
+- One withheld answer left (TRIPS Art. 27): the model's quote did not match the treaty text.
 
 ## 3. Live checks actually performed
 
@@ -113,15 +117,17 @@ python api/scripts/sources_register.py              # regenerate docs/SOURCES.md
 
 Groq free tier for `openai/gpt-oss-120b`: **8,000 tokens/minute, 200,000/day** per account.
 One cited answer ≈ 5,000 tokens, so a 46-item eval ≈ 230,000 — more than one day's allowance.
-Four keys were used up during testing on 2026-09-17. Options: wait for the rolling reset, use
-another key, pay for Groq's Dev tier (a full run is worth a few cents), or set
-`LLM_PROVIDER_*=anthropic` with an Anthropic key. Rate-limit errors are retried automatically;
-a run that still hits the limit saves a `-partial.json` file and can be resumed.
+Set **`GROQ_API_KEYS`** in `.env` to several keys separated by commas and a long run continues on
+the next key when one hits its daily limit (per-minute limits are just waited out). Otherwise:
+wait for the rolling reset, pay for Groq's Dev tier (a full run is worth a few cents), or set
+`LLM_PROVIDER_*=anthropic` with an Anthropic key. A run that still runs out saves a
+`-partial.json` file and can be resumed with `--resume`.
 
 ## 7. Next steps, in the order I would do them
 
-1. Re-run the eval to measure the two unmeasured fixes (citation retry, primary-law ordering).
-   `python eval/run.py --provider groq` — needs a key with quota.
+1. Re-run the eval to measure the primary-law selection fix of 2026-09-18 (the citation retry is
+   already measured: false abstention 0.242 → 0.077). `python eval/run.py --provider groq`, or
+   resume the partial run — needs a key with quota.
 2. Click through the web UI in a browser against the running API (drawer, `/sahayak` two panes,
    `/sources`, plant IP tab, 3D seal), and fix what looks wrong.
 3. Grow the golden set towards the planned ~120 items (now 46): more microbe/animal/mineral

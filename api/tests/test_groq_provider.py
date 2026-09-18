@@ -1,5 +1,8 @@
 from types import SimpleNamespace as NS
 
+import httpx
+import pytest
+
 from app.llm.base import Document
 from app.llm.groq_provider import GroqProvider, parse_markers
 
@@ -75,3 +78,38 @@ def test_retries_once_when_the_model_uses_its_own_citation_style():
     answer = GroqProvider("gpt-oss", client).answer_with_citations("sys", "q?", docs)
     assert [c.chunk_id for c in answer.citations] == ["c-2"]
     assert len(sent) == 2 and "c-2" in sent[1][-1]["content"]  # the retry names the allowed ids
+
+
+def test_switches_key_on_a_daily_limit_but_not_a_minute_limit(monkeypatch):
+    import app.llm.groq_provider as gp
+
+    monkeypatch.setenv("GROQ_API_KEYS", "key-one,key-two,key-three")
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    assert gp.groq_keys() == ["key-one", "key-two", "key-three"]
+
+    made = []
+
+    def fake_groq(max_retries, api_key):
+        made.append(api_key)
+        return NS(chat=NS(completions=NS(create=lambda **_: next(behaviour)())))
+
+    def limit_error(message):
+        response = httpx.Response(429, request=httpx.Request("POST", "https://api.groq.com/x"))
+        return gp.RateLimitError(message, response=response, body=None)
+
+    def daily():
+        raise limit_error("429 rate limit reached ... on tokens per day (TPD)")
+
+    def minute():
+        raise limit_error("429 ... on tokens per minute (TPM)")
+
+    behaviour = iter([daily, lambda: NS(choices=[NS(message=NS(content="second key answered"))])])
+    monkeypatch.setattr(gp, "Groq", fake_groq)
+    p = gp.GroqProvider("gpt-oss")
+    assert p.complete("s", "q") == "second key answered"
+    assert made == ["key-one", "key-two"]  # switched once, in order
+
+    behaviour = iter([minute])
+    p2 = gp.GroqProvider("gpt-oss")
+    with pytest.raises(gp.RateLimitError):
+        p2.complete("s", "q")  # a per-minute limit is the SDK's job, not a key switch

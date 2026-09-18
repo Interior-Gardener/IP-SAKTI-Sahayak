@@ -34,6 +34,7 @@ A minimal free setup is `GROQ_API_KEY` only, with `LLM_PROVIDER_*=groq`, `EMBED_
 - **Citations**: there is no native citation feature, so the prompt numbers each chunk and asks for markers of the form `[[c:<chunk_id>|"<verbatim span>"]]`. Where the model supports JSON-schema structured output, the answer is requested as `{ markdown, citations: [{chunk_id, span}] }` instead. Either way the markers are parsed into the same `Citation` shape and the same verifier runs, so "citation correctness" is measured identically across providers.
 - Tool loop: Groq tool calling behind the same `tool_loop` interface; fewer parallel calls and stricter iteration caps.
 - No embeddings on Groq: pair it with `EMBED_PROVIDER=local` (or Voyage).
+- Free-tier limits: 8,000 tokens/minute and 200,000/day per account; one cited answer is ~5,000 tokens. Per-minute limits are waited out by the SDK. For the daily limit, set `GROQ_API_KEYS` to several keys separated by commas: the provider moves to the next key and the run continues.
 
 Quirks seen with `openai/gpt-oss-120b` and handled by the marker parser: it sometimes drops the `c:` prefix, closes with a single `]`, or uses its native full-width brackets `【c:39|"…"】`. It also translated quoted spans when answering in Hindi, so the prompt now says quotes stay in the source's words.
 
