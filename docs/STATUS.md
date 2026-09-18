@@ -22,34 +22,40 @@ provenance is in [SOURCES.md](SOURCES.md).
 
 ## 2. Measured quality (eval)
 
-Latest: **`eval/runs/2026-09-18-groq-46items.json` — all 46 items in one run** (Groq
-`openai/gpt-oss-120b`, judge the same model). It finished only because `GROQ_API_KEYS` held six
-keys and the provider switched key six times as each hit its daily limit.
+Latest: **`eval/runs/2026-09-18-groq-after-window.json` — all 46 items** (Groq
+`openai/gpt-oss-120b`, judge the same model). Full runs are possible because `GROQ_API_KEYS` holds
+several keys and the provider switches when one hits its daily limit.
 
-| Metric | 2026-09-18 (46 items) | 2026-09-17 (44 items) | Target | |
-|---|---|---|---|---|
-| Retrieval recall@8 | 1.00 | 1.00 | ≥ 0.85 | met |
-| Abstention on out-of-scope / medical / unsafe | 1.00 | 1.00 | ≥ 0.95 | met |
-| False abstention (good answers withheld) | 0.028 | 0.242 | ≤ 0.10 | met |
-| Judge accuracy | 0.814 | 0.92 | ≥ 0.80 | met |
-| Citation correctness | 0.829 | 0.84 | ≥ 0.95 | **not met** |
-| Multilingual agreement | 0.75 | 1.00 | ≥ 0.85 | **not met** (3 of 4 twins) |
+| Metric | after-window | earlier 2026-09-18 | 2026-09-17 | Target | |
+|---|---|---|---|---|---|
+| Retrieval recall@8 | 1.00 | 1.00 | 1.00 | ≥ 0.85 | met |
+| Abstention on out-of-scope / medical / unsafe | 1.00 | 1.00 | 1.00 | ≥ 0.95 | met |
+| False abstention | 0.028 | 0.028 | 0.242 | ≤ 0.10 | met |
+| Multilingual agreement | 1.00 | 0.75 | 1.00 | ≥ 0.85 | met |
+| Judge accuracy | 0.843 | 0.814 | 0.92 | ≥ 0.80 | met |
+| Citation correctness | 0.886 | 0.829 | 0.84 | ≥ 0.95 | **not met** |
 
 Retrieval-only (no model calls, all 29 English items): recall@8 = 1.00.
 
-Both fixes landed: the citation-format retry and always keeping the best primary-law passages took
-withheld answers from 0.242 to **0.028** (1 of 36).
+What moved the numbers, in order: quote matching that tolerates the model's dash and ellipsis
+habits; a retry when it uses its own `【1†source】` style; showing all 8 retrieved passages instead
+of 6 (sections ranked 7th–8th were being cut); prompt rules on primary law, on not claiming
+"insufficient sources" when a document does answer, and on not shortening non-English answers.
 
-**What still fails, from the run file's per-item notes**
+**What still fails (from the run file's per-item notes)**
 
-- *Citations (6 of 35)*: the answer verifies, but rests on a neighbouring provision instead of the
-  expected one — e.g. Trade Marks s.36 instead of s.9, or PPV&FR s.18 instead of s.39. Both were in
-  the documents shown. This is now a prompting/ranking problem, not a retrieval one.
-- *Accuracy (3 items at 0)*: one said the sources were insufficient although 6 citations verified
-  (TRIPS Art. 39); one gave a single flat patent fee where the schedule varies by applicant; one
-  answered from the wrong trade mark section.
-- *Multilingual*: the Tamil twin covered only half of its English twin's content.
-- One withheld answer left (TRIPS Art. 27): the model's quote did not match the treaty text.
+- *Citations, 4 of 35*: the answer verifies but rests on a neighbouring provision (Trade Marks
+  s.36 instead of s.9; s.2 definitions instead of the operative section). Retrieval had the right
+  section and the model was shown it.
+- *Accuracy, 3 of 35 at 0*: **one is a wrong legal statement** — for Rule 158B it said proof of
+  effectiveness *is* required for a classical formulation, where the table says "Not Required".
+  The rule's content is a wide table whose columns survive chunking badly; table-aware chunking is
+  the fix. The others: a single flat patent fee where the schedule varies by applicant, and a trade
+  mark answer from the wrong section.
+- *One withheld answer*: Budapest Art. 7, quote did not match the treaty text.
+
+Known limits of these numbers: accuracy is judged by the same model family that writes the answers
+(spot-check a sample by hand), and 46 items is small — the plan asks for ~120.
 
 ## 3. Live checks actually performed
 
