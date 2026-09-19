@@ -89,12 +89,7 @@ def load_items(paths: list[Path]) -> list[Item]:
 # ------------------------------------------------------------------ scoring helpers
 
 
-def locator_matches(expected: str, actual: str) -> bool:
-    return (
-        actual == expected
-        or actual.startswith(expected + "(")
-        or actual.startswith(expected + ".")
-    )
+from app.retrieval.hybrid import locator_matches  # noqa: E402  (one definition, shared)
 
 
 def hit_expected(exp: Expected, source_id: str, locator: str) -> bool:

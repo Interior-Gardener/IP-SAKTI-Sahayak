@@ -20,12 +20,12 @@ from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
 from app.embed.base import Embedder
-from app.generate.answer import DraftAnswer, generate
+from app.generate.answer import DraftAnswer, generate, is_primary, select_documents
 from app.guardrails.guard_in import ABSTAIN_SUGGESTIONS, check_question
 from app.guardrails.verify import CONFIDENCE_FLOOR, Verified, score_confidence, verify
 from app.llm.base import CitedAnswer, LLMProvider
 from app.rerank.local import LocalReranker
-from app.retrieval.hybrid import Retrieved, locators_in, search
+from app.retrieval.hybrid import Retrieved, locator_matches, locators_in, search
 from app.schemas import (
     Abstention,
     Confidence,
@@ -77,11 +77,78 @@ class Trace:
         self.timings[stage] = round(time.perf_counter() - start, 3)
 
 
+NAMED_PROVISION_RETRY = (
+    "Your previous answer did not cite {locator}, although the question asks about it and it is "
+    "among the documents below. Answer again and cite {locator} itself for what it says."
+)
+GUIDANCE_ONLY_RETRY = (
+    "Your previous answer cited only guidance material. The law itself is among the documents "
+    "below ({titles}). Answer again, citing the statute, rule or treaty provision for every legal "
+    "point it covers; use guidance only to explain how it is applied."
+)
+PRIMARY_DOC_TYPES = {"statute", "rules", "regulations", "regulation", "treaty"}
+
 LEAK_RETRY = (
     "Your previous answer brought in law from another jurisdiction. Use only the documents "
     "given below, which all belong to the stated jurisdiction, and do not name other "
     "countries' laws or treaties unless these documents do."
 )
+
+
+def _generate_within_limits(
+    services, question, jurisdiction, retrieved, language, persona, instruction=""
+):
+    """Generate; if the provider rejects the request as too large, retry with fewer documents.
+
+    A fee schedule whose table is carried twice (raw cells plus labelled rows) pushed one
+    request past Groq's per-request limit and the question got no answer at all."""
+    try:
+        return generate(
+            services.answer_llm, question, jurisdiction, retrieved, language, persona, instruction
+        )
+    except Exception as e:  # noqa: BLE001 - providers raise their own type for this
+        if "too large" not in str(e).lower() and "413" not in str(e):
+            raise
+        return generate(
+            services.answer_llm,
+            question,
+            jurisdiction,
+            retrieved,
+            language,
+            persona,
+            instruction,
+            top_k=4,
+        )
+
+
+def missing_primary_citation(question: str, draft: DraftAnswer, checked: Verified) -> str:
+    """An instruction to regenerate when the answer rests on the wrong source, else "".
+
+    Two cases seen in the eval: the question names a provision that was retrieved but not
+    cited, and the answer cites only guidance (a manual) although a statute or rule was
+    among the documents. Both produce a correct-sounding answer anchored to the wrong text.
+    """
+    cited = [c for c in checked.citations if c.verified]
+    if not cited:
+        return ""
+    shown = select_documents(draft.retrieved)
+
+    asked_for = locators_in(question)
+    if asked_for:
+        missing = [
+            loc
+            for loc in asked_for
+            if any(locator_matches(loc, r.locator) for r in shown)
+            and not any(locator_matches(loc, c.locator) for c in cited)
+        ]
+        if missing:
+            return NAMED_PROVISION_RETRY.format(locator=missing[0])
+
+    primary_shown = [r for r in shown if is_primary(r)]
+    if primary_shown and not any(c.doc_type in PRIMARY_DOC_TYPES for c in cited):
+        titles = ", ".join(f"{r.source_title} {r.locator}" for r in primary_shown[:3])
+        return GUIDANCE_ONLY_RETRY.format(titles=titles)
+    return ""
 
 
 def _insufficient(jurisdiction: str, language: str) -> str:
@@ -144,11 +211,12 @@ def _answer_one(
         no_sources = Confidence(score=0, band="low", reasons=["no sources found"])
         return empty, Verified(jurisdiction, "", []), no_sources
 
-    draft = generate(services.answer_llm, question, jurisdiction, retrieved, language, persona)
+    draft = _generate_within_limits(services, question, jurisdiction, retrieved, language, persona)
     checked = verify(draft)
-    if checked.leaked:
-        draft = generate(
-            services.answer_llm, question, jurisdiction, retrieved, language, persona, LEAK_RETRY
+    retry = LEAK_RETRY if checked.leaked else missing_primary_citation(question, draft, checked)
+    if retry:
+        draft = _generate_within_limits(
+            services, question, jurisdiction, retrieved, language, persona, retry
         )
         checked = verify(draft)
     return draft, checked, score_confidence(checked, draft)

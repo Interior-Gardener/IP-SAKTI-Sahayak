@@ -98,3 +98,92 @@ def test_cache_returns_same_envelope(monkeypatch):
     first = list(run(req, services(), cache))[-1].data
     again = list(run(req, services(), cache))
     assert len(again) == 1 and again[0].data.id == first.id
+
+
+def test_regenerates_when_the_named_provision_is_not_cited(monkeypatch):
+    """The question names s.3, the section was retrieved, but the answer cites the manual."""
+    from app.ask.pipeline import missing_primary_citation
+    from app.generate.answer import DraftAnswer
+    from app.guardrails.verify import verify
+
+    act = hit(1, "IN", "s.3", "(p) an invention which, in effect, is traditional knowledge")
+    manual = hit(2, "IN", "p.98", "Traditional knowledge is not patentable, says the manual")
+    manual.doc_type = "manual"
+    draft = DraftAnswer(
+        "IN",
+        CitedAnswer(
+            "Not patentable.", [RawCitation("2", "Traditional knowledge is not patentable")], "m"
+        ),
+        [act, manual],
+    )
+    checked = verify(draft)
+    instruction = missing_primary_citation("What does section 3(p) say?", draft, checked)
+    assert "s.3" in instruction
+
+    # Citing the section itself needs no retry.
+    ok = DraftAnswer(
+        "IN",
+        CitedAnswer(
+            "Not patentable.",
+            [RawCitation("1", "an invention which, in effect, is traditional knowledge")],
+            "m",
+        ),
+        [act, manual],
+    )
+    assert missing_primary_citation("What does section 3(p) say?", ok, verify(ok)) == ""
+
+
+def test_regenerates_when_only_guidance_is_cited(monkeypatch):
+    from app.ask.pipeline import missing_primary_citation
+    from app.generate.answer import DraftAnswer
+    from app.guardrails.verify import verify
+
+    act = hit(1, "IN", "s.3", "(j) plants and animals other than micro-organisms")
+    manual = hit(2, "IN", "p.95", "Microorganisms may be patentable, says the manual")
+    manual.doc_type = "manual"
+    draft = DraftAnswer(
+        "IN",
+        CitedAnswer("Yes.", [RawCitation("2", "Microorganisms may be patentable")], "m"),
+        [act, manual],
+    )
+    assert "law itself" in missing_primary_citation(
+        "Can microbes be patented?", draft, verify(draft)
+    )
+
+
+class TooLargeOnceLLM(FakeLLM):
+    """Rejects a request with many documents, the way Groq rejects an oversized prompt."""
+
+    def __init__(self):
+        self.sizes = []
+
+    def answer_with_citations(self, system, question, documents):
+        self.sizes.append(len(documents))
+        if len(documents) > 4:
+            raise RuntimeError("Error code: 413 - Request too large for model")
+        return super().answer_with_citations(system, question, documents)
+
+
+def test_oversized_request_is_retried_with_fewer_documents():
+    llm = TooLargeOnceLLM()
+    many = [
+        hit(i, "IN", f"s.{i}", "(p) an invention which, in effect, is traditional knowledge")
+        for i in range(1, 9)
+    ]
+    draft = pipeline._generate_within_limits(
+        Services(lambda: _NullSession(), llm, None, None, None, "t"),
+        "what is excluded?",
+        "IN",
+        many,
+        "en",
+        None,
+    )
+    assert llm.sizes == [8, 4]
+    assert draft.answer.citations
+
+
+def test_best_matches_are_named_in_the_prompt():
+    from app.generate.answer import user_turn
+
+    turn = user_turn("q", "IN", "en", None, ["Patents Act s.3"])
+    assert "Patents Act s.3" in turn and "Search ranked" in turn

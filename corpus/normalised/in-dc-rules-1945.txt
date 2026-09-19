@@ -10579,6 +10579,9 @@ Required
 Required
 Not Required
 IndiaCode
+
+Serial number: 1 | Category: (A) Ayurveda, siddha and Unani drugs, given in 158 B as referred in 3(a) | Ingredient (S): As per text | Indication (s): As per text | Safety study: Not Required | Experience/Evidence of Effectiveness: Required | Proof of Effectiveness: Not Required
+Serial number: 2 | Category: (B) Any change in dosage form of Ayurveda, siddha and Unani drugs, as described in section 3 (a) of the Drugs and Cosmetics | Ingredient (S): As per text | Indication (s): As per text | Safety study: Not Required | Experience/Evidence of Effectiveness: Required | Proof of Effectiveness: Not Required
 <<page 183>>
 Drugs and Cosmetics Rules 1945
 183
@@ -10682,6 +10685,9 @@ as mentioned in the book of 1st schedule;
 1. Ins. by G.S.R. 663 (E),dt. 10.10.2010.
 
 IndiaCode
+
+Serial number: 1 | Category: Patent orPropri etary medicine | Ingredient (S): As per text | Indication (s): Textual Rationale i d n | Safety study: d o C Not a Required | Experience/Evidence of Effectiveness: Of Ingredients | Proof of Effectiveness: Pilot study as per relevant protocol for Ayurveda, siddha and Unani drugs
+Serial number: 2 | Category: Ayurveda, siddha and Unani drugswith any of the ingredients of Schedule E(1) of the Drugs and Cosmetics Act, 1940 | Ingredient (S): As per text | Indication (s): I Existing | Safety study: Required | Experience/Evidence of Effectiveness: Required | Proof of Effectiveness: Required
 <<page 184>>
 Drugs and Cosmetics Rules 1945
 184
@@ -10794,6 +10800,12 @@ fulfilment of all requisite formalities as required in the respective formats.]
 1. Ins. by G.S.R. 153 (E),dt. 5.3.2014.
 
 IndiaCode
+
+Serial number: 1 | Category: (A) Aqueous | Ingredien t (S): As per text | Indication (s): As per text | Safety study: e d Not Required | Experience/Evidence of Effectiveness: Not Required | Proof of Effectiveness: Not Required
+Serial number: 2 | Category: (Al). Aqueous | Ingredien t (S): As per text | Indication (s): New Indication** | Safety study: o C Not Required | Experience/Evidence of Effectiveness: Not Required | Proof of Effectiveness: Required
+Serial number: 3 | Category: (B) Hydro- Alcohol | Ingredien t (S): As per text | Indication (s): i d As per text | Safety study: a Not Required | Experience/Evidence of Effectiveness: If Required | Proof of Effectiveness: Not Required
+Serial number: 4 | Category: (B1) Hydro- Alcohol | Ingredien t (S): As specified | Indication (s): n I New Indication** | Safety study: Required | Experience/Evidence of Effectiveness: If Required | Proof of Effectiveness: Required
+Serial number: 5 | Category: Other than Hydro/ HydroAlc ohol | Ingredien t (S): As specified | Indication (s): As specified | Safety study: Required Acute, Chronic, mutagenicity and teratogenicit y | Experience/Evidence of Effectiveness: If Required | Proof of Effectiveness: Required
 <<page 185>>
 Drugs and Cosmetics Rules 1945
 185
@@ -11280,6 +11292,15 @@ Mandura - Lauha
 1. Ins. by G.S.R. 787 (E), dt. 17-10-2000.
 2. Ins. by G.S.R. 764 (E), dt. 15-10-2009.
 IndiaCode
+
+Sl. No.: 1. | Name of the Group of Ayurvedic Medicine: Churna, Kwatha Churna | column 3: 2 years
+Sl. No.: 2. | Name of the Group of Ayurvedic Medicine: Gutika (Vati-Gutti, Pills, Tablets except Gutika with Rasa) | column 3: 3 years
+Sl. No.: 3. | Name of the Group of Ayurvedic Medicine: (i) Gutika Tablet containing Kasth aushadhi (ii) Gutika,Tablet containing Kasth aushadi and Rasa, Uprasa, Metallic Bhasmas, and Guggulu. | column 3: 3 years 5 years
+Sl. No.: 4. | Name of the Group of Ayurvedic Medicine: Rasaushadhies | column 3: No expiry date1
+Sl. No.: 5. | Name of the Group of Ayurvedic Medicine: Asava Arista | column 3: No expiry date1
+Sl. No.: 6. | Name of the Group of Ayurvedic Medicine: Avaleha | column 3: 3 years
+Sl. No.: 7. | Name of the Group of Ayurvedic Medicine: Guggulu | column 3: 5 years
+Sl. No.: 8. | Name of the Group of Ayurvedic Medicine: Mandura - Lauha | column 3: 10 years
 <<page 193>>
 Drugs and Cosmetics Rules 1945
 193
@@ -11414,6 +11435,43 @@ Tiravakam
 Mattirai
 3 years
 IndiaCode
+
+9.: 10. | Ghrita: Taila | 2 years: 3 years
+9.: 11. | Ghrita: Arka | 2 years: 1 year
+9.: 12. | Ghrita: Dravaka, Lavana, Ksara | 2 years: 5 years
+9.: 13. | Ghrita: Lepa Churna | 2 years: 3 years
+9.: 14. | Ghrita: Dant Manjan Powder | 2 years: 2 years
+9.: 15. | Ghrita: Dant Manjan Paste | 2 years: 2 years
+9.: 16. | Ghrita: Lepa Guti | 2 years: 3 years
+9.: 17. | Ghrita: Lepa Malahar (Ointment)/Liniment/Gels/ lotions /creams | 2 years: 3 years
+9.: 18. | Ghrita: Varti | 2 years: 2 years (one time use)
+9.: 19. | Ghrita: Ghana Vati | 2 years: 3 years
+9.: 20. | Ghrita: Kupipakva Rasayan | 2 years: No expiry date1
+9.: 21. | Ghrita: Parpati | 2 years: No expiry date1
+9.: 22. | Ghrita: Sveta parpati | 2 years: 2 years
+9.: 23. | Ghrita: Pisti and Bhasma | 2 years: No expiry date1
+9.: 24. | Ghrita: Svarna, Rajata, Lauha, Mandura, Abhraka bhasma,Godanti, ShankhaBhasma, etc. | 2 years: e No expiry date1
+9.: 25. | Ghrita: d Naga Bhasma, Vanga Bhasma, Tamra Bhasma2 | 2 years: 5 years2
+9.: 26. | Ghrita: o C Capsules made of soft gelatin (depending upon thecontent material) for Kashtha aushadhi | 2 years: 3 years
+9.: 27. | Ghrita: a i Capsules of hard gelatin (depending upon the d content material) -containing Kasth aushdhi with n Rasa, Bhasma,Parad-Gandhak | 2 years: 5 years2
+9.: 28. | Ghrita: I Syrup/liquid oral | 2 years: 3 years
+9.: 29. | Ghrita: (Kama/Nasa Bindu) Ear/Nasal drops Eye drops | 2 years: 2 years 1 year
+9.: 30. | Ghrita: Khand/Granule/Pak | 2 years: 3 years
+9.: 31. | Ghrita: Dhoopans-Inhalers | 2 years: 2 years
+9.: 32. | Ghrita: Pravahi Kwatha (with preservatives) | 2 years: 3 years
+Sl. No.: 1. | Name of the Group of Medicine: Karpam | column 3: No expiry date*
+Sl. No.: 2. | Name of the Group of Medicine: Cunnam | column 3: 5 years
+Sl. No.: 3. | Name of the Group of Medicine: Kalanku | column 3: No expiry date*
+Sl. No.: 4. | Name of the Group of Medicine: Kattu | column 3: No expiry date*
+Sl. No.: 5. | Name of the Group of Medicine: Parpam | column 3: No expiry date*
+Sl. No.: 6. | Name of the Group of Medicine: Centuram | column 3: No expiry date*
+Sl. No.: 7. | Name of the Group of Medicine: Karuppu | column 3: No expiry date*
+Sl. No.: 8. | Name of the Group of Medicine: Patankam | column 3: 5 years
+Sl. No.: 9. | Name of the Group of Medicine: Kulampu | column 3: 5 years
+Sl. No.: 10. | Name of the Group of Medicine: Meluku | column 3: 5 years
+Sl. No.: 11. | Name of the Group of Medicine: Tinir | column 3: 2 years
+Sl. No.: 12. | Name of the Group of Medicine: Tiravakam | column 3: 2 years
+Sl. No.: 13. | Name of the Group of Medicine: Mattirai | column 3: 3 years
 <<page 194>>
 Drugs and Cosmetics Rules 1945
 194
@@ -11541,6 +11599,39 @@ shall be the duty of an Inspector authorised to inspect the manufacture of Ayurv
 1. Ins. by notification F.1-23/6, dt. 2-2-1970.
 
 IndiaCode
+
+14.: 15. | Tailam: Ilakam | 3 years: 3 years
+14.: 16. | Tailam: Iracayanaam | 3 years: 3 years
+14.: 17. | Tailam: Ney | 3 years: 2 years
+14.: 18. | Tailam: Manappaku | 3 years: 3 years
+14.: 19. | Tailam: Venney | 3 years: 3 years
+14.: 20. | Tailam: Vatakam | 3 years: 3 years
+14.: 21. | Tailam: Curanam | 3 years: 2 years
+14.: 22. | Tailam: Pura Maruntukal | 3 years: 5 years
+Sl. No.: 1. | Name of the Group of Medicine: Habb (Pills) | column 3: 3 years
+Sl. No.: 2. | Name of the Group of Medicine: Qurs (Tablets) | column 3: 3 years
+Sl. No.: 3. | Name of the Group of Medicine: Majoon/Dawa | column 3: e 3 years
+Sl. No.: 4. | Name of the Group of Medicine: Khamira | column 3: d 3 years
+Sl. No.: 5. | Name of the Group of Medicine: Itrifal | column 3: o 3 years
+Sl. No.: 6. | Name of the Group of Medicine: Tiryaq | column 3: C 3 years
+Sl. No.: 7. | Name of the Group of Medicine: a Laooq | column 3: 2 years
+Sl. No.: 8. | Name of the Group of Medicine: i d Laboob | column 3: 2 years
+Sl. No.: 9. | Name of the Group of Medicine: n Halwa | column 3: 2 years
+Sl. No.: 10. | Name of the Group of Medicine: I Mufarreh/Yaqooti | column 3: 2 years
+Sl. No.: 11. | Name of the Group of Medicine: Burood/Surma/Kohal | column 3: 3 years
+Sl. No.: 12. | Name of the Group of Medicine: Kushta | column 3: 5 years
+Sl. No.: 13. | Name of the Group of Medicine: Raughaniyat | column 3: 3 years
+Sl. No.: 14. | Name of the Group of Medicine: Marham/Zimad/Qairooti | column 3: 3 years
+Sl. No.: 15. | Name of the Group of Medicine: Ayarij/Sufoof | column 3: 2 years
+Sl. No.: 16. | Name of the Group of Medicine: Safoof (Namak wala/containing salt) | column 3: 1 year
+Sl. No.: 17. | Name of the Group of Medicine: Sharbat/Sikanjabeen | column 3: 3 years
+Sl. No.: 18. | Name of the Group of Medicine: Jawarish | column 3: 3 years
+Sl. No.: 19. | Name of the Group of Medicine: Capsule | column 3: 3 years
+Sl. No.: 20. | Name of the Group of Medicine: Arq | column 3: 1 year
+Sl. No.: 21 | Name of the Group of Medicine: Qutoor | column 3: 1 year
+Sl. No.: 22. | Name of the Group of Medicine: Nabeez | column 3: 5 years
+Sl. No.: 23. | Name of the Group of Medicine: Murabba | column 3: 1 year
+Sl. No.: 24. | Name of the Group of Medicine: Tila | column 3: 2 years]
 <<page 195>>
 Drugs and Cosmetics Rules 1945
 195
@@ -17229,6 +17320,35 @@ Limit test for drug of chemical origin
 Other miscellaneous tests
 1000.00
 IndiaCode
+
+Type of testing/analysis: (1) | Cost of testing or analysis in Rupees: (2)
+column 1: 1. | Type of testing/analysis: Test for sterlity | Cost of testing or analysis in Rupees: 250.00
+column 1: 2. | Type of testing/analysis: Abnormal toxicity or undue toxicity or safety test | Cost of testing or analysis in Rupees: 750.00
+column 1: 3. | Type of testing/analysis: Determination of lethal does LD 50 to 10 on mice | Cost of testing or analysis in Rupees: 2500.00
+column 1: 4. | Type of testing/analysis: Chemical test for each ingredient | Cost of testing or analysis in Rupees: 500.00
+column 1: 5. | Type of testing/analysis: Disinfectants | Cost of testing or analysis in Rupees: 1000.00
+column 1: 6. | Type of testing/analysis: Any other test requiring animal experimentation | Cost of testing or analysis in Rupees: 500.00
+column 1: 7. | Type of testing/analysis: Microbiological assay | Cost of testing or analysis in Rupees: 750.00
+column 1: 8. | Type of testing/analysis: Microscopic examination of single drugs | Cost of testing or analysis in Rupees: e 250.00
+column 1: 9. | Type of testing/analysis: o Microscopic examination of raw material of compound C drug | Cost of testing or analysis in Rupees: d 500.00
+column 1: 10. | Type of testing/analysis: a Chemical identification as per Pharmacopoeia | Cost of testing or analysis in Rupees: 250.00
+column 1: 11. | Type of testing/analysis: i d Disintegration of tablets and capsules n (a) ordinary I (b) sugar coated (c) enteric coated | Cost of testing or analysis in Rupees: 100.00 200.00 400.00
+column 1: 12. | Type of testing/analysis: Psysiochemical Assays | Cost of testing or analysis in Rupees: 300.00
+column 1: 13. | Type of testing/analysis: Test other than assay (limit tests for impurities, ash content, total solids, acid value, saponification value, loss on drying etc.) for each test. | Cost of testing or analysis in Rupees: 100.00
+column 1: 14. | Type of testing/analysis: Optical rotation | Cost of testing or analysis in Rupees: 250.00
+column 1: 15. | Type of testing/analysis: Refractive index | Cost of testing or analysis in Rupees: 250.00
+column 1: 16. | Type of testing/analysis: Arsenic testing | Cost of testing or analysis in Rupees: 250.00
+column 1: 17. | Type of testing/analysis: Paper chromatography | Cost of testing or analysis in Rupees: 250.00
+column 1: 18. | Type of testing/analysis: Thin layer chromatography | Cost of testing or analysis in Rupees: 300.00
+column 1: 19. | Type of testing/analysis: Column chromatography | Cost of testing or analysis in Rupees: 2500.00
+column 1: 20. | Type of testing/analysis: Gas liquid chromatography | Cost of testing or analysis in Rupees: 1000.00
+column 1: 21. | Type of testing/analysis: HPTLC restricted to single drugs qualitative | Cost of testing or analysis in Rupees: 1000.00
+column 1: 22. | Type of testing/analysis: Atomical absorption spectrophotometry for Hg, Pb, As, Cd | Cost of testing or analysis in Rupees: 500.00
+column 1: 23. | Type of testing/analysis: Cosmetics/ tails/ creams | Cost of testing or analysis in Rupees: 500.00
+column 1: 24. | Type of testing/analysis: Identification test for raw material of plant origin (other than assay of constitutents) | Cost of testing or analysis in Rupees: 125.00
+column 1: 25. | Type of testing/analysis: Identification test for raw material of chemical origin (other than assay) | Cost of testing or analysis in Rupees: 100.00
+column 1: 26. | Type of testing/analysis: Limit test for drug of chemical origin | Cost of testing or analysis in Rupees: 150.00
+column 1: 27. | Type of testing/analysis: Other miscellaneous tests | Cost of testing or analysis in Rupees: 1000.00
 <<page 286>>
 Drugs and Cosmetics Rules 1945
 286
@@ -19749,6 +19869,9 @@ Maximum number of Viable
 Micro-organism permitted per
 m3
 IndiaCode
+
+column 1: Grade | column 2: Maximum number of particles permitted per m3 | column 3: Maximum number of Viable Micro-organism permitted per m3
+column 2: 0.5 – 5 micron Less than 5 micron
 <<page 326>>
 Drugs and Cosmetics Rules 1945
 326
@@ -19815,6 +19938,9 @@ distribution.
 1. Subs. by G.S.R 40(E), dt. 29.1.2001 (w.e.f. 1.6.2001)
 
 IndiaCode
+
+A (Class 100) (Laminar - Airflow workstation): B (Class 100) | 3500: 3500 | None: None | Less than 1: Less than 5
+A (Class 100) (Laminar - Airflow workstation): C (Class 10,000) | 3500: 3,50,000 | None: 2000 | Less than 1: Less than 100
 <<page 327>>
 Drugs and Cosmetics Rules 1945
 327
@@ -20217,6 +20343,12 @@ D
 50
 -
 IndiaCode
+
+Grade: A B(a) C(a) D(a) | At rest (b): 0.5μm 3,500 3,500 3,50,000 35,00,000 | column 3: 5 μm 0 0 2000 20,000 | In Operation (a): 0.5 μm 3,500 3,50,000 35,00,000 Not defined | column 5: 5μm 0 2000 20,000 Not defined e
+Grade: A | Air samples Cfu/m3: Less than 1 | Settle Plates (dia 90mm) cfu/2hrs: Less than 1 | Contact plates (dia 55 mm) cfu per plate: Less than 1 | Glove points (Five fingers) cfu per glove: Less than 1
+Grade: B | Air samples Cfu/m3: 10 | Settle Plates (dia 90mm) cfu/2hrs: 5 | Contact plates (dia 55 mm) cfu per plate: 5 | Glove points (Five fingers) cfu per glove: 5
+Grade: C | Air samples Cfu/m3: 100 | Settle Plates (dia 90mm) cfu/2hrs: 50 | Contact plates (dia 55 mm) cfu per plate: 25 | Glove points (Five fingers) cfu per glove: -
+Grade: D | Air samples Cfu/m3: 500 | Settle Plates (dia 90mm) cfu/2hrs: 100 | Contact plates (dia 55 mm) cfu per plate: 50 | Glove points (Five fingers) cfu per glove: -
 <<page 333>>
 Drugs and Cosmetics Rules 1945
 333
@@ -28779,6 +28911,12 @@ Handling of components after washing
 
 1. Subs. by G.S.R. 431(E), dt. 30.6.2005.
 IndiaCode
+
+At rest (b): 0.5μm | column 3: 5μm | In operation (a): 0.5μm | column 5: 5μm
+Grade: A | At rest (b): 3500 | column 3: 0 | In operation (a): 3500 | column 5: 0
+Grade: B (a) | At rest (b): 3500 | column 3: 0 | In operation (a): 3,50,000 | column 5: 2,000
+Grade: C (a) | At rest (b): 350,000 | column 3: 2,000 | In operation (a): 35,00,000 | column 5: 20,000
+Grade: D (a) | At rest (b): 35,00,000 | column 3: 20,000 | In operation (a): Not defined (c) | column 5: Not defined (c)]
 <<page 451>>
 Drugs and Cosmetics Rules 1945
 451
@@ -28867,6 +29005,11 @@ C and D areas and for not less than thirty minutes in Grade A area.
 
 1. Subs. by G.S.R. 431(E), dt. 30.6.2005.
 IndiaCode
+
+Grade: A | Air sample Cfu/m2: < 1 | Settle plates (dia. 90mm. Cfu/2 hrs.: < 1 | Contact plates (dia. 55mm) cfu per plate: < 1 | Glove points (five fingers) cfu per glove: < 1
+Grade: B | Air sample Cfu/m2: 10 | Settle plates (dia. 90mm. Cfu/2 hrs.: 5 | Contact plates (dia. 55mm) cfu per plate: 5 | Glove points (five fingers) cfu per glove: 5
+Grade: C | Air sample Cfu/m2: 100 | Settle plates (dia. 90mm. Cfu/2 hrs.: 50 | Contact plates (dia. 55mm) cfu per plate: 25 | Glove points (five fingers) cfu per glove: --
+Grade: D | Air sample Cfu/m2: 500 | Settle plates (dia. 90mm. Cfu/2 hrs.: 100 | Contact plates (dia. 55mm) cfu per plate: 50 | Glove points (five fingers) cfu per glove: --
 <<page 452>>
 Drugs and Cosmetics Rules 1945
 452
@@ -33066,6 +33209,48 @@ Staple formation
 Staple assembly
 8
 IndiaCode
+
+Name of Device: Cardiac stent/Drug Eluting Stent | Type of Operation: Primary Packing and Crimping | ISO Class (At rest): 5
+Type of Operation: Washing, Ultrasonic cleaning &Drug coating | ISO Class (At rest): 7
+Type of Operation: Assembly, Wrapping & Packaging | ISO Class (At rest): 8
+Type of Operation: Laser cutting, Descaling, Annealing & Electro polishing | ISO Class (At rest): 9
+Name of Device: Heart Valves | Type of Operation: Valve Packing | ISO Class (At rest): 5
+Type of Operation: Ultrasonic Cleaning & Visual Inspection | ISO Class (At rest): 7
+Type of Operation: Frame & Disc Assembly | ISO Class (At rest): 7
+Name of Device: Intra Ocular Lenses | Type of Operation: Packing & Sealing | ISO Class (At rest): 5
+Type of Operation: Final Inspection | ISO Class (At rest): 7
+Type of Operation: Power Checking& Final Cleaning | ISO Class (At rest): 8
+Type of Operation: Tumble Polishing & Lathe Cutting | ISO Class (At rest): 9
+Name of Device: Bone Cements | Type of Operation: e Final Product Filling | ISO Class (At rest): 5
+Type of Operation: d Sieving & Calcinations | ISO Class (At rest): 7
+Type of Operation: o Powder Preparation, Granulation C &Drying | ISO Class (At rest): 8
+Name of Device: Internal Prosthetic Replacement | Type of Operation: a Packing | ISO Class (At rest): 5
+Type of Operation: i d Product Preparation | ISO Class (At rest): 7
+Type of Operation: n Component Preparation | ISO Class (At rest): 8
+Name of Device: Orthopedic Implants | Type of Operation: I Polishing &Cleaning & packaging (to be sterilized in factory premises) | ISO Class (At rest): 7
+Type of Operation: Polishing , cleaning & packaging (Non Sterile- to be sterilized in Hospital) | ISO Class (At rest): 8
+Type of Operation: Cutting, lathing | ISO Class (At rest): 9
+Name of Device: Catheters /Ablation Device / I V Cannulae / Scalp Vein Set/ Hypodermic Syringes/ Hypodermic Needles / Perfusion Sets | Type of Operation: Assembly, Coating, Wrapping & Packing | ISO Class (At rest): 7
+Type of Operation: Component Preparation & Cleaning | ISO Class (At rest): 8
+Type of Operation: Moulding | ISO Class (At rest): 9
+Name of Device: Condom | Type of Operation: Compounding | ISO Class (At rest): Well ventilated area with minimum 5 micron filter
+Type of Operation: Moulding | ISO Class (At rest): Well ventilated area with minimum 5 micron filter
+Type of Operation: Vulcanising | ISO Class (At rest): Normal air
+Type of Operation: Packing | ISO Class (At rest): Air conditioned
+Name of Device: Intra Uterine Devices | Type of Operation: Moulding | ISO Class (At rest): Well ventilated area with minimum 5 micron filter
+Type of Operation: Assembling | ISO Class (At rest): 7
+Type of Operation: Packaging | ISO Class (At rest): 7
+Name of Device: Tubal ring | Type of Operation: Extrusion | ISO Class (At rest): 7
+Type of Operation: Cutting and Assembly | ISO Class (At rest): 7
+Type of Operation: Packaging | ISO Class (At rest): 7
+Name of Device: Blood bags | Type of Operation: Moulding/Extrusion of components | ISO Class (At rest): 8
+Type of Operation: Assembly | ISO Class (At rest): 7
+Type of Operation: Filing | ISO Class (At rest): 5
+Name of Device: Suture | Type of Operation: Extrusion | ISO Class (At rest): 9
+Type of Operation: Assembly | ISO Class (At rest): 8
+Type of Operation: Packing | ISO Class (At rest): 8
+Name of Device: Staplers | Type of Operation: Staple formation | ISO Class (At rest): 9
+Type of Operation: Staple assembly5 23 | ISO Class (At rest): 8
 <<page 524>>
 Drugs and Cosmetics Rules 1945
 524
@@ -33116,6 +33301,18 @@ As per recommended
 storage condition of the
 product].
 IndiaCode
+
+Extrusion: Cutting and assembly | 9: 8
+Extrusion: Final Pack | 9: 8
+Ligatures: Surgical dressings | Extrusion: Weaving | 9: 9
+Extrusion: Assembly and Gauzing | 9: 9
+Extrusion: Final pack | 9: 9
+Ligatures: In-vitro diagnostics Kit/Reagents | Extrusion: Dry, Liquid Reagent Preparation | 9: Well Lighted and Ventilated controlled temperature & humidity as per process or product requirement
+Extrusion: Coating of sheets etc.
+Extrusion: Assembly and primary packing
+Extrusion: Filling e d o | 9: Well Lighted and Ventilated controlled temperature and humidity as per process or product requirement. Provision of Laminar hood if required, Clean Room class 8 or class 9 as per product/process requirement
+Extrusion: C Secondary Packing a i d | 9: Well Lighted and Ventilated controlled temperature if required
+Extrusion: n Storage I | 9: As per recommended storage condition of the product].
 <<page 525>>
 Drugs and Cosmetics Rules 1945
 525
@@ -33657,6 +33854,35 @@ In a cool place
 1. Subs. by G.S.R. 17(E) , dt. 7.1.1986 ( w.e.f. 7.1.1986 ).
 
 IndiaCode
+
+1.: 2. | Adramycin: Ampicillin | 30: e 36 | In a cool place: In a cool place
+1.: 3. | Adramycin: Ampicillin Capsules | 30: d 24
+1.: 4. | Adramycin: Ampicillin Dry Syrup | 30: o 24
+1.: 5. | Adramycin: Ampicillin Injection | 30: C 24
+1.: 6. | Adramycin: Ampicillin Sodium i | 30: a 36 | In a cool place: In a cool place
+1.: 7. | Adramycin: d Ampicillin Trihydrate | 30: 30 | In a cool place: In a cool place
+1.: 8. | Adramycin: n Amoxycillin Trihydrate | 30: 36 | In a cool place: In a cool place
+1.: 9 | Adramycin: I Amoxycillin Trihydrate Capsules | 30: 24
+1.: 10. | Adramycin: Amoxycillin Trihydrate Dry Syrup | 30: 18
+1.: 11. | Adramycin: Bacitracin | 30: 18 | In a cool place: In a cool place
+1.: 12. | Adramycin: Bacitracin or Zinc Bacitracin Tablets | 30: 12
+1.: 13. | Adramycin: Bacitracin Lozenges | 30: 12
+1.: 14. | Adramycin: Carbenicillin Sodium Injection | 30: 24 | In a cool place: At temperature not Exceeding 5°C
+1.: 15. | Adramycin: Carbenicillin Sodium Powder | 30: 24 | In a cool place: At temperature not Exceeding 5°C
+1.: 16. | Adramycin: Cephalexin | 30: 24 | In a cool place: In a cool place
+1.: 17. | Adramycin: Chloramphenicol | 30: 60 | In a cool place: In a cool place
+1.: 18. | Adramycin: Chloramphenicol Capsules & Tablets | 30: 48
+1.: 19. | Adramycin: Chloramphenicol Palmitate | 30: 48
+1.: 20. | Adramycin: Chloramphenicol Palmitate Oral Suspension | 30: 36
+1.: 21. | Adramycin: Chloramphenicol Eye drops | 30: 24
+1.: 22. | Adramycin: Chloramphenicol Sodium Succinate Powder | 30: 48 | In a cool place: In a cool palace
+1.: 23. | Adramycin: Chloramphenicol Sodium Succinate Injection | 30: 36 | In a cool place: In a cool place
+1.: 24 | Adramycin: Chlortetracycline Hydrochloride | 30: 60 | In a cool place: In a cool place
+1.: 25. | Adramycin: Chlortetracycline Hydrochloride Capsules | 30: 60
+1.: 26. | Adramycin: Chlortetracycline Hydrochloride Tablets | 30: 24
+1.: 27. | Adramycin: Chlortetracycline Hydrochloride Ointment | 30: 24
+1.: 28. | Adramycin: Cloxacillin (Oral) | 30: 36 | In a cool place: In a cool place
+1.: 29. | Adramycin: Cloxacillin Sodium (Injection Grade) | 30: 36 | In a cool place: In a cool place
 <<page 533>>
 Drugs and Cosmetics Rules 1945
 533
@@ -33826,6 +34052,45 @@ In a cool place
 In a cool place
 
 IndiaCode
+
+30.: 31. | Colistin Sulphate: D-Cycloserine | 60: 48 | Protected from light: In a cool place
+30.: 32. | Colistin Sulphate: Dimethyl Chlortetracycline Hydrochloride | 60: 48
+30.: 33. | Colistin Sulphate: Dimethyl Chlortetracycline Hydrochloride Capsules | 60: 36
+30.: 34. | Colistin Sulphate: Daunoblastin Injection. | 60: 36
+30.: 35. | Colistin Sulphate: Doxycycline Hydrochloride | 60: 48 | Protected from light: In a cool place
+30.: 36. | Colistin Sulphate: Doxcycline Monohydrate | 60: 36 | Protected from light: In a cool place
+30.: 37. | Colistin Sulphate: Doxycyline Monohydrate for Oral Suspension. | 60: 24
+30.: 38. | Colistin Sulphate: Doxycycline Monohydrate Capsules. | 60: 36
+30.: 39. | Colistin Sulphate: Erythromycin Estolate | 60: 36 | Protected from light: In a cool place
+30.: 40. | Colistin Sulphate: Erythromycin Ethylsuccinate | 60: 60 | Protected from light: In a cool place
+30.: 41. | Colistin Sulphate: Erythromycin Oral Suspension | 60: 36
+30.: 42. | Colistin Sulphate: Erythromycin Estolate for Oral Suspension | 60: 36
+30.: 43. | Colistin Sulphate: Erythromycin Ethyl Succinate Tablet | 60: 24
+30.: 44. | Colistin Sulphate: Erythromycin Estolate Tablets | 60: 24
+30.: 45. | Colistin Sulphate: Erythromycin Stearate | 60: 36 | Protected from light: In a cool place
+30.: 46. | Colistin Sulphate: Framycetin Sulphate | 60: 48 e d | Protected from light: In a well closed container with temperature not exceeding 30°C
+30.: 47. | Colistin Sulphate: o Framycetin Sulphate Eye drops C a | 60: 24 | Protected from light: In a well closed container with temperature not exceeding 30°C
+30.: 48. | Colistin Sulphate: i d Framycetin Sulphate Ointment n I | 60: 24 | Protected from light: In a well closed container with temperature not exceeding 30°C
+30.: 49. | Colistin Sulphate: Gentamycin Sulphate | 60: 60 | Protected from light: In a cool place.
+30.: 50. | Colistin Sulphate: Gentamycin Sulphate Injection | 60: 36
+30.: 51. | Colistin Sulphate: Gramicidin | 60: 60 | Protected from light: In a cool place
+30.: 52. | Colistin Sulphate: Griseofulvin | 60: 48 | Protected from light: In a cool place
+30.: 53. | Colistin Sulphate: Griseofulvin Tablets | 60: 36
+30.: 54. | Colistin Sulphate: Kanamycin Sulphate Injection. | 60: 24
+30.: 55. | Colistin Sulphate: Kanamycin Acid Sulphate Powder | 60: 48 | Protected from light: In a cool place
+30.: 56. | Colistin Sulphate: Mitomycin C | 60: 48 | Protected from light: In a cool place
+30.: 57. | Colistin Sulphate: Neomycin Sulphate. | 60: 48 | Protected from light: In a cool place
+30.: 58. | Colistin Sulphate: Nystatin | 60: 36 | Protected from light: At temperature not exceeding 5°C
+30.: 59. | Colistin Sulphate: Oleandomycin Phosphate sterile | 60: 24 | Protected from light: In a cool place
+30.: 60. | Colistin Sulphate: Oleandomycin Phosphate non sterile | 60: 36 | Protected from light: In a cool place
+30.: 61. | Colistin Sulphate: Oxytetracline Hydrochloride | 60: 36 | Protected from light: In a cool place
+30.: 62. | Colistin Sulphate: Oxytetracycline Hydrochloride Capsules. | 60: 36
+30.: 63. | Colistin Sulphate: Oxytetracycline Hydrochloride Tablets | 60: 24
+30.: 64. | Colistin Sulphate: Oxytetracycline Hydrochloride Injection | 60: 24
+30.: 65. | Colistin Sulphate: Oxytetracycline Hydrochloride Ointment | 60: 36
+30.: 66. | Colistin Sulphate: Penicillin Crystalline | 60: 36 | Protected from light: In a cool place
+30.: 67. | Colistin Sulphate: Penicillin Tablets | 60: 18 | Protected from light: In a cool place
+30.: 68. | Colistin Sulphate: Procaine Penicillin G | 60: 36 | Protected from light: In a cool place
 <<page 534>>
 Drugs and Cosmetics Rules 1945
 534
@@ -33988,6 +34253,40 @@ from light, in a cool place.
 1. Subs. by G.S.R. 250(E), dt. 4.4.2002
 2. Subs. by G.S.R. 626(E), dt. 14.10.1991
 IndiaCode
+
+69.: 70. | Benzathin Penicillin G: Potassium Phenoxy Methyl Penicillin | 48: 48 | column 4: In a cool place
+69.: 71. | Benzathin Penicillin G: Potassium Phenoxy Methyl PenicillinTablets | 48: 24
+69.: 72. | Benzathin Penicillin G: Polymixin B Sulphate | 48: 48 | column 4: In a cool place
+69.: 73. | Benzathin Penicillin G: Polymixin B Sulphate Ointment or Powder | 48: 24 | column 4: In a cool place
+69.: 74. | Benzathin Penicillin G: Rifampicin | 48: 36 | column 4: In a cool place
+69.: 1[75 | Benzathin Penicillin G: Rifampicin Capsules | 48: 36]
+69.: 76. | Benzathin Penicillin G: Spramycin Base | 48: 24 | column 4: In a cool place
+69.: 77. | Benzathin Penicillin G: Strepromycin Injection. | 48: 36
+69.: 78. | Benzathin Penicillin G: Streptomycin Ointment | 48: 24
+69.: 79. | Benzathin Penicillin G: Streptomycin Tablets | 48: 24
+69.: 80. | Benzathin Penicillin G: Streptomycin Sulphate | 48: 48 | column 4: At temperature not exceeding 20oC
+69.: 81. | Benzathin Penicillin G: Tetracycline Base | 48: 24 | column 4: In a cool place
+69.: 82. | Benzathin Penicillin G: Tetracycline Hydrochloride | 48: 36 | column 4: In a cool place
+69.: 83. | Benzathin Penicillin G: Tetracycline Hydrochloride Capsules | 48: 36
+69.: 84. | Benzathin Penicillin G: Tetracycline Tablets | 48: 24 | column 4: e
+69.: 85. | Benzathin Penicillin G: Tyrothricin | 48: o 60 | column 4: d In a cool place.
+1.: 2. | Vitamin A Injection: d Vitamin B1 Injection | a i 24: 24
+1.: 3. | Vitamin A Injection: n Thiamine Mononitrate Tablets I | a i 24: 36
+1.: 4. | Vitamin A Injection: Thiamine Hydrochloride | a i 24: 48 | column 4: In a well closed container, protected from light, in a cool place.
+1.: 5. | Vitamin A Injection: Thiamine Mononitrate | a i 24: 48 | column 4: In a well closed container, protected from light, in a cool place.
+1.: 6. | Vitamin A Injection: Riboflavin | a i 24: 60 | column 4: In a well closed container, protected from light, in a cool place.
+1.: 7. | Vitamin A Injection: Riboflavin-5-Phosphate | a i 24: 24 | column 4: In a well closed container, protected from light, in a cool place.
+1.: 8. | Vitamin A Injection: Riboflavin Tablets | a i 24: 36
+1.: 9. | Vitamin A Injection: Vitamin B2 Injection | a i 24: 24
+1.: 10. | Vitamin A Injection: Vitamin B6 | a i 24: 60 | column 4: In a well closed container, protected from light, in a cool place.
+1.: 11. | Vitamin A Injection: Vitamin B6 tablets | a i 24: 36
+1.: 12. | Vitamin A Injection: Cyanacobalamin | a i 24: 48 | column 4: In a well closed container, protected from light, in a cool place.
+1.: 13. | Vitamin A Injection: Hydroxycobalamin | a i 24: 48 | column 4: In a well closed container, protected from light, in a cool place.
+1.: 14. | Vitamin A Injection: Vitamin B12 Injection | a i 24: 36
+1.: 15. | Vitamin A Injection: Calcium Pantothenate | a i 24: 36 | column 4: In a well closed container, protected from light, in a cool place.
+1.: 16. | Vitamin A Injection: Vitamin C Injection | a i 24: 24
+1.: 17. | Vitamin A Injection: Calcium Pantothenate Tablets | a i 24: 36
+1.: 218. | Vitamin A Injection: Vitamin C | a i 24: 48 | column 4: In a well closed container, protected from light, in a cool place.
 <<page 535>>
 Drugs and Cosmetics Rules 1945
 535
@@ -34105,6 +34404,21 @@ At temperature between 4oC and
 At temperature between 4oC and
 6oC]
 IndiaCode
+
+19.: 20. | Vitamin D D 2 3: Vitamin E or E-Acetate | 36: 60 | column 4: In a well closed container, protected from light, in a cool place.
+19.: 21. | Vitamin D D 2 3: Folic Acid | 36: 60 | column 4: In a well closed container, protected from light, in a cool place.
+19.: 22. | Vitamin D D 2 3: Folic Acid Tablets | 36: 36
+19.: 23. | Vitamin D D 2 3: Vitamin K | 36: 60 | column 4: In a well closed container, protected from light, in a cool place.
+19.: 24. | Vitamin D D 2 3: Vitamin K Injection | 36: 36
+19.: 25. | Vitamin D D 2 3: Niacinamide | 36: 60 | column 4: In a well closed container, protected from light, in a cool place.
+19.: 26. | Vitamin D D 2 3: Niacinamide Tablets | 36: 36
+19.: 27. | Vitamin D D 2 3: D-Panthenol | 36: 60 | column 4: In a well closed container, protected from light, in a cool place.
+19.: e INSULIN PREPARATIONS d
+19.: 1. | Vitamin D D 2 3: Globuline Zinc Insulin Injection | 36: o 24 C | column 4: At temperature between 2oC and 8oC, must not be allowed to freeze.
+19.: 2. | Vitamin D D 2 3: Insulin Injection d | 36: a 24 i | column 4: At temperature between 2oC and 8oC, must not be allowed to freeze.
+19.: 3. | Vitamin D D 2 3: n Insulin Zinc Suspension I | 36: 24 | column 4: At temperature between 2oC and 8oC, must not be allowed to freeze.
+19.: 4. | Vitamin D D 2 3: Isophane Insulin Injection. | 36: 24 | column 4: At temperature between 2oC and 8oC, must not be allowed to freeze.
+19.: 1[5. | Vitamin D D 2 3: Human Insulin Injection | 36: 30 | column 4: At temperature between 2oC and 8oC, must not be allowed to freeze.
 <<page 536>>
 Drugs and Cosmetics Rules 1945
 536
@@ -34253,6 +34567,19 @@ Typhoid Para Typhoid A and B vaccine.
 18
 In cold place
 IndiaCode
+
+1.: 2[2. | Alum precipitatd pertussis Vaccine.: BCG Vaccine | 18: 24 | In cold place: In cold place]
+1.: 3. | Alum precipitatd pertussis Vaccine.: Cholera Vaccine | 18: 18 | In cold place: In cold place
+1.: 4. | Alum precipitatd pertussis Vaccine.: DHL Vaccine (for dog) | 18: 12 | In cold place: In cold place
+1.: 5. | Alum precipitatd pertussis Vaccine.: Measles Vaccine | 18: 24 | In cold place: In cold place
+1.: 6. | Alum precipitatd pertussis Vaccine.: Plague Vaccine | 18: 36 | In cold place: In cold place
+1.: 7. | Alum precipitatd pertussis Vaccine.: Polio Vaccine | 18: 24 | In cold place: When stored at minus 20oC
+18: 6 | In cold place: When stored at Zero oC
+18: 3 | In cold place: When stored at 4 oC
+1.: 8. | Alum precipitatd pertussis Vaccine.: Rabies vaccine | 18: 6 | In cold place: In cold place
+1.: 9. | Alum precipitatd pertussis Vaccine.: Typhoid vaccine | 18: 18 | In cold place: In cold place
+1.: 10. | Alum precipitatd pertussis Vaccine.: Typhoid and Para Typhoid Vaccine. | 18: 18 | In cold place: In cold place
+1.: 11. | Alum precipitatd pertussis Vaccine.: Typhoid Para Typhoid A and B vaccine. | 18: 18 | In cold place: e In cold place d
 <<page 538>>
 Drugs and Cosmetics Rules 1945
 538
@@ -36633,6 +36960,10 @@ personal supervision the ingredients are used for manufacture.
 N
 Y
 IndiaCode
+
+Name of Raw Materials: Name of the drug and part used as mentioned in official formulary / Pharmacopoeial/ Schedue I books | column 2: Biological/ Chemical Name (if any) | Appro. Qty of shortage (in Kgs.): e
+Appro. Qty of shortage (in Kgs.): o d
+Appro. Qty of shortage (in Kgs.): C
 <<page 574>>
 Drugs and Cosmetics Rules 1945
 574
@@ -38786,6 +39117,30 @@ I,II,III
 1. Subs. by G.S.R. 287(E), dt. 08.3.2016.
 
 IndiaCode
+
+Route of administration: 1[Oral or Parenteral or Transdermal | Duration of proposed human administration: Single dose or several doses in one day, Upto 1wk | Human Phase(s) for which study is proposed to be conducted: I,II,III | Long term toxicity requirements: 2sp,2wks
+Duration of proposed human administration: > 1 wk but upto 2wks | Human Phase(s) for which study is proposed to be conducted: I,II,III | Long term toxicity requirements: 2sp;4wks
+Duration of proposed human administration: Upto 2 wks | Human Phase(s) for which study is proposed to be conducted: Marketing permission | Long term toxicity requirements: 2sp;4wks
+Duration of proposed human administration: > 2 wk but upto 4wks | Human Phase(s) for which study is proposed to be conducted: I,II,III | Long term toxicity requirements: 2 sp; equal to duration of human exposure
+Human Phase(s) for which study is proposed to be conducted: e Marketing permission | Long term toxicity requirements: 2 sp; 12 wks
+Duration of proposed human administration: > 4 wks but upto 12 wks | Human Phase(s) for which study is proposed to be conducted: d I,II,III o | Long term toxicity requirements: 2 sp; equal to duration of human exposure
+Human Phase(s) for which study is proposed to be conducted: C Marketing permission | Long term toxicity requirements: 2sp;24wks
+Duration of proposed human administration: > 12 wks but upto 24 wks | Human Phase(s) for which study is proposed to be conducted: a I,II,III i d | Long term toxicity requirements: 2 sp; equal to duration of human exposure
+Duration of proposed human administration: I n | Human Phase(s) for which study is proposed to be conducted: Marketing permission | Long term toxicity requirements: 2 sp; Rodent 24 wks, non-rodent 36 wks
+Duration of proposed human administration: > 24 wks | Human Phase(s) for which study is proposed to be conducted: I,II,III | Long term toxicity requirements: 2 sp; Rodent 24 wks, non-rodent 36 wks
+Human Phase(s) for which study is proposed to be conducted: Marketing permission | Long term toxicity requirements: 2 sp; Rodent 24 wks, non-rodent 36 wks]
+Route of administration: Inhalation (general anaesthetics, aerosols) | Duration of proposed human administration: Upto 2 wk | Human Phase(s) for which study is proposed to be conducted: I,II,III | Long term toxicity requirements: 2sp;1mo; (Exposure time 3h/d,
+Duration of proposed human administration: Upto 4wk | Human Phase(s) for which study is proposed to be conducted: I,II,III | Long term toxicity requirements: 5d/wk) 2sp;12wk, (Exposure time 6h/d, 5d/wk)
+Duration of proposed human administration: > 1 4wk | Human Phase(s) for which study is proposed to be conducted: I,II,III | Long term toxicity requirements: 2sp;24wk, (Exposure time 6h/d, 5d/wk)
+Route of administration: Local Toxicity Studies Dermal | Duration of proposed human administration: Upto 2 wk | Human Phase(s) for which study is proposed to be conducted: I,II, | Long term toxicity requirements: 1sp;4wk
+Human Phase(s) for which study is proposed to be conducted: III | Long term toxicity requirements: 2sp;4wk
+Duration of proposed human administration: > 2 wk | Human Phase(s) for which study is proposed to be conducted: I,II,III | Long term toxicity requirements: 2sp;12wk
+Route of administration: Ocular or Otic or Nasal | Duration of proposed human administration: Upto 2 wk | Human Phase(s) for which study is proposed to be conducted: I,II | Long term toxicity requirements: 1sp;4wk
+Human Phase(s) for which study is proposed to be conducted: III | Long term toxicity requirements: 2sp;4wk
+Duration of proposed human administration: > 2 wk | Human Phase(s) for which study is proposed to be conducted: I,II,III | Long term toxicity requirements: 2sp;12wk
+Route of administration: Vaginal or Rectal | Duration of proposed human administration: Upto 2 wk | Human Phase(s) for which study is proposed to be conducted: I,II | Long term toxicity requirements: 1sp;4wk
+Human Phase(s) for which study is proposed to be conducted: III | Long term toxicity requirements: 2sp;4wk
+Duration of proposed human administration: > 2 wk | Human Phase(s) for which study is proposed to be conducted: I,II,III | Long term toxicity requirements: 2sp;12wk
 <<page 613>>
 Drugs and Cosmetics Rules 1945
 613

@@ -1553,6 +1553,15 @@ manufacture of cosmetics for sale or for
 distribution up to ten items of each category of
 cosmetics
 10000
+
+Subject: (b) Fee for the grant or retention of registration certificate for additional category of cosmetic | In rupees(INR) except where specified in dollars($): $1000
+Subject: (c) Fee for each variant of cosmetic for the grant or retention of registration certificate | In rupees(INR) except where specified in dollars($): $50
+Subject: (d) Fee for each manufacturing site for the grant or retention of registration certificate | In rupees(INR) except where specified in dollars($): $500
+Subject: (e) Fee for grant of permission for new cosmetics | In rupees(INR) except where specified in dollars($): $500
+Subject: (f) Fee for issue of duplicate copy of the registration certificate, if the original is defaced, damaged or lost | In rupees(INR) except where specified in dollars($): $200
+Subject: (g) Fee for inspection of each overseas manufacturing site of cosmetics | In rupees(INR) except where specified in dollars($): $5000
+Serial Number: 2. | Subject: Manufacturing Licence
+Subject: (a) Fee for grant of licence in Form COS- 8 for manufacture of cosmetics for sale or for distribution up to ten items of each category of cosmetics | In rupees(INR) except where specified in dollars($): 10000
 <<page 46>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
 Page 46 of 112
@@ -1716,6 +1725,27 @@ Other body hair removal products
 Bleach for body hair
 22.
 Products with antiperspirant activity
+
+column 1: Serial Category number 4. Lip care products 5. Hand care products 6. Foot care products 7. Body care products 8. External intimate care products 9. Chemical exfoliation products 10. Mechanical exfoliation products 11. Skin lightening products 12. Other skin care products 13. Soap products 14. Bath / shower products 15. Make-up remover products 16. External Intimate hygiene products 17. Other skin cleansing products 18. Chemical depilatories 19. Physical epilation products 20. Other body hair removal products 21. Bleach for body hair 22. Products with antiperspirant activity
+column 1: 4. | Category: Lip care products
+column 1: 5. | Category: Hand care products
+column 1: 6. | Category: Foot care products
+column 1: 7. | Category: Body care products
+column 1: 8. | Category: External intimate care products
+column 1: 9. | Category: Chemical exfoliation products
+column 1: 10. | Category: Mechanical exfoliation products
+column 1: 11. | Category: Skin lightening products
+column 1: 12. | Category: Other skin care products
+column 1: 13. | Category: Soap products
+column 1: 14. | Category: Bath / shower products
+column 1: 15. | Category: Make-up remover products
+column 1: 16. | Category: External Intimate hygiene products
+column 1: 17. | Category: Other skin cleansing products
+column 1: 18. | Category: Chemical depilatories
+column 1: 19. | Category: Physical epilation products
+column 1: 20. | Category: Other body hair removal products
+column 1: 21. | Category: Bleach for body hair
+column 1: 22. | Category: Products with antiperspirant activity
 <<page 49>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
 Page 49 of 112
@@ -1836,6 +1866,34 @@ Tooth cleansing powder / salt
 Other tooth care products
 76.
 Mouth wash
+
+50.: 51. | Antidandruff products: Oxidative hair colour products
+50.: 52. | Antidandruff products: Non-oxidative hair colour products
+50.: 53. | Antidandruff products: Hair bleaching and dye remover products
+50.: 54. | Antidandruff products: Other hair colouring pducts
+50.: 55. | Antidandruff products: Products for temporary hair
+50.: 56. | Antidandruff products: Styling Permanent wave products
+50.: 57. | Antidandruff products: Hair relaxer / straightener products
+50.: 58. | Antidandruff products: Other hair styling products
+50.: 59. | Antidandruff products: Hair sun protection products
+50.: 60. | Antidandruff products: Other hair and scalp products
+50.: 61. | Antidandruff products: Nail varnish / Nail make-up
+50.: 62. | Antidandruff products: Nail varnish remover
+50.: 63. | Antidandruff products: Nail varnish thinner
+50.: 64. | Antidandruff products: Nail bleach
+50.: 65. | Antidandruff products: Other nail varnish and remover products
+50.: 66. | Antidandruff products: Nail care products
+50.: 67. | Antidandruff products: Nail hardener
+50.: Serial number | Antidandruff products: Category
+50.: 68. | Antidandruff products: Other nail care / nail hardener products
+50.: 69. | Antidandruff products: Nail glue remover
+50.: 70. | Antidandruff products: Cuticle remover / softener
+50.: 71. | Antidandruff products: Nail sculpting products
+50.: 72. | Antidandruff products: Other nail and cuticle products
+50.: 73. | Antidandruff products: Toothpaste
+50.: 74. | Antidandruff products: Tooth cleansing powder / salt
+50.: 75. | Antidandruff products: Other tooth care products
+50.: 76. | Antidandruff products: Mouth wash
 <<page 51>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
 Page 51 of 112
@@ -1907,6 +1965,22 @@ Melting Point
 (XX)
 Moisture & Volatile Matter
 100
+
+FIFTH SCHEDULE: Fee for test or analysis by the Central cosmetics laboratories or by the state laboratories.
+column 1: 1. | FIFTH SCHEDULE: Fees for Physical tests | column 3: Rupees
+column 1: (i) | FIFTH SCHEDULE: Adhesion Strength | column 3: 150
+column 1: (ii) | FIFTH SCHEDULE: Ash Content | column 3: 100
+column 1: (iii) | FIFTH SCHEDULE: Bleed Number | column 3: 150
+column 1: (iv) | FIFTH SCHEDULE: Blush Time | column 3: 150
+column 1: (v) | FIFTH SCHEDULE: Cleaning Efficiency | column 3: 100
+column 1: (vi) | FIFTH SCHEDULE: Cloud Point | column 3: 100
+column 1: (vii) | FIFTH SCHEDULE: Colour in a Cell on the Lovibond Scale | column 3: 100
+column 1: (viii) | FIFTH SCHEDULE: Diameter of Slip | column 3: 150
+column 1: (ix) | FIFTH SCHEDULE: Drying Time | column 3: 150
+column 1: (x) | FIFTH SCHEDULE: Fineness | column 3: 100
+column 1: (xi) | FIFTH SCHEDULE: Flash Point | column 3: 100
+column 1: (xii) | FIFTH SCHEDULE: Foam Height | column 3: 100
+column 1: (xiii) | FIFTH SCHEDULE: Foaming Power | column 3: 100
 <<page 52>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
 Page 52 of 112
@@ -1985,6 +2059,32 @@ Rupees
 (vii)
 Carbonization Substance
 200
+
+(xxi): (xxii) | Mush: Non-Volatile Matter | 100: 100
+(xxi): (xxiii) | Mush: Odour | 100: 100
+(xxi): (xxiv) | Mush: Particle Size of Undispersed Pigments Microns | 100: 100
+(xxi): (xxv) | Mush: H P | 100: 100
+(xxi): (xxvi) | Mush: Polenske Value | 100: 100
+(xxi): (xxvii) | Mush: Refractive Index at 40°C | 100: 100
+(xxi): (xxviii) | Mush: Relative Density at 25°C | 100: 100
+(xxi): (xxix) | Mush: Relative Density at 30°/30°C | 100: 100
+(xxi): (xxx) | Mush: Saponification Value | 100: 100
+(xxi): (xxxi) | Mush: Softening Point | 100: 100
+(xxi): (xxxii) | Mush: Solid Content | 100: 200
+(xxi): (xxxiii) | Mush: Stability Test | 100: 100
+(xxi): (xxxiv) | Mush: Sulphated Ash | 100: 100
+(xxi): (xxxv) | Mush: Suspended Solids | 100: 100
+(xxi): (xxxvi) | Mush: Thermal Stability | 100: 150
+(xxi): (xxxvii) | Mush: Total Active Matter | 100: 100
+(xxi): (xxxviii) | Mush: Total Solid | 100: 100
+(xxi): (xxxix) | Mush: Total Volatile Matter | 100: 100
+(xxi): (xl) | Mush: Transparency | 100: 100
+(xxi): (xli) | Mush: Viscosity | 100: 100
+2.: (i) | Fees for Chemical tests: Acid Insoluble Ash | Rupees: 200
+2.: (ii) | Fees for Chemical tests: Acid Value | Rupees: 200
+2.: (iii) | Fees for Chemical tests: Arsenic | Rupees: 200
+2.: (iv) | Fees for Chemical tests: Assay (as Ammonium Bicarbonate) | Rupees: 200
+2.: (v) | Fees for Chemical tests: Assay (as Oxygen Content) | Rupees: 200
 <<page 53>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
 Page 53 of 112
@@ -2069,6 +2169,36 @@ Consistency
 (iv)
 Fluoride Ion
 300
+
+(viii): (ix) | Chlorides: Cold Water Extract | 200: 200
+(viii): (x) | Chlorides: Crude Fibre | 200: 200
+(viii): (xi) | Chlorides: Extraneous Sand | 200: 200
+(viii): (xii) | Chlorides: Free Acid & Alkali | 200: 200
+(viii): (xiii) | Chlorides: Free Carbonated Alkali | 200: 200
+(viii): (xiv) | Chlorides: Free Caustic Alkali | 200: 200
+(viii): (xv) | Chlorides: Glycerol | 200: 200
+(viii): (xvi) | Chlorides: Heavy Metals | 200: 200
+(viii): (xvii) | Chlorides: Iodine Value | 200: 200
+(viii): (xviii) | Chlorides: Lawsone Pigment | 200: 200
+(viii): (xix) | Chlorides: Matter Insoluble in Alcohol | 200: 200
+(viii): (xx) | Chlorides: Mineral Matter | 200: 200
+(viii): (xxi) | Chlorides: Non Volatile Alcohol Matter | 200: 200
+(viii): (xxii) | Chlorides: Peroxide Value | 200: 200
+(viii): (xxiii) | Chlorides: PPD Content (By Gravimetry) | 200: 200
+(viii): (xxiv) | Chlorides: Presence of Extraneous Dyes | 200: 200
+(viii): (xxv) | Chlorides: Rosin Test | 200: 200
+(viii): (xxvi) | Chlorides: Sulphur & Sulphide | 200: 200
+(viii): (xxvii) | Chlorides: Synthetic Detergent | 200: 200
+(viii): (xxviii) | Chlorides: Synthetic Surface Active Agent | 200: 200
+(viii): (xxix) | Chlorides: Test For Rancidity | 200: 200
+(viii): (xxx) | Chlorides: Titre of Total Fatty Acids | 200: 200
+(viii): (xxxi) | Chlorides: Total Fatty Matter | 200: 200
+(viii): (xxxii) | Chlorides: Unsaponifiable Matter | 200: 200
+(viii): 3. | Chlorides: Fees for tests involving instruments | 200: Rupees
+(viii): (i) | Chlorides: Arsenic | 200: 300
+(viii): (ii) | Chlorides: Breaking Load Value | 200: 150
+(viii): (iii) | Chlorides: Consistency | 200: 300
+(viii): (iv) | Chlorides: Fluoride Ion | 200: 300
 <<page 54>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
 Page 54 of 112
@@ -2124,6 +2254,16 @@ manufactured by the manufacturer whose name and address is written on the
 label as per the Cosmetics Rules, 2020 (Name and full address of the
 Manufacturer) and are complying with the provisions of the Cosmetics Rules,
 2020.
+
+(v): (vi) | Heavy Metal: Mercury | 300: 300
+(v): (vii) | Heavy Metal: Pay Off Test | 300: 150
+(v): (viii) | column 2: PPD Content (by HPLC) | 300: 1000
+(v): (ix) | column 2: Ultraviolet Absorption | 300: 300
+(v): (x) | column 2: Water Content | 300: 300
+4.: (i) | Fees for microbiological tests: Microbiological Limit Test | Rupees: 500
+Fees for microbiological tests: (a) Gram Negative Pathogens
+Fees for microbiological tests: (b) Total Yeast and Molds Count
+Fees for microbiological tests: (c) Total Viable Count
 <<page 55>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
 Page 55 of 112
@@ -2605,6 +2745,10 @@ Phthalocyanine Blue 74160
 Citrus Red No.2
 12156
 1 -2(2,5-d imethoxy phenylazo) 2naphthol.
+
+Common Name of the colour: (1) | Colour Index Number: (2) | Chemical Names of the colour: (3)
+Common Name of the colour: Phthalocyanine Blue | Colour Index Number: 74160 | Chemical Names of the colour: (phthalocyninate (2-) copper.
+Common Name of the colour: Citrus Red No.2 | Colour Index Number: 12156 | Chemical Names of the colour: 1 -2(2,5-d imethoxy phenylazo) 2- naphthol.
 <<page 69>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
 Page 69 of 112
@@ -2656,6 +2800,12 @@ carry out its testing, calibration, validation, and all other technical activiti
 such a way as to meet Good Laboratory Practices (GLP) requirements.
 (c) Laboratory management shall have a qualified individual to be known as
 quality manager or technical manager for carrying out all technical activities
+
+Aqueous Green Paste: Pigment Yellow 3 | 74260: 11710 | Polychloro copper Phthalocyanine.: 2-(4-Chloro-2-nitrophenyl)-azo-N-(-2- Chlorophenyl)-3- Oxobutamide.
+Aqueous Green Paste: Common Name of the colour | column 2: Colour Index Number | column 4: Chemical Names of the colour
+Aqueous Green Paste: (1) | column 2: (2) | column 4: (3)
+Aqueous Green Paste: Irgalite Carmine F- P Powder or Pigments Red 5 | column 2: 12490 | column 4: N-(5-Chloro-2, 4-Dimethoxy-phenyl)- 4-(CS- diathylamine) Sulfonyl-2-methoxyphenyl)- azo-3-hydroxy-2-naphthalene carboxamide.
+Aqueous Green Paste: Monolite Red 4R HV Paste or Pigment Red 7 | column 2: 12420 | column 4: N-(4-CWoro-2-methylphenyl-4-(4-Chloro-2- methylphenyl) azo 3-hydroxy-2-naphthalenol Carboxamide.
 <<page 70>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India
 Page 70 of 112

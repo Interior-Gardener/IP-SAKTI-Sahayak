@@ -258,6 +258,13 @@ No fee
 No fee
 No fee
 No fee
+
+For e-filing: Natural person or startup or small entity or educational institution | column 5: Other(s), alone or with natural person or startup or small entity or educational institution | For physical filing: Natural person or startup or small entity or educational institution | column 7: Other(s), alone or with natural person or startup or small entity or educational institution
+For e-filing: Rupees | column 5: Rupees | For physical filing: Rupees | column 7: Rupees
+“Number of Entry: 1. | On what payable: On application for a patent under sections 7, 54* or 135 and rule 20(1) accompanied by provisional or complete specification— | Number of the relevant Form: 1 | For e-filing: 1600 Multiple of 1600 in case of every multiple priority. | column 5: 8000 Multiple of 8000 in case of every multiple priority. | For physical filing: 1750 Multiple of 1750 in case of every multiple priority. | column 7: 8800 Multiple of 8800 in case of every multiple priority.
+On what payable: (i) for each sheet of specification in addition to 30, excluding sequence listing of nucleotides and/ or amino acid sequences under sub-rule (3) of rule (9); (ii) for each claim in addition to 10; (iii) for each page of sequence listing of nucleotides and/ or amino acid sequences under sub- rule (3) of rule (9). | For e-filing: (i) 160 (ii) 320 (iii) 160 subject to a maximum of 24000 | column 5: (i) 800 (ii) 1600 (iii) 800 subject to a maximum of 120000 | For physical filing: (i) 180 (ii) 350 Not allowed | column 7: (i) 880 (ii) 1750 Not allowed
+On what payable: *An application for a patent made under section 54 shall be eligible for a reduction of 50 per cent in fee as compared to other applications.
+“Number of Entry: 2. | On what payable: On filing complete specification after provisional up to 30 pages having up to 10 claims – | Number of the relevant Form: 2 | For e-filing: No fee | column 5: No fee | For physical filing: No fee | column 7: No fee
 <<page 4>>
 [भाग II—खण् ड 3(i)]
 भारत का रािपत्र : असाधारण
@@ -401,6 +408,18 @@ under section 20 (4) or 20
 4000
 880
 4400
+
+column 1: 3. | column 2: On filing a statement and undertaking under section 8. | column 3: 3 | (i) 160 (ii) 320 (iii) 160 subject to a maximum of 24000: No fee | (i) 800 (ii) 1600 (iii) 800 subject to a maximum of 120000: No fee | (i) 180 (ii) 350 Not allowed: No fee | (i) 880 (ii) 1800 Not allowed: No fee
+column 1: 4. | column 2: i) On request for extension of time under sections 53(2) and 142(4), rules 13(6), 80(1A) and 130 (per month). | column 3: 4 | (i) 160 (ii) 320 (iii) 160 subject to a maximum of 24000: 480 | (i) 800 (ii) 1600 (iii) 800 subject to a maximum of 120000: 2400 | (i) 180 (ii) 350 Not allowed: 530 | (i) 880 (ii) 1800 Not allowed: 2600
+column 2: ii) On request for extension of time or condonation of delay (per month) under sub-rule (4) of rule 12 or sub-rule (2) or rule 131. | column 3: 4 | (i) 160 (ii) 320 (iii) 160 subject to a maximum of 24000: 2000 | (i) 800 (ii) 1600 (iii) 800 subject to a maximum of 120000: 10000 | (i) 180 (ii) 350 Not allowed: 2200 | (i) 880 (ii) 1800 Not allowed: 11000
+column 2: iii) On request for extension of time under sub-rule (6) of rule 24B (per month). | column 3: 4 | (i) 160 (ii) 320 (iii) 160 subject to a maximum of 24000: 1000 | (i) 800 (ii) 1600 (iii) 800 subject to a maximum of 120000: 4000 | (i) 180 (ii) 350 Not allowed: 1100 | (i) 880 (ii) 1800 Not allowed: 4400
+column 2: iv) On request for extension of time under sub-rule (11) of rule 24C (per month). | column 3: 4 | (i) 160 (ii) 320 (iii) 160 subject to a maximum of 24000: 2000 | (i) 800 (ii) 1600 (iii) 800 subject to a maximum of 120000: 10000 | (i) 180 (ii) 350 Not allowed: 2200 | (i) 880 (ii) 1800 Not allowed: 11000
+column 2: v) On request for extension of time under rule 138 (per month). | column 3: 4 | (i) 160 (ii) 320 (iii) 160 subject to a maximum of 24000: 10000 | (i) 800 (ii) 1600 (iii) 800 subject to a maximum of 120000: 50000 | (i) 180 (ii) 350 Not allowed: 11000 | (i) 880 (ii) 1800 Not allowed: 55000
+column 1: 5. | column 2: On filing a declaration as to inventorship under sub-rule (6) of rule 13. | column 3: 5 | (i) 160 (ii) 320 (iii) 160 subject to a maximum of 24000: No fee | (i) 800 (ii) 1600 (iii) 800 subject to a maximum of 120000: No fee | (i) 180 (ii) 350 Not allowed: No fee | (i) 880 (ii) 1800 Not allowed: No fee
+column 1: 6. | column 2: On application for postdating. | column 3: - | (i) 160 (ii) 320 (iii) 160 subject to a maximum of 24000: 800 | (i) 800 (ii) 1600 (iii) 800 subject to a maximum of 120000: 4000 | (i) 180 (ii) 350 Not allowed: 880 | (i) 880 (ii) 1800 Not allowed: 4400
+column 1: 7. | column 2: On application for deletion of reference under section 19 (2). | column 3: - | (i) 160 (ii) 320 (iii) 160 subject to a maximum of 24000: 800 | (i) 800 (ii) 1600 (iii) 800 subject to a maximum of 120000: 4000 | (i) 180 (ii) 350 Not allowed: 880 | (i) 880 (ii) 1800 Not allowed: 4400
+column 1: 8. | column 2: (i) On claim under section 20(1); | column 3: 6 | (i) 160 (ii) 320 (iii) 160 subject to a maximum of 24000: 800 | (i) 800 (ii) 1600 (iii) 800 subject to a maximum of 120000: 4000 | (i) 180 (ii) 350 Not allowed: 880 | (i) 880 (ii) 1800 Not allowed: 4400
+column 2: (ii) On request for direction under section 20 (4) or 20 (5). | column 3: 6 | (i) 160 (ii) 320 (iii) 160 subject to a maximum of 24000: 800 | (i) 800 (ii) 1600 (iii) 800 subject to a maximum of 120000: 4000 | (i) 180 (ii) 350 Not allowed: 880 | (i) 880 (ii) 1800 Not allowed: 4400
 <<page 5>>
 26
 THE GAZETTE OF INDIA : EXTRAORDINARY
@@ -565,6 +584,27 @@ year;
 24000
 5300
 26400
+
+column 2: (ii) On filing representation opposing grant of patent under section 25(1). | 7: 7A | 8000: 4000 | 40000: 20000 | Not allowed: Not allowed | Not allowed: Not allowed
+9.: 10. | column 2: On giving notice that hearing before Controller shall be attended under rule 62(2). | 7: - | 8000: 1500 | 40000: 7500 | Not allowed: 1700 | Not allowed: 8300
+9.: 11. | column 2: On application under section 28(2). | 7: 8 | 8000: No fee | 40000: No fee | Not allowed: No fee | Not allowed: No fee
+column 2: On application under sections 28(3) or 28(7). | 7: 8 | 8000: 800 | 40000: 4000 | Not allowed: 880 | Not allowed: 4400
+9.: 12. | column 2: Certificate of inventorship under rule 70A. | 7: 8A | 8000: 900 | 40000: Not applicable | Not allowed: 1000 | Not allowed: Not applicable
+9.: 13. | column 2: Request for publication under section 11A(2) and rule 24A. | 7: 9 | 8000: 2500 | 40000: 12500 | Not allowed: 2750 | Not allowed: 13750
+9.: 14. | column 2: On application under section 44 for amendment of patent. | 7: 10 | 8000: 2400 | 40000: 12000 | Not allowed: 2650 | Not allowed: 13200
+9.: 15. | column 2: On application for directions under section 51(1) or 51(2). | 7: 11 | 8000: 2400 | 40000: 12000 | Not allowed: 2650 | Not allowed: 13200
+9.: 16. | column 2: On request for grant of a patent under sections 26(1) and 52(2). | 7: 12 | 8000: 2400 | 40000: 12000 | Not allowed: 2650 | Not allowed: 13200
+9.: 17. | column 2: On request for converting a patent of addition to an independent patent under section 55 (1). | 7: - | 8000: 2400 | 40000: 12000 | Not allowed: 2650 | Not allowed: 13200
+9.: 18. | column 2: For renewal of a patent under section 53—
+9.: (i) | column 2: before the expiration of the 2nd year from the date of patent in respect of 3rd year; | 7: - | 8000: 800 | 40000: 4000 | Not allowed: 880 | Not allowed: 4400
+9.: (ii) | column 2: before the expiration of the 3rd year in respect of the 4th year; | 7: - | 8000: 800 | 40000: 4000 | Not allowed: 880 | Not allowed: 4400
+9.: (iii) | column 2: before the expiration of the 4th year in respect of the 5th year; | 7: - | 8000: 800 | 40000: 4000 | Not allowed: 880 | Not allowed: 4400
+9.: (iv) | column 2: before the expiration of the 5th year in respect of the 6th year; | 7: - | 8000: 800 | 40000: 4000 | Not allowed: 880 | Not allowed: 4400
+9.: (v) | column 2: before the expiration of the 6th year in respect of the 7th year; | 7: - | 8000: 2400 | 40000: 12000 | Not allowed: 2650 | Not allowed: 13200
+9.: (vi) | column 2: before the expiration of the 7th year in respect of the 8th year; | 7: - | 8000: 2400 | 40000: 12000 | Not allowed: 2650 | Not allowed: 13200
+9.: (vii) | column 2: before the expiration of the 8th year in respect of the 9th year; | 7: - | 8000: 2400 | 40000: 12000 | Not allowed: 2650 | Not allowed: 13200
+9.: (viii) | column 2: before the expiration of the 9th year in respect of the 10th year; | 7: - | 8000: 2400 | 40000: 12000 | Not allowed: 2650 | Not allowed: 13200
+9.: (ix) | column 2: before the expiration of the 10th year in respect of the 11th year; | 7: - | 8000: 4800 | 40000: 24000 | Not allowed: 5300 | Not allowed: 26400
 <<page 6>>
 [भाग II—खण् ड 3(i)]
 भारत का रािपत्र : असाधारण
@@ -718,6 +758,24 @@ each patent)
 8,800
 (In respect of
 each patent)
+
+(x): (xi) | column 2: before the expiration of the 12th year in respect of the 13th year; | -: - | 4800: 4800 | 24000: 24000 | 5300: 5300 | 26400: 26400
+(x): (xii) | column 2: before the expiration of the 13th year in respect of the 14th year; | -: - | 4800: 4800 | 24000: 24000 | 5300: 5300 | 26400: 26400
+(x): (xiii) | column 2: before the expiration of the 14th year in respect of the 15th year; | -: - | 4800: 4800 | 24000: 24000 | 5300: 5300 | 26400: 26400
+(x): (xiv) | column 2: before the expiration of the 15th year in respect of the 16th year; | -: - | 4800: 8000 | 24000: 40000 | 5300: 8800 | 26400: 44000
+(x): (xv) | column 2: before the expiration of the 16th year in respect of the 17th year; | -: - | 4800: 8000 | 24000: 40000 | 5300: 8800 | 26400: 44000
+(x): (xvi) | column 2: before the expiration of the 17th year in respect of the 18th year; | -: - | 4800: 8000 | 24000: 40000 | 5300: 8800 | 26400: 44000
+(x): (xvii) | column 2: before the expiration of the 18th year in respect of the 19th year; | -: - | 4800: 8000 | 24000: 40000 | 5300: 8800 | 26400: 44000
+(x): (xviii | column 2: )before the expiration of the 19th year in respect of the 20th year. | -: - | 4800: 8000 | 24000: 40000 | 5300: 8800 | 26400: 44000
+(x): 19. | column 2: On application for amendment of application for patent or complete specification or other related documents under section 57— | -: 13
+(x): (i) | column 2: before grant of patent; | 4800: 800 | 24000: 4000 | 5300: 880 | 26400: 4400
+(x): (ii) | column 2: after grant of patent; | 4800: 1600 | 24000: 8000 | 5300: 1750 | 26400: 8800
+(x): (iii) | column 2: where amendment is for changing name or address or nationality or address for service. | 4800: 320 | 24000: 1600 | 5300: 350 | 26400: 1750
+(x): 20. | column 2: On notice of opposition to an application under sections 57(4), 61(1) and 87(2) or to surrender a patent under section 63(3) or to a request under section 78(5). | -: 14 | 4800: 2400 | 24000: 12000 | 5300: 2650 | 26400: 13200
+(x): 21. | column 2: On application for restoration of a patent under section 60. | -: 15 | 4800: 2400 | 24000: 12000 | 5300: 2650 | 26400: 13200
+(x): 22. | column 2: Additional fee for restoration under section 61(3) and rule 86(1). | -: — | 4800: 4800 | 24000: 24000 | 5300: 5300 | 26400: 26400
+(x): 23. | column 2: On notice of offer to surrender a patent under section 63. | -: — | 4800: No fee | 24000: No fee | 5300: No fee | 26400: No fee
+(x): 24. | column 2: On application for the entry in the register of patents of the name of a person entitled | -: 16 | 4800: 1600 (In respect of each patent) | 24000: 8,000 (In respect of each patent) | 5300: 1750 (In respect of each patent) | 26400: 8,800 (In respect of each patent)
 <<page 7>>
 28
 THE GAZETTE OF INDIA : EXTRAORDINARY
@@ -854,6 +912,19 @@ excluding the 1st year
 Not applicable
 880
 Not applicable
+
+column 1: 25. | column 2: On application for alteration of an entry in the register of patents or register of patent agents under rules 94(1) or rule 118(1). | column 3: — | column 4: 320 | column 5: 1600 | column 6: 350 | column 7: 1750
+column 1: 26. | column 2: On request for entry of an additional address for service in the Register of Patents under rule 94(3). | column 3: — | column 4: 800 | column 5: 4000 | column 6: 880 | column 7: 4400
+column 1: 27. | column 2: On application for compulsory license under sections 84(1), 91(1), 92(1) and 92A. | column 3: 17 | column 4: 2400 | column 5: 12000 | column 6: 2650 | column 7: 13200
+column 1: 28. | column 2: On request for examination of application for patent— (i) under section 11B and rule 24(1); (ii) under rule 20(4)(ii). | column 3: 18 | column 4: 4000 5600 | column 5: 20000 28000 | column 6: 4400 6150 | column 7: 22000 30800
+column 1: 29. | column 2: On request for expedited or delayed examination of application for patent under rule 24C. | column 3: 18A | column 4: 8000 | column 5: 60000 | column 6: Not allowed | column 7: Not allowed
+column 1: 30. | column 2: Conversion of the request for examination filed under rule 24B to request for expedited or delayed examination under rule 24C. | column 3: 18A | column 4: 4000 | column 5: 40000 | column 6: Not allowed | column 7: Not allowed
+column 1: 31. | column 2: On application for revocation of a patent under section 85(1). | column 3: 19 | column 4: 2400 | column 5: 12000 | column 6: 2650 | column 7: 13200
+column 1: 32. | column 2: On application for revision of terms and conditions of licence under section 88(4). | column 3: 20 | column 4: 2400 | column 5: 12000 | column 6: 2650 | column 7: 13200
+column 1: 33. | column 2: On request for termination of compulsory licence under section 94. | column 3: 21 | column 4: 2400 | column 5: 12000 | column 6: 2650 | column 7: 13200
+column 1: 34. | column 2: On application for registration as a patent agent under rule 109(1) or rule 112. | column 3: 22 | column 4: 3200 | column 5: Not applicable | column 6: 3500 | column 7: Not applicable
+column 1: 35. | column 2: On request for appearing in the qualifying examination under rule 109(3). | column 3: — | column 4: 1600 | column 5: Not applicable | column 6: 1750 | column 7: Not applicable
+column 1: 36. | column 2: For continuance of the name of a person in the register of patent agents— for the 1st year to be paid along with registration; (ii) for every year excluding the 1st year | column 3: — — | column 4: 800 800 | column 5: Not applicable Not applicable | column 6: 880 880 | column 7: Not applicable Not applicable
 <<page 8>>
 [भाग II—खण् ड 3(i)]
 भारत का रािपत्र : असाधारण
@@ -1052,6 +1123,24 @@ for each extra
 (up to 30 pages
 and, thereafter,
 150 for each
+
+column 1: 37. | to be paid on the 1st April in each year.: On application for duplicate certificate of patent agent under rule 111A. | column 3: — | column 4: 1600 | column 5: Not applicable | column 6: 1750 | column 7: Not applicable
+column 1: 38. | to be paid on the 1st April in each year.: On application for restoration of the name of a person in the register of patent agents under rule 117(1). | column 3: 23 | column 4: 1600 (Plus continuation fee under entry number 36) | column 5: Not applicable | column 6: 1750 (Plus continuation fee under entry number 36) | column 7: Not applicable
+column 1: 39. | to be paid on the 1st April in each year.: On a request for correction of clerical error under section 78(2). | column 3: — | column 4: 800 | column 5: 4000 | column 6: 880 | column 7: 4400
+column 1: 40. | to be paid on the 1st April in each year.: On application for review or setting aside the decision or order of the controller under section 77(1)(f) or 77(1)(g). | column 3: 24 | column 4: 1600 | column 5: 8000 | column 6: 1750 | column 7: 8800
+column 1: 41. | to be paid on the 1st April in each year.: On application for permission for applying patent outside India under section 39 and rule 71(1). | column 3: 25 | column 4: 1600 | column 5: 8000 | column 6: 1750 | column 7: 8800
+column 1: 42. | to be paid on the 1st April in each year.: On application for duplicate patent under section 154 and rule 132. | column 3: — | column 4: 1600 | column 5: 8000 | column 6: 1750 | column 7: 8800
+column 1: 43. | to be paid on the 1st April in each year.: (i) On request for certified copies under section 72 or for certificate under section 147 and rule 133(1). | column 3: — | column 4: 1000 (up to 30 pages and, thereafter, 30 for each extra page) | column 5: 5000 (up to 30 pages and, thereafter, 150 for each extra page) | column 6: 1100 (up to 30 pages and, thereafter, 30 for each extra page) | column 7: 5500 (up to 30 pages and, thereafter, 150 for each extra page)
+to be paid on the 1st April in each year.: (ii) On request for certified copies under section 72 or for certificate under section 147 and rule 133(2). | column 3: -- | column 4: 2400 (up to 30 pages and thereafter, 30 for each extra page) | column 5: 12000 (up to 30 pages and thereafter, 30 for each extra page) | column 6: 3300 (up to 30 pages and thereafter, 30 for each extra page) | column 7: 13200 (up to 30 pages and thereafter, 30 for each extra page)
+column 1: 44. | to be paid on the 1st April in each year.: For certifying office copies, printed each. | column 3: — | column 4: 800 | column 5: 4000 | column 6: 880 | column 7: 4400
+column 1: 45. | to be paid on the 1st April in each year.: On request for inspection of register under section 72, inspection under rule 27 or rule 74A. | column 3: — | column 4: 320 | column 5: 1600 | column 6: 350 | column 7: 1750
+column 1: 46. | to be paid on the 1st April in each year.: On request for information under section 153 and rule 134. | column 3: — | column 4: 480 | column 5: 2400 | column 6: 530 | column 7: 2650
+column 1: 47. | to be paid on the 1st April in each year.: On form of authorization of a patent agent. | column 3: 26 | column 4: No fee | column 5: No fee | column 6: No fee | column 7: No fee
+column 1: 48. | to be paid on the 1st April in each year.: On petition not otherwise provided for. | column 3: — | column 4: 1600 | column 5: 8000 | column 6: 1750 | column 7: 8800
+column 1: 49. | to be paid on the 1st April in each year.: For supplying of photocopies of the documents, per page. | column 3: — | column 4: 10 | column 5: 10 | column 6: 10 | column 7: 10
+column 1: 50. | to be paid on the 1st April in each year.: Transmittal fee for international application. | column 3: — | column 4: 3200 | column 5: 16000 | column 6: 3500 | column 7: 17600
+column 1: 51. | to be paid on the 1st April in each year.: Transmittal fee for international application (for ePCT filing). | column 3: — | column 4: No fee | column 5: No fee | column 6: Not applicable | column 7: Not applicable
+column 1: 52. | to be paid on the 1st April in each year.: For preparation of certified copy of priority document and for transmission of the same to the International Bureau of World Intellectual | column 3: — | column 4: 1000 (up to 30 pages and, thereafter, 30 for each | column 5: 5000 (up to 30 pages and, thereafter, 150 for each | column 6: 1100 (up to 30 pages and, thereafter, 30 for each extra | column 7: 5500 (up to 30 pages and, thereafter, 150 for each
 <<page 9>>
 30
 THE GAZETTE OF INDIA : EXTRAORDINARY
@@ -1168,6 +1257,17 @@ Ordinary ( )
 Convention ( )
 PCT-NP ( )
 PPH ( )
+
+column 1: 53. | Property Organization.: For preparation of certified copy of priority document and e-transmission through WIPO DAS. | column 3: — | extra page): No fee | extra page): No fee | page): Not applicable | extra page): Not applicable
+column 1: 54. | Property Organization.: On statement regarding working of a patented invention on a commercial scale in India under section 146(2) and rule 131(1). | column 3: 27 | extra page): No fee | extra page): No fee | page): No fee | extra page): No fee
+column 1: 55. | Property Organization.: To be submitted for claiming the status of a small entity or startup. | column 3: 28 | extra page): No fee | extra page): No fee | page): No fee | extra page): No fee
+column 1: 56. | Property Organization.: Application for withdrawing the application under section 11B(4), and rules 7(4A) and 26. | column 3: 29 | extra page): No fee | extra page): No fee | page): No fee | extra page): No fee
+column 1: 57. | Property Organization.: Request for adjournment of hearing under rule 129A (for each adjournment). | column 3: - | extra page): 1000 | extra page): 5000 | page): 1100 | extra page): 5500
+column 1: 58. | Property Organization.: Miscellaneous form under rule 8(2), to be used when no other form is prescribed. | column 3: 30 | extra page): As applicable
+column 1: 59. | Property Organization.: Grace period. | column 3: 31 | extra page): 500 | extra page): 2500 | page): 550 | extra page): 2750”
+column 1: 1. APPLICANT’S REFERENCE / IDENTIFICATION NO. (AS ALLOTTED BY OFFICE)
+column 1: 2. TYPE OF APPLICATION [Please tick ( ) at the appropriate category]
+column 1: Ordinary ( ) | column 2: Convention ( ) | column 4: PCT-NP ( ) | column 6: PPH ( )
 <<page 10>>
 [भाग II—खण् ड 3(i)]
 भारत का रािपत्र : असाधारण
@@ -1306,6 +1406,27 @@ INDIA
 Name
 
 Postal Address
+
+Address of the Applicant: Contact number (OTP verification mandatory -will be redacted)
+Divisional ( ): 3B. CATEGORY OF APPLICANT [Please tick ( ) at the appropriate category]
+Divisional ( ): Natural Person ( ) | Nationality: Other than Natural Person ( ) | column 19: Educational institution ()
+Nationality: Small Entity ( ) | column 10: Startup ( ) | column 14: Others ( )
+Divisional ( ): 4. INVENTOR(S) [Please tick ( ) at the appropriate category]
+Divisional ( ): Are all the inventor(s) same as the applicant(s) named above? | column 6: Yes ( ) | Divisional ( ): No ( )
+Divisional ( ): If “No”, furnish the details of the inventor(s)
+Divisional ( ): Name in Full | Gender (optional, for individuals): Gender (optional, for natural persons) | Nationality: Nationality | column 7: Age (optional, for natural persons) | column 11: Country of Residence | Divisional ( ): Address of the Inventor
+Gender (optional, for individuals): - Male - Female - Others - Prefer not to disclose | column 7: - years ____ - Prefer not to disclose | Divisional ( ): House No.
+Divisional ( ): Street
+Divisional ( ): City
+Divisional ( ): State
+Divisional ( ): Country
+Divisional ( ): Pin code
+Divisional ( ): 5. TITLE OF THE INVENTION
+Divisional ( ): 6. AUTHORISED REGISTERED PATENT AGENT(S) | column 11: IN/PA No.
+column 11: Name
+column 11: Mobile No. (OTP verification mandatory-will be redacted)
+Divisional ( ): 7. ADDRESS FOR SERVICE OF APPLICANT IN INDIA | column 11: Name
+column 11: Postal Address
 <<page 11>>
 32
 THE GAZETTE OF INDIA : EXTRAORDINARY
@@ -1855,6 +1976,10 @@ For application for compulsory
 licence under sections 84(1), 91(1)
 1500
 6000
+
+Amount ( in rupees): Natural person(s) or Startup(s) or Small entit(y)/ (ies) or educational institution(s) | column 4: Other(s), alone or with natural person(s) or Startup(s) or Small entit(y)/ (ies) or educational institution(s)
+Number of Entry: 1. | Matter in respect of which cost to be awarded: For notice of opposition under sections 25, 57, 60, 63, 78, 87(2) or 88(4). | Amount ( in rupees): 2400 | column 4: 12000
+Number of Entry: 2. | Matter in respect of which cost to be awarded: For application for compulsory licence under sections 84(1), 91(1) | Amount ( in rupees): 1500 | column 4: 6000
 <<page 19>>
 40
 THE GAZETTE OF INDIA : EXTRAORDINARY
@@ -1964,3 +2089,13 @@ Digitally signed by
 MANOJ KUMAR VERMA
 Date: 2024.03.15
 23:06:12 +05'30'
+
+column 2: 3. | or 92(1).: For application for revision of terms and conditions of licence under section 88(4) . | column 4: 2400 | column 5: 12000
+column 2: 4. | or 92(1).: For notice of intention to attend the hearing under rule 62(2). | column 4: 1500 | column 5: 6000
+column 2: 5. | or 92(1).: Stamp fee for power of attorney where a patent agent or other person has been appointed or stamp fee in respect of relevant affidavits. | column 4: The amount actually paid. | column 5: The amount actually paid.
+column 2: 6. | or 92(1).: For written statement under rule 57 or reply statement under rule 58 or for each affidavit, if relevant. | column 4: 4000 | column 5: 5000
+column 2: 7. | or 92(1).: For each document of publication produced in the proceedings, if relevant. | column 4: 1600 | column 5: 2000
+column 2: 8. | or 92(1).: For each unnecessary or irrelevant affidavit or citation. | column 4: 1600 | column 5: 2000
+column 2: 9. | or 92(1).: For every day or part day of hearing before the Controller. | column 4: 4000 | column 5: 5000
+column 2: 10. | or 92(1).: Sub-rule (2) of rule 136 | column 4: Aggregate of amounts actually paid in respect of entries 1, 2, 12, 27, 28, 29 of the First Schedule, as may be applicable | column 5: Twice the aggregate of amounts actually paid in respect of entries 1, 2, 12, 27, 28, 29 of the First Schedule, as may be applicable”.
+column 1: 19. In the said rules, in the FIFTH SCHEDULE, for the headings, “Sl. On what payable Relevant Rule For Natural Person Other than natural person either No. (Relevant provision of of regulations alone or jointly with natural Patents Rules, 2003, if under the person”, any) Treaty the following headings shall be substituted, namely: - “S. On what payable Relevant Rule Natural person(s) or Other(s), alone or with natural No. (Relevant provision of of regulations Startup(s) or Small person(s) or Startup(s) or Small Patents Rules, 2003, if under the entit(y)/ (ies) or entit(y)/ (ies) or educational any) Treaty educational institution(s) institution(s)”.

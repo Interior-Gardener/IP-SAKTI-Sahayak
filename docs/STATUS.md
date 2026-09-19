@@ -1,4 +1,4 @@
-# Status and handover — 2026-09-18
+# Status and handover — 2026-09-19
 
 Where the build stands, what has actually been tested, what is known to be wrong, and how to
 pick it up on another machine. Task-by-task detail is in [TASKS.md](TASKS.md); the corpus
@@ -22,18 +22,18 @@ provenance is in [SOURCES.md](SOURCES.md).
 
 ## 2. Measured quality (eval)
 
-Latest: **`eval/runs/2026-09-18-groq-after-window.json` — all 46 items** (Groq
+Latest: **`eval/runs/2026-09-19-groq-hint-and-size.json` — all 46 items** (Groq
 `openai/gpt-oss-120b`, judge the same model). Full runs are possible because `GROQ_API_KEYS` holds
 several keys and the provider switches when one hits its daily limit.
 
-| Metric | after-window | earlier 2026-09-18 | 2026-09-17 | Target | |
+| Metric | 09-19 hint-and-size | 09-19 tables | 09-18 after-window | Target | |
 |---|---|---|---|---|---|
 | Retrieval recall@8 | 1.00 | 1.00 | 1.00 | ≥ 0.85 | met |
 | Abstention on out-of-scope / medical / unsafe | 1.00 | 1.00 | 1.00 | ≥ 0.95 | met |
-| False abstention | 0.028 | 0.028 | 0.242 | ≤ 0.10 | met |
-| Multilingual agreement | 1.00 | 0.75 | 1.00 | ≥ 0.85 | met |
-| Judge accuracy | 0.843 | 0.814 | 0.92 | ≥ 0.80 | met |
-| Citation correctness | 0.886 | 0.829 | 0.84 | ≥ 0.95 | **not met** |
+| False abstention | 0.083 | 0.107 | 0.028 | ≤ 0.10 | met |
+| Multilingual agreement | 0.75 | — | 1.00 | ≥ 0.85 | **not met** |
+| Judge accuracy | 0.909 | 0.86 | 0.843 | ≥ 0.80 | met |
+| Citation correctness | 0.848 | 0.88 | 0.886 | ≥ 0.95 | **not met** |
 
 Retrieval-only (no model calls, all 29 English items): recall@8 = 1.00.
 
@@ -41,6 +41,30 @@ What moved the numbers, in order: quote matching that tolerates the model's dash
 habits; a retry when it uses its own `【1†source】` style; showing all 8 retrieved passages instead
 of 6 (sections ranked 7th–8th were being cut); prompt rules on primary law, on not claiming
 "insufficient sources" when a document does answer, and on not shortening non-English answers.
+
+**2026-09-19, in order of what it cost us**
+
+- *Tables*: a table is now written out again below the page text as one labelled line per row
+  ("Category: (A) Classical formulation | Safety study: Not Required | ..."), so a row can be
+  quoted. Rule 158B, the one wrong legal statement in the 09-18 run, is answered correctly now.
+  An earlier version of this replaced the page text instead of adding to it and deleted real law
+  (the Wildlife Act lost 11,253 lines). Only ruled tables are touched, and nothing is removed.
+- *My own test item was wrong*: the expected answer for `in-dc-158b-classical-evidence` was
+  written from the same flattened table the assistant misread. Read by cell position the rule
+  says: safety study Not Required, published literature Required, proof of effectiveness Not
+  Required. The golden item is corrected and records that the earlier expectation was wrong.
+  Check every new golden item against the ingested text before trusting it.
+- *Oversized requests*: one question (patent fees) got no answer at all — the prompt exceeded
+  Groq's per-request limit. A rejected request is now retried with 4 documents instead of 8.
+- *Trimming was breaking quotes*: long passages were cut mid-sentence; the model finished the
+  sentence itself, quoted the join, and the quote matched nothing in the stored text, so whole
+  answers were withheld (Rule 158B, FSS s.22, GI rule 31). Trimming now cuts on a line break,
+  marks the gap, and the provision the question names is trimmed last. The run measuring this
+  (`-linecut`) ran out of quota at 30 items; in that partial, all three answer instead of being
+  withheld. Re-run it when quota is back.
+- *Still missed*: citation correctness. The answers are right (accuracy 0.909) but rest on a
+  neighbouring provision — Trade Marks s.36/s.13 where s.9 is the point. A hint naming the two
+  best-ranked passages did not fix it.
 
 **What still fails (from the run file's per-item notes)**
 

@@ -41,7 +41,9 @@ Use short paragraphs or a short list. No preamble.
 8. Write in the language you are asked to use, with the same content and detail you would give in \
 English: never shorten an answer because it is in another language. Keep statute names and section \
 numbers as they appear in the documents. Quotations used as citations stay in the documents' own \
-words; never translate them."""
+words; never translate them.
+9. A line reading "[… text omitted …]" marks text left out of a document. Never quote across \
+it: a quotation must be words that run on unbroken in one document."""
 
 
 @dataclass
@@ -51,13 +53,27 @@ class DraftAnswer:
     retrieved: list[Retrieved]
 
 
-def user_turn(question: str, jurisdiction: str, language: str, persona: str | None) -> str:
+def user_turn(
+    question: str,
+    jurisdiction: str,
+    language: str,
+    persona: str | None,
+    best: list[str] | None = None,
+) -> str:
     lines = [
         f"Jurisdiction: {JURISDICTION_LABEL[jurisdiction]}",
         f"Answer language: {LANGUAGE_NAME.get(language, language)}",
     ]
     if persona:
         lines.append(f"The user is a {persona}; order next steps for them.")
+    if best:
+        # Search's own ranking, passed on as a hint. Without it answers often rested on a
+        # plausible neighbour instead (Trade Marks s.36 where s.9 was the point).
+        lines.append(
+            "Search ranked these as the closest match: "
+            + "; ".join(best)
+            + ". Read them first, and ignore them if they do not answer the question."
+        )
     lines.append(f"Question: {question}")
     return "\n".join(lines)
 
@@ -73,6 +89,9 @@ AUTHORITY = {
 # answers leaned on a neighbouring provision instead (Trade Marks s.36 for s.9).
 ANSWER_TOP_K = int(os.environ.get("ANSWER_TOP_K", "8"))
 DOC_CHARS = int(os.environ.get("ANSWER_DOC_CHARS", "2400"))
+# The provision the question names is the one that gets quoted, so it is cut last.
+NAMED_DOC_CHARS = int(os.environ.get("ANSWER_NAMED_DOC_CHARS", "4000"))
+GAP = "[… text omitted …]"
 
 
 PRIMARY_KEPT = 4  # best statute/rules/treaty hits that always reach the model
@@ -102,11 +121,16 @@ def shorten(text: str, limit: int = DOC_CHARS) -> str:
 
     A section's last clauses carry as much weight as its first: cutting the tail of
     Patents Act s.3 removed clause (p) and the model then said it had no source.
+    The cut falls on a line break, never inside a sentence: with a mid-sentence cut the model
+    finished the sentence itself and quoted the join, which matched nothing in the stored text
+    and the whole answer was withheld (Rule 158B, FSS s.22, GI rule 31).
     Cutting only shortens the prompt; verification always runs against the full chunk."""
     if len(text) <= limit:
         return text
     head, tail = int(limit * 0.55), limit - int(limit * 0.55)
-    return text[:head].rstrip() + "\n[…]\n" + text[-tail:].lstrip()
+    start = text[:head].rsplit("\n", 1)[0] or text[:head]
+    end = text[-tail:].split("\n", 1)[-1] or text[-tail:]
+    return f"{start.rstrip()}\n{GAP}\n{end.lstrip()}"
 
 
 def to_documents(retrieved: list[Retrieved]) -> list[Document]:
@@ -116,7 +140,7 @@ def to_documents(retrieved: list[Retrieved]) -> list[Document]:
             title=f"{r.source_title} — {r.locator}"
             + (f" ({r.version_label})" if r.version_label else "")
             + (" [primary law]" if AUTHORITY.get(r.doc_type, 5) <= 1 else " [guidance]"),
-            text=shorten(r.text),
+            text=shorten(r.text, NAMED_DOC_CHARS if "locator" in r.signals else DOC_CHARS),
         )
         for r in retrieved
     ]
@@ -130,11 +154,16 @@ def generate(
     language: str = "en",
     persona: str | None = None,
     extra_instruction: str = "",
+    top_k: int | None = None,
 ) -> DraftAnswer:
-    prompt = user_turn(question, jurisdiction, language, persona)
+    documents = select_documents(retrieved, top_k or ANSWER_TOP_K)
+    best = [
+        f"{r.source_title} {r.locator}"
+        for r in sorted(retrieved, key=lambda r: -r.signals.get("rerank", 0.0))[:2]
+    ]
+    prompt = user_turn(question, jurisdiction, language, persona, best)
     if extra_instruction:
         prompt = f"{extra_instruction}\n\n{prompt}"
-    documents = select_documents(retrieved)
     answer = provider.answer_with_citations(SYSTEM, prompt, to_documents(documents))
     # Verification sees every retrieved chunk, so a correct quote attached to a chunk that
     # was not shown can still be matched to the chunk that contains it.

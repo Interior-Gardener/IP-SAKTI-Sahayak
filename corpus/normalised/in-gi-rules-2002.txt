@@ -1640,6 +1640,21 @@ last
 3,500
 GI-4
 IndiaCode
+
+No. of Entry: (1) | On what payable: (2) | Amount in Rupees: (3) | Corresponding Form Numbers: (4)
+No. of Entry: 1A | On what payable: On application for the registration of a geographical indication for goods included in one class [Section 11(1), rule 23(2)]. | Amount in Rupees: 5,000 | Corresponding Form Numbers: GI-1
+No. of Entry: 1B | On what payable: On application for the registration of a geographical indication for goods included in one class from a convention country[Section 11(1), 84(1), rule 23(3) . | Amount in Rupees: 5,000 | Corresponding Form Numbers: GI-1
+No. of Entry: 1C | On what payable: On a single application for the registration of a geographical indication for goods in different classes [Section 11(3) rule 23(5)]. | Amount in Rupees: 5,000 for each class | Corresponding Form Numbers: GI-1
+No. of Entry: 1D | On what payable: On a single application for the registration of a geographical indication for goods in different classes from a convention country [Section 11(3), 84(1), rule 23(4)]. | Amount in Rupees: 5,000 e for each class d | Corresponding Form Numbers: GI-1
+No. of Entry: 2A | On what payable: On a notice of opposition to the registration of a geographical indication under section 14(1) or an opposition to an authorised user i Section 17(3)(e). | Amount in Rupees: o C 1,000 for each class a | Corresponding Form Numbers: GI-2
+No. of Entry: 2B | On what payable: d n On a counter-statement in answer to a notice of opposition under section 14(2) or I 17(3)(e) for each application opposed and in answer to an application under section 27 in respect of each geographical indication or in answer to a notice of opposition under section 29. | Amount in Rupees: 1,000 | Corresponding Form Numbers: GI-2
+No. of Entry: 2C | On what payable: On application for extension of time for filing notice of opposition. [Section 14(1), 17(3)(e), 29(2), rule 41(5)] | Amount in Rupees: 300 | Corresponding Form Numbers: GI-2
+No. of Entry: 3A | On what payable: On application for the registration of an authorised user of a registered geographical indication under section 17, Rule 56(1) | Amount in Rupees: 500 | Corresponding Form Numbers: GI-3
+No. of Entry: 3B | On what payable: On request for issuance of a registration certificate as an authorised user, Rule 59(1) | Amount in Rupees: 100 | Corresponding Form Numbers: GI-3
+No. of Entry: 3C | On what payable: For renewal of an authorised user 18(2), rule 60(1) | Amount in Rupees: 1,000 | Corresponding Form Numbers: GI-3
+No. of Entry: 4A | On what payable: For renewal under section 18(1) of the registration of a geographical indication at the expiration of the last registration. Rule 60(1). | Amount in Rupees: 3,000 | Corresponding Form Numbers: GI-4
+No. of Entry: 4B | On what payable: On application under section 18(5) for restoration of geographical indication or an authorised user removed from the Register. rule 63. | Amount in Rupees: 1000 plus applicable renewal fee | Corresponding Form Numbers: GI-4
+No. of Entry: 4C | On what payable: On application for renewal under proviso to section 18(4) Proviso to rule 62 within six months from the expiration of last | Amount in Rupees: 3,500 | Corresponding Form Numbers: GI-4
 <<page 30>>
 30
 registration of geographical indication.
@@ -1744,6 +1759,22 @@ a
 1,000
 GI-8
 IndiaCode
+
+column 1: 5A | registration of geographical indication.: On request for alteration of the address of the principal place of business or of residence in India or of the address in the home country abroad in the Register of Geographical Indications are authorised user, Section 28, rule 69. | column 3: 300 | column 4: GI-5
+column 1: 5B | registration of geographical indication.: On request to enter change in name or description of proprietor of geographical indication upon the Register. | column 3: 300 | column 4: GI-5
+column 1: 5C | registration of geographical indication.: On request for correction of any error in the name , address or description of the registered proprietor or the authorised user of a geographical indication. (Section 28(a)). | column 3: 300 | column 4: GI-5
+column 1: 5D | registration of geographical indication.: On application for the rectification of the register in Part B for the removal of an authorised user. Section 27, Rule 65. | column 3: 1,000 | column 4: GI-5
+column 1: 5E | registration of geographical indication.: On division of goods in a class or on division of an application made for registration of a geographical indication in different classes under proviso to Section 15, rule 23(7). | column 3: e 1,000 d o C a | column 4: GI-5
+column 1: 5F | registration of geographical indication.: i d For a search under rule 22 in respect of one class. | column 3: 500 | column 4: GI-5
+column 1: 6A | registration of geographical indication.: n On application under section 27 for I rectification of the register or removal of a geographical indication or expunge or vary the Statement of the Case under rule 32(1) recorded in the Register or an authorised user from the register, Rule 65. | column 3: 1,000 | column 4: GI-6
+column 1: 6B | registration of geographical indication.: On application for leave to intervene in proceedings relating to the rectification of the Register or for the removal of a geographical indication or an authorised user from the Register. Rule 67 and 80(4). | column 3: 500 | column 4: GI-6
+column 1: 7A | registration of geographical indication.: On request for certificate of Registrar [other than a certificate under Section 69 or 78(1)]. Rule 96 | column 3: 300 | column 4: GI-7
+column 1: 7B | registration of geographical indication.: Affidavit in support of statement of case or other documents required under the Act or rules. | column 3: Nil | column 4: GI-7
+column 1: 7C | registration of geographical indication.: On request for entry in the Register and advertisement of a note of certificate of validity of the Appellate Board. Rule 99. | column 3: 200 | column 4: GI-7
+column 1: 7D | registration of geographical indication.: On application for review of Registrar’s decision. | column 3: 500 | column 4: GI-7
+column 1: 7E | registration of geographical indication.: On request to registrar for particulars of advertisement of a geographical indication | column 3: 100 | column 4: GI-7
+column 1: 7F | registration of geographical indication.: On request to Registrar for a duplicate or further copy of certificate. | column 3: 200 | column 4: GI-7
+column 1: 8A | registration of geographical indication.: Application for registration of a | column 3: 1,000 | column 4: GI-8
 <<page 31>>
 31
 geographical indications agent. Rule 107.
@@ -1850,6 +1881,18 @@ typed) for every page or part thereof in
 excess of one page
 10
 IndiaCode
+
+column 1: 8B. | geographical indications agent. Rule 107.: On request for issuance of certificate as geographical indications agent. Rule 109. | column 3: 1,000 | column 4: GI-8
+column 1: 8C | geographical indications agent. Rule 107.: For continuance of the name of a person in the Register of Geographical Indication Agent under rule 110; - For every year (excluding the first year) to be paid on 1st April in each year. - For the first year to be paid along with the fee for registration, in the case of a person registered at any time between the 1st April, and 30th September. N.B: A year for this purpose will commence on the 1st day of April and end on the 31st day of March following. | column 3: 1,000 | column 4: GI-8
+column 1: 8D | geographical indications agent. Rule 107.: On application for restoration of the name of a person to the Register of Geographical Indications under rule 113 | column 3: 1,000 e plus continuance fee under entry No.8C | column 4: GI-8
+column 1: 9C. | geographical indications agent. Rule 107.: On application for extension of time not being a time expressly provided in the Act or prescribed in the rules. Rule 83. | column 3: d o 300 C | column 4: GI-9
+column 1: 9B. | geographical indications agent. Rule 107.: On application for leave to add or alter a i d registered geographical indication [except where the application is made by an or of a n public authority or in consequence of a I statutory requirement. Section 29. | column 3: a 300 | column 4: GI-9
+column 1: 9A. | geographical indications agent. Rule 107.: On application to Registrar for additional protection to certain goods. Section 22(2), rule 77(1). | column 3: 25,000 | column 4: GI-9
+column 1: 10A | geographical indications agent. Rule 107.: On application for cancellation of an entry in the Register or to strike out goods. (Section 28(c) or (d)). | column 3: 300 | column 4: GI-10
+column 1: 10B. | geographical indications agent. Rule 107.: Form of authorisation of agent in a matter or proceedings under the Act. Section 76, Rule 20 | column 3: Nil | column 4: GI-10
+column 1: 11 | geographical indications agent. Rule 107.: On petition (not otherwise charged) for obtaining the Registrar’s order on any interlocutory matter in a contested proceeding. | column 3: 500
+column 1: 12. | geographical indications agent. Rule 107.: For inspecting the document mentioned in Section 78(1)- a) relating to any particular geographical indication or authorised user thereof for every hour or part thereof; b) computer search (when made available) for every 15 minutes; c) Search of index mentioned in section 78 for every hour or part thereof. | column 3: 100 100 100
+column 1: 13 | geographical indications agent. Rule 107.: For copying of documents (photocopy or typed) for every page or part thereof in excess of one page | column 3: 10
 <<page 32>>
 32
 THE SECOND SCHEDULE
@@ -1970,6 +2013,24 @@ name , address or description of the
 registered proprietor or the authorised user
 5C
 IndiaCode
+
+Form No.: (1) | Section of the Act: (2) | Title: (3) | Entry Number: (4)
+Form No.: GI-1 | Section of the Act: Section 11(1), rule 23(2) | Title: Application for the registration of a geographical indication for goods included in one class | Entry Number: 1A
+Form No.: GI-1 | Section of the Act: Sections 11(1), 84(1), rule 23(3) | Title: Application for the registration of a geographical indication for goods included in one class from a convention country | Entry Number: 1B
+Form No.: GI-1 | Section of the Act: Sections 11(3), rule 23(5) | Title: A single application for the registration of a geographical indication for goods in different classes. | Entry Number: 1C
+Form No.: GI-1 | Section of the Act: Sections 11(3), 84(1), rule 23(4) | Title: A single application for the registration of a e geographical indication for goods in different classes from a convention country . | Entry Number: 1D
+Form No.: GI-2 | Section of the Act: Sections 14(1), 17(3)(e) Rule 41 | Title: d o Notice of opposition to the registration of a C geographical indication or an opposition or an authorised user. | Entry Number: 2A
+Form No.: GI-2 | Section of the Act: Section 14(2), 17(3)(e),27 & 29, rule 43(1), 58, 72(2) | Title: a Form of counterstatement i | Entry Number: 2B
+Form No.: GI-2 | Section of the Act: Section 14(1), 17(3)(e), 29(2), rule 41(5), 72(2) | Title: d n Application for extension of time for filing notice of opposition I | Entry Number: 2C
+Form No.: GI-3 | Section of the Act: Section 17(1), rule 56(1) | Title: Application for the registration of an authorised user of a registered geographical indication. | Entry Number: 3A
+Form No.: GI-3 | Section of the Act: Section 18(5), rule 59 | Title: Request for issuance of a registration certificate as an authorised user. | Entry Number: 3B
+Form No.: GI-3 | Section of the Act: 18(2), rule 60(1) | Title: For renewal of an authorised user | Entry Number: 3C
+Form No.: GI-4 | Section of the Act: Section 18(4), Rule 60 | Title: Renewal of the registration of a geographical indication at the expiration of the last registration. | Entry Number: 4A
+Form No.: GI-4 | Section of the Act: Sections 18(5), rule 63 | Title: Application for restoration of geographical indication or an authorised user removed from the Register. | Entry Number: 4B
+Form No.: GI-4 | Section of the Act: Proviso to section 18(4) Proviso to rule 62 | Title: Application for renewal within six months from the expiration of last registration of geographical indication. | Entry Number: 4C
+Form No.: GI-5 | Section of the Act: Section 28, rule 69 | Title: On request for alteration of the address of the principal place of business or of residence in India or of the address in the home country abroad in the Register of Geographical Indications are authorised user. | Entry Number: 5A
+Form No.: GI-5 | Section of the Act: 28 (c ) | Title: Request to enter change in name or description of proprietor of geographical indication upon the Register. | Entry Number: 5B
+Form No.: GI-5 | Section of the Act: 28(a) | Title: Request for correction of any error in the name , address or description of the registered proprietor or the authorised user | Entry Number: 5C
 <<page 33>>
 33
 of a geographical indication.
@@ -2077,6 +2138,22 @@ On application for restoration of the name of
 a person to the Register of Geographical
 8D
 IndiaCode
+
+column 1: GI-5 | column 2: Section 27, Rule 65 | of a geographical indication.: Application for the rectification of the register in Part B for the removal of an authorised user. | column 4: 5D
+column 1: GI-5 | column 2: Rule 22 | of a geographical indication.: A request for search in respect of one class. | column 4: 5E
+column 1: GI-5 | column 2: Proviso to Section 15, rule 23(7) | of a geographical indication.: Division of an application made for registration of a geographical indication in different classes | column 4: 5F
+column 1: GI-6 | column 2: Section 27 | of a geographical indication.: Application for rectification of the register or removal of a geographical indication or expunge or vary the Statement of the Case under rule 32(1) recorded in the Register from the register. | column 4: 6A
+column 1: GI-6 | column 2: Rule 67 and 80(4) | of a geographical indication.: Application for leave to intervene in proceedings relating to the rectification of the Register or for the removal of a e geographical indication or an authorised user from the Register. | column 4: 6B
+column 1: GI-7 | column 2: Section 69 or 78(1)]. Rule 96. | of a geographical indication.: d o Request for certificate of Registrar [other C than a certificate under Section 16(2) ]. | column 4: 7A
+column 1: GI-7 | column 2: Rule 93 | of a geographical indication.: a Affidavit in support of statement of case or i d other documents required under the Act or rules. | column 4: 7B
+column 1: GI-7 | column 2: 72, rule 99 | of a geographical indication.: n Request for entry in the Register and I advertisement of a note of certificate of validity of the Appellate Board. | column 4: 7C
+column 1: GI-7 | column 2: 63, rule 92 | of a geographical indication.: Application for review of Registrar’s decision. | column 4: 7D
+column 1: GI-7 | column 2: Rule 40 | of a geographical indication.: Request to registrar for particulars of advertisement of a geographical indication | column 4: 7E
+column 1: GI-7 | column 2: Rule 55(2) | of a geographical indication.: Request to Registrar for a duplicate or further copy of certificate. | column 4: 7F
+column 1: GI-8 | column 2: Rule 107 | of a geographical indication.: Application for registration of a geographical indications agent | column 4: 8A
+column 1: GI-8 | column 2: Rule 109. | of a geographical indication.: On request for issuance of certificate as geographical indications agent | column 4: 8B
+column 1: GI-8 | column 2: Rule 110. | of a geographical indication.: For continuance of the name of a person in the Register of Geographical Indication Agent under rule 110; - For every year (excluding the first year) to be paid on 1st April in each year. - For the first year to be paid along with the fee for registration, in the case of a person registered at any time between the 1st April, and 30th September. N.B: A year for this purpose will commence on the 1st day of April and end on the 31st day of March following. | column 4: 8C
+column 1: GI-8 | column 2: Rule 113 | of a geographical indication.: On application for restoration of the name of a person to the Register of Geographical | column 4: 8D
 <<page 34>>
 34
 Indications under rule 113
@@ -2110,6 +2187,12 @@ Form of authorisation of agent in a matter or
 proceedings under the Act.
 10B
 IndiaCode
+
+column 1: GI-9 | column 2: 22(2), rule 77 | Indications under rule 113: On application to Registrar for additional protection to certain goods. | column 4: 9A
+column 1: GI-9 | column 2: 29 | Indications under rule 113: Application for leave to add or alter a registered geographical indication [except where the application is made by an or of a public authority or in consequence of a statutory requirement] | column 4: 9B
+column 1: GI-9 | column 2: 64, rule 83 | Indications under rule 113: Application for extension of time not being a time expressly provided in the Act or prescribed in the rules. | column 4: 9C
+column 1: GI-10 | column 2: 28 ( c ) or (d) | Indications under rule 113: Application for cancellation of an entry in the Register or to strike out goods. | column 4: 10A
+column 1: GI-10 | column 2: 76, Rule 20 | Indications under rule 113: Form of authorisation of agent in a matter or proceedings under the Act. | column 4: 10B
 <<page 35>>
 35
 THE THIRD SCHEDULE

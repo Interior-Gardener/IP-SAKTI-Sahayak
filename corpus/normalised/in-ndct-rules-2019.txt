@@ -3960,6 +3960,13 @@ duration of human
 exposure
 Marketing
 2 species; 12 weeks
+
+Systemic Toxicity Studies: Route of administration | column 2: Duration of proposed human administration | column 3: Human Phase(s) for which study is proposed to be conducted | column 4: Long term toxicity requirements
+Systemic Toxicity Studies: Oral or Parenteral or Transdermal | column 2: Single dose or several doses in one day, up to 1 week | column 3: I, II, III | column 4: 2 species; 2 weeks
+column 2: > 1 week but upto 2 weeks | column 3: I, II, III | column 4: 2 species; 2 weeks
+column 2: Upto 2 weeks | column 3: Marketing permission | column 4: 2 species; 4 weeks
+column 2: > 2 weeks but upto 4 weeks | column 3: I, II, III | column 4: 2 species; equal to duration of human exposure
+column 3: Marketing | column 4: 2 species; 12 weeks
 <<page 115>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India Page 115 of 242
 
@@ -4039,6 +4046,26 @@ III
 > 2 weeks
 I, II, III
 2 species; 12 weeks
+
+column 2: > 4 weeks but upto 12 weeks | column 3: I, II, III | column 4: 2 species; equal to duration of human exposure
+column 3: Marketing permission | column 4: 2 species; 24 weeks
+column 2: > 12 weeks but upto 24 weeks | column 3: I, II, III | column 4: 2 species; equal to duration of human exposure
+column 3: Marketing permission | column 4: 2 species; Rodent 24 weeks, non-rodent 36 weeks
+column 2: > 24 weeks | column 3: I, II, III | column 4: 2 species; Rodent 24 weeks, non-rodent 36 weeks
+column 3: Marketing permission | column 4: 2 species; Rodent 24 weeks, non-rodent 36 weeks
+permission: Inhalation (general Anaesthetics, aerosols) | column 2: Up to 2 weeks | column 3: I, II, III | column 4: 2 species; I month (Exposure time 3h/ d, 5d/week)
+column 2: Up to 4 weeks | column 3: I, II, III | column 4: 2 species; 12 weeks (Exposure time 6h/d, 5d/week)
+column 2: >14 weeks | column 3: I, II, III | column 4: 2 sp; 24 weeks (Exposure time 6h/ d, 5d/week)
+permission: Local Toxicity Studies
+permission: Dermal | column 2: Up to 2 weeks | column 3: I, II | column 4: 1 species; 4 weeks
+column 3: III | column 4: 2 species; 4 weeks
+column 2: > 2 weeks | column 3: I, II, III | column 4: 2 species; 12 weeks
+permission: Ocular or Optic or Nasal | column 2: Up to 2 weeks | column 3: I, II | column 4: 1 species; 4 weeks
+column 3: III | column 4: 2 species; 4 weeks
+column 2: > 2 weeks | column 3: I, II, III | column 4: 2 species; 12 weeks
+permission: Vaginal or Rectal | column 2: Up to 2 weeks | column 3: I, II | column 4: 1 species; 4 weeks
+column 3: III | column 4: 2 species; 4 weeks
+column 2: > 2 weeks | column 3: I, II, III | column 4: 2 species; 12 weeks
 <<page 116>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India Page 116 of 242
 
@@ -4162,6 +4189,18 @@ High density
 lipoproteins (HDL)
 cholesterol
 (Nonrodents only)
+
+Rodent (Rat): Male | column 2: Female | Non-rodent (Dog or Monkey): Male | column 4: Female | Rodent (Rat): Male | column 6: Female | column 7: Male
+Rodent (Rat): 6 to 10 | column 2: 6 to 10 | Non-rodent (Dog or Monkey): 2 to 3 | column 4: 2 to 3 | Rodent (Rat): 15 to 30 | column 6: 15 to 30 | column 7: 4 to 6
+Rodent (Rat): 6 to 10 | column 2: 6 to 10 | Non-rodent (Dog or Monkey): 2 to 3 | column 4: 2 to 3 | Rodent (Rat): 15 to 30 | column 6: 15 to 30 | column 7: 4 to 6
+Rodent (Rat): 6 to 10 | column 2: 6 to 10 | Non-rodent (Dog or Monkey): 2 to 3 | column 4: 2 to 3 | Rodent (Rat): 15 to 30 | column 6: 15 to 30 | column 7: 4 to 6
+Rodent (Rat): 6 to 10 | column 2: 6 to 10 | Non-rodent (Dog or Monkey): 2 to 3 | column 4: 2 to 3 | Rodent (Rat): 15 to 30 | column 6: 15 to 30 | column 7: 4 to 6
+column 1: Differential Terminal Bone Total White Blood White Blood Platelet count Marrow Cell count Cell Count Examination
+column 1: Erythrocyte sedimentation rate (ESR) (Non- rodents only) | column 2: General Blood Picture: A Special mention of abnormal and immature cells should be made
+column 1: Coagulation parameters (Non-rodents only): Bleeding Time, coagulation Time, prothrombin time, Activated partial Thromboplast in Time
+column 1: Urinalysis Parameters
+column 1: Colour | column 2: Appearance | column 3: Specific Gravity | column 4: 24 hours urinary output
+Bile pigments Urobilinogen: Glucose | column 2: Cholesterol | Occult Blood: Triglycerides | column 4: High density lipoproteins (HDL) cholesterol (Nonrodents only)
 <<page 118>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India Page 118 of 242
 
@@ -4237,6 +4276,20 @@ Non-clinical toxicity testing and safety evaluation data of an Investigational
 New Drug (IND) needed for the conduct of different phases of clinical trials.
 Note: Refer clause 2 of Second Schedule for essential features of study designs
 of the non-clinical toxicity studies listed below.
+
+Low density lipoproteins (LDL): Cholesterol (Non-rodents only) Aspartate aminotransferase (AST)
+Low density lipoproteins (LDL): Alkaline Phosphatase (ALP) | Bilirubin: GGT (Non-rodents only) | Serum glutamic oxaloacetic transaminase (SGOT): Creatinine
+Low density lipoproteins (LDL): Total proteins | Bilirubin: Albumin | Serum glutamic oxaloacetic transaminase (SGOT): Sodium
+Low density lipoproteins (LDL): Potassium | Bilirubin: Phosphorus
+Low density lipoproteins (LDL): Gross and Microscopic Pathology
+Low density lipoproteins (LDL): Brain*: Cerebrum, Cerebellum, Midbrain | Bilirubin: (Spinal cord) | column 3: Eye | Serum glutamic oxaloacetic transaminase (SGOT): (Middle Ear)
+Low density lipoproteins (LDL): Thyroid | Bilirubin: (Parathyroid) | column 3: Spleen | Serum glutamic oxaloacetic transaminase (SGOT): Thymus
+Low density lipoproteins (LDL): Adrenal* | Bilirubin: (Pancreas) | column 3: (Trachea) | Serum glutamic oxaloacetic transaminase (SGOT): Lung*
+Low density lipoproteins (LDL): Heart* | Bilirubin: Aorta | column 3: Oesophagus | Serum glutamic oxaloacetic transaminase (SGOT): Stomach
+Low density lipoproteins (LDL): Duodenum | Bilirubin: Jejunum | column 3: Terminal ileum | Serum glutamic oxaloacetic transaminase (SGOT): Colon
+Low density lipoproteins (LDL): (Rectum) | Bilirubin: Liver* | column 3: Kidney* | Serum glutamic oxaloacetic transaminase (SGOT): Urinary bladder
+Low density lipoproteins (LDL): Epididymis | Bilirubin: Testis* | column 3: Ovary | Serum glutamic oxaloacetic transaminase (SGOT): Uterus*
+Low density lipoproteins (LDL): Skin | Bilirubin: Mammary gland | column 3: Mesenteric lymph node | Serum glutamic oxaloacetic transaminase (SGOT): Skeletal muscle
 <<page 119>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India Page 119 of 242
 
@@ -4559,6 +4612,9 @@ Study conditions
 Duration of study
 Long-term 30°C + 2° Cl 75% RH ± 5% RH 6 months or 12 months
 Accelerated 40°C ± 2° C/75% RH ± 5% RH 6 months
+
+Study: Long-term | Study conditions: 30°C + 2° Cl 75% RH ± 5% RH | Duration of study: 6 months or 12 months
+Study: Accelerated | Study conditions: 40°C ± 2° C/75% RH ± 5% RH | Duration of study: 6 months
 <<page 128>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India Page 128 of 242
 
@@ -4598,6 +4654,11 @@ NEW DRUGS FOR SALE IN THE COUNTRY
 
 1. Introduction: A brief description of the drug and the therapeutic class to
 which it belongs.
+
+Study: Long-term | Study conditions: 5°C ± 3°C | Duration of study: 6 months or 12 months
+Study: Accelerated | Study conditions: 25°C ±2° C/60% RH ±5%RH | Duration of study: 6 months
+Study: Study | Study conditions: Study conditions | Duration of study: Durations of study
+Study: Long-term | Study conditions: -20°C + 5°C | Duration of study: 6 months or 12 months
 <<page 129>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India Page 129 of 242
 
@@ -6533,6 +6594,20 @@ bioequivalence study
 5,000
 per
 product
+
+Number: 01 | column 2: 21 | column 3: Application for permission to conduct clinical trial
+column 3: (i) Phase I | National Rupee (1NR) except where specified in dollars ($): 3,00,000
+column 3: (ii) Phase II | National Rupee (1NR) except where specified in dollars ($): 2,00,000
+column 3: (iii) Phase III | National Rupee (1NR) except where specified in dollars ($): 2,00,000
+column 3: (iv) Phase IV | National Rupee (1NR) except where specified in dollars ($): 2,00,000
+Number: 02 | column 2: 22 | column 3: Reconsideration of application for permission to conduct clinical trial | National Rupee (1NR) except where specified in dollars ($): 50,000
+Number: 03 | column 2: 33 | column 3: Application for permission to conduct bioavailability or bioequivalence study | National Rupee (1NR) except where specified in dollars ($): 2,00,000
+Number: 04 | column 2: 34 | column 3: Reconsideration of application of permission to conduct bioavailability or bioequivalence study | National Rupee (1NR) except where specified in dollars ($): 50,000
+Number: 05 | column 2: 45 | column 3: Application for registration of bioavailability and bioequivalence study centre | National Rupee (1NR) except where specified in dollars ($): 5,00,000
+Number: 07 | column 2: 47 | column 3: Reconsideration of application for Registration of bioavailability and bioequivalence study centre | National Rupee (1NR) except where specified in dollars ($): 1,00,000
+Number: 08 | column 2: 52 | column 3: Application for permission to manufacture new drugs or investigational new drugs for clinical trial or bioavailability or bioequivalence study | National Rupee (1NR) except where specified in dollars ($): 5,000 per product
+Number: 09 | column 2: 53 | column 3: Reconsideration of application to manufacture new drugs or investigational new drugs for clinical trial or bioavailability or bioequivalence study | National Rupee (1NR) except where specified in dollars ($): 2,000 per product
+Number: 10 | column 2: 59 | column 3: Application for permission to manufacture unapproved active pharmaceutical ingredient for development of formulation for test or analysis or clinical trial or bioavailability or bioequivalence study | National Rupee (1NR) except where specified in dollars ($): 5,000 per product
 <<page 187>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India Page 187 of 242
 
@@ -6691,6 +6766,17 @@ approved new drug for new claims, new
 indication or new dosage form or new route of
 administration or new strength for sale or
 3,00,000
+
+column 1: 21 | for marketing: Application for permission to import fixed dose combination already approved for marketing | column 4: 2,00,000
+column 1: 22 | for marketing: Application for permission to import fixed dose combination for new claims, new indication or new dosage form or new route of administration or new strength for marketing | column 4: 3,00,000
+column 1: 23 | column 2: 76 | for marketing: Reconsideration of application for permission to import new drug for marketing | column 4: 50,000
+column 1: 24 | for marketing: Application for permission to manufacture new drug (Finished Formulation or Active Pharmaceutical Ingredient) for sale or distribution | column 4: 5,00,000
+column 1: 25 | for marketing: Application for permission to manufacture new drug (Active Pharmaceutical Ingredient) already approved in the country for sale or distribution | column 4: 2,00,000
+column 1: 26 | column 2: 80 | for marketing: Application for permission to manufacture new drug (Finished Formulation) for sale or distribution | column 4: 5,00,000
+column 1: 27 | for marketing: Application for permission to manufacture new drug (Finished Formulation) already approved in the country for sale or distribution | column 4: 2,00,000
+column 1: 28 | for marketing: Application for permission to manufacture new drug (Active Pharmaceutical Ingredient) for sale or distribution | column 4: 5,00,000
+column 1: 29 | for marketing: Application for permission to manufacture new drug (Active Pharmaceutical Ingredient) already approved in the country for sale or distribution | column 4: 2,00,000
+column 1: 30 | for marketing: Application for permission to manufacture approved new drug for new claims, new indication or new dosage form or new route of administration or new strength for sale or | column 4: 3,00,000
 <<page 189>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India Page 189 of 242
 
@@ -6758,6 +6844,17 @@ Post-submission meeting
 Any other application which is not specified
 above
 50,000
+
+column 1: 31 | distribution: Application for permission to manufacture fixed dose combination having one or more of the ingredients as unapproved new molecules for sale or distribution | column 4: 5,00,000
+column 1: 32 | distribution: Application for permission to manufacture fixed dose combination having approved ingredients for sale or distribution | column 4: 3,00,000
+column 1: 33 | column 2: 80 | distribution: Application for permission to manufacture fixed dose combination already approved for sale or distribution | column 4: 2,00,000
+column 1: 34 | distribution: Application for permission to manufacture fixed dose combination for new claims, new indication or new dosage form or new route of administration or new strength for sale or distribution | column 4: 3,00,000
+column 1: 35 | column 2: 80 | distribution: Application for permission to manufacture new drug (Active Pharmaceutical Ingredient) or to manufacture finished formulation | column 4: 5,00,000
+column 1: 36 | distribution: Application for permission to import or to manufacture phytopharmaceutical drugs | column 4: 2,00,000
+column 1: 37 | column 2: 81 | distribution: Reconsideration of application for permission to manufacture new drug for sale or distribution | column 4: 50,000
+column 1: 38 | column 2: 86 | distribution: Application for Import of unapproved new drug by Government hospital and medical institution | column 4: 10,000
+column 1: 39 | column 2: 91 | distribution: Application for permission to manufacture unapproved new drug but under clinical trial, for treatment of patient of life threatening disease | column 4: 5,000
+column 1: 40 | column 2: 98 | distribution: Pre-submission meeting | column 4: 5,00,000
 <<page 190>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India Page 190 of 242
 
@@ -7097,6 +7194,9 @@ be specified.
 
 3.
 (i) Sponsor address, telephone number, mobile number, fax
+
+1.: 2. | Name of Applicant:: Nature and constitution: proprietorship, partnership including limited liability partnership, company, society, trust, other to be specified.
+1.: 3. | Name of Applicant:: (i) Sponsor address, telephone number, mobile number, fax
 <<page 198>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India Page 198 of 242
 
@@ -7139,6 +7239,23 @@ Therapeutic class:
 Dosage form:
 Composition:
 Indications:
+
+column 1: 4. | column 2: Details of new drugs or investigational new drugs and clinical investigation site [As per Annexure],
+column 1: 5. | column 2: Phase of the Clinical Trial
+column 1: 6. | column 2: Clinical trial protocol number with date:
+column 1: 7. Fee paid on......................................Rs............................... transaction ID........................................
+column 1: 8. | column 2: I have enclosed the documents as specified in the Second Schedule of the New Drugs and Clinical Trials Rules, 2019.
+column 1: 9. I hereby state and undertake that: (i) I shall comply with all the provisions of the Drugs and Cosmetics Act, 1940, and the New Drugs and Clinical Trials Rules, 2019.
+column 1: Place:...................... | column 3: Digital Signature
+column 1: Date:........................ | column 3: (Name and designation)
+column 1: Annexure:
+column 1: Details of new drugs or investigational new drugs:
+column 1: Names of the new drug or investigational
+column 1: new drug:
+column 1: Therapeutic class:
+column 1: Dosage form: Composition: Indications:
+column 1: Composition:
+column 1: Indications:
 <<page 199>>
 Central Drugs Standard Control Organization, Ministry of Health and Family Welfare, Govt. of India Page 199 of 242
 

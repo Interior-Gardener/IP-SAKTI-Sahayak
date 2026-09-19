@@ -2625,6 +2625,9 @@ of
 Regulations
 under the
 PCT
+
+International Filing Fee: (US) | USD 1,352: USD 2080 For small entity USD 1,040 For micro entity: USD 520
+International Filing Fee: (IN) | column 2: INR 10000 (other than natural person) INR 2500 (for natural person) | USD 1,352: USD 144 USD 36
 <<page 59>>
 59
 
@@ -7356,6 +7359,23 @@ issuance of FER, then fee is refunded as
 prescribed in the First Schedule
 Rule 7(4A) ,
 Rule 26
+
+S.N.: 1. | Description: Proof of right to make an application | Time: Six months from the date of Filling of application | Provision: Section 7(2) Rule10
+S.N.: 2. | Description: Statement and undertaking Regarding foreign applications | Time: Six months from the date of Filing of application | Provision: Section 8(1)(a) Rule 12(1A)
+S.N.: 3. | Description: Subsequent information Corresponding to foreign filing | Time: Six months from the date of Filing of application outside India | Provision: Section 8(1)(b) Rule 12(2)
+S.N.: 4. | Description: Information relating to objections in respect of novelty, patentability etc. in foreign filing | Time: Six months from the date of communication by Controller | Provision: Section 8(2) Rule 12(3)
+S.N.: 5. | Description: Filing a complete specification after filing provisional specification | Time: Twelve months from the date of filling of the Provisional Specification | Provision: Section 9(1)
+S.N.: 6. | Description: Declaration of Inventorship (Form 5) | Time: With the complete specification or within one month from the date of filing of the complete specification as the Controller may allow on an application made in Form-4 | Provision: Rule 13(6)
+S.N.: 7. | Description: Reference to deposit of biological material | Time: Three months from the date of filing of application | Provision: Section10(4) Rule 13(8)
+S.N.: 8. | Description: Convention application | Time: Twelve months from the date of filing of the basic application | Provision: Section 135(1)
+S.N.: 9. | Description: Convention application (in case of multiple priorities) | Time: Twelve months from the date of filing of first filed basic application | Provision: Section 135(1)
+S.N.: 10. | Description: Convention application (cognate) | Time: Twelve months from the date of earliest filed application | Provision: Section 135(2)
+S.N.: 11. | Description: PCT national phase application | Time: Thirty one months from the Priority date | Provision: Rule 20(4)(i)
+S.N.: 12. | Description: Priority document (for convention application) | Time: Three months from the date of communication from the Controller | Provision: Section 138(1) Rule 121
+S.N.: 13. | Description: Publication of application | Time: Ordinarily within one month from the expiry of eighteen months from the date of filing or priority date, whichever is earlier, or within one month from the date of request for early publication. | Provision: Rule 24, Rule 24-A
+S.N.: 14. | Description: Withdrawal of application to prevent publication | Time: Fifteen months from date of Filing or priority, whichever is earlier | Provision: Section 11- A(3)(c)
+Description: Request for withdrawal of application | Time: Any time before the grant of Patent | Provision: Section 11- B(4), Rule 26
+Description: Request for withdrawal and refund of Fee | Time: In case withdrawal is requested after filing Request for examination but before issuance of FER, then fee is refunded as prescribed in the First Schedule | Provision: Rule 7(4A) , Rule 26
 <<page 173>>
 173
 
@@ -7476,6 +7496,24 @@ Section 36(1)
 Controller disposes permission
 Within a period of twenty-one days
 Section 39
+
+15.: 16. | Request for examination: Request for examination, where secrecy direction imposed | column 3: Forty eight months from the date of filing or priority or within sixth months from the date of revocation of secrecy direction, whichever expires later | Section 11-B Rule 24-B: Rule 24- B(1)(iii)
+15.: 17. | Request for examination: Request for examination (Divisional Application) | column 3: Forty eight months from date of filing or priority of first mentioned application, or within six months from date of filing of further application, which ever expires later. | Section 11-B Rule 24-B: Rule 24- B(1)(iv)
+15.: 18. | Request for examination: Time within which Examiner makes report to Controller | column 3: Ordinarily within one month but not exceeding three months from the date of such reference | Section 11-B Rule 24-B: Rule 24- B(2)(ii)
+15.: 19. | Request for examination: Controller disposes off the report of Examiner | column 3: Ordinarily within one month from the date of receipt of report | Section 11-B Rule 24-B: Rule 24-B(2) (iii)
+15.: 20. | Request for examination: First Examination Report (FER) to be sent by the Controller to applicant | column 3: Within one month from the date of disposal of the report of examiner by the Controller | Section 11-B Rule 24-B: Rule 24-B(3)
+15.: 21. | Request for examination: Time for complying with all requirements imposed by the Act | column 3: Six months from the date Of issuance of the FER | Section 11-B Rule 24-B: Section 21(1) Rule 24-B(5)
+15.: 22 | Request for examination: Extension Time for complying with all requirements | column 3: Maximum extension up to three months can be availed only once, on a request made in Form 4 , if requested before the expiry of prescribed time under Rule 24B(5) | Section 11-B Rule 24-B: Section 21(1) Rule 24-B(6)
+15.: 23. | Request for examination: Time, after publication, before Expiry of which no patent is granted | column 3: Six months from the date of publication | Section 11-B Rule 24-B: Rule 55(1A)
+15.: 24 | Request for examination: Pre-grant opposition | column 3: Any time before the grant of patent | Section 11-B Rule 24-B: Section 25(1)
+15.: 25. | Request for examination: Reply statement and evidence by applicant (pre-grant opposition) | column 3: Three months from the date Of notice of the Controller | Section 11-B Rule 24-B: Rule 55(4)
+15.: 26. | Request for examination: Decision by Controller upon pre-grant opposition | column 3: Ordinarily within one month from completion of the proceedings | Section 11-B Rule 24-B: Rule 55(5)
+15.: 27. | Request for examination: Notice of opposition (post-grant opposition) | column 3: Before the expiry of one year from the date of publication of grant of patent | Section 11-B Rule 24-B: Section 25(2)
+15.: 28. | Request for examination: Reply statement by patentee | column 3: Two months from receipt of opponent ̳s written statement | Section 11-B Rule 24-B: Rule 58(1)
+15.: 29. | Request for examination: Reply evidence by opponent | column 3: One month from date of delivery of patentee ̳s reply statement | Section 11-B Rule 24-B: Rule 59
+15.: 30. | Request for examination: Opposition Board submits report | column 3: Three months from the date on which documents were forwarded to the Board | Section 11-B Rule 24-B: Rule 56(4)
+15.: 31. | Request for examination: Periodical review of secrecy directions | column 3: Every six months | Section 11-B Rule 24-B: Section 36(1)
+15.: 32. | Request for examination: Controller disposes permission | column 3: Within a period of twenty-one days | Section 11-B Rule 24-B: Section 39
 <<page 174>>
 174
 
@@ -7573,3 +7611,17 @@ to working of patent, upon
 notice of Controller
 Two months from the date of notice
 Section 146(1)
+
+column 1: 33. | for filing abroad: Time after which no permission is required for filing abroad | from the date of filing of such request: Six weeks after filing the application in India, where no direction for secrecy is imposed or application has not been referred to Department of Atomic Energy (DAE) | Rule 71: Section 39(1)
+column 1: 34. | for filing abroad: Payment of due renewal fee, where patent has been granted after the expiry of two years from date of filing | from the date of filing of such request: Three months from the date of recordal in Register of Patents | Rule 71: Section 142(4)
+column 1: 35. | for filing abroad: Extension in time for payment of renewal fee, where patent has been granted after expiry of two years from date of filing | from the date of filing of such request: Extendable by maximum six months | Rule 71: Section 142(4)
+column 1: 36. | for filing abroad: Time for payment of the renewal fee | from the date of filing of such request: Before expiry of the nth year from date of patent in respect of the (n+1) th year | Rule 71: Rule 80(1)
+column 1: 37. | for filing abroad: Extension in time for payment of renewal fee | from the date of filing of such request: Maximum six months | Rule 71: Rule 80(1A)
+column 1: 38. | for filing abroad: Application for restoration of patent | from the date of filing of such request: Eighteen months from the date of cessation of the patent | Rule 71: Section 60
+column 1: 39. | for filing abroad: Request for hearing by an applicant for restoration, where prima facie case has not been made out | from the date of filing of such request: One month from date of intimation by the Controller | Rule 71: Rule 84(2)
+column 1: 40. | for filing abroad: Notice of Opposition against restoration | from the date of filing of such request: One month from date of publication of application for restoration | Rule 71: Rule 85(1)
+column 1: 41. | for filing abroad: Payment of the unpaid renewal fee and additional fee when restoration allowed | from the date of filing of such request: One month from date of order | Rule 71: Rule 86(1)
+column 1: 42. | for filing abroad: Notice of Opposition against an offer to surrender a patent | from the date of filing of such request: Three months from the date Of publication of offer | Rule 71: Rule 87(2)
+column 1: 43. | for filing abroad: Notice of Opposition against application for post-grant amendment | from the date of filing of such request: Three months from the date of publication of such application | Rule 71: Rule 81(3)(b)
+column 1: 44. | for filing abroad: Furnishing information relating to working of patent in respect of the calendar year | from the date of filing of such request: Three months from the end of each calendar year | Rule 71: Section 146(2), Rule 131 (2)
+column 1: 45. | for filing abroad: Furnishing information relating to working of patent, upon notice of Controller | from the date of filing of such request: Two months from the date of notice | Rule 71: Section 146(1)

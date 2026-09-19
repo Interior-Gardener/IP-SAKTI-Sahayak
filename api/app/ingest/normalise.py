@@ -43,15 +43,88 @@ def clean_text(text: str) -> str:
     return text.strip()
 
 
-def pdf_pages(path: Path, ocr: bool = True) -> tuple[list[str], int]:
+def render_table(rows: list[list[str | None]]) -> str:
+    """A detected table as one labelled line per row.
+
+    Plain text extraction prints a table cell by cell, which loses which column a value
+    belongs to: the Rule 158B licensing table came out as a column of "As per text",
+    "Not Required", "Required" with nothing tying them to their headings, and the
+    assistant duly misread it. Writing each row as
+    "Category: (A) Aqueous | Safety study: Not Required | ..." keeps the pairing, and the
+    row is then quotable as a citation like any other sentence.
+    """
+    grid = [[(c or "").replace("\n", " ").strip() for c in row] for row in rows]
+    grid = [r for r in grid if any(r)]
+    if not grid:
+        return ""
+
+    def is_numbering(row: list[str]) -> bool:
+        filled = [c for c in row if c]
+        return bool(filled) and all(re.fullmatch(r"\d{1,2}[.)]?", c) for c in filled)
+
+    # A heading longer than this is extraction debris (a neighbouring paragraph pulled into
+    # the header cell); a label like that is worse than none.
+    header = [c if len(c) <= 60 else "" for c in grid[0]]
+    body: list[list[str]] = []
+    for row in grid[1:]:
+        if is_numbering(row):
+            continue  # a "1 2 3 4" column-number row
+        filled = [c for c in row if c]
+        # A continuation of the heading: few cells, and the columns they sit in are still
+        # unnamed (wide tables print their sub-headings on a second line).
+        if not body and len(filled) <= len(row) / 2 and all(len(c) < 60 for c in filled):
+            for i, cell in enumerate(row):
+                if cell and i < len(header) and not header[i]:
+                    header[i] = cell  # names a column the first heading row left blank
+            continue
+        body.append(row)
+
+    lines = []
+    for row in body:
+        parts = []
+        for i, cell in enumerate(row):
+            if not cell:
+                continue
+            label = header[i] if i < len(header) and header[i] else f"column {i + 1}"
+            parts.append(f"{label}: {cell}")
+        if parts:
+            lines.append(" | ".join(parts))
+    return "\n".join(lines)
+
+
+def is_tabular(table) -> bool:
+    """A real data table: at least three columns, two body rows, and short cells. Prose in a
+    bordered box is not worth reshaping into rows."""
+    rows = [[(c or "").strip() for c in row] for row in table.extract()]
+    rows = [r for r in rows if any(r)]
+    if table.col_count < 3 or len(rows) < 3:
+        return False
+    cells = [c for r in rows for c in r if c]
+    return bool(cells) and sum(len(c) for c in cells) / len(cells) < 60
+
+
+def pdf_pages(path: Path, ocr: bool = True, tables: bool = True) -> tuple[list[str], int]:
     import pymupdf
 
     pages: list[str] = []
     ocr_count = 0
     with pymupdf.open(path) as doc:
         for page in doc:
+            rendered: list[str] = []
+            if tables:
+                # "lines_strict" only accepts tables drawn with ruled borders. The default
+                # text heuristic called ordinary statute pages tables and redacting them
+                # deleted real law (the Wildlife Act lost thousands of lines in one run).
+                found = page.find_tables(strategy="lines_strict").tables
+                for table in found:
+                    if not is_tabular(table):
+                        continue
+                    block = render_table(table.extract())
+                    if block:
+                        rendered.append(block)
+
             text = page.get_text("text")
-            if ocr and len(text.strip()) < MIN_PAGE_CHARS:
+            if ocr and len(text.strip()) < MIN_PAGE_CHARS and not rendered:
                 try:
                     # Needs Tesseract installed (it is in the API Docker image).
                     tp = page.get_textpage_ocr(language="eng", dpi=300, full=True)
@@ -59,6 +132,11 @@ def pdf_pages(path: Path, ocr: bool = True) -> tuple[list[str], int]:
                     ocr_count += 1
                 except RuntimeError:
                     pass
+            if rendered:
+                # Added after the page text, never in place of it: deleting the original
+                # cells once cost a notification most of its body. The duplicate cells are
+                # noise; the labelled rows are what make a table row readable.
+                text = f"{text}\n" + "\n".join(rendered)
             pages.append(clean_text(text))
     return pages, ocr_count
 

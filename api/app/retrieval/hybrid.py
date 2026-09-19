@@ -51,6 +51,12 @@ class Retrieved:
     signals: dict[str, float] = field(default_factory=dict)
 
 
+def locator_matches(wanted: str, actual: str) -> bool:
+    """Does `actual` cover the provision `wanted`? "s.3" is covered by a chunk located at
+    "s.3", "s.3(k)–(p)" or "s.3.2", but not by "s.30"."""
+    return actual == wanted or actual.startswith((wanted + "(", wanted + "."))
+
+
 def locators_in(question: str) -> list[str]:
     """'Can I patent under section 3(p)?' -> ['s.3(p)', 's.3']"""
     found: list[str] = []

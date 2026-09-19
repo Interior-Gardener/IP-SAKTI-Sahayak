@@ -155,7 +155,7 @@ def test_ellipsis_fragments_must_all_be_present_in_order():
 
 
 def test_long_chunk_keeps_its_last_clauses_and_is_labelled():
-    from app.generate.answer import shorten, to_documents
+    from app.generate.answer import GAP, shorten, to_documents
 
     section = (
         "3. What are not inventions.—"
@@ -165,8 +165,17 @@ def test_long_chunk_keeps_its_last_clauses_and_is_labelled():
     cut = shorten(section, 1000)
     assert cut.startswith("3. What are not inventions")
     assert cut.endswith("is traditional knowledge.")  # the tail survives the trim
-    assert "[…]" in cut and len(cut) < len(section)
+    assert GAP in cut and len(cut) < len(section)
     assert to_documents([S3])[0].title.endswith("[primary law]")
+
+
+def test_a_trim_cuts_on_a_line_break_so_no_sentence_is_left_half_quoted():
+    from app.generate.answer import GAP, shorten
+
+    lines = [f"({chr(97 + i)}) clause number {i} of the section." for i in range(60)]
+    cut = shorten("\n".join(lines), 600)
+    kept = [ln for ln in cut.split("\n") if ln != GAP]
+    assert all(ln in lines for ln in kept)  # every kept line is a whole line of the original
 
 
 def test_best_primary_law_hits_always_reach_the_model():

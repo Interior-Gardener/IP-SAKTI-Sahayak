@@ -77,3 +77,29 @@ def test_looks_like():
     assert looks_like("pdf", b"%PDF-1.7 ...")
     assert not looks_like("pdf", b"<html>")
     assert looks_like("html", b"<!DOCTYPE html><html>")
+
+
+def test_render_table_pairs_each_value_with_its_heading():
+    from app.ingest.normalise import render_table
+
+    rows = [
+        ["Serial number", "Category", "Safety study", "Experience/Evidence of Effectiveness", ""],
+        ["1", "2", "3", "4", ""],
+        ["", "", "", "Published Literature", "Proof of Effectiveness"],
+        ["1", "(A) Classical formulation", "As per text", "Required", "Not Required"],
+        ["2", "(C) New indication", "As per text", "If Required", "Required"],
+    ]
+    out = render_table(rows).splitlines()
+    assert len(out) == 2
+    assert "Category: (A) Classical formulation" in out[0]
+    assert (
+        "Proof of Effectiveness: Not Required" in out[0]
+    )  # the row's own value, not a neighbour's
+    assert "Proof of Effectiveness: Required" in out[1]
+    assert "column" not in out[0]  # every value found a heading
+
+
+def test_render_table_ignores_an_empty_table():
+    from app.ingest.normalise import render_table
+
+    assert render_table([["", ""], ["", ""]]) == ""

@@ -127,6 +127,13 @@ THE GAZETTE OF INDIA : EXTRAORDINARY
 /
 दकलोग्राम
 (
+
+“ि.स.ं: 11 | आविे न का प्रोिन: िवै जवजवधता प्रबधं न सजमजत द्वारा उगाए गए औषधीर ् पौधो ं क े जववरण वाली पुजस्ट्तकाए ं वबे पोटाल पर अनरु जित की िाने वाली | फीस: िून्द्र ्
+“ि.स.ं: 11क | आविे न का प्रोिन: उगाए गए औषधीर ्पौधो ं क े जलए उतप् जत ्तप्रमाण पत ्रप्राप ्तकरने हते ु आविे न | फीस: ₹ 200
+“ि.स.ं: 12 | आविे न का प्रोिन: आविे क को िारी दकर्ा गर्ा उतप् जत ्तप्रमाण पत ्र | फीस: िून्द्र्”
+िम सं.: (6) | जवजिषट् र्ा ं: िवै जवजवधता प्रबधं न सजमजत का नाम | जववरण: .................. (गावं र्ा िहर (सघं राज्र ्िेत/्रराज्र/् जिला)
+िम सं.: (7) | जवजिषट् र्ा ं: उगाए गए औषधीर ् पौधे तक पहचंु क ेे जलए अनरु ोध
+जवजिषट् र्ा ं: ि. स.ं | column 3: उगाए गए औषधीर ् पौधो ं का नाम | column 5: माता्र ( दकलोग्राम/कव् टं ल/टन आदि म) े
 <<page 3>>
 [भाग II—खण् ड 3(i)]
 भारत का रािपत्र : असाधारण
@@ -257,6 +264,13 @@ e-mail:
 Address:
 District:
 State:
+
+“Sl.No.: 11 | Purpose of the Application: Books containing details of cultivated medicinal plants, to be maintained by the Biodiversity Management Committee in web portal | Fee: Nil
+“Sl.No.: 11A | Purpose of the Application: Application for obtaining certificate of origin for cultivated medicinal plants | Fee: ₹ 200
+“Sl.No.: 12 | Purpose of the Application: Certificate of origin issued to the applicant | Fee: Nil”
+Sl.No.: (1) | Particulars: Name of the applicant:
+Sl.No.: (2) | Particulars: Phone No.: e-mail:
+Sl.No.: (3) | Particulars: Address: District: State:
 <<page 5>>
 [भाग II—खण् ड 3(i)]
 भारत का रािपत्र : असाधारण
@@ -323,3 +337,7 @@ Uploaded by Dte. of Printing at Government of India Press, Ring Road, Mayapuri, 
 and Published by the Controller of Publications, Delhi-110054. GORAKHA NATH YADAVA
 Digitally signed by GORAKHA NATH YADAVA
 Date: 2025.05.08 15:27:50 +05'30'
+
+(4): (6) | Select State in which SBB is located: Name of the Biodiversity Management Committee | column 5: .................. (Village or Town / District / State / Union Territory)
+(4): (7) | Select State in which SBB is located: Request for accessing the cultivated medicinal plant
+Select State in which SBB is located: Sl. No. | column 4: Name of the cultivated medicinal plants | column 6: Quantity (in kg./quintal/tonne etc.)
