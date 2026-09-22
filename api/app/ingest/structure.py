@@ -35,9 +35,22 @@ HEADING_START_RE = re.compile(
     r"^(?:\d{1,3}\[\s*)?\d{1,4}(?:[A-Z]{1,3}|\([A-Z]{1,2}\)|-[A-Z]{1,2})?\.?\s+[A-Z]"
 )
 DASH_RE = re.compile(r"\.\s?[—–]|\.\s?-\s|\.-|—")
+# "SCHEDULE III", "THE FIRST SCHEDULE.", "1[SCHEDULE - H", "SCHEDULE — I", "2[SCHEDULE E(1)",
+# "SCHEDULE C (1)", "SCHEDULE-E". The separator may be a space or a dash, and the line may end on
+# a stray "." or "]" left by the gazette. "THE SCHEDULES" and "SCHEDULE OF FEES" are not headings.
 SCHEDULE_RE = re.compile(
-    r"^(?:\d{1,3}\[\s*)?(?:THE\s+)?(?P<name>(?:[A-Z]+\s+)?SCHEDULE(?:\s+[A-Z0-9()\-]{1,12})?)\s*$"
+    r"^(?:\d{1,3}\[\s*)?(?:THE\s+)?(?P<ordinal>[A-Z]+\s+)?SCHEDULE"
+    r"(?:(?:\s*[—–-]\s*|\s+)(?P<suffix>[A-Z0-9][A-Z0-9()\-]{0,11}(?:\s*\([A-Z0-9]{1,4}\))?))?"
+    r"\s*[.\]]*\s*$"
 )
+
+
+def schedule_name(m: re.Match[str]) -> str:
+    """`1[SCHEDULE - H` -> "Schedule H": separator dropped, suffix kept as written."""
+    parts = [(m.group("ordinal") or "").strip(), "Schedule", (m.group("suffix") or "").strip()]
+    return " ".join(p for p in parts if p).title()
+
+
 CHAPTER_RE = re.compile(r"^(?:\d{1,3}\[\s*)?(?P<name>(?:CHAPTER|PART)\s+[IVXLC0-9A-Z]{1,8})\]?\s*$")
 FOOTNOTE_RE = re.compile(
     r"^\d{1,3}\.\s+(?:Subs\.|Ins\.|Omitted|Cls?\.|The words|Added|Rep\.|Renumbered|Sub-section|"
@@ -184,7 +197,7 @@ def _parse_sections(normalised: str, prefix: str) -> list[Unit]:
 
         sm = SCHEDULE_RE.match(line)
         if sm and current is not None:
-            name = " ".join(sm.group("name").split()).title()
+            name = schedule_name(sm)
             current = Unit(name, name, chapter, page)
             units.append(current)
             continue
@@ -238,7 +251,7 @@ def _parse_bare_headings(normalised: str, prefix: str) -> list[Unit]:
         sm = SCHEDULE_RE.match(line)
         if sm and current is not None:
             # Schedules restart numbering, so list items inside them must not become rules.
-            name = " ".join(sm.group("name").split()).title()
+            name = schedule_name(sm)
             current = Unit(name, name, "", page)
             units.append(current)
             last = 10_000

@@ -7,19 +7,20 @@ import { UNKNOWN, type MaterialIPProfile, type MaterialKind } from '../../types/
  * The search links are not legal claims, just starting points for a prior-art
  * search. InPASS and PATENTSCOPE have no stable query URL, so they open the
  * public search page; T2.8 builds proper per-material query strings. */
+export function searchLinks(searchTerm: string): MaterialIPProfile['patents']['search'] {
+  return {
+    inpass: 'https://iprsearch.ipindia.gov.in/PublicSearch/',
+    patentscope: 'https://patentscope.wipo.int/search/en/search.jsf',
+    googlePatents: `https://patents.google.com/?q=${encodeURIComponent(`"${searchTerm}"`)}`,
+  }
+}
+
 export function unknownProfile(kind: MaterialKind, searchTerm: string): MaterialIPProfile {
   return {
     kind,
     tk: { tkdl: UNKNOWN, classicalTexts: [], cite: UNKNOWN },
     patentability: { note: 'Not yet verified. Ask Sahayak or a facilitator.', cites: [] },
-    patents: {
-      landmark: [],
-      search: {
-        inpass: 'https://iprsearch.ipindia.gov.in/PublicSearch/',
-        patentscope: 'https://patentscope.wipo.int/search/en/search.jsf',
-        googlePatents: `https://patents.google.com/?q=${encodeURIComponent(`"${searchTerm}"`)}`,
-      },
-    },
+    patents: { landmark: [], search: searchLinks(searchTerm) },
     deposit: null,
     gi: { tags: [] },
     biodiversity: { indianBioResource: UNKNOWN, normallyTradedCommodity: UNKNOWN, cites: [] },

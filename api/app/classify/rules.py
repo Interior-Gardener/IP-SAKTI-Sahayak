@@ -113,8 +113,10 @@ RULES: list[CategoryRule] = [
     CategoryRule(
         category="classical", label="Classical (generic) Ayurvedic medicine", when="exact_classical",
         requires=[
+            # 2026-09-21: found in the s.3(a) chunk — "manufactured exclusively in accordance with
+            # the formulae described in, the authoritative books ... specified in the First Schedule".
             Line(text="An Ayurvedic drug made exactly per the authoritative books in the First Schedule falls under the Act's definition of Ayurvedic drug.",
-                 cite=c("in-dc-act-1940", "s.3(a)", False)),
+                 cite=c("in-dc-act-1940", "s.3(a)", True)),
             Line(text="A manufacturing licence under the ASU drug rules is needed (Rule 158B guidelines); verify the evidence required for this category.",
                  cite=c("in-dc-rules-1945", "Rule 158B", False)),
             Line(text="Manufacture must meet Good Manufacturing Practices under Schedule T.", cite=c("in-dc-rules-1945", "Rule 157", True)),

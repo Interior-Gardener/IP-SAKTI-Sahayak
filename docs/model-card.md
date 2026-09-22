@@ -33,7 +33,10 @@ A system card for the assistant as a whole (retrieval + language models + guardr
 
 ## 4. Evaluation (Measure)
 
-Golden set ~120 items (PLAN.md stage 1). Results per provider:
+Golden set: 102 items as of 2026-09-21 (plan: ~120) — 63 in-scope, 20 abstention, 19 multilingual
+twins, covering 27 of the 31 corpus sources. The results below were measured on the 46-item set of
+2026-09-18 and have not been re-run since it grew; they are the baseline, not the current score.
+Results per provider:
 
 | Metric | Target (MVP) | Groq (2026-09-18, 46 items) | Anthropic |
 |---|---|---|---|
@@ -44,8 +47,9 @@ Golden set ~120 items (PLAN.md stage 1). Results per provider:
 | False abstention on in-scope | ≤ 0.10 | 0.028 | not run |
 | Multilingual agreement (hi / mr / ta) | ≥ 0.85 | 1.00 | not run |
 
-Run file: `eval/runs/2026-09-18-groq-after-window.json`. Treat these as early and indicative: 46
-items (plan: ~120), written in-house, and graded by the same model family that writes the answers.
+Run file: `eval/runs/2026-09-18-groq-after-window.json`. Treat these as early and indicative: they
+were measured on 46 items, written in-house, and graded by the same model family that writes the
+answers.
 Known wrong answer in that run: Rule 158B's requirement table was misread (a flattened table).
 
 Known limitation of the method: the accuracy judge is itself a model; a sample of judged items is checked by a team member each run and the agreement rate recorded here.

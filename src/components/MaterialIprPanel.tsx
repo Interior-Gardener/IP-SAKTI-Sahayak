@@ -112,6 +112,19 @@ export function MaterialIprPanel({
         <Row label="Normally traded commodity" cite={profile.biodiversity.cites}>
           <Status value={profile.biodiversity.normallyTradedCommodity} yes="Yes" no="No" />
         </Row>
+        {profile.wildlife && (
+          <Row label="Wildlife / CITES" cite={profile.wildlife.cites}>
+            {profile.wildlife.citesListed === true ? (
+              <span className="font-medium text-ink">
+                Listed{profile.wildlife.protectedSchedule ? ` — ${profile.wildlife.protectedSchedule}` : ''}
+              </span>
+            ) : profile.wildlife.citesListed === false ? (
+              <>Not in the Wild Life (Protection) Act's plant schedules</>
+            ) : (
+              <span className="text-ink-faint italic">Not yet verified</span>
+            )}
+          </Row>
+        )}
         <Row label="Export restricted" cite={profile.export.cite}>
           <Status value={profile.export.restricted} yes="Restricted" no="Not restricted" />
         </Row>

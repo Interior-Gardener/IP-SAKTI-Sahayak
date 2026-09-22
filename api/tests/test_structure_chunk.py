@@ -112,3 +112,48 @@ I. (A). Ayurveda, Siddha Unani Medicines under section 3(a):- Ayurveda, Siddha o
     units = parse_units(text, "rules")
     assert [u.locator for u in units] == ["Rule 158", "Rule 158B", "Rule 158C"]
     assert units[1].heading.startswith("Guidelines for issue of license")
+
+
+def test_schedule_headings_with_dashes_periods_and_brackets():
+    """Gazette copies write a schedule heading half a dozen ways. Each is a unit of its
+    own, or its contents end up inside the preceding section and cannot be cited: the
+    Wild Life Act's whole Schedule I species list used to sit inside `s.66`."""
+    text = """<<page 1>>
+66. Repeal and savings.—The Wild Life (Protection) Act, 1972 is amended.
+1[SCHEDULE \u2014 I
+(See sections 9, 11, 12 and 39)
+PART A: MAMMALS
+57. Alpine Musk Deer Moschus chrysogaster
+<<page 2>>
+1[SCHEDULE - H
+(See Rules 65 and 97)
+PRESCRIPTION DRUGS
+428. Rauwolfia, alkaloids of, their salts, derivatives of the alkaloids or rauwolfia
+<<page 3>>
+THE FIRST SCHEDULE.
+A list of the authoritative books of the Ayurvedic system of medicine.
+<<page 4>>
+1[SCHEDULE C (1)
+Biological and other special products to which special provisions apply.
+"""
+    units = parse_units(text, "statute")
+    assert [u.locator for u in units] == [
+        "s.66",
+        "Schedule I",
+        "Schedule H",
+        "First Schedule",
+        "Schedule C (1)",
+    ]
+    assert "Alpine Musk Deer" in units[1].text
+    assert "Rauwolfia" in units[2].text
+
+
+def test_schedules_plural_is_not_a_heading():
+    """`THE SCHEDULES` introduces the schedules; it is not one of them."""
+    text = """<<page 1>>
+66. Repeal and savings.—The Act is amended and this sentence is long enough to keep.
+THE SCHEDULES
+SCHEDULE OF FEES PAYABLE
+More text belonging to section 66 rather than to a schedule of its own.
+"""
+    assert [u.locator for u in parse_units(text, "statute")] == ["s.66"]

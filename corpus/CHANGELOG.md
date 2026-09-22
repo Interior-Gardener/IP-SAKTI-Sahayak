@@ -2,6 +2,21 @@
 
 Every change to `manifest.yaml` gets a line here: what changed, why, who checked it. Newest first.
 
+## 2026-09-21 — schedule headings become citable (re-chunk needed)
+
+- No source changed. The parser missed a schedule heading written with a dash separator, a trailing
+  full stop or bracket, or a space before a parenthesised part, so those schedules were swallowed by
+  the preceding section and could not be cited. `api/app/ingest/structure.py` now recognises all of
+  them (`SCHEDULE - H`, `SCHEDULE — I`, `THE FIRST SCHEDULE.`, `SCHEDULE G]`, `SCHEDULE C (1)`,
+  `SCHEDULE-E`), and `THE SCHEDULES` still is not a heading.
+- Effect on the three sources it touches, measured with `python api/scripts/locators.py`:
+  Wild Life Act 256 -> 255 chunks (the whole Schedule I species list moves out of `s.66` into
+  `Schedule I`); Drugs and Cosmetics Rules 553 -> 561 (Schedules C(1), D(III), F(II), F(III), G and
+  H — the prescription-drug list — become addressable, instead of hiding inside Schedule FF);
+  FSSAI Ayurveda Aahara gains `Schedule E`. The other 28 sources are unchanged, chunk for chunk.
+- **Run `python -m app.ingest run --no-ocr --rechunk` before the next eval**, or the database still
+  holds the old chunks and the golden item `in-wlpa-musk-49b` cannot hit `Schedule I`.
+
 ## 2026-09-17 — all 31 sources ingested
 
 - FSSAI Ayurveda Aahara Regulations switched to automatic download from FSSAI's archive host `stg-old.fssai.gov.in` (the main site serves its web app instead of the PDF).

@@ -1,8 +1,9 @@
-# Status and handover — 2026-09-19
+# Status and handover — 2026-09-21
 
 Where the build stands, what has actually been tested, what is known to be wrong, and how to
 pick it up on another machine. Task-by-task detail is in [TASKS.md](TASKS.md); the corpus
-provenance is in [SOURCES.md](SOURCES.md).
+provenance is in [SOURCES.md](SOURCES.md). The last batch of work, and where to see it in the
+website, is in [WHAT-CHANGED-2026-09-21.md](WHAT-CHANGED-2026-09-21.md).
 
 ## 1. What works today
 
@@ -17,10 +18,19 @@ provenance is in [SOURCES.md](SOURCES.md).
 - **Web**: Ask Sahayak drawer everywhere, `/sahayak` (two panes for India vs international),
   `/sources`, an "IP & Law" tab on all 30 plants, an IP line on the garden card and the walkable
   garden board, and a seal hotspot in the 3D plant viewer. The garden still works with the API down.
+- **Plant IP profiles**: 8 of 30 plants verified against the corpus (turmeric, neem, ashwagandha,
+  sandalwood, sarpagandha, guggulu, amla, tulsi). The other 22 stay honestly 'unknown'. Every
+  quoted provision is re-read from `corpus/normalised/` by `npm run check:ipr`, which CI runs.
 - **Tests**: 88 (`cd api && .venv/Scripts/python -m pytest -q`). CI runs web lint+build and API
-  ruff+pytest with Postgres.
+  ruff+pytest with Postgres, plus two cheap correctness gates that need no database or keys:
+  `npm run check:ipr` (every legal claim in the plant profiles) and
+  `python api/scripts/locators.py --check-golden` (every locator a golden eval item expects).
 
 ## 2. Measured quality (eval)
+
+> **The golden set grew from 46 to 102 items on 2026-09-21 and has not been run yet.** The numbers
+> below are the last measured ones, on the 46-item set. Treat them as the baseline to beat, not as
+> the current score; the new items cover eight sources that were never tested.
 
 Latest: **`eval/runs/2026-09-19-groq-hint-and-size.json` — all 46 items** (Groq
 `openai/gpt-oss-120b`, judge the same model). Full runs are possible because `GROQ_API_KEYS` holds
@@ -171,19 +181,29 @@ wait for the rolling reset, pay for Groq's Dev tier (a full run is worth a few c
 
 ## 7. Next steps, in the order I would do them
 
-1. Re-run the eval to measure the primary-law selection fix of 2026-09-18 (the citation retry is
-   already measured: false abstention 0.242 → 0.077). `python eval/run.py --provider groq`, or
-   resume the partial run — needs a key with quota.
+0. **Re-chunk first**: `python -m app.ingest run --no-ocr --rechunk`. The schedule-heading fix of
+   2026-09-21 changes three sources (see `corpus/CHANGELOG.md`), and until it runs the database
+   still holds the old chunks.
+1. **Run the eval on the 102-item set** (it was 46 when the last numbers were measured). Expect the
+   metrics to move: 31 of the new items are the first to touch the patent manual, the Designs Act,
+   the Cosmetics Rules, the NDCT Rules, the Consumer Protection Act, the Wild Life Act, the PCT and
+   the EU directive. `python eval/run.py --provider groq` — needs a key with quota, and the run is
+   now roughly twice as long, so `GROQ_API_KEYS` with several keys matters more than before.
 2. Click through the web UI in a browser against the running API (drawer, `/sahayak` two panes,
-   `/sources`, plant IP tab, 3D seal), and fix what looks wrong.
-3. Grow the golden set towards the planned ~120 items (now 46): more microbe/animal/mineral
-   items, more abstention items, more twins. Always check the expected provision against the
-   ingested text first (see `verified_by` in each item).
-4. Fill the plant IP profiles for the first 8 plants (T1.19/T1.20) — every field needs a citation
-   id or stays `unknown`.
+   `/sources`, plant IP tab and the new Wildlife / CITES row, 3D seal), and fix what looks wrong.
+3. T1.27: serve the eight verified profiles from `GET /materials/{kind}/{id}/ipr`. The web shows
+   them; the API still 404s, because nothing ever writes the `material_ipr` table.
+4. Finish the golden set: one more microbe/animal/mineral item and six more multilingual twins
+   (19 of the planned 25). Check every new item with
+   `python api/scripts/locators.py --check-golden` before trusting it.
 5. Add the missing sources listed in `corpus/CHANGELOG.md` (Trade Marks Rules 2017 first: answers
-   already want to cite it), then re-run ingest.
-6. Stage 2 proper: Rasashala scene, knowledge graph, agent loop, Workbench.
+   already want to cite it), then re-run ingest. The plant profiles are waiting on several of them —
+   GI register entries, patent records, the Ayurvedic Pharmacopoeia index, DGFT export policy.
+6. The other "verify" flags in `api/app/classify/rules.py` (Cosmetics Rules detail, the Rule 158B
+   evidence requirements, the NDCT approval data). The D&C Act `s.3(a)` one was cleared on
+   2026-09-21; the rest each need a reading of the provision, not just a locator check. Note the
+   Rule 158B table is the place a wrong answer came from once — read it by cell, not by line.
+7. Stage 2 proper: Rasashala scene, knowledge graph, agent loop, Workbench.
 
 ## 8. Rules that must not be broken
 
