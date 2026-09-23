@@ -11,12 +11,24 @@ import json
 import logging
 import os
 import re
+from collections.abc import Callable
 
-from groq import Groq, RateLimitError
+from groq import BadRequestError, Groq, RateLimitError
 from pydantic import BaseModel
 
 from app.llm import router
-from app.llm.base import CitedAnswer, Document, LLMProvider, RawCitation
+from app.llm.base import (
+    CUT_SHORT,
+    WRAP_UP_SYSTEM,
+    CitedAnswer,
+    Document,
+    LLMProvider,
+    RawCitation,
+    ToolInvocation,
+    ToolRun,
+    ToolSpec,
+    wrap_up_prompt,
+)
 
 # Markers as models actually write them. Seen from gpt-oss-120b: the "c:" prefix left out,
 # a single closing "]", and its native full-width brackets 【c:39|"..."】.
@@ -107,6 +119,96 @@ class GroqProvider(LLMProvider):
                 daily = "per day" in str(e) or "TPD" in str(e) or "RPD" in str(e)
                 if not (daily and self._next_key()):
                     raise
+
+    def _chat_message(self, messages: list[dict], max_tokens: int, **kwargs):
+        """The same call as `_chat`, returning the whole message: a tool call
+        carries no content, so the text-only path cannot be reused for it."""
+        while True:
+            try:
+                response = self.client.chat.completions.create(
+                    model=self.model, messages=messages, max_tokens=max_tokens, **kwargs
+                )
+                return response.choices[0].message
+            except RateLimitError as e:
+                daily = "per day" in str(e) or "TPD" in str(e) or "RPD" in str(e)
+                if not (daily and self._next_key()):
+                    raise
+
+    def tool_loop(
+        self,
+        system: str,
+        prompt: str,
+        tools: list[ToolSpec],
+        execute: Callable[[str, dict], str],
+        max_iterations: int = 6,
+    ) -> ToolRun:
+        """OpenAI-shaped tool calling: the model answers with `tool_calls`, each
+        result goes back as a `tool` message, and the loop ends when it answers
+        in words instead — or when the cap is reached, which is recorded."""
+        payload = [
+            {
+                "type": "function",
+                "function": {
+                    "name": t.name,
+                    "description": t.description,
+                    "parameters": t.parameters,
+                },
+            }
+            for t in tools
+        ]
+        messages: list[dict] = [
+            {"role": "system", "content": system},
+            {"role": "user", "content": prompt},
+        ]
+        run = ToolRun(text="", model=self.model)
+        for _ in range(max_iterations):
+            message = self._chat_message(messages, 2048, tools=payload, tool_choice="auto")
+            calls = getattr(message, "tool_calls", None) or []
+            if not calls:
+                run.text = message.content or ""
+                return run
+            messages.append(
+                {
+                    "role": "assistant",
+                    "content": message.content or "",
+                    "tool_calls": [
+                        {
+                            "id": c.id,
+                            "type": "function",
+                            "function": {
+                                "name": c.function.name,
+                                "arguments": c.function.arguments,
+                            },
+                        }
+                        for c in calls
+                    ],
+                }
+            )
+            for call in calls:
+                try:
+                    args = json.loads(call.function.arguments or "{}")
+                except json.JSONDecodeError:
+                    args = {}
+                result = execute(call.function.name, args)
+                run.calls.append(ToolInvocation(call.function.name, args, result))
+                messages.append({"role": "tool", "tool_call_id": call.id, "content": result})
+        # Out of iterations: ask once for what it has, and say it was cut short.
+        run.truncated = True
+        run.text = self._wrap_up(system, wrap_up_prompt(prompt, run.calls))
+        return run
+
+    def _wrap_up(self, system: str, notes: str) -> str:
+        """The capped loop's last answer. gpt-oss sometimes answers even a
+        tool-free request with a tool call, which Groq returns as a 400
+        (`tool_use_failed`); one retry usually lands, and if it does not the
+        caller gets an honest "cut short" rather than an exception."""
+        for _ in range(2):
+            try:
+                return self.complete(system + WRAP_UP_SYSTEM, notes, 1024)
+            except BadRequestError as e:
+                if "tool_use_failed" not in str(e):
+                    raise
+        return CUT_SHORT
 
     def complete(self, system: str, prompt: str, max_tokens: int = 1024) -> str:
         return self._chat(

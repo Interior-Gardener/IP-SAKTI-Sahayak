@@ -177,6 +177,7 @@ def main() -> int:
     from app import services
     from app.ask.pipeline import AskRequest, Services, run
     from app.db import SessionLocal
+    from app.graph.expand import linked_entities
     from app.retrieval.hybrid import search
 
     files = args.files or sorted(GOLDEN.glob("*.jsonl"))
@@ -237,9 +238,19 @@ def main() -> int:
         if item.category == "in_scope" and item.expected and item.language == "en":
             with SessionLocal() as session:
                 found = []
+                # The same inputs /ask gives search, graph entities included:
+                # scored without them, retrieval measured a search the product
+                # never runs.
+                entities = linked_entities(session, item.question)
                 for j, exp in item.expected.items():
                     hits = search(
-                        session, item.question, j, embedder, reranker, top_k=8
+                        session,
+                        item.question,
+                        j,
+                        embedder,
+                        reranker,
+                        top_k=8,
+                        entities=entities,
                     )
                     found.append(
                         any(hit_expected(exp, h.source_id, h.locator) for h in hits)

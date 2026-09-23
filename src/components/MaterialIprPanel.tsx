@@ -1,5 +1,6 @@
 import type { MaterialIPProfile } from '../types/material'
 import { openSahayak } from '../lib/sahayak/client'
+import { useWorkbench } from '../store/useWorkbench'
 import { priorArtLinks } from '../lib/priorArt'
 import { Icon } from './ui/Icon'
 import { Button, cx } from './ui/primitives'
@@ -51,6 +52,8 @@ export function MaterialIprPanel({
   const verified = profile.lastVerified !== null
   const ask = (question: string) =>
     openSahayak({ question, context: [{ kind: profile.kind, id: materialId, label: name }] })
+  const addToBench = useWorkbench((s) => s.add)
+  const onBench = useWorkbench((s) => s.items.some((i) => i.id === materialId))
 
   return (
     <div className="space-y-5">
@@ -146,6 +149,16 @@ export function MaterialIprPanel({
         </Button>
         <Button size="sm" onClick={() => ask(`Do I need biodiversity approval to use ${name} commercially?`)}>
           Biodiversity approval?
+        </Button>
+        {/* The bench is where a question stops being about one ingredient and
+            starts being about a product. */}
+        <Button
+          size="sm"
+          icon={onBench ? 'check' : 'plus'}
+          onClick={() => addToBench({ kind: profile.kind, id: materialId, label: name })}
+          disabled={onBench}
+        >
+          {onBench ? 'On the workbench' : 'Add to workbench'}
         </Button>
       </div>
 

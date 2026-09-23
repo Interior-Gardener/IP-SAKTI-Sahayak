@@ -9,8 +9,11 @@ import { useCalmMotion } from './components/motion/Reveal'
 const Gateway = lazy(() => import('./routes/Gateway'))
 const Garden = lazy(() => import('./routes/Garden'))
 const MedicinalGarden = lazy(() => import('./routes/MedicinalGarden'))
+const Rasashala = lazy(() => import('./routes/Rasashala'))
+const Workbench = lazy(() => import('./routes/Workbench'))
 const TourPage = lazy(() => import('./routes/TourPage'))
 const PlantPage = lazy(() => import('./routes/PlantPage'))
+const MaterialPage = lazy(() => import('./routes/MaterialPage'))
 const Explore = lazy(() => import('./routes/Explore'))
 const Tours = lazy(() => import('./routes/Tours'))
 const MyGarden = lazy(() => import('./routes/MyGarden'))
@@ -40,6 +43,8 @@ function skipsPageFade(pathname: string) {
     pathname === '/' ||
     pathname === '/garden' ||
     pathname === '/medicinal-garden' ||
+    pathname === '/rasashala' ||
+    pathname === '/workbench' ||
     pathname === '/quiz' ||
     pathname.startsWith('/tours/')
   )
@@ -69,10 +74,13 @@ function AnimatedRoutes() {
             <Route path="/" element={<Gateway />} />
             <Route path="/garden" element={<Garden />} />
             <Route path="/medicinal-garden" element={<MedicinalGarden />} />
+            <Route path="/rasashala" element={<Rasashala />} />
+            <Route path="/workbench" element={<Workbench />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/atlas" element={<Atlas />} />
             <Route path="/compare" element={<Compare />} />
             <Route path="/plant/:id" element={<PlantPage />} />
+            <Route path="/material/:id" element={<MaterialPage />} />
             <Route path="/tours" element={<Tours />} />
             <Route path="/tours/:id" element={<TourPage />} />
             <Route path="/my-garden" element={<MyGarden />} />

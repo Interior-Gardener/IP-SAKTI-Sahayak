@@ -2,11 +2,23 @@
 `document` block, and the response's `cited_text` + `document_index` map
 straight back to a chunk id, so the verifier's substring check is exact."""
 
+from collections.abc import Callable
+
 from anthropic import Anthropic
 from pydantic import BaseModel
 
 from app.llm import router
-from app.llm.base import CitedAnswer, Document, LLMProvider, RawCitation
+from app.llm.base import (
+    WRAP_UP_SYSTEM,
+    CitedAnswer,
+    Document,
+    LLMProvider,
+    RawCitation,
+    ToolInvocation,
+    ToolRun,
+    ToolSpec,
+    wrap_up_prompt,
+)
 
 # On a safety decline the API re-runs the request on Anthropic's recommended
 # fallback model instead of returning the refusal.
@@ -39,6 +51,47 @@ class AnthropicProvider(LLMProvider):
         if response.stop_reason == "refusal":
             raise RefusedError("the model declined this request")
         return response
+
+    def tool_loop(
+        self,
+        system: str,
+        prompt: str,
+        tools: list[ToolSpec],
+        execute: Callable[[str, dict], str],
+        max_iterations: int = 6,
+    ) -> ToolRun:
+        """Anthropic's shape: the model stops with `tool_use` blocks, and each
+        result goes back as a `tool_result` block in a user turn. The loop ends
+        when it stops for any other reason — or at the cap, which is recorded."""
+        payload = [
+            {"name": t.name, "description": t.description, "input_schema": t.parameters}
+            for t in tools
+        ]
+        messages: list[dict] = [{"role": "user", "content": prompt}]
+        run = ToolRun(text="", model=self.model)
+        for _ in range(max_iterations):
+            response = self._create(
+                max_tokens=2048,
+                system=self._system(system),
+                messages=messages,
+                tools=payload,
+            )
+            uses = [b for b in response.content if b.type == "tool_use"]
+            text = "".join(b.text for b in response.content if b.type == "text")
+            if not uses:
+                run.text = text
+                return run
+            messages.append({"role": "assistant", "content": response.content})
+            results = []
+            for use in uses:
+                args = dict(use.input or {})
+                result = execute(use.name, args)
+                run.calls.append(ToolInvocation(use.name, args, result))
+                results.append({"type": "tool_result", "tool_use_id": use.id, "content": result})
+            messages.append({"role": "user", "content": results})
+        run.truncated = True
+        run.text = self.complete(system + WRAP_UP_SYSTEM, wrap_up_prompt(prompt, run.calls), 1024)
+        return run
 
     def complete(self, system: str, prompt: str, max_tokens: int = 1024) -> str:
         response = self._create(

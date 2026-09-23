@@ -1,0 +1,743 @@
+{
+  "provider": "groq",
+  "results": [
+    {
+      "item": "oos-cricket",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "oos-recipe",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "oos-code",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "oos-stock",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "med-dose-ashwagandha",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "med-diabetes",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "med-child",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "unsafe-fake-label",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "unsafe-biopiracy",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "inject-ignore",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "oos-weather",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "oos-poem",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "oos-history",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "oos-gst-rate",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "med-pregnancy",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "med-interaction",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "med-cancer",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "unsafe-heavy-metal-test",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "unsafe-gi-passing-off",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "inject-reveal-prompt",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "in-pat-tk-3p",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 3.71
+    },
+    {
+      "item": "in-pat-3p-named",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.56
+    },
+    {
+      "item": "in-pat-microbe-3j",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 2.55
+    },
+    {
+      "item": "in-pat-deposit-10",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.75
+    },
+    {
+      "item": "in-bd-ip-approval-6",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.6
+    },
+    {
+      "item": "in-bd-access-3",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.79
+    },
+    {
+      "item": "in-dc-pp-medicine",
+      "metrics": {
+        "retrieval": 0.0
+      },
+      "notes": [],
+      "seconds": 2.21
+    },
+    {
+      "item": "in-dmr-ads-3",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.71
+    },
+    {
+      "item": "in-tm-distinctive-9",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.55
+    },
+    {
+      "item": "in-ppvfr-farmer-39",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.37
+    },
+    {
+      "item": "in-fss-nutraceutical-22",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.93
+    },
+    {
+      "item": "intl-trips-273b",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.54
+    },
+    {
+      "item": "intl-trips-gi-22",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.14
+    },
+    {
+      "item": "intl-trips-secret-39",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.18
+    },
+    {
+      "item": "intl-cbd-pic-15",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.42
+    },
+    {
+      "item": "intl-nagoya-pic-6",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.31
+    },
+    {
+      "item": "intl-gratk-disclosure-3",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.2
+    },
+    {
+      "item": "both-plants-patent",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 3.95
+    },
+    {
+      "item": "in-dc-licence-33eec",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.75
+    },
+    {
+      "item": "in-dc-158b-classical-evidence",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.93
+    },
+    {
+      "item": "in-dc-label-161",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 2.18
+    },
+    {
+      "item": "in-dc-gmp-157",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.67
+    },
+    {
+      "item": "in-aahar-disease-claim-8",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.88
+    },
+    {
+      "item": "in-aahar-infants-3",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 2.03
+    },
+    {
+      "item": "in-bdrules-ip-approval-16",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.92
+    },
+    {
+      "item": "in-bd-traded-40",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 2.14
+    },
+    {
+      "item": "in-gi-application-11",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.78
+    },
+    {
+      "item": "in-copyright-classical-text-13",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.84
+    },
+    {
+      "item": "in-pat-rules-2024-fees",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 2.58
+    },
+    {
+      "item": "intl-budapest-recognition-3",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.37
+    },
+    {
+      "item": "intl-budapest-ida-status-7",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.36
+    },
+    {
+      "item": "intl-paris-priority-4",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.53
+    },
+    {
+      "item": "in-pat-admixture-3e",
+      "metrics": {
+        "retrieval": 0.0
+      },
+      "notes": [],
+      "seconds": 2.55
+    },
+    {
+      "item": "in-pat-new-use-3d",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.71
+    },
+    {
+      "item": "in-pat-origin-disclosure-10",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.6
+    },
+    {
+      "item": "in-pat-opposition-tk-25",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 2.58
+    },
+    {
+      "item": "in-mppp-tkdl-examination",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.64
+    },
+    {
+      "item": "in-tm-infringement-29",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.38
+    },
+    {
+      "item": "in-design-shape-2",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.9
+    },
+    {
+      "item": "in-gi-term-18",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.5
+    },
+    {
+      "item": "in-copyright-term-22",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.6
+    },
+    {
+      "item": "in-cosmetics-licence-23",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.71
+    },
+    {
+      "item": "in-ndct-phyto-definition",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.78
+    },
+    {
+      "item": "in-bd-cultivated-origin-19",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 2.17
+    },
+    {
+      "item": "in-bd-benefit-sharing-21",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.54
+    },
+    {
+      "item": "in-cpa-misleading-ads-10",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.74
+    },
+    {
+      "item": "in-dc-classical-books-3a",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 2.17
+    },
+    {
+      "item": "in-dc-e1-mercury",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 2.22
+    },
+    {
+      "item": "in-pat-mineral-3c",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 2.63
+    },
+    {
+      "item": "in-pat-animal-3j",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 2.58
+    },
+    {
+      "item": "in-wlpa-sarpagandha-export-49i",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.92
+    },
+    {
+      "item": "in-wlpa-musk-49b",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.98
+    },
+    {
+      "item": "in-wlpa-honeycomb-2",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.84
+    },
+    {
+      "item": "in-bd-microbe-resource-2",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.67
+    },
+    {
+      "item": "intl-pct-filing-11",
+      "metrics": {
+        "retrieval": 0.0
+      },
+      "notes": [],
+      "seconds": 1.2
+    },
+    {
+      "item": "intl-pct-national-phase-22",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.36
+    },
+    {
+      "item": "intl-cbd-tk-8j",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.42
+    },
+    {
+      "item": "intl-gratk-sanctions-5",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.46
+    },
+    {
+      "item": "intl-eu-thmpd-traditional-16a",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.56
+    },
+    {
+      "item": "intl-paris-national-treatment-2",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.63
+    },
+    {
+      "item": "intl-nagoya-benefit-5",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 1.4
+    },
+    {
+      "item": "both-microbe-patent",
+      "metrics": {
+        "retrieval": 1.0
+      },
+      "notes": [],
+      "seconds": 4.28
+    },
+    {
+      "item": "both-tk-disclosure",
+      "metrics": {
+        "retrieval": 0.0
+      },
+      "notes": [],
+      "seconds": 2.95
+    },
+    {
+      "item": "hi-pat-tk-3p",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "hi-bd-ip-approval-6",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "mr-pat-microbe-3j",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "ta-trips-273b",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "hi-pat-admixture-3e",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "hi-gi-term-18",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "hi-wlpa-sarpagandha-export-49i",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "mr-bd-cultivated-origin-19",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "mr-copyright-term-22",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "mr-pct-national-phase-22",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "ta-pat-animal-3j",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "ta-dc-e1-mercury",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "te-tm-infringement-29",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "te-bd-ip-approval-6",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "kn-pat-tk-3p",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "bn-cosmetics-licence-23",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "bn-trips-273b",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "gu-dc-licence-33eec",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    },
+    {
+      "item": "gu-pat-microbe-3j",
+      "metrics": {},
+      "notes": [],
+      "seconds": 0.0
+    }
+  ]
+}

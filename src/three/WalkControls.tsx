@@ -137,9 +137,22 @@ function resolve(
 
 /** The minimum a scene must say about a specimen for it to be aimed at. */
 export interface WalkTarget {
-  plant: Plant
+  /** A plant to aim at. Kept for the garden, which places plants. */
+  plant?: Plant
+  /** Anything else that can be met on foot — a vat, a shelf, a specimen jar.
+   *  Give it an id and how tall it stands; the capsule is built from that. */
+  id?: string
+  height?: number
   position: [number, number, number]
   scale: number
+}
+
+/** Where the aim capsule starts. A plant grows from the ground, so the garden
+ *  never sets this; a pot on a bench does not, and a capsule drawn from the
+ *  floor for it sits entirely below the crosshair, which is why nothing on a
+ *  bench could be aimed at before. */
+function baseOf(target: WalkTarget): number {
+  return target.plant ? 0 : target.position[1]
 }
 
 /**
@@ -210,15 +223,19 @@ export function WalkControls({
    * lands on a leaf reads as broken rather than precise. */
   const targets = useMemo(
     () =>
-      placements.map(({ plant, position, scale }) => {
-        const height = plant.model.height * scale
+      placements.map((target) => {
+        const { plant, id, height: given, position, scale } = target
+        const height = (plant ? plant.model.height : (given ?? 1)) * scale
+        const base = baseOf(target)
         return {
-          id: plant.id,
+          id: plant ? plant.id : (id ?? ''),
           board: false,
           x: position[0],
           z: position[2],
-          bottom: -0.1,
-          top: height + 0.25,
+          bottom: base - 0.1,
+          // A small thing on a bench needs a little more room than its own
+          // height, or the crosshair has to be dead on it to register.
+          top: base + height + Math.max(0.25, 0.5 - height),
           radius: THREE.MathUtils.clamp(height * 0.36, 0.34, 1),
         }
       }),

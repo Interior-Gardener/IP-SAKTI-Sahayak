@@ -2,6 +2,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { plants } from '../data/plants'
 import { tours } from '../data/tours'
+import { materials } from '../data/materials'
+import { KIND_LABEL, materialMatches } from '../lib/materialFlags'
 import { emptyFilters, searchPlants } from '../lib/search'
 import { BotanicalPlate } from './BotanicalPlate'
 import { Icon, type IconName } from './ui/Icon'
@@ -11,7 +13,7 @@ import { openSahayak } from '../lib/sahayak/client'
 
 interface Result {
   id: string
-  kind: 'plant' | 'tour' | 'page' | 'ask'
+  kind: 'plant' | 'material' | 'tour' | 'page' | 'ask'
   title: string
   subtitle: string
   to: string
@@ -22,6 +24,9 @@ interface Result {
 const PAGES: Result[] = [
   { id: 'p-garden', kind: 'page', title: 'The Garden', subtitle: 'Walk the 3D beds', to: '/garden', icon: 'map' },
   { id: 'p-explore', kind: 'page', title: 'Explore all plants', subtitle: 'Search and filter the compendium', to: '/explore', icon: 'grid' },
+  { id: 'p-rasashala', kind: 'page', title: 'The Rasashala', subtitle: 'Microbes, animal products and minerals, in 3D', to: '/rasashala', icon: 'flask' },
+  { id: 'p-materials', kind: 'page', title: 'Explore the materials', subtitle: 'The Rasashala in the compendium', to: '/explore?set=materials', icon: 'grid' },
+  { id: 'p-workbench', kind: 'page', title: 'The Workbench', subtitle: 'Compose a formulation and classify it', to: '/workbench', icon: 'flask' },
   { id: 'p-atlas', kind: 'page', title: 'The Atlas', subtitle: 'The whole collection read as data', to: '/atlas', icon: 'layers' },
   { id: 'p-compare', kind: 'page', title: 'Comparison bench', subtitle: 'Put two or three plants side by side', to: '/compare', icon: 'expand' },
   { id: 'p-tours', kind: 'page', title: 'Guided tours', subtitle: 'Themed walks with narration', to: '/tours', icon: 'route' },
@@ -74,6 +79,18 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
       plantId: p.id,
     }))
 
+    const materialResults = materials
+      .filter((m) => materialMatches(m, trimmed))
+      .slice(0, 4)
+      .map<Result>((m) => ({
+        id: `m-${m.id}`,
+        kind: 'material',
+        title: m.name,
+        subtitle: `${KIND_LABEL[m.kind]} · ${m.scientific ?? m.sanskrit ?? ''}`,
+        to: `/material/${m.id}`,
+        icon: 'flask',
+      }))
+
     const tourResults = tours
       .filter((t) => `${t.title} ${t.theme} ${t.subtitle}`.toLowerCase().includes(trimmed.toLowerCase()))
       .slice(0, 3)
@@ -94,7 +111,7 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
         ? [{ id: 'ask', kind: 'ask', title: `Ask Sahayak: ${trimmed}`, subtitle: 'IP and regulatory answer with sources', to: '/sahayak', icon: 'scale' }]
         : []
 
-    return [...plantResults, ...tourResults, ...pageResults, ...askResult]
+    return [...plantResults, ...materialResults, ...tourResults, ...pageResults, ...askResult]
   }, [query, bookmarks, visited])
 
   useEffect(() => {

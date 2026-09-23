@@ -8,6 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "check:ipr": "node scripts/check-ipr-cites.mjs",
+    "check:3d": "node scripts/check-procedural.mjs",
+    "export:ipr": "node scripts/export-ipr.mjs",
+    "check:export": "node scripts/export-ipr.mjs --check",
     "preview": "vite preview",
     "gen:api": "openapi-typescript api/openapi.json -o src/types/sahayak.ts"
   },
@@ -28,6 +31,7 @@
     "@types/react-dom": "^19.2.3",
     "@types/three": "^0.185.4",
     "@vitejs/plugin-react": "^6.0.4",
+    "jiti": "^2.7.0",
     "openapi-typescript": "^7.13.0",
     "oxlint": "^1.75.0",
     "tailwindcss": "^4.3.3",

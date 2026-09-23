@@ -7,6 +7,10 @@ import { RASAS, rasaProfile, viryaOf, vipakaOf } from '../lib/ayurveda'
 import { IndiaMap } from '../components/viz/IndiaMap'
 import { Constellation } from '../components/viz/Constellation'
 import { ConservationLadder } from '../components/viz/ConservationLadder'
+import { MaterialLawMatrix } from '../components/viz/MaterialLawMatrix'
+import { MaterialThumb } from '../components/MaterialCard'
+import { SHELVES, materials, materialsOnShelf } from '../data/materials'
+import { KIND_LABEL, KIND_TONE, legalFlags } from '../lib/materialFlags'
 import { Counter, Reveal, StaggerWords } from '../components/motion/Reveal'
 import { Button } from '../components/ui/primitives'
 import { Icon } from '../components/ui/Icon'
@@ -171,7 +175,8 @@ export default function Atlas() {
         </h1>
         <p className="mt-4 max-w-2xl text-[1.02rem] leading-relaxed text-ink-soft text-balance-pretty">
           These species carry a great deal more than their names. Here is what the collection looks like when you
-          ask it where it grows, what it treats, how it tastes, and how much of it is still safe in the wild.
+          ask it where it grows, what it treats, how it tastes, how much of it is still safe in the wild — and, for
+          the Rasashala's microbes, animal products and minerals, which laws reach them.
         </p>
       </header>
 
@@ -295,6 +300,84 @@ export default function Atlas() {
           }
         >
           <ConservationLadder />
+        </Panel>
+
+        {/* ---------------------------- rasashala ---------------------------- */}
+        <Panel
+          eyebrow="Beyond the plants"
+          title="The Rasashala, and the law that reaches it"
+          lede="The problem statement asks for microbial, animal and mineral sources as well as herbs. They stand in the Rasashala, each drawn in 3D and each with a cited legal layer — and the law treats the three kinds very differently."
+          aside={
+            <div className="flex flex-wrap gap-2">
+              <Link to="/rasashala">
+                <Button variant="secondary" size="sm" icon="flask">
+                  Walk the Rasashala
+                </Button>
+              </Link>
+              <Link to="/explore?set=materials">
+                <Button variant="secondary" size="sm" iconRight="arrowRight">
+                  All {materials.length} materials
+                </Button>
+              </Link>
+            </div>
+          }
+        >
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {SHELVES.map((shelf, i) => {
+              const members = materialsOnShelf(shelf.id)
+              return (
+                <Reveal key={shelf.id} delay={i * 0.05}>
+                  <Link
+                    to="/rasashala"
+                    className="group block h-full rounded-3xl border border-line bg-surface p-4 transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
+                  >
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-display text-[1.02rem] font-semibold">{shelf.title}</h3>
+                      <span className="ml-auto text-[0.72rem] text-ink-faint tabular-nums">{members.length}</span>
+                    </div>
+                    <p className="mt-1 text-[0.78rem] leading-snug text-ink-soft text-balance-pretty">{shelf.blurb}</p>
+                    <div className="mt-3 flex -space-x-2">
+                      {members.slice(0, 6).map((m) => (
+                        <span
+                          key={m.id}
+                          className="grid size-10 place-items-center overflow-hidden rounded-full border-2 border-[var(--surface)]"
+                          style={{ background: `color-mix(in srgb, ${KIND_TONE[m.kind]} 14%, var(--surface-sunken))` }}
+                          title={m.name}
+                        >
+                          <MaterialThumb material={m} className="size-10 object-contain" />
+                        </span>
+                      ))}
+                    </div>
+                  </Link>
+                </Reveal>
+              )
+            })}
+          </div>
+
+          <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)]">
+            <div className="space-y-4">
+              {(['microbe', 'animal', 'mineral'] as const).map((kind) => {
+                const ofKind = materials.filter((m) => m.kind === kind)
+                const flagged = ofKind.filter((m) => legalFlags(m.ipr).some((f) => ['scheduleE1', 'wildlife', 'cites', 'exportRestricted'].includes(f.key))).length
+                return (
+                  <div key={kind} className="rounded-2xl bg-sunken p-4" style={{ borderLeft: `3px solid ${KIND_TONE[kind]}` }}>
+                    <p className="font-display text-[1.6rem] leading-none font-semibold" style={{ color: KIND_TONE[kind] }}>
+                      {ofKind.length}
+                    </p>
+                    <p className="mt-1 text-[0.82rem] font-medium">{KIND_LABEL[kind]}</p>
+                    <p className="mt-0.5 text-[0.72rem] text-ink-faint">
+                      {flagged} carry a schedule, listing or export restriction
+                    </p>
+                  </div>
+                )
+              })}
+              <p className="text-[0.72rem] leading-relaxed text-ink-faint text-balance-pretty">
+                A dot is a verified provision with its source id; hover it to read which. A blank means nothing is
+                recorded, which is not the same as nothing applying.
+              </p>
+            </div>
+            <MaterialLawMatrix />
+          </div>
         </Panel>
 
         {/* ------------------------------- beds ------------------------------- */}

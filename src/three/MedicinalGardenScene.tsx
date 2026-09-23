@@ -16,6 +16,7 @@ import { buildLeafGeometry } from './procedural/leaf'
 import { useGarden } from '../store/useGarden'
 import { makeRng, hashSeed } from './procedural/rng'
 import { WalkControls, type Obstacle } from './WalkControls'
+import { GroundPlane, LabelBoard, useGrain, type BoardRead } from './scenery'
 import type { Plant } from '../types/plant'
 import { asset } from '../lib/asset'
 
@@ -71,104 +72,6 @@ const PLAQUE_LIFT = 0.06
 const plaqueOccluder: RefObject<THREE.Object3D | null> = { current: null }
 const HEDGE_DARK = '#1b2d1a'
 
-/**
- * A fine speckle, tiled across the lawn and the soil.
- *
- * Neither surface is a painted slab in the photographs — laterite is
- * grainy and blotchy where it has been turned over, and mown grass is
- * never one flat green — but a plain coloured plane is exactly what a
- * slab looks like. One 512px canvas, generated once and tinted by each
- * material's own colour, breaks both of them up for a single texture
- * fetch. The speckle is drawn near-white so it multiplies into whatever
- * colour it is laid under.
- */
-let noiseCache: THREE.CanvasTexture | null = null
-function groundNoise(): THREE.CanvasTexture {
-  if (noiseCache) return noiseCache
-  const size = 512
-  const canvas = document.createElement('canvas')
-  canvas.width = size
-  canvas.height = size
-  const ctx = canvas.getContext('2d')!
-  const rng = makeRng(hashSeed('vanaspatyam-grain'))
-
-  ctx.fillStyle = '#ffffff'
-  ctx.fillRect(0, 0, size, size)
-
-  // Wraps every mark round the edges, so the tile joins itself invisibly.
-  const stamp = (draw: (dx: number, dy: number) => void, x: number, y: number, r: number) => {
-    for (const ox of x < r ? [0, size] : x > size - r ? [0, -size] : [0]) {
-      for (const oy of y < r ? [0, size] : y > size - r ? [0, -size] : [0]) draw(ox, oy)
-    }
-  }
-
-  /**
-   * Broad mottling: damp patches and worn ground.
-   *
-   * Every mark fades to nothing at its rim. A hard-edged ellipse reads as a
-   * drawn circle rather than a patch of damp, and once the tile repeats you
-   * see a lattice of them — which is exactly what the first cut of this did.
-   * Small, faint and numerous beats large, dark and few for the same reason.
-   */
-  for (let i = 0; i < 260; i++) {
-    const x = rng.next() * size
-    const y = rng.next() * size
-    const r = rng.range(10, 38)
-    const dark = rng.next() > 0.45
-    const alpha = rng.range(0.018, 0.055)
-    stamp(
-      (dx, dy) => {
-        const g = ctx.createRadialGradient(x + dx, y + dy, 0, x + dx, y + dy, r)
-        const rgb = dark ? '0, 0, 0' : '255, 255, 255'
-        g.addColorStop(0, `rgba(${rgb}, ${alpha})`)
-        g.addColorStop(0.55, `rgba(${rgb}, ${alpha * 0.55})`)
-        g.addColorStop(1, `rgba(${rgb}, 0)`)
-        ctx.fillStyle = g
-        ctx.fillRect(x + dx - r, y + dy - r, r * 2, r * 2)
-      },
-      x,
-      y,
-      r,
-    )
-  }
-
-  // Grain: grit in the soil, blade shadow in the turf.
-  for (let i = 0; i < 22000; i++) {
-    const x = rng.next() * size
-    const y = rng.next() * size
-    const w = rng.range(1, 3.4)
-    ctx.globalAlpha = rng.range(0.05, 0.18)
-    ctx.fillStyle = rng.next() > 0.45 ? '#000000' : '#ffffff'
-    stamp((dx, dy) => ctx.fillRect(x + dx, y + dy, w, rng.range(1, 2.2)), x, y, 4)
-  }
-  ctx.globalAlpha = 1
-
-  const texture = new THREE.CanvasTexture(canvas)
-  texture.wrapS = THREE.RepeatWrapping
-  texture.wrapT = THREE.RepeatWrapping
-  texture.anisotropy = 4
-  texture.colorSpace = THREE.SRGBColorSpace
-  noiseCache = texture
-  return texture
-}
-
-/**
- * The grain above, repeated once per `tile` metres over a surface. Clones
- * share the one canvas; `seed` slides each surface to its own corner of
- * the tile so two beds of the same size don't come out identically dug.
- */
-function useGrain(width: number, depth: number, tile = 1.6, seed = ''): THREE.Texture {
-  return useMemo(() => {
-    const texture = groundNoise().clone()
-    texture.needsUpdate = true
-    texture.repeat.set(width / tile, depth / tile)
-    if (seed) {
-      const rng = makeRng(hashSeed(`grain-${seed}`))
-      texture.offset.set(rng.next(), rng.next())
-    }
-    return texture
-  }, [width, depth, tile, seed])
-}
 
 function WindClock({ strength }: { strength: number }) {
   useFrame(({ clock }) => tickWind(clock.elapsedTime, strength))
@@ -356,14 +259,8 @@ function Weeds({ dark, detail }: { dark: boolean; detail: Detail }) {
 
 /** Ground: mown grass over the whole plot, with the beds cut into it. */
 function Ground({ dark }: { dark: boolean }) {
-  const width = GARDEN.width + 14
-  const depth = GARDEN.length + 14
-  const grain = useGrain(width, depth, 3.4)
   return (
-    <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow position={[0, 0, 0]}>
-      <planeGeometry args={[width, depth]} />
-      <meshStandardMaterial map={grain} color={dark ? '#22301f' : '#6f8a4e'} roughness={1} />
-    </mesh>
+    <GroundPlane width={GARDEN.width + 14} depth={GARDEN.length + 14} color={dark ? '#22301f' : '#6f8a4e'} />
   )
 }
 
@@ -457,12 +354,9 @@ function Bed({ plot, dark }: { plot: GardenBedPlot; dark: boolean }) {
   )
 }
 
-/**
- * What a board reports when the pointer is on it: which plant it names,
- * and where on screen to hang the printed card. Null means the pointer
- * has left every board.
- */
-export type BoardRead = (plantId: string | null, clientX?: number, clientY?: number) => void
+/* What a board reports when the pointer is on it now lives with the board
+ * itself, in ./scenery; re-exported here so the route's import is unchanged. */
+export type { BoardRead } from './scenery'
 
 /**
  * The same, for the dedication plaque, which names no plant: whether the
@@ -476,93 +370,6 @@ export type PlaqueRead = (on: boolean, clientX?: number, clientY?: number) => vo
  * through the bed boards' machinery rather than a second set of it.
  */
 export const PLAQUE_BOARD_ID = '__plaque'
-
-/**
- * The label board: a white plate raked back on a single black post, the
- * prop that makes the place recognisable more than any plant does.
- *
- * Reading one on the ground means walking up and squinting at the print,
- * so reading one here means holding the pointer on it: `onRead` fires
- * and the route raises the full board card over the scene.
- */
-function LabelBoard({
-  position,
-  rotation,
-  plant,
-  dark,
-  showText,
-  onRead,
-}: {
-  position: [number, number, number]
-  rotation: number
-  plant: Plant
-  dark: boolean
-  showText: boolean
-  onRead?: BoardRead
-}) {
-  return (
-    <group position={position} rotation={[0, rotation, 0]}>
-      <mesh position={[0, 0.34, 0]} castShadow>
-        <cylinderGeometry args={[0.028, 0.028, 0.68, 6]} />
-        <meshStandardMaterial color={dark ? '#15181a' : '#2b2f31'} roughness={0.7} metalness={0.3} />
-      </mesh>
-      <group position={[0, 0.72, 0]} rotation={[-Math.PI / 3.1, 0, 0]}>
-        {/* The plate carries the pointer events for the whole board — the
-            orange rule in front of it is taken out of the raycast below so
-            crossing it cannot read as leaving the board. */}
-        <mesh
-          castShadow
-          onPointerOver={
-            onRead
-              ? (e) => {
-                  e.stopPropagation()
-                  onRead(plant.id, e.clientX, e.clientY)
-                }
-              : undefined
-          }
-          onPointerMove={
-            onRead
-              ? (e) => {
-                  e.stopPropagation()
-                  onRead(plant.id, e.clientX, e.clientY)
-                }
-              : undefined
-          }
-          onPointerOut={onRead ? () => onRead(null) : undefined}
-        >
-          <boxGeometry args={[0.62, 0.42, 0.02]} />
-          <meshStandardMaterial color={dark ? '#7d8288' : '#eceae2'} roughness={0.55} />
-        </mesh>
-        {/* The orange rule across every board on site. */}
-        <mesh position={[0, -0.03, 0.012]} raycast={() => null}>
-          <planeGeometry args={[0.62, 0.045]} />
-          <meshStandardMaterial color="#e2762c" roughness={0.6} />
-        </mesh>
-        {showText && (
-          <Html
-            position={[0, 0.09, 0.014]}
-            transform
-            distanceFactor={2.6}
-            zIndexRange={[8, 0]}
-            /* Hidden outright when the plaque is between it and the camera —
-               the label is not dimmed or blended, it is simply not drawn, so
-               nothing about how it looks the rest of the time changes. */
-            occlude={[plaqueOccluder as RefObject<THREE.Object3D>]}
-            style={{ pointerEvents: 'none' }}
-          >
-            {/* The plate is 0.62 wide at distanceFactor 2.6, which works out at
-                roughly 96 px of label — anything wider prints off the board, so
-                long names wrap here rather than running over the edge. */}
-            <div className="w-[96px] break-words px-1 text-center font-display leading-[1.1] text-stone-800">
-              <div className="text-[7px] font-semibold">{plant.names.Sanskrit ?? plant.name}</div>
-              <div className="text-[5.5px] italic">{plant.botanical}</div>
-            </div>
-          </Html>
-        )}
-      </group>
-    </group>
-  )
-}
 
 /**
  * The tree line outside the hedge — the plan's perimeter vegetation, and
@@ -1449,7 +1256,11 @@ function SceneContents({
       {boards.map(({ plant, plotId, position }) => (
         <LabelBoard
           key={`label-${plotId}-${plant.id}`}
-          plant={plant}
+          id={plant.id}
+          title={plant.names.Sanskrit ?? plant.name}
+          subtitle={plant.botanical}
+          /* Hidden outright when the plaque is between it and the camera. */
+          occlude={[plaqueOccluder as RefObject<THREE.Object3D>]}
           dark={dark}
           showText={detail !== 'low'}
           /* Walking locks the pointer away, so there is nothing to hover with. */

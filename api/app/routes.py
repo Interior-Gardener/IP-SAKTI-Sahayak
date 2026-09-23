@@ -29,7 +29,7 @@ from app.db.models import (
 )
 from app.guardrails.guard_in import QuestionTooLong, RateLimited, RateLimiter
 from app.ingest.manifest import REPO
-from app.schemas import MaterialIPProfile, MaterialKind, SahayakAnswer
+from app.schemas import MaterialIPProfile, MaterialKind, ProviderInfo, SahayakAnswer
 
 router = APIRouter()
 limiter = RateLimiter(per_minute=10, burst=5)
@@ -377,3 +377,80 @@ def classify_formulation(body: ClassifyRequest) -> ClassifyStep:
 @router.post("/abs", response_model=AbsStep, tags=["assistant"])
 def abs_helper(body: ClassifyRequest) -> AbsStep:
     return abs_check(body)
+
+
+# ---------------------------------------------------------- knowledge graph (stage 2)
+
+from app.agent.loop import DISCLAIMER as AGENT_DISCLAIMER  # noqa: E402
+from app.agent.loop import run_agent  # noqa: E402
+from app.graph.expand import neighbourhood  # noqa: E402
+
+
+class AgentRequest(BaseModel):
+    question: str = Field(..., max_length=2000)
+    #: Hard cap on model turns. Kept low: the loop is for multi-step questions,
+    #: not for letting a model wander.
+    max_iterations: int = Field(default=6, ge=1, le=10)
+
+
+class AgentToolCall(BaseModel):
+    tool: str
+    arguments: dict
+
+
+class AgentAnswer(BaseModel):
+    markdown: str
+    calls: list[AgentToolCall]
+    provider: ProviderInfo
+    truncated: bool
+    chunk_ids: list[int]
+    disclaimer: str
+
+
+@router.post("/agent", response_model=AgentAnswer, tags=["assistant"])
+def agent(
+    body: AgentRequest,
+    sid: str = Depends(services.session_id),
+    db: Session = Depends(services.db),
+    llm=Depends(services.answer_llm),
+    embedder=Depends(services.embedder),
+    reranker=Depends(services.reranker),
+) -> AgentAnswer:
+    """The agentic path: the model works the question with the tools in
+    app/agent/tools.py, under a hard iteration cap, with an audit row per call.
+
+    Consent is required exactly as it is for /ask, and every tool is read-only.
+    """
+    if not services.has_consent(db, sid, "assistant"):
+        raise HTTPException(403, "assistant consent is required")
+    try:
+        run = run_agent(
+            body.question,
+            llm,
+            db,
+            embedder,
+            reranker,
+            session_id=sid,
+            max_iterations=body.max_iterations,
+        )
+    except NotImplementedError as e:
+        raise HTTPException(501, str(e)) from e
+    return AgentAnswer(
+        markdown=run.text,
+        calls=[AgentToolCall(tool=c.name, arguments=c.arguments) for c in run.calls],
+        provider=ProviderInfo(name=run.provider, model=run.model),
+        truncated=run.truncated,
+        chunk_ids=run.chunk_ids,
+        disclaimer=AGENT_DISCLAIMER,
+    )
+
+
+@router.get("/graph/{ref}", tags=["corpus"])
+def graph_entity(ref: str, db: Session = Depends(services.db)) -> dict:
+    """One entity and every edge it takes part in, each with the provision it
+    rests on. `ref` is "kind:key" — for example `concept:micro-organism`,
+    `regime:abs` or `source:in-patents-act-1970`."""
+    out = neighbourhood(db, ref)
+    if not out:
+        raise HTTPException(404, f"no entity {ref!r} in the graph")
+    return out

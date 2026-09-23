@@ -93,6 +93,89 @@
         "title": "Abstention",
         "type": "object"
       },
+      "AgentAnswer": {
+        "properties": {
+          "calls": {
+            "items": {
+              "$ref": "#/components/schemas/AgentToolCall"
+            },
+            "title": "Calls",
+            "type": "array"
+          },
+          "chunk_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Chunk Ids",
+            "type": "array"
+          },
+          "disclaimer": {
+            "title": "Disclaimer",
+            "type": "string"
+          },
+          "markdown": {
+            "title": "Markdown",
+            "type": "string"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/ProviderInfo"
+          },
+          "truncated": {
+            "title": "Truncated",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "markdown",
+          "calls",
+          "provider",
+          "truncated",
+          "chunk_ids",
+          "disclaimer"
+        ],
+        "title": "AgentAnswer",
+        "type": "object"
+      },
+      "AgentRequest": {
+        "properties": {
+          "max_iterations": {
+            "default": 6,
+            "maximum": 10.0,
+            "minimum": 1.0,
+            "title": "Max Iterations",
+            "type": "integer"
+          },
+          "question": {
+            "maxLength": 2000,
+            "title": "Question",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "title": "AgentRequest",
+        "type": "object"
+      },
+      "AgentToolCall": {
+        "properties": {
+          "arguments": {
+            "additionalProperties": true,
+            "title": "Arguments",
+            "type": "object"
+          },
+          "tool": {
+            "title": "Tool",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tool",
+          "arguments"
+        ],
+        "title": "AgentToolCall",
+        "type": "object"
+      },
       "ApiMonograph": {
         "properties": {
           "part": {
@@ -1641,6 +1724,61 @@
         ]
       }
     },
+    "/agent": {
+      "post": {
+        "description": "The agentic path: the model works the question with the tools in\napp/agent/tools.py, under a hard iteration cap, with an audit row per call.\n\nConsent is required exactly as it is for /ask, and every tool is read-only.",
+        "operationId": "agent_agent_post",
+        "parameters": [
+          {
+            "description": "anonymous id from the browser",
+            "in": "header",
+            "name": "x-session-id",
+            "required": true,
+            "schema": {
+              "description": "anonymous id from the browser",
+              "title": "X-Session-Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentAnswer"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Agent",
+        "tags": [
+          "assistant"
+        ]
+      }
+    },
     "/ask": {
       "post": {
         "operationId": "ask_ask_post",
@@ -1880,6 +2018,51 @@
         "summary": "Escalate",
         "tags": [
           "assistant"
+        ]
+      }
+    },
+    "/graph/{ref}": {
+      "get": {
+        "description": "One entity and every edge it takes part in, each with the provision it\nrests on. `ref` is \"kind:key\" \u2014 for example `concept:micro-organism`,\n`regime:abs` or `source:in-patents-act-1970`.",
+        "operationId": "graph_entity_graph__ref__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ref",
+            "required": true,
+            "schema": {
+              "title": "Ref",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Graph Entity Graph  Ref  Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Graph Entity",
+        "tags": [
+          "corpus"
         ]
       }
     },

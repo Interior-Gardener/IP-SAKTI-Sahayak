@@ -15,6 +15,9 @@ class Settings(BaseSettings):
 
     app_name: str = "IP-SAKTI Sahayak API"
     database_url: str = "postgresql+psycopg://sahayak:sahayak@localhost:5432/sahayak"
+    #: Seconds to wait for a database connection before giving up. Low on
+    #: purpose: a missing database should fail fast, not hang.
+    db_connect_timeout: int = 5
     cors_origins: list[str] = ["http://localhost:5173"]
 
     llm_provider_answer: str = "groq"

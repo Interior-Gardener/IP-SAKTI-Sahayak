@@ -113,3 +113,49 @@ def test_switches_key_on_a_daily_limit_but_not_a_minute_limit(monkeypatch):
     p2 = gp.GroqProvider("gpt-oss")
     with pytest.raises(gp.RateLimitError):
         p2.complete("s", "q")  # a per-minute limit is the SDK's job, not a key switch
+
+
+def test_a_capped_tool_loop_ends_with_a_plain_request():
+    """The live bug of 2026-09-23: at the cap, the wrap-up replayed the tool
+    transcript without declaring tools, and Groq refused it the moment the model
+    reached for a tool again. The wrap-up must carry no tool shape at all."""
+    from app.llm.base import ToolSpec
+
+    sent = []
+
+    def create(**kw):
+        sent.append(kw)
+        if "tools" in kw:
+            call = NS(id="t1", function=NS(name="search_corpus", arguments='{"query": "coral"}'))
+            return NS(choices=[NS(message=NS(content="", tool_calls=[call]))])
+        return NS(choices=[NS(message=NS(content="Coral export needs a permit."))])
+
+    client = NS(chat=NS(completions=NS(create=create)))
+    spec = ToolSpec("search_corpus", "search", {"type": "object", "properties": {}})
+    run = GroqProvider("gpt-oss", client).tool_loop(
+        "sys", "Is coral export restricted?", [spec], lambda n, a: "Schedule I Part K", 2
+    )
+    assert run.truncated and run.text == "Coral export needs a permit."
+    final = sent[-1]
+    assert "tools" not in final and "tool_choice" not in final
+    assert all(m["role"] in ("system", "user") for m in final["messages"])
+    assert "Schedule I Part K" in final["messages"][-1]["content"]
+
+
+def test_a_wrap_up_that_keeps_calling_tools_is_cut_short_not_raised():
+    """gpt-oss can answer even a tool-free request with a tool call, which Groq
+    returns as a 400. One retry, then an honest refusal — never a stack trace."""
+    import app.llm.groq_provider as gp
+    from app.llm.base import CUT_SHORT, ToolSpec
+
+    def create(**kw):
+        if "tools" in kw:
+            call = NS(id="t1", function=NS(name="search_corpus", arguments="{}"))
+            return NS(choices=[NS(message=NS(content="", tool_calls=[call]))])
+        response = httpx.Response(400, request=httpx.Request("POST", "https://api.groq.com/x"))
+        raise gp.BadRequestError("tool_use_failed", response=response, body=None)
+
+    client = NS(chat=NS(completions=NS(create=create)))
+    spec = ToolSpec("search_corpus", "search", {"type": "object", "properties": {}})
+    run = GroqProvider("gpt-oss", client).tool_loop("sys", "q?", [spec], lambda n, a: "r", 1)
+    assert run.truncated and run.text == CUT_SHORT

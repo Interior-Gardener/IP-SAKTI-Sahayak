@@ -11,6 +11,7 @@ import { SahayakDrawer } from './sahayak/Drawer'
 
 const NAV: { to: string; label: string; icon: IconName }[] = [
   { to: '/garden', label: 'Garden', icon: 'map' },
+  { to: '/rasashala', label: 'Rasashala', icon: 'flask' },
   { to: '/explore', label: 'Explore', icon: 'grid' },
   { to: '/atlas', label: 'Atlas', icon: 'layers' },
   { to: '/tours', label: 'Tours', icon: 'route' },
@@ -153,6 +154,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const immersive =
     location.pathname === '/garden' ||
     location.pathname === '/medicinal-garden' ||
+    location.pathname === '/rasashala' ||
+    location.pathname === '/workbench' ||
     location.pathname === '/quiz' ||
     location.pathname.startsWith('/tours/')
 

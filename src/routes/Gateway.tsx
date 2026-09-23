@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { plants, gardenBeds } from "../data/plants";
 import { BED_PLOTS, PLAQUE } from "../data/medicinalGarden";
+import { materials } from "../data/materials";
 import { BotanicalPlate } from "../components/BotanicalPlate";
 import { Icon, type IconName } from "../components/ui/Icon";
 import { useCalmMotion } from "../components/motion/Reveal";
@@ -37,6 +38,8 @@ interface Door {
   note?: string;
   accent: string;
   plants: Plant[];
+  /** Shown in place of the plates by a door that holds no plants. */
+  motifs?: { icon: IconName; label: string }[];
 }
 
 export default function Gateway() {
@@ -80,6 +83,29 @@ export default function Gateway() {
         accent: "#8a6a2f",
         plants: sample(["neem", "bael", "arjuna"]),
       },
+      {
+        to: "/rasashala",
+        kind: "Pharmacy and lab",
+        kindIcon: "flask",
+        eyebrow: "Everything that is not a plant",
+        title: "Rasashala",
+        sub: "रसशाला",
+        body: "Ayurveda is not only herbs. The pharmacy holds what the garden cannot: the microbes that carry a fermentation, the animal-derived materials, and the metals and minerals of rasa shastra — each with the law that reaches it.",
+        facts: [
+          `${materials.length} microbial, animal and mineral sources`,
+          "Four areas: fermentation, culture vault, animal shelf, rasa shelf",
+          "Two of them named in Schedule E(1) of the Drugs and Cosmetics Rules",
+        ],
+        note: "Descriptive only — no preparation methods and no doses.",
+        accent: "#7b5ea7",
+        plants: [],
+        motifs: [
+          { icon: "drop", label: "Fermentation" },
+          { icon: "shield", label: "Culture vault" },
+          { icon: "leaf", label: "Animal shelf" },
+          { icon: "sparkle", label: "Rasa shelf" },
+        ],
+      },
     ];
   }, []);
 
@@ -113,17 +139,18 @@ export default function Gateway() {
             Vanaspati · virtual herbal garden
           </p>
           <h1 className="mt-3 font-display text-[clamp(2rem,5.5vw,3.4rem)] leading-[1.03] font-semibold tracking-[-0.03em]">
-            Two gardens, the same plants.
+            Two gardens and a pharmacy.
           </h1>
           <p className="mt-3 text-[0.98rem] leading-relaxed text-ink-soft text-balance-pretty">
-            One we designed, arranged by what the plants treat. The other is a
-            walkable Ayurvedic herb garden, laid out bed by bed in 3D.
+            One garden we designed, arranged by what the plants treat. One
+            walkable Ayurvedic herb garden, laid out bed by bed in 3D. And the
+            Rasashala, where the microbial, animal and mineral sources are kept.
             Pick the door you want to come in by — you can cross between them
             whenever you like.
           </p>
         </motion.header>
 
-        <div className="mt-8 grid gap-5 sm:mt-10 lg:grid-cols-2">
+        <div className="mt-8 grid gap-5 sm:mt-10 lg:grid-cols-3">
           {doors.map((door, i) => (
             <motion.div
               key={door.to}
@@ -152,6 +179,21 @@ export default function Gateway() {
                       className="h-32 flex-1 transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-[1.05] sm:h-40"
                       style={{ transitionDelay: `${n * 40}ms` }}
                     />
+                  ))}
+
+                  {/* A door with no plants says what it holds instead — the
+                      pharmacy's four areas, in the order they are walked. */}
+                  {door.motifs?.map((motif, n) => (
+                    <span
+                      key={motif.label}
+                      className="mb-2 flex flex-1 flex-col items-center gap-1.5 text-center transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:-translate-y-1"
+                      style={{ transitionDelay: `${n * 40}ms`, color: door.accent }}
+                    >
+                      <Icon name={motif.icon} size={26} />
+                      <span className="text-[0.62rem] font-semibold tracking-[0.08em] text-ink-soft uppercase">
+                        {motif.label}
+                      </span>
+                    </span>
                   ))}
 
                   {/* Which kind of garden this is, said before anything else

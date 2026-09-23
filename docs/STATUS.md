@@ -1,9 +1,10 @@
-# Status and handover — 2026-09-21
+# Status and handover — 2026-09-22
 
 Where the build stands, what has actually been tested, what is known to be wrong, and how to
 pick it up on another machine. Task-by-task detail is in [TASKS.md](TASKS.md); the corpus
-provenance is in [SOURCES.md](SOURCES.md). The last batch of work, and where to see it in the
-website, is in [WHAT-CHANGED-2026-09-21.md](WHAT-CHANGED-2026-09-21.md).
+provenance is in [SOURCES.md](SOURCES.md). The last two batches of work, and where to see
+them in the website, are in [WHAT-CHANGED-2026-09-22.md](WHAT-CHANGED-2026-09-22.md) (stage 2)
+and [WHAT-CHANGED-2026-09-21.md](WHAT-CHANGED-2026-09-21.md).
 
 ## 1. What works today
 
@@ -14,16 +15,35 @@ website, is in [WHAT-CHANGED-2026-09-21.md](WHAT-CHANGED-2026-09-21.md).
 - **Answers**: one per jurisdiction, never merged, each citation checked word-for-word against
   the stored text, confidence score, abstention below the floor, standing disclaimer.
 - **API**: `/health`, `/ask` (SSE), `/sources`, `/registry`, `/materials/{kind}/{id}/ipr`,
-  `/consent`, `/escalate`, `DELETE /me`, `/classify`, `/abs`.
+  `/consent`, `/escalate`, `DELETE /me`, `/classify`, `/abs`, and since 2026-09-22
+  `GET /graph/{kind}:{key}` and `POST /agent`.
+- **Knowledge graph**: `kg_entity` + `kg_relation`, seeded from `api/app/graph/seed.py`
+  (9 concepts, the manifest's regimes, one entity per source, 44 edges). Every edge carries the
+  provision it rests on, and the tests re-read all of them out of the corpus. `/ask` links
+  entities from the question by alias and folds the provisions they cite into the same fusion as
+  dense and lexical search.
+- **Agent**: `POST /agent` runs a capped tool loop over six read-only tools (corpus search, graph,
+  classifier, ABS helper, material profile, registry). Consent-gated like `/ask`, one audit row per
+  tool call, `truncated` reported when the cap is what stopped it.
 - **Web**: Ask Sahayak drawer everywhere, `/sahayak` (two panes for India vs international),
   `/sources`, an "IP & Law" tab on all 30 plants, an IP line on the garden card and the walkable
   garden board, and a seal hotspot in the 3D plant viewer. The garden still works with the API down.
 - **Plant IP profiles**: 8 of 30 plants verified against the corpus (turmeric, neem, ashwagandha,
   sandalwood, sarpagandha, guggulu, amla, tulsi). The other 22 stay honestly 'unknown'. Every
   quoted provision is re-read from `corpus/normalised/` by `npm run check:ipr`, which CI runs.
-- **Tests**: 88 (`cd api && .venv/Scripts/python -m pytest -q`). CI runs web lint+build and API
-  ruff+pytest with Postgres, plus two cheap correctness gates that need no database or keys:
-  `npm run check:ipr` (every legal claim in the plant profiles) and
+- **Rasashala** (`/rasashala`, 2026-09-22): a walkable pharmacy holding the 20 non-plant sources —
+  6 microbes, 8 animal-derived, 6 mineral — each generated procedurally and each with the same
+  cited IP & law panel a plant has. Two of the minerals are named in Schedule E(1); coral and musk
+  carry real wildlife schedules. Third door on the Gateway.
+- **Workbench** (`/workbench`): a bench of chosen materials, and the classifier's minimum questions
+  answered against the API's rule table, with every requirement and posture line carrying its
+  source id and locator.
+- **Tests**: 108 (`cd api && .venv/Scripts/python -m pytest -q`) — 87 pass without a database, 20
+  need Postgres and skip without it, and `/health` reports "degraded" (so its test fails) on a
+  machine with no database. CI runs web lint+build and API ruff+pytest with Postgres, seeds the
+  graph, and runs three cheap correctness gates that need no database or keys:
+  `npm run check:ipr` (every legal claim in the material profiles),
+  `npm run check:3d` (every procedural form and every material spec builds), and
   `python api/scripts/locators.py --check-golden` (every locator a golden eval item expects).
 
 ## 2. Measured quality (eval)
@@ -117,7 +137,14 @@ hand-check a sample of judged answers, and re-tune only then.
   Tamil; out-of-scope and dosing questions refused.
 - Docker: `docker compose up` → Postgres + API, `/health` 200, Alembic migrations on start.
 - **Not done**: clicking through the web UI in a browser; the drawer, `/sahayak`, `/sources`,
-  the IP tab and the 3D seal have only been type-checked and built.
+  the IP tab and the 3D seal have only been type-checked and built. The same is true of everything
+  added on 2026-09-22 — `/rasashala`, `/workbench`, the Gateway's third door — and the two new API
+  paths (`/graph`, `/agent`) have never run against a database or a live model. The machine that
+  built them has no Postgres, no Docker and no provider key.
+- **Checked without a database**: the procedural generators build every form and every material
+  spec at every detail level (`npm run check:3d`, 99 builds); the graph seed's 44 edges all cite
+  provisions that are in the corpus; the agent's loop, cap and auditing are driven by a scripted
+  provider in `tests/test_agent.py`.
 
 ## 4. Machine setup (new machine)
 
@@ -203,7 +230,10 @@ wait for the rolling reset, pay for Groq's Dev tier (a full run is worth a few c
    evidence requirements, the NDCT approval data). The D&C Act `s.3(a)` one was cleared on
    2026-09-21; the rest each need a reading of the provision, not just a locator check. Note the
    Rule 158B table is the place a wrong answer came from once — read it by cell, not by line.
-7. Stage 2 proper: Rasashala scene, knowledge graph, agent loop, Workbench.
+7. Stage 2 is done (2026-09-22): Rasashala, knowledge graph, agent loop and Workbench. What it
+   still needs is a browser and a live model — none of it has been clicked through, the agent has
+   never run against a real provider, and the graph has never been seeded into a real database.
+   Stage 3 is next: connectors, Bhashini voice, UI i18n, Registry Marg, the tour, the README.
 
 ## 8. Rules that must not be broken
 

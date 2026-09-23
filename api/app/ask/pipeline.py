@@ -21,6 +21,7 @@ from sqlalchemy.orm import Session
 
 from app.embed.base import Embedder
 from app.generate.answer import DraftAnswer, generate, is_primary, select_documents
+from app.graph.expand import linked_entities
 from app.guardrails.guard_in import ABSTAIN_SUGGESTIONS, check_question
 from app.guardrails.verify import CONFIDENCE_FLOOR, Verified, score_confidence, verify
 from app.llm.base import CitedAnswer, LLMProvider
@@ -200,8 +201,17 @@ def _answer_one(
     try:
         # Named provisions come from the question itself; the rewrite may drop them.
         query = search_query + " " + " ".join(locators_in(question))
+        # Knowledge-graph entities the question touches. A question about musk
+        # names no statute, but the material kind it names is joined to one.
+        entities = linked_entities(session, question)
         retrieved: list[Retrieved] = search(
-            session, query.strip(), jurisdiction, services.embedder, services.reranker, regimes
+            session,
+            query.strip(),
+            jurisdiction,
+            services.embedder,
+            services.reranker,
+            regimes,
+            entities=entities,
         )
     finally:
         session.close()

@@ -149,6 +149,26 @@ export function sources() {
   return request<SourcesOut>('/sources')
 }
 
+/* ------------------------------------------------- classification and ABS
+ * Both are rule tables on the API, not model calls: the same answers always
+ * give the same category, and every line comes back with the provision it
+ * rests on. The wizard sends the answers it has so far and gets either the
+ * next question or the result. */
+
+export type ClassifyStep = components['schemas']['ClassifyStep']
+export type ClassificationResult = components['schemas']['ClassificationResult']
+export type AbsStep = components['schemas']['AbsStep']
+export type ClassifyQuestion = components['schemas']['Question']
+export type CitedLine = components['schemas']['Line']
+
+export function classify(answers: Record<string, boolean>, sessionId?: string) {
+  return request<ClassifyStep>('/classify', { method: 'POST', body: JSON.stringify({ answers }) }, sessionId)
+}
+
+export function absCheck(answers: Record<string, boolean>, sessionId?: string) {
+  return request<AbsStep>('/abs', { method: 'POST', body: JSON.stringify({ answers }) }, sessionId)
+}
+
 /* ---------------------------------------------------------------- opening the drawer */
 
 export interface OpenSahayakDetail {

@@ -36,6 +36,8 @@ const paths = {
   shield: 'M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6l-7-3Zm-3 9 2 2 4-4',
   arrowLeft: 'M20 12H5m0 0 5-5m-5 5 5 5',
   seedling: 'M12 21v-7m0 0c0-3.3-2.7-6-6-6H4v2c0 2.8 2.2 5 5 5h3Zm0 0c0-4 3-7 7-7h1v1c0 3.3-2.7 6-6 6h-2Z',
+  // The pharmacy: a round-bottomed flask with its shoulder line.
+  flask: 'M10 3h4M11 3v6.2L5.6 18A2 2 0 0 0 7.3 21h9.4a2 2 0 0 0 1.7-3L13 9.2V3M8.4 14h7.2',
   drop: 'M12 3s6 6.5 6 10.5a6 6 0 0 1-12 0C6 9.5 12 3 12 3Z',
   alert: 'M12 4 3 20h18L12 4Zm0 6v5m0 3h.01',
   layers: 'm12 3 9 5-9 5-9-5 9-5Zm9 9-9 5-9-5m18 4-9 5-9-5',

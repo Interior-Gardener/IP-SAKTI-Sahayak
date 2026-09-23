@@ -46,7 +46,9 @@ client ──► /ask {question, language?, jurisdiction_mode, persona?, context
    └─ audit_events (trace per stage) · answer cache · SSE stream to client
 ```
 
-Stage 2 adds the agentic loop between 2 and 5: the model may call `search_corpus`, `lookup_material_ipr`, `graph_neighbors`, `classify_formulation`, `abs_check`, `registry_pointer`, `escalate`. Every call is audited; iterations are capped.
+Stage 2 adds the agentic loop as a second path, `POST /agent`, rather than a branch inside `/ask`: the model may call `search_corpus`, `graph_neighbors`, `classify_formulation`, `abs_check`, `lookup_material_ipr` and `registry_pointer`. Every call is audited (tool name and arguments, never the question) and iterations are capped, with `truncated: true` reported when the cap is what stopped it. **Every tool is read-only**: `escalate` and the paid connectors are actions a person takes, so they are not offered to the model.
+
+`/ask` itself gained the graph in stage 2 as well, but only as a widening of retrieval: entities are linked from the question by alias, and the provisions their edges cite join the same RRF fusion as dense and lexical search.
 
 ## 3. Data model (Postgres)
 
@@ -58,8 +60,9 @@ Corpus and retrieval
 
 Knowledge graph (stage 2)
 
-- `kg_entity` — `id, kind (material | formulation | statute_section | treaty_article | category | registry | jurisdiction | ida), label, ref` where `ref` points to a chunk locator or a material id.
-- `kg_relation` — `src, rel (documented_in | barred_by | requires | deposited_at | regulated_by | binds | filed_at), dst, cite_chunk_id`.
+- `kg_entity` — `id, kind (concept | regime | source), key, label, aliases[]`. `(kind, key)` is unique and is how an entity is addressed: `concept:micro-organism`, `regime:abs`, `source:in-patents-act-1970`. Aliases are what a question is matched against.
+- `kg_relation` — `subject_id, predicate, object_id, cite_source_id, cite_locator, note`. **The citation is on the edge**: a manifest source id and a locator within it, which is both the evidence for the relation and the passage retrieval expansion fetches. A null locator means the source as a whole (a manual has no sections).
+- Seeded from `api/app/graph/seed.py` by `python -m app.graph seed`, which is idempotent and runs in CI and on container start. `tests/test_graph.py` re-reads every edge's provision out of `corpus/normalised/`, so an edge can never cite something the corpus does not have.
 
 Materials and registries
 
@@ -91,7 +94,8 @@ Sessions are anonymous ids issued by the API and held in the web store; no accou
 | DELETE | `/me` | 1 | purge session data |
 | POST | `/classify` | 2 | rule-table classification |
 | POST | `/abs` | 2 | ABS helper |
-| GET | `/graph/{entity}` | 2 | neighbours for the graph view |
+| GET | `/graph/{kind}:{key}` | 2 | an entity and its edges, each with the provision it rests on |
+| POST | `/agent` | 2 | agentic tool loop: consent-gated, capped, one audit row per tool call |
 | POST | `/voice/asr`, `/voice/tts` | 3 | Bhashini with fallbacks |
 
 OpenAPI at `/openapi.json`; `npm run gen:api` regenerates `src/types/sahayak.ts`.

@@ -13,6 +13,7 @@ import { useGarden } from '../store/useGarden'
 import { Icon } from '../components/ui/Icon'
 import { cx } from '../components/ui/primitives'
 import { openSahayak } from '../lib/sahayak/client'
+import { useWorkbench } from '../store/useWorkbench'
 
 /* ------------------------------------------------------------------ *
  * Single-specimen viewer: orbit, zoom, and labelled hotspots pointing
@@ -28,30 +29,56 @@ export function Hotspot({
   position,
   label,
   accent,
+  onAdd,
+  added = false,
 }: {
   position: [number, number, number]
   label: string
   accent: string
+  /** Put this part on the workbench. Offered once the label is opened. */
+  onAdd?: () => void
+  /** This part is already what the workbench holds for the plant. */
+  added?: boolean
 }) {
   const [open, setOpen] = useState(false)
+  const [pinned, setPinned] = useState(false)
+  const shown = open || pinned
   return (
     <Html position={position} center zIndexRange={[20, 0]}>
-      <button
+      <div
+        className="flex -translate-y-1/2 items-center gap-1"
         onPointerEnter={() => setOpen(true)}
         onPointerLeave={() => setOpen(false)}
-        onClick={() => setOpen((v) => !v)}
-        className={cx(
-          'flex -translate-y-1/2 items-center gap-1.5 rounded-full py-1 pr-2.5 pl-1 text-[11px] font-medium whitespace-nowrap shadow-md ring-1 transition-colors duration-300',
-          open ? 'text-white ring-transparent' : 'text-stone-700 ring-black/10',
-        )}
-        style={{ background: open ? accent : 'rgba(255,255,255,0.9)' }}
       >
-        <span
-          className="size-2.5 rounded-full ring-2 ring-white/70"
-          style={{ background: open ? 'rgba(255,255,255,0.9)' : accent }}
-        />
-        {label}
-      </button>
+        <button
+          onClick={() => setPinned((v) => !v)}
+          className={cx(
+            'flex items-center gap-1.5 rounded-full py-1 pr-2.5 pl-1 text-[11px] font-medium whitespace-nowrap shadow-md ring-1 transition-colors duration-300',
+            shown ? 'text-white ring-transparent' : 'text-stone-700 ring-black/10',
+          )}
+          style={{ background: shown ? accent : 'rgba(255,255,255,0.9)' }}
+        >
+          <span
+            className="size-2.5 rounded-full ring-2 ring-white/70"
+            style={{ background: shown ? 'rgba(255,255,255,0.9)' : accent }}
+          />
+          {label}
+        </button>
+        {/* The workbench entry point on the specimen itself: a formulation is
+            made from a part of a plant, not from the plant, so the part is
+            where you pick it up. */}
+        {onAdd && shown && (
+          <button
+            onClick={onAdd}
+            disabled={added}
+            className="flex items-center gap-1 rounded-full bg-white/95 py-1 pr-2 pl-1.5 text-[10.5px] font-medium whitespace-nowrap text-stone-700 shadow-md ring-1 ring-black/10 transition-transform enabled:hover:scale-105 disabled:opacity-70"
+            title={added ? 'This part is on the workbench' : `Add ${label} to the workbench`}
+          >
+            <Icon name={added ? 'check' : 'plus'} size={12} />
+            {added ? 'On bench' : 'Workbench'}
+          </button>
+        )}
+      </div>
     </Html>
   )
 }
@@ -86,7 +113,7 @@ export function SealHotspot({ plant, top }: { plant: Plant; top: number }) {
  * Frames the camera so the whole specimen fits, whatever its proportions —
  * a 14 cm creeper and a 3 m tree both need to fill the frame.
  */
-function Rig({
+export function Rig({
   metrics,
   controls,
   autoRotate,
@@ -176,6 +203,15 @@ export function PlantViewer({ plant, className }: PlantViewerProps) {
   const controls = useRef<OrbitControlsImpl | null>(null)
 
   const parts = useMemo(() => plant.partsUsed.slice(0, 4), [plant.partsUsed])
+  const benchItem = useWorkbench((s) => s.items.find((i) => i.id === plant.id))
+  const addToBench = useWorkbench((s) => s.add)
+  const updateBench = useWorkbench((s) => s.update)
+  // One plant is one line on the bench; picking a different part of it
+  // changes which part that line uses rather than adding the plant twice.
+  const benchPart = (part: string) => {
+    if (benchItem) updateBench(plant.id, { part })
+    else addToBench({ kind: 'plant', id: plant.id, label: plant.name, part })
+  }
 
   const metrics = useMemo(() => {
     const built = buildPlantGeometry(plant.id, plant.model, detail)
@@ -239,6 +275,8 @@ export function PlantViewer({ plant, className }: PlantViewerProps) {
                 position={metrics.anchors[i]}
                 label={part}
                 accent={plant.accent}
+                onAdd={() => benchPart(part)}
+                added={benchItem?.part === part}
               />
             ))}
 
@@ -295,7 +333,7 @@ export function PlantViewer({ plant, className }: PlantViewerProps) {
   )
 }
 
-function ViewerToggle({
+export function ViewerToggle({
   active,
   onClick,
   icon,

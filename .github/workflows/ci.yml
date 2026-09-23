@@ -21,8 +21,12 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
-      # Every legal claim in the plant IP profiles is re-read from corpus/normalised/.
+      # Every legal claim in the material IP profiles is re-read from corpus/normalised/.
       - run: npm run check:ipr
+      # Every procedural form, and every material's spec, builds outside the browser.
+      - run: npm run check:3d
+      # The API serves the same verified profiles the web shows, from an exported file.
+      - run: npm run check:export
 
   api:
     runs-on: ubuntu-latest
@@ -50,6 +54,10 @@ jobs:
       - run: uv run --no-sync ruff format --check .
       - run: uv run --no-sync ruff check .
       - run: uv run --no-sync alembic upgrade head
+      # Seeding is idempotent and runs against the CI database, so a seed that
+      # cannot be written fails here rather than on a deploy.
+      - run: uv run --no-sync python -m app.graph seed
+      - run: uv run --no-sync python -m app.materials seed
       - run: uv run --no-sync pytest -q
       # Every locator a golden eval item expects must exist in the corpus.
       - run: uv run --no-sync python scripts/locators.py --check-golden

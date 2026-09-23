@@ -55,7 +55,15 @@ def test_sources_and_registry_and_materials(client):
     body = client.get("/sources").json()
     assert "corpus_version" in body and "Corpus changelog" in body["changelog_markdown"]
     assert client.get("/registry?jurisdiction=IN").status_code == 200
-    assert client.get("/materials/plant/neem/ipr").status_code == 404
+    # Neem has a verified profile, so it is served once the profiles are seeded
+    # (T1.27); a material nobody has verified is still a 404.
+    from app.db import SessionLocal
+    from app.materials import seed_profiles
+
+    with SessionLocal() as db:
+        seed_profiles(db)
+    assert client.get("/materials/plant/neem/ipr").status_code == 200
+    assert client.get("/materials/plant/brahmi/ipr").status_code == 404
     assert client.get("/materials/rock/neem/ipr").status_code == 422
 
 

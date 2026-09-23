@@ -190,3 +190,47 @@ class MaterialIpr(Base):
     material_id: Mapped[str] = mapped_column(String(60), primary_key=True)
     profile: Mapped[dict] = mapped_column(JSONB)
     last_verified: Mapped[date | None] = mapped_column(Date)
+
+
+# --- Knowledge graph (stage 2) -----------------------------------------------------------
+# Relational on purpose: the problem statement asks for a relational knowledge graph, and
+# one join is cheaper to run and easier to audit than a second database. Every edge that
+# asserts a legal relation carries the provision it rests on, and app/graph/seed.py is
+# checked against corpus/normalised/ by the tests.
+
+
+class KgEntity(Base):
+    __tablename__ = "kg_entity"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    # 'concept' | 'regime' | 'source' | later: 'material'
+    kind: Mapped[str] = mapped_column(String(20))
+    key: Mapped[str] = mapped_column(String(80))
+    label: Mapped[str] = mapped_column(Text)
+    # Words that should reach this entity from a question, lowercase.
+    aliases: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list)
+
+    __table_args__ = (Index("ux_kg_entity_kind_key", "kind", "key", unique=True),)
+
+
+class KgEdge(Base):
+    __tablename__ = "kg_relation"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    subject_id: Mapped[int] = mapped_column(ForeignKey("kg_entity.id", ondelete="CASCADE"))
+    predicate: Mapped[str] = mapped_column(String(60))
+    object_id: Mapped[int] = mapped_column(ForeignKey("kg_entity.id", ondelete="CASCADE"))
+    # The evidence, and what retrieval expansion pulls in: a manifest source id
+    # and a locator within it. A null locator means the source as a whole, which
+    # is all a manual can be pointed at.
+    cite_source_id: Mapped[str | None] = mapped_column(String(60))
+    cite_locator: Mapped[str | None] = mapped_column(Text)
+    note: Mapped[str] = mapped_column(Text, default="")
+
+    subject: Mapped[KgEntity] = relationship(foreign_keys=[subject_id])
+    object: Mapped[KgEntity] = relationship(foreign_keys=[object_id])
+
+    __table_args__ = (
+        Index("ix_kg_relation_subject", "subject_id"),
+        Index("ix_kg_relation_object", "object_id"),
+    )

@@ -1,0 +1,1476 @@
+{
+  "plant": {
+    "amla": {
+      "kind": "plant",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "No provision in the corpus names amla, so nothing plant-specific is asserted. The plant and its parts are not patentable as such (Patents Act s.3(j), which carves out only micro-organisms); knowledge that is already traditional is excluded by s.3(p) and examiners search the TKDL when they apply it; a mere admixture of known ingredients is excluded by s.3(e) and a new form or new use of a known substance by s.3(d) unless efficacy improves. An application resting on this material must disclose the source and geographical origin of the biological material (s.10(4)(d)(ii)(D)), and the WIPO GRATK Treaty Art. 3.1 asks for the same disclosure internationally. New varieties go to the PPV&FR Act s.14 route instead of the patent route; whether this species is notified under s.29(2) is not verified here. Its use in classical formulations such as the three-fruit combination is traditional knowledge on the face of s.3(p), and a proportion or dosage-form change alone is the kind of claim s.3(e) is aimed at.",
+        "cites": [
+          "in-patents-act-1970",
+          "in-mppp-v3",
+          "intl-gratk-2024",
+          "in-ppvfr-act-2001"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22Phyllanthus%20emblica%22"
+        }
+      },
+      "deposit": null,
+      "gi": {
+        "tags": []
+      },
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002",
+          "in-bd-rules-2024"
+        ]
+      },
+      "wildlife": {
+        "protectedSchedule": null,
+        "citesListed": false,
+        "cites": [
+          "in-wlpa-1972"
+        ]
+      },
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "lastVerified": "2026-09-21"
+    },
+    "ashwagandha": {
+      "kind": "plant",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "No provision in the corpus names ashwagandha, so nothing plant-specific is asserted. The plant and its parts are not patentable as such (Patents Act s.3(j), which carves out only micro-organisms); knowledge that is already traditional is excluded by s.3(p) and examiners search the TKDL when they apply it; a mere admixture of known ingredients is excluded by s.3(e) and a new form or new use of a known substance by s.3(d) unless efficacy improves. An application resting on this material must disclose the source and geographical origin of the biological material (s.10(4)(d)(ii)(D)), and the WIPO GRATK Treaty Art. 3.1 asks for the same disclosure internationally. New varieties go to the PPV&FR Act s.14 route instead of the patent route; whether this species is notified under s.29(2) is not verified here. A purified or standardised fraction is judged on the same sections: s.3(c) keeps out the discovery of a substance occurring in nature, and s.3(d) keeps out a new form of a known substance without better efficacy.",
+        "cites": [
+          "in-patents-act-1970",
+          "in-mppp-v3",
+          "intl-gratk-2024",
+          "in-ppvfr-act-2001"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22Withania%20somnifera%22"
+        }
+      },
+      "deposit": null,
+      "gi": {
+        "tags": []
+      },
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002",
+          "in-bd-rules-2024"
+        ]
+      },
+      "wildlife": {
+        "protectedSchedule": null,
+        "citesListed": false,
+        "cites": [
+          "in-wlpa-1972"
+        ]
+      },
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "lastVerified": "2026-09-21"
+    },
+    "guggulu": {
+      "kind": "plant",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "No provision in the corpus names guggulu as a plant, so nothing plant-specific is asserted. The plant and its parts are not patentable as such (Patents Act s.3(j), which carves out only micro-organisms); knowledge that is already traditional is excluded by s.3(p) and examiners search the TKDL when they apply it; a mere admixture of known ingredients is excluded by s.3(e) and a new form or new use of a known substance by s.3(d) unless efficacy improves. An application resting on this material must disclose the source and geographical origin of the biological material (s.10(4)(d)(ii)(D)), and the WIPO GRATK Treaty Art. 3.1 asks for the same disclosure internationally. New varieties go to the PPV&FR Act s.14 route instead of the patent route; whether this species is notified under s.29(2) is not verified here. A guggulu preparation built from a classical formula runs into s.3(p) and s.3(e) together: traditional knowledge, and an admixture whose properties are the sum of its parts.",
+        "cites": [
+          "in-patents-act-1970",
+          "in-mppp-v3",
+          "intl-gratk-2024",
+          "in-ppvfr-act-2001"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22Commiphora%20wightii%22"
+        }
+      },
+      "deposit": null,
+      "gi": {
+        "tags": []
+      },
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002",
+          "in-bd-rules-2024"
+        ]
+      },
+      "wildlife": {
+        "protectedSchedule": null,
+        "citesListed": false,
+        "cites": [
+          "in-wlpa-1972"
+        ]
+      },
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "lastVerified": "2026-09-21"
+    },
+    "neem": {
+      "kind": "plant",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "The Patent Office names neem itself: its manual gives \"the pesticidal and insecticidal properties of neem\" as an example of knowledge that, being traditional, is not an invention under s.3(p). The plant and its parts are not patentable as such (Patents Act s.3(j), which carves out only micro-organisms); knowledge that is already traditional is excluded by s.3(p) and examiners search the TKDL when they apply it; a mere admixture of known ingredients is excluded by s.3(e) and a new form or new use of a known substance by s.3(d) unless efficacy improves. An application resting on this material must disclose the source and geographical origin of the biological material (s.10(4)(d)(ii)(D)), and the WIPO GRATK Treaty Art. 3.1 asks for the same disclosure internationally. New varieties go to the PPV&FR Act s.14 route instead of the patent route; whether this species is notified under s.29(2) is not verified here.",
+        "cites": [
+          "in-patents-act-1970",
+          "in-mppp-v3",
+          "intl-gratk-2024",
+          "in-ppvfr-act-2001"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22Azadirachta%20indica%22"
+        }
+      },
+      "deposit": null,
+      "gi": {
+        "tags": []
+      },
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002",
+          "in-bd-rules-2024"
+        ]
+      },
+      "wildlife": {
+        "protectedSchedule": null,
+        "citesListed": false,
+        "cites": [
+          "in-wlpa-1972"
+        ]
+      },
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "lastVerified": "2026-09-21"
+    },
+    "sandalwood": {
+      "kind": "plant",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "No provision in the corpus names sandalwood, so nothing plant-specific is asserted. The plant and its parts are not patentable as such (Patents Act s.3(j), which carves out only micro-organisms); knowledge that is already traditional is excluded by s.3(p) and examiners search the TKDL when they apply it; a mere admixture of known ingredients is excluded by s.3(e) and a new form or new use of a known substance by s.3(d) unless efficacy improves. An application resting on this material must disclose the source and geographical origin of the biological material (s.10(4)(d)(ii)(D)), and the WIPO GRATK Treaty Art. 3.1 asks for the same disclosure internationally. New varieties go to the PPV&FR Act s.14 route instead of the patent route; whether this species is notified under s.29(2) is not verified here.",
+        "cites": [
+          "in-patents-act-1970",
+          "in-mppp-v3",
+          "intl-gratk-2024",
+          "in-ppvfr-act-2001"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22Santalum%20album%22"
+        }
+      },
+      "deposit": null,
+      "gi": {
+        "tags": []
+      },
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002",
+          "in-bd-rules-2024"
+        ]
+      },
+      "wildlife": {
+        "protectedSchedule": null,
+        "citesListed": false,
+        "cites": [
+          "in-wlpa-1972"
+        ]
+      },
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "lastVerified": "2026-09-21"
+    },
+    "sarpagandha": {
+      "kind": "plant",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "No provision in the corpus names sarpagandha in a patent context, so nothing plant-specific is asserted there. The plant and its parts are not patentable as such (Patents Act s.3(j), which carves out only micro-organisms); knowledge that is already traditional is excluded by s.3(p) and examiners search the TKDL when they apply it; a mere admixture of known ingredients is excluded by s.3(e) and a new form or new use of a known substance by s.3(d) unless efficacy improves. An application resting on this material must disclose the source and geographical origin of the biological material (s.10(4)(d)(ii)(D)), and the WIPO GRATK Treaty Art. 3.1 asks for the same disclosure internationally. New varieties go to the PPV&FR Act s.14 route instead of the patent route; whether this species is notified under s.29(2) is not verified here. Its alkaloids are the obvious patent question, and s.3(c) keeps out the discovery of a substance occurring in nature, so an isolated alkaloid as such is outside patentability.",
+        "cites": [
+          "in-patents-act-1970",
+          "in-mppp-v3",
+          "intl-gratk-2024",
+          "in-ppvfr-act-2001"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22Rauvolfia%20serpentina%22"
+        }
+      },
+      "deposit": null,
+      "gi": {
+        "tags": []
+      },
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002",
+          "in-bd-rules-2024"
+        ]
+      },
+      "wildlife": {
+        "protectedSchedule": "Schedule IV, CITES Appendix II, annotation #2 (all parts and derivatives except seeds, pollen and finished products packaged for retail trade)",
+        "citesListed": true,
+        "cites": [
+          "in-wlpa-1972"
+        ]
+      },
+      "export": {
+        "restricted": true,
+        "cite": "in-wlpa-1972"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "lastVerified": "2026-09-21"
+    },
+    "tulsi": {
+      "kind": "plant",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "No provision in the corpus names tulsi, so nothing plant-specific is asserted. The plant and its parts are not patentable as such (Patents Act s.3(j), which carves out only micro-organisms); knowledge that is already traditional is excluded by s.3(p) and examiners search the TKDL when they apply it; a mere admixture of known ingredients is excluded by s.3(e) and a new form or new use of a known substance by s.3(d) unless efficacy improves. An application resting on this material must disclose the source and geographical origin of the biological material (s.10(4)(d)(ii)(D)), and the WIPO GRATK Treaty Art. 3.1 asks for the same disclosure internationally. New varieties go to the PPV&FR Act s.14 route instead of the patent route; whether this species is notified under s.29(2) is not verified here.",
+        "cites": [
+          "in-patents-act-1970",
+          "in-mppp-v3",
+          "intl-gratk-2024",
+          "in-ppvfr-act-2001"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22Ocimum%20tenuiflorum%22"
+        }
+      },
+      "deposit": null,
+      "gi": {
+        "tags": []
+      },
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002",
+          "in-bd-rules-2024"
+        ]
+      },
+      "wildlife": {
+        "protectedSchedule": null,
+        "citesListed": false,
+        "cites": [
+          "in-wlpa-1972"
+        ]
+      },
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "lastVerified": "2026-09-21"
+    },
+    "turmeric": {
+      "kind": "plant",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "The Patent Office names turmeric itself: its manual gives \"the antiseptic properties of turmeric for wound healing\" as the example of knowledge that, being traditional, is not an invention under s.3(p). The plant and its parts are not patentable as such (Patents Act s.3(j), which carves out only micro-organisms); knowledge that is already traditional is excluded by s.3(p) and examiners search the TKDL when they apply it; a mere admixture of known ingredients is excluded by s.3(e) and a new form or new use of a known substance by s.3(d) unless efficacy improves. An application resting on this material must disclose the source and geographical origin of the biological material (s.10(4)(d)(ii)(D)), and the WIPO GRATK Treaty Art. 3.1 asks for the same disclosure internationally. New varieties go to the PPV&FR Act s.14 route instead of the patent route; whether this species is notified under s.29(2) is not verified here.",
+        "cites": [
+          "in-patents-act-1970",
+          "in-mppp-v3",
+          "intl-gratk-2024",
+          "in-ppvfr-act-2001"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22Curcuma%20longa%22"
+        }
+      },
+      "deposit": null,
+      "gi": {
+        "tags": []
+      },
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002",
+          "in-bd-rules-2024"
+        ]
+      },
+      "wildlife": {
+        "protectedSchedule": null,
+        "citesListed": false,
+        "cites": [
+          "in-wlpa-1972"
+        ]
+      },
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "lastVerified": "2026-09-21"
+    }
+  },
+  "microbe": {
+    "bacillus-clausii": {
+      "kind": "microbe",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Micro-organisms are the carve-out in Patents Act s.3(j): plants and animals are excluded \"other than micro-organisms\". A strain as found is still caught by s.3(c), which keeps out the discovery of a living thing occurring in nature. Where a specification cannot describe the material well enough, s.10(4)(d)(ii) completes the application by deposit with an international depositary authority, and Budapest Treaty Art. 3(1)(a) makes one such deposit count in every contracting state.",
+        "cites": [
+          "in-patents-act-1970",
+          "intl-budapest-treaty"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22Bacillus%20clausii%22"
+        }
+      },
+      "deposit": {
+        "budapest": true,
+        "indianIDAs": [],
+        "cite": "intl-budapest-treaty"
+      },
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "dadhi-lactococcus": {
+      "kind": "microbe",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Micro-organisms are the carve-out in Patents Act s.3(j): plants and animals are excluded \"other than micro-organisms\". A strain as found is still caught by s.3(c), which keeps out the discovery of a living thing occurring in nature. Where a specification cannot describe the material well enough, s.10(4)(d)(ii) completes the application by deposit with an international depositary authority, and Budapest Treaty Art. 3(1)(a) makes one such deposit count in every contracting state.",
+        "cites": [
+          "in-patents-act-1970",
+          "intl-budapest-treaty"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22Lactococcus%20lactis%22"
+        }
+      },
+      "deposit": {
+        "budapest": true,
+        "indianIDAs": [],
+        "cite": "intl-budapest-treaty"
+      },
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "dhataki-yeast": {
+      "kind": "microbe",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Micro-organisms are the carve-out in Patents Act s.3(j): plants and animals are excluded \"other than micro-organisms\". A strain as found is still caught by s.3(c), which keeps out the discovery of a living thing occurring in nature. Where a specification cannot describe the material well enough, s.10(4)(d)(ii) completes the application by deposit with an international depositary authority, and Budapest Treaty Art. 3(1)(a) makes one such deposit count in every contracting state.",
+        "cites": [
+          "in-patents-act-1970",
+          "intl-budapest-treaty"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22Saccharomyces%20cerevisiae%22"
+        }
+      },
+      "deposit": {
+        "budapest": true,
+        "indianIDAs": [],
+        "cite": "intl-budapest-treaty"
+      },
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "plant-endophyte": {
+      "kind": "microbe",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Micro-organisms are the carve-out in Patents Act s.3(j): plants and animals are excluded \"other than micro-organisms\". A strain as found is still caught by s.3(c), which keeps out the discovery of a living thing occurring in nature. Where a specification cannot describe the material well enough, s.10(4)(d)(ii) completes the application by deposit with an international depositary authority, and Budapest Treaty Art. 3(1)(a) makes one such deposit count in every contracting state. An endophyte that makes a compound its host plant is known for raises the s.3(p) question too: the use of the plant may be traditional knowledge even where the organism is newly isolated.",
+        "cites": [
+          "in-patents-act-1970",
+          "intl-budapest-treaty"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22endophytic%20fungus%20medicinal%20plant%22"
+        }
+      },
+      "deposit": {
+        "budapest": true,
+        "indianIDAs": [],
+        "cite": "intl-budapest-treaty"
+      },
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "spirulina": {
+      "kind": "microbe",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Micro-organisms are the carve-out in Patents Act s.3(j): plants and animals are excluded \"other than micro-organisms\". A strain as found is still caught by s.3(c), which keeps out the discovery of a living thing occurring in nature. Where a specification cannot describe the material well enough, s.10(4)(d)(ii) completes the application by deposit with an international depositary authority, and Budapest Treaty Art. 3(1)(a) makes one such deposit count in every contracting state.",
+        "cites": [
+          "in-patents-act-1970",
+          "intl-budapest-treaty"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22Arthrospira%20platensis%22"
+        }
+      },
+      "deposit": {
+        "budapest": true,
+        "indianIDAs": [],
+        "cite": "intl-budapest-treaty"
+      },
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "takra-lactobacillus": {
+      "kind": "microbe",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Micro-organisms are the carve-out in Patents Act s.3(j): plants and animals are excluded \"other than micro-organisms\". A strain as found is still caught by s.3(c), which keeps out the discovery of a living thing occurring in nature. Where a specification cannot describe the material well enough, s.10(4)(d)(ii) completes the application by deposit with an international depositary authority, and Budapest Treaty Art. 3(1)(a) makes one such deposit count in every contracting state.",
+        "cites": [
+          "in-patents-act-1970",
+          "intl-budapest-treaty"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22Lactiplantibacillus%20plantarum%22"
+        }
+      },
+      "deposit": {
+        "budapest": true,
+        "indianIDAs": [],
+        "cite": "intl-budapest-treaty"
+      },
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    }
+  },
+  "animal": {
+    "dugdha": {
+      "kind": "animal",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Patents Act s.3(j) excludes animals in whole or any part thereof, so the material itself is not patentable; s.3(c) separately keeps out the discovery of a substance occurring in nature. A process of preparation is judged on its own against the rest of s.3.",
+        "cites": [
+          "in-patents-act-1970"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22milk%20Ayurveda%22"
+        }
+      },
+      "deposit": null,
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "ghrita": {
+      "kind": "animal",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Patents Act s.3(j) excludes animals in whole or any part thereof, so the material itself is not patentable; s.3(c) separately keeps out the discovery of a substance occurring in nature. A process of preparation is judged on its own against the rest of s.3.",
+        "cites": [
+          "in-patents-act-1970"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22ghee%20clarified%20butter%22"
+        }
+      },
+      "deposit": null,
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "kasturi": {
+      "kind": "animal",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Patents Act s.3(j) excludes animals in whole or any part thereof, so the material itself is not patentable; s.3(c) separately keeps out the discovery of a substance occurring in nature. A process of preparation is judged on its own against the rest of s.3.",
+        "cites": [
+          "in-patents-act-1970"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22musk%20Moschus%22"
+        }
+      },
+      "deposit": null,
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": {
+        "protectedSchedule": "Schedule I, Part A — Alpine, Black, Himalayan and Kashmir musk deer (Moschus spp.); s.49B prohibits dealing in animal articles derived from scheduled animals, and s.2 counts musk as an uncured trophy",
+        "citesListed": "unknown",
+        "cites": [
+          "in-wlpa-1972"
+        ]
+      },
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "madhu": {
+      "kind": "animal",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Patents Act s.3(j) excludes animals in whole or any part thereof, so the material itself is not patentable; s.3(c) separately keeps out the discovery of a substance occurring in nature. A process of preparation is judged on its own against the rest of s.3.",
+        "cites": [
+          "in-patents-act-1970"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22honey%20Apis%22"
+        }
+      },
+      "deposit": null,
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "mukta": {
+      "kind": "animal",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Patents Act s.3(j) excludes animals in whole or any part thereof, so the material itself is not patentable; s.3(c) separately keeps out the discovery of a substance occurring in nature. A process of preparation is judged on its own against the rest of s.3.",
+        "cites": [
+          "in-patents-act-1970"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22pearl%20Pinctada%22"
+        }
+      },
+      "deposit": null,
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "pravala": {
+      "kind": "animal",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Patents Act s.3(j) excludes animals in whole or any part thereof, so the material itself is not patentable; s.3(c) separately keeps out the discovery of a substance occurring in nature. A process of preparation is judged on its own against the rest of s.3.",
+        "cites": [
+          "in-patents-act-1970"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22Corallium%20red%20coral%22"
+        }
+      },
+      "deposit": null,
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": {
+        "protectedSchedule": "Schedule I, Part K (corals) and Schedule IV — Corallium spp. in CITES Appendix III (listed by China), Antipatharia and Scleractinia in Appendix II",
+        "citesListed": true,
+        "cites": [
+          "in-wlpa-1972"
+        ]
+      },
+      "export": {
+        "restricted": true,
+        "cite": "in-wlpa-1972"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "shankha": {
+      "kind": "animal",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Patents Act s.3(j) excludes animals in whole or any part thereof, so the material itself is not patentable; s.3(c) separately keeps out the discovery of a substance occurring in nature. A process of preparation is judged on its own against the rest of s.3.",
+        "cites": [
+          "in-patents-act-1970"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22conch%20shell%20Turbinella%20pyrum%22"
+        }
+      },
+      "deposit": null,
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "shukti": {
+      "kind": "animal",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Patents Act s.3(j) excludes animals in whole or any part thereof, so the material itself is not patentable; s.3(c) separately keeps out the discovery of a substance occurring in nature. A process of preparation is judged on its own against the rest of s.3.",
+        "cites": [
+          "in-patents-act-1970"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22pearl%20oyster%20shell%22"
+        }
+      },
+      "deposit": null,
+      "biodiversity": {
+        "indianBioResource": true,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    }
+  },
+  "mineral": {
+    "abhraka": {
+      "kind": "mineral",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Patents Act s.3(c) keeps out the discovery of a non-living substance occurring in nature, so the mineral itself is not patentable. A process — the classical purification and incineration steps, or a modern equivalent — is judged on its own against the rest of s.3, where s.3(p) and s.3(e) are the clauses that usually bite.",
+        "cites": [
+          "in-patents-act-1970"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22mica%20abhraka%20bhasma%22"
+        }
+      },
+      "deposit": null,
+      "biodiversity": {
+        "indianBioResource": false,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "gandhaka": {
+      "kind": "mineral",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Patents Act s.3(c) keeps out the discovery of a non-living substance occurring in nature, so the mineral itself is not patentable. A process — the classical purification and incineration steps, or a modern equivalent — is judged on its own against the rest of s.3, where s.3(p) and s.3(e) are the clauses that usually bite.",
+        "cites": [
+          "in-patents-act-1970"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22sulphur%20gandhaka%22"
+        }
+      },
+      "deposit": null,
+      "biodiversity": {
+        "indianBioResource": false,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "hingula": {
+      "kind": "mineral",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Patents Act s.3(c) keeps out the discovery of a non-living substance occurring in nature, so the mineral itself is not patentable. A process — the classical purification and incineration steps, or a modern equivalent — is judged on its own against the rest of s.3, where s.3(p) and s.3(e) are the clauses that usually bite.",
+        "cites": [
+          "in-patents-act-1970"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22cinnabar%20hingula%22"
+        }
+      },
+      "deposit": null,
+      "biodiversity": {
+        "indianBioResource": false,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": true,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "loha": {
+      "kind": "mineral",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Patents Act s.3(c) keeps out the discovery of a non-living substance occurring in nature, so the mineral itself is not patentable. A process — the classical purification and incineration steps, or a modern equivalent — is judged on its own against the rest of s.3, where s.3(p) and s.3(e) are the clauses that usually bite.",
+        "cites": [
+          "in-patents-act-1970"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22loha%20bhasma%20iron%22"
+        }
+      },
+      "deposit": null,
+      "biodiversity": {
+        "indianBioResource": false,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "parada": {
+      "kind": "mineral",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Patents Act s.3(c) keeps out the discovery of a non-living substance occurring in nature, so the mineral itself is not patentable. A process — the classical purification and incineration steps, or a modern equivalent — is judged on its own against the rest of s.3, where s.3(p) and s.3(e) are the clauses that usually bite.",
+        "cites": [
+          "in-patents-act-1970"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22mercury%20parada%20bhasma%22"
+        }
+      },
+      "deposit": null,
+      "biodiversity": {
+        "indianBioResource": false,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": true,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    },
+    "swarna": {
+      "kind": "mineral",
+      "tk": {
+        "tkdl": "unknown",
+        "classicalTexts": [],
+        "cite": "unknown"
+      },
+      "gi": {
+        "tags": []
+      },
+      "monographs": {
+        "api": null,
+        "cite": "unknown"
+      },
+      "patentability": {
+        "note": "Patents Act s.3(c) keeps out the discovery of a non-living substance occurring in nature, so the mineral itself is not patentable. A process — the classical purification and incineration steps, or a modern equivalent — is judged on its own against the rest of s.3, where s.3(p) and s.3(e) are the clauses that usually bite.",
+        "cites": [
+          "in-patents-act-1970"
+        ]
+      },
+      "patents": {
+        "landmark": [],
+        "search": {
+          "inpass": "https://iprsearch.ipindia.gov.in/PublicSearch/",
+          "patentscope": "https://patentscope.wipo.int/search/en/search.jsf",
+          "googlePatents": "https://patents.google.com/?q=%22swarna%20bhasma%20gold%22"
+        }
+      },
+      "deposit": null,
+      "biodiversity": {
+        "indianBioResource": false,
+        "normallyTradedCommodity": "unknown",
+        "cites": [
+          "in-bd-act-2002"
+        ]
+      },
+      "wildlife": null,
+      "export": {
+        "restricted": "unknown",
+        "cite": "unknown"
+      },
+      "drugSchedules": {
+        "scheduleE1": false,
+        "heavyMetalTesting": null,
+        "cite": "in-dc-rules-1945"
+      },
+      "lastVerified": "2026-09-22"
+    }
+  }
+}

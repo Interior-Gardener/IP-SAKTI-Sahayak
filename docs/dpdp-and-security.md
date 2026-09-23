@@ -51,6 +51,7 @@ Paid connectors (stage 3): a `consent_grants` row for `connector:<name>` must ex
 - **Secrets**: provider keys only in the API environment (`.env`, never committed; `.env.example` has empty values). The browser never receives them.
 - **Transport**: HTTPS in deployment; CORS allowlist of the web origins (`cors_origins` in `api/app/settings.py`).
 - **Abuse**: per-session rate limit, request size cap, input length cap, iteration cap on the agent loop.
+- **The agent's blast radius** (built 2026-09-22): every tool the model can call is read-only and local — corpus search, the knowledge graph, the two rule tables, a stored material profile, the registry list. Nothing it can call writes a row, files a ticket, spends money or reaches the network, so a prompt injection in a corpus PDF can at worst make the model read something else. Escalation and the paid connectors stay actions a person takes. `POST /agent` requires the same `assistant` consent as `/ask`, and each call writes a `tool_call` audit row holding the tool name and its arguments — never the question.
 - **Least privilege**: the API's database user owns only the app schema; connectors run with the user's own credentials, per call.
 - **Dependencies**: CI runs lint and tests on every push; lockfiles committed.
 

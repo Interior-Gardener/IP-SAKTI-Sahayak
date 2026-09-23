@@ -171,6 +171,7 @@ def search(
     top_k: int = 8,
     candidates: int = 40,
     historical: bool = False,
+    entities: list[str] | None = None,
 ) -> list[Retrieved]:
     lists = {
         "dense": dense(
@@ -180,6 +181,13 @@ def search(
         "lexical": lexical(session, query, jurisdiction, candidates, historical),
         "locator": by_locator(session, locators_in(query), jurisdiction, 10, historical),
     }  # fmt: skip
+    if entities:
+        # Knowledge-graph expansion: the provisions the question's entities are
+        # joined to, whether or not the question uses the words in them. Imported
+        # here because the graph imports this module for the row shape.
+        from app.graph.expand import graph_chunks
+
+        lists["graph"] = graph_chunks(session, entities, jurisdiction, 8, historical)
     fused = dedupe_by_locator(fuse(lists, regimes))[:candidates]
     if reranker and fused:
         scored = reranker.rerank(
@@ -193,4 +201,45 @@ def search(
             key=lambda h: ("locator" in h.signals, h.signals.get("rerank", float("-inf"))),
             reverse=True,
         )
-    return fused[:top_k]
+    return reserve_graph_slots(fused, top_k)
+
+
+#: How many of the top results a knowledge-graph hit may claim. The graph's
+#: edges are curated, cited legal relations ("musk deer: Schedule I, Part A"),
+#: so a provision one of them points at is strong evidence even when its text
+#: shares few words with the question — the cross-encoder scores WLPA s.49B at
+#: 0.002 for a musk question and ranks D&C Rules sections above it.
+GRAPH_SLOTS = 2
+
+#: ...but only where the reranker is unsure of what the graph hit would push
+#: out. Measured on the 2026-09-23 golden set: a correct graph hit scores about
+#: what a wrong one does (0.002 against 0.004), so no absolute floor separates
+#: them. What does is the result being displaced: for the musk question the 8th
+#: hit scored 0.009, for "patent or proprietary medicine" (a D&C term that
+#: links the patent regime) it scored 0.947. A graph hit may displace a result
+#: only when it scores at least this fraction of that result's score.
+GRAPH_DISPLACE_RATIO = 0.1
+
+
+def reserve_graph_slots(ranked: list[Retrieved], top_k: int) -> list[Retrieved]:
+    """The top `top_k`, with up to GRAPH_SLOTS of it open to graph hits.
+
+    Only graph hits already among the candidates compete, best reranked first.
+    Each may displace the weakest result that is neither a graph hit nor an
+    exact locator hit (the user named that provision), and only when the
+    reranker was not confident about that result either.
+    """
+    head = ranked[:top_k]
+    have = sum(1 for h in head if "graph" in h.signals)
+    waiting = [h for h in ranked[top_k:] if "graph" in h.signals][: max(0, GRAPH_SLOTS - have)]
+    for hit in waiting:
+        for i in range(len(head) - 1, -1, -1):
+            if "graph" in head[i].signals or "locator" in head[i].signals:
+                continue
+            weakest = head[i].signals.get("rerank")
+            score = hit.signals.get("rerank")
+            if weakest is not None and score is not None and score < weakest * GRAPH_DISPLACE_RATIO:
+                break
+            head[i] = hit
+            break
+    return head

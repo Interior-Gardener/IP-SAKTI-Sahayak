@@ -83,3 +83,36 @@ def test_fuse_rewards_agreement_across_lists():
 
     fused = fuse({"dense": [r(1), r(2)], "lexical": [r(2), r(3)]})
     assert fused[0].chunk_id == 2
+
+
+def _hit(n: int, rerank: float, *signals: str):
+    from app.retrieval.hybrid import Retrieved
+
+    hit = Retrieved(n, "src", "Src", "u", "v", "IN", "act", [], f"s.{n}", "", None, "t", "")
+    hit.signals = {"rerank": rerank, **{s: 1.0 for s in signals}}
+    return hit
+
+
+def test_a_graph_hit_takes_a_slot_when_the_reranker_is_unsure():
+    """The musk case: every result is weak, so the cited graph provision gets in."""
+    from app.retrieval.hybrid import reserve_graph_slots
+
+    ranked = [_hit(i, 0.009) for i in range(8)] + [_hit(99, 0.002, "graph")]
+    top = reserve_graph_slots(ranked, 8)
+    assert [h.chunk_id for h in top][-1] == 99 and len(top) == 8
+
+
+def test_a_graph_hit_steps_aside_when_the_reranker_is_sure():
+    """The "patent or proprietary medicine" case: a D&C term that links the
+    patent regime must not push confident D&C results out of the top 8."""
+    from app.retrieval.hybrid import reserve_graph_slots
+
+    ranked = [_hit(i, 0.95) for i in range(8)] + [_hit(99, 0.005, "graph")]
+    assert 99 not in [h.chunk_id for h in reserve_graph_slots(ranked, 8)]
+
+
+def test_a_graph_hit_never_displaces_a_named_provision():
+    from app.retrieval.hybrid import reserve_graph_slots
+
+    ranked = [_hit(i, 0.001, "locator") for i in range(8)] + [_hit(99, 0.5, "graph")]
+    assert 99 not in [h.chunk_id for h in reserve_graph_slots(ranked, 8)]

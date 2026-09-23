@@ -4,9 +4,17 @@ python -m app.ingest fetch      [--only ID ...]
 python -m app.ingest normalise  [--only ID ...] [--no-ocr]
 python -m app.ingest chunk      [--only ID ...]   # parse + chunk, print counts, no DB
 python -m app.ingest run        [--only ID ...] [--no-ocr]  # fetch -> ... -> Postgres
+python -m app.ingest load       [--only ID ...] [--rechunk] # committed text -> Postgres
+
+`load` skips fetch and normalise and ingests `corpus/normalised/` as committed: the text
+every quote check and golden item was verified against. It is how a fresh database is
+filled on a machine without the raw PDFs, including the four sources that can only be
+downloaded by hand. The version is keyed by the raw file's hash when the raw file is
+present, and by the hash of the normalised text when it is not.
 """
 
 import argparse
+import hashlib
 import sys
 from pathlib import Path
 
@@ -37,9 +45,17 @@ def drafts_for(source: ManifestSource):
     return chunk_units(parse_units(text, source.doc_type, source.language), source.title)
 
 
+def version_hash(source: ManifestSource) -> str:
+    raw = source.raw_path()
+    if raw.exists():
+        return sha256_of(raw)
+    text = REPO / "corpus" / "normalised" / f"{source.id}.txt"
+    return hashlib.sha256(text.read_bytes()).hexdigest()
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="python -m app.ingest")
-    parser.add_argument("command", choices=["fetch", "normalise", "chunk", "run"])
+    parser.add_argument("command", choices=["fetch", "normalise", "chunk", "run", "load"])
     parser.add_argument("--manifest", default=str(MANIFEST))
     parser.add_argument("--only", nargs="*", help="source ids to process")
     parser.add_argument("--no-ocr", action="store_true")
@@ -53,7 +69,7 @@ def main(argv: list[str] | None = None) -> int:
     failures = 0
 
     session = embedder = None
-    if args.command == "run":
+    if args.command in ("run", "load"):
         from app.db import SessionLocal
         from app.embed.base import get_embedder
 
@@ -77,20 +93,20 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"normalise {source.id:36} skipped         {e}")
                 continue
             print(f"normalise {source.id:36} {n.pages:4} pages {n.ocr_pages:3} ocr", flush=True)
-        if args.command in ("chunk", "run"):
+        if args.command in ("chunk", "run", "load"):
             try:
                 drafts = drafts_for(source)
             except FileNotFoundError:
                 print(f"chunk     {source.id:36} skipped (not normalised)")
                 continue
             print(f"chunk     {source.id:36} {len(drafts):5} chunks", flush=True)
-        if args.command == "run":
+        if args.command in ("run", "load"):
             from app.ingest.upsert import upsert_source
 
             u = upsert_source(
                 session,
                 source,
-                sha256_of(source.raw_path()),
+                sha256_of(source.raw_path()) if args.command == "run" else version_hash(source),
                 drafts,
                 embedder,
                 rechunk=args.rechunk,

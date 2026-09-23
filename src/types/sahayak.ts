@@ -21,6 +21,29 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/agent": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Agent
+         * @description The agentic path: the model works the question with the tools in
+         *     app/agent/tools.py, under a hard iteration cap, with an audit row per call.
+         *
+         *     Consent is required exactly as it is for /ask, and every tool is read-only.
+         */
+        post: operations["agent_agent_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/ask": {
         parameters: {
             query?: never;
@@ -87,6 +110,28 @@ export interface paths {
         put?: never;
         /** Escalate */
         post: operations["escalate_escalate_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/graph/{ref}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Graph Entity
+         * @description One entity and every edge it takes part in, each with the provision it
+         *     rests on. `ref` is "kind:key" — for example `concept:micro-organism`,
+         *     `regime:abs` or `source:in-patents-act-1970`.
+         */
+        get: operations["graph_entity_graph__ref__get"];
+        put?: never;
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -219,6 +264,39 @@ export interface components {
             reason: "out_of_scope" | "insufficient_sources" | "medical_advice" | "unsafe";
             /** Suggestion */
             suggestion: string;
+        };
+        /** AgentAnswer */
+        AgentAnswer: {
+            /** Calls */
+            calls: components["schemas"]["AgentToolCall"][];
+            /** Chunk Ids */
+            chunk_ids: number[];
+            /** Disclaimer */
+            disclaimer: string;
+            /** Markdown */
+            markdown: string;
+            provider: components["schemas"]["ProviderInfo"];
+            /** Truncated */
+            truncated: boolean;
+        };
+        /** AgentRequest */
+        AgentRequest: {
+            /**
+             * Max Iterations
+             * @default 6
+             */
+            max_iterations: number;
+            /** Question */
+            question: string;
+        };
+        /** AgentToolCall */
+        AgentToolCall: {
+            /** Arguments */
+            arguments: {
+                [key: string]: unknown;
+            };
+            /** Tool */
+            tool: string;
         };
         /** ApiMonograph */
         ApiMonograph: {
@@ -851,6 +929,42 @@ export interface operations {
             };
         };
     };
+    agent_agent_post: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description anonymous id from the browser */
+                "x-session-id": string;
+            };
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["AgentRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AgentAnswer"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
     ask_ask_post: {
         parameters: {
             query?: never;
@@ -1011,6 +1125,39 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["EscalateResult"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    graph_entity_graph__ref__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                ref: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
                 };
             };
             /** @description Validation Error */
