@@ -124,6 +124,13 @@ export default function MaterialPage() {
             >
               {onBench ? 'On the workbench' : 'Add to workbench'}
             </Button>
+            {onBench && (
+              <Link to="/workbench">
+                <Button variant="primary" iconRight="arrowRight">
+                  Open the workbench
+                </Button>
+              </Link>
+            )}
             <Link to={`/rasashala?open=${material.id}`}>
               <Button variant="secondary" icon="compass">
                 See it in the Rasashala

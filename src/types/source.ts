@@ -54,6 +54,8 @@ export type SubstanceForm =
   | 'pearl'
   /** A branched stick — pravala. */
   | 'coral'
+  /** One valve of a bivalve: frilled outside, nacre inside — shukti. */
+  | 'shell'
   /** A cast bar — swarna, rajata, loha. */
   | 'ingot'
   /** A conical heap of powder — a bhasma or churna as it is kept. */
@@ -76,6 +78,13 @@ export type SubstanceVariant =
   | 'nugget'
   /** powder: poured into a shallow dish rather than heaped. */
   | 'dish'
+  /** powder: heaped, with books of raw mica sheets beside it — abhraka. */
+  | 'mica'
+  /** rock: a smooth pouch with a coat of short hair — the musk pod. */
+  | 'pod'
+  /** rock: bipyramid crystals grown on matrix rock — cinnabar, sulphur. The
+   *  crystals take `color`, the matrix `accent`. */
+  | 'crystals'
 
 export interface SubstanceModelSpec {
   form: SubstanceForm

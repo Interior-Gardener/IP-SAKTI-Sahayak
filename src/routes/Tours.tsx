@@ -5,6 +5,9 @@ import { BotanicalPlate } from '../components/BotanicalPlate'
 import { Icon } from '../components/ui/Icon'
 import { Button } from '../components/ui/primitives'
 import { useGarden } from '../store/useGarden'
+import { RASASHALA_TOUR } from '../data/rasashalaTour'
+import { MaterialThumb } from '../components/MaterialCard'
+import { getMaterial } from '../data/materials'
 
 export default function Tours() {
   const completed = useGarden((s) => s.completedTours)
@@ -14,7 +17,7 @@ export default function Tours() {
       <header className="py-8 sm:py-12">
         <p className="text-[0.72rem] font-semibold tracking-[0.2em] text-accent uppercase">Guided walks</p>
         <h1 className="mt-2 max-w-3xl font-display text-[clamp(2rem,5vw,3.2rem)] leading-[1.05] font-semibold tracking-[-0.03em]">
-          Six routes through the garden, each with a point to make.
+          {tours.length + 1} guided walks, each with a point to make.
         </h1>
         <p className="mt-3 max-w-2xl text-[0.95rem] leading-relaxed text-ink-soft text-balance-pretty">
           A tour walks you from plant to plant, moving the camera and narrating as it goes. They are built to
@@ -88,6 +91,31 @@ export default function Tours() {
           )
         })}
       </div>
+
+      {/* The Rasashala's own tour: the camera moves between materials in the hall. */}
+      <Link
+        to="/rasashala?tour=1"
+        className="group mb-10 flex flex-col gap-4 rounded-4xl border border-line bg-raised p-5 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] sm:flex-row sm:items-center sm:p-6"
+      >
+        <div className="flex -space-x-3">
+          {RASASHALA_TOUR.stops.slice(0, 5).map((stop) => {
+            const m = getMaterial(stop.materialId)
+            return m ? (
+              <span key={m.id} className="grid size-14 place-items-center overflow-hidden rounded-full border-2 border-[var(--surface-raised)] bg-sunken">
+                <MaterialThumb material={m} className="size-14 object-contain" />
+              </span>
+            ) : null
+          })}
+        </div>
+        <div className="min-w-0 flex-1">
+          <p className="text-[0.66rem] font-semibold tracking-[0.18em] text-accent uppercase">In the Rasashala · IP &amp; Law</p>
+          <h2 className="mt-1 font-display text-[1.3rem] leading-tight font-semibold">{RASASHALA_TOUR.title}</h2>
+          <p className="mt-1 text-[0.86rem] text-ink-soft">
+            {RASASHALA_TOUR.subtitle}. {RASASHALA_TOUR.stops.length} stops, each with the provision it rests on.
+          </p>
+        </div>
+        <Icon name="arrowRight" size={20} className="shrink-0 text-ink-faint transition-transform group-hover:translate-x-1" />
+      </Link>
 
       <section className="mb-20 rounded-4xl border border-line bg-sunken p-6 sm:p-8">
         <h2 className="font-display text-xl font-semibold">Prefer to wander?</h2>

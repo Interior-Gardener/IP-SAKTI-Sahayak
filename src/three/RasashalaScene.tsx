@@ -1,7 +1,8 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import * as THREE from 'three'
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Environment, Lightformer, OrbitControls } from '@react-three/drei'
+import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 import { useDetail, dprFor } from '../hooks/useDetail'
 import { daylightAt } from './daylight'
 import { CultureDish, GroundPlane, LabelBoard, SignBoard, type BoardRead } from './scenery'
@@ -248,6 +249,50 @@ function VialRack({ x, z, dark }: { x: number; z: number; dark: boolean }) {
   )
 }
 
+/** Where the camera should stand to look at one thing, and what it looks at. */
+interface CameraGoal {
+  position: THREE.Vector3
+  target: THREE.Vector3
+}
+
+/**
+ * Glides the orbit camera to a goal and hands control back.
+ *
+ * Opening a material should bring it to you, not leave it a speck across the
+ * hall with a panel open over the view. The move eases in over about a second,
+ * and stops the moment the visitor drags — whatever they do next is theirs.
+ */
+function CameraFocus({ goal }: { goal: CameraGoal | null }) {
+  const camera = useThree((s) => s.camera)
+  const controls = useThree((s) => s.controls) as OrbitControlsImpl | null
+  const moving = useRef(false)
+
+  useEffect(() => {
+    moving.current = goal !== null
+  }, [goal])
+
+  useEffect(() => {
+    if (!controls) return
+    const stop = () => {
+      moving.current = false
+    }
+    controls.addEventListener('start', stop)
+    return () => controls.removeEventListener('start', stop)
+  }, [controls])
+
+  useFrame((_, dt) => {
+    if (!moving.current || !goal || !controls) return
+    const k = 1 - Math.exp(-dt * 3.2)
+    camera.position.lerp(goal.position, k)
+    controls.target.lerp(goal.target, k)
+    controls.update()
+    if (camera.position.distanceTo(goal.position) < 0.004 && controls.target.distanceTo(goal.target) < 0.004) {
+      moving.current = false
+    }
+  })
+  return null
+}
+
 interface ContentsProps {
   detail: Detail
   timeOfDay: number
@@ -257,6 +302,12 @@ interface ContentsProps {
   onSelect?: (id: string) => void
   onWalkExit?: () => void
   onWalkAim?: (id: string | null) => void
+  /** A material to bring the camera to, or null to leave it where it is. */
+  focus?: string | null
+  /** How far to push the focused thing off centre, as a fraction of the view:
+   *  x < 0 moves it left (clear of a panel on the right), y > 0 moves it up
+   *  (clear of a card along the bottom). */
+  focusShift?: [number, number]
 }
 
 function SceneContents({
@@ -268,12 +319,38 @@ function SceneContents({
   onSelect,
   onWalkExit,
   onWalkAim,
+  focus = null,
+  focusShift = [0, 0],
 }: ContentsProps) {
   const light = daylightAt(timeOfDay)
   const dark = light.dark
   const shadows = detail !== 'low'
   const still = useGarden((s) => s.reducedMotion)
   const stands = useMemo(() => placements(), [])
+  const camera = useThree((s) => s.camera) as THREE.PerspectiveCamera
+  const aspect = useThree((s) => s.size.width / Math.max(1, s.size.height))
+
+  /* The camera's goal for the focused material: in the aisle, a little above
+   * bench height, looking at the piece — then slid sideways and up so the
+   * piece lands clear of whatever the page has open over the view. */
+  const [shiftX, shiftY] = focusShift
+  const goal = useMemo<CameraGoal | null>(() => {
+    const stand = stands.find((s) => s.material.id === focus)
+    if (!stand) return null
+    const [x, y, z] = stand.position
+    const side = aisleSide(x)
+    const target = new THREE.Vector3(x, y + stand.fit * 0.45, z)
+    const distance = 1.3 + stand.fit * 1.6
+    const position = new THREE.Vector3(x + side * distance, y + 0.75 + stand.fit * 0.4, z + 0.35)
+    const forward = target.clone().sub(position).normalize()
+    const right = new THREE.Vector3().crossVectors(forward, new THREE.Vector3(0, 1, 0)).normalize()
+    const up = new THREE.Vector3().crossVectors(right, forward).normalize()
+    const along = target.distanceTo(position)
+    const halfH = along * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))
+    // Moving the whole view one way moves the piece the other way on screen.
+    const offset = right.multiplyScalar(-shiftX * 2 * halfH * aspect).add(up.multiplyScalar(-shiftY * 2 * halfH))
+    return { position: position.add(offset), target: target.add(offset) }
+  }, [focus, stands, camera.fov, aspect, shiftX, shiftY])
 
   /* Aim targets and obstacles for walking: the benches block the feet, and
    * every material is something the crosshair can settle on. */
@@ -420,6 +497,9 @@ function SceneContents({
             <MaterialObject
               material={material}
               position={[position[0], position[1] + (material.kind === 'microbe' ? 0.024 : 0), position[2]]}
+              // Front (+Z in the generators) turned to the aisle, so the comb's
+              // cells and the conch's lip face the people walking past.
+              rotation={(side * Math.PI) / 2}
               fit={fit}
               detail={detail}
               highlighted={selected === material.id}
@@ -464,12 +544,13 @@ function SceneContents({
         <OrbitControls
           makeDefault
           enablePan
-          minDistance={4}
+          minDistance={0.8}
           maxDistance={34}
           maxPolarAngle={Math.PI / 2.15}
           target={[0, 1.05, -3]}
         />
       )}
+      {!walking && <CameraFocus goal={goal} />}
     </>
   )
 }
@@ -482,6 +563,8 @@ export interface RasashalaSceneProps {
   onSelect?: (id: string) => void
   onWalkExit?: () => void
   onWalkAim?: (id: string | null) => void
+  focus?: string | null
+  focusShift?: [number, number]
 }
 
 export function RasashalaScene(props: RasashalaSceneProps) {

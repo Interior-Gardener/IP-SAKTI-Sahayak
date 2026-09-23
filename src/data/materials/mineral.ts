@@ -41,7 +41,8 @@ export const mineralMaterials: SourceMaterialEntry[] = [
       'Cinnabar is the natural sulphide of mercury — a heavy red mineral. Because the mercury in it is already combined, the tradition treats it as a separate material from parada with its own processing, and it is used to extract mercury as well as in its own right.',
     classicalUse: 'Used after shodhana in several classical preparations, and as a source of parada.',
     shelf: 'rasa',
-    model: { draw: 'substance', form: 'rock', size: 0.3, color: '#96302a', accent: '#d66a54', metalness: 0.25, roughness: 0.55 },
+    // Red crystals on a grey host rock, as cinnabar is mined.
+    model: { draw: 'substance', form: 'rock', variant: 'crystals', size: 0.32, color: '#a3281f', accent: '#7f786f', metalness: 0.25, roughness: 0.4 },
   },
   {
     id: 'gandhaka',
@@ -55,8 +56,8 @@ export const mineralMaterials: SourceMaterialEntry[] = [
       'Sulphur is purified through repeated melting in a fatty or milky medium before use. Its main role is with mercury: ground together, the two make kajjali, the black powder that most mercurial preparations start from.',
     classicalUse: 'Shodhita gandhaka, used with parada as kajjali and in preparations such as gandhaka rasayana.',
     shelf: 'rasa',
-    // Sulphur breaks in flat bright plates rather than rounding off.
-    model: { draw: 'substance', form: 'rock', variant: 'shard', size: 0.3, color: '#d8bf3c', accent: '#f4e79a', roughness: 0.6 },
+    // Sulphur grows as bright yellow bipyramids, here on a pale limestone host.
+    model: { draw: 'substance', form: 'rock', variant: 'crystals', size: 0.32, color: '#e2c52c', accent: '#cbc3b1', roughness: 0.5 },
   },
   {
     id: 'abhraka',
@@ -70,8 +71,8 @@ export const mineralMaterials: SourceMaterialEntry[] = [
       'Mica splits into thin sheets, which is what makes its processing distinctive: it is heated and quenched again and again until it can be ground, then incinerated in a series of firings. A bhasma is graded by tests the tradition specifies, such as whether the powder floats on still water.',
     classicalUse: 'Abhraka bhasma, graded by the number of firings it has been through.',
     shelf: 'rasa',
-    // Heaped on the bench, the way a bhasma is shown for its float test.
-    model: { draw: 'substance', form: 'powder', size: 0.3, color: '#4a4a52', accent: '#8f8f9c', metalness: 0.35, roughness: 0.5 },
+    // The heap of bhasma, with books of the raw mica it was made from beside it.
+    model: { draw: 'substance', form: 'powder', variant: 'mica', size: 0.3, color: '#4a4a52', accent: '#b9b6ae', metalness: 0.35, roughness: 0.5 },
   },
   {
     id: 'swarna',

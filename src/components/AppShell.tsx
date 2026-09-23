@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { useTranslation } from 'react-i18next'
 import { UI_LANGUAGES, setUiLanguage, type UiLanguage } from '../i18n'
 import { useSahayak } from '../store/useSahayak'
+import { useWorkbench } from '../store/useWorkbench'
 import { useGarden } from '../store/useGarden'
 import { Icon, type IconName } from './ui/Icon'
 import { cx } from './ui/primitives'
@@ -18,6 +19,7 @@ const NAV: { to: string; label: string; icon: IconName; desktop?: boolean }[] = 
   { to: '/garden', label: 'nav.garden', icon: 'map' },
   { to: '/rasashala', label: 'nav.rasashala', icon: 'flask' },
   { to: '/registry-marg', label: 'nav.registryMarg', icon: 'compass', desktop: true },
+  { to: '/workbench', label: 'nav.workbench', icon: 'flask', desktop: true },
   { to: '/explore', label: 'nav.explore', icon: 'grid' },
   { to: '/atlas', label: 'nav.atlas', icon: 'layers' },
   { to: '/tours', label: 'nav.tours', icon: 'route' },
@@ -40,7 +42,7 @@ function LanguageSwitch() {
         setUiLanguage(code)
         setAnswerLanguage(code)
       }}
-      className="h-9 rounded-full border border-line bg-raised px-2.5 text-[0.78rem] text-ink-soft outline-none hover:text-ink focus:border-line-strong"
+      className="h-9 min-w-[6.5rem] rounded-full border border-line bg-raised px-2.5 text-[0.78rem] text-ink-soft outline-none hover:text-ink focus:border-line-strong"
     >
       {UI_LANGUAGES.map((l) => (
         <option key={l.code} value={l.code}>
@@ -66,7 +68,7 @@ function Wordmark() {
       </span>
       <span className="leading-none">
         <span className="block font-display text-[1.05rem] font-semibold tracking-[-0.02em]">Vanaspati</span>
-        <span className={cx('block text-ink-faint', latin ? 'text-[0.62rem] tracking-[0.18em] uppercase' : 'text-[0.7rem]')}>
+        <span className={cx('block whitespace-nowrap text-ink-faint', latin ? 'text-[0.62rem] tracking-[0.18em] uppercase' : 'text-[0.7rem]')}>
           {t('brand.subtitle')}
         </span>
       </span>
@@ -179,6 +181,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const theme = useGarden((s) => s.theme)
   const toggleTheme = useGarden((s) => s.toggleTheme)
   const bookmarks = useGarden((s) => s.bookmarks.length)
+  const benchItems = useWorkbench((s) => s.items.length)
   const setIntroSeen = useGarden((s) => s.setIntroSeen)
   const [paletteOpen, setPaletteOpen] = useState(false)
   const [walkthroughOpen, setWalkthroughOpen] = useState(false)
@@ -267,7 +270,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <div className="mx-auto flex h-16 max-w-[92rem] items-center gap-4 px-4 sm:px-6">
           <Wordmark />
 
-          <nav className="ml-6 hidden items-center gap-1 md:flex" data-tour="nav">
+          <nav className="ml-4 hidden items-center gap-0.5 md:flex xl:ml-6" data-tour="nav">
             {NAV.map((item) => (
               <NavLink
                 key={item.to}
@@ -275,7 +278,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 end={item.to === '/garden'}
                 className={({ isActive }) =>
                   cx(
-                    'relative rounded-full px-3.5 py-2 text-[0.85rem] font-medium transition-colors duration-200',
+                    'relative rounded-full px-2.5 py-2 text-[0.82rem] font-medium whitespace-nowrap transition-colors duration-200 xl:px-3',
                     isActive ? 'text-ink' : 'text-ink-faint hover:text-ink-soft',
                   )
                 }
@@ -296,6 +299,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                         {bookmarks}
                       </span>
                     )}
+                    {item.to === '/workbench' && benchItems > 0 && (
+                      <span className="ml-1.5 rounded-full bg-accent px-1.5 py-px text-[0.62rem] font-semibold text-[var(--surface-raised)] tabular-nums">
+                        {benchItems}
+                      </span>
+                    )}
                   </>
                 )}
               </NavLink>
@@ -309,8 +317,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               className="flex h-9 items-center gap-2 rounded-full border border-line bg-raised px-3 text-[0.8rem] text-ink-faint transition-colors hover:border-line-strong hover:text-ink-soft"
             >
               <Icon name="search" size={15} />
-              <span className="hidden sm:inline">{t('header.search')}</span>
-              <kbd className="hidden rounded border border-line px-1.5 py-px font-mono text-[0.62rem] lg:inline">
+              <span className="hidden whitespace-nowrap 2xl:inline">{t('header.search')}</span>
+              <kbd className="hidden rounded border border-line px-1.5 py-px font-mono text-[0.62rem] 2xl:inline">
                 ⌘K
               </kbd>
             </button>
@@ -320,7 +328,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               className="flex h-9 items-center gap-2 rounded-full bg-moss-900 px-3 text-[0.8rem] font-medium text-moss-100 transition-colors hover:bg-moss-800"
             >
               <Icon name="scale" size={15} />
-              <span className="hidden sm:inline">{t('header.ask')}</span>
+              <span className="hidden whitespace-nowrap lg:inline">{t('header.ask')}</span>
             </button>
 
             <LanguageSwitch />

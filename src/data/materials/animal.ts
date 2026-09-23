@@ -81,10 +81,11 @@ export const animalMaterials: SourceMaterialEntry[] = [
     names: { Sanskrit: 'Shankha', Hindi: 'Shankh', Tamil: 'Sangu', English: 'Conch' },
     tagline: 'The temple conch, also processed into a calcium-rich bhasma.',
     description:
-      'The conch is familiar as a ritual object; in the pharmacy it is a source of calcium carbonate, purified and incinerated into shankha bhasma. The spiral is the distinctive thing about it, and it is drawn here the way it grows — a tube coiling and widening as it turns.',
+      'The conch is familiar as a ritual object; in the pharmacy it is a source of calcium carbonate, purified and incinerated into shankha bhasma. It is drawn here as it is set down: lying on its side, a heavy spindle with a stepped spire at one end, knobs round the shoulder and a long canal at the other.',
     classicalUse: 'Shankha bhasma, prepared by the standard shodhana and marana steps.',
     shelf: 'animal',
-    model: { draw: 'substance', form: 'conch', size: 0.5, color: '#efe6d4', accent: '#cbbb9e', roughness: 0.35 },
+    // Creamy outside; the accent is the glossy pink-orange of the aperture lip.
+    model: { draw: 'substance', form: 'conch', size: 0.5, color: '#efe6d4', accent: '#e8a88c', roughness: 0.35 },
   },
   {
     id: 'shukti',
@@ -98,8 +99,8 @@ export const animalMaterials: SourceMaterialEntry[] = [
       'Shukti is the shell rather than the pearl, and is used for the same calcium content at a fraction of the cost. Classical practice treats the two as related but separate materials, with their own processing.',
     classicalUse: 'Shukti bhasma, prepared like the other shell and gem materials.',
     shelf: 'animal',
-    // Flat and angular: a piece of shell, not a pebble.
-    model: { draw: 'substance', form: 'rock', variant: 'shard', size: 0.34, color: '#ded3c0', accent: '#f4efe4', roughness: 0.5 },
+    // One valve of the oyster: grey-brown frilled outside, nacre inside.
+    model: { draw: 'substance', form: 'shell', size: 0.4, color: '#a8957a', accent: '#efe8dc', roughness: 0.8 },
   },
   {
     id: 'pravala',
@@ -128,7 +129,7 @@ export const animalMaterials: SourceMaterialEntry[] = [
     classicalUse:
       'Named as an ingredient of several classical compound formulations. Present-day manufacture substitutes it; see the IP & law layer for why.',
     shelf: 'animal',
-    // The pod: small, round and closed.
-    model: { draw: 'substance', form: 'rock', variant: 'nugget', size: 0.2, color: '#6b4a34', accent: '#3c2a1e', roughness: 0.8 },
+    // The pod: a small closed pouch with a coat of short hair.
+    model: { draw: 'substance', form: 'rock', variant: 'pod', size: 0.22, color: '#6b4a34', accent: '#3c2a1e', roughness: 0.8 },
   },
 ]

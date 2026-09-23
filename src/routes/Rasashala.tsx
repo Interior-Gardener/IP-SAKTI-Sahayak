@@ -8,6 +8,9 @@ import { Icon } from '../components/ui/Icon'
 import { SHELVES, getMaterial, materials, materialsOnShelf } from '../data/materials'
 import { openSahayak } from '../lib/sahayak/client'
 import { useGarden } from '../store/useGarden'
+import { useWorkbench } from '../store/useWorkbench'
+import { useNarrator } from '../lib/speech'
+import { RASASHALA_TOUR } from '../data/rasashalaTour'
 import type { SourceMaterial } from '../types/source'
 
 /* ------------------------------------------------------------------ *
@@ -86,6 +89,81 @@ function HoverCard({ material, at }: { material: SourceMaterial; at: { x: number
   )
 }
 
+/** Roughly how long a stop takes to read aloud, so the tour can move on by itself. */
+function readingTime(text: string) {
+  return Math.max(9000, text.split(/\s+/).length * 390)
+}
+
+function TourCard({
+  step,
+  playing,
+  onStep,
+  onPlay,
+  onOpen,
+  onClose,
+}: {
+  step: number
+  playing: boolean
+  onStep: (next: number) => void
+  onPlay: () => void
+  onOpen: (id: string) => void
+  onClose: () => void
+}) {
+  const stop = RASASHALA_TOUR.stops[step]
+  const material = getMaterial(stop.materialId)
+  const last = step === RASASHALA_TOUR.stops.length - 1
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 16 }}
+      className="absolute inset-x-3 bottom-3 z-30 mx-auto max-w-3xl sm:bottom-6"
+    >
+      <div className="glass overflow-hidden rounded-3xl border border-line shadow-[var(--shadow-lift)]">
+        <div className="flex h-1">
+          {RASASHALA_TOUR.stops.map((_, i) => (
+            <span key={i} className={cx('flex-1 transition-colors', i <= step ? 'bg-accent' : 'bg-line')} />
+          ))}
+        </div>
+        <div className="p-4 sm:p-5">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span className="font-mono text-[0.7rem] text-ink-faint">
+              {String(step + 1).padStart(2, '0')} / {String(RASASHALA_TOUR.stops.length).padStart(2, '0')}
+            </span>
+            <h2 className="font-display text-[1.1rem] leading-tight font-semibold text-ink">{stop.headline}</h2>
+            {material && (
+              <button onClick={() => onOpen(material.id)} className="text-[0.78rem] font-medium text-accent underline underline-offset-2">
+                {material.name}
+              </button>
+            )}
+          </div>
+          <p className="mt-2 text-[0.9rem] leading-relaxed text-ink-soft">{stop.narration}</p>
+          <p className="mt-2 rounded-xl bg-sunken px-3 py-2 text-[0.74rem] text-ink-soft">
+            <span className="italic">“{stop.cite.quote}”</span>
+            <span className="ml-1.5 font-mono text-[0.68rem] text-ink-faint">
+              {stop.cite.source} · {stop.cite.locator}
+            </span>
+          </p>
+        </div>
+        <div className="flex items-center gap-2 border-t border-line px-4 py-2.5">
+          <Button variant="ghost" size="sm" icon="chevronLeft" onClick={() => onStep(step - 1)} disabled={step === 0}>
+            Back
+          </Button>
+          <Button variant="primary" size="sm" icon={playing ? 'pause' : 'play'} onClick={onPlay}>
+            {playing ? 'Pause' : 'Play tour'}
+          </Button>
+          <button onClick={onClose} className="ml-auto text-[0.78rem] text-ink-faint hover:text-ink">
+            End tour
+          </button>
+          <Button size="sm" iconRight="chevronRight" onClick={() => (last ? onClose() : onStep(step + 1))}>
+            {last ? 'Finish' : 'Next stop'}
+          </Button>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
 export default function Rasashala() {
   const timeOfDay = useGarden((s) => s.timeOfDay)
   const [walking, setWalking] = useState(false)
@@ -96,6 +174,42 @@ export default function Rasashala() {
   const [hovered, setHovered] = useState<{ id: string; x: number; y: number } | null>(null)
   const [aimed, setAimed] = useState<string | null>(null)
   const hoverRef = useRef<number | null>(null)
+  const onBench = useWorkbench((s) => s.items.length)
+  const narrationOn = useGarden((s) => s.narration)
+  const narrator = useNarrator()
+  // The tour: `?tour=1` starts it on arrival (the Tours page links there).
+  const [tourStep, setTourStep] = useState<number | null>(() => (params.get('tour') ? 0 : null))
+  const [tourPlaying, setTourPlaying] = useState(false)
+  const touring = tourStep !== null
+  const wide = typeof window !== 'undefined' && window.innerWidth >= 1024
+
+  /* The tour reads each stop aloud (when narration is on) and, while playing,
+   * moves on once the reading has had time to finish. */
+  const { speak, stop: hush } = narrator
+  useEffect(() => {
+    if (tourStep === null) return
+    const stop = RASASHALA_TOUR.stops[tourStep]
+    if (tourPlaying && narrationOn) speak(`${stop.headline}. ${stop.narration}`)
+    if (!tourPlaying) return
+    const timer = window.setTimeout(() => {
+      if (tourStep < RASASHALA_TOUR.stops.length - 1) setTourStep(tourStep + 1)
+      else setTourPlaying(false)
+    }, readingTime(stop.narration))
+    return () => window.clearTimeout(timer)
+  }, [tourStep, tourPlaying, narrationOn, speak])
+  useEffect(() => () => hush(), [hush])
+
+  const startTour = () => {
+    setSelected(null)
+    setWalking(false)
+    setTourStep(0)
+    setTourPlaying(true)
+  }
+  const endTour = () => {
+    hush()
+    setTourPlaying(false)
+    setTourStep(null)
+  }
 
   const onRead = useCallback((id: string | null, clientX?: number, clientY?: number) => {
     if (hoverRef.current) window.clearTimeout(hoverRef.current)
@@ -113,11 +227,18 @@ export default function Rasashala() {
   /* Opening something while walking has to leave the walk: the pointer is
    * locked to the scene, so a panel raised behind that lock could be looked at
    * and not touched. Clicking a vial is a decision to stop and read it. */
-  const open = useCallback((id: string) => {
-    setSelected(id)
-    setWalking(false)
-    setAimed(null)
-  }, [])
+  const open = useCallback(
+    (id: string) => {
+      // Opening something mid-tour pauses the tour rather than fighting it for the camera.
+      hush()
+      setTourPlaying(false)
+      setTourStep(null)
+      setSelected(id)
+      setWalking(false)
+      setAimed(null)
+    },
+    [hush],
+  )
 
   const opened = useMemo(() => getMaterial(selected ?? undefined), [selected])
   const hoveredMaterial = useMemo(() => getMaterial(hovered?.id), [hovered])
@@ -129,6 +250,10 @@ export default function Rasashala() {
         timeOfDay={timeOfDay}
         selected={selected}
         walking={walking}
+        // Opening a material brings the camera to it; the tour does the same stop by stop.
+        focus={touring ? RASASHALA_TOUR.stops[tourStep].materialId : selected}
+        // Keep the piece clear of the panel on the right, or of the tour card below.
+        focusShift={touring ? [0, 0.16] : selected && wide ? [-0.2, 0] : [0, 0]}
         onRead={onRead}
         onSelect={open}
         onWalkExit={() => setWalking(false)}
@@ -152,6 +277,14 @@ export default function Rasashala() {
           <Button size="sm" icon="route" onClick={() => setWalking(true)}>
             Walk the hall
           </Button>
+          <Button size="sm" icon="play" onClick={startTour}>
+            Take the tour
+          </Button>
+          <Link to="/workbench">
+            <Button size="sm" variant={onBench ? 'primary' : 'secondary'} icon="flask">
+              Workbench{onBench ? ` · ${onBench}` : ''}
+            </Button>
+          </Link>
         </div>
       </div>
 
@@ -178,6 +311,26 @@ export default function Rasashala() {
       )}
 
       {/* The opened material: the same cited panel a plant has. */}
+      <AnimatePresence>
+        {touring && !walking && (
+          <TourCard
+            key="tour"
+            step={tourStep}
+            playing={tourPlaying}
+            onStep={(next) => {
+              hush()
+              setTourStep(Math.max(0, Math.min(RASASHALA_TOUR.stops.length - 1, next)))
+            }}
+            onPlay={() => {
+              if (tourPlaying) hush()
+              setTourPlaying((v) => !v)
+            }}
+            onOpen={open}
+            onClose={endTour}
+          />
+        )}
+      </AnimatePresence>
+
       <AnimatePresence>
         {opened && !walking && (
           <motion.aside

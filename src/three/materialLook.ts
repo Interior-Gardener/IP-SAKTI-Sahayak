@@ -65,8 +65,16 @@ function bodyParams(spec: MaterialModelSpec): Params {
       // A polished bar is mostly what it reflects, so it takes more of the room.
       return { color, roughness, metalness, clearcoat: 0.35, clearcoatRoughness: 0.2, envMapIntensity: 1.8 }
     case 'rock':
+      if (spec.variant === 'crystals') {
+        // Crystal faces are flat and catch the light one face at a time.
+        return { color, roughness: Math.min(roughness, 0.4), metalness, clearcoat: 0.6, clearcoatRoughness: 0.15, flatShading: true }
+      }
+      if (spec.variant === 'pod') return { color, roughness: 0.75, metalness: 0, sheen: 0.6, sheenColor: color.clone().offsetHSL(0, 0, 0.2) }
       // A shard is faceted: its flat faces are the point, so it is shaded flat.
       return { color, roughness, metalness, flatShading: spec.variant === 'shard' }
+    case 'shell':
+      // The outside of a valve: chalky, ridged, dull.
+      return { color, roughness: 0.85, metalness: 0, side: THREE.DoubleSide }
     case 'powder':
       return { color, roughness: Math.max(roughness, 0.9), metalness: metalness * 0.5 }
     case 'vessel':
@@ -97,6 +105,28 @@ function accentParams(spec: MaterialModelSpec): Params {
   if (spec.draw === 'substance' && spec.form === 'ingot') {
     // Gold leaf: brighter and rougher than the bar it was beaten from.
     return { color, roughness: 0.32, metalness: 0.9, side: THREE.DoubleSide }
+  }
+  if (spec.draw === 'substance' && spec.form === 'shell') {
+    // The nacre lining: the same iridescence as the pearl it grew.
+    return {
+      color,
+      roughness: 0.18,
+      metalness: 0.05,
+      clearcoat: 1,
+      clearcoatRoughness: 0.08,
+      iridescence: 1,
+      iridescenceIOR: 1.5,
+      iridescenceThicknessRange: [200, 600],
+      side: THREE.DoubleSide,
+    }
+  }
+  if (spec.draw === 'substance' && spec.form === 'rock' && spec.variant === 'crystals') {
+    // The host rock the crystals grew on: plain and matte.
+    return { color, roughness: 0.95, metalness: 0 }
+  }
+  if (spec.draw === 'substance' && spec.form === 'powder' && spec.variant === 'mica') {
+    // Mica sheets: glassy and faintly metallic, the look that names the mineral.
+    return { color, roughness: 0.25, metalness: 0.35, clearcoat: 1, clearcoatRoughness: 0.1 }
   }
   if (spec.draw === 'substance' && (spec.form === 'pearl' || spec.form === 'vessel')) {
     // Cloth: a cushion, the cover tied over a jar, the seal on a kupi.

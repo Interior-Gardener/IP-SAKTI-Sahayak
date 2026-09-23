@@ -49,7 +49,7 @@ let checked = 0
 
 // The tours narrate law too ("Who owns the neem tree?"), so their quotes are held
 // to the same check as the profiles'.
-for (const file of [...tsFiles(iprDir), join(root, 'src', 'data', 'tours.ts')]) {
+for (const file of [...tsFiles(iprDir), join(root, 'src', 'data', 'tours.ts'), join(root, 'src', 'data', 'rasashalaTour.ts')]) {
   const source = readFileSync(file, 'utf8')
   const name = file.slice(root.length).split(sep).join('/')
 

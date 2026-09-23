@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js'
+import { ParametricGeometry } from 'three/examples/jsm/geometries/ParametricGeometry.js'
 import type { SubstanceModelSpec } from '../../types/source'
 import type { Detail } from './plant'
 import { hashSeed, makeRng, type Rng } from './rng'
@@ -111,6 +112,9 @@ function honeycomb(
   const depth = spec.size * 0.34
   const rows = Math.max(2, Math.round(4 * q.cells) + 1)
   const reach = cell * rows * 1.75
+  // Where this comb's parts start in each list, so they can be stood up
+  // together once built — a comb lying flat reads as a block of cheese.
+  const from = { body: body.length, accent: accent.length, liquid: liquid.length }
   // The sheet the cells are built on, so the comb has a back and not a void.
   place(
     new THREE.CylinderGeometry(reach * 0.92, reach * 0.88, depth * 0.16, Math.max(8, q.radial)),
@@ -158,14 +162,23 @@ function honeycomb(
       }
     }
   }
+  // Stand the comb up, leaning back a little, its cells facing the room.
+  const lean = new THREE.Matrix4()
+    .makeTranslation(0, reach * 0.93 + depth * 0.2, 0)
+    // +Y (the way the cells open) turned to +Z: towards whoever faces the comb.
+    .multiply(new THREE.Matrix4().makeRotationX(Math.PI / 2 - 0.3))
+  body.slice(from.body).forEach((g) => g.applyMatrix4(lean))
+  accent.slice(from.accent).forEach((g) => g.applyMatrix4(lean))
+  liquid.slice(from.liquid).forEach((g) => g.applyMatrix4(lean))
   // Honey run off the torn edge and pooled on the bench under it.
   for (let i = 0; i < Math.max(2, Math.round(4 * q.cells)); i++) {
     const a = rng.next() * Math.PI * 2
-    const at = reach * rng.range(0.82, 0.95)
+    const at = reach * rng.range(0.25, 0.6)
     place(
       new THREE.SphereGeometry(cell * rng.range(0.9, 1.5), 10, 6, 0, Math.PI * 2, 0, Math.PI / 2),
       liquid,
-      new THREE.Vector3(Math.cos(a) * at, 0, Math.sin(a) * at),
+      // In front of the comb's foot, where it dripped.
+      new THREE.Vector3(Math.cos(a) * at, 0, Math.abs(Math.sin(a)) * at + depth * 0.3),
       undefined,
       new THREE.Vector3(1.6, 0.32, 1.2),
     )
@@ -199,7 +212,7 @@ function vessel(
       profile.push(new THREE.Vector2(Math.sin(t * Math.PI * 0.86) * r + h * 0.02, t * r * 1.9))
     }
     profile.push(new THREE.Vector2(h * 0.075, h * 0.7), new THREE.Vector2(h * 0.08, h * 0.96))
-    body.push(new THREE.LatheGeometry(profile, q.radial))
+    body.push(new THREE.LatheGeometry(profile, Math.max(32, q.radial * 2)))
     // The kupi is glass, and what it holds is the point of it: a bead of
     // mercury pooled in the round bottom, drawn as a flattened drop.
     place(
@@ -231,7 +244,10 @@ function vessel(
     new THREE.Vector2(h * shape.lip, h * 0.96),
     new THREE.Vector2(h * shape.lip * 0.94, h),
   ]
-  body.push(new THREE.LatheGeometry(profile, q.radial))
+  // Eight control points turned directly give a faceted pot; a spline through
+  // them, turned on more sides, gives a thrown one.
+  const turned = new THREE.SplineCurve(profile).getPoints(Math.max(24, q.rings * 3))
+  body.push(new THREE.LatheGeometry(turned, Math.max(32, q.radial * 2)))
   // The cloth over the mouth, with the cord below it — how a jar of ghee and
   // a fermenting vat are both actually kept.
   const mouth = h * shape.lip
@@ -252,10 +268,68 @@ function vessel(
   place(hoop(mouth * 0.98, h * 0.018, 6, q.radial), accent, new THREE.Vector3(0, h * 0.93, 0), aim(new THREE.Vector3(0, 1, 0)))
 }
 
-/** A lump: an ore, a raw resin, a shell fragment, a pod. The variant decides
- *  how it sits — a shard is flat and angular where a nugget is closed and
- *  round, and the two do not read as the same object. */
+/** A lump of something: ore, resin, shell fragment, musk pod, crystal cluster.
+ *  The variant decides how it sits. A shard is flat and angular; a pod is a
+ *  smooth pouch with short hair; crystals are a cluster of bipyramids grown on
+ *  a lump of matrix rock, which is how cinnabar and sulphur are found. */
 function rock(spec: SubstanceModelSpec, rng: Rng, q: Q, body: THREE.BufferGeometry[], accent: THREE.BufferGeometry[]) {
+  if (spec.variant === 'pod') {
+    // Kasturi: the musk pod. Smooth, a little flattened, with a small opening
+    // on top and a short coat of hair laid over it.
+    const r = spec.size * 0.5
+    const pod = new THREE.SphereGeometry(r, Math.max(24, q.radial * 2), Math.max(16, q.rings * 2))
+    const noise = lobes(rng, 3)
+    const pos = pod.attributes.position
+    const n = new THREE.Vector3()
+    for (let i = 0; i < pos.count; i++) {
+      n.fromBufferAttribute(pos, i).normalize()
+      const d = r * (1 + noise(n) * 0.25)
+      pos.setXYZ(i, n.x * d, n.y * d * 0.78, n.z * d * 0.92)
+    }
+    pod.computeVertexNormals()
+    place(pod, body, new THREE.Vector3(0, r * 0.78, 0))
+    place(hoop(r * 0.12, r * 0.045, 6, q.radial), accent, new THREE.Vector3(0, r * 1.54, 0), aim(new THREE.Vector3(0, 1, 0)))
+    const hairs = Math.round(110 * q.cells)
+    for (let i = 0; i < hairs; i++) {
+      // Only the upper two-thirds; the pod sits on the rest.
+      const dir = new THREE.Vector3(rng.jitter(1), rng.range(-0.3, 1), rng.jitter(1)).normalize()
+      const at = new THREE.Vector3(dir.x * r, r * 0.78 + dir.y * r * 0.78, dir.z * r * 0.92)
+      // Laid back along the surface, as fur lies, not standing straight out.
+      const lay = dir.clone().lerp(new THREE.Vector3(0, -1, 0), 0.55).normalize()
+      const len = spec.size * rng.range(0.05, 0.09)
+      place(new THREE.ConeGeometry(spec.size * 0.006, len, 3), accent, at.addScaledVector(lay, len * 0.4), aim(lay))
+    }
+    return
+  }
+
+  if (spec.variant === 'crystals') {
+    // Matrix first (the accent: dull host rock), crystals on its top (the body).
+    const matrixR = spec.size * 0.42
+    const matrix = new THREE.IcosahedronGeometry(matrixR, Math.max(1, q.detail - 1))
+    const noise = lobes(rng, 4)
+    const mpos = matrix.attributes.position
+    const n = new THREE.Vector3()
+    for (let i = 0; i < mpos.count; i++) {
+      n.fromBufferAttribute(mpos, i).normalize()
+      const d = matrixR * (1 + noise(n) * 0.9)
+      mpos.setXYZ(i, n.x * d * 1.15, n.y * d * 0.45, n.z * d)
+    }
+    matrix.computeVertexNormals()
+    place(matrix, accent, new THREE.Vector3(0, matrixR * 0.45, 0))
+    const count = Math.round(14 * q.cells) + 4
+    for (let i = 0; i < count; i++) {
+      const a = rng.next() * Math.PI * 2
+      const out = rng.range(0, 0.8)
+      const w = spec.size * rng.range(0.05, 0.11) * (1 - out * 0.4)
+      const h = w * rng.range(1.8, 3)
+      const up = new THREE.Vector3(Math.cos(a) * out, 1, Math.sin(a) * out).normalize()
+      const at = new THREE.Vector3(Math.cos(a) * out * matrixR, matrixR * 0.72 + h * 0.3, Math.sin(a) * out * matrixR * 0.8)
+      const twist = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), rng.next() * Math.PI)
+      place(new THREE.OctahedronGeometry(1, 0), body, at, aim(up).multiply(twist), new THREE.Vector3(w, h, w * rng.range(0.7, 1)))
+    }
+    return
+  }
+
   const shard = spec.variant === 'shard'
   const nugget = spec.variant === 'nugget'
   // A shard is faceted, so it is built at a lower subdivision and left angular.
@@ -275,8 +349,6 @@ function rock(spec: SubstanceModelSpec, rng: Rng, q: Q, body: THREE.BufferGeomet
   }
   geo.computeVertexNormals()
   place(geo, body, new THREE.Vector3(0, spec.size * 0.5 * squash, 0))
-  // A few bright grains where the lump was broken open. They follow the same
-  // squash as the body, or they float off a flattened shard.
   const lift = spec.size * 0.5 * squash
   for (let i = 0; i < Math.round(6 * q.cells); i++) {
     const dir = new THREE.Vector3(rng.jitter(1), rng.range(0, 1), rng.jitter(1)).normalize()
@@ -288,59 +360,64 @@ function rock(spec: SubstanceModelSpec, rng: Rng, q: Q, body: THREE.BufferGeomet
   }
 }
 
-/** Shankha: a logarithmic spiral swept into a tube, widening as it turns,
- *  with the aperture flared at the end. Shell ridges are the accent. */
+/** Shankha: the sacred conch, Turbinella pyrum — a heavy spindle, not a
+ *  coil. A low stepped spire at one end, a broad knobbed shoulder, and a body
+ *  that tapers into a long siphonal canal at the other, wrapped in fine spiral
+ *  cords. Built as one parametric surface along the shell's axis, lying on its
+ *  side the way it is set down, with the glossy pink-orange aperture lip on
+ *  top — the colour the tradition prizes. */
 function conch(spec: SubstanceModelSpec, rng: Rng, q: Q, body: THREE.BufferGeometry[], accent: THREE.BufferGeometry[]) {
-  const turns = rng.range(3.1, 3.6)
-  const steps = q.tube
-  const points: THREE.Vector3[] = []
-  const radii: number[] = []
-  for (let i = 0; i <= steps; i++) {
-    const u = i / steps
-    const angle = u * turns * Math.PI * 2
-    // Both the spiral and the tube grow geometrically — that ratio is what
-    // makes a shell a shell rather than a coiled sausage.
-    const spiral = Math.pow(1.9, u * 2.2) * spec.size * 0.06
-    points.push(new THREE.Vector3(Math.cos(angle) * spiral, u * spec.size * 0.62, Math.sin(angle) * spiral))
-    radii.push(Math.pow(2.1, u * 2.1) * spec.size * 0.035)
+  const length = spec.size
+  const widest = spec.size * 0.25
+  const whorls = 4 + Math.round(rng.next())
+  const smooth = (t: number) => t * t * (3 - 2 * t)
+  const profile = (u: number) => {
+    if (u < 0.3) {
+      // The spire: a cone of stepped whorls, each a little bulge.
+      const s = (u / 0.3) * whorls
+      const step = 0.78 + 0.22 * smooth(s - Math.floor(s))
+      return widest * 0.6 * Math.pow(u / 0.3, 0.85) * step
+    }
+    if (u < 0.46) return widest * (0.6 + 0.4 * smooth((u - 0.3) / 0.16))
+    // The body whorl narrowing into the canal, closing at the very tip.
+    const t = (u - 0.46) / 0.54
+    return widest * (0.1 + 0.9 * Math.pow(1 - smooth(t), 0.85)) * (u > 0.985 ? (1 - u) / 0.015 : 1)
   }
-  const curve = new THREE.CatmullRomCurve3(points)
-  // TubeGeometry takes one radius, so the taper is applied to its vertices
-  // afterwards: each ring is scaled about the curve point it belongs to.
-  const tube = new THREE.TubeGeometry(curve, steps, 1, Math.max(6, q.radial / 2), false)
-  const pos = tube.attributes.position
-  const ring = Math.max(6, Math.round(q.radial / 2)) + 1
-  for (let i = 0; i < pos.count; i++) {
-    const seg = Math.min(steps, Math.floor(i / ring))
-    const centre = points[seg]
-    const v = new THREE.Vector3().fromBufferAttribute(pos, i).sub(centre).multiplyScalar(radii[seg]).add(centre)
-    pos.setXYZ(i, v.x, v.y, v.z)
-  }
-  tube.computeVertexNormals()
-  // The shell lies on its side, the way a conch is set down and the way it is
-  // held to blow it — standing on its spire it reads as a screw.
-  const lie = new THREE.Quaternion().setFromEuler(new THREE.Euler(Math.PI / 2.1, 0, 0.18))
-  place(tube, body, new THREE.Vector3(0, 0, 0), lie)
+  const knobs = rng.range(7, 9)
+  const surface = new ParametricGeometry(
+    (u: number, v: number, target: THREE.Vector3) => {
+      const theta = v * Math.PI * 2
+      let r = profile(u)
+      // Fine spiral cords over the whole shell.
+      r *= 1 + 0.03 * Math.cos(2 * Math.PI * u * 16 + theta)
+      // Blunt knobs round the shoulder.
+      r *= 1 + 0.09 * Math.exp(-(((u - 0.4) / 0.045) ** 2)) * Math.max(0, Math.cos(theta * knobs))
+      target.set((u - 0.45) * length, r * Math.cos(theta), r * Math.sin(theta))
+    },
+    q.tube * 2,
+    Math.max(24, q.radial * 2),
+  )
+  body.push(surface)
 
-  // The aperture: the mouth flares out, and without it the last whorl ends in
-  // a cut-off pipe. Built as a short cone on the final tangent.
-  const last = points[points.length - 1]
-  const mouthR = radii[radii.length - 1]
-  const mouth = new THREE.CylinderGeometry(mouthR * 1.55, mouthR * 0.98, mouthR * 1.3, Math.max(8, q.radial), 1, true)
-  const mouthPlace = new THREE.Vector3().copy(last).addScaledVector(curve.getTangentAt(0.999), mouthR * 0.6)
-  place(mouth, body, mouthPlace.applyQuaternion(lie), lie.clone().multiply(aim(curve.getTangentAt(0.999))))
-
-  // Growth ridges across the whorls.
-  for (let i = 0; i < Math.round(7 * q.cells); i++) {
-    const u = 0.35 + (i / 8) * 0.6
-    const seg = Math.min(steps, Math.round(u * steps))
-    place(
-      hoop(radii[seg] * 1.04, radii[seg] * 0.08, 4, Math.max(8, q.radial)),
-      accent,
-      points[seg].clone().applyQuaternion(lie),
-      lie.clone().multiply(aim(curve.getTangentAt(Math.min(0.999, u)))),
-    )
-  }
+  // The aperture lip: a glossy pink-orange band laid on the shell itself,
+  // along the upper side of the body whorl. Drawn as its own patch of the same
+  // surface a hair further out, so it follows every cord and knob beneath it.
+  const half = 0.13
+  const lip = new ParametricGeometry(
+    (u: number, v: number, target: THREE.Vector3) => {
+      const uu = 0.48 + u * 0.46
+      const theta = (v - 0.5) * 2 * half * Math.PI * 2
+      // Widest in the middle of the lip, narrowing to both ends.
+      const taper = Math.sin(u * Math.PI)
+      const t = theta * (0.35 + 0.65 * taper)
+      let r = profile(uu) * 1.012
+      r *= 1 + 0.03 * Math.cos(2 * Math.PI * uu * 16 + t)
+      target.set((uu - 0.45) * length, r * Math.cos(t), r * Math.sin(t))
+    },
+    q.tube,
+    Math.max(8, q.radial / 2),
+  )
+  accent.push(lip)
 }
 
 /** Mukta: a sphere, very nearly. Pearls are not perfectly round, and the
@@ -386,29 +463,92 @@ function pearl(spec: SubstanceModelSpec, rng: Rng, q: Q, body: THREE.BufferGeome
   }
 }
 
-/** Pravala: a branch of coral, grown by the same recursion as a mould but
- *  thicker, blunter and reaching upwards. */
+/** Pravala: a branch of red coral as it is sold — a bushy fan of tapering,
+ *  slightly crooked branches from a thick base, dotted with polyp pores. Each
+ *  branch is two bent segments with a knuckle between, so none is a straight rod. */
 function coral(spec: SubstanceModelSpec, rng: Rng, q: Q, body: THREE.BufferGeometry[], accent: THREE.BufferGeometry[]) {
-  const grow = (from: THREE.Vector3, dir: THREE.Vector3, radius: number, length: number, depth: number) => {
-    const to = from.clone().addScaledVector(dir, length)
-    const mid = from.clone().add(to).multiplyScalar(0.5)
-    place(new THREE.CylinderGeometry(radius * 0.72, radius, length, Math.max(5, q.radial / 3)), body, mid, aim(dir))
-    place(new THREE.SphereGeometry(radius * 0.8, Math.max(5, q.radial / 3), Math.max(4, q.rings / 3)), body, to)
-    if (depth === 0) {
-      // The polyp cups at the tips, which is where coral reads as coral.
-      place(new THREE.SphereGeometry(radius * 0.5, 6, 5), accent, to.clone().addScaledVector(dir, radius * 0.4))
-      return
-    }
-    for (let i = 0; i < 2 + (rng.next() > 0.6 ? 1 : 0); i++) {
-      const side = dir
-        .clone()
-        .add(new THREE.Vector3(rng.jitter(0.9), rng.range(0.1, 0.6), rng.jitter(0.9)))
-        .normalize()
-      grow(to, side, radius * 0.7, length * rng.range(0.6, 0.85), depth - 1)
+  const sides = Math.max(6, Math.round(q.radial / 2))
+  const segment = (from: THREE.Vector3, to: THREE.Vector3, r0: number, r1: number) => {
+    const dir = to.clone().sub(from)
+    const len = dir.length()
+    place(new THREE.CylinderGeometry(r1, r0, len, sides), body, from.clone().add(to).multiplyScalar(0.5), aim(dir))
+    place(new THREE.SphereGeometry(r1, sides, Math.max(4, sides / 2)), body, to)
+  }
+  const pores = (from: THREE.Vector3, to: THREE.Vector3, r: number) => {
+    const count = Math.round(3 * q.cells)
+    for (let i = 0; i < count; i++) {
+      const at = from.clone().lerp(to, rng.range(0.15, 0.95))
+      const out = new THREE.Vector3(rng.jitter(1), rng.jitter(1), rng.jitter(1)).normalize()
+      place(new THREE.SphereGeometry(r * 0.32, 5, 4), accent, at.addScaledVector(out, r * 0.85))
     }
   }
-  grow(new THREE.Vector3(0, 0, 0), new THREE.Vector3(rng.jitter(0.2), 1, rng.jitter(0.2)).normalize(), spec.size * 0.09, spec.size * 0.34, q.detail)
+  const grow = (from: THREE.Vector3, dir: THREE.Vector3, radius: number, length: number, depth: number) => {
+    // A knuckle partway along, turning the branch a little.
+    const bend = dir
+      .clone()
+      .add(new THREE.Vector3(rng.jitter(0.35), rng.range(0, 0.2), rng.jitter(0.35)))
+      .normalize()
+    const knuckle = from.clone().addScaledVector(dir, length * 0.5)
+    const tip = knuckle.clone().addScaledVector(bend, length * 0.5)
+    segment(from, knuckle, radius, radius * 0.85)
+    segment(knuckle, tip, radius * 0.85, radius * 0.7)
+    pores(from, tip, radius)
+    if (depth === 0) {
+      place(new THREE.SphereGeometry(radius * 0.78, sides, Math.max(4, sides / 2)), body, tip)
+      return
+    }
+    const children = 2 + (rng.next() > 0.45 ? 1 : 0)
+    for (let i = 0; i < children; i++) {
+      const spread = (i / children) * Math.PI * 2 + rng.next()
+      const next = bend
+        .clone()
+        .add(new THREE.Vector3(Math.cos(spread) * 0.75, rng.range(0.2, 0.55), Math.sin(spread) * 0.75))
+        .normalize()
+      grow(tip, next, radius * 0.68, length * rng.range(0.62, 0.8), depth - 1)
+    }
+  }
+  const trunk = spec.size * 0.075
+  // A short thick stump, then three leaders that fan out from it.
+  const base = new THREE.Vector3(0, spec.size * 0.12, 0)
+  segment(new THREE.Vector3(0, 0, 0), base, trunk * 1.4, trunk * 1.1)
+  const leaders = 3
+  for (let i = 0; i < leaders; i++) {
+    const a = (i / leaders) * Math.PI * 2 + rng.jitter(0.4)
+    const dir = new THREE.Vector3(Math.cos(a) * 0.55, 1, Math.sin(a) * 0.3).normalize()
+    grow(base, dir, trunk, spec.size * rng.range(0.26, 0.32), Math.min(3, q.detail))
+  }
 }
+
+/** Shukti: one valve of a pearl oyster — a shallow, fan-shaped dish with
+ *  frilled growth rings outside and a smooth nacre lining within. The lining
+ *  is the accent, so it can take the pearl's own iridescence. */
+function shell(spec: SubstanceModelSpec, rng: Rng, q: Q, body: THREE.BufferGeometry[], accent: THREE.BufferGeometry[]) {
+  const R = spec.size * 0.5
+  const depth = spec.size * 0.16
+  const wobble = [rng.jitter(0.08), rng.jitter(0.08), rng.jitter(0.06)]
+  // The outline: rounded, a little longer than wide, narrowing to the hinge.
+  const outline = (phi: number) =>
+    R * (1 + 0.18 * Math.cos(phi) + wobble[0] * Math.cos(2 * phi) + wobble[1] * Math.sin(3 * phi)) *
+    (1 - 0.35 * Math.max(0, -Math.cos(phi)) ** 3)
+  const valve = (inset: number, frills: number) =>
+    new ParametricGeometry(
+      (t: number, v: number, target: THREE.Vector3) => {
+        const phi = v * Math.PI * 2
+        const rings = frills * Math.sin(t * Math.PI * 11) * t
+        const rho = t * outline(phi) * (1 - inset) * (1 + rings * 0.06)
+        const y = depth * t * t * (1 - inset * 0.5) + rings * spec.size * 0.02 + inset * spec.size * 0.014
+        target.set(rho * Math.cos(phi) - R * 0.12, y, rho * Math.sin(phi))
+      },
+      Math.max(10, q.rings * 2),
+      Math.max(24, q.radial * 2),
+    )
+  // Propped up on its hinge, tipped towards the viewer: flat, it showed only
+  // the lining and read as a saucer.
+  const prop = new THREE.Matrix4().makeTranslation(0, R * 0.45, 0).multiply(new THREE.Matrix4().makeRotationZ(0.55))
+  body.push(valve(0, 1).applyMatrix4(prop))
+  accent.push(valve(0.12, 0).applyMatrix4(prop))
+}
+
 
 /** A cast bar: swarna, rajata, loha. Tapered like a mould-cast ingot, with
  *  the bevel a bar actually has, not a plain box. */
@@ -470,6 +610,24 @@ function powder(spec: SubstanceModelSpec, rng: Rng, q: Q, body: THREE.BufferGeom
     ]
     place(new THREE.LatheGeometry(bowl, q.radial), accent, new THREE.Vector3(0, 0, 0))
   }
+  if (spec.variant === 'mica') {
+    // Beside the bhasma, the raw mineral it was made from: "books" of mica,
+    // stacks of thin six-sided sheets, each a little turned on the one below.
+    for (let b = 0; b < 3; b++) {
+      const a = (b / 3) * Math.PI * 2 + rng.next()
+      const at = new THREE.Vector3(Math.cos(a) * r * 1.55, 0, Math.sin(a) * r * 1.55)
+      const plate = r * rng.range(0.28, 0.42)
+      const sheets = 4 + Math.round(rng.next() * 3)
+      for (let k = 0; k < sheets; k++) {
+        place(
+          new THREE.CylinderGeometry(plate, plate, spec.size * 0.012, 6),
+          accent,
+          new THREE.Vector3(at.x + rng.jitter(plate * 0.08), spec.size * (0.008 + k * 0.014), at.z + rng.jitter(plate * 0.08)),
+          new THREE.Quaternion().setFromEuler(new THREE.Euler(rng.jitter(0.04), rng.next() * Math.PI, rng.jitter(0.04))),
+        )
+      }
+    }
+  }
   const cone = new THREE.ConeGeometry(r, h, q.radial, 2)
   const pos = cone.attributes.position
   const noise = lobes(rng, 3)
@@ -493,7 +651,7 @@ function powder(spec: SubstanceModelSpec, rng: Rng, q: Q, body: THREE.BufferGeom
   }
 }
 
-const FORMS = { honeycomb, vessel, rock, conch, pearl, coral, ingot, powder } as const
+const FORMS = { honeycomb, vessel, rock, conch, pearl, coral, shell, ingot, powder } as const
 
 /** Builds (and caches) one substance, standing on y = 0. */
 export function buildSubstanceGeometry(
@@ -512,9 +670,13 @@ export function buildSubstanceGeometry(
   const liquid: THREE.BufferGeometry[] = []
   FORMS[spec.form](spec, rng, q, body, accent, liquid)
 
-  const merged = body.length ? mergeGeometries(body, false) : new THREE.BoxGeometry(spec.size, spec.size, spec.size)
-  const mergedAccent = accent.length ? mergeGeometries(accent, false) : null
-  const mergedLiquid = liquid.length ? mergeGeometries(liquid, false) : null
+  // mergeGeometries refuses a mix of indexed and non-indexed parts (a
+  // polyhedron beside a sphere), so a mixed list is flattened first.
+  const unify = (list: THREE.BufferGeometry[]) =>
+    list.some((g) => !g.index) ? list.map((g) => (g.index ? g.toNonIndexed() : g)) : list
+  const merged = body.length ? mergeGeometries(unify(body), false) : new THREE.BoxGeometry(spec.size, spec.size, spec.size)
+  const mergedAccent = accent.length ? mergeGeometries(unify(accent), false) : null
+  const mergedLiquid = liquid.length ? mergeGeometries(unify(liquid), false) : null
   for (const g of [...body, ...accent, ...liquid]) g.dispose()
 
   merged.computeVertexNormals()

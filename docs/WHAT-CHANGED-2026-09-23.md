@@ -222,6 +222,29 @@ the bench from its page, five classifier questions were answered against the liv
 result was "New or non-classical drug" with every line cited.
 
 
+## 5b. Follow-up: better models, a Rasashala tour, zoom on click, a way into the Workbench
+
+- **Models rebuilt** (every one photographed and compared on a contact sheet): **shankha**
+  is now a true *Turbinella* conch, a spindle with a stepped spire, a knobbed shoulder, spiral cords
+  and a long canal, with a glossy pink aperture band. The old spiral had collapsed into a shapeless
+  mass. **Shukti** is a propped oyster valve with frilled growth rings outside and an iridescent
+  nacre lining. **Pravala** is a bushy fan of crooked, tapering branches with polyp pores.
+  **Kasturi** is a hairy musk pod. **Hingula** and **gandhaka** are crystal clusters on host rock:
+  red for cinnabar, yellow bipyramids for sulphur. **Abhraka** has books of raw mica beside its
+  bhasma. **Madhu** stands on edge with its cells to the room. The **ghee jar** and **milk pot**
+  are turned on smooth profiles instead of faceted ones. On the benches every piece now faces the aisle.
+- **Click to zoom** (`/rasashala`): opening a material, from the scene or the shelf index, glides
+  the camera to it and frames it clear of the info panel. Dragging stops the glide.
+- **The Rasashala tour**, *Three Kinds of Law Under One Roof*: seven stops, from the yeast
+  (s.3(j)) and the deposit rule (s.10(4)(d)(ii)) through honey (BD Act s.2(c)), musk (Schedule I),
+  coral (s.49I(2) export permit) and mercury (Schedule E(1)) to gold (s.3(c)). The camera flies to
+  each stop; it plays hands-free, with narration if narration is on. Start it from **Take the
+  tour** in the hall, or from the card on `/tours`. Its 13 quotes are in `npm run check:ipr`
+  (now 59 provisions).
+- **The Workbench is findable**: in the header nav (with a count), a **Workbench** button in the
+  Rasashala, and **Open the workbench** on every material and plant IP panel once something is on
+  the bench. Before this the only way in was the search palette.
+
 ## 6. What is still missing
 
 - **The rest of the eval**: resume it when the Groq limit resets (§4). Then fix the two misses

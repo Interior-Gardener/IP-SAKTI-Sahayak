@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import type { MaterialIPProfile } from '../types/material'
 import { openSahayak } from '../lib/sahayak/client'
 import { useWorkbench } from '../store/useWorkbench'
@@ -160,6 +161,14 @@ export function MaterialIprPanel({
         >
           {onBench ? 'On the workbench' : 'Add to workbench'}
         </Button>
+        {/* Once something is on the bench, the bench is one click away. */}
+        {onBench && (
+          <Link to="/workbench">
+            <Button size="sm" variant="primary" iconRight="arrowRight">
+              Open the workbench
+            </Button>
+          </Link>
+        )}
       </div>
 
       <div className="text-[0.78rem] text-ink-faint">
