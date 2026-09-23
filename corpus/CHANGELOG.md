@@ -2,6 +2,16 @@
 
 Every change to `manifest.yaml` gets a line here: what changed, why, who checked it. Newest first.
 
+## 2026-09-23 — WIPO's list of depositary authorities added (32 sources)
+
+- Added `intl-budapest-ida-list`, WIPO's list of International Depositary Authorities under the
+  Budapest Treaty (`doc_type: registry_record`, fetched automatically from wipo.int). It is a
+  registry record, not law: it says where a deposit can be made and since when. Registry Marg's
+  depositary office cites it. Checked by Kushal on 2026-09-23 against the downloaded PDF: it lists
+  MTCC (4 Oct 2002), MCC (9 Apr 2011) and NAIMCC (28 Jul 2020) for India. 4 chunks.
+- The first registry record in the corpus. Records change faster than law; re-fetch it
+  (`python -m app.ingest run --only intl-budapest-ida-list`) to pick up a new authority.
+
 ## 2026-09-21 — schedule headings become citable (re-chunk needed)
 
 - No source changed. The parser missed a schedule heading written with a dash separator, a trailing

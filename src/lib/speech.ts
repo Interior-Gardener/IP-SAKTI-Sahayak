@@ -65,7 +65,13 @@ function hardCancel(wanted: { current: string | null }) {
   }, 80)
 }
 
-function pickVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | undefined {
+function pickVoice(voices: SpeechSynthesisVoice[], lang = 'en'): SpeechSynthesisVoice | undefined {
+  if (lang !== 'en') {
+    // An answer in Hindi read by an English voice is noise, so for any other
+    // language only a voice for that language will do; with none installed
+    // the caller says so instead of reading it wrongly.
+    return voices.find((v) => v.lang === `${lang}-IN`) ?? voices.find((v) => v.lang.split(/[-_]/)[0] === lang)
+  }
   // Prefer an Indian English voice — the vocabulary here is largely Sanskrit.
   return (
     voices.find((v) => v.lang === 'en-IN') ??
@@ -78,11 +84,14 @@ function pickVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | undef
 export interface Narrator {
   supported: boolean
   speaking: boolean
-  /** Reads the text aloud, cancelling anything already in progress. */
-  speak: (text: string) => void
+  /** Reads the text aloud, cancelling anything already in progress. `lang`
+   *  is an ISO 639-1 code; English when left out. */
+  speak: (text: string, lang?: string) => void
   stop: () => void
   /** Speaks if idle, stops if this same text is already playing. */
-  toggle: (text: string) => void
+  toggle: (text: string, lang?: string) => void
+  /** Whether a voice for this language is installed in this browser. */
+  hasVoice: (lang: string) => boolean
 }
 
 export function useNarrator(): Narrator {
@@ -117,7 +126,7 @@ export function useNarrator(): Narrator {
   }, [supported])
 
   const speak = useCallback(
-    (text: string) => {
+    (text: string, lang = 'en') => {
       if (!supported || !text.trim()) return
       window.speechSynthesis.cancel()
       currentText.current = text
@@ -128,7 +137,12 @@ export function useNarrator(): Narrator {
         // waited. currentText is the record of what is wanted now.
         if (currentText.current !== text) return
         voices.current = window.speechSynthesis.getVoices()
-        const voice = pickVoice(voices.current)
+        const voice = pickVoice(voices.current, lang)
+        if (!voice && lang !== 'en') {
+          currentText.current = null
+          setSpeaking(false)
+          return
+        }
         const chunks = chunkText(text)
 
         chunks.forEach((chunk, i) => {
@@ -157,12 +171,17 @@ export function useNarrator(): Narrator {
   )
 
   const toggle = useCallback(
-    (text: string) => {
+    (text: string, lang?: string) => {
       if (speaking && currentText.current === text) stop()
-      else speak(text)
+      else speak(text, lang)
     },
     [speaking, speak, stop],
   )
 
-  return { supported, speaking, speak, stop, toggle }
+  const hasVoice = useCallback(
+    (lang: string) => supported && !!pickVoice(window.speechSynthesis.getVoices(), lang),
+    [supported],
+  )
+
+  return { supported, speaking, speak, stop, toggle, hasVoice }
 }

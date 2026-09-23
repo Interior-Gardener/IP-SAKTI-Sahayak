@@ -318,7 +318,19 @@ def run(req: AskRequest, services: Services, cache: AnswerCache | None = None) -
             suggestion="Try naming the product type, ingredient or law you mean, or escalate "
             "the question to a human IP facilitator.",
         )
-    env = envelope(answers=answers, abstained=abstained, language=u.language)
+    # Where to go next: only when the India answer stands, since every registry
+    # here is Indian and a withheld answer has nothing to act on.
+    next_steps = []
+    india = results.get("IN")
+    if abstained is None and india is not None and india.confidence.score >= CONFIDENCE_FLOOR:
+        from app.registry import pointers
+
+        session = services.session_factory()
+        try:
+            next_steps = pointers(session, u.regimes)
+        finally:
+            session.close()
+    env = envelope(answers=answers, abstained=abstained, language=u.language, next_steps=next_steps)
     if cache and abstained is None:
         cache.put(key, env)
     yield Event("trace", trace)

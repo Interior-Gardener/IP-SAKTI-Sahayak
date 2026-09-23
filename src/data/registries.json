@@ -1,0 +1,188 @@
+{
+  "checked_on": "2026-09-23",
+  "registries": [
+    {
+      "id": "in-patent-office",
+      "name": "Indian Patent Office (Controller General of Patents, Designs and Trade Marks)",
+      "jurisdiction": "IN",
+      "regime": [
+        "patent"
+      ],
+      "url": "https://ipindiaonline.gov.in/epatentfiling/",
+      "action": "File a patent application, then request its examination",
+      "cite_source": "in-patents-act-1970",
+      "cite_locator": "s.7",
+      "cite_quote": "shall be made in the prescribed form and filed in the patent office",
+      "forms": [
+        {
+          "name": "Form 18",
+          "purpose": "Request for examination",
+          "cite_source": "in-patents-rules-2003",
+          "cite_locator": "Rule 24B",
+          "quote": "A request for examination under section 11B shall be made in Form 18"
+        },
+        {
+          "name": "Form 1",
+          "purpose": "Application corresponding to an international (PCT) application",
+          "cite_source": "in-patents-rules-2003",
+          "cite_locator": "Rule 20",
+          "quote": "may be made in Form 1 under sub-section (1A) of section 7"
+        }
+      ],
+      "forms_note": "The form for an ordinary application is 'the prescribed form' in s.7; the forms schedule of the Patents Rules is not in the corpus, so verify it before filing.",
+      "fee_note": "Fees are set by the Patents Rules, 2003 (as amended in 2024); not quoted here."
+    },
+    {
+      "id": "in-gi-registry",
+      "name": "Geographical Indications Registry",
+      "jurisdiction": "IN",
+      "regime": [
+        "gi"
+      ],
+      "url": "https://ipindiaonline.gov.in/gi/",
+      "action": "Apply to register a geographical indication for a class of goods",
+      "cite_source": "in-gi-act-1999",
+      "cite_locator": "s.11",
+      "cite_quote": "shall apply in writing to the Registrar",
+      "forms": [
+        {
+          "name": "Form GI-1",
+          "purpose": "Application to register a geographical indication",
+          "cite_source": "in-gi-rules-2002",
+          "cite_locator": "Rule 23",
+          "quote": "shall be made in Form GI-1"
+        }
+      ],
+      "forms_note": null,
+      "fee_note": "Fees are set by the Geographical Indications Rules, 2002; not quoted here."
+    },
+    {
+      "id": "in-tm-registry",
+      "name": "Trade Marks Registry",
+      "jurisdiction": "IN",
+      "regime": [
+        "trademark"
+      ],
+      "url": "https://ipindiaonline.gov.in/trademarkefiling/",
+      "action": "Apply to register a trade mark for your goods or services",
+      "cite_source": "in-trade-marks-act-1999",
+      "cite_locator": "s.18",
+      "cite_quote": "shall apply in writing to the Registrar in the prescribed manner",
+      "forms": [],
+      "forms_note": "The Trade Marks Rules, which name the forms, are not in the corpus: the e-filing portal shows the current form.",
+      "fee_note": null
+    },
+    {
+      "id": "in-nba",
+      "name": "National Biodiversity Authority",
+      "jurisdiction": "IN",
+      "regime": [
+        "abs"
+      ],
+      "url": "https://nbaindia.org/",
+      "action": "Seek approval before accessing a biological resource or associated knowledge",
+      "cite_source": "in-bd-rules-2024",
+      "cite_locator": "Rule 13",
+      "cite_quote": "shall make an application on the web portal of the Authority in Form 1",
+      "forms": [
+        {
+          "name": "Form 1",
+          "purpose": "Access for research, bio-survey or bio-utilisation",
+          "cite_source": "in-bd-rules-2024",
+          "cite_locator": "Rule 13",
+          "quote": "for research or for bio-survey and bio-utilisation shall make an application on the web portal of the Authority in Form 1"
+        },
+        {
+          "name": "Form 2",
+          "purpose": "Access for commercial utilisation",
+          "cite_source": "in-bd-rules-2024",
+          "cite_locator": "Rule 13",
+          "quote": "for commercial utilisation shall make an application on the web portal of the Authority in Form 2"
+        }
+      ],
+      "forms_note": null,
+      "fee_note": "Fees are in the First Schedule to the Biological Diversity Rules, 2024."
+    },
+    {
+      "id": "in-asu-licensing",
+      "name": "State Licensing Authority for Ayurveda, Siddha and Unani drugs (e-Aushadhi)",
+      "jurisdiction": "IN",
+      "regime": [
+        "drug_licensing"
+      ],
+      "url": "https://e-aushadhi.gov.in/",
+      "action": "Apply for a licence to manufacture Ayurvedic, Siddha or Unani drugs for sale",
+      "cite_source": "in-dc-rules-1945",
+      "cite_locator": "Rule 153",
+      "cite_quote": "shall be made in Form 24-D to the Licensing Authority",
+      "forms": [
+        {
+          "name": "Form 24-D",
+          "purpose": "Licence to manufacture Ayurvedic (including Siddha) or Unani drugs for sale",
+          "cite_source": "in-dc-rules-1945",
+          "cite_locator": "Rule 153",
+          "quote": "shall be made in Form 24-D to the Licensing Authority"
+        }
+      ],
+      "forms_note": null,
+      "fee_note": null
+    },
+    {
+      "id": "in-fssai",
+      "name": "Food Safety and Standards Authority of India (FoSCoS)",
+      "jurisdiction": "IN",
+      "regime": [
+        "food"
+      ],
+      "url": "https://foscos.fssai.gov.in/",
+      "action": "Get a food business licence or registration before selling Ayurveda Aahara",
+      "cite_source": "in-fss-act-2006",
+      "cite_locator": "s.31",
+      "cite_quote": "No person shall commence or carry on any food business except under a licence",
+      "forms": [],
+      "forms_note": "The licensing regulations that name the forms are not in the corpus; FoSCoS shows which licence or registration applies.",
+      "fee_note": null
+    },
+    {
+      "id": "in-ppvfra",
+      "name": "Protection of Plant Varieties and Farmers' Rights Authority",
+      "jurisdiction": "IN",
+      "regime": [
+        "pvp"
+      ],
+      "url": "https://plantauthority.gov.in/",
+      "action": "Register a new, extant or farmers' plant variety",
+      "cite_source": "in-ppvfr-act-2001",
+      "cite_locator": "s.14",
+      "cite_quote": "may make an application to the Registrar for registration of any variety",
+      "forms": [],
+      "forms_note": "The PPV&FR Rules, which name the application form, are not in the corpus; the Authority's site has the current one.",
+      "fee_note": null
+    },
+    {
+      "id": "in-ida-mtcc",
+      "name": "Microbial Type Culture Collection and Gene Bank (MTCC), a depositary authority",
+      "jurisdiction": "IN",
+      "regime": [
+        "patent",
+        "treaty"
+      ],
+      "url": "https://mtccindia.res.in/",
+      "action": "Deposit a micro-organism a patent application relies on, before filing",
+      "cite_source": "in-patents-act-1970",
+      "cite_locator": "s.10",
+      "cite_quote": "an international depository authority under the Budapest Treaty",
+      "forms": [
+        {
+          "name": "Recognised depositary",
+          "purpose": "MTCC is on WIPO's list of International Depositary Authorities (since 4 October 2002); MCC and NAIMCC are the other two in India",
+          "cite_source": "intl-budapest-ida-list",
+          "cite_locator": "p.1",
+          "quote": "Microbial Type Culture Collection and Gene Bank (MTCC)"
+        }
+      ],
+      "forms_note": "Each depositary sets its own deposit forms and charges; ask it directly.",
+      "fee_note": null
+    }
+  ]
+}

@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { AnimatePresence, motion } from 'motion/react'
+import { useTranslation } from 'react-i18next'
+import { UI_LANGUAGES, setUiLanguage, type UiLanguage } from '../i18n'
+import { useSahayak } from '../store/useSahayak'
 import { useGarden } from '../store/useGarden'
 import { Icon, type IconName } from './ui/Icon'
 import { cx } from './ui/primitives'
@@ -9,19 +12,52 @@ import { Walkthrough } from './Walkthrough'
 import { PresentationMode } from './PresentationMode'
 import { SahayakDrawer } from './sahayak/Drawer'
 
-const NAV: { to: string; label: string; icon: IconName }[] = [
-  { to: '/garden', label: 'Garden', icon: 'map' },
-  { to: '/rasashala', label: 'Rasashala', icon: 'flask' },
-  { to: '/explore', label: 'Explore', icon: 'grid' },
-  { to: '/atlas', label: 'Atlas', icon: 'layers' },
-  { to: '/tours', label: 'Tours', icon: 'route' },
-  { to: '/quiz', label: 'Quiz', icon: 'quiz' },
-  { to: '/my-garden', label: 'My Garden', icon: 'bookmark' },
+/** `label` is a key into the i18n dictionary (src/i18n). `desktop` items are
+ *  left off the phone tab bar, which has room for seven. */
+const NAV: { to: string; label: string; icon: IconName; desktop?: boolean }[] = [
+  { to: '/garden', label: 'nav.garden', icon: 'map' },
+  { to: '/rasashala', label: 'nav.rasashala', icon: 'flask' },
+  { to: '/registry-marg', label: 'nav.registryMarg', icon: 'compass', desktop: true },
+  { to: '/explore', label: 'nav.explore', icon: 'grid' },
+  { to: '/atlas', label: 'nav.atlas', icon: 'layers' },
+  { to: '/tours', label: 'nav.tours', icon: 'route' },
+  { to: '/quiz', label: 'nav.quiz', icon: 'quiz' },
+  { to: '/my-garden', label: 'nav.myGarden', icon: 'bookmark' },
 ]
 
-function Wordmark() {
+/** The interface language. Switching it also sets the language Sahayak
+ *  answers in, which is what someone reading the site in Hindi wants. */
+function LanguageSwitch() {
+  const { t, i18n } = useTranslation()
+  const setAnswerLanguage = useSahayak((s) => s.setLanguage)
   return (
-    <Link to="/" className="group flex items-center gap-2.5" aria-label="Vanaspati home">
+    <select
+      aria-label={t('header.language')}
+      title={t('header.language')}
+      value={i18n.language}
+      onChange={(e) => {
+        const code = e.target.value as UiLanguage
+        setUiLanguage(code)
+        setAnswerLanguage(code)
+      }}
+      className="h-9 rounded-full border border-line bg-raised px-2.5 text-[0.78rem] text-ink-soft outline-none hover:text-ink focus:border-line-strong"
+    >
+      {UI_LANGUAGES.map((l) => (
+        <option key={l.code} value={l.code}>
+          {l.label}
+        </option>
+      ))}
+    </select>
+  )
+}
+
+function Wordmark() {
+  const { t, i18n } = useTranslation()
+  // Wide tracking and capitals are a Latin-script device; Devanagari and Tamil
+  // set in them come apart into separate marks.
+  const latin = i18n.language === 'en'
+  return (
+    <Link to="/" className="group flex items-center gap-2.5" aria-label={t('brand.home')}>
       <span className="relative grid size-9 place-items-center overflow-hidden rounded-xl bg-moss-900 text-moss-300 transition-transform duration-500 group-hover:rotate-[-8deg]">
         <svg viewBox="0 0 32 32" className="size-6" aria-hidden="true">
           <path d="M8 24C8 24 6.5 14 12 9.5S25 6 25 6s1 10-4 15-13 3-13 3Z" fill="currentColor" />
@@ -30,7 +66,9 @@ function Wordmark() {
       </span>
       <span className="leading-none">
         <span className="block font-display text-[1.05rem] font-semibold tracking-[-0.02em]">Vanaspati</span>
-        <span className="block text-[0.62rem] tracking-[0.18em] text-ink-faint uppercase">Virtual Herbal Garden</span>
+        <span className={cx('block text-ink-faint', latin ? 'text-[0.62rem] tracking-[0.18em] uppercase' : 'text-[0.7rem]')}>
+          {t('brand.subtitle')}
+        </span>
       </span>
     </Link>
   )
@@ -51,6 +89,7 @@ function HelpMenu({
   onPresent: () => void
   onReplayIntro: () => void
 }) {
+  const { t } = useTranslation()
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
@@ -66,19 +105,19 @@ function HelpMenu({
   const items: { icon: IconName; label: string; hint: string; kbd?: string; run: () => void }[] = [
     {
       icon: 'cursor',
-      label: 'Guided walkthrough',
-      hint: 'Nine stops across the whole site',
+      label: t('help.walkthrough'),
+      hint: t('help.walkthroughHint'),
       run: onWalkthrough,
     },
-    { icon: 'play', label: 'Presentation mode', hint: 'Hands-free narrated reel', kbd: 'P', run: onPresent },
-    { icon: 'sparkle', label: 'Replay the opening', hint: 'The cinematic garden intro', run: onReplayIntro },
+    { icon: 'play', label: t('help.present'), hint: t('help.presentHint'), kbd: 'P', run: onPresent },
+    { icon: 'sparkle', label: t('help.intro'), hint: t('help.introHint'), run: onReplayIntro },
   ]
 
   return (
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen((v) => !v)}
-        aria-label="How to use this site"
+        aria-label={t('header.help')}
         aria-expanded={open}
         data-tour="help"
         className={cx(
@@ -99,7 +138,7 @@ function HelpMenu({
             className="absolute right-0 z-50 mt-2 w-72 overflow-hidden rounded-3xl border border-line bg-raised shadow-[var(--shadow-lift)]"
           >
             <p className="border-b border-line px-4 py-2.5 text-[0.64rem] font-semibold tracking-[0.16em] text-ink-faint uppercase">
-              Show me around
+              {t('help.title')}
             </p>
             {items.map((item) => (
               <button
@@ -136,6 +175,7 @@ function HelpMenu({
 }
 
 export function AppShell({ children }: { children: React.ReactNode }) {
+  const { t } = useTranslation()
   const theme = useGarden((s) => s.theme)
   const toggleTheme = useGarden((s) => s.toggleTheme)
   const bookmarks = useGarden((s) => s.bookmarks.length)
@@ -155,6 +195,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     location.pathname === '/garden' ||
     location.pathname === '/medicinal-garden' ||
     location.pathname === '/rasashala' ||
+    location.pathname === '/registry-marg' ||
     location.pathname === '/workbench' ||
     location.pathname === '/quiz' ||
     location.pathname.startsWith('/tours/')
@@ -249,7 +290,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                         aria-hidden="true"
                       />
                     )}
-                    {item.label}
+                    {t(item.label)}
                     {item.to === '/my-garden' && bookmarks > 0 && (
                       <span className="ml-1.5 rounded-full bg-accent px-1.5 py-px text-[0.62rem] font-semibold text-[var(--surface-raised)] tabular-nums">
                         {bookmarks}
@@ -268,7 +309,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               className="flex h-9 items-center gap-2 rounded-full border border-line bg-raised px-3 text-[0.8rem] text-ink-faint transition-colors hover:border-line-strong hover:text-ink-soft"
             >
               <Icon name="search" size={15} />
-              <span className="hidden sm:inline">Search plants</span>
+              <span className="hidden sm:inline">{t('header.search')}</span>
               <kbd className="hidden rounded border border-line px-1.5 py-px font-mono text-[0.62rem] lg:inline">
                 ⌘K
               </kbd>
@@ -279,14 +320,16 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               className="flex h-9 items-center gap-2 rounded-full bg-moss-900 px-3 text-[0.8rem] font-medium text-moss-100 transition-colors hover:bg-moss-800"
             >
               <Icon name="scale" size={15} />
-              <span className="hidden sm:inline">Ask Sahayak</span>
+              <span className="hidden sm:inline">{t('header.ask')}</span>
             </button>
+
+            <LanguageSwitch />
 
             <HelpMenu onWalkthrough={startWalkthrough} onPresent={() => setPresenting(true)} onReplayIntro={replayIntro} />
 
             <button
               onClick={toggleTheme}
-              aria-label={theme === 'dark' ? 'Switch to daylight' : 'Switch to evening'}
+              aria-label={theme === 'dark' ? t('header.toDay') : t('header.toEvening')}
               className="grid size-9 place-items-center rounded-full border border-line bg-raised text-ink-soft transition-colors hover:text-ink"
             >
               <Icon name={theme === 'dark' ? 'sun' : 'moon'} size={16} />
@@ -300,7 +343,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       {/* Mobile tab bar */}
       <nav className="glass fixed inset-x-0 bottom-0 z-40 border-t border-line pb-[env(safe-area-inset-bottom)] md:hidden">
         <div className="flex items-stretch justify-around">
-          {NAV.map((item) => (
+          {NAV.filter((item) => !item.desktop).map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
@@ -313,7 +356,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               }
             >
               <Icon name={item.icon} size={19} />
-              {item.label}
+              {t(item.label)}
             </NavLink>
           ))}
         </div>

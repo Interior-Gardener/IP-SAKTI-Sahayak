@@ -32,6 +32,8 @@ def test_consent_grant_revoke_and_purge(client):
     ).json() == {
         "assistant": True,
         "transcript": False,
+        # Consent to the assistant grants no paid connector.
+        "connectors": {"lens": False},
     }
     assert (
         client.post("/consent", json={"scope": "assistant", "granted": False}, headers=h).json()[
@@ -48,7 +50,11 @@ def test_consent_grant_revoke_and_purge(client):
         and deleted["escalations"] == 1
         and deleted["audit_events"] >= 1
     )
-    assert client.get("/consent", headers=h).json() == {"assistant": False, "transcript": False}
+    assert client.get("/consent", headers=h).json() == {
+        "assistant": False,
+        "transcript": False,
+        "connectors": {"lens": False},
+    }
 
 
 def test_sources_and_registry_and_materials(client):

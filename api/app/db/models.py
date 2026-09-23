@@ -181,6 +181,10 @@ class Registry(Base):
     forms: Mapped[list] = mapped_column(JSONB, default=list)
     fee_note: Mapped[str | None] = mapped_column(Text)
     cite_chunk_id: Mapped[int | None] = mapped_column(ForeignKey("chunks.id", ondelete="SET NULL"))
+    #: What the person does there, in a line.
+    action: Mapped[str | None] = mapped_column(Text)
+    #: Said when the corpus does not name the form, so the gap is visible.
+    forms_note: Mapped[str | None] = mapped_column(Text)
 
 
 class MaterialIpr(Base):

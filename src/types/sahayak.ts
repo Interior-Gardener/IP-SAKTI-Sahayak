@@ -81,6 +81,50 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/connectors": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * List Connectors
+         * @description The credentialed connectors. Free official databases are links, listed by the web.
+         */
+        get: operations["list_connectors_connectors_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/connectors/lens/search": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Lens Search
+         * @description Patent search on The Lens with the person's own token.
+         *
+         *     Needs `connector:lens` consent. One audit row per call, holding the
+         *     connector, a hash of the query and the result count — never the token, never
+         *     the query text.
+         */
+        post: operations["lens_search_connectors_lens_search_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/consent": {
         parameters: {
             query?: never;
@@ -227,6 +271,71 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/voice": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Voice Status
+         * @description Which providers are live, so the web can say what the mic will use.
+         */
+        get: operations["voice_status_voice_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/voice/asr": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Voice Asr
+         * @description Speech to text. Bhashini when configured, Groq Whisper otherwise.
+         *
+         *     Needs the same consent as /ask: a recording of someone's voice is personal
+         *     data. Nothing is stored; the audit row holds the provider, language and size.
+         */
+        post: operations["voice_asr_voice_asr_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/voice/tts": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Voice Tts
+         * @description Text to speech. Bhashini audio when configured; otherwise 204 and the
+         *     browser reads the text with its own voices. No consent needed: the text is
+         *     an answer the API wrote, not something the person said.
+         */
+        post: operations["voice_tts_voice_tts_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -321,6 +430,32 @@ export interface components {
             persona?: ("practitioner" | "researcher" | "startup" | "cultivator") | null;
             /** Question */
             question: string;
+        };
+        /** AsrRequest */
+        AsrRequest: {
+            /**
+             * Audio Base64
+             * @description 16 kHz mono WAV, base64-encoded; about a minute at most
+             */
+            audio_base64: string;
+            /**
+             * Language
+             * @default en
+             * @enum {string}
+             */
+            language: "en" | "hi" | "mr" | "ta" | "te" | "kn" | "bn" | "gu";
+        };
+        /** AsrResult */
+        AsrResult: {
+            /** Language */
+            language: string;
+            /**
+             * Provider
+             * @description 'bhashini' or 'groq-whisper'
+             */
+            provider: string;
+            /** Text */
+            text: string;
         };
         /** Biodiversity */
         Biodiversity: {
@@ -436,12 +571,19 @@ export interface components {
              * Scope
              * @enum {string}
              */
-            scope: "assistant" | "transcript";
+            scope: "assistant" | "transcript" | "connector:lens";
         };
         /** ConsentState */
         ConsentState: {
             /** Assistant */
             assistant: boolean;
+            /**
+             * Connectors
+             * @default {}
+             */
+            connectors: {
+                [key: string]: boolean;
+            };
             /** Transcript */
             transcript: boolean;
         };
@@ -451,6 +593,21 @@ export interface components {
             id: string;
             /** Kind */
             kind: string;
+        };
+        /** CredentialedConnector */
+        CredentialedConnector: {
+            /** Cost */
+            cost: string;
+            /** Credential */
+            credential: string;
+            /** Docs */
+            docs: string;
+            /** Id */
+            id: string;
+            /** Name */
+            name: string;
+            /** Url */
+            url: string;
         };
         /** Deposit */
         Deposit: {
@@ -599,6 +756,45 @@ export interface components {
             /** Year */
             year: number;
         };
+        /** LensHit */
+        LensHit: {
+            /** Date Published */
+            date_published: string;
+            /** Doc Number */
+            doc_number: string;
+            /** Jurisdiction */
+            jurisdiction: string;
+            /** Kind */
+            kind: string;
+            /** Lens Id */
+            lens_id: string;
+            /** Title */
+            title: string;
+            /** Url */
+            url: string;
+        };
+        /** LensSearchRequest */
+        LensSearchRequest: {
+            /** Query */
+            query: string;
+            /**
+             * Size
+             * @default 10
+             */
+            size: number;
+        };
+        /** LensSearchResult */
+        LensSearchResult: {
+            /** Hits */
+            hits: components["schemas"]["LensHit"][];
+            /**
+             * Note
+             * @default Results come from The Lens on your own token. Nothing is stored here.
+             */
+            note: string;
+            /** Total */
+            total: number;
+        };
         /** Line */
         Line: {
             cite: components["schemas"]["Cite"];
@@ -698,8 +894,26 @@ export interface components {
             /** Text */
             text: string;
         };
+        /** RegistryForm */
+        RegistryForm: {
+            /** Cite Locator */
+            cite_locator: string;
+            /** Cite Source Id */
+            cite_source_id: string;
+            /** Name */
+            name: string;
+            /** Purpose */
+            purpose: string;
+            /**
+             * Quote
+             * @description the rule's own words naming the form, checked against the corpus
+             */
+            quote: string;
+        };
         /** RegistryOut */
         RegistryOut: {
+            /** Action */
+            action?: string | null;
             /** Cite Locator */
             cite_locator: string | null;
             /** Cite Source Id */
@@ -707,7 +921,9 @@ export interface components {
             /** Fee Note */
             fee_note: string | null;
             /** Forms */
-            forms: unknown[];
+            forms: components["schemas"]["RegistryForm"][];
+            /** Forms Note */
+            forms_note?: string | null;
             /** Id */
             id: string;
             /** Jurisdiction */
@@ -855,6 +1071,17 @@ export interface components {
              * @enum {string}
              */
             tkdl: "documented" | "unknown";
+        };
+        /** TtsRequest */
+        TtsRequest: {
+            /**
+             * Language
+             * @default en
+             * @enum {string}
+             */
+            language: "en" | "hi" | "mr" | "ta" | "te" | "kn" | "bn" | "gu";
+            /** Text */
+            text: string;
         };
         /** ValidationError */
         ValidationError: {
@@ -1021,6 +1248,64 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["ClassifyStep"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    list_connectors_connectors_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CredentialedConnector"][];
+                };
+            };
+        };
+    };
+    lens_search_connectors_lens_search_post: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description your own Lens API token; never stored */
+                "x-connector-token": string;
+                /** @description anonymous id from the browser */
+                "x-session-id": string;
+            };
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["LensSearchRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["LensSearchResult"];
                 };
             };
             /** @description Validation Error */
@@ -1303,6 +1588,108 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["SourcesOut"];
+                };
+            };
+        };
+    };
+    voice_status_voice_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+        };
+    };
+    voice_asr_voice_asr_post: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description anonymous id from the browser */
+                "x-session-id": string;
+            };
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["AsrRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AsrResult"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    voice_tts_voice_tts_post: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description anonymous id from the browser */
+                "x-session-id": string;
+            };
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["TtsRequest"];
+            };
+        };
+        responses: {
+            /** @description the text, spoken */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "audio/wav": unknown;
+                };
+            };
+            /** @description no speech provider: read it aloud in the browser (X-Voice-Fallback) */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
                 };
             };
         };

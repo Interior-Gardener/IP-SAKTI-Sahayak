@@ -1,7 +1,10 @@
 import { Fragment, type ReactNode } from 'react'
+import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import type { Citation, JurisdictionAnswer, SahayakAnswer } from '../../lib/sahayak/client'
 import { Icon } from '../ui/Icon'
 import { cx } from '../ui/primitives'
+import { ListenButton } from './Voice'
 
 export const JURISDICTION_NAME: Record<'IN' | 'INTL', string> = {
   IN: 'India',
@@ -93,7 +96,7 @@ export function Citations({ citations }: { citations: Citation[] }) {
   )
 }
 
-export function AnswerPane({ answer }: { answer: JurisdictionAnswer }) {
+export function AnswerPane({ answer, language = 'en' }: { answer: JurisdictionAnswer; language?: string }) {
   return (
     <section
       className="rounded-2xl border border-line bg-raised p-4"
@@ -101,7 +104,10 @@ export function AnswerPane({ answer }: { answer: JurisdictionAnswer }) {
     >
       <header className="mb-3 flex flex-wrap items-center justify-between gap-2">
         <h3 className="font-display text-[1rem] font-semibold">{JURISDICTION_NAME[answer.jurisdiction]}</h3>
-        <ConfidenceChip confidence={answer.confidence} />
+        <span className="flex items-center gap-2">
+          <ListenButton markdown={answer.markdown} language={language} />
+          <ConfidenceChip confidence={answer.confidence} />
+        </span>
       </header>
       <Markdown text={answer.markdown} />
       <Citations citations={answer.citations} />
@@ -123,5 +129,47 @@ export function ProviderFooter({ answer }: { answer: SahayakAnswer }) {
     <p className="text-[0.66rem] text-ink-faint">
       Answered by {answer.provider.name} · <span className="font-mono">{answer.provider.model}</span>
     </p>
+  )
+}
+
+/**
+ * Where to go next: the registries the question's regimes point at, each with
+ * the provision that sends you there. Held to the same rule as the answer —
+ * every line shows its source, and a form is named only where the corpus names it.
+ */
+export function NextSteps({ steps }: { steps: SahayakAnswer['next_steps'] }) {
+  const { t } = useTranslation()
+  if (!steps.length) return null
+  return (
+    <section className="rounded-2xl border border-line bg-sunken p-4" aria-label="Where to go next">
+      <header className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
+        <h3 className="font-display text-[1rem] font-semibold">{t('ask.nextSteps')}</h3>
+        <Link to="/registry-marg" className="text-[0.74rem] font-medium text-accent hover:underline">
+          {t('ask.walkMarg')}
+        </Link>
+      </header>
+      <ol className="space-y-3">
+        {steps.map((s) => (
+          <li key={s.registry} className="rounded-xl border border-line bg-raised p-3">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <a href={s.url} target="_blank" rel="noreferrer" className="font-medium text-ink hover:text-accent">
+                {s.registry}
+              </a>
+              {s.form && (
+                <span className="rounded-full bg-accent-soft px-2 py-0.5 text-[0.68rem] font-semibold text-accent-ink">
+                  {s.form}
+                </span>
+              )}
+            </div>
+            <p className="mt-1 text-[0.8rem] text-ink-soft">{s.action}</p>
+            <p className="mt-1.5 text-[0.7rem] text-ink-faint">
+              Because <span className="font-mono">{s.cite.source_id}</span> {s.cite.locator}:{' '}
+              <span className="italic">“{s.cite.cited_text}”</span>
+            </p>
+            {s.fee_note && <p className="mt-1 text-[0.68rem] text-ink-faint">{s.fee_note}</p>}
+          </li>
+        ))}
+      </ol>
+    </section>
   )
 }

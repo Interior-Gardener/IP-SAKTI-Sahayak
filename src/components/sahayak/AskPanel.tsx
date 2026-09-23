@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import type { OpenSahayakDetail } from '../../lib/sahayak/client'
 import { useSahayak } from '../../store/useSahayak'
 import { Icon } from '../ui/Icon'
 import { Button, cx } from '../ui/primitives'
-import { AnswerPane, Disclaimer, JURISDICTION_NAME, ProviderFooter } from './AnswerParts'
+import { AnswerPane, Disclaimer, JURISDICTION_NAME, NextSteps, ProviderFooter } from './AnswerParts'
 import {
   ConsentBanner,
   DeleteMyData,
@@ -14,12 +15,14 @@ import {
   PersonaPicker,
 } from './Controls'
 import { useAsk, useAssistantHealth, type Stage } from './useAsk'
+import { MicButton } from './Voice'
 
+/** i18n keys for the pipeline's stages. */
 const STAGE_LABEL: Partial<Record<Stage, string>> = {
-  checking: 'Checking the question…',
-  understanding: 'Working out which laws apply…',
-  searching: 'Searching the statutes and treaties…',
-  answering: 'Writing the answer…',
+  checking: 'ask.checking',
+  understanding: 'ask.understanding',
+  searching: 'ask.searching',
+  answering: 'ask.answering',
 }
 
 const EXAMPLES = [
@@ -36,6 +39,7 @@ export function AskPanel({
   compact?: boolean
   seed?: OpenSahayakDetail
 }) {
+  const { t } = useTranslation()
   const { status, retry } = useAssistantHealth()
   const consent = useSahayak((s) => s.consent)
   const jurisdiction = useSahayak((s) => s.jurisdiction)
@@ -81,7 +85,7 @@ export function AskPanel({
 
       {context.length > 0 && (
         <p className="flex flex-wrap items-center gap-1.5 text-[0.74rem] text-ink-faint">
-          Asking about
+          {t('ask.askingAbout')}
           {context.map((c) => (
             <span key={`${c.kind}:${c.id}`} className="rounded-full bg-sunken px-2 py-0.5 text-ink-soft">
               {c.label ?? c.id}
@@ -108,11 +112,12 @@ export function AskPanel({
           }}
           rows={compact ? 2 : 3}
           maxLength={2000}
-          placeholder="Ask about patents, GI, biodiversity approval, licensing, labels…"
+          placeholder={t('ask.placeholder')}
           className="flex-1 resize-none bg-transparent p-1.5 text-[0.9rem] outline-none placeholder:text-ink-faint"
-          aria-label="Your question"
+          aria-label={t('ask.question')}
         />
-        <Button variant="primary" size="sm" icon="send" type="submit" disabled={busy || !question.trim()} aria-label="Ask" />
+        <MicButton language={language} onHeard={(heard) => setQuestion((q) => (q.trim() ? `${q.trim()} ${heard}` : heard))} />
+        <Button variant="primary" size="sm" icon="send" type="submit" disabled={busy || !question.trim()} aria-label={t('ask.send')} />
       </form>
 
       {stage === 'idle' && (
@@ -134,7 +139,7 @@ export function AskPanel({
 
       {busy && (
         <p className="flex items-center gap-2 text-[0.8rem] text-ink-faint" aria-live="polite">
-          <Icon name="seedling" size={16} className="animate-float" /> {STAGE_LABEL[stage]}
+          <Icon name="seedling" size={16} className="animate-float" /> {STAGE_LABEL[stage] && t(STAGE_LABEL[stage])}
         </p>
       )}
       {error && <p className="text-[0.82rem] text-rose-clay-500">{error}</p>}
@@ -155,7 +160,7 @@ export function AskPanel({
             .map((j) => answers.find((a) => a.jurisdiction === j))
             .filter((a): a is NonNullable<typeof a> => Boolean(a))
             .map((a) => (
-              <AnswerPane key={a.jurisdiction} answer={a} />
+              <AnswerPane key={a.jurisdiction} answer={a} language={result?.language ?? language} />
             ))}
           {busy && jurisdiction === 'BOTH' && answers.length === 1 && (
             <p className="rounded-2xl border border-dashed border-line p-4 text-[0.8rem] text-ink-faint">
@@ -165,11 +170,13 @@ export function AskPanel({
         </div>
       )}
 
+      {result && result.next_steps.length > 0 && <NextSteps steps={result.next_steps} />}
+
       {result && (
         <div className="flex flex-wrap items-center justify-between gap-2">
           {!escalating && (
             <Button size="sm" variant="ghost" icon="scale" onClick={() => setEscalating(true)}>
-              Ask a human facilitator
+              {t('ask.human')}
             </Button>
           )}
           <ProviderFooter answer={result} />

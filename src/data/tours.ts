@@ -250,6 +250,81 @@ export const tours: Tour[] = [
       },
     ],
   },
+  {
+    id: 'neem-tree',
+    title: 'Who Owns the Neem Tree?',
+    theme: 'IP & Law',
+    subtitle: 'Traditional knowledge, patents and who has to say where it came from',
+    blurb:
+      'Neem and turmeric are the two examples the Indian Patent Office itself uses for knowledge that is too old to patent. This walk follows the law from the garden bed outwards: what cannot be patented, how an examiner finds out, whose approval an invention on an Indian plant needs, and what the 2024 WIPO treaty adds.',
+    minutes: 6,
+    accent: '#8a5a3c',
+    stops: [
+      {
+        plantId: 'neem',
+        headline: 'Knowledge that is already known',
+        narration:
+          'Section 3(p) of the Patents Act says that an invention which, in effect, is traditional knowledge is not an invention at all. The Patent Office manual gives neem as its example: the pesticidal and insecticidal properties of neem are traditional knowledge, and so not patentable.',
+        // @verify in-patents-act-1970 | s.3 | an invention which, in effect, is traditional knowledge or which is an aggregation or duplication of known properties of traditionally known component or components
+        // @verify in-mppp-v3 | p.98 | Another example is the pesticidal and insecticidal properties of neem.
+        cite: {
+          source: 'in-mppp-v3',
+          locator: 'p.98',
+          quote: 'Another example is the pesticidal and insecticidal properties of neem.',
+        },
+      },
+      {
+        plantId: 'turmeric',
+        headline: 'The wound-healing rhizome',
+        narration:
+          'The same passage of the manual gives turmeric as its first example: the antiseptic properties of turmeric for wound healing. Knowledge a household has used for generations does not become new because someone writes it into a patent claim.',
+        // @verify in-mppp-v3 | p.98 | An example is the antiseptic properties of turmeric for wound healing.
+        cite: {
+          source: 'in-mppp-v3',
+          locator: 'p.98',
+          quote: 'An example is the antiseptic properties of turmeric for wound healing.',
+        },
+      },
+      {
+        plantId: 'tulsi',
+        headline: 'How an examiner finds out',
+        narration:
+          'A patent examiner cannot rule out what they cannot find. The manual says the examiner searches the Traditional Knowledge Digital Library, TKDL, and other resources to decide whether a claim falls under section 3(p). Before you file, search it the same way: the prior-art links on every plant page start there.',
+        // @verify in-mppp-v3 | p.98 | Digital Library (TKDL) and other resources to decide as to whether the claimed subject matter falls within the purview of this provision.
+        cite: {
+          source: 'in-mppp-v3',
+          locator: 'p.98',
+          quote:
+            'Digital Library (TKDL) and other resources to decide as to whether the claimed subject matter falls within the purview of this provision.',
+        },
+      },
+      {
+        plantId: 'ashwagandha',
+        headline: 'Whose permission, before the patent',
+        narration:
+          'An invention built on an Indian plant can still be patentable. But under section 6 of the Biological Diversity Act, an applicant for an intellectual property right on research into a biological resource accessed from India, or the knowledge associated with it, must obtain the prior approval of the National Biodiversity Authority. Registry Marg has the Authority, and its forms.',
+        // @verify in-bd-act-2002 | s.6 | shall obtain prior approval of the National Biodiversity Authority before grant of such intellectual property rights
+        cite: {
+          source: 'in-bd-act-2002',
+          locator: 's.6',
+          quote:
+            'shall obtain prior approval of the National Biodiversity Authority before grant of such intellectual property rights',
+        },
+      },
+      {
+        plantId: 'amla',
+        headline: 'Saying where it came from',
+        narration:
+          'In 2024 WIPO members adopted a treaty on genetic resources and associated traditional knowledge. Where a claimed invention is based on traditional knowledge associated with genetic resources, each contracting party must require the applicant to disclose the Indigenous Peoples or local community who provided it. Owning the neem tree was never the question; saying whose knowledge you built on is.',
+        // @verify intl-gratk-2024 | Art. 3 | the Indigenous Peoples or local community, as applicable
+        cite: {
+          source: 'intl-gratk-2024',
+          locator: 'Art. 3',
+          quote: 'the Indigenous Peoples or local community, as applicable',
+        },
+      },
+    ],
+  },
 ]
 
 export const tourById: ReadonlyMap<string, Tour> = new Map(tours.map((t) => [t.id, t]))

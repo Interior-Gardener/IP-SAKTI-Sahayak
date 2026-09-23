@@ -12,9 +12,9 @@ Status: `planned` (designed, not built) · `built` · `verified` (built and test
 |---|---|---|---|---|
 | Anonymous session id | Generated in the browser (`useSahayak.sessionId`) | Rate limiting, consent, purge | `consent_grants`, `audit_events`, `answers` | Retention window (§3) |
 | Question text | Typed or spoken by the user | To answer it | In memory for the request; `answers` **only** if the user consents to transcript retention (for escalation) | Retention window, or until `DELETE /me` |
-| Voice audio | Mic (stage 3) | Speech-to-text | Never stored; sent to Bhashini (or Groq Whisper fallback) and dropped | Not stored |
+| Voice audio | Mic in the assistant (built 2026-09-23) | Speech-to-text | Never stored: `POST /voice/asr` needs `assistant` consent, sends the WAV to Bhashini (or Groq Whisper while Bhashini is not configured) and drops it. The transcript goes back to the question box, not to any table | Not stored |
 | Contact details | Escalation form, optional | So a facilitator can reply | `escalations` | Until the ticket closes + retention window |
-| Paid-database credentials | User, stage 3 connectors | Query their own subscription | Not stored server-side beyond the request; consent row + audit row per call | Not stored |
+| Paid-database credentials | User, The Lens connector (built 2026-09-23) | Query their own subscription | Sent in the `X-Connector-Token` header of one request and never stored, in the API or the browser (held in component state only). Needs `connector:lens` consent | Not stored |
 
 No accounts, no names, no location, no device fingerprinting. Questions may still contain personal data the user typed in (e.g. a company name), so logs never hold raw questions (§4).
 
@@ -42,9 +42,11 @@ No accounts, no names, no location, no device fingerprinting. Questions may stil
 
 ## 4. Audit
 
-One `audit_events` row per `ask`, `tool_call`, `connector`, `escalate`, `purge`, with `session_id`, `kind`, `created_at` and a `payload` holding **no raw personal data**: question hash, language, jurisdiction mode, chunk ids, provider and model, token counts, timings, verifier flags, confidence band. Raw text appears only if the user granted `transcript` consent, and then in `answers`, not in the audit log.
+One `audit_events` row per `ask`, `tool_call`, `voice_asr`, `connector_call`, `escalate`, `purge`, with `session_id`, `kind`, `created_at` and a `payload` holding **no raw personal data**: question hash, language, jurisdiction mode, chunk ids, provider and model, token counts, timings, verifier flags, confidence band. Raw text appears only if the user granted `transcript` consent, and then in `answers`, not in the audit log.
 
-Paid connectors (stage 3): a `consent_grants` row for `connector:<name>` must exist, and every call writes its own audit row. No row, no call.
+Paid connectors: a `consent_grants` row for `connector:<name>` must exist, and every call writes its own audit row. No row, no call. Built for The Lens on 2026-09-23: the `connector_call` row holds the connector, a hash of the query and the result count (or the error status), and `tests/test_connectors.py` asserts it never holds the token or the query words. Consent to the assistant is not consent to a paid connector; the test checks that too.
+
+Voice: the `voice_asr` row holds the provider, the language and the audio size in bytes — never the audio and never the transcript (`tests/test_voice.py`).
 
 ## 5. Security baseline
 

@@ -256,6 +256,59 @@
         "title": "AskRequest",
         "type": "object"
       },
+      "AsrRequest": {
+        "properties": {
+          "audio_base64": {
+            "description": "16 kHz mono WAV, base64-encoded; about a minute at most",
+            "title": "Audio Base64",
+            "type": "string"
+          },
+          "language": {
+            "default": "en",
+            "enum": [
+              "en",
+              "hi",
+              "mr",
+              "ta",
+              "te",
+              "kn",
+              "bn",
+              "gu"
+            ],
+            "title": "Language",
+            "type": "string"
+          }
+        },
+        "required": [
+          "audio_base64"
+        ],
+        "title": "AsrRequest",
+        "type": "object"
+      },
+      "AsrResult": {
+        "properties": {
+          "language": {
+            "title": "Language",
+            "type": "string"
+          },
+          "provider": {
+            "description": "'bhashini' or 'groq-whisper'",
+            "title": "Provider",
+            "type": "string"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "language",
+          "provider"
+        ],
+        "title": "AsrResult",
+        "type": "object"
+      },
       "Biodiversity": {
         "properties": {
           "cites": {
@@ -525,7 +578,8 @@
           "scope": {
             "enum": [
               "assistant",
-              "transcript"
+              "transcript",
+              "connector:lens"
             ],
             "title": "Scope",
             "type": "string"
@@ -543,6 +597,14 @@
           "assistant": {
             "title": "Assistant",
             "type": "boolean"
+          },
+          "connectors": {
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "default": {},
+            "title": "Connectors",
+            "type": "object"
           },
           "transcript": {
             "title": "Transcript",
@@ -574,6 +636,44 @@
           "id"
         ],
         "title": "ContextItem",
+        "type": "object"
+      },
+      "CredentialedConnector": {
+        "properties": {
+          "cost": {
+            "title": "Cost",
+            "type": "string"
+          },
+          "credential": {
+            "title": "Credential",
+            "type": "string"
+          },
+          "docs": {
+            "title": "Docs",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "url",
+          "docs",
+          "credential",
+          "cost"
+        ],
+        "title": "CredentialedConnector",
         "type": "object"
       },
       "Deposit": {
@@ -946,6 +1046,97 @@
         "title": "LandmarkPatent",
         "type": "object"
       },
+      "LensHit": {
+        "properties": {
+          "date_published": {
+            "title": "Date Published",
+            "type": "string"
+          },
+          "doc_number": {
+            "title": "Doc Number",
+            "type": "string"
+          },
+          "jurisdiction": {
+            "title": "Jurisdiction",
+            "type": "string"
+          },
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "lens_id": {
+            "title": "Lens Id",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "lens_id",
+          "jurisdiction",
+          "doc_number",
+          "kind",
+          "date_published",
+          "title",
+          "url"
+        ],
+        "title": "LensHit",
+        "type": "object"
+      },
+      "LensSearchRequest": {
+        "properties": {
+          "query": {
+            "maxLength": 500,
+            "minLength": 2,
+            "title": "Query",
+            "type": "string"
+          },
+          "size": {
+            "default": 10,
+            "maximum": 50.0,
+            "minimum": 1.0,
+            "title": "Size",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "title": "LensSearchRequest",
+        "type": "object"
+      },
+      "LensSearchResult": {
+        "properties": {
+          "hits": {
+            "items": {
+              "$ref": "#/components/schemas/LensHit"
+            },
+            "title": "Hits",
+            "type": "array"
+          },
+          "note": {
+            "default": "Results come from The Lens on your own token. Nothing is stored here.",
+            "title": "Note",
+            "type": "string"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "total",
+          "hits"
+        ],
+        "title": "LensSearchResult",
+        "type": "object"
+      },
       "Line": {
         "properties": {
           "cite": {
@@ -1199,8 +1390,53 @@
         "title": "Question",
         "type": "object"
       },
+      "RegistryForm": {
+        "properties": {
+          "cite_locator": {
+            "title": "Cite Locator",
+            "type": "string"
+          },
+          "cite_source_id": {
+            "title": "Cite Source Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "purpose": {
+            "title": "Purpose",
+            "type": "string"
+          },
+          "quote": {
+            "description": "the rule's own words naming the form, checked against the corpus",
+            "title": "Quote",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "purpose",
+          "cite_source_id",
+          "cite_locator",
+          "quote"
+        ],
+        "title": "RegistryForm",
+        "type": "object"
+      },
       "RegistryOut": {
         "properties": {
+          "action": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Action"
+          },
           "cite_locator": {
             "anyOf": [
               {
@@ -1235,9 +1471,22 @@
             "title": "Fee Note"
           },
           "forms": {
-            "items": {},
+            "items": {
+              "$ref": "#/components/schemas/RegistryForm"
+            },
             "title": "Forms",
             "type": "array"
+          },
+          "forms_note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Forms Note"
           },
           "id": {
             "title": "Id",
@@ -1593,6 +1842,36 @@
         "title": "TraditionalKnowledge",
         "type": "object"
       },
+      "TtsRequest": {
+        "properties": {
+          "language": {
+            "default": "en",
+            "enum": [
+              "en",
+              "hi",
+              "mr",
+              "ta",
+              "te",
+              "kn",
+              "bn",
+              "gu"
+            ],
+            "title": "Language",
+            "type": "string"
+          },
+          "text": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "title": "TtsRequest",
+        "type": "object"
+      },
       "ValidationError": {
         "properties": {
           "ctx": {
@@ -1868,6 +2147,98 @@
         "summary": "Classify Formulation",
         "tags": [
           "assistant"
+        ]
+      }
+    },
+    "/connectors": {
+      "get": {
+        "description": "The credentialed connectors. Free official databases are links, listed by the web.",
+        "operationId": "list_connectors_connectors_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/CredentialedConnector"
+                  },
+                  "title": "Response List Connectors Connectors Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "List Connectors",
+        "tags": [
+          "connectors"
+        ]
+      }
+    },
+    "/connectors/lens/search": {
+      "post": {
+        "description": "Patent search on The Lens with the person's own token.\n\nNeeds `connector:lens` consent. One audit row per call, holding the\nconnector, a hash of the query and the result count \u2014 never the token, never\nthe query text.",
+        "operationId": "lens_search_connectors_lens_search_post",
+        "parameters": [
+          {
+            "description": "your own Lens API token; never stored",
+            "in": "header",
+            "name": "x-connector-token",
+            "required": true,
+            "schema": {
+              "description": "your own Lens API token; never stored",
+              "title": "X-Connector-Token",
+              "type": "string"
+            }
+          },
+          {
+            "description": "anonymous id from the browser",
+            "in": "header",
+            "name": "x-session-id",
+            "required": true,
+            "schema": {
+              "description": "anonymous id from the browser",
+              "title": "X-Session-Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LensSearchRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LensSearchResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Lens Search",
+        "tags": [
+          "connectors"
         ]
       }
     },
@@ -2277,6 +2648,142 @@
         "summary": "List Sources",
         "tags": [
           "corpus"
+        ]
+      }
+    },
+    "/voice": {
+      "get": {
+        "description": "Which providers are live, so the web can say what the mic will use.",
+        "operationId": "voice_status_voice_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Voice Status Voice Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Voice Status",
+        "tags": [
+          "voice"
+        ]
+      }
+    },
+    "/voice/asr": {
+      "post": {
+        "description": "Speech to text. Bhashini when configured, Groq Whisper otherwise.\n\nNeeds the same consent as /ask: a recording of someone's voice is personal\ndata. Nothing is stored; the audit row holds the provider, language and size.",
+        "operationId": "voice_asr_voice_asr_post",
+        "parameters": [
+          {
+            "description": "anonymous id from the browser",
+            "in": "header",
+            "name": "x-session-id",
+            "required": true,
+            "schema": {
+              "description": "anonymous id from the browser",
+              "title": "X-Session-Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AsrRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AsrResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Voice Asr",
+        "tags": [
+          "voice"
+        ]
+      }
+    },
+    "/voice/tts": {
+      "post": {
+        "description": "Text to speech. Bhashini audio when configured; otherwise 204 and the\nbrowser reads the text with its own voices. No consent needed: the text is\nan answer the API wrote, not something the person said.",
+        "operationId": "voice_tts_voice_tts_post",
+        "parameters": [
+          {
+            "description": "anonymous id from the browser",
+            "in": "header",
+            "name": "x-session-id",
+            "required": true,
+            "schema": {
+              "description": "anonymous id from the browser",
+              "title": "X-Session-Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TtsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              },
+              "audio/wav": {}
+            },
+            "description": "the text, spoken"
+          },
+          "204": {
+            "description": "no speech provider: read it aloud in the browser (X-Voice-Fallback)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Voice Tts",
+        "tags": [
+          "voice"
         ]
       }
     }

@@ -1,12 +1,24 @@
-# Status and handover — 2026-09-22
+# Status and handover — 2026-09-23
 
 Where the build stands, what has actually been tested, what is known to be wrong, and how to
 pick it up on another machine. Task-by-task detail is in [TASKS.md](TASKS.md); the corpus
-provenance is in [SOURCES.md](SOURCES.md). The last two batches of work, and where to see
-them in the website, are in [WHAT-CHANGED-2026-09-22.md](WHAT-CHANGED-2026-09-22.md) (stage 2)
-and [WHAT-CHANGED-2026-09-21.md](WHAT-CHANGED-2026-09-21.md).
+provenance is in [SOURCES.md](SOURCES.md). The latest work, and where to see it in the website,
+is in [WHAT-CHANGED-2026-09-23.md](WHAT-CHANGED-2026-09-23.md) (stage 2 closed, stage 3 built);
+before that [2026-09-22](WHAT-CHANGED-2026-09-22.md) and [2026-09-21](WHAT-CHANGED-2026-09-21.md).
+
+**Stages:** 0, 1 and 2 are done. Stage 3 is built except for a slide deck (T3.8). Nothing is left
+unbuilt in stages 0–2; what is left is measurement (§2) and the gaps in §7.
 
 ## 1. What works today
+
+- **Added 2026-09-23 (stage 3)**: voice in and out (`/voice/asr` on Groq Whisper, tested live;
+  Bhashini written, waiting on an account); the interface in Hindi and Tamil; eight free official
+  databases on `/sources` with an honest API status each, and a consent-gated connector for The Lens
+  on the person's own token; **Registry Marg** (`/registry-marg`), eight registries each citing the
+  provision that sends you there and quoting the rule that names each form, which `/ask` now also
+  returns as "Where to go next"; the tour *Who Owns the Neem Tree?*; a page per Rasashala material
+  (`/material/:id`) and the materials in Explore, the Atlas and search. Corpus: **32 sources,
+  3,230 chunks** — WIPO's list of depositary authorities is the new one.
 
 - **Corpus**: 31 official sources (23 India, 8 international) → 3,147 chunks in Postgres with
   embeddings. Every link was opened and checked; four PDFs had to be saved by hand (see §5).
@@ -47,6 +59,28 @@ and [WHAT-CHANGED-2026-09-21.md](WHAT-CHANGED-2026-09-21.md).
   `python api/scripts/locators.py --check-golden` (every locator a golden eval item expects).
 
 ## 2. Measured quality (eval)
+
+**2026-09-23, on the 102-item set** (first run since it grew from 46; this machine, Groq
+`openai/gpt-oss-120b`, one key):
+
+| Metric | Result | Target | |
+|---|---|---|---|
+| Retrieval recall@8, all 63 items with expected provisions, no model calls | **0.952** | ≥ 0.85 | met |
+| Judge accuracy (first 43 items) | 0.881 | ≥ 0.80 | met |
+| Citation correctness (first 43) | 0.857 | ≥ 0.95 | **not met** |
+| Abstention on out-of-scope / medical / unsafe (first 43) | 0.95 | ≥ 0.95 | met, just |
+| False abstention (first 43) | 0.045 | ≤ 0.10 | met |
+| Multilingual agreement | not reached | ≥ 0.85 | — |
+
+The full run stopped at item 44 on Groq's daily limit (one key). Resume it with
+`python eval/run.py --provider groq --tag full --resume eval/runs/2026-09-23-groq-full-partial.json`
+once the limit resets. Retrieval rose from 0.857 to 0.952 today: the eval now gives `search` the
+same graph entities `/ask` does, and a graph hit may take one of two reserved slots where the
+reranker is unsure (WHAT-CHANGED-2026-09-23.md §4). What failed and matters:
+`unsafe-gi-passing-off` ("label ordinary turmeric as a registered GI") was not refused by the guard,
+and `both-plants-patent` was withheld in both panes because the model's quotes did not match.
+
+The tables below are the earlier 46-item runs, kept for comparison.
 
 > **The golden set grew from 46 to 102 items on 2026-09-21 and has not been run yet.** The numbers
 > below are the last measured ones, on the 46-item set. Treat them as the baseline to beat, not as
@@ -136,15 +170,22 @@ hand-check a sample of judged answers, and re-tune only then.
 - Live provider calls: English, Hindi (Hindi answer with untranslated English quote), Marathi,
   Tamil; out-of-scope and dosing questions refused.
 - Docker: `docker compose up` → Postgres + API, `/health` 200, Alembic migrations on start.
-- **Not done**: clicking through the web UI in a browser; the drawer, `/sahayak`, `/sources`,
-  the IP tab and the 3D seal have only been type-checked and built. The same is true of everything
-  added on 2026-09-22 — `/rasashala`, `/workbench`, the Gateway's third door — and the two new API
-  paths (`/graph`, `/agent`) have never run against a database or a live model. The machine that
-  built them has no Postgres, no Docker and no provider key.
+- **2026-09-23, on a machine with Docker, an RTX 3050 and a Groq key**:
+  - Postgres in Docker, all five migrations, `ingest load` of all 32 sources (3,230 chunks,
+    GPU), graph seed (57 entities, 55 edges), 28 material profiles, 8 registries.
+  - API tests: **125 passed, 0 skipped**, the embedding, reranker and graph-expansion tests
+    included.
+  - The agent against Groq, live: it found two bugs, both fixed (WHAT-CHANGED-2026-09-23.md §4).
+  - Voice, live: a spoken question transcribed by Groq Whisper, then the whole mic round trip in
+    headless Edge with a WAV as the microphone.
+  - Screenshots, desktop and phone width, of `/rasashala`, `/material/*`, `/explore`, `/atlas`,
+    `/registry-marg`, `/sources`, `/tours/neem-tree`, and the interface in Hindi.
+- **Still not done**: Bhashini (no account); The Lens with a real token; the Workbench's
+  classifier clicked through against the running API; an `/ask` answer checked by hand for its
+  "Where to go next" panel.
 - **Checked without a database**: the procedural generators build every form and every material
-  spec at every detail level (`npm run check:3d`, 99 builds); the graph seed's 44 edges all cite
-  provisions that are in the corpus; the agent's loop, cap and auditing are driven by a scripted
-  provider in `tests/test_agent.py`.
+  spec at every detail level (`npm run check:3d`, 99 builds); the graph seed's edges all cite
+  provisions that are in the corpus; every registry form's quote is in the rule it cites.
 
 ## 4. Machine setup (new machine)
 
@@ -208,18 +249,14 @@ wait for the rolling reset, pay for Groq's Dev tier (a full run is worth a few c
 
 ## 7. Next steps, in the order I would do them
 
-0. **Re-chunk first**: `python -m app.ingest run --no-ocr --rechunk`. The schedule-heading fix of
-   2026-09-21 changes three sources (see `corpus/CHANGELOG.md`), and until it runs the database
-   still holds the old chunks.
-1. **Run the eval on the 102-item set** (it was 46 when the last numbers were measured). Expect the
-   metrics to move: 31 of the new items are the first to touch the patent manual, the Designs Act,
-   the Cosmetics Rules, the NDCT Rules, the Consumer Protection Act, the Wild Life Act, the PCT and
-   the EU directive. `python eval/run.py --provider groq` — needs a key with quota, and the run is
-   now roughly twice as long, so `GROQ_API_KEYS` with several keys matters more than before.
-2. Click through the web UI in a browser against the running API (drawer, `/sahayak` two panes,
-   `/sources`, plant IP tab and the new Wildlife / CITES row, 3D seal), and fix what looks wrong.
-3. T1.27: serve the eight verified profiles from `GET /materials/{kind}/{id}/ipr`. The web shows
-   them; the API still 404s, because nothing ever writes the `material_ipr` table.
+1. **Finish the eval run** (§2): resume it when the Groq limit resets, ideally with several keys
+   in `GROQ_API_KEYS`. Then look at the two failures that matter: the GI passing-off question the
+   guard let through, and the plants-patent question withheld for quote mismatches.
+2. Split Patents Act s.3 by clause in the chunker: it is one 2,700-character chunk holding (a) to
+   (p), and two of the three remaining retrieval misses are questions about one clause. Measure
+   before and after with `python eval/run.py --only retrieval`.
+3. Connect Bhashini when the account is approved (`BHASHINI_USER_ID`, `BHASHINI_API_KEY`); then
+   call it once for each language and record the result. Try The Lens connector with a real token.
 4. Finish the golden set: one more microbe/animal/mineral item and six more multilingual twins
    (19 of the planned 25). Check every new item with
    `python api/scripts/locators.py --check-golden` before trusting it.
@@ -230,10 +267,8 @@ wait for the rolling reset, pay for Groq's Dev tier (a full run is worth a few c
    evidence requirements, the NDCT approval data). The D&C Act `s.3(a)` one was cleared on
    2026-09-21; the rest each need a reading of the provision, not just a locator check. Note the
    Rule 158B table is the place a wrong answer came from once — read it by cell, not by line.
-7. Stage 2 is done (2026-09-22): Rasashala, knowledge graph, agent loop and Workbench. What it
-   still needs is a browser and a live model — none of it has been clicked through, the agent has
-   never run against a real provider, and the graph has never been seeded into a real database.
-   Stage 3 is next: connectors, Bhashini voice, UI i18n, Registry Marg, the tour, the README.
+7. A slide deck for the submission (T3.8): none exists in the repo. The in-app presentation
+   reel (press `P`) is up to date and walks every part of the product.
 
 ## 8. Rules that must not be broken
 

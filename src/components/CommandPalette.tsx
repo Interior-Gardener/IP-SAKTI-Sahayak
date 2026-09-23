@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { plants } from '../data/plants'
 import { tours } from '../data/tours'
 import { materials } from '../data/materials'
@@ -41,6 +42,7 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
   const inputRef = useRef<HTMLInputElement>(null)
   const listRef = useRef<HTMLDivElement>(null)
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const bookmarks = useGarden((s) => s.bookmarks)
   const visited = useGarden((s) => s.visited)
 
@@ -175,7 +177,7 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
             ref={inputRef}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder={`Search ${plants.length} plants, tours, or a symptom…`}
+            placeholder={t('palette.placeholder')}
             className="h-14 flex-1 bg-transparent text-[0.95rem] outline-none placeholder:text-ink-faint"
             autoComplete="off"
             spellCheck={false}

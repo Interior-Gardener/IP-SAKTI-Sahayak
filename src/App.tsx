@@ -10,6 +10,7 @@ const Gateway = lazy(() => import('./routes/Gateway'))
 const Garden = lazy(() => import('./routes/Garden'))
 const MedicinalGarden = lazy(() => import('./routes/MedicinalGarden'))
 const Rasashala = lazy(() => import('./routes/Rasashala'))
+const RegistryMarg = lazy(() => import('./routes/RegistryMarg'))
 const Workbench = lazy(() => import('./routes/Workbench'))
 const TourPage = lazy(() => import('./routes/TourPage'))
 const PlantPage = lazy(() => import('./routes/PlantPage'))
@@ -44,6 +45,7 @@ function skipsPageFade(pathname: string) {
     pathname === '/garden' ||
     pathname === '/medicinal-garden' ||
     pathname === '/rasashala' ||
+    pathname === '/registry-marg' ||
     pathname === '/workbench' ||
     pathname === '/quiz' ||
     pathname.startsWith('/tours/')
@@ -75,6 +77,7 @@ function AnimatedRoutes() {
             <Route path="/garden" element={<Garden />} />
             <Route path="/medicinal-garden" element={<MedicinalGarden />} />
             <Route path="/rasashala" element={<Rasashala />} />
+            <Route path="/registry-marg" element={<RegistryMarg />} />
             <Route path="/workbench" element={<Workbench />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/atlas" element={<Atlas />} />

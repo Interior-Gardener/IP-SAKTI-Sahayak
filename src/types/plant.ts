@@ -281,12 +281,15 @@ export interface TourStop {
   plantId: string
   headline: string
   narration: string
+  /** The provision a legal stop rests on. Its quote is re-read from the corpus
+   *  by `npm run check:ipr`, through the @verify line beside it in tours.ts. */
+  cite?: { source: string; locator: string; quote: string }
 }
 
 export interface Tour {
   id: string
   title: string
-  theme: TherapeuticTag | 'Foundations' | 'Rare & Endangered'
+  theme: TherapeuticTag | 'Foundations' | 'Rare & Endangered' | 'IP & Law'
   subtitle: string
   blurb: string
   minutes: number

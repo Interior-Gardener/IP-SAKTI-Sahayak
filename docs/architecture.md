@@ -86,8 +86,8 @@ Sessions are anonymous ids issued by the API and held in the web store; no accou
 |---|---|---|---|
 | GET | `/health` | 0 | provider, embed model, corpus version |
 | POST | `/ask` | 1 | SSE; body per §2; returns `SahayakAnswer` |
-| GET | `/materials/{kind}/{id}/ipr` | 1 | `MaterialIPProfile` |
-| GET | `/registry` | 1 | registries + forms, filter by regime/jurisdiction |
+| GET | `/materials/{kind}/{id}/ipr` | 1 | `MaterialIPProfile`, from the verified profiles exported by `npm run export:ipr` and seeded by `python -m app.materials seed` (2026-09-23) |
+| GET | `/registry` | 1 | registries + forms, filter by regime/jurisdiction. Seeded by `python -m app.registry seed` (2026-09-23); each form carries the quote of the rule that names it |
 | POST | `/escalate` | 1 | creates ticket; optional email |
 | POST | `/consent` | 1 | grant/revoke by scope |
 | GET | `/sources` | 1 | corpus browser: sources, versions, changelog |
@@ -96,7 +96,11 @@ Sessions are anonymous ids issued by the API and held in the web store; no accou
 | POST | `/abs` | 2 | ABS helper |
 | GET | `/graph/{kind}:{key}` | 2 | an entity and its edges, each with the provision it rests on |
 | POST | `/agent` | 2 | agentic tool loop: consent-gated, capped, one audit row per tool call |
-| POST | `/voice/asr`, `/voice/tts` | 3 | Bhashini with fallbacks |
+| POST | `/voice/asr` | 3 | speech to text: assistant consent; Bhashini, else Groq Whisper; audio never stored |
+| POST | `/voice/tts` | 3 | text to speech: Bhashini audio, else 204 + `X-Voice-Fallback: browser` |
+| GET | `/voice` | 3 | which voice providers are live |
+| GET | `/connectors` | 3 | the credentialed connectors (free official databases are links, in the web) |
+| POST | `/connectors/lens/search` | 3 | The Lens on the person's own token (`X-Connector-Token`, never stored); needs `connector:lens` consent; one audit row per call |
 
 OpenAPI at `/openapi.json`; `npm run gen:api` regenerates `src/types/sahayak.ts`.
 

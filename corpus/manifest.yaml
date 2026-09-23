@@ -423,6 +423,20 @@ sources:
     version_label: As amended on 26 September 1980
     notes: WIPO Lex serves the PDF through signed links; download from the details page.
 
+  - id: intl-budapest-ida-list
+    title: Budapest Treaty — International Depositary Authorities
+    jurisdiction: INTL
+    regime: [treaty, patent]
+    doc_type: registry_record
+    issuer: World Intellectual Property Organization
+    url: https://www.wipo.int/en/web/treaties/registration/budapest/index
+    fetch_url: https://www.wipo.int/documents/d/treaties/docs-en-registration-budapest-idalist.pdf
+    fetch: auto
+    format: pdf
+    licence: Official WIPO publication
+    version_label: WIPO list as fetched; re-fetch to pick up a newly recognised authority
+    notes: A registry record, not law. It says which depositaries a Budapest deposit can be made at and since when; the obligation to deposit is Patents Act s.10(4)(d)(ii) and Budapest Art. 3. Checked 2026-09-23 — lists MTCC (4 Oct 2002), MCC (9 Apr 2011) and NAIMCC (28 Jul 2020) for India.
+
   - id: intl-eu-thmpd-2004-24
     title: Directive 2004/24/EC on traditional herbal medicinal products
     jurisdiction: INTL

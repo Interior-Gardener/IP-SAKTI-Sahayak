@@ -35,7 +35,7 @@ router = APIRouter()
 limiter = RateLimiter(per_minute=10, burst=5)
 cache = AnswerCache()
 
-ConsentScope = Literal["assistant", "transcript"]
+ConsentScope = Literal["assistant", "transcript", "connector:lens"]
 
 
 # ------------------------------------------------------------------ consent and privacy
@@ -49,6 +49,8 @@ class ConsentRequest(BaseModel):
 class ConsentState(BaseModel):
     assistant: bool
     transcript: bool
+    #: Credentialed connectors, by id. Each needs its own grant before one call is made.
+    connectors: dict[str, bool] = {}
 
 
 @router.post("/consent", response_model=ConsentState, tags=["privacy"])
@@ -76,9 +78,12 @@ def set_consent(
 def get_consent(
     sid: str = Depends(services.session_id), db: Session = Depends(services.db)
 ) -> ConsentState:
+    from app.connectors import CREDENTIALED
+
     return ConsentState(
         assistant=services.has_consent(db, sid, "assistant"),
         transcript=services.has_consent(db, sid, "transcript"),
+        connectors={c: services.has_consent(db, sid, f"connector:{c}") for c in CREDENTIALED},
     )
 
 
@@ -311,13 +316,25 @@ def list_sources(db: Session = Depends(services.db)) -> SourcesOut:
     )
 
 
+class RegistryForm(BaseModel):
+    name: str
+    purpose: str
+    cite_source_id: str
+    cite_locator: str
+    quote: str = Field(
+        description="the rule's own words naming the form, checked against the corpus"
+    )
+
+
 class RegistryOut(BaseModel):
     id: str
     name: str
     jurisdiction: str
     regime: list[str]
     url: str
-    forms: list
+    action: str | None = None
+    forms: list[RegistryForm]
+    forms_note: str | None = None
     fee_note: str | None
     cite_locator: str | None
     cite_source_id: str | None
@@ -341,7 +358,8 @@ def list_registries(
     return [
         RegistryOut(
             id=r.id, name=r.name, jurisdiction=r.jurisdiction, regime=r.regime, url=r.url,
-            forms=r.forms, fee_note=r.fee_note, cite_locator=loc, cite_source_id=src,
+            action=r.action, forms=r.forms, forms_note=r.forms_note, fee_note=r.fee_note,
+            cite_locator=loc, cite_source_id=src,
         )
         for r, loc, src in db.execute(query.order_by(Registry.name))
     ]  # fmt: skip
@@ -454,3 +472,158 @@ def graph_entity(ref: str, db: Session = Depends(services.db)) -> dict:
     if not out:
         raise HTTPException(404, f"no entity {ref!r} in the graph")
     return out
+
+
+# ------------------------------------------------------------------- voice (stage 3)
+
+import base64 as _base64  # noqa: E402
+import binascii as _binascii  # noqa: E402
+
+from fastapi import Response  # noqa: E402
+
+from app import voice  # noqa: E402
+
+
+class AsrRequest(BaseModel):
+    audio_base64: str = Field(description="16 kHz mono WAV, base64-encoded; about a minute at most")
+    language: Literal["en", "hi", "mr", "ta", "te", "kn", "bn", "gu"] = "en"
+
+
+class AsrResult(BaseModel):
+    text: str
+    language: str
+    provider: str = Field(description="'bhashini' or 'groq-whisper'")
+
+
+class TtsRequest(BaseModel):
+    text: str = Field(min_length=1, max_length=voice.MAX_TTS_CHARS)
+    language: Literal["en", "hi", "mr", "ta", "te", "kn", "bn", "gu"] = "en"
+
+
+@router.post("/voice/asr", response_model=AsrResult, tags=["voice"])
+def voice_asr(
+    body: AsrRequest,
+    sid: str = Depends(services.session_id),
+    db: Session = Depends(services.db),
+) -> AsrResult:
+    """Speech to text. Bhashini when configured, Groq Whisper otherwise.
+
+    Needs the same consent as /ask: a recording of someone's voice is personal
+    data. Nothing is stored; the audit row holds the provider, language and size.
+    """
+    if not services.has_consent(db, sid, "assistant"):
+        raise HTTPException(403, "assistant consent is required")
+    try:
+        audio = _base64.b64decode(body.audio_base64, validate=True)
+    except (_binascii.Error, ValueError) as e:
+        raise HTTPException(422, "audio_base64 is not valid base64") from e
+    if not audio or len(audio) > voice.MAX_AUDIO_BYTES:
+        raise HTTPException(413, "the recording is empty or longer than about a minute")
+    try:
+        heard = voice.transcribe(audio, body.language)
+    except voice.VoiceUnavailable as e:
+        raise HTTPException(503, str(e)) from e
+    services.audit(
+        db, sid, "voice_asr",
+        {"provider": heard.provider, "language": body.language, "audio_bytes": len(audio)},
+    )  # fmt: skip
+    return AsrResult(text=heard.text, language=heard.language, provider=heard.provider)
+
+
+@router.post(
+    "/voice/tts",
+    tags=["voice"],
+    responses={
+        200: {"content": {"audio/wav": {}}, "description": "the text, spoken"},
+        204: {"description": "no speech provider: read it aloud in the browser (X-Voice-Fallback)"},
+    },
+)
+def voice_tts(body: TtsRequest, sid: str = Depends(services.session_id)) -> Response:
+    """Text to speech. Bhashini audio when configured; otherwise 204 and the
+    browser reads the text with its own voices. No consent needed: the text is
+    an answer the API wrote, not something the person said."""
+    spoken = voice.synthesise(body.text, body.language)
+    if spoken is None:
+        return Response(status_code=204, headers={"X-Voice-Fallback": "browser"})
+    return Response(
+        spoken.audio, media_type=spoken.mime, headers={"X-Voice-Provider": spoken.provider}
+    )
+
+
+@router.get("/voice", tags=["voice"])
+def voice_status() -> dict:
+    """Which providers are live, so the web can say what the mic will use."""
+    bhashini = voice.speech_provider() == "bhashini"
+    return {
+        "asr": "bhashini" if bhashini else "groq-whisper",
+        "tts": "bhashini" if bhashini else "browser",
+        "languages": list(voice.LANGUAGES),
+    }
+
+
+# -------------------------------------------------------------- connectors (stage 3)
+
+from fastapi import Header  # noqa: E402
+
+from app import connectors  # noqa: E402
+
+
+class CredentialedConnector(BaseModel):
+    id: str
+    name: str
+    url: str
+    docs: str
+    credential: str
+    cost: str
+
+
+class LensSearchRequest(BaseModel):
+    query: str = Field(min_length=2, max_length=500)
+    size: int = Field(default=10, ge=1, le=50)
+
+
+class LensHit(BaseModel):
+    lens_id: str
+    jurisdiction: str
+    doc_number: str
+    kind: str
+    date_published: str
+    title: str
+    url: str
+
+
+class LensSearchResult(BaseModel):
+    total: int
+    hits: list[LensHit]
+    note: str = "Results come from The Lens on your own token. Nothing is stored here."
+
+
+@router.get("/connectors", response_model=list[CredentialedConnector], tags=["connectors"])
+def list_connectors() -> list[CredentialedConnector]:
+    """The credentialed connectors. Free official databases are links, listed by the web."""
+    return [CredentialedConnector(id=k, **v) for k, v in connectors.CREDENTIALED.items()]
+
+
+@router.post("/connectors/lens/search", response_model=LensSearchResult, tags=["connectors"])
+def lens_search(
+    body: LensSearchRequest,
+    sid: str = Depends(services.session_id),
+    db: Session = Depends(services.db),
+    x_connector_token: str = Header(..., description="your own Lens API token; never stored"),
+) -> LensSearchResult:
+    """Patent search on The Lens with the person's own token.
+
+    Needs `connector:lens` consent. One audit row per call, holding the
+    connector, a hash of the query and the result count — never the token, never
+    the query text.
+    """
+    if not services.has_consent(db, sid, "connector:lens"):
+        raise HTTPException(403, "consent for the Lens connector is required")
+    logged = {"connector": "lens", "query_hash": connectors.query_hash(body.query)}
+    try:
+        total, hits = connectors.lens_search(x_connector_token, body.query, body.size)
+    except connectors.ConnectorError as e:
+        services.audit(db, sid, "connector_call", {**logged, "error": e.status})
+        raise HTTPException(e.status, str(e)) from e
+    services.audit(db, sid, "connector_call", {**logged, "results": len(hits)})
+    return LensSearchResult(total=total, hits=[LensHit(**h.__dict__) for h in hits])

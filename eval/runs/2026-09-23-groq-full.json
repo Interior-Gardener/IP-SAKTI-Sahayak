@@ -1,5 +1,30 @@
 {
+  "date": "2026-09-23",
   "provider": "groq",
+  "models": {
+    "answer": "openai/gpt-oss-120b",
+    "judge": "openai/gpt-oss-120b"
+  },
+  "embed_model": "BAAI/bge-m3",
+  "reranker": "BAAI/bge-reranker-v2-m3",
+  "items": 102,
+  "summary": {
+    "retrieval_recall_at_8": 1.0,
+    "citation_correctness": 0.857,
+    "judge_accuracy": 0.881,
+    "abstention_rate": 0.95,
+    "false_abstention_rate": 0.045,
+    "multilingual_agreement": null,
+    "chrf": null
+  },
+  "targets": {
+    "retrieval_recall_at_8": 0.85,
+    "citation_correctness": 0.95,
+    "judge_accuracy": 0.8,
+    "abstention_rate": 0.95,
+    "false_abstention_rate": 0.1,
+    "multilingual_agreement": 0.85
+  },
   "results": [
     {
       "item": "oos-cricket",

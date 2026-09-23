@@ -55,6 +55,24 @@ Expect a quality gap versus Claude on legal reasoning and on writing in Indian l
 - Fallbacks so nothing blocks on approval: NMT → the `fast` LLM; ASR → Groq Whisper; TTS → the browser's SpeechSynthesis already in `src/lib/speech.ts`.
 - Answer language: the answer model writes directly in the user's language. Legal prose survives that better than machine-translating an English answer, and the eval's multilingual runner compares against the English twin to catch drift.
 
+**Built 2026-09-23** (`api/app/voice/`, `POST /voice/asr`, `POST /voice/tts`, `GET /voice`):
+
+- *Bhashini client*: the two-step ULCA pipeline, which first asks `getModelsPipeline` which
+  service handles a task and language, then calls the inference endpoint it returns. It is written to the
+  published request and response shapes (`userID` and `ulcaApiKey` headers; ASR audio as base64
+  16 kHz WAV; TTS audio back as base64). **It has not been called yet**: no Bhashini account
+  on the machine that built it. Configure `BHASHINI_USER_ID` and `BHASHINI_API_KEY` and it is used first.
+- *ASR fallback*, **tested live**: Groq `whisper-large-v3` on the answer path's key, with a
+  vocabulary prompt of the domain's terms. The first test heard "Ayurvedic" as "A. Urvedic";
+  with the prompt and the full model it came back right. `whisper-large-v3-turbo` misheard it
+  even with the prompt; override with `ASR_FALLBACK_MODEL`.
+- *TTS fallback*: the route answers 204 with `X-Voice-Fallback: browser`, and the web reads
+  the answer with the browser's own voices in the answer's language. Where the browser has no
+  voice for that language it says so instead of reading Hindi in an English voice.
+- *The browser records in its own format* (webm or mp4) and resamples to 16 kHz mono WAV
+  before sending, so both providers get the one format they both read and the API needs no
+  ffmpeg. Checked end to end in headless Edge with a WAV standing in for the microphone.
+
 ## 6. Adding a provider
 
 Implement `LLMProvider` in `api/app/llm/base.py` (`complete`, `complete_structured`, `answer_with_citations`, `tool_loop`, `transcribe`), register it in `router.py`, and add a citation adapter that produces `Citation[]`. The verifier and the eval harness need no changes; that is the point of the layer.

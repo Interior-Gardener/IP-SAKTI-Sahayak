@@ -1,323 +1,197 @@
-# Vanaspati — Virtual Herbal Garden
+# IP-SAKTI Sahayak, on Vanaspati
 
 <div align="center">
 
   <p>
-    <img src="https://img.shields.io/badge/Virtual-Herbal%20Garden-2E7D32?style=for-the-badge" alt="Virtual Herbal Garden" />
+    <img src="https://img.shields.io/badge/SIH-PS--45%20IP--SAKTI%20Sahayak-2E7D32?style=for-the-badge" alt="SIH PS-45" />
     <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=000000" alt="React 19" />
-    <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Vite-Ready-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+    <img src="https://img.shields.io/badge/FastAPI-Postgres%20%2B%20pgvector-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
+    <img src="https://img.shields.io/badge/three.js-procedural%203D-000000?style=for-the-badge&logo=threedotjs&logoColor=white" alt="three.js" />
   </p>
 
-  <h3>Explore medicinal plants through a living 3D herbal garden</h3>
-
-  <p>
-    <a href="https://tushar-surti.github.io/virtual-herbal-garden/">🌿 Live Demo</a>
-    &nbsp;•&nbsp;
-    <a href="#a-quick-look">✨ Highlights</a>
-    &nbsp;•&nbsp;
-    <a href="#running-it">🚀 Run Locally</a>
-  </p>
+  <h3>An IP and regulatory assistant for Ayurveda that cites the law it relies on, inside a 3D garden you can walk.</h3>
 
 </div>
 
-An interactive 3D garden of AYUSH medicinal plants. Twenty-five species, six themed beds,
-six guided tours, and a compendium written the way a vaidya would describe a plant —
-rasa, guna, virya, vipaka, the part that carries the medicine, and the cautions that matter.
+**IP-SAKTI Sahayak** answers questions about patents, geographical indications, trade marks,
+biodiversity access, drug licensing and labelling for Ayurvedic products. It answers in eight
+Indian languages, by text or by voice, and every answer quotes the provision it rests on.
+India and the international regime are always answered in **separate panes, never merged**.
 
-> 🌿 Step into the experience: [Live Demo](https://tushar-surti.github.io/virtual-herbal-garden/)
+It lives inside **Vanaspati**, a 3D herbal garden. There, every plant, microbe, animal product
+and mineral carries its own cited legal layer, and every question can end at the registry
+where you file.
 
-## A quick look
+| | |
+|---|---|
+| **30** medicinal plants, grown procedurally from their botany | **20** microbial, animal and mineral sources in the Rasashala |
+| **32** official sources in a version-tracked corpus (**3,230** passages) | **8** registries on Registry Marg, each form quoted from its rule |
+| **8** answer languages; voice in and out | **7** guided tours, one of them about the law |
 
-<div align="center">
-
-<table>
-  <tr>
-    <td><strong>25</strong><br/>Medicinal species</td>
-    <td><strong>6</strong><br/>Themed garden beds</td>
-    <td><strong>6</strong><br/>Guided tours</td>
-    <td><strong>3D</strong><br/>Interactive plant exploration</td>
-  </tr>
-</table>
-
-</div>
-
-## Features at a glance
-
-| 🌱 Explore | 🔍 Discover | 📚 Learn | 🎧 Listen |
-| --- | --- | --- | --- |
-| Walk through the 3D herbal garden and inspect plants up close. | Search by names, uses, parts, and conservation details. | Read botanical and Ayurvedic knowledge side by side. | Use narration and guided tours for a more immersive experience. |
-
-### Why this project stands out
-
-- Beautiful, immersive garden-style interface inspired by a living herbarium
-- Procedurally generated botanical forms driven by structured plant data
-- Ayurvedic insights visualized alongside botanical information
-- Search, compare, tours, atlas, and personal garden features in one place
-- Built for learning, exploration, and presentation
-
-Built for the Smart India Hackathon problem statement on a Virtual Herbal Garden.
+> **This is information about the law, not legal advice.** Every answer says so. Where a fact
+> has not been checked against a source, the product says `unknown` or "verify" rather than
+> guessing.
 
 ---
 
-## The idea that makes it work
+## The rule everything follows
 
-**Every plant in this garden is grown at run time from its botanical description.**
-There is not a single downloaded 3D model, texture, or photograph in the project.
+**Nothing from memory.** A legal statement anywhere in this repository (an answer, a plant's
+IP profile, a knowledge-graph edge, a registry form, a line of tour narration) points at a
+source in [`corpus/manifest.yaml`](corpus/manifest.yaml) and a locator in it (`s.3(p)`,
+`Rule 153`, `Art. 3`). Checks re-read it from the corpus text:
 
-A plant's morphology — leaf shape, phyllotaxy, branching order, inflorescence type,
-whether the stem is square — is written as data:
-
-```ts
-model: {
-  archetype: 'herb',
-  height: 0.62,
-  stem: { color: '#6a7f4a', radius: 0.012, square: true },   // Lamiaceae tell
-  branching: { levels: 2, count: 5, angle: 42, startAt: 0.25 },
-  leaf: { shape: 'ovate', arrangement: 'opposite', serration: 0.55, … },
-  flower: { form: 'spike', color: '#a06fb8', petals: 5, … },
-}
-```
-
-…and a generator turns that into geometry. The same numbers also drive the 2D specimen
-plates on every card, so a plant's silhouette is recognisably itself in both places.
-
-This matters for three reasons:
-
-1. **It scales.** Adding a plant is thirty lines of data, not a week in Blender.
-2. **It's honest.** The model is derived from the botany, so an opposite-leaved square-stemmed
-   mint really looks like one, and a pinnate neem frond really has 9–19 leaflets.
-3. **It's tiny.** The entire garden — 25 species, ground plan, grass — downloads as code.
-   No asset pipeline, no CDN, works offline after first load.
+| Check | What it holds |
+|---|---|
+| Answer verifier (every `/ask`) | each quotation is found word for word in the passage it cites, or the answer is withheld |
+| `npm run check:ipr` | 46 quoted provisions in plant/material profiles and tours are in the corpus |
+| `pytest tests/test_graph.py` | every knowledge-graph edge cites a provision that exists |
+| `pytest tests/test_registry.py` | every registry form is named, in those words, by the rule it cites |
+| `scripts/locators.py --check-golden` | every provision an eval item expects is in the corpus |
 
 ---
 
 ## What's in it
 
-| Requirement | How it's met |
-| --- | --- |
-| Interactive 3D models | Orbit, zoom and inspect any plant; procedurally generated with wind, venation and bark shading |
-| Detailed information | Botanical + family + names in six languages, habitat, morphology, parts used, Ayurvedic profile, classical preparations, cultivation calendar, precautions |
-| Multimedia | Four botanical plates per species (habit, leaf study, inflorescence, medicinal part), four audio-description tracks, animated 3D specimen |
-| Search & filter | Weighted fuzzy search over names, symptoms and Sanskrit synonyms; facets for use, plant type, part used, region, AYUSH system and conservation status |
-| Virtual tours | Six themed walks that fly the camera bed to bed with narration, in a letterboxed story mode |
-| User interaction | Bookmarks, autosaving study notes, progress tracking, native share sheet, social links, downloadable study sheet |
-| Data visualisation | An Atlas that reads the whole compendium as charts, and a comparison bench for putting herbs side by side |
+### Sahayak, the assistant
 
-### The Grand Walk
+- **Ask anywhere**: the drawer in the header, `Ctrl K`, a button on any plant or material, or
+  the full page at `/sahayak`.
+- **Two jurisdictions, two panes.** Indian law and international treaties (TRIPS, CBD,
+  Nagoya, PCT, Budapest, the 2024 WIPO GRATK treaty) are retrieved, answered and verified
+  separately.
+- **Hybrid retrieval**: dense vectors (bge-m3), full text and exact section lookup, fused and
+  reranked. A knowledge graph widens the search: a question about musk reaches the Wild Life
+  Act without using the word "wildlife".
+- **Checked citations and a confidence score.** An answer below the confidence floor is
+  withheld rather than guessed.
+- **Where to go next**: the registries the question points at, each with the provision that
+  sends you there.
+- **Voice**: ask by microphone, hear answers read aloud. Bhashini is the intended provider;
+  until its key arrives, speech-to-text falls back to Groq Whisper and speech to the
+  browser's own voices.
+- **Guardrails, consent and audit**: out-of-scope, medical-advice and unsafe questions are
+  refused. Consent is recorded and can be revoked, and there is an audit trail that never
+  stores the question text. `DELETE /me` removes everything stored for your session.
+- **An agent** (`POST /agent`) works multi-step questions with six read-only tools.
 
-The main way through the garden. It opens outside a **walled** garden: a boundary wall
-runs the whole perimeter and the gate's two leaves are shut, so there is nothing to see
-but the entrance. Pressing **Open the gate** swings both leaves inward on their hinges,
-and the camera glides under the lintel into a garden you have not seen yet.
+### The worlds
 
-**Every stop then happens in that same scene.** The camera flies to each plant where it
-actually stands and frames it close, its medicinal parts labelled with hotspots on the
-living specimen — no studio, no second copy of the model, and the beds and plaza stay
-visible behind. Everything the compendium holds opens around the edges of the frame at
-the same time:
+| Route | What it is |
+|---|---|
+| `/garden` | The walled 3D garden: 30 plants in six beds, each grown at run time from its botanical description. No downloaded models. |
+| `/plant/:id` | A plant's full entry, with an **IP & Law** tab: patentability, biodiversity, wildlife, export, drug schedules, prior-art searches, each line with its source. |
+| `/rasashala` | The pharmacy: yeasts, lactobacilli, honey, ghee, pearl, coral, musk, mercury, gold and more. Each is drawn in 3D and has its own cited legal layer. |
+| `/material/:id` | One material: a 3D turntable and the law at a glance. |
+| `/workbench` | Compose a formulation; the classifier asks the minimum questions and returns its category with every requirement cited. |
+| `/registry-marg` | The street of registries: the Patent Office, the GI Registry, the NBA, the licensing authority and more. Each form is quoted from its rule. |
+| `/explore`, `/atlas` | The compendium (plants and materials), and the whole collection read as data, including which laws reach which material. |
+| `/tours/neem-tree` | *Who Owns the Neem Tree?*: s.3(p), TKDL, NBA approval, and the 2024 disclosure treaty. |
+| `/sources` | The corpus, and the official databases outside it, each saying honestly whether it has a public API. Most do not. |
 
-| Where | What is on it |
-| --- | --- |
-| Left | Habit, family and conservation status; the full entry prose; grow difficulty, systems and range; the names in six languages; how to recognise it in the field |
-| Centre | The living specimen, framed close, parts labelled in place — still draggable |
-| Right | The rasa hexagon, the virya scale, the doshic effect, the medicinal part, guna, and the complaints it is filed under |
-| Below | A dossier: what it treats · how it is given · how to grow it · cautions · the four botanical plates · worth knowing · your own notes |
+The interface itself switches to **Hindi or Tamil** from the header.
 
-The dossier expands to half the screen for proper reading, and notes save to the device
-as you type. **There is deliberately no link out to a flat page** — everything the plant
-entry carries is readable here, inside the garden.
+---
 
-**Every panel has its own Listen button**, and "Walk it for me" reads each plant aloud and
-moves on by itself when the reading is done — the whole thing runs hands-free. Arrow keys
-change stop, space plays and pauses, escape leaves, dragging still looks around mid-stop,
-and clicking any other plant in the scene jumps the walk to it. The URL tracks the current
-plant, so a walk can be resumed or linked to from the middle.
+## How well it works
 
-The wall is raised only for the walk: the bed views used by the garden and the themed tours
-stand further out than the wall does, and would be looking at masonry instead of planting.
+Measured, not claimed. Details and history are in [`docs/model-card.md`](docs/model-card.md)
+and [`docs/STATUS.md`](docs/STATUS.md).
 
-### Showing a newcomer around
+| On the 102-item golden set | Result | Target |
+|---|---|---|
+| Retrieval recall@8 (63 items with expected provisions, no model calls) | **0.952** | ≥ 0.85 |
+| Answer accuracy, judged (first 43 items; the run stopped at the provider's daily limit) | 0.881 | ≥ 0.80 |
+| Citation correctness (same 43) | 0.857 | ≥ 0.95, **not met** |
+| Abstention on out-of-scope, medical and unsafe questions (same 43) | 0.95 | ≥ 0.95 |
 
-Three more ways in, all replayable from the **?** menu in the header:
-
-- **A cinematic opening.** Titles play over the live garden while the camera flies a
-  scripted route through it. Skipping leaves you exactly where the camera stopped —
-  there is no separate splash screen to escape from.
-- **A guided walkthrough.** Nine spotlit stops that cross the whole site: beds,
-  daylight, search, facets, the Ayurvedic fingerprint, the 3D specimen, the Atlas,
-  tours, and where progress is saved. Steps name the page and the element they point
-  at, and fall back to a centred card if a viewport hides the target.
-- **Presentation mode** (press **P**). A hands-free reel of eleven scenes that drives
-  the real app — real routes, real camera moves, no screenshots — and narrates itself.
-  Space pauses, arrows scrub, escape leaves. Built for talking to a room.
-
-### Reading a plant as shapes
-
-Ayurvedic pharmacology is usually printed as a list of five properties. Every plant
-page draws it instead:
-
-- a **shad-rasa hexagon** for the six tastes, with the dominant one weighted;
-- a **virya scale** from shita to ushna, nudged by the gunas, so a sharp heating herb
-  sits further along than a merely warm one;
-- **vipaka**, the taste that survives digestion;
-- a centre-anchored **doshic bar** per dosha — pacifies grows one way, aggravates the other.
-
-None of this is a second copy of the data. `src/lib/ayurveda.ts` parses the same prose
-the compendium already carries ("Pacifies Kapha and Vata; may aggravate Pitta"), so the
-charts cannot drift away from the text beside them.
-
-### The Atlas
-
-One route that reads all twenty-five species at once: a schematic map of where they grow,
-a force-laid graph of every plant against every complaint it treats, the distribution of
-tastes and potencies, and a conservation ladder that marks which at-risk plants are
-harvested for root, bark or heartwood — the parts that do not grow back. Every number on
-the page is derived from the plant data at load time, so it cannot fall out of step with
-the collection.
-
-### The comparison bench
-
-Two or three plants on one set of axes: taste hexagons overlaid, potencies on a shared
-scale, doshic effects in a grid, and the properties lined up row by row. The bench state
-lives in the URL, so a comparison is a link.
-
-### Beyond the brief
-
-- **A day-night cycle.** One clock value from before dawn to night drives the sky gradient,
-  fog, sun colour and angle, ambient bounce and tone-mapping exposure. After sunset the
-  fireflies come out. `src/three/daylight.ts` holds the whole table, so the sky and the
-  shadows can never disagree about what time it is. The theme toggle moves the sun too —
-  daylight opens the garden in late afternoon, dark opens it at dusk — so the chrome and
-  the scene always agree; the slider overrides both.
-- **A horizon.** The garden sits under a gradient dome and on open country that recedes
-  into haze, rather than floating in a flat field of background colour. The lawn dissolves
-  by alpha into that country, so there is no plate edge to catch the eye at any hour.
-- **Labelled part hotspots** on the 3D model — tap "Bark" and see where on the tree it comes from.
-- **A real scale bar**, so a 14 cm creeper and a 3 m tree are not silently drawn the same size.
-- **Conservation framing** — one whole tour is about why guggulu is Critically Endangered,
-  because the medicinal part is the part that kills the plant.
-- **Offline-first**: no network calls after load. Narration uses the browser's own speech synthesis.
-- **Everything is a link**: a bed, a plant, a plant's Ayurvedic tab, a region filter, a
-  three-way comparison — all addressable, all survive a hard refresh.
+Citation correctness is the known gap: answers are usually right but sometimes quote a
+neighbouring provision. The golden set was written in-house, which flatters it.
 
 ---
 
 ## Running it
 
+**The web app** (the garden, the Rasashala and Registry Marg all work without the API):
+
 ```bash
 npm install
-npm run dev        # http://localhost:5173
-npm run build      # production build into dist/
-npm run preview    # serve the production build
-npm run lint
+npm run dev          # http://localhost:5173
 ```
 
-Node 20+ recommended (developed on Node 25).
+**The API**, needed for Sahayak, voice, the classifier and the agent:
 
-Deploying to any static host works; `public/_redirects` and `vercel.json` are included so
-client-side routes such as `/plant/tulsi` survive a hard refresh.
+```bash
+cp .env.example .env                  # add GROQ_API_KEY (or GROQ_API_KEYS) at least
+docker compose up -d postgres
 
----
-
-## Tech
-
-- **React 19** + **TypeScript** + **Vite 8**
-- **three.js** via **@react-three/fiber** and **@react-three/drei**
-- **Tailwind CSS v4** with a semantic token layer for light/dark
-- **Zustand** (persisted to `localStorage`) for bookmarks, notes and settings
-- **React Router 7**
-- **Motion** for page transitions, the opening, and the chart animations
-
-Every chart is hand-drawn SVG. There is no charting library in the dependency list —
-a hexagon, a spring layout and a stacked bar are less code than the adapter would be.
-
-No backend. Everything a visitor saves lives on their own device.
-
----
-
-## How the garden is put together
-
-```
-src/
-  data/            25 plants, 6 beds, 6 tours — the compendium
-  types/plant.ts   the schema that drives both the prose and the geometry
-  three/
-    procedural/
-      leaf.ts      parametric blade: a profile function per botanical leaf shape
-      plant.ts     archetype skeletons, phyllotaxy, flowers, fruit, merging
-      rng.ts       seeded PRNG, so a plant always grows the same way
-    materials.ts   one shader for the whole garden: wind, venation, bark
-    gardenTexture.ts   the garden plan, painted once to a canvas
-    GardenScene.tsx    beds, plaza, instanced planting, camera rig
-    PlantViewer.tsx    single-specimen viewer with part hotspots
-  lib/
-    plate.ts       the same leaf maths, projected to SVG specimen plates
-    search.ts      weighted index + fuzzy fallback
-    speech.ts      audio descriptions via SpeechSynthesis
-  lib/ayurveda.ts  rasa, virya, vipaka and dosha parsed out of the compendium's prose
-  three/daylight.ts  one clock value → sky, sun, fog, ambient, exposure, fireflies
-  components/
-    GardenIntro.tsx     the cinematic opening, played over the live scene
-    Walkthrough.tsx     cross-route spotlight tour, driven by `data-tour` handles
-    PresentationMode.tsx  the hands-free demo reel
-    viz/                radar, fingerprint, map, constellation, conservation ladder
-  three/GardenGate.tsx  the torana you come in through
-  routes/          Garden · Walk · Explore · Atlas · Compare · PlantPage · Tours · TourPage · MyGarden
+cd api
+uv venv --python 3.12 .venv
+uv pip install -e ".[dev,local]"      # local = bge-m3 embeddings + reranker (large download)
+# NVIDIA GPU: the default torch is CPU-only; install the CUDA build for a ~5 minute ingest
+.venv/Scripts/alembic upgrade head
+.venv/Scripts/python -m app.ingest load       # fill Postgres from corpus/normalised/
+.venv/Scripts/python -m app.graph seed
+.venv/Scripts/python -m app.materials seed
+.venv/Scripts/python -m app.registry seed
+.venv/Scripts/python -m uvicorn app.main:app --reload   # http://localhost:8000
 ```
 
-### Performance notes
+`docker compose up` runs the migrations and all three seeds on start. The first-run details,
+including the four corpus PDFs that have to be downloaded by hand, are in
+[`docs/STATUS.md`](docs/STATUS.md) §4–5.
 
-Rendering twenty-five distinct plants without instancing would be hopeless, so:
+**Checks**, the same ones CI runs:
 
-- Each plant merges into **at most six geometries** — one per material — instead of hundreds of meshes.
-- **Mesh resolution and leaf count are separate knobs.** A garden seen from ten metres needs many
-  leaves of few triangles; a specimen under inspection needs the opposite.
-- A **leaf budget** with an up-front census keeps branching from exploding, and thins the whole
-  plant evenly rather than spending everything on the first limb.
-- Lawn and bed planting are **two instanced meshes**, roughly 2,600 tufts in two draw calls.
-- Foliage cards take the **ground's normal**, the standard trick that stops vertical quads
-  going black.
-- All foliage shares **one compiled shader program**, via `customProgramCacheKey`.
-- Quality is auto-detected from device capability and overridable in Settings.
-
-The whole garden is about 60k triangles on the light preset and builds in under 100 ms.
-
----
-
-## About the plant data
-
-Botanical descriptions, Ayurvedic properties and cultivation notes follow the conventions of
-the Ayurvedic Pharmacopoeia of India and standard field floras. Conservation statuses reflect
-IUCN Red List and Indian regulatory listings.
-
-**This is an educational resource, not medical advice.** Every plant page carries its
-contraindications, and several — sarpagandha and liquorice especially — are genuinely
-dangerous when self-prescribed. Consult a registered AYUSH practitioner.
+```bash
+npm run lint && npm run build
+npm run check:ipr        # legal claims in profiles and tours
+npm run check:3d         # every procedural form builds
+npm run check:export     # the API's copy of the profiles is current
+cd api && .venv/Scripts/python -m pytest -q
+python ../eval/run.py --only retrieval    # free: no model calls
+python ../eval/run.py --provider groq     # the full eval
+```
 
 ---
 
-## Keyboard
+## How it is built
 
-| Key | Does |
-| --- | --- |
-| `⌘K` / `/` | Search |
-| `space` | Start or pause the Grand Walk |
-| `P` | Presentation mode |
-| `space` | Pause the reel, or play/pause a tour |
-| `← →` | Move between scenes, tour stops or walkthrough steps |
-| `esc` | Leave whatever is running |
+```
+src/                          the web app (React 19, Vite, three.js via react-three-fiber)
+  three/procedural/           plants, microbes and substances generated from data, no assets
+  three/*Scene.tsx            garden, Rasashala, workbench, Registry Marg
+  data/                       plants, materials, their IP profiles (src/data/ipr), tours, connectors
+  components/sahayak/         the assistant: drawer, answer panes, voice, connectors
+  i18n/                       interface strings in English, Hindi and Tamil
+api/                          FastAPI + SQLAlchemy + Postgres 16 / pgvector
+  app/ingest/                 fetch → normalise → parse → chunk → embed, version-tracked
+  app/retrieval/              dense + lexical + locator + graph, fused and reranked
+  app/ask/ app/generate/      the answer pipeline and its verifier
+  app/graph/ app/agent/       knowledge graph, and the tool-using agent
+  app/registry/ app/voice/ app/connectors/   where to go next, speech, credentialed sources
+corpus/                       manifest.yaml (what may be cited) and the normalised texts
+eval/                         golden items and the harness
+docs/                         plan, status, architecture, providers, privacy, model card
+```
+
+The provider layer puts Groq and Anthropic behind one interface. Provider keys live only in
+the API's environment and never reach the browser. More in
+[`docs/architecture.md`](docs/architecture.md) and [`docs/providers.md`](docs/providers.md).
 
 ---
 
 ## Known limits
 
-- Speech narration depends on the browser's installed voices; quality varies, and it is
-  unavailable in a few browsers. The UI disables the control rather than failing silently.
-- Models are botanically faithful in structure, not photoreal. That is a deliberate trade:
-  a stylised plant that is *correct* teaches better than a pretty one that is not.
-- Fifteen of the twenty-five species have flowers modelled; the rest flower rarely in
-  cultivation and are shown vegetative, which is how you would actually find them.
-- The India in the Atlas is a **schematic**, drawn by hand to place the climatic regions
-  in roughly the right relationship to each other. It is labelled as such on the page. It
-  is not survey data and should not be read as a statement about boundaries.
+- **Not legal advice.** The corpus is 32 sources; many rules (the Trade Marks Rules, the
+  Patents Rules' forms schedule, FSSAI licensing) are not in it yet, and the product says so
+  where it matters.
+- **Bhashini is written but not yet connected**: it waits on an approved account. Voice works
+  today through the fallbacks.
+- **The Lens connector** is built to Lens's published API, but has not yet been called with a
+  real token.
+- **22 of 30 plants** have honestly-`unknown` IP profiles until someone verifies them.
+- The eval's golden set was written by the team; an outside set would be a harder test.
+- The India in the Atlas is a schematic drawn to place climatic regions, not survey data.
+
+Built for Smart India Hackathon 2026, problem statement PS-45, on the SIH 2025 Vanaspati garden.

@@ -10,7 +10,7 @@
 - `docs/providers.md` — Anthropic vs Groq, embeddings, Bhashini, env vars.
 - `docs/CONTRIBUTING.md` — setup, keys, branch flow, ownership.
 - `docs/STATUS.md` — **start here**: what works, measured eval results, what was tested live, setup on a new machine, next steps.
-- `docs/WHAT-CHANGED-2026-09-22.md`, `docs/WHAT-CHANGED-2026-09-21.md` — the last two batches of work and where they show up in the website.
+- `docs/WHAT-CHANGED-2026-09-23.md`, `docs/WHAT-CHANGED-2026-09-22.md`, `docs/WHAT-CHANGED-2026-09-21.md` — the latest batches of work (stage 3 on 09-23) and where they show up in the website.
 - `docs/SOURCES.md` — generated register: where every corpus document came from, which file, where its data lives.
 - `docs/TASKS.md` — task tracker and the per-task workflow rules (check limit, update tracker, push).
 - `docs/dpdp-and-security.md` — privacy, audit, threat model, OWASP LLM checklist.

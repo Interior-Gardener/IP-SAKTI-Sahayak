@@ -129,7 +129,11 @@ export function getConsent(sessionId: string) {
   return request<ConsentState>('/consent', {}, sessionId)
 }
 
-export function setConsent(sessionId: string, scope: 'assistant' | 'transcript', granted: boolean) {
+export function setConsent(
+  sessionId: string,
+  scope: 'assistant' | 'transcript' | 'connector:lens',
+  granted: boolean,
+) {
   return request<ConsentState>(
     '/consent',
     { method: 'POST', body: JSON.stringify({ scope, granted }) },
@@ -179,4 +183,48 @@ export interface OpenSahayakDetail {
 /** Any page (or a 3D scene) can open the assistant without prop drilling. */
 export function openSahayak(detail: OpenSahayakDetail = {}) {
   window.dispatchEvent(new CustomEvent<OpenSahayakDetail>('sahayak:open', { detail }))
+}
+
+/* ---------------------------------------------------------------- voice (stage 3) */
+
+export type AsrResult = components['schemas']['AsrResult']
+
+/** Speech to text. `audioBase64` is 16 kHz mono WAV (see lib/sahayak/voice.ts). */
+export function transcribe(sessionId: string, audioBase64: string, language: string) {
+  return request<AsrResult>(
+    '/voice/asr',
+    { method: 'POST', body: JSON.stringify({ audio_base64: audioBase64, language }) },
+    sessionId,
+  )
+}
+
+/**
+ * Text to speech. Resolves to a playable blob when the API has a speech
+ * provider, and to null when it answers 204 — the signal to read the text in
+ * the browser instead, which is what happens until Bhashini is configured.
+ */
+export async function synthesise(sessionId: string, text: string, language: string): Promise<Blob | null> {
+  if (!API_URL) return null
+  const res = await fetch(`${API_URL}/voice/tts`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'X-Session-Id': sessionId },
+    body: JSON.stringify({ text, language }),
+  })
+  if (res.status === 204) return null
+  if (!res.ok) throw new SahayakError(res.status, await res.text())
+  return await res.blob()
+}
+
+/* ------------------------------------------------------------ connectors (stage 3) */
+
+export type LensSearchResult = components['schemas']['LensSearchResult']
+
+/** Patent search on The Lens with the person's own token. The token goes in a
+ *  header on this one request and is kept nowhere — not here, not on the API. */
+export function lensSearch(sessionId: string, token: string, query: string) {
+  return request<LensSearchResult>(
+    '/connectors/lens/search',
+    { method: 'POST', body: JSON.stringify({ query }), headers: { 'X-Connector-Token': token } },
+    sessionId,
+  )
 }

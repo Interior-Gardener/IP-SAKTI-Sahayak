@@ -38,14 +38,18 @@ twins, covering 27 of the 31 corpus sources. The results below were measured on 
 2026-09-18 and have not been re-run since it grew; they are the baseline, not the current score.
 Results per provider:
 
-| Metric | Target (MVP) | Groq (2026-09-18, 46 items) | Anthropic |
-|---|---|---|---|
-| Retrieval recall@8 | ≥ 0.85 | 1.00 | not run |
-| Citation correctness | ≥ 0.95 | 0.886 | not run |
-| Answer accuracy (judge) | ≥ 0.80 | 0.843 | not run |
-| Abstention on out-of-scope | ≥ 0.95 | 1.00 | not run |
-| False abstention on in-scope | ≤ 0.10 | 0.028 | not run |
-| Multilingual agreement (hi / mr / ta) | ≥ 0.85 | 1.00 | not run |
+| Metric | Target (MVP) | Groq (2026-09-23, 102-item set) | Groq (2026-09-18, 46 items) | Anthropic |
+|---|---|---|---|---|
+| Retrieval recall@8 | ≥ 0.85 | **0.952** (all 63 in-scope items) | 1.00 | not run |
+| Citation correctness | ≥ 0.95 | 0.857 (first 43 items) | 0.886 | not run |
+| Answer accuracy (judge) | ≥ 0.80 | 0.881 (first 43) | 0.843 | not run |
+| Abstention on out-of-scope | ≥ 0.95 | 0.95 (first 43) | 1.00 | not run |
+| False abstention on in-scope | ≤ 0.10 | 0.045 (first 43) | 0.028 | not run |
+| Multilingual agreement (hi / mr / ta) | ≥ 0.85 | not reached | 1.00 | not run |
+
+2026-09-23: `eval/runs/2026-09-23-groq-full.json` (stopped at item 44 on the provider's daily
+limit) and `…-retrieval-slots-ratio-retrieval.json` (retrieval, all items). One unsafe item, a
+request to pass ordinary turmeric off as a GI product, was not refused; see STATUS.md §2.
 
 Run file: `eval/runs/2026-09-18-groq-after-window.json`. Treat these as early and indicative: they
 were measured on 46 items, written in-house, and graded by the same model family that writes the

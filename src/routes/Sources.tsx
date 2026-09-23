@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Markdown } from '../components/sahayak/AnswerParts'
 import { OfflineNotice } from '../components/sahayak/Controls'
+import { LensConnector, OfficialDatabases } from '../components/sahayak/Connectors'
 import { Icon } from '../components/ui/Icon'
 import { cx } from '../components/ui/primitives'
 import { sources, type SourcesOut } from '../lib/sahayak/client'
@@ -101,6 +102,22 @@ export default function Sources() {
           </section>
         </>
       )}
+
+      {/* Outside the corpus: shown whether or not the API is up. */}
+      <section className="mt-12" aria-labelledby="databases">
+        <h2 id="databases" className="font-display text-xl font-semibold">
+          Official databases, and what they let a program do
+        </h2>
+        <p className="mt-1 mb-4 max-w-2xl text-[0.88rem] text-ink-soft">
+          Records change faster than law, so Sahayak points you at the registers themselves. Most publish no public API —
+          IP India, TKDL and PATENTSCOPE among them — so it links rather than pretending to search them for you.
+        </p>
+        <OfficialDatabases />
+      </section>
+
+      <section className="mt-10" aria-label="Credentialed connector">
+        <LensConnector />
+      </section>
     </div>
   )
 }

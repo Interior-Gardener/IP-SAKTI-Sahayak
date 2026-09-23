@@ -319,6 +319,14 @@ export default function TourPage() {
               <p className="mt-2 text-[0.92rem] leading-relaxed text-ink-soft text-balance-pretty">
                 {stop.narration}
               </p>
+              {stop.cite && (
+                <p className="mt-2 rounded-xl bg-sunken px-3 py-2 text-[0.76rem] leading-relaxed text-ink-soft">
+                  <span className="italic">“{stop.cite.quote}”</span>
+                  <span className="ml-1.5 font-mono text-[0.7rem] text-ink-faint">
+                    {stop.cite.source} · {stop.cite.locator}
+                  </span>
+                </p>
+              )}
               {plant.facts[0] && (
                 <p className="mt-2.5 flex items-start gap-1.5 text-[0.78rem] leading-relaxed text-ink-faint">
                   <Icon name="sparkle" size={13} className="mt-0.5 shrink-0" style={{ color: plant.accent }} />

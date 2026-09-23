@@ -58,6 +58,9 @@ jobs:
       # cannot be written fails here rather than on a deploy.
       - run: uv run --no-sync python -m app.graph seed
       - run: uv run --no-sync python -m app.materials seed
+      - run: uv run --no-sync python -m app.registry seed
       - run: uv run --no-sync pytest -q
       # Every locator a golden eval item expects must exist in the corpus.
       - run: uv run --no-sync python scripts/locators.py --check-golden
+      # Registry Marg reads an export of the registry seed; it must match the seed.
+      - run: uv run --no-sync python scripts/export_registries.py --check

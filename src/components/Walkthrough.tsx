@@ -85,7 +85,7 @@ export const WALKTHROUGH_STEPS: Step[] = [
     route: '/tours',
     handle: 'tour-list',
     title: 'Let a walk lead you',
-    body: 'Six narrated routes fly the camera bed to bed and explain why each plant belongs to the theme. Start with First Steps.',
+    body: 'Seven narrated routes fly the camera bed to bed and explain why each plant belongs to the theme. Start with First Steps, or Who Owns the Neem Tree? for the law.',
     pad: 8,
   },
   {
