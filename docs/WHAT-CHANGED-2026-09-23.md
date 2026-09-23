@@ -233,6 +233,17 @@ result was "New or non-classical drug" with every line cited.
   red for cinnabar, yellow bipyramids for sulphur. **Abhraka** has books of raw mica beside its
   bhasma. **Madhu** stands on edge with its cells to the room. The **ghee jar** and **milk pot**
   are turned on smooth profiles instead of faceted ones. On the benches every piece now faces the aisle.
+- **Microbes rebuilt**, and corrected where they were wrong: the lactobacillus had flagella
+  (lactobacilli are non-motile) and spirulina was a swimming corkscrew with a tail at each end
+  (it is a helical filament of cells). Now: *Lactococcus* in pairs and short chains with the
+  division plane between cells; the lactobacillus as non-motile rods end to end with cross-walls;
+  *Bacillus clausii* with flagella all over the cell (peritrichous) and oval endospores inside some
+  cells, a few already free — the spore is the form it is sold in; yeast budding, with bud scars
+  and a vacuole; spirulina as coiled trichomes of short cells, a new `trichome` form; the
+  endophyte as a denser mycelium. Cell walls are translucent, so the nucleoid, vacuole or spore
+  inside shows. The geometry check also caught a latent bug on the way: thin tubes were built
+  with a fractional segment count, which `TubeGeometry` does not round, giving indices past the
+  last vertex.
 - **Click to zoom** (`/rasashala`): opening a material, from the scene or the shelf index, glides
   the camera to it and frames it clear of the info panel. Dragging stops the glide.
 - **The Rasashala tour**, *Three Kinds of Law Under One Roof*: seven stops, from the yeast

@@ -18,7 +18,7 @@ const jiti = createJiti(fileURLToPath(import.meta.url), { interopDefault: true }
 const { buildMicrobeGeometry } = await jiti.import(`${root}src/three/procedural/microbe.ts`)
 const { buildSubstanceGeometry } = await jiti.import(`${root}src/three/procedural/substance.ts`)
 
-const MICROBES = ['coccus', 'bacillus', 'yeast', 'hypha', 'spirillum']
+const MICROBES = ['coccus', 'bacillus', 'yeast', 'hypha', 'spirillum', 'trichome']
 const SUBSTANCES = ['honeycomb', 'vessel', 'rock', 'conch', 'pearl', 'coral', 'shell', 'ingot', 'powder']
 const DETAILS = ['high', 'medium', 'low']
 

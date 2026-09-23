@@ -26,7 +26,7 @@ export const microbes: SourceMaterialEntry[] = [
     classicalUse:
       'Sandhana kalpana: the group of preparations made by fermentation. Asava is fermented from a cold infusion, arishta from a decoction; dhataki flowers are the usual starter in both.',
     shelf: 'fermentation',
-    model: { draw: 'microbe', form: 'yeast', count: 11, size: 0.26, color: '#e8d9a8', accent: '#a98b4e', sheen: 0.7 },
+    model: { draw: 'microbe', form: 'yeast', count: 11, size: 0.26, color: '#ecdcaa', accent: '#b8914e', sheen: 0.7 },
   },
   {
     id: 'dadhi-lactococcus',
@@ -41,7 +41,7 @@ export const microbes: SourceMaterialEntry[] = [
     classicalUse:
       'Dadhi is a dravya of the ksheera varga (the milk group), and the starting point for takra, which is used far more widely than the curd itself.',
     shelf: 'fermentation',
-    model: { draw: 'microbe', form: 'coccus', count: 10, size: 0.22, color: '#f0efe6', accent: '#8d9a86', sheen: 0.55 },
+    model: { draw: 'microbe', form: 'coccus', count: 10, size: 0.22, color: '#eef1e0', accent: '#6f8a5c', sheen: 0.55 },
   },
   {
     id: 'takra-lactobacillus',
@@ -56,7 +56,8 @@ export const microbes: SourceMaterialEntry[] = [
     classicalUse:
       'Takra is used as an anupana (a vehicle taken with a medicine) and as a base for preparations such as takrarishta; the texts describe several grades of it.',
     shelf: 'fermentation',
-    model: { draw: 'microbe', form: 'bacillus', count: 12, size: 0.3, color: '#f4f1e4', accent: '#9aa38c', sheen: 0.5 },
+    // Non-motile rods in short chains: no flagella, no spores.
+    model: { draw: 'microbe', form: 'bacillus', count: 12, size: 0.3, color: '#f3ecd6', accent: '#a0784a', sheen: 0.5, flagella: 'none' },
   },
   {
     id: 'bacillus-clausii',
@@ -70,7 +71,9 @@ export const microbes: SourceMaterialEntry[] = [
     classicalUse:
       'No classical counterpart: this is a modern addition to the pharmacy, kept here because the deposit and disclosure questions it raises are the ones the culture vault is about.',
     shelf: 'vault',
-    model: { draw: 'microbe', form: 'bacillus', count: 9, size: 0.34, color: '#dfe6ea', accent: '#6f8695', sheen: 0.35 },
+    // Motile on flagella all over the cell, and a spore former: oval endospores
+    // inside some cells, a few already free.
+    model: { draw: 'microbe', form: 'bacillus', count: 9, size: 0.34, color: '#dbe5ec', accent: '#3f6178', sheen: 0.35, flagella: 'peritrichous', spores: true },
   },
   {
     id: 'plant-endophyte',
@@ -98,6 +101,7 @@ export const microbes: SourceMaterialEntry[] = [
     classicalUse:
       'Not a classical dravya. Included because supplement products routinely combine it with Ayurvedic ingredients, and the combination is what decides how the product is regulated.',
     shelf: 'vault',
-    model: { draw: 'microbe', form: 'spirillum', count: 7, size: 0.34, color: '#4f7f5c', accent: '#2f5540', sheen: 0.6 },
+    // A helical filament of cells, not a swimming corkscrew: no flagella.
+    model: { draw: 'microbe', form: 'trichome', count: 7, size: 0.34, color: '#3f8a6a', accent: '#1f5140', sheen: 0.6 },
   },
 ]

@@ -26,6 +26,8 @@ export type MicrobeForm =
   | 'hypha'
   /** Corkscrews. */
   | 'spirillum'
+  /** A helical filament of short cells — Arthrospira ("spirulina"). No flagella. */
+  | 'trichome'
 
 export interface MicrobeModelSpec {
   form: MicrobeForm
@@ -38,6 +40,11 @@ export interface MicrobeModelSpec {
   accent?: string
   /** 0 = matte, 1 = wet and glossy. Yeasts in wort are glossy; spores are not. */
   sheen?: number
+  /** How the cells swim, if they do. Lactobacilli have none; Bacillus is
+   *  peritrichous (flagella all over the cell). Only rods use it. */
+  flagella?: 'none' | 'polar' | 'peritrichous'
+  /** Whether some cells carry an endospore — a Bacillus does, a lactobacillus does not. */
+  spores?: boolean
 }
 
 /** The shapes the pharmacy's shelves hold. */

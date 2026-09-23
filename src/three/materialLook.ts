@@ -27,16 +27,22 @@ type Params = THREE.MeshPhysicalMaterialParameters
 function bodyParams(spec: MaterialModelSpec): Params {
   const color = new THREE.Color(spec.color)
   if (spec.draw === 'microbe') {
-    // A living cell is wet: the sheen field is how glossy the colony is.
+    // A living cell under a microscope is mostly water behind a thin wall: it
+    // is seen through, which is what lets the nucleoid, the vacuole or the
+    // spore inside it show. Spirulina's filament is packed with pigment, so it
+    // is nearly opaque. The sheen field is how wet and glossy the wall looks.
     const sheen = spec.sheen ?? 0.4
+    const pigmented = spec.form === 'trichome' || spec.form === 'hypha'
     return {
       color,
-      roughness: 1 - sheen * 0.75,
-      metalness: 0.02,
-      clearcoat: sheen * 0.8,
-      clearcoatRoughness: 0.25,
-      sheen: 0.35,
-      sheenColor: color.clone().lerp(new THREE.Color('#ffffff'), 0.5),
+      roughness: 0.35 - sheen * 0.2,
+      metalness: 0,
+      clearcoat: 1,
+      clearcoatRoughness: 0.1,
+      sheen: 0.6,
+      sheenColor: color.clone().lerp(new THREE.Color('#ffffff'), 0.6),
+      transparent: !pigmented,
+      opacity: pigmented ? 1 : 0.58,
     }
   }
   const metalness = spec.metalness ?? 0
