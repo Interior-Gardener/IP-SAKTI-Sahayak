@@ -188,6 +188,33 @@ CONCEPTS: list[SeedEntity] = [
         "Trade secret",
         ("trade secret", "undisclosed information", "secret formula"),
     ),
+    SeedEntity(
+        "concept",
+        "international-trademark-filing",
+        "Taking a trade mark abroad",
+        (
+            "madrid",
+            "madrid system",
+            "madrid protocol",
+            "international registration of marks",
+            "trade mark abroad",
+            "brand abroad",
+            "register my brand in other countries",
+        ),
+    ),
+    SeedEntity(
+        "concept",
+        "international-design-filing",
+        "Taking a design abroad",
+        (
+            "hague",
+            "hague system",
+            "hague agreement",
+            "international registration of industrial designs",
+            "design abroad",
+            "register my design in other countries",
+        ),
+    ),
 ]
 
 #: Labels for the regimes the manifest uses; anything new falls back to its id.
@@ -548,6 +575,47 @@ EDGES: list[SeedEdge] = [
         "Art. 16a",
     ),
     SeedEdge("regime:wildlife", "primary_law", "source:in-wlpa-1972", "in-wlpa-1972", "s.49B"),
+    # Taking a mark or a design abroad. The two routes are deliberately kept apart,
+    # because India is in one list and not in the other, and that is the whole answer
+    # to half the questions people ask about them.
+    SeedEdge(
+        "concept:international-trademark-filing",
+        "route_under",
+        "source:intl-madrid-protocol",
+        "intl-madrid-protocol",
+        "Art. 2",
+        "Art. 2: protection secured by registering the mark with the International Bureau, "
+        "on an application filed through the Office of origin",
+    ),
+    SeedEdge(
+        "concept:international-trademark-filing",
+        "india_listed_in",
+        "source:intl-madrid-parties",
+        "intl-madrid-parties",
+        "p.1",
+        "WIPO's status list gives India as party to the Protocol from 8 July 2013",
+    ),
+    SeedEdge("concept:international-trademark-filing", "belongs_to_regime", "regime:trademark"),
+    SeedEdge(
+        "concept:international-design-filing",
+        "route_under",
+        "source:intl-hague-geneva-act",
+        "intl-hague-geneva-act",
+        "Art. 3",
+        "Art. 3: only a national of a Contracting Party, or someone with a domicile, habitual "
+        "residence or real and effective establishment in one, may file",
+    ),
+    SeedEdge(
+        "concept:international-design-filing",
+        "india_not_listed_in",
+        "source:intl-hague-parties",
+        "intl-hague-parties",
+        "p.1",
+        "India is not among the Contracting Parties in WIPO's status list, so the route is not "
+        "open on an Indian connection alone. The list is evidence of an absence, which search "
+        "cannot match on; the answer rests on Art. 3 and the list is checked by hand.",
+    ),
+    SeedEdge("concept:international-design-filing", "belongs_to_regime", "regime:design"),
 ]
 
 

@@ -1,4 +1,4 @@
-# Status and handover — 2026-09-23
+# Status and handover — 2026-09-24
 
 Where the build stands, what has actually been tested, what is known to be wrong, and how to
 pick it up on another machine. Task-by-task detail is in [TASKS.md](TASKS.md); the corpus
@@ -10,6 +10,12 @@ before that [2026-09-22](WHAT-CHANGED-2026-09-22.md) and [2026-09-21](WHAT-CHANG
 unbuilt in stages 0–2; what is left is measurement (§2) and the gaps in §7.
 
 ## 1. What works today
+
+- **Added 2026-09-24**: the two international routes PS-45 names that the corpus was missing —
+  the **Madrid Protocol** (a trade mark abroad) and the **Geneva Act 1999 of the Hague Agreement**
+  (a design abroad) — each with WIPO's official list of contracting parties beside it, because the
+  two answers differ: India is party to the Madrid Protocol from 8 July 2013, and is **not** among
+  the 85 parties to the Hague Agreement. Corpus: **36 sources, 3,315 chunks**.
 
 - **Added 2026-09-23 (stage 3)**: voice in and out (`/voice/asr` on Groq Whisper, tested live;
   Bhashini written, waiting on an account); the interface in Hindi and Tamil; eight free official
@@ -65,7 +71,7 @@ unbuilt in stages 0–2; what is left is measurement (§2) and the gaps in §7.
 
 | Metric | Result | Target | |
 |---|---|---|---|
-| Retrieval recall@8, all 63 items with expected provisions, no model calls | **0.952** | ≥ 0.85 | met |
+| Retrieval recall@8, all 67 items with expected provisions, no model calls | **0.955** | ≥ 0.85 | met |
 | Judge accuracy (first 43 items) | 0.881 | ≥ 0.80 | met |
 | Citation correctness (first 43) | 0.857 | ≥ 0.95 | **not met** |
 | Abstention on out-of-scope / medical / unsafe (first 43) | 0.95 | ≥ 0.95 | met, just |
@@ -79,6 +85,21 @@ same graph entities `/ask` does, and a graph hit may take one of two reserved sl
 reranker is unsure (WHAT-CHANGED-2026-09-23.md §4). What failed and matters:
 `unsafe-gi-passing-off` ("label ordinary turmeric as a registered GI") was not refused by the guard,
 and `both-plants-patent` was withheld in both panes because the model's quotes did not match.
+
+
+**2026-09-24 — the four new Madrid/Hague items, answered end to end** (`eval/runs/2026-09-24-groq-madrid-hague-answers.json`):
+retrieval 1.0, citation 1.0, false abstention 0, judge accuracy 0.625 (2 of 4 full marks, one
+half for an omitted sub-rule, one zero). Retrieval across the whole set went 0.952 (63 items) to
+**0.955** (67), with no regressions: `eval/runs/2026-09-24-groq-madrid-hague-retrieval.json`.
+
+The zero is worth keeping rather than tuning away. Asked whether an Indian applicant can use the
+Hague route, the assistant said it could not confirm membership instead of answering. It is right
+that it did not guess, and the list that settles it *is* in the corpus — but **a fact that exists
+only as a missing row cannot be retrieved by similarity**: there is nothing in the party list for
+"India" to match on. The graded provision for that item is therefore Geneva Act Art. 3 (who is
+entitled to file), with the party list checked by hand, and the graph carries a cited edge saying
+India is not listed. Making a curated edge note visible to the answer model would close it, and
+that is a prompt-authority change that needs its own measurement.
 
 The tables below are the earlier 46-item runs, kept for comparison.
 
@@ -260,7 +281,8 @@ wait for the rolling reset, pay for Groq's Dev tier (a full run is worth a few c
 4. Finish the golden set: one more microbe/animal/mineral item and six more multilingual twins
    (19 of the planned 25). Check every new item with
    `python api/scripts/locators.py --check-golden` before trusting it.
-5. Add the missing sources listed in `corpus/CHANGELOG.md` (Trade Marks Rules 2017 first: answers
+5. Add the missing sources listed in `corpus/CHANGELOG.md` (Madrid and Hague landed 2026-09-24;
+   Trade Marks Rules 2017 next: answers
    already want to cite it), then re-run ingest. The plant profiles are waiting on several of them —
    GI register entries, patent records, the Ayurvedic Pharmacopoeia index, DGFT export policy.
 6. The other "verify" flags in `api/app/classify/rules.py` (Cosmetics Rules detail, the Rule 158B

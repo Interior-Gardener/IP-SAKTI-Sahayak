@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-24",
+  "provider": "groq",
+  "models": {
+    "answer": "openai/gpt-oss-120b",
+    "judge": "openai/gpt-oss-120b"
+  },
+  "embed_model": "BAAI/bge-m3",
+  "reranker": "BAAI/bge-reranker-v2-m3",
+  "items": 4,
+  "summary": {
+    "retrieval_recall_at_8": 1.0,
+    "citation_correctness": 1.0,
+    "judge_accuracy": 0.625,
+    "abstention_rate": null,
+    "false_abstention_rate": 0.0,
+    "multilingual_agreement": null,
+    "chrf": null
+  },
+  "targets": {
+    "retrieval_recall_at_8": 0.85,
+    "citation_correctness": 0.95,
+    "judge_accuracy": 0.8,
+    "abstention_rate": 0.95,
+    "false_abstention_rate": 0.1,
+    "multilingual_agreement": 0.85
+  },
+  "results": [
+    {
+      "item": "intl-madrid-route-2",
+      "metrics": {
+        "retrieval": 1.0,
+        "false_abstention": 0.0,
+        "citation": 1.0,
+        "accuracy": 1.0
+      },
+      "notes": [
+        "INTL confidence high 0.938: 4 of 4 citations verified",
+        "judge: The answer correctly explains that the Indian registration can be used as a basic registration to obtain protection via the International Bureau (Article 2(1)) and that the international application must be filed through the Indian trademark office, the Office of origin (Article 2(2)). It fully captures the required key points."
+      ],
+      "seconds": 16.91
+    },
+    {
+      "item": "intl-madrid-dependence-6",
+      "metrics": {
+        "retrieval": 1.0,
+        "false_abstention": 0.0,
+        "citation": 1.0,
+        "accuracy": 1.0
+      },
+      "notes": [
+        "INTL confidence high 1.0: 3 of 3 citations verified",
+        "judge: The answer correctly applies Article 6(3), noting that cancellation three years after filing (i.e., before the five‑year independence threshold of Article 6(2)) means the international registration’s protection may no longer be invoked. It reflects both key points and adds accurate supplementary information without contradicting the essentials."
+      ],
+      "seconds": 58.05
+    },
+    {
+      "item": "intl-hague-contents-5",
+      "metrics": {
+        "retrieval": 1.0,
+        "false_abstention": 0.0,
+        "citation": 1.0,
+        "accuracy": 0.5
+      },
+      "notes": [
+        "INTL confidence high 0.7: 13 of 13 citations verified; 1 verifier warning(s)",
+        "INTL flag: mentions provision 4 without a citation that contains it",
+        "judge: The answer correctly lists the core requirements from Art 5(1) – request, applicant data and reproductions in the prescribed manner – and notes deferment of publication. However it omits the specific special rule for two‑dimensional designs when deferment is requested, and adds many extra items (product indication, designated parties, fees, etc.) that are not part of the key points. Thus it is only partially aligned with the required key points."
+      ],
+      "seconds": 53.27
+    },
+    {
+      "item": "intl-hague-india-route",
+      "metrics": {
+        "retrieval": 1.0,
+        "false_abstention": 0.0,
+        "citation": 1.0,
+        "accuracy": 0.0
+      },
+      "notes": [
+        "INTL confidence high 0.8: 2 of 2 citations verified",
+        "judge: The answer does not affirm that India is not a contracting party and that an Indian applicant cannot use the Hague System, instead claiming insufficient information. This contradicts the key points which state India is not a Contracting Party and therefore cannot file internationally."
+      ],
+      "seconds": 44.16
+    }
+  ]
+}

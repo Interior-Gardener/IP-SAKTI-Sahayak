@@ -270,12 +270,28 @@ def _parse_bare_headings(normalised: str, prefix: str) -> list[Unit]:
     return units
 
 
+# What follows a real article heading is a title, a "[Bracketed title]" or a numbered
+# paragraph. What follows a cross-reference is the rest of the sentence it sits in.
+# WIPO Lex serves each cross-reference as its own link, so "…the Assembly referred to in
+# Article 10 (hereinafter…)" arrives with "Article 10" alone on a line; read as a heading it
+# stole the locator from the real Article 10 and dropped the Assembly provision entirely.
+CONTINUATION_RE = re.compile(r"^[a-z,;:.)”’]|^\((?=[a-z]{2})")
+
+
+def _is_heading(following: list[str]) -> bool:
+    nxt = next((ln for ln in following if ln), "")
+    return not CONTINUATION_RE.match(nxt)
+
+
 def _parse_articles(normalised: str) -> list[Unit]:
     units: list[Unit] = []
     current: Unit | None = None
     expect_title = False
-    for page, line in iter_lines(normalised):
+    lines = iter_lines(normalised)
+    for i, (page, line) in enumerate(lines):
         m = ARTICLE_RE.match(line)
+        if m and not _is_heading([ln for _, ln in lines[i + 1 : i + 4]]):
+            m = None  # a reference inside a sentence, or a table-of-contents entry
         if m:
             current = Unit(f"Art. {m.group('num').lower()}", "", "", page)
             units.append(current)

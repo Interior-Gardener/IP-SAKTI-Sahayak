@@ -124,8 +124,11 @@ def shorten(text: str, limit: int = DOC_CHARS) -> str:
     The cut falls on a line break, never inside a sentence: with a mid-sentence cut the model
     finished the sentence itself and quoted the join, which matched nothing in the stored text
     and the whole answer was withheld (Rule 158B, FSS s.22, GI rule 31).
-    Cutting only shortens the prompt; verification always runs against the full chunk."""
-    if len(text) <= limit:
+    A passage only a little over the limit is left whole: trimming Madrid Protocol Art. 2
+    (2,616 characters against a 2,400 limit) saved a couple of hundred characters and cost
+    an answer, because the model quoted across the cut. Cutting only shortens the prompt;
+    verification always runs against the full chunk."""
+    if len(text) <= limit * 1.25:
         return text
     head, tail = int(limit * 0.55), limit - int(limit * 0.55)
     start = text[:head].rsplit("\n", 1)[0] or text[:head]

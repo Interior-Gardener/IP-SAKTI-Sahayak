@@ -2,6 +2,33 @@
 
 Every change to `manifest.yaml` gets a line here: what changed, why, who checked it. Newest first.
 
+## 2026-09-24 — the Madrid and Hague routes added (36 sources)
+
+- Added the two international routes the problem statement names and the corpus did not have:
+  `intl-madrid-protocol` (Madrid Protocol, the route for a trade mark, 28 chunks) and
+  `intl-hague-geneva-act` (Geneva Act 1999 of the Hague Agreement, the route for an industrial
+  design, 40 chunks). Both are WIPO Lex authentic texts, fetched automatically as HTML because
+  WIPO serves the PDFs through signed links.
+- Added the two status lists they have to be read with, as registry records:
+  `intl-madrid-parties` (10 chunks) and `intl-hague-parties` (7 chunks). Checked on 2026-09-24
+  against the downloaded PDFs: India is in the Madrid list, party to the Protocol from
+  8 July 2013; India is **not** among the 85 parties in the Hague list, so that route is not open
+  on an Indian connection alone. The entitlement rule itself is Geneva Act Art. 3.
+- **Parser fix, treaties only.** WIPO Lex puts every cross-reference on its own line, so
+  "…the Assembly referred to in / Article 10 / (hereinafter…)" read as a heading: it took the
+  locator and the real Article 10 was dropped. A bare `Article N` is now only a heading when the
+  line after it is not the continuation of a sentence (`app/ingest/structure.py`, with a test).
+  Madrid 20 -> 28 chunks, Articles 1 to 16 in order. The other seven treaties are unchanged,
+  chunk for chunk, and so is every Indian source.
+- Four golden items added (`eval/golden/inscope4.jsonl`), all verified against the ingested text.
+  Retrieval recall@8 across the whole set: 0.952 (63 items) -> **0.955** (67 items), no regressions.
+- Known gaps still to fill: Trade Marks Rules 2017; Designs Rules; Copyright Rules; consolidated
+  Patents Rules including the 2024 amendment; normally-traded-commodities notification; heavy-metal
+  testing notification; Schedule E(1) text check; US FDA botanical guidance and DSHEA; Health Canada
+  NHP Regulations; TGA; MHRA THR; WHO herbal guidelines; Ayurvedic Pharmacopoeia index; registry
+  records (GI Register, InPASS); case law (turmeric, neem, basmati, Novartis, Divya Pharmacy,
+  Dimminaco, IMA v UoI).
+
 ## 2026-09-23 — WIPO's list of depositary authorities added (32 sources)
 
 - Added `intl-budapest-ida-list`, WIPO's list of International Depositary Authorities under the
@@ -39,4 +66,4 @@ Every change to `manifest.yaml` gets a line here: what changed, why, who checked
 - Added 23 Indian sources (patents, GI, trade marks, designs, copyright, plant varieties, biodiversity, drugs and cosmetics, advertising, food, wildlife, consumer protection, data protection) and 8 international ones (TRIPS, Paris, CBD, Nagoya, GRATK, PCT, Budapest, EU Directive 2004/24/EC).
 - India Code moved from indiacode.nic.in to indiacode.gov.in (old links 404). Download links use its DSpace API: `/server/api/core/bitstreams/<uuid>/content`. The central Act was picked by `act_id` starting `AC_CEN_` (state copies share titles).
 - Every `fetch: auto` link returned a PDF when checked. `fetch: manual` sources block scripts (WIPO Lex signed links, fssai.gov.in web app, EUR-Lex challenge): download them by hand into `corpus/raw/`.
-- Known gaps to fill next: consolidated Patents Rules including the 2024 amendment; Trade Marks Rules 2017; Designs Rules; Copyright Rules; normally-traded-commodities notification; heavy-metal testing notification; Schedule E(1) text check; Madrid Protocol; Hague Agreement; US FDA botanical guidance and DSHEA; Health Canada NHP Regulations; TGA; MHRA THR; WHO herbal guidelines; Ayurvedic Pharmacopoeia index; registry records (GI Register, InPASS); case law (turmeric, neem, basmati, Novartis, Divya Pharmacy, Dimminaco, IMA v UoI).
+- Known gaps to fill next: consolidated Patents Rules including the 2024 amendment; Trade Marks Rules 2017; Designs Rules; Copyright Rules; normally-traded-commodities notification; heavy-metal testing notification; Schedule E(1) text check; US FDA botanical guidance and DSHEA; Health Canada NHP Regulations; TGA; MHRA THR; WHO herbal guidelines; Ayurvedic Pharmacopoeia index; registry records (GI Register, InPASS); case law (turmeric, neem, basmati, Novartis, Divya Pharmacy, Dimminaco, IMA v UoI).

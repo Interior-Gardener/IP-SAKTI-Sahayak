@@ -157,3 +157,36 @@ SCHEDULE OF FEES PAYABLE
 More text belonging to section 66 rather than to a schedule of its own.
 """
     assert [u.locator for u in parse_units(text, "statute")] == ["s.66"]
+
+
+# WIPO Lex puts every cross-reference link on its own line, so a reference inside a
+# sentence arrives looking exactly like a heading.
+TREATY_WITH_REFERENCES = """<<page 1>>
+Article 9
+:
+Assembly
+Article 10
+
+Assembly
+
+(1) (a) The Contracting Parties shall have an Assembly.
+
+(b) Each Contracting Party shall be represented by one delegate.
+
+(5) Each Office shall receive copies under the conditions fixed by the Assembly referred to in
+Article 10
+(hereinafter referred to as "the Assembly"). No other publicity may be required.
+
+(6) Any amendment to
+Article 10
+, and to the present paragraph, shall require four-fifths of the votes cast.
+"""
+
+
+def test_a_cross_reference_is_not_read_as_an_article_heading():
+    units = parse_units(TREATY_WITH_REFERENCES, "treaty")
+    assert [u.locator for u in units] == ["Art. 10"]
+    assert units[0].heading == "Assembly"
+    # The real provision, not the sentence that merely names it.
+    assert "The Contracting Parties shall have an Assembly" in units[0].text
+    assert "four-fifths of the votes cast" in units[0].text

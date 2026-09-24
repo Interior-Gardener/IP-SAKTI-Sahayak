@@ -449,3 +449,61 @@ sources:
     licence: Official EU legal text (EUR-Lex terms)
     version_label: Original text, OJ L 136, 30.4.2004
     notes: EUR-Lex answers scripted requests with a 202 challenge page; open https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32004L0024 in a browser and save the PDF.
+
+  - id: intl-madrid-protocol
+    title: Protocol Relating to the Madrid Agreement Concerning the International Registration of Marks
+    jurisdiction: INTL
+    regime: [treaty, trademark]
+    doc_type: treaty
+    issuer: World Intellectual Property Organization
+    url: https://www.wipo.int/wipolex/en/treaties/textdetails/12603
+    fetch_url: https://www.wipo.int/wipolex/en/text/283484
+    fetch: auto
+    format: html
+    licence: Official treaty text
+    version_label: As amended on 12 November 2007 (TRT/MADRIDP-GP/001)
+    text_start: adopted at Madrid on June 27, 1989,
+    notes: The international route for a trade mark — one application through the home office, designating other members. India's national law is the Trade Marks Act, 1999; the Protocol is what takes a mark abroad. WIPO Lex serves the authentic text as HTML; the PDF is behind a signed link.
+
+  - id: intl-madrid-parties
+    title: Madrid Agreement and Protocol — Contracting Parties
+    jurisdiction: INTL
+    regime: [treaty, trademark]
+    doc_type: registry_record
+    issuer: World Intellectual Property Organization
+    url: https://www.wipo.int/en/web/treaties/registration/madrid_protocol/index
+    fetch_url: https://www.wipo.int/treaties/en/docs/pdf/madrid_marks.pdf
+    fetch: auto
+    format: pdf
+    licence: Official WIPO publication
+    version_label: WIPO status list as fetched; re-fetch to pick up a new accession
+    notes: A registry record, not law. It is the authority for whether a country can be designated. Checked 2026-09-24 — the list gives India as party to the Protocol from 8 July 2013, and no date in the Madrid Agreement column.
+
+  - id: intl-hague-geneva-act
+    title: Hague Agreement Concerning the International Registration of Industrial Designs — Geneva Act (1999)
+    jurisdiction: INTL
+    regime: [treaty, design]
+    doc_type: treaty
+    issuer: World Intellectual Property Organization
+    url: https://www.wipo.int/wipolex/en/treaties/textdetails/12531
+    fetch_url: https://www.wipo.int/wipolex/en/text/285214
+    fetch: auto
+    format: html
+    licence: Official treaty text
+    version_label: Geneva Act of 2 July 1999 (TRT/HAGUE/006)
+    text_start: Geneva Act of July 2, 1999
+    notes: The international route for an industrial design. India is not in the contracting-party list (see intl-hague-parties), so this text says what the route is, not that it is open from India. WIPO Lex serves the authentic text as HTML.
+
+  - id: intl-hague-parties
+    title: Hague Agreement — Contracting Parties
+    jurisdiction: INTL
+    regime: [treaty, design]
+    doc_type: registry_record
+    issuer: World Intellectual Property Organization
+    url: https://www.wipo.int/en/web/hague-system/legal_texts
+    fetch_url: https://www.wipo.int/treaties/en/docs/pdf/hague.pdf
+    fetch: auto
+    format: pdf
+    licence: Official WIPO publication
+    version_label: WIPO status list as fetched; re-fetch to pick up a new accession
+    notes: A registry record, not law, and the authority for the negative answer. Checked 2026-09-24 — 85 parties listed and India is not among them, so an Indian applicant files for a design nationally or in each country, not through the Hague route.
