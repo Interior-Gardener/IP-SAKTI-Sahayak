@@ -1,5 +1,30 @@
 {
+  "date": "2026-09-24",
   "provider": "groq",
+  "models": {
+    "answer": "openai/gpt-oss-120b",
+    "judge": "openai/gpt-oss-120b"
+  },
+  "embed_model": "BAAI/bge-m3",
+  "reranker": "BAAI/bge-reranker-v2-m3",
+  "items": 106,
+  "summary": {
+    "retrieval_recall_at_8": 0.955,
+    "citation_correctness": 0.829,
+    "judge_accuracy": 0.849,
+    "abstention_rate": 0.95,
+    "false_abstention_rate": 0.116,
+    "multilingual_agreement": 0.684,
+    "chrf": null
+  },
+  "targets": {
+    "retrieval_recall_at_8": 0.85,
+    "citation_correctness": 0.95,
+    "judge_accuracy": 0.8,
+    "abstention_rate": 0.95,
+    "false_abstention_rate": 0.1,
+    "multilingual_agreement": 0.85
+  },
   "results": [
     {
       "item": "oos-cricket",
@@ -1187,7 +1212,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 1.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 1.0
       },
       "notes": [
         "IN confidence medium 0.625: 3 of 3 citations verified",
@@ -1200,7 +1226,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 1.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 1.0
       },
       "notes": [
         "IN confidence high 0.812: 5 of 5 citations verified",
@@ -1213,7 +1240,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 1.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 1.0
       },
       "notes": [
         "IN confidence high 0.825: the provision you named was found; 1 of 1 citations verified",
@@ -1226,7 +1254,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 1.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 1.0
       },
       "notes": [
         "INTL confidence high 0.887: the provision you named was found; 2 of 2 citations verified",
@@ -1239,7 +1268,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 0.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 1.0
       },
       "notes": [
         "IN confidence medium 0.688: 3 of 3 citations verified",
@@ -1252,7 +1282,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 1.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 0.0
       },
       "notes": [
         "IN confidence medium 0.688: 3 of 3 citations verified",
@@ -1265,7 +1296,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 1.0,
-        "accuracy": 0.0
+        "accuracy": 0.0,
+        "multilingual": 0.0
       },
       "notes": [
         "IN confidence medium 0.562: 3 of 3 citations verified",
@@ -1278,7 +1310,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 1.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 1.0
       },
       "notes": [
         "IN confidence medium 0.656: 7 of 8 citations verified; 1 verifier warning(s)",
@@ -1292,7 +1325,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 1.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 1.0
       },
       "notes": [
         "IN confidence medium 0.5: 1 of 1 citations verified",
@@ -1305,7 +1339,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 1.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 1.0
       },
       "notes": [
         "INTL confidence medium 0.688: 3 of 3 citations verified",
@@ -1318,7 +1353,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 0.0,
-        "accuracy": 0.0
+        "accuracy": 0.0,
+        "multilingual": 0.0
       },
       "notes": [
         "IN confidence low 0.3: 4 of 5 citations verified; 2 verifier warning(s)",
@@ -1333,7 +1369,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 1.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 0.0
       },
       "notes": [
         "IN confidence medium 0.688: 1 of 1 citations verified",
@@ -1346,7 +1383,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 1.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 0.0
       },
       "notes": [
         "IN confidence high 0.75: 2 of 2 citations verified",
@@ -1359,7 +1397,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 1.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 1.0
       },
       "notes": [
         "IN confidence medium 0.65: 2 of 2 citations verified; 1 verifier warning(s)",
@@ -1373,7 +1412,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 1.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 1.0
       },
       "notes": [
         "IN confidence medium 0.562: 3 of 3 citations verified",
@@ -1384,7 +1424,8 @@
     {
       "item": "bn-cosmetics-licence-23",
       "metrics": {
-        "false_abstention": 1.0
+        "false_abstention": 1.0,
+        "multilingual": 0.0
       },
       "notes": [
         "abstained: insufficient_sources",
@@ -1398,7 +1439,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 1.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 1.0
       },
       "notes": [
         "INTL confidence high 0.938: 2 of 2 citations verified",
@@ -1411,7 +1453,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 0.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 1.0
       },
       "notes": [
         "IN confidence medium 0.625: 4 of 4 citations verified",
@@ -1424,7 +1467,8 @@
       "metrics": {
         "false_abstention": 0.0,
         "citation": 0.0,
-        "accuracy": 1.0
+        "accuracy": 1.0,
+        "multilingual": 1.0
       },
       "notes": [
         "IN confidence low 0.407: the provision you named was found; 2 of 3 citations verified; 1 verifier warning(s)",
