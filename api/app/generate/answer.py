@@ -59,6 +59,7 @@ def user_turn(
     language: str,
     persona: str | None,
     best: list[str] | None = None,
+    checks: list[str] | None = None,
 ) -> str:
     lines = [
         f"Jurisdiction: {JURISDICTION_LABEL[jurisdiction]}",
@@ -73,6 +74,13 @@ def user_turn(
             "Search ranked these as the closest match: "
             + "; ".join(best)
             + ". Read them first, and ignore them if they do not answer the question."
+        )
+    if checks:
+        # Settled in code by reading the register, because a country's absence from a list
+        # of parties is the one thing search cannot turn up: there is nothing to match on.
+        lines.append(
+            "Checked against the register before answering. State this in the answer as "
+            "settled, and cite the list named in it: " + " ".join(checks)
         )
     lines.append(f"Question: {question}")
     return "\n".join(lines)
@@ -158,13 +166,14 @@ def generate(
     persona: str | None = None,
     extra_instruction: str = "",
     top_k: int | None = None,
+    checks: list[str] | None = None,
 ) -> DraftAnswer:
     documents = select_documents(retrieved, top_k or ANSWER_TOP_K)
     best = [
         f"{r.source_title} {r.locator}"
         for r in sorted(retrieved, key=lambda r: -r.signals.get("rerank", 0.0))[:2]
     ]
-    prompt = user_turn(question, jurisdiction, language, persona, best)
+    prompt = user_turn(question, jurisdiction, language, persona, best, checks)
     if extra_instruction:
         prompt = f"{extra_instruction}\n\n{prompt}"
     answer = provider.answer_with_citations(SYSTEM, prompt, to_documents(documents))

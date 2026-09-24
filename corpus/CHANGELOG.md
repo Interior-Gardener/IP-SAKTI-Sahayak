@@ -2,6 +2,15 @@
 
 Every change to `manifest.yaml` gets a line here: what changed, why, who checked it. Newest first.
 
+## 2026-09-24 (later) — the status lists become readable, row by row
+
+- `layout: rows` on `intl-madrid-parties` and `intl-hague-parties`. Plain PDF extraction reads a
+  status list column by column, so a country and its date of accession landed lines apart with two
+  other countries in between. `app/ingest/normalise.py` now rebuilds those two files one printed
+  row per line, so "India .... – July 8, 2013" is a single line: quotable as a citation, and
+  readable by code. Chunk counts unchanged (10 and 7).
+- Nothing else in the corpus uses `layout: rows`, and the default is unchanged.
+
 ## 2026-09-24 — the Madrid and Hague routes added (36 sources)
 
 - Added the two international routes the problem statement names and the corpus did not have:

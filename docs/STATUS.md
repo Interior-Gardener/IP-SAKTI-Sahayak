@@ -15,7 +15,9 @@ unbuilt in stages 0–2; what is left is measurement (§2) and the gaps in §7.
   the **Madrid Protocol** (a trade mark abroad) and the **Geneva Act 1999 of the Hague Agreement**
   (a design abroad) — each with WIPO's official list of contracting parties beside it, because the
   two answers differ: India is party to the Madrid Protocol from 8 July 2013, and is **not** among
-  the 85 parties to the Hague Agreement. Corpus: **36 sources, 3,315 chunks**.
+  the 85 parties to the Hague Agreement. Membership is settled by reading those lists in code
+  (`app/treaties/membership.py`, also the agent tool `treaty_membership`), because an absence from
+  a list is not something search can find. Corpus: **36 sources, 3,315 chunks**.
 
 - **Added 2026-09-23 (stage 3)**: voice in and out (`/voice/asr` on Groq Whisper, tested live;
   Bhashini written, waiting on an account); the interface in Hindi and Tamil; eight free official
@@ -92,14 +94,36 @@ retrieval 1.0, citation 1.0, false abstention 0, judge accuracy 0.625 (2 of 4 fu
 half for an omitted sub-rule, one zero). Retrieval across the whole set went 0.952 (63 items) to
 **0.955** (67), with no regressions: `eval/runs/2026-09-24-groq-madrid-hague-retrieval.json`.
 
-The zero is worth keeping rather than tuning away. Asked whether an Indian applicant can use the
-Hague route, the assistant said it could not confirm membership instead of answering. It is right
-that it did not guess, and the list that settles it *is* in the corpus — but **a fact that exists
-only as a missing row cannot be retrieved by similarity**: there is nothing in the party list for
-"India" to match on. The graded provision for that item is therefore Geneva Act Art. 3 (who is
-entitled to file), with the party list checked by hand, and the graph carries a cited edge saying
-India is not listed. Making a curated edge note visible to the answer model would close it, and
-that is a prompt-authority change that needs its own measurement.
+**The Hague question is answered now (2026-09-24, later).** The first attempt failed in a way
+worth writing down: asked whether an Indian applicant can use the Hague route, the assistant said
+it could not confirm membership. It was right not to guess, and the list that settles it was in the
+corpus — but **a fact that exists only as a missing row cannot be retrieved by similarity**, because
+there is nothing for "India" to match on.
+
+The fix is `api/app/treaties/membership.py`: WIPO's status lists are parsed by code out of the
+committed normalised text, and a country is settled against a list with no model in the loop. Two
+rules make it safe to state a negative:
+
+- **A negative only comes from a parse that is provably complete.** Each list prints its own count
+  ("(Total: 85)"); if the rows parsed do not match it, the module raises instead of reporting a
+  country as absent. This caught a real miss: Lao People's Democratic Republic is printed with a
+  three-dot leader rather than a long one, and an earlier parse dropped it — one short, and any
+  absence claim built on it would have been worthless.
+- **The country names come from the lists themselves**, so there is no separate gazetteer to drift.
+
+The result goes into the prompt as a check that was already run, and for a negative the page it was
+read from is added to the sources so the answer can cite it. `layout: rows` (corpus changelog) makes
+each row a single line — "India .... – July 8, 2013" — so it is quotable. The same lookup is an
+agent tool, `treaty_membership`.
+
+Measured on the four items (`eval/runs/2026-09-24-groq-register-check.json`): retrieval 1.0,
+citation 1.0, false abstention 0, judge accuracy 0.875 — `intl-hague-india-route` went 0 -> **1.0**,
+with 2 of 2 citations verified and high confidence. India's Madrid date and its absence from Hague
+are both pinned by tests that re-read the lists.
+
+What this does not do: membership is only as current as the committed list, which is a WIPO status
+list with a date printed on it ("as at 14 July 2026"), and the answer says that date. Re-fetch the
+two sources to move it.
 
 The tables below are the earlier 46-item runs, kept for comparison.
 

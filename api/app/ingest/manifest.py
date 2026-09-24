@@ -35,6 +35,8 @@ class ManifestSource(BaseModel):
     fetch_url: HttpUrl | None = None
     fetch: Literal["auto", "manual"]
     format: Literal["pdf", "html"]
+    #: "rows" rebuilds a columnar PDF one printed row per line (status lists, fee tables).
+    layout: Literal["text", "rows"] = "text"
     language: str = "en"
     licence: str
     version_label: str

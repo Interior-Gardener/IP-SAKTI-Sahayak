@@ -103,7 +103,32 @@ def is_tabular(table) -> bool:
     return bool(cells) and sum(len(c) for c in cells) / len(cells) < 60
 
 
-def pdf_pages(path: Path, ocr: bool = True, tables: bool = True) -> tuple[list[str], int]:
+# Words whose tops are within this many points of each other were printed on one line.
+ROW_TOLERANCE = 3.0
+
+
+def row_lines(page) -> str:
+    """Rebuild a columnar page as one printed row per line.
+
+    Plain extraction reads a status list column by column, so a country and its date of
+    accession end up lines apart and nothing joins them: "India" on one line, "July 8, 2013"
+    three lines below, with two other countries in between. Grouping words by the line they
+    were printed on puts the row back together, which is what makes it quotable as a citation
+    and what lets the membership lookup read it.
+    """
+    rows: dict[int, list] = {}
+    for w in page.get_text("words"):
+        rows.setdefault(round(w[1] / ROW_TOLERANCE), []).append(w)
+    out = []
+    for key in sorted(rows):
+        words = sorted(rows[key], key=lambda w: w[0])
+        out.append(" ".join(w[4] for w in words))
+    return "\n".join(out)
+
+
+def pdf_pages(
+    path: Path, ocr: bool = True, tables: bool = True, layout: str = "text"
+) -> tuple[list[str], int]:
     import pymupdf
 
     pages: list[str] = []
@@ -123,7 +148,7 @@ def pdf_pages(path: Path, ocr: bool = True, tables: bool = True) -> tuple[list[s
                     if block:
                         rendered.append(block)
 
-            text = page.get_text("text")
+            text = row_lines(page) if layout == "rows" else page.get_text("text")
             if ocr and len(text.strip()) < MIN_PAGE_CHARS and not rendered:
                 try:
                     # Needs Tesseract installed (it is in the API Docker image).
@@ -158,7 +183,7 @@ def normalise_source(
         raise FileNotFoundError(f"{source.id}: no raw file at {raw}; run fetch first")
 
     if source.format == "pdf":
-        pages, ocr_pages = pdf_pages(raw, ocr=ocr)
+        pages, ocr_pages = pdf_pages(raw, ocr=ocr, layout=source.layout)
     else:
         pages, ocr_pages = [html_text(raw)], 0
 

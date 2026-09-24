@@ -221,6 +221,19 @@ GRAPH_SLOTS = 2
 GRAPH_DISPLACE_RATIO = 0.1
 
 
+def chunk_at(session, source_id: str, locator: str, jurisdiction: str):
+    """One named chunk, fetched outright rather than searched for.
+
+    Used where code already knows which passage settles a point — the treaty status lists —
+    so the model has the register in front of it and something real to cite.
+    """
+    sql = f"SELECT {_SELECT} {_FROM} AND s.id = :source AND c.locator = :loc ORDER BY c.id LIMIT 1"
+    rows = _rows(
+        session, sql, jurisdiction=jurisdiction, historical=False, source=source_id, loc=locator
+    )
+    return rows[0] if rows else None
+
+
 def reserve_graph_slots(ranked: list[Retrieved], top_k: int) -> list[Retrieved]:
     """The top `top_k`, with up to GRAPH_SLOTS of it open to graph hits.
 

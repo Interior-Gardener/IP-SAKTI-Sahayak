@@ -475,6 +475,7 @@ sources:
     fetch_url: https://www.wipo.int/treaties/en/docs/pdf/madrid_marks.pdf
     fetch: auto
     format: pdf
+    layout: rows
     licence: Official WIPO publication
     version_label: WIPO status list as fetched; re-fetch to pick up a new accession
     notes: A registry record, not law. It is the authority for whether a country can be designated. Checked 2026-09-24 — the list gives India as party to the Protocol from 8 July 2013, and no date in the Madrid Agreement column.
@@ -504,6 +505,7 @@ sources:
     fetch_url: https://www.wipo.int/treaties/en/docs/pdf/hague.pdf
     fetch: auto
     format: pdf
+    layout: rows
     licence: Official WIPO publication
     version_label: WIPO status list as fetched; re-fetch to pick up a new accession
     notes: A registry record, not law, and the authority for the negative answer. Checked 2026-09-24 — 85 parties listed and India is not among them, so an Indian applicant files for a design nationally or in each country, not through the Hague route.

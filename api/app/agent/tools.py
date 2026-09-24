@@ -139,6 +139,23 @@ def specs() -> list[ToolSpec]:
             },
         ),
         ToolSpec(
+            name="treaty_membership",
+            description=(
+                "Whether a country is a party to the Madrid Protocol (a trade mark abroad) or "
+                "the Hague Agreement (a design abroad), read from WIPO's own status list. Use it "
+                "before saying a route is open: India is a party to Madrid and is not a party to "
+                "Hague, and search cannot show you the second, because it is an absence."
+            ),
+            parameters={
+                "type": "object",
+                "properties": {
+                    "treaty": {"type": "string", "enum": ["madrid", "hague"]},
+                    "country": {"type": "string"},
+                },
+                "required": ["treaty", "country"],
+            },
+        ),
+        ToolSpec(
             name="registry_pointer",
             description=(
                 "Registries, forms and links for a regime — where the user goes next. Returns "
@@ -237,6 +254,20 @@ class Toolbox:
         if row is None:
             return "no verified profile for this material yet"
         return json.dumps(row.profile, ensure_ascii=False)
+
+    def _treaty_membership(self, args: dict) -> str:
+        from app.treaties.membership import LISTS, IncompleteList, check
+
+        wanted = str(args.get("treaty", "")).casefold()
+        entry = next((t for t in LISTS if wanted in t.aliases or wanted in t.source_id), None)
+        if entry is None:
+            return "error: treaty must be 'madrid' or 'hague'"
+        try:
+            found = check(entry.source_id, str(args.get("country", "India")))
+        except IncompleteList as e:
+            # Better no answer than a wrong "not a party" from a half-read list.
+            return f"unavailable: {e}"
+        return f"{found.sentence()} Source: {found.source_id} {found.locator}."
 
     def _registry_pointer(self, args: dict) -> str:
         query = select(Registry).where(Registry.regime.any(str(args.get("regime", ""))))

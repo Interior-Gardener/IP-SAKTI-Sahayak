@@ -96,8 +96,37 @@ LEAK_RETRY = (
 )
 
 
+def _register_checks(session, question: str, jurisdiction: str, retrieved: list[Retrieved]):
+    """Settle any treaty-membership point the question raises, and put the list in front
+    of the model.
+
+    Membership is decided by reading WIPO's status list in code (app/treaties/membership.py),
+    because the answer to "can an Indian applicant use the Hague route" is India's absence
+    from a list, and search has nothing to match an absence on. The sentence goes into the
+    prompt as a check that was run; the page it was read from is added to the sources so the
+    answer can cite it like anything else.
+    """
+    from app.retrieval.hybrid import chunk_at
+    from app.treaties.membership import checks_for
+
+    if jurisdiction != "INTL":
+        return []
+    sentences = []
+    for found in checks_for(question):
+        sentences.append(found.sentence())
+        if found.listed:
+            # A positive rests on the treaty's own articles; the row only carries the date,
+            # and a 117-row table of countries would crowd them out of the prompt.
+            continue
+        page = chunk_at(session, found.source_id, found.locator, jurisdiction)
+        if page is not None and all(r.chunk_id != page.chunk_id for r in retrieved):
+            page.signals["register"] = 1.0
+            retrieved.insert(0, page)
+    return sentences
+
+
 def _generate_within_limits(
-    services, question, jurisdiction, retrieved, language, persona, instruction=""
+    services, question, jurisdiction, retrieved, language, persona, instruction="", checks=None
 ):
     """Generate; if the provider rejects the request as too large, retry with fewer documents.
 
@@ -105,7 +134,14 @@ def _generate_within_limits(
     request past Groq's per-request limit and the question got no answer at all."""
     try:
         return generate(
-            services.answer_llm, question, jurisdiction, retrieved, language, persona, instruction
+            services.answer_llm,
+            question,
+            jurisdiction,
+            retrieved,
+            language,
+            persona,
+            instruction,
+            checks=checks,
         )
     except Exception as e:  # noqa: BLE001 - providers raise their own type for this
         if "too large" not in str(e).lower() and "413" not in str(e):
@@ -119,6 +155,7 @@ def _generate_within_limits(
             persona,
             instruction,
             top_k=4,
+            checks=checks,
         )
 
 
@@ -213,6 +250,7 @@ def _answer_one(
             regimes,
             entities=entities,
         )
+        checks = _register_checks(session, question, jurisdiction, retrieved)
     finally:
         session.close()
 
@@ -221,12 +259,14 @@ def _answer_one(
         no_sources = Confidence(score=0, band="low", reasons=["no sources found"])
         return empty, Verified(jurisdiction, "", []), no_sources
 
-    draft = _generate_within_limits(services, question, jurisdiction, retrieved, language, persona)
+    draft = _generate_within_limits(
+        services, question, jurisdiction, retrieved, language, persona, checks=checks
+    )
     checked = verify(draft)
     retry = LEAK_RETRY if checked.leaked else missing_primary_citation(question, draft, checked)
     if retry:
         draft = _generate_within_limits(
-            services, question, jurisdiction, retrieved, language, persona, retry
+            services, question, jurisdiction, retrieved, language, persona, retry, checks
         )
         checked = verify(draft)
     return draft, checked, score_confidence(checked, draft)
