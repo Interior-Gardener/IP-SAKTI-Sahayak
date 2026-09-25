@@ -293,14 +293,29 @@ cd .. && docker compose up -d postgres
 cd api && .venv/Scripts/alembic upgrade head
 ```
 
-Then either restore the database (fastest) or re-ingest:
+**Then fill the database.** Nothing searchable exists until you do: the chunks and their
+embeddings live in Postgres, and Postgres is not in git. Two ways, and the first is the one to
+use unless you are changing the parser.
 
 ```bash
-# re-ingest everything (GPU: ~5 min; CPU: hours)
-.venv/Scripts/python -m app.ingest run --no-ocr
-# after a parser change, re-chunk files that have not changed:
-.venv/Scripts/python -m app.ingest run --no-ocr --rechunk
+# 1. Restore the database someone already built (~30 seconds, no GPU, no model download).
+#    Get sahayak.dump from a teammate — 16 MB, too big to commit, so it is shared as a file.
+docker compose up -d postgres
+cd api && .venv/Scripts/alembic upgrade head && cd ..
+docker compose exec -T postgres pg_restore -U sahayak -d sahayak --clean --if-exists < sahayak.dump
+#    make db-dump writes that file; make db-restore reads it.
+
+# 2. Or build it yourself from the committed text. `load` skips fetching and normalising and
+#    ingests corpus/normalised/ exactly as committed, so the raw PDFs are not needed —
+#    including the four that can only be downloaded by hand.
+#    First run also downloads bge-m3 and the reranker (~3.5 GB) from Hugging Face.
+cd api && .venv/Scripts/python -m app.ingest load        # GPU ~5 min; CPU hours
+.venv/Scripts/python -m app.ingest load --rechunk        # after a parser change
+.venv/Scripts/python -m app.ingest run --no-ocr          # re-fetch from source too (needs raw PDFs)
 ```
+
+Check it worked: `select count(*) from chunks` is **3,315** across 36 sources, and
+`python eval/run.py --only retrieval` scores 0.955 with no API key.
 
 Run things:
 
@@ -322,7 +337,12 @@ python api/scripts/sources_register.py              # regenerate docs/SOURCES.md
   `intl-eu-thmpd-2004-24.pdf` (EUR-Lex, or the EU Publications Office search when EUR-Lex is down).
   `corpus/normalised/*.txt` **is** in git, so the extracted text survives without the PDFs, but
   ingest needs the raw file for its sha256.
-- **The database** is not in git. Re-ingest, or copy the Docker volume.
+- **The database** is not in git — no chunks, no embeddings, so `/ask` finds nothing until you
+  either restore `sahayak.dump` (`make db-restore`) or run `make load`. Everything else that
+  matters is committed: `corpus/manifest.yaml`, all 36 normalised texts, the graph seed, the
+  material profiles, the registries and the golden eval set. Chunking is not a pending piece of
+  work — it is code (`api/app/ingest/`) that runs on demand; only its output is left out of git,
+  because 3,315 rows of 1024-dimension vectors do not belong in a repository.
 - **`.env`** is not in git. Keys live only there.
 
 ## 6. Provider quota (the current bottleneck)
